@@ -1,0 +1,33 @@
+@font-face {
+    font-family: 'Nunito';
+    src: url('Nunito-Light.ttf');
+}
+
+body {
+    background-color: #FBFBFB;
+    font-family: 'Nunito', Helvetica, Arial, sans-serif;
+    font-weight: 100 !important;
+}
+
+#header {
+    display: table;
+}
+
+#header img {
+    height: 41px;
+    margin: 10px 0;
+    float: left;
+}
+
+#header h1 {
+    font-weight: 100 !important;
+    margin-top: 9px;
+    font-size: 30px;
+    color: #666666;
+    margin-left: 10px;
+    float: left;
+}
+
+#converter_settings {
+    margin: 0 10px 10px 10px;
+}

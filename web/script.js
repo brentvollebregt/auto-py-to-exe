@@ -1,4 +1,4 @@
-async function doStuff() {
+async function getFile() {
     let file = await eel.askFile()();
-    document.getElementById('result').innerText = file;
+    document.getElementById('file').value = file;
 }

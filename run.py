@@ -12,4 +12,4 @@ def askFile():
     filename = askopenfilename(parent=root)
     return filename
 
-eel.start('main.html', size=(400, 300))
+eel.start('main.html', size=(650, 550))

@@ -1,5 +1,5 @@
 # Auto PY to EXE
-Converts .py to .exe using a simple graphical interface built with [eel](https://github.com/ChrisKnott/Eel).
+Converts .py to .exe using a simple graphical interface built with [Eel](https://github.com/ChrisKnott/Eel).
 
 ## Getting Started
 
@@ -13,9 +13,10 @@ Converts .py to .exe using a simple graphical interface built with [eel](https:/
 3. Execute ```pip install -r requirements.txt```
 
 ## Running the Application
-Simply run ```python run.py``` or double click the script to run it. A window will
+Simply run ```python run.py``` or double click the script to run it. Chrome will open in app mode with the project running inside.
 
 ## Using the Application
+ *Not Created Yet*
 
 # Task List
 - [ ] Create interface

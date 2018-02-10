@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Title</title>
+        <title>Auto Py To Exe</title>
         <script type="text/javascript" src="/eel.js"></script>
         <script type="text/javascript" src="/script.js"></script>
         <link rel="stylesheet" href="/styles.css">
     </head>
 
     <body>
-        <button onclick="doStuff()">Click</button>
-        <p id="result">Result</p>
+        <div id="header">
+            <img src="/favicon.ico">
+            <h1>Auto Py to Exe</h1>
+        </div>
+
+        <div id="converter_settings">
+            <input id="file" placeholder="Path to file">
+            <button onclick="getFile()">Search</button>
+        </div>
+        <div id="info">
+
+        </div>
     </body>
 </html>
