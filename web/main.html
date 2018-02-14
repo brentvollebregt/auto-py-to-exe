@@ -5,6 +5,9 @@
         <script type="text/javascript" src="/eel.js"></script>
         <script type="text/javascript" src="/script.js"></script>
         <link rel="stylesheet" href="/styles.css">
+        <style>
+
+        </style>
     </head>
 
     <body>
@@ -12,13 +15,16 @@
             <img src="/favicon.ico">
             <h1>Auto Py to Exe</h1>
         </div>
-
-        <div id="converter_settings">
-            <input id="file" placeholder="Path to file">
-            <button onclick="getFile()">Search</button>
-        </div>
-        <div id="info">
-
+        <div id="mid" style="margin: auto">
+            <div id="content" style="display: grid; grid-template-columns: 1fr; grid-gap: 0;">
+                <div id="info_bar" style="width: 250px; background-color: rgba(69, 139, 198, 0.15); display: none;">
+                    <p>Auto Py to Exe easily converts python scripts to executable files.</p>
+                </div>
+                <div id="converter_settings" style="max-width: 800px">
+                    <input id="file" placeholder="Path to file">
+                    <button onclick="getFile()">Search</button>
+                </div>
+            </div>
         </div>
     </body>
 </html>
