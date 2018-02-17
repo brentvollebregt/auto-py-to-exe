@@ -15,14 +15,50 @@
             <img src="/favicon.ico">
             <h1>Auto Py to Exe</h1>
         </div>
-        <div id="mid" style="margin: auto">
-            <div id="content" style="display: grid; grid-template-columns: 1fr; grid-gap: 0;">
-                <div id="info_bar" style="width: 250px; background-color: rgba(69, 139, 198, 0.15); display: none;">
+        <div id="mid">
+            <div id="content">
+                <div id="info_bar">
                     <p>Auto Py to Exe easily converts python scripts to executable files.</p>
                 </div>
-                <div id="converter_settings" style="max-width: 800px">
-                    <input id="file" placeholder="Path to file">
-                    <button onclick="getFile()">Search</button>
+                <div id="converter_settings">
+                    <h1 class="section_header">Script Location</h1>
+                    <div style="display: grid; grid-gap: 4px; grid-template-columns: 1fr 120px;">
+                        <input id="file" placeholder="Path to file">
+                        <button class="button_search" onclick="getFile()">Search</button>
+                    </div>
+
+                    <h1 class="section_header">Onefile</h1>
+                    <button class="button_choice">One Direcotry</button>
+                    <button class="button_choice_greyed">One File</button>
+                    <!-- -D/-F -->
+
+                    <h1 class="section_header">Console Window</h1>
+                    <button class="button_choice">Console Based</button>
+                    <button class="button_choice_greyed">Window Based (hide the console)</button>
+
+                    <h1 class="section_header">Icon</h1>
+                    <input>
+                    <button class="button_search">Search</button>
+                    <!-- -i <FILE.ico or FILE.exe,ID or FILE.icns> -->
+
+                    <h1 class="section_header">Additional Files</h1>
+                    <input placeholder="File">
+                    <button class="button_search">Search</button>
+                    <input placeholder="Filename">
+                    <!-- Where and what to write as -->
+                    <!-- --add-data <SRC;DEST or SRC:DEST> -->
+
+                    <h1 class="section_header">Advanced</h1>
+                    <!-- --clean -->
+                    <!-- -n NAME -->
+                    <!-- --add-binary <SRC;DEST or SRC:DEST> -->
+
+                    <h1 class="section_header">Current Command</h1>
+                    <textarea style="width: 100%;"></textarea>
+                    <!-- Make sure to include -y/&#45;&#45;noconfirm always -->
+
+                    <button class="button_main">Convert .py to .exe</button>
+
                 </div>
             </div>
         </div>

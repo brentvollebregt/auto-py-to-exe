@@ -3,10 +3,14 @@
     src: url('Nunito-Light.ttf');
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: #FBFBFB;
     font-family: 'Nunito', Helvetica, Arial, sans-serif;
-    font-weight: 100 !important;
+    font-weight: 100;
 }
 
 #header {
@@ -15,19 +19,88 @@ body {
 
 #header img {
     height: 41px;
-    margin: 10px 0;
+    margin-top: 10px;
     float: left;
 }
 
 #header h1 {
-    font-weight: 100 !important;
-    margin-top: 9px;
+    font-weight: 100;
     font-size: 30px;
     color: #666666;
-    margin-left: 10px;
     float: left;
+    margin: 9px 0 0 10px;
+}
+
+#mid {
+    margin: auto;
+}
+
+#content {
+    display: grid;
+    grid-gap: 0;
+}
+
+#info_bar {
+    width: 250px;
+    background-color: rgba(69, 139, 198, 0.15);
+    display: none;
 }
 
 #converter_settings {
     margin: 0 10px 10px 10px;
+    max-width: 800px
+}
+
+.section_header {
+    margin: 10px 0 2px 0;
+    font-weight: normal;
+    font-size: 25px;
+}
+
+button {
+    cursor: pointer;
+    border-radius: 4px;
+    font-family: 'Nunito', Helvetica, Arial, sans-serif;
+    font-weight: 100;
+}
+
+.button_choice {
+    border: 3px solid rgb(72, 140, 196);
+    color: rgb(72, 140, 196);
+    background: transparent;
+    padding: 8px;
+}
+
+.button_choice_greyed {
+    border: solid 3px #EEEEEE;
+    color: lightgrey;
+    background: transparent;
+    padding: 8px;
+}
+
+.button_main {
+    width: 100%;
+    background-color: #458BC6;
+    border: 1px solid #458BC6;
+    font-size: 15px;
+    color: white;
+    height: 38px;
+    padding: 0 30px;
+    text-align: center;
+    box-sizing: border-box;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.button_search {
+    background: transparent;
+    border: 2px solid #458BC6;
+    height: 27px;
+    padding: 0 15px;
+}
+
+input {
+    padding: 4px;
+    border: 1px solid #458BC6;
 }
