@@ -34,9 +34,10 @@
                     <button id="console_inactive" class="button_choice button_choice_greyed" onclick="switchConsole(false)">Window Based (hide the console)</button>
 
                     <h1 class="section_header">Icon</h1>
-                    <input placeholder=".ico file">
-                    <button class="button_search">Search</button>
-                    <!-- -i <FILE.ico or FILE.exe,ID or FILE.icns> -->
+                    <div style="display: grid; grid-gap: 4px; grid-template-columns: 1fr 120px;">
+                        <input id="icon" placeholder=".ico file" onkeyup="checkScript(this)">
+                        <button class="button_search" onclick="getIcon()">Search</button>
+                    </div>
 
                     <h1 class="section_header">Additional Files</h1>
                     <div id="additional_files_content">

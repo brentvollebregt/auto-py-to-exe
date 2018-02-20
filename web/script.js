@@ -1,7 +1,6 @@
 var command_data = {
     "onefile" : false,
     "console" : true,
-    "icon" : "",
     "additional_files" : {},
     "advanced" : {
         "clean" : true,
@@ -17,7 +16,6 @@ async function getFile() {
 
 async function checkScript(node) {
     let exists = await eel.checkIfFileExists(node.value)();
-    console.log(exists)
     if (exists) {
         node.style.border = "1px solid #458BC6";
     } else {
@@ -50,7 +48,10 @@ function switchConsole(active) {
     generateCurrentCommand();
 }
 
-function checkIcon() {
+async function getIcon() {
+    let file = await eel.askFile()();
+    document.getElementById('icon').value = file;
+    checkScript(document.getElementById('icon'));
     generateCurrentCommand();
 }
 
@@ -75,8 +76,8 @@ function generateCurrentCommand() {
     if (!command_data['console']) {
         command += "-w "
     }
-    if (command_data['icon'] !== "") {
-
+    if (document.getElementById("icon").value !== "") {
+        command += '-i "' + document.getElementById("icon").value + '" ';
     }
     if (JSON.stringify(command_data['additional_files']) === JSON.stringify({})) {
 
