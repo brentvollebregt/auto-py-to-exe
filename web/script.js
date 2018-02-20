@@ -1,6 +1,88 @@
+var command_data = {
+    "onefile" : false,
+    "console" : true,
+    "icon" : "",
+    "additional_files" : {},
+    "advanced" : {
+        "clean" : true,
+        "name" : ""
+    }
+}
+
 async function getFile() {
     let file = await eel.askFile()();
     document.getElementById('file').value = file;
+    checkScript(document.getElementById('file'));
+}
+
+async function checkScript(node) {
+    let exists = await eel.checkIfFileExists(node.value)();
+    console.log(exists)
+    if (exists) {
+        node.style.border = "1px solid #458BC6";
+    } else {
+        node.style.border = "1px solid #f44336";
+    }
+    generateCurrentCommand();
+}
+
+function switchOnefile(active) {
+    if (active) {
+        document.getElementById('onefile_inactive').classList.add('button_choice_greyed')
+        document.getElementById('onefile_active').classList.remove('button_choice_greyed')
+    } else {
+        document.getElementById('onefile_active').classList.add('button_choice_greyed')
+        document.getElementById('onefile_inactive').classList.remove('button_choice_greyed')
+    }
+    command_data['onefile'] = active
+    generateCurrentCommand();
+}
+
+function switchConsole(active) {
+    if (active) {
+        document.getElementById('console_inactive').classList.add('button_choice_greyed')
+        document.getElementById('console_active').classList.remove('button_choice_greyed')
+    } else {
+        document.getElementById('console_active').classList.add('button_choice_greyed')
+        document.getElementById('console_inactive').classList.remove('button_choice_greyed')
+    }
+    command_data['console'] = active
+    generateCurrentCommand();
+}
+
+function checkIcon() {
+    generateCurrentCommand();
+}
+
+function additionalFilesAdd() {
+
+}
+
+function additionalFilesRemove() {
+
+}
+
+function additionalFilesEdit() {
+    generateCurrentCommand();
+}
+
+function generateCurrentCommand() {
+    var node = document.getElementById("current_command")
+    var command = 'pyinstaller -y ';
+    if (command_data['onefile']) {
+        command += "-F "
+    }
+    if (!command_data['console']) {
+        command += "-w "
+    }
+    if (command_data['icon'] !== "") {
+
+    }
+    if (JSON.stringify(command_data['additional_files']) === JSON.stringify({})) {
+
+    }
+    command += '"' + document.getElementById('file').value + '"';
+    node.value = command
 }
 
 function checkInfoBar() {
@@ -30,3 +112,5 @@ window.addEventListener('resize', function () {
 window.addEventListener('load', function () {
     checkInfoBar();
 });
+
+generateCurrentCommand();

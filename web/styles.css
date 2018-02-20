@@ -72,10 +72,8 @@ button {
 }
 
 .button_choice_greyed {
-    border: solid 3px #EEEEEE;
-    color: lightgrey;
-    background: transparent;
-    padding: 8px;
+    border: solid 3px #EEEEEE !important;
+    color: lightgrey !important;
 }
 
 .button_main {
