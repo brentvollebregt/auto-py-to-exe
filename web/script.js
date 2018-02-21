@@ -73,13 +73,23 @@ async function getIcon() {
 function additionalFilesAdd() {
     var parent_node = document.getElementById('additional_files_content');
     var div = document.createElement('div');
-    div.innerHTML = '<div style="margin: 1px 0;">\n<input placeholder="File">\n<button class="button_search">Search</button>\n<input placeholder="Filename">\n<img src="img/remove.svg" style="height: 20px; margin-bottom: -5px; cursor: pointer;">\n</div>';
+    var id = 'addFiles_' + Math.random().toString(36).substring(7);
+    while (Object.keys(command_data['additional_files']).indexOf(id) !== -1) {
+        id = 'addFiles_' + Math.random().toString(36).substring(7);
+    }
+    div.innerHTML = '<div style="margin: 1px 0;" id="' + id + '">\n<input placeholder="File">\n<button class="button_search">Search</button>\n<input placeholder="Filename">\n<img src="img/remove.svg" onclick="additionalFilesRemove(\'' + id + '\')" style="height: 20px; margin-bottom: -5px; cursor: pointer;">\n</div>';
     parent_node_children = document.getElementById('additional_files_content').children;
-    parent_node.insertBefore(div.firstChild, parent_node_children[parent_node_children.length-1])
+    parent_node.insertBefore(div.firstChild, parent_node_children[parent_node_children.length-1]);
+    command_data["additional_files"][id] = {
+        "file" : "",
+        "filename" : ""
+    };
 }
 
-function additionalFilesRemove() {
-
+function additionalFilesRemove(id) {
+    var block = document.getElementById(id);
+    block.parentNode.removeChild(block);
+    delete command_data["additional_files"][id];
 }
 
 function additionalFilesEdit() {
