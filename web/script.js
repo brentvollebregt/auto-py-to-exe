@@ -77,7 +77,7 @@ function additionalFilesAdd() {
     while (Object.keys(command_data['additional_files']).indexOf(id) !== -1) {
         id = 'addFiles_' + Math.random().toString(36).substring(7);
     }
-    div.innerHTML = '<div style="margin: 1px 0;" id="' + id + '">\n<input placeholder="File">\n<button class="button_search">Search</button>\n<input placeholder="Filename">\n<img src="img/remove.svg" onclick="additionalFilesRemove(\'' + id + '\')" style="height: 20px; margin-bottom: -5px; cursor: pointer;">\n</div>';
+    div.innerHTML = '<div style="margin: 1px 0;" id="' + id + '">\n<input placeholder="File">\n<button class="button_search" onclick="additionalFilesSearch(\'' + id + '\')">Search</button>\n<input placeholder="Filename">\n<img src="img/remove.svg" onclick="additionalFilesRemove(\'' + id + '\')" style="height: 20px; margin-bottom: -5px; cursor: pointer;">\n</div>';
     parent_node_children = document.getElementById('additional_files_content').children;
     parent_node.insertBefore(div.firstChild, parent_node_children[parent_node_children.length-1]);
     command_data["additional_files"][id] = {
@@ -92,8 +92,15 @@ function additionalFilesRemove(id) {
     delete command_data["additional_files"][id];
 }
 
-function additionalFilesEdit() {
+function additionalFilesEdit(node) {
+    // Update field
     generateCurrentCommand();
+}
+
+async function additionalFilesSearch(id) {
+    let file = await eel.askFile()();
+    document.getElementById(id).children[0].value = file;
+    document.getElementById(id).children[2].value = file.replace(/^.*[\\\/]/, '');
 }
 
 function generateCurrentCommand() {
@@ -108,8 +115,8 @@ function generateCurrentCommand() {
     if (document.getElementById("icon").value !== "") {
         command += '-i "' + document.getElementById("icon").value + '" ';
     }
-    if (JSON.stringify(command_data['additional_files']) === JSON.stringify({})) {
-
+    if (Object.keys(command_data['additional_files']).length > 0) {
+        // Deal with these using Object.keys(command_data['additional_files'])
     }
     command += '"' + document.getElementById('file').value + '"';
     node.value = command
