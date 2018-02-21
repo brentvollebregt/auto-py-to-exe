@@ -77,7 +77,7 @@ function additionalFilesAdd() {
     while (Object.keys(command_data['additional_files']).indexOf(id) !== -1) {
         id = 'addFiles_' + Math.random().toString(36).substring(7);
     }
-    div.innerHTML = '<div style="margin: 1px 0;" id="' + id + '">\n<input placeholder="File">\n<button class="button_search" onclick="additionalFilesSearch(\'' + id + '\')">Search</button>\n<input placeholder="Filename">\n<img src="img/remove.svg" onclick="additionalFilesRemove(\'' + id + '\')" style="height: 20px; margin-bottom: -5px; cursor: pointer;">\n</div>';
+    div.innerHTML = '<div style="margin: 1px 0;" id="' + id + '">\n<input placeholder="File" onkeyup="additionalFilesEdit(\'' + id + '\')">\n<button class="button_search" onclick="additionalFilesSearch(\'' + id + '\')">Search</button>\n<input placeholder="Filename" onkeyup="additionalFilesEdit(\'' + id + '\')">\n<img src="img/remove.svg" onclick="additionalFilesRemove(\'' + id + '\')" style="height: 20px; margin-bottom: -5px; cursor: pointer;">\n</div>';
     parent_node_children = document.getElementById('additional_files_content').children;
     parent_node.insertBefore(div.firstChild, parent_node_children[parent_node_children.length-1]);
     command_data["additional_files"][id] = {
@@ -92,8 +92,9 @@ function additionalFilesRemove(id) {
     delete command_data["additional_files"][id];
 }
 
-function additionalFilesEdit(node) {
-    // Update field
+function additionalFilesEdit(id) {
+    command_data["additional_files"][id]["file"] = document.getElementById(id).children[0].value;
+    command_data["additional_files"][id]["filename"] = document.getElementById(id).children[2].value;
     generateCurrentCommand();
 }
 
@@ -101,6 +102,7 @@ async function additionalFilesSearch(id) {
     let file = await eel.askFile()();
     document.getElementById(id).children[0].value = file;
     document.getElementById(id).children[2].value = file.replace(/^.*[\\\/]/, '');
+    additionalFilesEdit(id);
 }
 
 function generateCurrentCommand() {
