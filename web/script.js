@@ -1,3 +1,18 @@
+function expand(node) {
+    var expandDiv_node = document.getElementById(node.dataset.expand);
+    if (node.style.transform === "") {
+        node.style.transform = 'rotate(180deg)';
+        if (node.dataset.display !== undefined) {
+            expandDiv_node.style.display = node.dataset.display;
+        } else {
+            expandDiv_node.style.display = 'block';
+        }
+    } else {
+        node.style.transform = '';
+        expandDiv_node.style.display = 'none';
+    }
+}
+
 var command_data = {
     "onefile" : false,
     "console" : true,

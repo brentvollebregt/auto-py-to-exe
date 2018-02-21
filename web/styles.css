@@ -102,3 +102,18 @@ input {
     padding: 4px;
     border: 1px solid #458BC6;
 }
+
+.expand {
+    background: url(img/chevron-square-up.svg) no-repeat center;
+    height: 30px;
+    margin-bottom: -4px;
+    margin-right: 6px;
+    width: 30px;
+    display: inline-block;
+    transition: transform 0.4s;
+    cursor: pointer;
+}
+
+.expanded {
+
+}

@@ -27,20 +27,19 @@
                     <h1 class="section_header">Onefile</h1>
                     <button id="onefile_inactive" class="button_choice" onclick="switchOnefile(false)">One Direcotry</button>
                     <button id="onefile_active" class="button_choice button_choice_greyed" onclick="switchOnefile(true)">One File</button>
-                    <!-- -D/-F -->
 
                     <h1 class="section_header">Console Window</h1>
                     <button id="console_active" class="button_choice" onclick="switchConsole(true)">Console Based</button>
                     <button id="console_inactive" class="button_choice button_choice_greyed" onclick="switchConsole(false)">Window Based (hide the console)</button>
 
-                    <h1 class="section_header">Icon</h1>
-                    <div style="display: grid; grid-gap: 4px; grid-template-columns: 1fr 120px;">
+                    <h1 class="section_header"><a class="expand" data-expand="icon_content" data-display="grid" onclick="expand(this)"></a>Icon</h1>
+                    <div id="icon_content" style="display: none; grid-gap: 4px; grid-template-columns: 1fr 120px;">
                         <input id="icon" placeholder=".ico file" onkeyup="checkScript(this)">
                         <button class="button_search" onclick="getIcon()">Search</button>
                     </div>
 
-                    <h1 class="section_header">Additional Files</h1>
-                    <div id="additional_files_content">
+                    <h1 class="section_header"><a class="expand" data-expand="additional_files_content" onclick="expand(this)"></a>Additional Files</h1>
+                    <div id="additional_files_content" style="display: none;">
                         <div style="margin: 1px 0;">
                             <input placeholder="File">
                             <button class="button_search">Search</button>
@@ -54,8 +53,8 @@
                     </div>
                     <!-- --add-data <SRC;DEST or SRC:DEST> -->
 
-                    <h1 class="section_header">Advanced</h1>
-                    <div id="advanced_content">
+                    <h1 class="section_header"><a class="expand" data-expand="advanced_content" onclick="expand(this)"></a>Advanced</h1>
+                    <div id="advanced_content" style="display: none;">
                         <button class="button_choice">Clean before building</button><br>
                         <input style="margin: 8px 0;" placeholder="Name">
                     </div>
