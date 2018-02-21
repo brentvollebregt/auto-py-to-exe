@@ -71,7 +71,11 @@ async function getIcon() {
 }
 
 function additionalFilesAdd() {
-
+    var parent_node = document.getElementById('additional_files_content');
+    var div = document.createElement('div');
+    div.innerHTML = '<div style="margin: 1px 0;">\n<input placeholder="File">\n<button class="button_search">Search</button>\n<input placeholder="Filename">\n<img src="img/remove.svg" style="height: 20px; margin-bottom: -5px; cursor: pointer;">\n</div>';
+    parent_node_children = document.getElementById('additional_files_content').children;
+    parent_node.insertBefore(div.firstChild, parent_node_children[parent_node_children.length-1])
 }
 
 function additionalFilesRemove() {
@@ -101,6 +105,13 @@ function generateCurrentCommand() {
     node.value = command
 }
 
+function convert() {
+    if (document.getElementById('file').value === "") {
+        alert("Script location required");
+        return;
+    }
+}
+
 function checkInfoBar() {
     if (window.innerWidth >= 1050) {
         document.getElementById('content').style.gridTemplateColumns = '250px 800px'; // 266 = info bar + body margins
@@ -128,5 +139,3 @@ window.addEventListener('resize', function () {
 window.addEventListener('load', function () {
     checkInfoBar();
 });
-
-generateCurrentCommand();

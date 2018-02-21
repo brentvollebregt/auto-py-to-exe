@@ -40,16 +40,7 @@
 
                     <h1 class="section_header"><a class="expand" data-expand="additional_files_content" onclick="expand(this)"></a>Additional Files</h1>
                     <div id="additional_files_content" style="display: none;">
-                        <div style="margin: 1px 0;">
-                            <input placeholder="File">
-                            <button class="button_search">Search</button>
-                            <input placeholder="Filename">
-                        </div>
-                        <div style="margin: 1px 0;">
-                            <input placeholder="File">
-                            <button class="button_search">Search</button>
-                            <input placeholder="Filename">
-                        </div>
+                        <img src="img/add.svg" onclick="additionalFilesAdd()" style="height: 20px; cursor: pointer;">
                     </div>
                     <!-- --add-data <SRC;DEST or SRC:DEST> -->
 
@@ -68,10 +59,10 @@
                     <h1 class="section_header">Current Command</h1>
                     <textarea id="current_command" style="width: 100%;"></textarea>
 
-                    <button class="button_main">Convert .py to .exe</button>
-
+                    <button class="button_main" onclick="convert()">Convert .py to .exe</button>
                 </div>
             </div>
         </div>
+        <script>checkScript(document.getElementById('file'))</script>
     </body>
 </html>
