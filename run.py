@@ -22,14 +22,20 @@ def checkIfFileExists(file):
 
 @eel.expose
 def convert(command):
+    eel.addOutput("Cleaning file structure\n")
+    clean()
     process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     for line in iter(process.stderr.readline, ''):
         if line == b'':
             break
         eel.addOutput(line.decode('utf-8'))
     eel.outputComplete()
+    eel.addOutput("Moving project to output/\n")
     moveProject()
+    eel.addOutput("Cleaning file structure\n")
     clean()
+    eel.addOutput("Complete.\n")
+    eel.outputComplete()
 
 def moveProject():
     if not os.path.exists('output/'):
@@ -38,11 +44,13 @@ def moveProject():
     shutil.move(folder, 'output/')
 
 def clean():
-    shutil.rmtree('dist/')
-    shutil.rmtree('build/')
+    if os.path.exists('dist/'):
+        shutil.rmtree('dist/')
+    if os.path.exists('build/'):
+        shutil.rmtree('build/')
     files = os.listdir('.')
     for file in files:
         if file.endswith('.spec'):
             os.remove(file)
 
-eel.start('main.html', size=(650, 550))
+eel.start('main.html', size=(650, 608))
