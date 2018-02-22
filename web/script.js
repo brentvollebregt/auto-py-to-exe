@@ -134,6 +134,31 @@ function convert() {
         alert("Script location required");
         return;
     }
+    // TODO Check if already converting (grey out button)
+    var command = document.getElementById("current_command").value;
+    eel.convert(command)();
+    // TODO Grey button out and change to clear
+}
+
+eel.expose(addOutput);
+function addOutput(line) {
+    document.getElementById('output').style.display = 'block';
+    document.getElementById('output').children[1].value += line
+    document.getElementById('output').children[1].rows = (parseInt(document.getElementById('output').children[1].rows) + 1) + '';
+    window.scrollTo(0, document.body.scrollHeight);
+}
+
+eel.expose(outputComplete);
+function outputComplete() {
+    console.log("Complete");
+}
+
+function clearOutput() {
+    document.getElementById('output').style.display = 'none';
+    document.getElementById('output').children[1].value = '';
+    document.getElementById('output').children[1].rows = "0";
+
+    // TODO Change button back to convert
 }
 
 function checkInfoBar() {

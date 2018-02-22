@@ -42,7 +42,6 @@
                     <div id="additional_files_content" style="display: none;">
                         <img src="img/add.svg" onclick="additionalFilesAdd()" style="height: 20px; cursor: pointer;">
                     </div>
-                    <!-- --add-data <SRC;DEST or SRC:DEST> -->
 
                     <h1 class="section_header"><a class="expand" data-expand="advanced_content" onclick="expand(this)"></a>Advanced</h1>
                     <div id="advanced_content" style="display: none;">
@@ -58,6 +57,11 @@
 
                     <h1 class="section_header">Current Command</h1>
                     <textarea id="current_command" style="width: 100%;"></textarea>
+
+                    <div id="output" style="display: none;">
+                        <h1 class="section_header">Output</h1>
+                        <textarea style="width: 100%; white-space: pre; overflow-y: hidden;"></textarea>
+                    </div>
 
                     <button class="button_main" onclick="convert()">Convert .py to .exe</button>
                 </div>
