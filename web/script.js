@@ -119,7 +119,6 @@ function generateCurrentCommand() {
     }
     if (Object.keys(command_data['additional_files']).length > 0) {
         for (const id of Object.keys(command_data['additional_files'])) {
-            console.log(id, command_data['additional_files'][id]);
             var src = document.getElementById(id).children[0].value;
             var dst = document.getElementById(id).children[2].value;
             command += '--add-data "' + src + '";"' + dst + '" ';
@@ -140,7 +139,6 @@ function convert() {
         clearOutput();
         return;
     }
-    console.log("RUNNING");
     var command = document.getElementById("current_command").value;
     eel.convert(command)();
 
