@@ -134,10 +134,19 @@ function convert() {
         alert("Script location required");
         return;
     }
-    // TODO Check if already converting (grey out button)
+    if (document.getElementById('convert').style.cursor !== '') {return;}
+    if (document.getElementById('convert').innerHTML === 'Converting...') {return;}
+    if (document.getElementById('convert').innerHTML === 'Clear Output') {
+        clearOutput();
+        return;
+    }
+    console.log("RUNNING");
     var command = document.getElementById("current_command").value;
     eel.convert(command)();
-    // TODO Grey button out and change to clear
+
+    document.getElementById('convert').style.filter = 'grayscale(1)';
+    document.getElementById('convert').style.cursor = 'not-allowed';
+    document.getElementById('convert').innerHTML = "Converting...";
 }
 
 eel.expose(addOutput);
@@ -150,7 +159,9 @@ function addOutput(line) {
 
 eel.expose(outputComplete);
 function outputComplete() {
-    console.log("Complete");
+    document.getElementById('convert').style.cursor = '';
+    document.getElementById('convert').style.filter = '';
+    document.getElementById('convert').innerHTML = "Clear Output";
 }
 
 function clearOutput() {
@@ -158,7 +169,7 @@ function clearOutput() {
     document.getElementById('output').children[1].value = '';
     document.getElementById('output').children[1].rows = "0";
 
-    // TODO Change button back to convert
+    document.getElementById('convert').innerHTML = "Convert .py to .exe";
 }
 
 function checkInfoBar() {
