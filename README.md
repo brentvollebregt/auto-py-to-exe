@@ -1,10 +1,7 @@
 # Auto PY to EXE
 Converts .py to .exe using a simple graphical interface built with [Eel](https://github.com/ChrisKnott/Eel) in Python.
 
-## Screenshots
-![Empty interface](https://i.imgur.com/PIWXYQf.png)
-![Filled out](https://i.imgur.com/Y4itvce.png)
-![Converting](https://i.imgur.com/MjdONcC.png)
+<img align="center" src="https://i.imgur.com/PIWXYQfm.png" alt="Empty interface">
 
 ## Getting Started
 
@@ -21,4 +18,19 @@ Converts .py to .exe using a simple graphical interface built with [Eel](https:/
 Run ```run.py```. Chrome will open in app mode with the project running inside.
 
 ## Using the Application
- *Not Created Yet*
+1. Select your script location (paste in or use a file explorer)
+    - Outline will become blue when file exists
+2. Select other options and add things like an icon or other files
+3. Click the big blue button at the bottom to convert
+4. Find your converted files in /output when completed
+
+
+*Easy.*
+
+## Screenshots
+![Empty interface](https://i.imgur.com/PIWXYQf.png)
+![Filled out](https://i.imgur.com/Y4itvce.png)
+![Converting](https://i.imgur.com/MjdONcC.png)
+
+# Tasklist
+- [ ] Add more options to advanced
