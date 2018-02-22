@@ -1,9 +1,10 @@
 import eel
 from tkinter.filedialog import askopenfilename
 from tkinter import Tk
-import os.path
+import os
 import subprocess
 import sys
+import shutil
 
 eel.init('web')
 
@@ -27,14 +28,21 @@ def convert(command):
             break
         eel.addOutput(line.decode('utf-8'))
     eel.outputComplete()
+    moveProject()
+    clean()
 
 def moveProject():
-    pass
+    if not os.path.exists('output/'):
+        os.makedirs('output/')
+    folder = 'dist/' + os.listdir('dist/')[0]
+    shutil.move(folder, 'output/')
 
 def clean():
-    # dist
-    # build
-    # *.spec
-    pass
+    shutil.rmtree('dist/')
+    shutil.rmtree('build/')
+    files = os.listdir('.')
+    for file in files:
+        if file.endswith('.spec'):
+            os.remove(file)
 
 eel.start('main.html', size=(650, 550))
