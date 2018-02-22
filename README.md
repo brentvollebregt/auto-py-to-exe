@@ -1,5 +1,5 @@
-# Auto PY to EXE
-A .py to .exe converter using a simple graphical interface built with [Eel](https://github.com/ChrisKnott/Eel) in Python.
+<h1 align="center">Auto PY to EXE</h1>
+<p align="center">A .py to .exe converter using a simple graphical interface built with [Eel](https://github.com/ChrisKnott/Eel) in Python.</p>
 
 <div align="center">
     <img src="https://i.imgur.com/PIWXYQfm.png" alt="Empty interface">
