@@ -44,6 +44,11 @@ body {
     width: 250px;
     background-color: rgba(69, 139, 198, 0.15);
     display: none;
+    padding: 8px;
+}
+
+#info_bar p {
+    margin: 0;
 }
 
 #converter_settings {

@@ -1,5 +1,5 @@
 import eel
-from tkinter.filedialog import askopenfilename
+from tkinter.filedialog import askopenfilename, askdirectory
 from tkinter import Tk
 import os
 import subprocess
@@ -15,6 +15,14 @@ def askFile():
     root.wm_attributes('-topmost', 1)
     filename = askopenfilename(parent=root)
     return filename
+
+@eel.expose
+def askFolder():
+    root = Tk()
+    root.withdraw()
+    root.wm_attributes('-topmost', 1)
+    folder = askdirectory(parent=root)
+    return folder
 
 @eel.expose
 def checkIfFileExists(file):
@@ -34,7 +42,7 @@ def convertPreCheck(filename, onefile, outputFolder):
     return True
 
 @eel.expose
-def convert(command):
+def convert(command, output):
     eel.addOutput("Cleaning file structure\n")
     clean()
     process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -43,23 +51,23 @@ def convert(command):
             break
         eel.addOutput(line.decode('utf-8'))
     eel.outputComplete()
-    eel.addOutput("Moving project to output/\n")
-    moveProject()
+    eel.addOutput("Moving project to: " + output + "\n")
+    moveProject(output)
     eel.addOutput("Cleaning file structure\n")
     clean()
     eel.addOutput("Complete.\n")
     eel.outputComplete()
 
-def moveProject():
-    if not os.path.exists('output/'):
-        os.makedirs('output/')
+def moveProject(output):
+    if not os.path.exists(output):
+        os.makedirs(output)
     folder = 'dist/' + os.listdir('dist/')[0]
-    if os.listdir('dist/')[0] in os.listdir('output/'):
+    if os.listdir('dist/')[0] in os.listdir(output):
         if os.path.isfile('dist/' + os.listdir('dist/')[0]):
-            os.remove('output/' + os.listdir('dist/')[0])
+            os.remove(output + os.listdir('dist/')[0])
         else:
-            shutil.rmtree('output/' + os.listdir('dist/')[0])
-    shutil.move(folder, 'output/')
+            shutil.rmtree(output + os.listdir('dist/')[0])
+    shutil.move(folder, output)
 
 def clean():
     if os.path.exists('dist/'):

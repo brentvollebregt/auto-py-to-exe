@@ -1,3 +1,4 @@
+// Expand groups
 function expand(node) {
     var expandDiv_node = document.getElementById(node.dataset.expand);
     if (node.style.transform === "") {
@@ -13,6 +14,7 @@ function expand(node) {
     }
 }
 
+// Group end command data
 var command_data = {
     "onefile" : false,
     "console" : true,
@@ -23,13 +25,14 @@ var command_data = {
     }
 }
 
-async function getFile() {
+// Python script
+async function getFile(for_id) {
     let file = await eel.askFile()();
-    document.getElementById('file').value = file;
-    checkScript(document.getElementById('file'));
+    document.getElementById(for_id).value = file;
+    checkFile(document.getElementById(for_id));
 }
 
-async function checkScript(node) {
+async function checkFile(node) {
     let exists = await eel.checkIfFileExists(node.value)();
     if (exists) {
         node.style.border = "1px solid #458BC6";
@@ -39,6 +42,7 @@ async function checkScript(node) {
     generateCurrentCommand();
 }
 
+// Onefile
 function switchOnefile(active) {
     if (active) {
         document.getElementById('onefile_inactive').classList.add('button_choice_greyed')
@@ -51,6 +55,7 @@ function switchOnefile(active) {
     generateCurrentCommand();
 }
 
+// No window
 function switchConsole(active) {
     if (active) {
         document.getElementById('console_inactive').classList.add('button_choice_greyed')
@@ -63,13 +68,7 @@ function switchConsole(active) {
     generateCurrentCommand();
 }
 
-async function getIcon() {
-    let file = await eel.askFile()();
-    document.getElementById('icon').value = file;
-    checkScript(document.getElementById('icon'));
-    generateCurrentCommand();
-}
-
+// Additional files
 function additionalFilesAdd() {
     var parent_node = document.getElementById('additional_files_content');
     var div = document.createElement('div');
@@ -105,6 +104,14 @@ async function additionalFilesSearch(id) {
     additionalFilesEdit(id);
 }
 
+// Advanced
+// Output directory
+async function getFolder(for_id) {
+    let file = await eel.askFolder()();
+    document.getElementById(for_id).value = file;
+}
+
+// Command generation
 function generateCurrentCommand() {
     var node = document.getElementById("current_command")
     var command = 'pyinstaller -y ';
@@ -128,6 +135,7 @@ function generateCurrentCommand() {
     node.value = command
 }
 
+// Convert
 async function convert() {
     if (document.getElementById('file').value === "") {
         alert("Script location required");
@@ -142,23 +150,30 @@ async function convert() {
 
     generateCurrentCommand();
     var command = document.getElementById("current_command").value;
+    var output = document.getElementById("output_location").value;
+    if (output === '') {
+        output = 'output/';
+    }
+    if (!output.endsWith('/')) {
+        output += '/'
+    }
     var command_split = command.split('"');
     var filename = command_split[command_split.length-2].replace(/^.*[\\\/]/, '');
-    let check = await eel.convertPreCheck(filename, command_data['onefile'], 'output/')();
-    console.log(check);
+    let check = await eel.convertPreCheck(filename, command_data['onefile'], output)();
     if (!check) {
         console.log("Overwrite warning");
         if(!confirm("File will overwrite current file\nContinue?")) {
             return;
         }
     }
-    eel.convert(command)();
+    eel.convert(command, output)();
 
     document.getElementById('convert').style.filter = 'grayscale(1)';
     document.getElementById('convert').style.cursor = 'not-allowed';
     document.getElementById('convert').innerHTML = "Converting...";
 }
 
+// Execution output
 eel.expose(addOutput);
 function addOutput(line) {
     document.getElementById('output').style.display = 'block';
@@ -182,6 +197,7 @@ function clearOutput() {
     document.getElementById('convert').innerHTML = "Convert .py to .exe";
 }
 
+// Left info bar
 function checkInfoBar() {
     if (window.innerWidth >= 1050) {
         document.getElementById('content').style.gridTemplateColumns = '250px 800px'; // 266 = info bar + body margins
@@ -202,6 +218,7 @@ function checkInfoBar() {
     }
 }
 
+// Events
 window.addEventListener('resize', function () {
     checkInfoBar();
 });
