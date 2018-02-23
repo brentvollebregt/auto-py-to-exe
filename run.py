@@ -21,6 +21,19 @@ def checkIfFileExists(file):
     return os.path.isfile(file)
 
 @eel.expose
+def convertPreCheck(filename, onefile, outputFolder):
+    if not os.path.exists(outputFolder):
+        return True
+    no_extension = '.'.join(filename.split('.')[:-1])
+    if onefile:
+        if no_extension + '.exe' in os.listdir(outputFolder):
+            return False
+    else:
+        if no_extension in os.listdir(outputFolder):
+            return False
+    return True
+
+@eel.expose
 def convert(command):
     eel.addOutput("Cleaning file structure\n")
     clean()
@@ -41,6 +54,11 @@ def moveProject():
     if not os.path.exists('output/'):
         os.makedirs('output/')
     folder = 'dist/' + os.listdir('dist/')[0]
+    if os.listdir('dist/')[0] in os.listdir('output/'):
+        if os.path.isfile('dist/' + os.listdir('dist/')[0]):
+            os.remove('output/' + os.listdir('dist/')[0])
+        else:
+            shutil.rmtree('output/' + os.listdir('dist/')[0])
     shutil.move(folder, 'output/')
 
 def clean():

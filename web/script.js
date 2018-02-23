@@ -128,7 +128,7 @@ function generateCurrentCommand() {
     node.value = command
 }
 
-function convert() {
+async function convert() {
     if (document.getElementById('file').value === "") {
         alert("Script location required");
         return;
@@ -139,7 +139,18 @@ function convert() {
         clearOutput();
         return;
     }
+
     var command = document.getElementById("current_command").value;
+    var command_split = command.split('"');
+    var filename = command_split[command_split.length-2].replace(/^.*[\\\/]/, '');
+    let check = await eel.convertPreCheck(filename, command_data['onefile'], 'output/')();
+    console.log(check);
+    if (!check) {
+        console.log("Overwrite warning");
+        if(!confirm("File will overwrite current file\nContinue?")) {
+            return;
+        }
+    }
     eel.convert(command)();
 
     document.getElementById('convert').style.filter = 'grayscale(1)';

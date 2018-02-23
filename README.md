@@ -2,7 +2,7 @@
 <p align="center">A .py to .exe converter using a simple graphical interface built with <a href="https://github.com/ChrisKnott/Eel">Eel</a> in Python.</p>
 
 <div align="center">
-    <img src="https://i.imgur.com/PIWXYQfm.png" alt="Empty interface">
+    <img src="https://i.imgur.com/BvfQABI.png" alt="Empty interface">
 </div>
 
 ## Getting Started
