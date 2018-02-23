@@ -37,7 +37,7 @@ Run ```run.py```. Chrome will open in app mode with the project running inside.
 # Tasklist
 #### General
 - [x] Specify output directory
-- [ ] Add section to add own flags
+- [x] Add section to add own flags
 #### Add to Advanced
 - [ ] -a
 - [ ] --upx-dir

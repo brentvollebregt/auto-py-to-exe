@@ -50,6 +50,10 @@
                             <input id="output_location" placeholder="Folder path">
                             <button class="button_search" onclick="getFolder('output_location')">Search</button>
                         </div>
+                        <div style="display: grid; grid-gap: 4px; grid-template-columns: 160px 1fr; margin-top: 2px;">
+                            <a>Extra Command Data:</a>
+                            <input id="extra_command_data" onkeyup="generateCurrentCommand()" placeholder="Flags and extra data">
+                        </div>
                         <!--<button class="button_choice">Clean before building</button><br>-->
                         <!--<input style="margin: 8px 0;" placeholder="Name">-->
                     </div>
