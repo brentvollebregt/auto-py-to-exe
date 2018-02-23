@@ -140,6 +140,7 @@ async function convert() {
         return;
     }
 
+    generateCurrentCommand();
     var command = document.getElementById("current_command").value;
     var command_split = command.split('"');
     var filename = command_split[command_split.length-2].replace(/^.*[\\\/]/, '');
