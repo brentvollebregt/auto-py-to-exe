@@ -5,6 +5,7 @@
     <img src="https://i.imgur.com/BvfQABI.png" alt="Empty interface">
 </div>
 
+*Note: This project is still being developed and some features are currently not supported; see the tasklist for what still needs to be done.*
 ## Getting Started
 
 ### Prerequisites
@@ -34,4 +35,24 @@ Run ```run.py```. Chrome will open in app mode with the project running inside.
 ![Converting](https://i.imgur.com/MjdONcC.png)
 
 # Tasklist
-- [ ] Add more options to advanced
+- [ ] Specify output directory
+- [ ] Add more options to advanced:
+        - [ ] -n
+        - [ ] --add-binary
+        - [ ] -p
+        - [ ] --hidden-import
+        - [ ] --additional-hooks-dir
+        - [ ] --runtime-hook
+        - [ ] --exclude-module
+        - [ ] -d
+        - [ ] -s
+        - [ ] --noupx
+        - [ ] --version-file
+        - [ ] -m
+        - [ ] -r
+        - [ ] --uac-admin
+        - [ ] --uac-uiaccess
+        - [ ] --win-private-assemblies
+        - [ ] --win-no-prefer-redirects
+        - [ ] --osx-bundle-identifier
+        - [ ] --runtime-tmpdir
