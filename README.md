@@ -35,24 +35,30 @@ Run ```run.py```. Chrome will open in app mode with the project running inside.
 ![Converting](https://i.imgur.com/MjdONcC.png)
 
 # Tasklist
+#### General
 - [ ] Specify output directory
-- [ ] Add more options to advanced:
-        - [ ] -n
-        - [ ] --add-binary
-        - [ ] -p
-        - [ ] --hidden-import
-        - [ ] --additional-hooks-dir
-        - [ ] --runtime-hook
-        - [ ] --exclude-module
-        - [ ] -d
-        - [ ] -s
-        - [ ] --noupx
-        - [ ] --version-file
-        - [ ] -m
-        - [ ] -r
-        - [ ] --uac-admin
-        - [ ] --uac-uiaccess
-        - [ ] --win-private-assemblies
-        - [ ] --win-no-prefer-redirects
-        - [ ] --osx-bundle-identifier
-        - [ ] --runtime-tmpdir
+- [ ] Add section to add own flags
+#### Add to Advanced
+- [ ] -a
+- [ ] -a
+- [ ] --upx-dir
+- [ ] --clean
+- [ ] --log-level LEVEL
+- [ ] --add-binary
+- [ ] -p
+- [ ] --hidden-import
+- [ ] --additional-hooks-dir
+- [ ] --runtime-hook
+- [ ] --exclude-module
+- [ ] -d
+- [ ] -s
+- [ ] --noupx
+- [ ] --version-file
+- [ ] -m
+- [ ] -r
+- [ ] --uac-admin
+- [ ] --uac-uiaccess
+- [ ] --win-private-assemblies
+- [ ] --win-no-prefer-redirects
+- [ ] --osx-bundle-identifier
+- [ ] --runtime-tmpdir
