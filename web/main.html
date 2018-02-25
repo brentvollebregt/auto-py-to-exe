@@ -53,8 +53,8 @@
                             <button class="button_search" onclick="getFolder('output_location')">Search</button>
                         </div>
                         <h2 class="sub_header">General Options</h2>
-                        <button id="OPTION-a" class="button_choice button_choice_greyed" onclick="switchButton(this)">-a Don't include unicode encoding support</button>
-                        <button id="OPTION--clean" class="button_choice button_choice_greyed" onclick="switchButton(this)">--clean Clean PyInstaller cache and remove temporary files before building</button>
+                        <button id="OPTION-a" class="button_choice button_choice_greyed">-a Don't include unicode encoding support</button>
+                        <button id="OPTION--clean" class="button_choice button_choice_greyed">--clean Clean PyInstaller cache and remove temporary files before building</button>
                         <!-- --log-level LEVEL Amount of detail in build-time console messages. LEVEL may be one of TRACE, DEBUG, INFO, WARN, ERROR, CRITICAL (default: INFO). -->
                         <!-- -n NAME Name to assign to the bundled app and spec file (default: first script’s basename) -->
                         <h2 class="sub_header">What to bundle, where to search</h2>
@@ -65,18 +65,18 @@
                         <!-- --runtime-hook RUNTIME_HOOKS Path to a custom runtime hook file. A runtime hook is code that is bundled with the executable and is executed before any other code or module to set up special features of the runtime environment. This option can be used multiple times. -->
                         <!-- --exclude-module EXCLUDES Optional module or package (the Python name, not the path name) that will be ignored (as though it was not found). This option can be used multiple times. -->
                         <h2 class="sub_header">How to generate</h2>
-                        <button id="OPTION-d" class="button_choice button_choice_greyed" onclick="switchButton(this)">-d Tell the bootloader to issue progress messages while initializing and starting</button>
-                        <button id="OPTION-s" class="button_choice button_choice_greyed" onclick="switchButton(this)">-s Apply a symbol-table strip to the executable and shared libs</button>
-                        <button id="OPTION--noupx" class="button_choice button_choice_greyed" onclick="switchButton(this)">--noupx Do not use UPX even if it is available</button>
+                        <button id="OPTION-d" class="button_choice button_choice_greyed">-d Tell the bootloader to issue progress messages while initializing and starting</button>
+                        <button id="OPTION-s" class="button_choice button_choice_greyed">-s Apply a symbol-table strip to the executable and shared libs</button>
+                        <button id="OPTION--noupx" class="button_choice button_choice_greyed">--noupx Do not use UPX even if it is available</button>
                         <h2 class="sub_header">Windows specific options</h2>
                         <!-- --version-file FILE add a version resource from FILE to the exe -->
                         <!-- -m <FILE or XML> add manifest FILE or XML to the exe -->
                         <!-- -r RESOURCE Add or update a resource to a Windows executable. The RESOURCE is one to four items, FILE[,TYPE[,NAME[,LANGUAGE]]]. FILE can be a data file or an exe/dll. For data files, at least TYPE and NAME must be specified. LANGUAGE defaults to 0 or may be specified as wildcard * to update all resources of the given TYPE and NAME. For exe/dll files, all resources from FILE will be added/updated to the final executable if TYPE, NAME and LANGUAGE are omitted or specified as wildcard *.This option can be used multiple times. -->
-                        <button id="OPTION--uac-admin" class="button_choice button_choice_greyed" onclick="switchButton(this)">--uac-admin Using this option creates a Manifest which will request elevation</button>
-                        <button id="OPTION--uac-uiaccess" class="button_choice button_choice_greyed" onclick="switchButton(this)">--uac-uiaccess Using this option allows an elevated application to work with Remote Desktop</button>
+                        <button id="OPTION--uac-admin" class="button_choice button_choice_greyed">--uac-admin Using this option creates a Manifest which will request elevation</button>
+                        <button id="OPTION--uac-uiaccess" class="button_choice button_choice_greyed">--uac-uiaccess Using this option allows an elevated application to work with Remote Desktop</button>
                         <h2 class="sub_header">Windows Side-by-side Assembly searching options</h2>
-                        <button id="OPTION--win-private-assemblies" class="button_choice button_choice_greyed" onclick="switchButton(this)">--win-private-assemblies</button> <!-- Any Shared Assemblies bundled into the application will be changed into Private Assemblies. This means the exact versions of these assemblies will always be used, and any newer versions installed on user machines at the system level will be ignored. -->
-                        <button id="OPTION--win-no-prefer-redirects" class="button_choice button_choice_greyed" onclick="switchButton(this)">--win-no-prefer-redirects</button> <!-- While searching for Shared or Private Assemblies to bundle into the application, PyInstaller will prefer not to follow policies that redirect to newer versions, and will try to bundle the exact versions of the assembly. -->
+                        <button id="OPTION--win-private-assemblies" class="button_choice button_choice_greyed">--win-private-assemblies</button> <!-- Any Shared Assemblies bundled into the application will be changed into Private Assemblies. This means the exact versions of these assemblies will always be used, and any newer versions installed on user machines at the system level will be ignored. -->
+                        <button id="OPTION--win-no-prefer-redirects" class="button_choice button_choice_greyed">--win-no-prefer-redirects</button> <!-- While searching for Shared or Private Assemblies to bundle into the application, PyInstaller will prefer not to follow policies that redirect to newer versions, and will try to bundle the exact versions of the assembly. -->
                         <h2 class="sub_header">Mac OS X specific options</h2>
                         <!-- --osx-bundle-identifier BUNDLE_IDENTIFIER Mac OS X .app bundle identifier is used as the default unique program name for code signing purposes. The usual form is a hierarchical name in reverse DNS notation. For example: com.mycompany.department.appname (default: first script’s basename) -->
                         <h2 class="sub_header">Rarely used special options</h2>

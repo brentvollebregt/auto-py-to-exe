@@ -121,6 +121,12 @@ function switchButton(node) {
     generateCurrentCommand();
 }
 
+function setupSimpleSwitchButtons() {
+    for (const node of document.querySelectorAll('*[id^="OPTION"]')) {
+        node.onclick = function () { switchButton(node); }
+    }
+}
+
 // Command generation
 function generateCurrentCommand() {
     var node = document.getElementById("current_command")
@@ -246,4 +252,5 @@ window.addEventListener('resize', function () {
 
 window.addEventListener('load', function () {
     checkInfoBar();
+    setupSimpleSwitchButtons();
 });
