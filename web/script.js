@@ -105,16 +105,27 @@ async function additionalFilesSearch(id) {
 }
 
 // Advanced
-// Output directory
+// - Output directory
 async function getFolder(for_id) {
     let file = await eel.askFolder()();
     document.getElementById(for_id).value = file;
+}
+
+// - General flag switches
+function switchButton(node) {
+    if (node.classList.contains('button_choice_greyed')) {
+        node.classList.remove('button_choice_greyed');
+    } else {
+        node.classList.add('button_choice_greyed');
+    }
+    generateCurrentCommand();
 }
 
 // Command generation
 function generateCurrentCommand() {
     var node = document.getElementById("current_command")
     var command = 'pyinstaller -y ';
+    // Basic
     if (command_data['onefile']) {
         command += "-F "
     }
@@ -128,9 +139,19 @@ function generateCurrentCommand() {
         for (const id of Object.keys(command_data['additional_files'])) {
             var src = document.getElementById(id).children[0].value;
             var dst = document.getElementById(id).children[2].value;
+            // TODO Select path separator based off os. unix=: windows=; mac=??? (need testing - os.pathsep)
             command += '--add-data "' + src + '";"' + dst + '" ';
         }
     }
+    // Advanced
+    // - Simple button flags
+    for (const node of document.querySelectorAll('*[id^="OPTION"]')) {
+        if (!node.classList.contains('button_choice_greyed')) {
+            command += node.id.replace('OPTION', '') + ' ';
+        }
+    }
+
+    // Final
     command += document.getElementById('extra_command_data').value + ' "' + document.getElementById('file').value + '"';
     node.value = command
 }

@@ -62,6 +62,12 @@ body {
     font-size: 25px;
 }
 
+.sub_header {
+    font-weight: normal;
+    font-size: 20px;
+    margin: 2px;
+}
+
 button {
     cursor: pointer;
     border-radius: 4px;
@@ -74,12 +80,25 @@ button {
     color: rgb(72, 140, 196);
     background: transparent;
     padding: 8px;
+    margin-bottom: 2px;
 }
 
 .button_choice_greyed {
     border: solid 3px #EEEEEE !important;
     color: lightgrey !important;
 }
+
+/*.info_button {*/
+    /*background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAq0lEQVR4XnWQywrDIBBF82P+WPtXebiSbJKtq0jAtVAEwW0WIZ16p04aWjpwcbge5tU0Nfq+V13XteV9QDVX8i/Qrei5LAtt28ZCXuADf9dKxzzPhEgpsRDwKqwatCiiaZrIe09aazLGMOicAwi1qIh5xGAw50z7vtM4juyB+QFDCFzNWnt6DEpr0bquPMIwDKcnrXkZMWOMrAv0XqZufhf4C/ycR6JW/nvwF51vE+IcomqCAAAAAElFTkSuQmCC) -0px -0px no-repeat;*/
+    /*height: 10px;*/
+    /*width: 10px;*/
+    /*overflow: hidden;*/
+    /*cursor: pointer;*/
+    /*margin-left: .25em;*/
+    /*vertical-align: middle;*/
+    /*display: inline-block;*/
+/*}*/
+/* Use <div class="info_button" onmouseover="" onmouseleave=""></div> to create tooltip (implement later)*/
 
 .button_main {
     width: 100%;
