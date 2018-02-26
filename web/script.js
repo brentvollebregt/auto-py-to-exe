@@ -45,11 +45,11 @@ async function checkFile(node) {
 // Onefile
 function switchOnefile(active) {
     if (active) {
-        document.getElementById('onefile_inactive').classList.add('button_choice_greyed')
-        document.getElementById('onefile_active').classList.remove('button_choice_greyed')
+        document.getElementById('onefile_inactive').classList.add('btn_choice_greyed')
+        document.getElementById('onefile_active').classList.remove('btn_choice_greyed')
     } else {
-        document.getElementById('onefile_active').classList.add('button_choice_greyed')
-        document.getElementById('onefile_inactive').classList.remove('button_choice_greyed')
+        document.getElementById('onefile_active').classList.add('btn_choice_greyed')
+        document.getElementById('onefile_inactive').classList.remove('btn_choice_greyed')
     }
     command_data['onefile'] = active
     generateCurrentCommand();
@@ -58,11 +58,11 @@ function switchOnefile(active) {
 // No window
 function switchConsole(active) {
     if (active) {
-        document.getElementById('console_inactive').classList.add('button_choice_greyed')
-        document.getElementById('console_active').classList.remove('button_choice_greyed')
+        document.getElementById('console_inactive').classList.add('btn_choice_greyed')
+        document.getElementById('console_active').classList.remove('btn_choice_greyed')
     } else {
-        document.getElementById('console_active').classList.add('button_choice_greyed')
-        document.getElementById('console_inactive').classList.remove('button_choice_greyed')
+        document.getElementById('console_active').classList.add('btn_choice_greyed')
+        document.getElementById('console_inactive').classList.remove('btn_choice_greyed')
     }
     command_data['console'] = active
     generateCurrentCommand();
@@ -76,19 +76,21 @@ function additionalFilesAdd() {
     while (Object.keys(command_data['additional_files']).indexOf(id) !== -1) {
         id = 'addFiles_' + Math.random().toString(36).substring(7);
     }
-    div.innerHTML = '<div style="margin: 1px 0;" id="' + id + '">\n<input placeholder="File" onkeyup="additionalFilesEdit(\'' + id + '\')">\n<button class="button_search" onclick="additionalFilesSearch(\'' + id + '\')">Search</button>\n<input placeholder="Destination" onkeyup="additionalFilesEdit(\'' + id + '\')">\n<img src="img/remove.svg" onclick="additionalFilesRemove(\'' + id + '\')" style="height: 20px; margin-bottom: -5px; cursor: pointer;">\n</div>';
+    div.innerHTML = '<div style="margin: 1px 0;" id="' + id + '">\n<input placeholder="File" onkeyup="additionalFilesEdit(\'' + id + '\')">\n<button class="btn_search" onclick="additionalFilesSearch(\'' + id + '\')">Search</button>\n<input placeholder="Destination" onkeyup="additionalFilesEdit(\'' + id + '\')">\n<img src="img/remove.svg" onclick="additionalFilesRemove(\'' + id + '\')" style="height: 20px; margin-bottom: -5px; cursor: pointer;">\n</div>';
     parent_node_children = document.getElementById('additional_files_content').children;
     parent_node.insertBefore(div.firstChild, parent_node_children[parent_node_children.length-1]);
     command_data["additional_files"][id] = {
         "file" : "",
         "filename" : ""
     };
+    generateCurrentCommand();
 }
 
 function additionalFilesRemove(id) {
     var block = document.getElementById(id);
     block.parentNode.removeChild(block);
     delete command_data["additional_files"][id];
+    generateCurrentCommand();
 }
 
 function additionalFilesEdit(id) {
@@ -113,10 +115,10 @@ async function getFolder(for_id) {
 
 // - General flag switches
 function switchButton(node) {
-    if (node.classList.contains('button_choice_greyed')) {
-        node.classList.remove('button_choice_greyed');
+    if (node.classList.contains('btn_choice_greyed')) {
+        node.classList.remove('btn_choice_greyed');
     } else {
-        node.classList.add('button_choice_greyed');
+        node.classList.add('btn_choice_greyed');
     }
     generateCurrentCommand();
 }
@@ -156,7 +158,7 @@ function generateCurrentCommand() {
     // Advanced
     // - Simple button flags
     for (const node of document.querySelectorAll('*[id^="OPTION"]')) {
-        if (!node.classList.contains('button_choice_greyed')) {
+        if (!node.classList.contains('btn_choice_greyed')) {
             command += node.id.replace('OPTION', '') + ' ';
         }
     }
