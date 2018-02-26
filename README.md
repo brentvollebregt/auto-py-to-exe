@@ -43,24 +43,24 @@ Run ```run.py```. Chrome will open in app mode with the project running inside.
 #### Add to Advanced
 *[pyinstaller options](https://pyinstaller.readthedocs.io/en/stable/usage.html#options)*
 - [x] -a
-- [ ] --upx-dir
+- [x] --upx-dir
 - [x] --clean
-- [ ] --log-level
-- [ ] --add-binary
-- [ ] -p
-- [ ] --hidden-import
-- [ ] --additional-hooks-dir
-- [ ] --runtime-hook
-- [ ] --exclude-module
+- [x] --log-level
+- [x] --add-binary
+- [x] -p
+- [x] --hidden-import
+- [x] --additional-hooks-dir
+- [x] --runtime-hook
+- [x] --exclude-module
 - [x] -d
 - [x] -s
 - [x] --noupx
-- [ ] --version-file
-- [ ] -m
-- [ ] -r
+- [x] --version-file
+- [x] -m
+- [x] -r
 - [x] --uac-admin
 - [x] --uac-uiaccess
 - [x] --win-private-assemblies
 - [x] --win-no-prefer-redirects
-- [ ] --osx-bundle-identifier
-- [ ] --runtime-tmpdir
+- [x] --osx-bundle-identifier
+- [x] --runtime-tmpdir

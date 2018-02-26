@@ -79,4 +79,4 @@ def clean():
         if file.endswith('.spec'):
             os.remove(file)
 
-eel.start('main.html', size=(650, 608))
+eel.start('main.html', size=(650, 612))

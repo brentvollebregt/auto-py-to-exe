@@ -121,9 +121,13 @@ function switchButton(node) {
     generateCurrentCommand();
 }
 
-function setupSimpleSwitchButtons() {
+function setupAdvancedSwitchesAndInputs() {
     for (const node of document.querySelectorAll('*[id^="OPTION"]')) {
-        node.onclick = function () { switchButton(node); }
+        node.onclick = function () { switchButton(node); };
+    }
+    for (const node of document.querySelectorAll('*[id^="VALUE"]')) {
+        node.onkeyup = function () { generateCurrentCommand(); };
+        node.style.marginBottom = '2px';
     }
 }
 
@@ -156,6 +160,13 @@ function generateCurrentCommand() {
             command += node.id.replace('OPTION', '') + ' ';
         }
     }
+    // - Values
+    for (const node of document.querySelectorAll('*[id^="VALUE"]')) {
+        if (node.value !== '') {
+            command += node.id.replace('VALUE', '') + ' ';
+            command += node.value + ' ';
+        }
+    }
 
     // Final
     command += document.getElementById('extra_command_data').value + ' "' + document.getElementById('file').value + '"';
@@ -185,7 +196,12 @@ async function convert() {
         output += '/'
     }
     var command_split = command.split('"');
-    var filename = command_split[command_split.length-2].replace(/^.*[\\\/]/, '');
+    var filename;
+    if (document.getElementById('VALUE-n').value !== '') {
+        filename = document.getElementById('VALUE-n').value + '.py';
+    } else {
+        filename = command_split[command_split.length-2].replace(/^.*[\\\/]/, '');
+    }
     let check = await eel.convertPreCheck(filename, command_data['onefile'], output)();
     if (!check) {
         console.log("Overwrite warning");
@@ -252,5 +268,5 @@ window.addEventListener('resize', function () {
 
 window.addEventListener('load', function () {
     checkInfoBar();
-    setupSimpleSwitchButtons();
+    setupAdvancedSwitchesAndInputs();
 });
