@@ -32,34 +32,3 @@ Run ```run.py```. Chrome will open in app mode with the project running inside.
 ![Empty interface](https://i.imgur.com/PIWXYQf.png)
 ![Filled out](https://i.imgur.com/Y4itvce.png)
 ![Converting](https://i.imgur.com/MjdONcC.png)
-
-# Tasklist
-#### General
-- [x] Specify output directory
-- [x] Add section to add own flags
-- [x] Button tooltips (use title attributes on div tags)
-- [x] Path separator based off os
-#### Add to Advanced
-*[pyinstaller options](https://pyinstaller.readthedocs.io/en/stable/usage.html#options)*
-- [x] -a
-- [x] --upx-dir
-- [x] --clean
-- [x] --log-level
-- [x] --add-binary
-- [x] -p
-- [x] --hidden-import
-- [x] --additional-hooks-dir
-- [x] --runtime-hook
-- [x] --exclude-module
-- [x] -d
-- [x] -s
-- [x] --noupx
-- [x] --version-file
-- [x] -m
-- [x] -r
-- [x] --uac-admin
-- [x] --uac-uiaccess
-- [x] --win-private-assemblies
-- [x] --win-no-prefer-redirects
-- [x] --osx-bundle-identifier
-- [x] --runtime-tmpdir
