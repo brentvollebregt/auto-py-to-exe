@@ -151,8 +151,7 @@ function generateCurrentCommand() {
         for (const id of Object.keys(command_data['additional_files'])) {
             var src = document.getElementById(id).children[0].value;
             var dst = document.getElementById(id).children[2].value;
-            // TODO Select path separator based off os. unix=: windows=; mac=??? (need testing - os.pathsep)
-            command += '--add-data "' + src + '";"' + dst + '" ';
+            command += '--add-data "' + src + '"' + OSPathSep() + '"' + dst + '" ';
         }
     }
     // Advanced
@@ -173,6 +172,10 @@ function generateCurrentCommand() {
     // Final
     command += document.getElementById('extra_command_data').value + ' "' + document.getElementById('file').value + '"';
     node.value = command
+}
+
+function OSPathSep() {
+    if (window.navigator.userAgent.indexOf("Windows")!= -1) { return ';'; } else { return ':'; }
 }
 
 // Convert

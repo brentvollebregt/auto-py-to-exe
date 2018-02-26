@@ -38,7 +38,7 @@ Run ```run.py```. Chrome will open in app mode with the project running inside.
 - [x] Specify output directory
 - [x] Add section to add own flags
 - [ ] Button tooltips (use title attributes on div tags)
-- [ ] Path separator based off os
+- [x] Path separator based off os
 #### Add to Advanced
 *[pyinstaller options](https://pyinstaller.readthedocs.io/en/stable/usage.html#options)*
 - [x] -a
