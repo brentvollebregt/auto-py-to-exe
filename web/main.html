@@ -48,56 +48,42 @@
                     <h1 class="section_header"><a class="expand" data-expand="advanced_content" onclick="expand(this)"></a>Advanced</h1>
                     <div id="advanced_content" style="display: none;">
                         <div style="display: grid; grid-gap: 4px; grid-template-columns: 130px 1fr 120px;">
-                            <a>Output Directory:</a>
+                            Output Directory:
                             <input id="output_location" placeholder="Folder path">
                             <button class="btn_search" onclick="getFolder('output_location')">Search</button>
                         </div>
                         <h2 class="sub_header">General Options</h2>
-                        <a>--upx-dir</a>
-                        <input id="VALUE--upx-dir" placeholder="UPX_DIR"><div class="info_btn"></div>
+                        --upx-dir<input id="VALUE--upx-dir" placeholder="UPX_DIR"><div class="info_btn"></div>
                         <br><button id="OPTION-a" class="btn_choice btn_choice_greyed">-a Don't include unicode encoding support<div class="info_btn"></div></button>
                         <br><button id="OPTION--clean" class="btn_choice btn_choice_greyed">--clean Clean PyInstaller cache and remove temporary files before building<div class="info_btn"></div></button>
-                        <br><a>--log-level</a>
-                        <input id="VALUE--log-level" placeholder="LEVEL"><div class="info_btn"></div>
-                        <br><a>-n</a>
-                        <input id="VALUE-n" placeholder="NAME"><div class="info_btn"></div>
+                        <br>--log-level<input id="VALUE--log-level" placeholder="LEVEL"><div class="info_btn"></div>
+                        <br>-n<input id="VALUE-n" placeholder="NAME"><div class="info_btn"></div>
                         <h2 class="sub_header">What to bundle, where to search</h2>
-                        <a>--add-binary</a>
-                        <input id="VALUE--add-binary" placeholder="<SRC;DEST or SRC:DEST>"><div class="info_btn"></div>
-                        <br><a>-p</a>
-                        <input id="VALUE-p" placeholder="DIR"><div class="info_btn"></div>
-                        <br><a>--hidden-import</a>
-                        <input id="VALUE--hidden-import" placeholder="MODULENAME"><div class="info_btn"></div>
-                        <br><a>--additional-hooks-dir</a>
-                        <input id="VALUE--additional-hooks-dir" placeholder="HOOKSPATH"><div class="info_btn"></div>
-                        <br><a>--runtime-hook</a>
-                        <input id="VALUE--runtime-hook" placeholder="RUNTIME_HOOKS"><div class="info_btn"></div>
-                        <br><a>--exclude-module</a>
-                        <input id="VALUE--exclude-module" placeholder="EXCLUDES"><div class="info_btn"></div>
+                        --add-binary<input id="VALUE--add-binary" placeholder="<SRC;DEST or SRC:DEST>"><div class="info_btn"></div>
+                        <br>-p<input id="VALUE-p" placeholder="DIR"><div class="info_btn"></div>
+                        <br>--hidden-import<input id="VALUE--hidden-import" placeholder="MODULENAME"><div class="info_btn"></div>
+                        <br>--additional-hooks-dir<input id="VALUE--additional-hooks-dir" placeholder="HOOKSPATH"><div class="info_btn"></div>
+                        <br>--runtime-hook<input id="VALUE--runtime-hook" placeholder="RUNTIME_HOOKS"><div class="info_btn"></div>
+                        <br>--exclude-module<input id="VALUE--exclude-module" placeholder="EXCLUDES"><div class="info_btn"></div>
                         <h2 class="sub_header">How to generate</h2>
                         <button id="OPTION-d" class="btn_choice btn_choice_greyed">-d Issues progress messages while initializing and starting<div class="info_btn"></div></button>
                         <br><button id="OPTION-s" class="btn_choice btn_choice_greyed">-s Apply a symbol-table strip to the executable and shared libs<div class="info_btn"></div></button>
                         <br><button id="OPTION--noupx" class="btn_choice btn_choice_greyed">--noupx Do not use UPX even if it is available<div class="info_btn"></div></button>
                         <h2 class="sub_header">Windows specific options</h2>
-                        <a>--version-file</a>
-                        <input id="VALUE--version-file" placeholder="FILE"><div class="info_btn"></div>
-                        <br><a>-m</a>
-                        <input id="VALUE-m" placeholder="<FILE or XML>"><div class="info_btn"></div>
-                        <br><a>-r</a>
-                        <input id="VALUE-r" placeholder="RESOURCE"><div class="info_btn"></div>
+                        --version-file<input id="VALUE--version-file" placeholder="FILE"><div class="info_btn"></div>
+                        <br>-m<input id="VALUE-m" placeholder="<FILE or XML>"><div class="info_btn"></div>
+                        <br>-r<input id="VALUE-r" placeholder="RESOURCE"><div class="info_btn"></div>
                         <br><button id="OPTION--uac-admin" class="btn_choice btn_choice_greyed">--uac-admin Creates a Manifest which will request elevation<div class="info_btn"></div></button>
                         <br><button id="OPTION--uac-uiaccess" class="btn_choice btn_choice_greyed">--uac-uiaccess Allows an elevated application to work with Remote Desktop<div class="info_btn"></div></button>
                         <h2 class="sub_header">Windows Side-by-side Assembly searching options</h2>
                         <button id="OPTION--win-private-assemblies" class="btn_choice btn_choice_greyed">--win-private-assemblies<div class="info_btn"></div></button> <!-- Any Shared Assemblies bundled into the application will be changed into Private Assemblies. This means the exact versions of these assemblies will always be used, and any newer versions installed on user machines at the system level will be ignored. -->
                         <br><button id="OPTION--win-no-prefer-redirects" class="btn_choice btn_choice_greyed">--win-no-prefer-redirects<div class="info_btn"></div></button> <!-- While searching for Shared or Private Assemblies to bundle into the application, PyInstaller will prefer not to follow policies that redirect to newer versions, and will try to bundle the exact versions of the assembly. -->
                         <h2 class="sub_header">Mac OS X specific options</h2>
-                        <a>--osx-bundle-identifier</a>
-                        <input id="VALUE--osx-bundle-identifier" placeholder="BUNDLE_IDENTIFIER"><div class="info_btn"></div>
+                        --osx-bundle-identifier<input id="VALUE--osx-bundle-identifier" placeholder="BUNDLE_IDENTIFIER"><div class="info_btn"></div>
                         <h2 class="sub_header">Rarely used special options</h2>
-                        <a>--runtime-tmpdir</a>
-                        <input id="VALUE--runtime-tmpdir" placeholder="PATH"><div class="info_btn"></div>
+                        --runtime-tmpdir<input id="VALUE--runtime-tmpdir" placeholder="PATH"><div class="info_btn"></div>
                         <div style="display: grid; grid-gap: 4px; grid-template-columns: 160px 1fr; margin-top: 2px;">
-                            <a>Extra Command Data:</a>
+                            Extra Command Data:
                             <input id="extra_command_data" onkeyup="generateCurrentCommand()" placeholder="Flags and extra data (use this to add a flag more than once)">
                         </div>
                     </div>
@@ -114,6 +100,5 @@
                 </div>
             </div>
         </div>
-        <script>checkFile(document.getElementById('file'))</script>
     </body>
 </html>

@@ -63,8 +63,7 @@ body {
 }
 
 .sub_header {
-    font-weight: normal;
-    font-size: 20px;
+    font-size: 17px;
     margin: 2px;
 }
 
@@ -123,6 +122,7 @@ button {
 input {
     padding: 4px;
     border: 1px solid #458BC6;
+    margin-left: 6px;
 }
 
 .expand {

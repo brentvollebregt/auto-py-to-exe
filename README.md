@@ -5,7 +5,6 @@
     <img src="https://i.imgur.com/BvfQABI.png" alt="Empty interface">
 </div>
 
-*Note: This project is still being developed and some features are currently not supported; see the tasklist for what still needs to be done.*
 ## Getting Started
 
 ### Prerequisites
@@ -38,7 +37,7 @@ Run ```run.py```. Chrome will open in app mode with the project running inside.
 #### General
 - [x] Specify output directory
 - [x] Add section to add own flags
-- [ ] Button tooltips
+- [ ] Button tooltips (use title attributes on div tags)
 - [ ] Path separator based off os
 #### Add to Advanced
 *[pyinstaller options](https://pyinstaller.readthedocs.io/en/stable/usage.html#options)*

@@ -25,7 +25,7 @@ var command_data = {
     }
 }
 
-// Python script
+// Get and Check files
 async function getFile(for_id) {
     let file = await eel.askFile()();
     document.getElementById(for_id).value = file;
@@ -271,4 +271,5 @@ window.addEventListener('resize', function () {
 window.addEventListener('load', function () {
     checkInfoBar();
     setupAdvancedSwitchesAndInputs();
+    checkFile(document.getElementById('file'));
 });
