@@ -3,7 +3,6 @@ from tkinter.filedialog import askopenfilename, askdirectory
 from tkinter import Tk
 import os
 import subprocess
-import sys
 import shutil
 
 eel.init('web')
