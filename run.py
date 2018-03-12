@@ -50,7 +50,6 @@ def convert(command, output):
         if line == b'':
             break
         eel.addOutput(line.decode('utf-8'))
-    eel.outputComplete()
     eel.addOutput("Moving project to: " + output + "\n")
     moveProject(output)
     eel.addOutput("Cleaning file structure\n")
