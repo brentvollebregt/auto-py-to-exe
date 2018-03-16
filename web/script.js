@@ -102,7 +102,7 @@ function additionalFilesEdit(id) {
 async function additionalFilesSearch(id) {
     let file = await eel.askFile()();
     document.getElementById(id).children[0].value = file;
-    document.getElementById(id).children[2].value = file.replace(/^.*[\\\/]/, '');
+    document.getElementById(id).children[2].value = "assets/";
     additionalFilesEdit(id);
 }
 
