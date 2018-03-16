@@ -66,7 +66,10 @@ def convert(command, output):
             break
         eel.addOutput(line.decode('utf-8'))
     eel.addOutput("Moving project to: " + output + "\n")
-    moveProject(output)
+    try:
+        moveProject(output)
+    except:
+        eel.addOutput("Failed to move project. Did an error occur?\n")
     eel.addOutput("Cleaning file structure\n")
     clean()
     eel.addOutput("Complete.\n")
