@@ -42,7 +42,8 @@
 
                     <h1 class="section_header"><a class="expand" data-expand="additional_files_content" onclick="expand(this)"></a>Additional Files</h1>
                     <div id="additional_files_content" style="display: none;">
-                        <img src="img/add.svg" onclick="additionalFilesAdd()" style="height: 20px; cursor: pointer;">
+                        <img id="additionalFilesAdd" src="img/add.svg" onclick="additionalFilesAdd()" style="height: 20px; cursor: pointer;">
+                        <p id="onefileAdditionalFilesNote" class="note" style="display: none;">Be careful when using additional files with onefile mode; <a href="https://stackoverflow.com/questions/7674790/bundling-data-files-with-pyinstaller-onefile/13790741#13790741" style="text-decoration: none;">read this</a> and update your code to work with pyinstaller.</p>
                     </div>
 
                     <h1 class="section_header"><a class="expand" data-expand="advanced_content" onclick="expand(this)"></a>Advanced</h1>

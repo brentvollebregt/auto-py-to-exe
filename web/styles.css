@@ -135,3 +135,8 @@ input {
     transition: transform 0.4s;
     cursor: pointer;
 }
+
+.note {
+    font-size: 14px;
+    font-style: italic;
+}

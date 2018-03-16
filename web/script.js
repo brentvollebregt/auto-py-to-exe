@@ -47,9 +47,11 @@ function switchOnefile(active) {
     if (active) {
         document.getElementById('onefile_inactive').classList.add('btn_choice_greyed')
         document.getElementById('onefile_active').classList.remove('btn_choice_greyed')
+        document.getElementById('onefileAdditionalFilesNote').style.display = 'block';
     } else {
         document.getElementById('onefile_active').classList.add('btn_choice_greyed')
         document.getElementById('onefile_inactive').classList.remove('btn_choice_greyed')
+        document.getElementById('onefileAdditionalFilesNote').style.display = 'none';
     }
     command_data['onefile'] = active
     generateCurrentCommand();
@@ -78,7 +80,7 @@ function additionalFilesAdd() {
     }
     div.innerHTML = '<div style="margin: 1px 0;" id="' + id + '">\n<input placeholder="File" onkeyup="additionalFilesEdit(\'' + id + '\')">\n<button class="btn_search" onclick="additionalFilesSearch(\'' + id + '\')">Search</button>\n<input placeholder="Destination" onkeyup="additionalFilesEdit(\'' + id + '\')">\n<img src="img/remove.svg" onclick="additionalFilesRemove(\'' + id + '\')" style="height: 20px; margin-bottom: -5px; cursor: pointer;">\n</div>';
     parent_node_children = document.getElementById('additional_files_content').children;
-    parent_node.insertBefore(div.firstChild, parent_node_children[parent_node_children.length-1]);
+    parent_node.insertBefore(div.firstChild, document.getElementById('additionalFilesAdd'));
     command_data["additional_files"][id] = {
         "file" : "",
         "filename" : ""

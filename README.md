@@ -34,6 +34,11 @@ Alternatively you can execute ```python run.py [filename]```. This will open up 
 ## Video
 If you need something visual to help you get started, [I made a video for the original release of this project](https://youtu.be/OZSZHmWSOeM), some things may be different but the same concepts still apply.
 
+## Something is Wrong?
+There could be a chance that you were using an old version and I have changed something and your cache is now a mess. Press Shift+F5 in the chrome app to force reload everything.
+
+If this doesn't work please report it and I will look into it!
+
 ## Screenshots
 ![Empty interface](https://i.imgur.com/dd0LC2n.png)
 ![Filled out](https://i.imgur.com/Wd9pFqR.png)
