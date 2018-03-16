@@ -4,8 +4,15 @@ from tkinter import Tk
 import os
 import subprocess
 import shutil
+import sys
 
 eel.init('web')
+
+@eel.expose
+def getFileFromArgs():
+    if len(sys.argv) > 1:
+        return sys.argv[1].replace('/', '\\')
+    return ''
 
 @eel.expose
 def askFile():

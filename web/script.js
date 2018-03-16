@@ -266,6 +266,13 @@ function checkInfoBar() {
     }
 }
 
+// Get file from args
+async function getFileFromArgs() {
+    let filename = await eel.getFileFromArgs()();
+    document.getElementById('file').value = filename;
+    checkFile(document.getElementById('file'));
+}
+
 // Events
 window.addEventListener('resize', function () {
     checkInfoBar();
@@ -274,5 +281,5 @@ window.addEventListener('resize', function () {
 window.addEventListener('load', function () {
     checkInfoBar();
     setupAdvancedSwitchesAndInputs();
-    checkFile(document.getElementById('file'));
+    getFileFromArgs();
 });

@@ -28,6 +28,9 @@ Run ```run.py```. Chrome will open in app mode with the project running inside.
 
 *Easy.*
 
+### Passing the File With Arguments
+Alternatively you can execute ```python run.py [filename]```. This will open up the window with the filename in the script location.
+
 ## Screenshots
 ![Empty interface](https://i.imgur.com/dd0LC2n.png)
 ![Filled out](https://i.imgur.com/Wd9pFqR.png)
