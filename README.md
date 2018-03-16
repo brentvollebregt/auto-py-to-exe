@@ -2,7 +2,7 @@
 <p align="center">A .py to .exe converter using a simple graphical interface built with <a href="https://github.com/ChrisKnott/Eel">Eel</a> in Python.</p>
 
 <div align="center">
-    <img src="https://i.imgur.com/BvfQABI.png" alt="Empty interface">
+    <img src="https://i.imgur.com/EuUlayC.png" alt="Empty interface">
 </div>
 
 ## Getting Started
@@ -29,6 +29,6 @@ Run ```run.py```. Chrome will open in app mode with the project running inside.
 *Easy.*
 
 ## Screenshots
-![Empty interface](https://i.imgur.com/PIWXYQf.png)
-![Filled out](https://i.imgur.com/Y4itvce.png)
+![Empty interface](https://i.imgur.com/dd0LC2n.png)
+![Filled out](https://i.imgur.com/Wd9pFqR.png)
 ![Converting](https://i.imgur.com/MjdONcC.png)
