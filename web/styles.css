@@ -132,6 +132,7 @@ input {
     margin-right: 6px;
     width: 30px;
     display: inline-block;
+    transform: rotate(180deg);
     transition: transform 0.4s;
     cursor: pointer;
 }
