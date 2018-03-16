@@ -195,10 +195,10 @@ async function convert() {
     var command = document.getElementById("current_command").value;
     var output = document.getElementById("output_location").value;
     if (output === '') {
-        output = 'output/';
+        output = 'output\\';
     }
-    if (!output.endsWith('/')) {
-        output += '/'
+    if (!output.endsWith('\\')) {
+        output += '\\'
     }
     var command_split = command.split('"');
     var filename;
@@ -235,6 +235,11 @@ function outputComplete() {
     document.getElementById('convert').style.cursor = '';
     document.getElementById('convert').style.filter = '';
     document.getElementById('convert').innerHTML = "Clear Output";
+    // Show open folder button
+    document.getElementById('btm_main_wrapper').style.display = 'grid';
+    document.getElementById('btm_main_wrapper').style.gridGap = '4px';
+    document.getElementById('btm_main_wrapper').style.gridTemplateColumns = '1fr 1fr';
+    document.getElementById('openOutput').style.display = 'block';
 }
 
 function clearOutput() {
@@ -243,6 +248,9 @@ function clearOutput() {
     document.getElementById('output').children[1].rows = "0";
 
     document.getElementById('convert').innerHTML = "Convert .py to .exe";
+    // Hide open folder button
+    document.getElementById('btm_main_wrapper').style.display = 'block';
+    document.getElementById('openOutput').style.display = 'none';
 }
 
 // Left info bar
@@ -271,6 +279,18 @@ async function getFileFromArgs() {
     let filename = await eel.getFileFromArgs()();
     document.getElementById('file').value = filename;
     checkFile(document.getElementById('file'));
+}
+
+// Open output folder
+function openOutputFolder() {
+    var output = document.getElementById("output_location").value;
+    if (output === '') {
+        output = 'output\\';
+    }
+    if (!output.endsWith('\\')) {
+        output += '\\'
+    }
+    eel.openOutputFolder(output)();
 }
 
 // Events

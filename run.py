@@ -15,6 +15,15 @@ def getFileFromArgs():
     return ''
 
 @eel.expose
+def openOutputFolder(folder):
+    folder = folder.replace('/', '\\')
+    if os.name == 'nt':
+        # Opens the new window to the top on Windows
+        os.system('explorer "' + folder + '"')
+    else:
+        os.startfile(folder)
+
+@eel.expose
 def askFile():
     root = Tk()
     root.withdraw()
