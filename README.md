@@ -41,5 +41,5 @@ If this doesn't work please report it and I will look into it!
 
 ## Screenshots
 ![Empty interface](https://i.imgur.com/dd0LC2n.png)
-![Filled out](https://i.imgur.com/Wd9pFqR.png)
+![Filled out](https://i.imgur.com/f3TEnZI.png)
 ![Converting](https://i.imgur.com/MjdONcC.png)
