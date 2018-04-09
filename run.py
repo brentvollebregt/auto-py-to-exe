@@ -1,5 +1,5 @@
 import eel
-from tkinter.filedialog import askopenfilename, askdirectory
+from tkinter.filedialog import askopenfilename, askdirectory, askopenfilenames
 from tkinter import Tk
 import os
 import subprocess
@@ -30,6 +30,14 @@ def askFile():
     root.wm_attributes('-topmost', 1)
     filename = askopenfilename(parent=root)
     return filename
+
+@eel.expose
+def askFiles():
+    root = Tk()
+    root.withdraw()
+    root.wm_attributes('-topmost', 1)
+    filenames = askopenfilenames(parent=root)
+    return filenames
 
 @eel.expose
 def askFolder():

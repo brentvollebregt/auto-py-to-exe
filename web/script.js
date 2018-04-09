@@ -71,21 +71,40 @@ function switchConsole(active) {
 }
 
 // Additional files
-function additionalFilesAdd() {
+async function additionalFilesAddFiles() {
+    let files = await eel.askFiles()();
+    for (file of files) {
+        additionalFilesAdd(file);
+    }
+}
+
+async function additionalFilesAddFolder() {
+    let folder = await eel.askFolder()();
+    additionalFilesAdd(folder);
+}
+
+function additionalFilesAdd(src) {
     var parent_node = document.getElementById('additional_files_content');
     var div = document.createElement('div');
     var id = 'addFiles_' + Math.random().toString(36).substring(7);
-    while (Object.keys(command_data['additional_files']).indexOf(id) !== -1) {
+    while (Object.keys(command_data['additional_files']).indexOf(id) !== -1) { // TODO Get rid of the need for 'additional_files' in command data
         id = 'addFiles_' + Math.random().toString(36).substring(7);
     }
-    div.innerHTML = '<div style="margin: 1px 0;" id="' + id + '">\n<input placeholder="File" onkeyup="additionalFilesEdit(\'' + id + '\')">\n<button class="btn_search" onclick="additionalFilesSearch(\'' + id + '\')">Search</button>\n<input placeholder="Destination" onkeyup="additionalFilesEdit(\'' + id + '\')">\n<img src="img/remove.svg" onclick="additionalFilesRemove(\'' + id + '\')" style="height: 20px; margin-bottom: -5px; cursor: pointer;">\n</div>';
-    parent_node_children = document.getElementById('additional_files_content').children;
-    parent_node.insertBefore(div.firstChild, document.getElementById('additionalFilesAdd'));
+    div.innerHTML =
+        '<div style="margin: 1px 0;" id="' + id + '">\n' +
+        '<input placeholder="Source" onkeyup="additionalFilesEdit(\'' + id + '\')" style="max-width: 45%; width: 400px;">\n' +
+        '<input placeholder="Destination" onkeyup="additionalFilesEdit(\'' + id + '\')" style="max-width: 45%; width: 400px; margin-left: 0;">\n' +
+        '<img src="img/remove.svg" onclick="additionalFilesRemove(\'' + id + '\')" style="height: 20px; margin-bottom: -5px; cursor: pointer;">\n' +
+        '</div>';
+    parent_node.insertBefore(div.firstChild, document.getElementById('onefileAdditionalFilesNote'));
+    document.getElementById(id).children[0].value = src;
+    document.getElementById(id).children[1].value = 'assets/';
     command_data["additional_files"][id] = {
         "file" : "",
         "filename" : ""
     };
     generateCurrentCommand();
+    additionalFilesEdit(id);
 }
 
 function additionalFilesRemove(id) {
@@ -97,15 +116,8 @@ function additionalFilesRemove(id) {
 
 function additionalFilesEdit(id) {
     command_data["additional_files"][id]["file"] = document.getElementById(id).children[0].value;
-    command_data["additional_files"][id]["filename"] = document.getElementById(id).children[2].value;
+    command_data["additional_files"][id]["filename"] = document.getElementById(id).children[1].value;
     generateCurrentCommand();
-}
-
-async function additionalFilesSearch(id) {
-    let file = await eel.askFile()();
-    document.getElementById(id).children[0].value = file;
-    document.getElementById(id).children[2].value = "assets/";
-    additionalFilesEdit(id);
 }
 
 // Advanced
@@ -152,7 +164,7 @@ function generateCurrentCommand() {
     if (Object.keys(command_data['additional_files']).length > 0) {
         for (const id of Object.keys(command_data['additional_files'])) {
             var src = document.getElementById(id).children[0].value;
-            var dst = document.getElementById(id).children[2].value;
+            var dst = document.getElementById(id).children[1].value;
             command += '--add-data "' + src + '"' + OSPathSep() + '"' + dst + '" ';
         }
     }
