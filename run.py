@@ -1,4 +1,5 @@
 import eel
+import random
 from tkinter.filedialog import askopenfilename, askdirectory, askopenfilenames
 from tkinter import Tk
 import os
@@ -104,4 +105,11 @@ def clean():
         if file.endswith('.spec'):
             os.remove(file)
 
-eel.start('main.html', size=(650, 612))
+for i in range(10):
+    try:
+        eel.start('main.html', size=(650, 612), options={'port': random.randint(49152, 65535)})
+        break
+    except Exception:
+        continue
+else:
+    print ("Cannot find an unassigned port")
