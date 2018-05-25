@@ -13,7 +13,7 @@ eel.init(web_path)
 @eel.expose
 def getFileFromArgs():
     if len(sys.argv) > 1:
-        return sys.argv[1].replace('/', '\\')
+        return os.path.abspath(sys.argv[1])
     return ''
 
 @eel.expose
