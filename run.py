@@ -1,5 +1,4 @@
 import eel
-import random
 from tkinter.filedialog import askopenfilename, askdirectory, askopenfilenames
 from tkinter import Tk
 import os
@@ -7,7 +6,9 @@ import subprocess
 import shutil
 import sys
 
-eel.init('web')
+web_location = 'web'
+web_path = os.path.dirname(os.path.realpath(__file__)) + '\\' + web_location
+eel.init(web_path)
 
 @eel.expose
 def getFileFromArgs():
@@ -105,11 +106,5 @@ def clean():
         if file.endswith('.spec'):
             os.remove(file)
 
-for i in range(10):
-    try:
-        eel.start('main.html', size=(650, 612), options={'port': random.randint(49152, 65535)})
-        break
-    except Exception:
-        continue
-else:
-    print ("Cannot find an unassigned port")
+eel.start('main.html', size=(650, 612))
+# eel.start('main.html', size=(650, 612), options={'port': 0}) # TODO Add when Eel 0.9.7 is released to pypi
