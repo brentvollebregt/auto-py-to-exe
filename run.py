@@ -74,7 +74,7 @@ def convert(command, output):
     for line in iter(process.stderr.readline, ''):
         if line == b'':
             break
-        eel.addOutput(line.decode('utf-8'))
+        eel.addOutput(line.decode('utf-8', errors='replace'))
     eel.addOutput("Moving project to: " + output + "\n")
     try:
         moveProject(output)
