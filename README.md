@@ -8,7 +8,7 @@
 ## Getting Started
 
 ### Prerequisites
- - Python : Python 2.7 or Python 3.3+ (basically anything that pyinstaller runs on)
+ - Python : Python 3.3+
  - Chrome : to run the user interface in; eel uses this (app mode)
 
 ### Installing
