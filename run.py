@@ -106,11 +106,4 @@ def clean():
         if file.endswith('.spec'):
             os.remove(file)
 
-# Temporary solution for #10
-import socket
-sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-sock.bind(('localhost', 0))
-port = sock.getsockname()[1]
-sock.close()
-eel.start('main.html', size=(650, 612), options={'port': port})
-# eel.start('main.html', size=(650, 612), options={'port': 0}) # TODO Add when Eel 0.9.7 is released to pypi
+eel.start('main.html', size=(650, 612), options={'port': 0})
