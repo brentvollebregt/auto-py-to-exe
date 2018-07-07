@@ -8,7 +8,7 @@
 ## Getting Started
 
 ### Prerequisites
- - Python : Python 3.3 - 3.6
+ - Python : Python 2.7, 3.3 - 3.6
  - Chrome : to run the user interface in; eel uses this (app mode)
 
 ### Installing
