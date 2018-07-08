@@ -1,6 +1,12 @@
 import eel
-from tkinter.filedialog import askopenfilename, askdirectory, askopenfilenames
-from tkinter import Tk
+try:
+    from tkinter.filedialog import askopenfilename, askdirectory, askopenfilenames
+except:
+    from tkFileDialog import askopenfilename, askdirectory, askopenfilenames
+try:
+    from tkinter import Tk
+except:
+    from Tkinter import Tk
 import os
 import subprocess
 import shutil
