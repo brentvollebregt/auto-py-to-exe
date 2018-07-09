@@ -112,4 +112,8 @@ def clean():
         if file.endswith('.spec'):
             os.remove(file)
 
-eel.start('main.html', size=(650, 612), options={'port': 0})
+def run():
+    eel.start('main.html', size=(650, 612), options={'port': 0})
+
+if __name__ == '__main__':
+    run()
