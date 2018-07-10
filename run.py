@@ -25,8 +25,8 @@ def getFileFromArgs():
 
 @eel.expose
 def openOutputFolder(folder):
-    folder = folder.replace('/', '\\')
     if platform.system() == 'Windows':
+        folder = folder.replace('/', '\\')
         os.system('explorer "' + folder + '"')
     elif platform.system() == 'Linux':
         os.system('xdg-open "' + folder + '"')
