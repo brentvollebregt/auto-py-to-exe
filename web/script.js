@@ -209,10 +209,10 @@ async function convert() {
     var command = document.getElementById("current_command").value;
     var output = document.getElementById("output_location").value;
     if (output === '') {
-        output = 'output\\';
+        output = 'output/';
     }
-    if (!output.endsWith('\\')) {
-        output += '\\'
+    if (!output.endsWith('/')) {
+        output += '/'
     }
     var command_split = command.split('"');
     var filename;
@@ -299,10 +299,10 @@ async function getFileFromArgs() {
 function openOutputFolder() {
     var output = document.getElementById("output_location").value;
     if (output === '') {
-        output = 'output\\';
+        output = 'output/';
     }
-    if (!output.endsWith('\\')) {
-        output += '\\'
+    if (!output.endsWith('/')) {
+        output += '/'
     }
     eel.openOutputFolder(output)();
 }

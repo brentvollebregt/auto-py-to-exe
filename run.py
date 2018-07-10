@@ -8,12 +8,13 @@ try:
 except:
     from Tkinter import Tk
 import os
+import platform
 import subprocess
 import shutil
 import sys
 
 web_location = 'web'
-web_path = os.path.dirname(os.path.realpath(__file__)) + '\\' + web_location
+web_path = os.path.dirname(os.path.realpath(__file__)) + '/' + web_location
 eel.init(web_path)
 
 @eel.expose
@@ -25,9 +26,12 @@ def getFileFromArgs():
 @eel.expose
 def openOutputFolder(folder):
     folder = folder.replace('/', '\\')
-    if os.name == 'nt':
-        # Opens the new window to the top on Windows
+    if platform.system() == 'Windows':
         os.system('explorer "' + folder + '"')
+    elif platform.system() == 'Linux':
+        os.system('xdg-open "' + folder + '"')
+    elif platform.system() == 'Darwin':
+        os.system('open "' + folder + '"')
     else:
         os.startfile(folder)
 
@@ -76,7 +80,7 @@ def convertPreCheck(filename, onefile, outputFolder):
 def convert(command, output):
     eel.addOutput("Cleaning file structure\n")
     clean()
-    process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
     for line in iter(process.stderr.readline, ''):
         if line == b'':
             break
