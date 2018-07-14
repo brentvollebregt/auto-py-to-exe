@@ -11,7 +11,7 @@
  - Python : Python 2.7, 3.3 - 3.6
  - Chrome : to run the user interface in; eel uses this (app mode)
 
-### Instillation and Usage
+### Installation and Usage
 #### Via [PyPI](https://pypi.org/project/auto-py-to-exe/)
 You can install this project using the PyPI:
 ```
