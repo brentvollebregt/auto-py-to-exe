@@ -223,7 +223,6 @@ async function convert() {
     }
     let check = await eel.convertPreCheck(filename, command_data['onefile'], output)();
     if (!check) {
-        console.log("Overwrite warning");
         if(!confirm("File will overwrite current file\nContinue?")) {
             return;
         }
@@ -240,7 +239,11 @@ eel.expose(addOutput);
 function addOutput(line) {
     document.getElementById('output').style.display = 'block';
     document.getElementById('output').children[1].value += line
-    document.getElementById('output').children[1].rows = (parseInt(document.getElementById('output').children[1].rows) + 1) + '';
+    if (!line.endsWith('\n')) {
+        document.getElementById('output').children[1].value += '\n';
+    }
+    document.getElementById('output').children[1].style.height = 'auto';
+    document.getElementById('output').children[1].style.height = (document.getElementById('output').children[1].scrollHeight + 10) + 'px';
     window.scrollTo(0, document.body.scrollHeight);
 }
 
@@ -307,6 +310,11 @@ function openOutputFolder() {
     eel.openOutputFolder(output)();
 }
 
+// Notify server that we have loaded
+function loaded() {
+    eel.loaded()();
+}
+
 // Events
 window.addEventListener('resize', function () {
     checkInfoBar();
@@ -316,4 +324,5 @@ window.addEventListener('load', function () {
     checkInfoBar();
     setupAdvancedSwitchesAndInputs();
     getFileFromArgs();
+    loaded();
 });

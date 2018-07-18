@@ -1,17 +1,66 @@
-import eel
+# Import packages we know are here and won't mess anything up
+import sys
+try:
+    from tkinter import Tk
+except:
+    try:
+        from Tkinter import Tk
+    except:
+        # If no versions of tkinter exist (most likely linux) provide a message
+        if sys.version_info.major < 3:
+            print ("Error: Tkinter not found")
+            print ('For linux, you can install Tkinter by executing: "sudo apt-get install python-tk"')
+        else:
+            print ("Error: tkinter not found")
+            print('For linux, you can install tkinter by executing: "sudo apt-get install python3-tk"')
 try:
     from tkinter.filedialog import askopenfilename, askdirectory, askopenfilenames
 except:
     from tkFileDialog import askopenfilename, askdirectory, askopenfilenames
-try:
-    from tkinter import Tk
-except:
-    from Tkinter import Tk
 import os
 import platform
-import subprocess
 import shutil
-import sys
+import shlex
+
+class CaptureStderr():
+    """ Capture stderr and forward it onto eel.addOutput """
+    dump = False
+
+    def __init__(self):
+        self.original = sys.stderr # Keep track of original
+
+    def start(self):
+        """ Start filtering and redirecting stderr """
+        sys.stderr = self
+
+    def stop(self):
+        """ Stop filtering and redirecting stderr """
+        sys.stderr = self.original
+
+    def write(self, i):
+        """ When sys.stderr.write is called, it will re directed here """
+        if i != '\n' and not self.dump:
+            if i.endswith('\n'):
+                eel.addOutput(i)
+            else:
+                eel.addOutput(i + '\n')
+
+# These modules capture stderr so we need to make sure they get our object
+cs = CaptureStderr()
+cs.start()
+try:
+    # Make sure PyInstaller is installed
+    from PyInstaller import __main__ as pyi
+except:
+    print ("Error: PyInstaller not found")
+    print ('Please install PyInstaller using: "python -m pip install PyInstaller"')
+try:
+    # Make sure Eel is installed
+    import eel # Import eel last so we don't have to deal with the monkey patching crap it gives
+except:
+    print ("Error: Eel not found")
+    print ('Please install PyInstaller using: "python -m pip install Eel"')
+cs.stop()
 
 web_location = 'web'
 web_path = os.path.dirname(os.path.realpath(__file__)) + '/' + web_location
@@ -22,6 +71,12 @@ def getFileFromArgs():
     if len(sys.argv) > 1:
         return os.path.abspath(sys.argv[1])
     return ''
+
+@eel.expose
+def loaded():
+    """ When UI is loaded, stop dumping and switch stderr back """
+    cs.dump = False
+    cs.stop()
 
 @eel.expose
 def openOutputFolder(folder):
@@ -80,11 +135,12 @@ def convertPreCheck(filename, onefile, outputFolder):
 def convert(command, output):
     eel.addOutput("Cleaning file structure\n")
     clean()
-    process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
-    for line in iter(process.stderr.readline, ''):
-        if line == b'':
-            break
-        eel.addOutput(line.decode('utf-8', errors='replace'))
+
+    cs.start() # Capture stderr so PyInstaller output can be send to UI
+    sys.argv = shlex.split(command) # Put command into sys.argv
+    pyi.run() # Execute PyInstaller
+    cs.stop() # Stop stderr capture
+
     eel.addOutput("Moving project to: " + output + "\n")
     try:
         moveProject(output)
@@ -117,6 +173,8 @@ def clean():
             os.remove(file)
 
 def run():
+    cs.start()
+    cs.dump = True # Dump output provided by server resource logs
     eel.start('main.html', size=(650, 612), options={'port': 0})
 
 if __name__ == '__main__':
