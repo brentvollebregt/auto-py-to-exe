@@ -310,11 +310,6 @@ function openOutputFolder() {
     eel.openOutputFolder(output)();
 }
 
-// Notify server that we have loaded
-function loaded() {
-    eel.loaded()();
-}
-
 // Events
 window.addEventListener('resize', function () {
     checkInfoBar();
@@ -324,5 +319,4 @@ window.addEventListener('load', function () {
     checkInfoBar();
     setupAdvancedSwitchesAndInputs();
     getFileFromArgs();
-    loaded();
 });
