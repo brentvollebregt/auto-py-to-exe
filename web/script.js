@@ -145,6 +145,9 @@ function setupAdvancedSwitchesAndInputs() {
         node.onkeyup = function () { generateCurrentCommand(); };
         node.style.marginBottom = '2px';
     }
+    for (const node of document.querySelectorAll('*[id^="COMMASPLIT"]')) {
+        node.onkeyup = function () { generateCurrentCommand(); };
+    }
 }
 
 // Command generation
@@ -180,6 +183,18 @@ function generateCurrentCommand() {
         if (node.value !== '') {
             command += node.id.replace('VALUE', '') + ' ';
             command += node.value + ' ';
+        }
+    }
+    // - Split by Comma Values
+    for (const node of document.querySelectorAll('*[id^="COMMASPLIT"]')) {
+        if (node.value !== '') {
+            var flag = node.id.replace('COMMASPLIT', '') + ' ';
+            var values = node.value.split(',');
+            for (const value of values) {
+                if (value.trim() !== '') {
+                    command += flag + value.trim() + ' ';
+                }
+            }
         }
     }
 
