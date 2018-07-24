@@ -147,6 +147,7 @@ function setupAdvancedSwitchesAndInputs() {
     }
     for (const node of document.querySelectorAll('*[id^="COMMASPLIT"]')) {
         node.onkeyup = function () { generateCurrentCommand(); };
+        node.style.marginBottom = '2px';
     }
 }
 
