@@ -142,3 +142,7 @@ input {
     font-style: italic;
     margin: 8px 0 0 0;
 }
+
+[id|=VALUE], [id|=COMMASPLIT] {
+    margin-bottom: 2px;
+}
