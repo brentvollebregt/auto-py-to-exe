@@ -9,7 +9,8 @@
 
 ### Prerequisites
  - Python : Python 2.7, 3.3 - 3.6
- - Chrome : to run the user interface in; eel uses this (app mode)
+
+*To have the interface displayed in the images, you will need chrome. If chrome is not installed or --no-chrome is supplied the default browser will be used.*
 
 ### Installation and Usage
 #### Via [PyPI](https://pypi.org/project/auto-py-to-exe/)
@@ -39,8 +40,12 @@ Now to run the application, run the ```run.py``` file with python. A Chrome will
 
 *Easy.*
 
-### Passing the File With Arguments
+### Arguments
 Alternatively you can execute ```python run.py [filename]```. This will open up the window with the filename in the script location.
+
+You can also pass ```--no-chrome``` if you want to use your default browser and not chromes app mode; for example ```python run.py --no-chrome my_script.py```.
+
+> If you installed this package using pip you can call ```auto-py-to-exe``` instead of ```python run.py```
 
 ## Video
 If you need something visual to help you get started, [I made a video for the original release of this project](https://youtu.be/OZSZHmWSOeM), some things may be different but the same concepts still apply.

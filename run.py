@@ -78,18 +78,25 @@ except:
     sys.exit(1)
 cs.stop()
 
+# Some varaibles to help with arguments and how they are passed around (can also be used when being imported)
+filename = ''
+disable_chrome = False
+
+# Setup eels root folder
 web_location = 'web'
 web_path = os.path.dirname(os.path.realpath(__file__)) + '/' + web_location
 eel.init(web_path)
 
 @eel.expose
 def getFileFromArgs():
-    if len(sys.argv) > 1:
-        return os.path.abspath(sys.argv[1])
+    """ Pass the filename argument to the UI """
+    if filename != '':
+        return os.path.abspath(filename)
     return ''
 
 @eel.expose
 def openOutputFolder(folder):
+    """ Open the folder of there the package was moved to """
     if platform.system() == 'Windows':
         folder = folder.replace('/', '\\')
         os.system('explorer "' + folder + '"')
@@ -102,6 +109,7 @@ def openOutputFolder(folder):
 
 @eel.expose
 def askFile():
+    """ Ask the user to select a file """
     root = Tk()
     root.withdraw()
     root.wm_attributes('-topmost', 1)
@@ -110,6 +118,7 @@ def askFile():
 
 @eel.expose
 def askFiles():
+    """ Ask the user to select one or more files """
     root = Tk()
     root.withdraw()
     root.wm_attributes('-topmost', 1)
@@ -118,6 +127,7 @@ def askFiles():
 
 @eel.expose
 def askFolder():
+    """ Ask the user to select a folder """
     root = Tk()
     root.withdraw()
     root.wm_attributes('-topmost', 1)
@@ -126,10 +136,12 @@ def askFolder():
 
 @eel.expose
 def checkIfFileExists(file):
+    """ Checks if a file exists """
     return os.path.isfile(file)
 
 @eel.expose
 def convertPreCheck(filename, onefile, outputFolder):
+    """ Checks if there is a possibility of a previous output being overwritten """
     if not os.path.exists(outputFolder):
         return True
     no_extension = '.'.join(filename.split('.')[:-1])
@@ -143,6 +155,7 @@ def convertPreCheck(filename, onefile, outputFolder):
 
 @eel.expose
 def convert(command, output):
+    """ Package the executable passing the arguments the user requested """
     eel.addOutput("Cleaning file structure\n")
     clean()
 
@@ -162,6 +175,7 @@ def convert(command, output):
     eel.outputComplete()
 
 def moveProject(output):
+    """ Move the output package to the desired path (default is output/ - set in script.js) """
     if not os.path.exists(output):
         os.makedirs(output)
     folder = 'dist/' + os.listdir('dist/')[0]
@@ -173,6 +187,7 @@ def moveProject(output):
     shutil.move(folder, output)
 
 def clean():
+    """ Clean the output of pyinstaller """
     if os.path.exists('dist/'):
         shutil.rmtree('dist/')
     if os.path.exists('build/'):
@@ -183,8 +198,22 @@ def clean():
             os.remove(file)
 
 def run():
+    """ Open the interface """
     cs.start()
-    eel.start('main.html', size=(650, 612), options={'port': 0})
+    if eel.brw.chr.get_instance_path() is not None and not disable_chrome:
+        eel.start('main.html', size=(650, 612), options={'port': 0})
+    else:
+        eel.start('main.html', size=(650, 612), options={'port': 0, 'mode': 'user selection'})
 
 if __name__ == '__main__':
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("filename", nargs='?', help="pass a file into the interface")
+    parser.add_argument("-nc", "--no-chrome", action="count", help="do not open in chromes app mode")
+    args = parser.parse_args()
+    if args.filename is not None:
+        filename = args.filename
+    if args.no_chrome is not None:
+        disable_chrome = True
+
     run()
