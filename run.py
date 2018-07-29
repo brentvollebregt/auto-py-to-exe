@@ -1,4 +1,5 @@
 # Import packages we know are here and won't mess anything up
+import argparse
 import sys
 try:
     from tkinter import Tk
@@ -197,16 +198,11 @@ def clean():
         if file.endswith('.spec'):
             os.remove(file)
 
-def run():
-    """ Open the interface """
-    cs.start()
-    if eel.brw.chr.get_instance_path() is not None and not disable_chrome:
-        eel.start('main.html', size=(650, 612), options={'port': 0})
-    else:
-        eel.start('main.html', size=(650, 612), options={'port': 0, 'mode': 'user selection'})
+def checkArguments():
+    """ Check arguments passed """
+    global filename
+    global disable_chrome
 
-if __name__ == '__main__':
-    import argparse
     parser = argparse.ArgumentParser()
     parser.add_argument("filename", nargs='?', help="pass a file into the interface")
     parser.add_argument("-nc", "--no-chrome", action="count", help="do not open in chromes app mode")
@@ -216,4 +212,14 @@ if __name__ == '__main__':
     if args.no_chrome is not None:
         disable_chrome = True
 
+def run():
+    """ Open the interface """
+    checkArguments()
+    cs.start()
+    if eel.brw.chr.get_instance_path() is not None and not disable_chrome:
+        eel.start('main.html', size=(650, 612), options={'port': 0})
+    else:
+        eel.start('main.html', size=(650, 612), options={'port': 0, 'mode': 'user selection'})
+
+if __name__ == '__main__':
     run()
