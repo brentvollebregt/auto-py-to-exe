@@ -214,7 +214,8 @@ def checkArguments():
 
 def run():
     """ Open the interface """
-    checkArguments()
+    if __name__ == '__main__':
+        checkArguments()
     cs.start()
     if eel.brw.chr.get_instance_path() is not None and not disable_chrome:
         eel.start('main.html', size=(650, 612), options={'port': 0})
