@@ -25,6 +25,7 @@ import platform
 import shutil
 import shlex
 import re
+import traceback
 
 class CaptureStderr():
     """ Capture stderr and forward it onto eel.addOutput """
@@ -157,21 +158,44 @@ def convertPreCheck(filename, onefile, outputFolder):
 @eel.expose
 def convert(command, output):
     """ Package the executable passing the arguments the user requested """
-    eel.addOutput("Cleaning file structure\n")
-    clean()
+    # Initially clean the workspace
+    eel.addOutput("Cleaning workspace\n")
+    try:
+        clean()
+    except Exception as e:
+        eel.addOutput("Warning: could not clean the workspace before starting\n")
 
+    # Run PyInstaller
+    pyinstaller_fail = True
     cs.start() # Capture stderr so PyInstaller output can be send to UI
     sys.argv = shlex.split(command) # Put command into sys.argv
-    pyi.run() # Execute PyInstaller
+    try:
+        pyi.run() # Execute PyInstaller
+        pyinstaller_fail = False
+    except Exception as e:
+        eel.addOutput("An error occured, traceback follows:\n")
+        eel.addOutput(traceback.format_exc())
     cs.stop() # Stop stderr capture
 
-    eel.addOutput("Moving project to: " + output + "\n")
+    # Move Project
+    if pyinstaller_fail:
+        eel.addOutput("\n")
+        eel.addOutput("Project output will not be moved to output folder\n")
+    else:
+        eel.addOutput("Moving project to: " + output + "\n")
+        try:
+            moveProject(output)
+        except Exception as e:
+            eel.addOutput("Failed to move project, traceback follows:\n")
+            eel.addOutput(traceback.format_exc())
+
+    # Clean the workspace
+    eel.addOutput("Cleaning workspace\n")
     try:
-        moveProject(output)
-    except:
-        eel.addOutput("Failed to move project. Did an error occur?\n")
-    eel.addOutput("Cleaning file structure\n")
-    clean()
+        clean()
+    except Exception as e:
+        eel.addOutput("Warning: could not clean the workspace; some build files will still exist\n")
+
     eel.addOutput("Complete.\n")
     eel.outputComplete()
 
