@@ -38,7 +38,7 @@ You can run this project locally by following these steps:
 
 Now to run the application, run the ```run.py``` file with python. A Chrome window in app mode will open with the project running inside.
 
-*Note: The repository linked above is not what is hosted on PyPI. It has been preserved to keep in line with the provided video but instructions have been provided to use the new method. The PyPI version is hosted [here](https://github.com/brentvollebregt/auto-py-to-exe-pypi).*
+> Note: The repository linked above is not what is hosted on PyPI. It has been preserved to keep in line with the provided video but instructions have been provided to use the new method. The PyPI version is hosted [here](https://github.com/brentvollebregt/auto-py-to-exe-pypi).
 
 ## Using the Application
 1. Select your script location (paste in or use a file explorer)
