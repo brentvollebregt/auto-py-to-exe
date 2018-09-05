@@ -188,7 +188,7 @@ def convert(command, output):
             # We can remove this when (if) PyInstaller supports 3.7
             # In the meantime, this is staying as too many people are ignoring the readme and complaining that it doesn't work
             eel.addOutput("A zipimport.ZipImportError error occurred because you are using Python 3.7\n")
-            eel.addOutput("Lack of support for Python 3.7 is clearly stated it the README\n")
+            eel.addOutput("Lack of support for Python 3.7 is clearly stated in the README\n")
             eel.addOutput("Please downgrade to a version supported to use this tool, traceback follows:\n")
             eel.addOutput(traceback.format_exc())
         else:
