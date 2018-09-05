@@ -3,7 +3,7 @@ import argparse
 import sys
 try:
     from tkinter import Tk
-except:
+except ModuleNotFoundError:
     try:
         from Tkinter import Tk
     except:
@@ -18,7 +18,7 @@ except:
             sys.exit(1)
 try:
     from tkinter.filedialog import askopenfilename, askdirectory, askopenfilenames
-except:
+except ModuleNotFoundError:
     from tkFileDialog import askopenfilename, askdirectory, askopenfilenames
 import os
 import platform
@@ -27,7 +27,8 @@ import shlex
 import re
 import traceback
 
-class CaptureStderr():
+
+class CaptureStderr:
     """ Capture stderr and forward it onto eel.addOutput """
     filters = []
 
@@ -42,15 +43,15 @@ class CaptureStderr():
         """ Stop filtering and redirecting stderr """
         sys.stderr = self.original
 
-    def addFilter(self, filter_expression):
+    def add_filter(self, filter_expression):
         self.filters.append(re.compile(filter_expression))
 
     def write(self, i):
         """ When sys.stderr.write is called, it will re directed here """
 
         # Filter pre-defined lines that don't need to be sent
-        for filter in self.filters:
-            if not filter.match(i) is None:
+        for single_filter in self.filters:
+            if not single_filter.match(i) is None:
                 return
 
         # Send making sure there is a newline at the end
@@ -61,26 +62,27 @@ class CaptureStderr():
 
 # These modules capture stderr so we need to make sure they get our object
 cs = CaptureStderr()
-cs.addFilter('[0-9]+ ([a-z]|[A-Z])+: [0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3} - - \[[0-9]{4}-[[0-9]{2}-[[0-9]{2} [[0-9]{2}:[[0-9]{2}:[[0-9]{2}\] "GET')
-cs.addFilter('\s$')
+cs.add_filter('[0-9]+ ([a-z]|[A-Z])+: [0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3} - - \[[0-9]{4}-[[0-9]{2}-[[0-9]{2} [[0-9]{2}:[[0-9]{2}:[[0-9]{2}\] "GET')
+cs.add_filter('\s$')
 cs.start()
 try:
     # Make sure PyInstaller is installed
     from PyInstaller import __main__ as pyi
-except:
+except ModuleNotFoundError:
     print ("Error: PyInstaller not found")
     print ('Please install PyInstaller using: "python -m pip install PyInstaller"')
     sys.exit(1)
 try:
     # Make sure Eel is installed
     import eel # Import eel last so we don't have to deal with the monkey patching crap it gives
-except:
+except ModuleNotFoundError:
     print ("Error: Eel not found")
     print ('Please install PyInstaller using: "python -m pip install Eel"')
     sys.exit(1)
 cs.stop()
 
-# Some varaibles to help with arguments and how they are passed around (can also be used when being imported)
+
+# Some variables to help with arguments and how they are passed around (can also be used when being imported)
 filename = ''
 disable_chrome = False
 
@@ -89,12 +91,14 @@ web_location = 'web'
 web_path = os.path.dirname(os.path.realpath(__file__)) + '/' + web_location
 eel.init(web_path)
 
+
 @eel.expose
 def getFileFromArgs():
     """ Pass the filename argument to the UI """
     if filename != '':
         return os.path.abspath(filename)
     return ''
+
 
 @eel.expose
 def openOutputFolder(folder):
@@ -109,6 +113,7 @@ def openOutputFolder(folder):
     else:
         os.startfile(folder)
 
+
 @eel.expose
 def askFile():
     """ Ask the user to select a file """
@@ -117,6 +122,7 @@ def askFile():
     root.wm_attributes('-topmost', 1)
     filename = askopenfilename(parent=root)
     return filename
+
 
 @eel.expose
 def askFiles():
@@ -127,6 +133,7 @@ def askFiles():
     filenames = askopenfilenames(parent=root)
     return filenames
 
+
 @eel.expose
 def askFolder():
     """ Ask the user to select a folder """
@@ -136,10 +143,12 @@ def askFolder():
     folder = askdirectory(parent=root)
     return folder
 
+
 @eel.expose
 def checkIfFileExists(file):
     """ Checks if a file exists """
     return os.path.isfile(file)
+
 
 @eel.expose
 def convertPreCheck(filename, onefile, outputFolder):
@@ -155,6 +164,7 @@ def convertPreCheck(filename, onefile, outputFolder):
             return False
     return True
 
+
 @eel.expose
 def convert(command, output):
     """ Package the executable passing the arguments the user requested """
@@ -162,7 +172,7 @@ def convert(command, output):
     eel.addOutput("Cleaning workspace\n")
     try:
         clean()
-    except Exception as e:
+    except:
         eel.addOutput("Warning: could not clean the workspace before starting\n")
 
     # Run PyInstaller
@@ -172,8 +182,8 @@ def convert(command, output):
     try:
         pyi.run() # Execute PyInstaller
         pyinstaller_fail = False
-    except Exception as e:
-        eel.addOutput("An error occured, traceback follows:\n")
+    except:
+        eel.addOutput("An error occurred, traceback follows:\n")
         eel.addOutput(traceback.format_exc())
     cs.stop() # Stop stderr capture
 
@@ -185,7 +195,7 @@ def convert(command, output):
         eel.addOutput("Moving project to: " + output + "\n")
         try:
             moveProject(output)
-        except Exception as e:
+        except:
             eel.addOutput("Failed to move project, traceback follows:\n")
             eel.addOutput(traceback.format_exc())
 
@@ -193,11 +203,12 @@ def convert(command, output):
     eel.addOutput("Cleaning workspace\n")
     try:
         clean()
-    except Exception as e:
+    except:
         eel.addOutput("Warning: could not clean the workspace; some build files will still exist\n")
 
     eel.addOutput("Complete.\n")
     eel.outputComplete()
+
 
 def moveProject(output):
     """ Move the output package to the desired path (default is output/ - set in script.js) """
@@ -211,6 +222,7 @@ def moveProject(output):
             shutil.rmtree(output + os.listdir('dist/')[0])
     shutil.move(folder, output)
 
+
 def clean():
     """ Clean the output of pyinstaller """
     if os.path.exists('dist/'):
@@ -221,6 +233,7 @@ def clean():
     for file in files:
         if file.endswith('.spec'):
             os.remove(file)
+
 
 def checkArguments():
     """ Check arguments passed """
@@ -236,6 +249,7 @@ def checkArguments():
     if args.no_chrome is not None:
         disable_chrome = True
 
+
 def run():
     """ Open the interface """
     if __name__ == '__main__':
@@ -245,6 +259,7 @@ def run():
         eel.start('main.html', size=(650, 612), options={'port': 0})
     else:
         eel.start('main.html', size=(650, 612), options={'port': 0, 'mode': 'user selection'})
+
 
 if __name__ == '__main__':
     run()
