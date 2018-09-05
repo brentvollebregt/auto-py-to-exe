@@ -1,0 +1,9 @@
+include README.md
+include LICENSE
+include auto_py_to_exe/web/img/chevron-square-up.svg
+include auto_py_to_exe/web/img/remove.svg
+include auto_py_to_exe/web/favicon.ico
+include auto_py_to_exe/web/main.html
+include auto_py_to_exe/web/Nunito-Light.ttf
+include auto_py_to_exe/web/script.js
+include auto_py_to_exe/web/styles.css
