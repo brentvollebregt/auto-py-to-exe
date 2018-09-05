@@ -26,6 +26,7 @@ import shutil
 import shlex
 import re
 import traceback
+from zipimport import ZipImportError
 
 
 class CaptureStderr:
@@ -182,6 +183,17 @@ def convert(command, output):
     try:
         pyi.run() # Execute PyInstaller
         pyinstaller_fail = False
+    except ZipImportError:
+        if sys.version_info == (3, 7):
+            # We can remove this when (if) PyInstaller supports 3.7
+            # In the meantime, this is staying as too many people are ignoring the readme and complaining that it doesn't work
+            eel.addOutput("A zipimport.ZipImportError error occurred because you are using Python 3.7\n")
+            eel.addOutput("Lack of support for Python 3.7 is clearly stated it the README\n")
+            eel.addOutput("Please downgrade to a version supported to use this tool, traceback follows:\n")
+            eel.addOutput(traceback.format_exc())
+        else:
+            eel.addOutput("An error occurred, traceback follows:\n")
+            eel.addOutput(traceback.format_exc())
     except:
         eel.addOutput("An error occurred, traceback follows:\n")
         eel.addOutput(traceback.format_exc())
