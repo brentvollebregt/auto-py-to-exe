@@ -26,12 +26,12 @@ import shutil
 import shlex
 import re
 import traceback
-from zipimport import ZipImportError
 
 
 class CaptureStderr:
     """ Capture stderr and forward it onto eel.addOutput """
     filters = []
+    ui_started = False # Don't send messages until the UI has started (or is close)
 
     def __init__(self):
         self.original = sys.stderr # Keep track of original
@@ -55,15 +55,19 @@ class CaptureStderr:
             if not single_filter.match(i) is None:
                 return
 
-        # Send making sure there is a newline at the end
-        if i.endswith('\n'):
-            eel.addOutput(i)
+        if self.ui_started:
+            # Send making sure there is a newline at the end
+            if i.endswith('\n'):
+                eel.addOutput(i)
+            else:
+                eel.addOutput(i + '\n')
         else:
-            eel.addOutput(i + '\n')
+            print (i)
+
 
 # These modules capture stderr so we need to make sure they get our object
 cs = CaptureStderr()
-cs.add_filter('[0-9]+ ([a-z]|[A-Z])+: [0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3} - - \[[0-9]{4}-[[0-9]{2}-[[0-9]{2} [[0-9]{2}:[[0-9]{2}:[[0-9]{2}\] "GET')
+cs.add_filter('[0-9]+ ([a-z]|[A-Z])+: [0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3} - - \[[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}\] "GET')
 cs.add_filter('\s$')
 cs.start()
 try:
@@ -82,6 +86,11 @@ except ModuleNotFoundError:
     sys.exit(1)
 cs.stop()
 
+# Make sure PyInstaller 3.4 is being used with Python 3.7
+if sys.version_info == (3, 7) and not (float(pyi.__version__) >= 3.4):
+    print ('You will need PyInstaller 3.4 or above to use this with Python 3.7')
+    print ('Please upgrade PyInstaller: python -m pip install --upgrade PyInstaller')
+    sys.exit(1)
 
 # Some variables to help with arguments and how they are passed around (can also be used when being imported)
 filename = ''
@@ -183,17 +192,6 @@ def convert(command, output):
     try:
         pyi.run() # Execute PyInstaller
         pyinstaller_fail = False
-    except ZipImportError:
-        if sys.version_info == (3, 7):
-            # We can remove this when (if) PyInstaller supports 3.7
-            # In the meantime, this is staying as too many people are ignoring the readme and complaining that it doesn't work
-            eel.addOutput("A zipimport.ZipImportError error occurred because you are using Python 3.7\n")
-            eel.addOutput("Lack of support for Python 3.7 is clearly stated in the README\n")
-            eel.addOutput("Please downgrade to a version supported to use this tool, traceback follows:\n")
-            eel.addOutput(traceback.format_exc())
-        else:
-            eel.addOutput("An error occurred, traceback follows:\n")
-            eel.addOutput(traceback.format_exc())
     except:
         eel.addOutput("An error occurred, traceback follows:\n")
         eel.addOutput(traceback.format_exc())
@@ -267,6 +265,7 @@ def run():
     if __name__ == '__main__':
         checkArguments()
     cs.start()
+    cs.ui_started = True
     if eel.brw.chr.get_instance_path() is not None and not disable_chrome:
         eel.start('main.html', size=(650, 612), options={'port': 0})
     else:
