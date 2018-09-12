@@ -26,11 +26,11 @@ function switchButton(node) {
 }
 
 
-
 //---- Server Functions ----//
 // Ask the user for a file and put it in a node with id=for_id. Re-check if exists to get rid of any red
 async function getFile(for_id) {
-    document.getElementById(for_id).value = await eel.askFile()();
+    let file = await eel.askFile()();
+    document.getElementById(for_id).value = file;
     checkFile(document.getElementById(for_id));
 }
 
@@ -75,7 +75,11 @@ function openOutputFolder() {
 
 
 
-// Group end command data
+
+
+
+
+// Group end command data // TODO Get rid of this shit
 var command_data = {
     "onefile" : false,
     "console" : true,
@@ -85,6 +89,7 @@ var command_data = {
         "name" : ""
     }
 };
+
 
 
 
@@ -100,7 +105,7 @@ function switchOnefile(active) {
         document.getElementById('onefile_inactive').classList.remove('btn_choice_greyed');
         document.getElementById('onefileAdditionalFilesNote').style.display = 'none';
     }
-    command_data['onefile'] = active;
+    command_data['onefile'] = active; // TODO Get rid of: which one doesn't have btn_choice_greyed
     generateCurrentCommand();
 }
 
@@ -113,11 +118,9 @@ function switchConsole(active) {
         document.getElementById('console_active').classList.add('btn_choice_greyed');
         document.getElementById('console_inactive').classList.remove('btn_choice_greyed');
     }
-    command_data['console'] = active;
+    command_data['console'] = active; // TODO Get rid of: which one doesn't have btn_choice_greyed
     generateCurrentCommand();
 }
-
-
 
 //---- Additional files ----//
 // Add multiple files - request for file input before
@@ -139,8 +142,8 @@ function additionalFilesAdd(src) {
     var parent_node = document.getElementById('additional_files_content');
     var div = document.createElement('div');
     var id = 'addFiles_' + Math.random().toString(36).substring(7);
-    while (Object.keys(command_data['additional_files']).indexOf(id) !== -1) {
-        id = 'addFiles_' + Math.random().toString(36).substring(7);
+    while (Object.keys(command_data['additional_files']).indexOf(id) !== -1) { // TODO Get rid of the need for 'additional_files' in command data
+        id = 'addFiles_' + Math.random().toString(36).substring(7); // TODO Will still needs the ids
     }
     div.innerHTML =
         '<div style="margin: 1px 0;" id="' + id + '">\n' +
@@ -151,7 +154,7 @@ function additionalFilesAdd(src) {
     parent_node.insertBefore(div.firstChild, document.getElementById('onefileAdditionalFilesNote'));
     document.getElementById(id).children[0].value = src;
     document.getElementById(id).children[1].value = 'assets/';
-    command_data["additional_files"][id] = {
+    command_data["additional_files"][id] = { // TODO REMOVE
         "file" : "",
         "filename" : ""
     };
@@ -163,21 +166,22 @@ function additionalFilesAdd(src) {
 function additionalFilesRemove(id) {
     var block = document.getElementById(id);
     block.parentNode.removeChild(block);
-    delete command_data["additional_files"][id];
+    delete command_data["additional_files"][id]; // TODO REMOVE
     generateCurrentCommand();
 }
 
-// When file data is modified for an id, update it
+// When file data is modified for an id, update it // TODO Remove this and just call update
 function additionalFilesEdit(id) {
-    command_data["additional_files"][id]["file"] = document.getElementById(id).children[0].value;
-    command_data["additional_files"][id]["filename"] = document.getElementById(id).children[1].value;
+    command_data["additional_files"][id]["file"] = document.getElementById(id).children[0].value; // TODO REMOVE
+    command_data["additional_files"][id]["filename"] = document.getElementById(id).children[1].value; // TODO REMOVE
     generateCurrentCommand();
 }
 
 
 
-//---- Command Generation ----//
-// Command generation
+
+
+// Command generation // TODO FIX
 function generateCurrentCommand() {
     var node = document.getElementById("current_command");
     var command = 'pyinstaller -y ';
@@ -230,9 +234,6 @@ function generateCurrentCommand() {
     node.value = command
 }
 
-
-
-//---- Packaging Scripts and Files ----//
 // Convert
 async function convert() {
     if (document.getElementById('file').value === "") {
@@ -256,6 +257,7 @@ async function convert() {
     if (!output.endsWith('/')) { // Make sure the output ends with /
         output += '/'
     }
+    // TODO Why the fuck
     var command_split = command.split('"');
     var filename;
     if (document.getElementById('VALUE-n').value !== '') {
@@ -270,8 +272,10 @@ async function convert() {
             return;
         }
     }
-    // Make a call to convert
+
+    // Convert
     eel.convert(command, output)();
+
     // Set buttons
     document.getElementById('convert').style.filter = 'grayscale(1)';
     document.getElementById('convert').style.cursor = 'not-allowed';
@@ -320,6 +324,10 @@ function clearOutput() {
 
 
 
+
+
+
+
 //---- Info Bar ----//
 // Setting view of left information bar based on size of window
 function checkInfoBar() {
@@ -348,7 +356,6 @@ window.addEventListener('resize', function () {
 });
 
 
-
 //---- Load Events ----//
 window.addEventListener('load', function () {
     checkInfoBar();
@@ -356,7 +363,7 @@ window.addEventListener('load', function () {
     getFileFromArgs();
 });
 
-// Setup onclicks for buttons and onkeyups for inputs
+// Setup onclicks for buttons and onkeyups for inputs // TODO Try to remove (more dynamic arguments)
 function setupAdvancedSwitchesAndInputs() {
     for (const node of document.querySelectorAll('*[id^="OPTION"]')) {
         node.onclick = function () { switchButton(node); };
