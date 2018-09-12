@@ -23,7 +23,7 @@ var command_data = {
         "clean" : true,
         "name" : ""
     }
-}
+};
 
 // Get and Check files
 async function getFile(for_id) {
@@ -53,7 +53,7 @@ function switchOnefile(active) {
         document.getElementById('onefile_inactive').classList.remove('btn_choice_greyed')
         document.getElementById('onefileAdditionalFilesNote').style.display = 'none';
     }
-    command_data['onefile'] = active
+    command_data['onefile'] = active;
     generateCurrentCommand();
 }
 
@@ -66,7 +66,7 @@ function switchConsole(active) {
         document.getElementById('console_active').classList.add('btn_choice_greyed')
         document.getElementById('console_inactive').classList.remove('btn_choice_greyed')
     }
-    command_data['console'] = active
+    command_data['console'] = active;
     generateCurrentCommand();
 }
 
