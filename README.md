@@ -1,9 +1,9 @@
 <h1 align="center">Auto PY to EXE</h1>
 <p align="center">A .py to .exe converter using a simple graphical interface built using <a href="https://github.com/ChrisKnott/Eel">Eel</a> and <a href="http://www.pyinstaller.org/">PyInstaller</a> in Python.</p>
 
-<div align="center">
+<p align="center">
     <img src="https://i.imgur.com/EuUlayC.png" alt="Empty interface">
-</div>
+</p>
 
 <p align="center">
     <a href="https://pypi.org/project/auto-py-to-exe/"><img src="https://img.shields.io/pypi/v/auto-py-to-exe.svg" alt="PyPI Version"></a>
