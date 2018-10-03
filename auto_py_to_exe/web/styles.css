@@ -14,21 +14,20 @@ body {
 }
 
 #header {
-    display: table;
+    display: flex;
+    align-items: center;
+    margin-top: 18px;
 }
 
 #header img {
     height: 41px;
-    margin-top: 10px;
-    float: left;
 }
 
 #header h1 {
     font-weight: 100;
     font-size: 30px;
     color: #666666;
-    float: left;
-    margin: 9px 0 0 10px;
+    margin: 0 0 0 10px;
 }
 
 #mid {
