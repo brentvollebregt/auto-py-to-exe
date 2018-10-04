@@ -34,13 +34,19 @@
                     <button id="console_active" class="btn_choice" onclick="switchConsole(true)">Console Based</button>
                     <button id="console_inactive" class="btn_choice btn_choice_greyed" onclick="switchConsole(false)">Window Based (hide the console)</button>
 
-                    <h1 class="section_header"><a class="expand" data-expand="icon_content" data-display="grid" onclick="expand(this)"></a>Icon</h1>
+                    <h1 class="section_header">
+                        <a class="expand" data-expand="icon_content" data-display="grid" onclick="expand(this)"></a>
+                        <a onclick="expand(this.previousElementSibling)">Icon</a>
+                    </h1>
                     <div id="icon_content" style="display: none; grid-gap: 4px; grid-template-columns: 1fr 120px;">
                         <input id="icon" placeholder=".ico file" onkeyup="checkFile(this)">
                         <button class="btn_search" onclick="getFile('icon')">Search</button>
                     </div>
 
-                    <h1 class="section_header"><a class="expand" data-expand="additional_files_content" onclick="expand(this)"></a>Additional Files</h1>
+                    <h1 class="section_header">
+                        <a class="expand" data-expand="additional_files_content" onclick="expand(this)"></a>
+                        <a onclick="expand(this.previousElementSibling)">Additional Files</a>
+                    </h1>
                     <div id="additional_files_content" style="display: none;">
                         <button class="btn_search" onclick="additionalFilesAddFiles()" style="margin: 0 0 5px 6px;">Add Files</button>
                         <button class="btn_search" onclick="additionalFilesAddFolder()">Add Folder</button>
@@ -49,7 +55,10 @@
                         <p class="note">If you want to put additional files in the root directory, put a period (.) in the destination.</p>
                     </div>
 
-                    <h1 class="section_header"><a class="expand" data-expand="advanced_content" onclick="expand(this)"></a>Advanced</h1>
+                    <h1 class="section_header">
+                        <a class="expand" data-expand="advanced_content" onclick="expand(this)"></a>
+                        <a onclick="expand(this.previousElementSibling)">Advanced</a>
+                    </h1>
                     <div id="advanced_content" style="display: none;">
                         <div style="display: grid; grid-gap: 4px; grid-template-columns: 130px 1fr 120px;">
                             Output Directory:

@@ -79,6 +79,10 @@ body {
     font-size: 25px;
 }
 
+.section_header > a {
+    cursor: pointer;
+}
+
 .sub_header {
     font-size: 17px;
     margin: 2px;

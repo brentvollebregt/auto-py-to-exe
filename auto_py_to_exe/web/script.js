@@ -1,16 +1,16 @@
 //---- Generic Movement ----//
 // Expand groups using blue chevrons
-function expand(node) {
-    var expandDiv_node = document.getElementById(node.dataset.expand);
-    if (node.style.transform !== "rotate(0deg)") {
-        node.style.transform = 'rotate(0deg)';
-        if (node.dataset.display !== undefined) {
-            expandDiv_node.style.display = node.dataset.display;
+function expand(el) {
+    var expandDiv_node = document.getElementById(el.dataset.expand);
+    if (el.style.transform !== "rotate(0deg)") {
+        el.style.transform = 'rotate(0deg)';
+        if (el.dataset.display !== undefined) {
+            expandDiv_node.style.display = el.dataset.display;
         } else {
             expandDiv_node.style.display = 'block';
         }
     } else {
-        node.style.transform = 'rotate(180deg)';
+        el.style.transform = 'rotate(180deg)';
         expandDiv_node.style.display = 'none';
     }
 }
