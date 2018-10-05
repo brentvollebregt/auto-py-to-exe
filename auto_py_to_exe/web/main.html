@@ -36,7 +36,7 @@
 
                     <h1 class="section_header">
                         <a class="expand" data-expand="icon_content" data-display="grid" onclick="expand(this)"></a>
-                        <a onclick="expand(this.previousElementSibling)">Icon</a>
+                        <a class="noselect" onclick="expand(this.previousElementSibling)">Icon</a>
                     </h1>
                     <div id="icon_content" style="display: none; grid-gap: 4px; grid-template-columns: 1fr 120px;">
                         <input id="icon" placeholder=".ico file" onkeyup="checkFile(this)">
@@ -45,7 +45,7 @@
 
                     <h1 class="section_header">
                         <a class="expand" data-expand="additional_files_content" onclick="expand(this)"></a>
-                        <a onclick="expand(this.previousElementSibling)">Additional Files</a>
+                        <a class="noselect" onclick="expand(this.previousElementSibling)">Additional Files</a>
                     </h1>
                     <div id="additional_files_content" style="display: none;">
                         <button class="btn_search" onclick="additionalFilesAddFiles()" style="margin: 0 0 5px 6px;">Add Files</button>
@@ -57,7 +57,7 @@
 
                     <h1 class="section_header">
                         <a class="expand" data-expand="advanced_content" onclick="expand(this)"></a>
-                        <a onclick="expand(this.previousElementSibling)">Advanced</a>
+                        <a class="noselect" onclick="expand(this.previousElementSibling)">Advanced</a>
                     </h1>
                     <div id="advanced_content" style="display: none;">
                         <div style="display: grid; grid-gap: 4px; grid-template-columns: 130px 1fr 120px;">
