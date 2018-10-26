@@ -3,7 +3,7 @@ import argparse
 import sys
 try:
     from tkinter import Tk
-except ModuleNotFoundError:
+except ImportError:
     try:
         from Tkinter import Tk
     except:
@@ -18,7 +18,7 @@ except ModuleNotFoundError:
             sys.exit(1)
 try:
     from tkinter.filedialog import askopenfilename, askdirectory, askopenfilenames
-except ModuleNotFoundError:
+except ImportError:
     from tkFileDialog import askopenfilename, askdirectory, askopenfilenames
 import os
 import platform
@@ -73,14 +73,14 @@ cs.start()
 try:
     # Make sure PyInstaller is installed
     from PyInstaller import __main__ as pyi
-except ModuleNotFoundError:
+except ImportError:
     print ("Error: PyInstaller not found")
     print ('Please install PyInstaller using: "python -m pip install PyInstaller"')
     sys.exit(1)
 try:
     # Make sure Eel is installed
     import eel # Import eel last so we don't have to deal with the monkey patching crap it gives
-except ModuleNotFoundError:
+except ImportError:
     print ("Error: Eel not found")
     print ('Please install PyInstaller using: "python -m pip install Eel"')
     sys.exit(1)
