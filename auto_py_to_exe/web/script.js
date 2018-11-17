@@ -270,8 +270,10 @@ async function convert() {
             return;
         }
     }
+    // Check if Recursion Limit is enabled
+    var recursion_limit = !document.getElementById('recursion_limit').classList.contains('btn_choice_greyed');
     // Make a call to convert
-    eel.convert(command, output)();
+    eel.convert(command, output, recursion_limit)();
     // Set buttons
     document.getElementById('convert').style.filter = 'grayscale(1)';
     document.getElementById('convert').style.cursor = 'not-allowed';
@@ -358,7 +360,7 @@ window.addEventListener('load', function () {
 
 // Setup onclicks for buttons and onkeyups for inputs
 function setupAdvancedSwitchesAndInputs() {
-    for (const node of document.querySelectorAll('*[id^="OPTION"]')) {
+    for (const node of document.querySelectorAll('*[id^="OPTION"], #recursion_limit')) {
         node.onclick = function () { switchButton(node); };
     }
     for (const node of document.querySelectorAll('*[id^="VALUE"]')) {
