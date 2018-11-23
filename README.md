@@ -70,6 +70,9 @@ You can also pass ```--no-chrome``` if you want to use your default browser and 
 ## Video
 If you need something visual to help you get started, [I made a video for the original release of this project](https://youtu.be/OZSZHmWSOeM); some things may be different but the same concepts still apply.
 
+## Issues Using the Tool
+If you're having issues with the packaged executable or using this tool in general, I recommend you read [my blog post on common issues when using auto-py-to-exe](https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/). This post covers things you should know about packaging Python scripts and fixes for things that commonly go wrong.
+
 ## Screenshots
 ![Empty interface](https://i.imgur.com/dd0LC2n.png)
 
