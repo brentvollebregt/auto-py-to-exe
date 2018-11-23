@@ -190,6 +190,7 @@ def convert(command, output):
     cs.start() # Capture stderr so PyInstaller output can be send to UI
     sys.argv = shlex.split(command) # Put command into sys.argv
     try:
+        eel.addOutput("Executing: " + command + "\n")
         pyi.run() # Execute PyInstaller
         pyinstaller_fail = False
     except:
