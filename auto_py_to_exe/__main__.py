@@ -8,7 +8,7 @@ except ImportError:
     except:
         # If no versions of tkinter exist (most likely linux) provide a message
         if sys.version_info.major < 3:
-            prin("Error: Tkinter not found")
+            print("Error: Tkinter not found")
             print('For linux, you can install Tkinter by executing: "sudo apt-get install python-tk"')
             sys.exit(1)
         else:
@@ -26,6 +26,7 @@ import shutil
 import shlex
 import re
 import traceback
+import tempfile
 
 
 class CaptureStderr:
@@ -101,6 +102,9 @@ disable_chrome = False
 web_location = 'web'
 web_path = os.path.dirname(os.path.realpath(__file__)) + '/' + web_location
 eel.init(web_path)
+
+# Use the same temporary directory to speed up consecutive builds
+temporary_directory = tempfile.TemporaryDirectory()
 
 
 @eel.expose
@@ -179,12 +183,12 @@ def convert_pre_check(file_path, one_file, output_folder):
 @eel.expose
 def convert(command, output, recursion_limit):
     """ Package the executable passing the arguments the user requested """
-    # Initially clean the workspace
-    eel.addOutput("Cleaning workspace\n")
-    try:
-        clean()
-    except:
-        eel.addOutput("Warning: could not clean the workspace before starting\n")
+    # Notify the user of the workspace and setup building to it
+    eel.addOutput("Building in the current instances temporary directory at {}\n".format(temporary_directory.name))
+    eel.addOutput("To get a new temporary directory, restart this application\n")
+    dist_path = os.path.join(temporary_directory.name, 'application')
+    build_path = os.path.join(temporary_directory.name, 'build')
+    extra_args = ['--distpath', dist_path] + ['--workpath', build_path] + ['--specpath', temporary_directory.name]
 
     # If the Recursion Limit is enabled, set it
     if recursion_limit:
@@ -194,9 +198,9 @@ def convert(command, output, recursion_limit):
     # Run PyInstaller
     pyinstaller_fail = True
     cs.start() # Capture stderr so PyInstaller output can be send to UI
-    sys.argv = shlex.split(command) # Put command into sys.argv
+    sys.argv = shlex.split(command) + extra_args # Put command into sys.argv and extra args
     try:
-        eel.addOutput("Executing: " + command + "\n")
+        eel.addOutput("Executing: {0}\n".format(command))
         pyi.run() # Execute PyInstaller
         pyinstaller_fail = False
     except:
@@ -204,52 +208,39 @@ def convert(command, output, recursion_limit):
         eel.addOutput(traceback.format_exc())
     cs.stop() # Stop stderr capture
 
-    # Move Project
+    # Move project if there was no failure
     if pyinstaller_fail:
         eel.addOutput("\n")
         eel.addOutput("Project output will not be moved to output folder\n")
     else:
-        eel.addOutput("Moving project to: " + output + "\n")
+        eel.addOutput("Moving project to: {0}\n".format(output))
         try:
-            move_project(output)
+            move_project(dist_path, output)
         except:
             eel.addOutput("Failed to move project, traceback follows:\n")
             eel.addOutput(traceback.format_exc())
-
-    # Clean the workspace
-    eel.addOutput("Cleaning workspace\n")
-    try:
-        clean()
-    except:
-        eel.addOutput("Warning: could not clean the workspace; some build files will still exist\n")
 
     eel.addOutput("Complete.\n")
     eel.outputComplete()
 
 
-def move_project(output):
+def move_project(src, dst):
     """ Move the output package to the desired path (default is output/ - set in script.js) """
-    if not os.path.exists(output):
-        os.makedirs(output)
-    folder = 'dist/' + os.listdir('dist/')[0]
-    if os.listdir('dist/')[0] in os.listdir(output):
-        if os.path.isfile('dist/' + os.listdir('dist/')[0]):
-            os.remove(output + os.listdir('dist/')[0])
-        else:
-            shutil.rmtree(output + os.listdir('dist/')[0])
-    shutil.move(folder, output)
+    # Make sure the destination exists
+    if not os.path.exists(dst):
+        os.makedirs(dst)
 
-
-def clean():
-    """ Clean the output of pyinstaller """
-    if os.path.exists('dist/'):
-        shutil.rmtree('dist/')
-    if os.path.exists('build/'):
-        shutil.rmtree('build/')
-    files = os.listdir('.')
-    for file in files:
-        if file.endswith('.spec'):
-            os.remove(file)
+    # Move all files/folders in dist/
+    for file_or_folder in os.listdir(src):
+        _dst = os.path.join(dst, file_or_folder)
+        # If this already exists in the destination, delete it
+        if os.path.exists(_dst):
+            if os.path.isfile(_dst):
+                os.remove(_dst)
+            else:
+                shutil.rmtree(_dst)
+        # Move file
+        shutil.move(os.path.join(src, file_or_folder), dst)
 
 
 def check_arguments():
