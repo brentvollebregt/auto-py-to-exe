@@ -177,7 +177,7 @@ def convert_pre_check(file_path, one_file, output_folder):
 
 
 @eel.expose
-def convert(command, output):
+def convert(command, output, recursion_limit):
     """ Package the executable passing the arguments the user requested """
     # Initially clean the workspace
     eel.addOutput("Cleaning workspace\n")
@@ -185,6 +185,11 @@ def convert(command, output):
         clean()
     except:
         eel.addOutput("Warning: could not clean the workspace before starting\n")
+
+    # If the Recursion Limit is enabled, set it
+    if recursion_limit:
+        sys.setrecursionlimit(5000)
+        eel.addOutput("Set Recursion Limit to 5000\n")
 
     # Run PyInstaller
     pyinstaller_fail = True

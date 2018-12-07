@@ -60,11 +60,12 @@
                         <a class="noselect" onclick="expand(this.previousElementSibling)">Advanced</a>
                     </h1>
                     <div id="advanced_content" style="display: none;">
-                        <div style="display: grid; grid-gap: 4px; grid-template-columns: 130px 1fr 120px;">
+                        <div style="display: grid; grid-gap: 4px; grid-template-columns: 130px 1fr 120px; margin-bottom: 2px;">
                             Output Directory:
                             <input id="output_location" placeholder="Folder path">
                             <button class="btn_search" onclick="getFolder('output_location')">Search</button>
                         </div>
+                        <button id="recursion_limit" class="btn_choice btn_choice_greyed">Enable Recursion Limit<div class="info_btn" title="Set the recursion limit to 5000. If a RecursionError occurs, it is recommended to enable this to try and prevent the error. When enabled, sys.setrecursionlimit(5000) is called."></div></button>
                         <h2 class="sub_header">General Options</h2>
                         --upx-dir<input id="VALUE--upx-dir" placeholder="UPX_DIR"><div class="info_btn" title="Path to UPX utility (default: search the execution path)"></div>
                         <br><button id="OPTION-a" class="btn_choice btn_choice_greyed">-a Don't include unicode encoding support<div class="info_btn" title="Do not include unicode encoding support (default: included if available)"></div></button>
