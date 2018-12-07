@@ -1,5 +1,4 @@
 # Import packages we know are here and won't mess anything up
-import argparse
 import sys
 try:
     from tkinter import Tk
@@ -9,17 +8,18 @@ except ImportError:
     except:
         # If no versions of tkinter exist (most likely linux) provide a message
         if sys.version_info.major < 3:
-            print ("Error: Tkinter not found")
-            print ('For linux, you can install Tkinter by executing: "sudo apt-get install python-tk"')
+            prin("Error: Tkinter not found")
+            print('For linux, you can install Tkinter by executing: "sudo apt-get install python-tk"')
             sys.exit(1)
         else:
-            print ("Error: tkinter not found")
+            print("Error: tkinter not found")
             print('For linux, you can install tkinter by executing: "sudo apt-get install python3-tk"')
             sys.exit(1)
 try:
     from tkinter.filedialog import askopenfilename, askdirectory, askopenfilenames
 except ImportError:
     from tkFileDialog import askopenfilename, askdirectory, askopenfilenames
+import argparse
 import os
 import platform
 import shutil
@@ -47,22 +47,22 @@ class CaptureStderr:
     def add_filter(self, filter_expression):
         self.filters.append(re.compile(filter_expression))
 
-    def write(self, i):
+    def write(self, message):
         """ When sys.stderr.write is called, it will re directed here """
 
         # Filter pre-defined lines that don't need to be sent
         for single_filter in self.filters:
-            if not single_filter.match(i) is None:
+            if not single_filter.match(message) is None:
                 return
 
         if self.ui_started:
             # Send making sure there is a newline at the end
-            if i.endswith('\n'):
-                eel.addOutput(i)
+            if message.endswith('\n'):
+                eel.addOutput(message)
             else:
-                eel.addOutput(i + '\n')
+                eel.addOutput(message + '\n')
         else:
-            print (i)
+            print(message)
 
 
 # These modules capture stderr so we need to make sure they get our object
@@ -74,26 +74,27 @@ try:
     # Make sure PyInstaller is installed
     from PyInstaller import __main__ as pyi
 except ImportError:
-    print ("Error: PyInstaller not found")
-    print ('Please install PyInstaller using: "python -m pip install PyInstaller"')
+    print("Error: PyInstaller not found")
+    print('Please install PyInstaller using: "python -m pip install PyInstaller"')
     sys.exit(1)
 try:
     # Make sure Eel is installed
     import eel # Import eel last so we don't have to deal with the monkey patching crap it gives
 except ImportError:
-    print ("Error: Eel not found")
-    print ('Please install PyInstaller using: "python -m pip install Eel"')
+    print("Error: Eel not found")
+    print('Please install PyInstaller using: "python -m pip install Eel"')
     sys.exit(1)
 cs.stop()
 
 # Make sure PyInstaller 3.4 is being used with Python 3.7
 if sys.version_info == (3, 7) and not (float(pyi.__version__) >= 3.4):
-    print ('You will need PyInstaller 3.4 or above to use this with Python 3.7')
-    print ('Please upgrade PyInstaller: python -m pip install --upgrade PyInstaller')
+    print('You will need PyInstaller 3.4 or above to use this with Python 3.7')
+    print('Please upgrade PyInstaller: python -m pip install --upgrade PyInstaller')
     sys.exit(1)
 
+
 # Some variables to help with arguments and how they are passed around (can also be used when being imported)
-filename = ''
+filename = None
 disable_chrome = False
 
 # Setup eels root folder
@@ -103,15 +104,15 @@ eel.init(web_path)
 
 
 @eel.expose
-def getFileFromArgs():
+def get_file_from_args():
     """ Pass the filename argument to the UI """
-    if filename != '':
+    if filename is not None:
         return os.path.abspath(filename)
     return ''
 
 
 @eel.expose
-def openOutputFolder(folder):
+def open_output_folder(folder):
     """ Open the folder of there the package was moved to """
     if platform.system() == 'Windows':
         folder = folder.replace('/', '\\')
@@ -125,27 +126,27 @@ def openOutputFolder(folder):
 
 
 @eel.expose
-def askFile():
+def ask_file():
     """ Ask the user to select a file """
     root = Tk()
     root.withdraw()
     root.wm_attributes('-topmost', 1)
-    filename = askopenfilename(parent=root)
-    return filename
+    file_path = askopenfilename(parent=root)
+    return file_path
 
 
 @eel.expose
-def askFiles():
+def ask_files():
     """ Ask the user to select one or more files """
     root = Tk()
     root.withdraw()
     root.wm_attributes('-topmost', 1)
-    filenames = askopenfilenames(parent=root)
-    return filenames
+    file_paths = askopenfilenames(parent=root)
+    return file_paths
 
 
 @eel.expose
-def askFolder():
+def ask_folder():
     """ Ask the user to select a folder """
     root = Tk()
     root.withdraw()
@@ -155,22 +156,22 @@ def askFolder():
 
 
 @eel.expose
-def checkIfFileExists(file):
+def check_if_file_exists(file):
     """ Checks if a file exists """
     return os.path.isfile(file)
 
 
 @eel.expose
-def convertPreCheck(filename, onefile, outputFolder):
+def convert_pre_check(file_path, one_file, output_folder):
     """ Checks if there is a possibility of a previous output being overwritten """
-    if not os.path.exists(outputFolder):
+    if not os.path.exists(output_folder):
         return True
-    no_extension = '.'.join(filename.split('.')[:-1])
-    if onefile:
-        if no_extension + '.exe' in os.listdir(outputFolder):
+    no_extension = '.'.join(file_path.split('.')[:-1])
+    if one_file:
+        if no_extension + '.exe' in os.listdir(output_folder):
             return False
     else:
-        if no_extension in os.listdir(outputFolder):
+        if no_extension in os.listdir(output_folder):
             return False
     return True
 
@@ -205,7 +206,7 @@ def convert(command, output):
     else:
         eel.addOutput("Moving project to: " + output + "\n")
         try:
-            moveProject(output)
+            move_project(output)
         except:
             eel.addOutput("Failed to move project, traceback follows:\n")
             eel.addOutput(traceback.format_exc())
@@ -221,7 +222,7 @@ def convert(command, output):
     eel.outputComplete()
 
 
-def moveProject(output):
+def move_project(output):
     """ Move the output package to the desired path (default is output/ - set in script.js) """
     if not os.path.exists(output):
         os.makedirs(output)
@@ -246,25 +247,24 @@ def clean():
             os.remove(file)
 
 
-def checkArguments():
+def check_arguments():
     """ Check arguments passed """
     global filename
     global disable_chrome
 
     parser = argparse.ArgumentParser()
     parser.add_argument("filename", nargs='?', help="pass a file into the interface")
-    parser.add_argument("-nc", "--no-chrome", action="count", help="do not open in chromes app mode")
+    parser.add_argument("-nc", "--no-chrome", action="store_true", help="do not open in chromes app mode")
     args = parser.parse_args()
     if args.filename is not None:
         filename = args.filename
-    if args.no_chrome is not None:
-        disable_chrome = True
+    disable_chrome = args.no_chrome
 
 
 def run():
     """ Open the interface """
     if __name__ == '__main__':
-        checkArguments()
+        check_arguments()
     cs.start()
     cs.ui_started = True
     if eel.brw.chr.get_instance_path() is not None and not disable_chrome:

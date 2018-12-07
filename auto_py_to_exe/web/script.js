@@ -1,7 +1,7 @@
 //---- Generic Movement ----//
 // Expand groups using blue chevrons
 function expand(el) {
-    var expandDiv_node = document.getElementById(el.dataset.expand);
+    let expandDiv_node = document.getElementById(el.dataset.expand);
     if (el.style.transform !== "rotate(0deg)") {
         el.style.transform = 'rotate(0deg)';
         if (el.dataset.display !== undefined) {
@@ -30,13 +30,13 @@ function switchButton(node) {
 //---- Server Functions ----//
 // Ask the user for a file and put it in a node with id=for_id. Re-check if exists to get rid of any red
 async function getFile(for_id) {
-    document.getElementById(for_id).value = await eel.askFile()();
+    document.getElementById(for_id).value = await eel.ask_file()();
     checkFile(document.getElementById(for_id));
 }
 
 // Check if the value of a node is a filename that exists. Set border colours based on if it exists.
 async function checkFile(node) {
-    let exists = await eel.checkIfFileExists(node.value)();
+    let exists = await eel.check_if_file_exists(node.value)();
     if (exists) {
         node.style.border = "1px solid #458BC6";
     } else {
@@ -47,7 +47,7 @@ async function checkFile(node) {
 
 // Ask the user for a folder and put it in a node with id=for_id.
 async function getFolder(for_id) {
-    document.getElementById(for_id).value = await eel.askFolder()();
+    document.getElementById(for_id).value = await eel.ask_folder()();
 }
 
 // Find the path separator for this OS
@@ -57,26 +57,26 @@ function OSPathSep() {
 
 // Get file from args
 async function getFileFromArgs() {
-    document.getElementById('file').value = await eel.getFileFromArgs()();
+    document.getElementById('file').value = await eel.get_file_from_args()();
     checkFile(document.getElementById('file'));
 }
 
 // Open output folder
 function openOutputFolder() {
-    var output = document.getElementById("output_location").value;
+    let output = document.getElementById("output_location").value;
     if (output === '') {
         output = 'output/';
     }
     if (!output.endsWith('/')) {
         output += '/'
     }
-    eel.openOutputFolder(output)();
+    eel.open_output_folder(output)();
 }
 
 
 
 // Group end command data
-var command_data = {
+let command_data = {
     "onefile" : false,
     "console" : true,
     "additional_files" : {},
@@ -122,7 +122,7 @@ function switchConsole(active) {
 //---- Additional files ----//
 // Add multiple files - request for file input before
 async function additionalFilesAddFiles() {
-    let files = await eel.askFiles()();
+    let files = await eel.ask_files()();
     for (file of files) {
         additionalFilesAdd(file);
     }
@@ -130,15 +130,15 @@ async function additionalFilesAddFiles() {
 
 // Add a single folder - request for folder input before
 async function additionalFilesAddFolder() {
-    let folder = await eel.askFolder()();
+    let folder = await eel.ask_folder()();
     additionalFilesAdd(folder);
 }
 
 // Generic method to add files
 function additionalFilesAdd(src) {
-    var parent_node = document.getElementById('additional_files_content');
-    var div = document.createElement('div');
-    var id = 'addFiles_' + Math.random().toString(36).substring(7);
+    let parent_node = document.getElementById('additional_files_content');
+    let div = document.createElement('div');
+    let id = 'addFiles_' + Math.random().toString(36).substring(7);
     while (Object.keys(command_data['additional_files']).indexOf(id) !== -1) {
         id = 'addFiles_' + Math.random().toString(36).substring(7);
     }
@@ -161,7 +161,7 @@ function additionalFilesAdd(src) {
 
 // Remove file/folder entry by id
 function additionalFilesRemove(id) {
-    var block = document.getElementById(id);
+    let block = document.getElementById(id);
     block.parentNode.removeChild(block);
     delete command_data["additional_files"][id];
     generateCurrentCommand();
@@ -179,8 +179,8 @@ function additionalFilesEdit(id) {
 //---- Command Generation ----//
 // Command generation
 function generateCurrentCommand() {
-    var node = document.getElementById("current_command");
-    var command = 'pyinstaller -y ';
+    let node = document.getElementById("current_command");
+    let command = 'pyinstaller -y ';
     // Basic
     if (command_data['onefile']) {
         command += "-F "
@@ -193,8 +193,8 @@ function generateCurrentCommand() {
     }
     if (Object.keys(command_data['additional_files']).length > 0) {
         for (const id of Object.keys(command_data['additional_files'])) {
-            var src = document.getElementById(id).children[0].value;
-            var dst = document.getElementById(id).children[1].value;
+            let src = document.getElementById(id).children[0].value;
+            let dst = document.getElementById(id).children[1].value;
             command += '--add-data "' + src + '"' + OSPathSep() + '"' + dst + '" ';
         }
     }
@@ -215,8 +215,8 @@ function generateCurrentCommand() {
     // - Split by Comma Values
     for (const node of document.querySelectorAll('*[id^="COMMASPLIT"]')) {
         if (node.value !== '') {
-            var flag = node.id.replace('COMMASPLIT', '') + ' ';
-            var values = node.value.split(',');
+            let flag = node.id.replace('COMMASPLIT', '') + ' ';
+            let values = node.value.split(',');
             for (const value of values) {
                 if (value.trim() !== '') {
                     command += flag + value.trim() + ' ';
@@ -248,23 +248,23 @@ async function convert() {
     }
 
     generateCurrentCommand(); // Final checks on the command
-    var command = document.getElementById("current_command").value; // Pull out command
-    var output = document.getElementById("output_location").value;
+    let command = document.getElementById("current_command").value; // Pull out command
+    let output = document.getElementById("output_location").value;
     if (output === '') { // Set default output to 'output/'
         output = 'output/';
     }
     if (!output.endsWith('/')) { // Make sure the output ends with /
         output += '/'
     }
-    var command_split = command.split('"');
-    var filename;
+    let command_split = command.split('"');
+    let filename;
     if (document.getElementById('VALUE-n').value !== '') {
         filename = document.getElementById('VALUE-n').value + '.py';
     } else {
         filename = command_split[command_split.length-2].replace(/^.*[\\\/]/, '');
     }
     // Check and warn if a file will be overwritten
-    let check = await eel.convertPreCheck(filename, command_data['onefile'], output)();
+    let check = await eel.convert_pre_check(filename, command_data['onefile'], output)();
     if (!check) {
         if(!confirm("File will overwrite current file\nContinue?")) {
             return;
