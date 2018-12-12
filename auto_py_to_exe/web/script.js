@@ -124,18 +124,18 @@ function switchConsole(active) {
 async function additionalFilesAddFiles() {
     let files = await eel.ask_files()();
     for (file of files) {
-        additionalFilesAdd(file);
+        additionalFilesAdd(file, true);
     }
 }
 
 // Add a single folder - request for folder input before
 async function additionalFilesAddFolder() {
     let folder = await eel.ask_folder()();
-    additionalFilesAdd(folder);
+    additionalFilesAdd(folder, false);
 }
 
 // Generic method to add files
-function additionalFilesAdd(src) {
+function additionalFilesAdd(src, is_file) {
     let parent_node = document.getElementById('additional_files_content');
     let div = document.createElement('div');
     let id = 'addFiles_' + Math.random().toString(36).substring(7);
@@ -150,7 +150,19 @@ function additionalFilesAdd(src) {
         '</div>';
     parent_node.insertBefore(div.firstChild, document.getElementById('onefileAdditionalFilesNote'));
     document.getElementById(id).children[0].value = src;
-    document.getElementById(id).children[1].value = 'assets/';
+    if (is_file) {
+        // If we were given a file, put it in the root by default
+        document.getElementById(id).children[1].value = '.';
+    } else {
+        if (src.split('/').length > 1) {
+            // If we can find the last folder in the path, use that
+            document.getElementById(id).children[1].value = src.split('/').pop() + '/';
+        } else {
+            // If we can't find a last folder, use assets/
+            document.getElementById(id).children[1].value = 'assets/';
+        }
+    }
+
     command_data["additional_files"][id] = {
         "file" : "",
         "filename" : ""
