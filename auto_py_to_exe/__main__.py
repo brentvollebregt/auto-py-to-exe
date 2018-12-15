@@ -19,6 +19,7 @@ try:
     from tkinter.filedialog import askopenfilename, askdirectory, askopenfilenames
 except ImportError:
     from tkFileDialog import askopenfilename, askdirectory, askopenfilenames
+import atexit
 import argparse
 import os
 import platform
@@ -104,7 +105,17 @@ web_path = os.path.dirname(os.path.realpath(__file__)) + '/' + web_location
 eel.init(web_path)
 
 # Use the same temporary directory to speed up consecutive builds
-temporary_directory = tempfile.TemporaryDirectory()
+temporary_directory = tempfile.mkdtemp()
+
+
+def cleanup():
+    try:
+        shutil.rmtree(temporary_directory)
+    except:
+        pass
+
+
+atexit.register(cleanup)
 
 
 @eel.expose
@@ -184,11 +195,11 @@ def convert_pre_check(file_path, one_file, output_folder):
 def convert(command, output, recursion_limit):
     """ Package the executable passing the arguments the user requested """
     # Notify the user of the workspace and setup building to it
-    eel.addOutput("Building in the current instances temporary directory at {}\n".format(temporary_directory.name))
+    eel.addOutput("Building in the current instances temporary directory at {}\n".format(temporary_directory))
     eel.addOutput("To get a new temporary directory, restart this application\n")
-    dist_path = os.path.join(temporary_directory.name, 'application')
-    build_path = os.path.join(temporary_directory.name, 'build')
-    extra_args = ['--distpath', dist_path] + ['--workpath', build_path] + ['--specpath', temporary_directory.name]
+    dist_path = os.path.join(temporary_directory, 'application')
+    build_path = os.path.join(temporary_directory, 'build')
+    extra_args = ['--distpath', dist_path] + ['--workpath', build_path] + ['--specpath', temporary_directory]
 
     # If the Recursion Limit is enabled, set it
     if recursion_limit:
