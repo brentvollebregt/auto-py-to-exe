@@ -317,6 +317,9 @@ function outputComplete() {
     document.getElementById('btm_main_wrapper').style.gridGap = '4px';
     document.getElementById('btm_main_wrapper').style.gridTemplateColumns = '1fr 1fr';
     document.getElementById('openOutput').style.display = 'block';
+    // Show common issue link
+    document.getElementById('common-issue-link').style.display = 'block';
+    window.scrollTo(0, document.body.scrollHeight);
 }
 
 // When user clicks "Clear Output"
@@ -330,6 +333,8 @@ function clearOutput() {
     // Hide open folder button
     document.getElementById('btm_main_wrapper').style.display = 'block';
     document.getElementById('openOutput').style.display = 'none';
+    // Hide common issue link
+    document.getElementById('common-issue-link').style.display = 'none';
 }
 
 

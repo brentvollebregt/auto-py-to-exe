@@ -96,16 +96,21 @@ button {
 }
 
 .btn_choice {
-    border: 3px solid rgb(72, 140, 196);
-    color: rgb(72, 140, 196);
+    border: 3px solid #458BC6;
+    color: #458BC6;
     background: transparent;
     padding: 8px;
     margin-bottom: 2px;
+    transition: border 0.3s;
 }
 
 .btn_choice_greyed {
-    border: solid 3px #EEEEEE !important;
-    color: lightgrey !important;
+    border: solid 3px #EEEEEE;
+    color: lightgrey;
+}
+
+.btn_choice.btn_choice_greyed:hover {
+    border: 3px solid #458BC6;
 }
 
 .info_btn {
@@ -131,6 +136,11 @@ button {
     letter-spacing: .1rem;
     text-transform: uppercase;
     white-space: nowrap;
+    transition: background-color 0.3s;
+}
+
+.btn_main:hover {
+    background-color: #1c79c7;
 }
 
 .btn_search {
@@ -138,6 +148,11 @@ button {
     border: 2px solid #458BC6;
     height: 27px;
     padding: 0 15px;
+    transition: background 0.3s;
+}
+
+.btn_search:hover {
+    background: #1c79c71a;
 }
 
 input {
@@ -175,4 +190,20 @@ input {
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none;
+}
+
+#common-issue-link {
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 5px;
+    display: none;
+}
+
+#common-issue-link a {
+    text-decoration: none;
+    color: #458BC6
+}
+
+#common-issue-link a:hover {
+    color: #1c79c7;
 }
