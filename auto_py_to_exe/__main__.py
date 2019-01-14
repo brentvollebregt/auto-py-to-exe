@@ -28,6 +28,7 @@ import shlex
 import re
 import traceback
 import tempfile
+from . import __version__ as version
 
 
 class CaptureStderr:
@@ -194,6 +195,7 @@ def convert_pre_check(file_path, one_file, output_folder):
 @eel.expose
 def convert(command, output, recursion_limit):
     """ Package the executable passing the arguments the user requested """
+    eel.addOutput("Running auto-py-to-exe v" + version)
     # Notify the user of the workspace and setup building to it
     eel.addOutput("Building in the current instances temporary directory at {}\n".format(temporary_directory))
     eel.addOutput("To get a new temporary directory, restart this application\n")

@@ -1,9 +1,10 @@
 from io import open
 from setuptools import setup
+from auto_py_to_exe import __version__ as version
 
 setup(
     name='auto-py-to-exe',
-    version='2.5.1',
+    version=version,
     url='https://github.com/brentvollebregt/auto-py-to-exe',
     license='MIT',
     author='Brent Vollebregt',
