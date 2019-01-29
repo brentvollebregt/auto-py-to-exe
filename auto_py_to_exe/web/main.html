@@ -65,7 +65,7 @@
                             <input id="output_location" placeholder="Folder path">
                             <button class="btn_search" onclick="getFolder('output_location')">Search</button>
                         </div>
-                        <button id="recursion_limit" class="btn_choice btn_choice_greyed">Enable Recursion Limit<div class="info_btn" title="Set the recursion limit to 5000. If a RecursionError occurs, it is recommended to enable this to try and prevent the error. When enabled, sys.setrecursionlimit(5000) is called."></div></button>
+                        <button id="disable_recursion_limit" class="btn_choice btn_choice_greyed">Disable Recursion Limit Helper<div class="info_btn" title="By default the recursion limit is set to 5000; this disables the limit. If not set, sys.setrecursionlimit(5000) is called."></div></button>
                         <h2 class="sub_header">General Options</h2>
                         --upx-dir<input id="VALUE--upx-dir" placeholder="UPX_DIR"><div class="info_btn" title="Path to UPX utility (default: search the execution path)"></div>
                         <br><button id="OPTION-a" class="btn_choice btn_choice_greyed">-a Don't include unicode encoding support<div class="info_btn" title="Do not include unicode encoding support (default: included if available)"></div></button>
