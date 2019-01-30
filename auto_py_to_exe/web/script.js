@@ -29,8 +29,8 @@ function switchButton(node) {
 
 //---- Server Functions ----//
 // Ask the user for a file and put it in a node with id=for_id. Re-check if exists to get rid of any red
-async function getFile(for_id) {
-    document.getElementById(for_id).value = await eel.ask_file()();
+async function getFile(for_id, type) {
+    document.getElementById(for_id).value = await eel.ask_file(type)();
     checkFile(document.getElementById(for_id));
 }
 
@@ -385,5 +385,8 @@ function setupAdvancedSwitchesAndInputs() {
     }
     for (const node of document.querySelectorAll('*[id^="COMMASPLIT"]')) {
         node.onkeyup = function () { generateCurrentCommand(); };
+    }
+    for (const node of document.querySelectorAll('select[id^="VALUE"]')) {
+        node.onchange = function () { generateCurrentCommand(); };
     }
 }

@@ -144,12 +144,21 @@ def open_output_folder(folder):
 
 
 @eel.expose
-def ask_file():
+def ask_file(file_type):
     """ Ask the user to select a file """
     root = Tk()
     root.withdraw()
     root.wm_attributes('-topmost', 1)
-    file_path = askopenfilename(parent=root)
+    if file_type is None:
+        file_path = askopenfilename(parent=root)
+    else:
+        if file_type == 'python':
+            file_types = [('Python files', '*.py;*.pyw'), ('All files', '*')]
+        elif file_type == 'icon':
+            file_types = [('Icon files', '*.ico')]
+        else:
+            file_types = []#[('All files', '*')]
+        file_path = askopenfilename(parent=root, filetypes=file_types)
     return file_path
 
 
