@@ -23,7 +23,7 @@
                     <h1 class="section_header">Script Location</h1>
                     <div style="display: grid; grid-gap: 4px; grid-template-columns: 1fr 120px;">
                         <input id="file" onkeyup="checkFile(this)" placeholder="Path to file">
-                        <button class="btn_search" onclick="getFile('file')">Search</button>
+                        <button class="btn_search" onclick="getFile('file', 'python')">Search</button>
                     </div>
 
                     <h1 class="section_header">Onefile</h1>
@@ -40,7 +40,7 @@
                     </h1>
                     <div id="icon_content" style="display: none; grid-gap: 4px; grid-template-columns: 1fr 120px;">
                         <input id="icon" placeholder=".ico file" onkeyup="checkFile(this)">
-                        <button class="btn_search" onclick="getFile('icon')">Search</button>
+                        <button class="btn_search" onclick="getFile('icon', 'icon')">Search</button>
                     </div>
 
                     <h1 class="section_header">
@@ -65,7 +65,7 @@
                             <input id="output_location" placeholder="Folder path">
                             <button class="btn_search" onclick="getFolder('output_location')">Search</button>
                         </div>
-                        <button id="recursion_limit" class="btn_choice btn_choice_greyed">Enable Recursion Limit<div class="info_btn" title="Set the recursion limit to 5000. If a RecursionError occurs, it is recommended to enable this to try and prevent the error. When enabled, sys.setrecursionlimit(5000) is called."></div></button>
+                        <button id="disable_recursion_limit" class="btn_choice btn_choice_greyed">Disable Recursion Limit Helper<div class="info_btn" title="By default the recursion limit is set to 5000; this disables the limit. If not set, sys.setrecursionlimit(5000) is called."></div></button>
                         <h2 class="sub_header">General Options</h2>
                         --upx-dir<input id="VALUE--upx-dir" placeholder="UPX_DIR"><div class="info_btn" title="Path to UPX utility (default: search the execution path)"></div>
                         <br><button id="OPTION-a" class="btn_choice btn_choice_greyed">-a Don't include unicode encoding support<div class="info_btn" title="Do not include unicode encoding support (default: included if available)"></div></button>
@@ -81,7 +81,13 @@
                         <br>--exclude-module<input id="COMMASPLIT--exclude-module" placeholder="EXCLUDES"><div class="info_btn" title="Optional module or package (the Python name, not the path name) that will be ignored (as though it was not found). This option can be used multiple times. Commas can be used to split package names in this input field (will be split later)."></div>
                         <br>--key<input id="COMMASPLIT--key" placeholder="KEY"><div class="info_btn" title="The key used to encrypt Python bytecode. Must have the PyCrypto module installed. The key-string is a string of 16 characters which is used to encrypt each file of Python byte-code before it is stored in the archive inside the executable file."></div>
                         <h2 class="sub_header">How to generate</h2>
-                        --debug<input id="VALUE--debug" placeholder="{all,imports,bootloader,noarchive}"><div class="info_btn" title="Provide assistance with debugging a frozen application, by specifying one or more of {all,imports,bootloader,noarchive}."></div>
+                        --debug<select id="VALUE--debug">
+                            <option value=""></option>
+                            <option value="all">all</option>
+                            <option value="imports">imports</option>
+                            <option value="bootloader">bootloader</option>
+                            <option value="noarchive">noarchive</option>
+                        </select><div class="info_btn" title="Provide assistance with debugging a frozen application, by specifying one or more of {all,imports,bootloader,noarchive}."></div>
                         <br><button id="OPTION-s" class="btn_choice btn_choice_greyed">-s Apply a symbol-table strip to the executable and shared libs<div class="info_btn" title="Apply a symbol-table strip to the executable and shared libs (not recommended for Windows)"></div></button>
                         <br><button id="OPTION--noupx" class="btn_choice btn_choice_greyed">--noupx Do not use UPX even if it is available<div class="info_btn" title="Do not use UPX even if it is available (works differently between Windows and *nix)"></div></button>
                         <h2 class="sub_header">Windows specific options</h2>

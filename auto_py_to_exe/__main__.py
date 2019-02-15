@@ -95,6 +95,8 @@ if sys.version_info == (3, 7) and not (float(pyi.__version__) >= 3.4):
     print('Please upgrade PyInstaller: python -m pip install --upgrade PyInstaller')
     sys.exit(1)
 
+# Pre-defined variables by Python
+DEFAULT_RECURSION_LIMIT = sys.getrecursionlimit()
 
 # Some variables to help with arguments and how they are passed around (can also be used when being imported)
 filename = None
@@ -142,12 +144,21 @@ def open_output_folder(folder):
 
 
 @eel.expose
-def ask_file():
+def ask_file(file_type):
     """ Ask the user to select a file """
     root = Tk()
     root.withdraw()
     root.wm_attributes('-topmost', 1)
-    file_path = askopenfilename(parent=root)
+    if file_type is None:
+        file_path = askopenfilename(parent=root)
+    else:
+        if file_type == 'python':
+            file_types = [('Python files', '*.py;*.pyw'), ('All files', '*')]
+        elif file_type == 'icon':
+            file_types = [('Icon files', '*.ico')]
+        else:
+            file_types = []#[('All files', '*')]
+        file_path = askopenfilename(parent=root, filetypes=file_types)
     return file_path
 
 
@@ -193,7 +204,7 @@ def convert_pre_check(file_path, one_file, output_folder):
 
 
 @eel.expose
-def convert(command, output, recursion_limit):
+def convert(command, output, disable_recursion_limit):
     """ Package the executable passing the arguments the user requested """
     eel.addOutput("Running auto-py-to-exe v" + version)
     # Notify the user of the workspace and setup building to it
@@ -204,9 +215,11 @@ def convert(command, output, recursion_limit):
     extra_args = ['--distpath', dist_path] + ['--workpath', build_path] + ['--specpath', temporary_directory]
 
     # If the Recursion Limit is enabled, set it
-    if recursion_limit:
+    if not disable_recursion_limit:
         sys.setrecursionlimit(5000)
-        eel.addOutput("Set Recursion Limit to 5000\n")
+        eel.addOutput("Recursion Limit is set to 5000\n")
+    else:
+        sys.setrecursionlimit(DEFAULT_RECURSION_LIMIT) # In the case the limit was set and now the user doesn't want it set
 
     # Run PyInstaller
     pyinstaller_fail = True

@@ -29,8 +29,8 @@ function switchButton(node) {
 
 //---- Server Functions ----//
 // Ask the user for a file and put it in a node with id=for_id. Re-check if exists to get rid of any red
-async function getFile(for_id) {
-    document.getElementById(for_id).value = await eel.ask_file()();
+async function getFile(for_id, type) {
+    document.getElementById(for_id).value = await eel.ask_file(type)();
     checkFile(document.getElementById(for_id));
 }
 
@@ -283,9 +283,9 @@ async function convert() {
         }
     }
     // Check if Recursion Limit is enabled
-    var recursion_limit = !document.getElementById('recursion_limit').classList.contains('btn_choice_greyed');
+    var disable_recursion_limit = !document.getElementById('disable_recursion_limit').classList.contains('btn_choice_greyed');
     // Make a call to convert
-    eel.convert(command, output, recursion_limit)();
+    eel.convert(command, output, disable_recursion_limit)();
     // Set buttons
     document.getElementById('convert').style.filter = 'grayscale(1)';
     document.getElementById('convert').style.cursor = 'not-allowed';
@@ -377,7 +377,7 @@ window.addEventListener('load', function () {
 
 // Setup onclicks for buttons and onkeyups for inputs
 function setupAdvancedSwitchesAndInputs() {
-    for (const node of document.querySelectorAll('*[id^="OPTION"], #recursion_limit')) {
+    for (const node of document.querySelectorAll('*[id^="OPTION"], #disable_recursion_limit')) {
         node.onclick = function () { switchButton(node); };
     }
     for (const node of document.querySelectorAll('*[id^="VALUE"]')) {
@@ -385,5 +385,8 @@ function setupAdvancedSwitchesAndInputs() {
     }
     for (const node of document.querySelectorAll('*[id^="COMMASPLIT"]')) {
         node.onkeyup = function () { generateCurrentCommand(); };
+    }
+    for (const node of document.querySelectorAll('select[id^="VALUE"]')) {
+        node.onchange = function () { generateCurrentCommand(); };
     }
 }
