@@ -276,7 +276,7 @@ def run():
         check_arguments()
     cs.start()
     cs.ui_started = True
-    if eel.brw.chr.get_instance_path() is not None and not disable_chrome:
+    if eel.chrome.get_instance_path() is not None and not disable_chrome:
         eel.start('main.html', size=(650, 612), options={'port': 0})
     else:
         eel.start('main.html', size=(650, 612), options={'port': 0, 'mode': 'user selection'})
