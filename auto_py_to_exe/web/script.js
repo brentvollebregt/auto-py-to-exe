@@ -28,6 +28,14 @@ function switchButton(node) {
 
 
 //---- Server Functions ----//
+// Init method to tell the server we have started and get the file from the args if it exists
+async function onInit() {
+    let init_data = await eel.ui_on_init()();
+    // Setup file from args
+    document.getElementById('file').value = init_data.filename;
+    checkFile(document.getElementById('file'));
+}
+
 // Ask the user for a file and put it in a node with id=for_id. Re-check if exists to get rid of any red
 async function getFile(for_id, type) {
     document.getElementById(for_id).value = await eel.ask_file(type)();
@@ -53,12 +61,6 @@ async function getFolder(for_id) {
 // Find the path separator for this OS
 function OSPathSep() {
     if (window.navigator.userAgent.indexOf("Windows")!== -1) { return ';'; } else { return ':'; }
-}
-
-// Get file from args
-async function getFileFromArgs() {
-    document.getElementById('file').value = await eel.get_file_from_args()();
-    checkFile(document.getElementById('file'));
 }
 
 // Open output folder
@@ -372,7 +374,7 @@ window.addEventListener('resize', function () {
 window.addEventListener('load', function () {
     checkInfoBar();
     setupAdvancedSwitchesAndInputs();
-    getFileFromArgs();
+    onInit();
 });
 
 // Setup onclicks for buttons and onkeyups for inputs

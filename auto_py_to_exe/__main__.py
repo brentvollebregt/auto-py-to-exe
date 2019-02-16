@@ -19,7 +19,6 @@ try:
     from tkinter.filedialog import askopenfilename, askdirectory, askopenfilenames
 except ImportError:
     from tkFileDialog import askopenfilename, askdirectory, askopenfilenames
-import atexit
 import argparse
 import os
 import platform
@@ -65,7 +64,8 @@ class CaptureStderr:
             else:
                 eel.addOutput(message + '\n')
         else:
-            print(message)
+            self.original.write(message)
+            self.original.flush()
 
 
 # These modules capture stderr so we need to make sure they get our object
@@ -111,22 +111,12 @@ eel.init(web_path)
 temporary_directory = tempfile.mkdtemp()
 
 
-def cleanup():
-    try:
-        shutil.rmtree(temporary_directory)
-    except:
-        pass
-
-
-atexit.register(cleanup)
-
-
 @eel.expose
-def get_file_from_args():
-    """ Pass the filename argument to the UI """
-    if filename is not None:
-        return os.path.abspath(filename)
-    return ''
+def ui_on_init():
+    cs.ui_started = True
+    return {
+        'filename': os.path.abspath(filename) if filename is not None else ''
+    }
 
 
 @eel.expose
@@ -288,11 +278,16 @@ def run():
     if __name__ == '__main__':
         check_arguments()
     cs.start()
-    cs.ui_started = True
-    if eel.chrome.get_instance_path() is not None and not disable_chrome:
-        eel.start('main.html', size=(650, 612), options={'port': 0})
-    else:
-        eel.start('main.html', size=(650, 612), options={'port': 0, 'mode': 'user selection'})
+
+    try:
+        if eel.chrome.get_instance_path() is not None and not disable_chrome:
+            eel.start('main.html', size=(650, 612), options={'port': 0})
+        else:
+            eel.start('main.html', size=(650, 612), options={'port': 0, 'mode': 'user selection'})
+    except (SystemExit, KeyboardInterrupt):
+        pass # This is what the bottle server raises
+
+    shutil.rmtree(temporary_directory)
 
 
 if __name__ == '__main__':
