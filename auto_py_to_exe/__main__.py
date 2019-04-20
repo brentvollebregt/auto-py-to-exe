@@ -113,6 +113,7 @@ temporary_directory = tempfile.mkdtemp()
 
 @eel.expose
 def ui_on_init():
+    """ Called by the UI when opened. Used to pass initial values. """
     cs.ui_started = True
     return {
         'filename': os.path.abspath(filename) if filename is not None else ''
@@ -122,15 +123,15 @@ def ui_on_init():
 @eel.expose
 def open_output_folder(folder):
     """ Open the folder of there the package was moved to """
+    folder_directory = os.path.abspath(folder) # Use absolute directories
     if platform.system() == 'Windows':
-        folder = folder.replace('/', '\\')
-        os.system('explorer "' + folder + '"')
+        os.startfile(folder_directory, operation='explore')
     elif platform.system() == 'Linux':
-        os.system('xdg-open "' + folder + '"')
+        os.system('xdg-open "' + folder_directory + '"')
     elif platform.system() == 'Darwin':
-        os.system('open "' + folder + '"')
+        os.system('open "' + folder_directory + '"')
     else:
-        os.startfile(folder)
+        eel.addOutput("Unable to open output folder: " + folder_directory)
 
 
 @eel.expose
@@ -229,9 +230,10 @@ def convert(command, output, disable_recursion_limit):
         eel.addOutput("\n")
         eel.addOutput("Project output will not be moved to output folder\n")
     else:
-        eel.addOutput("Moving project to: {0}\n".format(output))
+        output_directory = os.path.abspath(output) # Use absolute directories
+        eel.addOutput("Moving project to: {0}\n".format(output_directory))
         try:
-            move_project(dist_path, output)
+            move_project(dist_path, output_directory)
         except:
             eel.addOutput("Failed to move project, traceback follows:\n")
             eel.addOutput(traceback.format_exc())
