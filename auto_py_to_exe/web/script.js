@@ -42,25 +42,45 @@ async function getFile(for_id, type) {
     checkFile(document.getElementById(for_id));
 }
 
-// Check if the value of a node is a filename that exists. Set border colours based on if it exists.
+// Ask the user for a folder and put it in a node with id=for_id.
+async function getFolder(for_id) {
+    document.getElementById(for_id).value = await eel.ask_folder()();
+    checkFolder(document.getElementById(for_id));
+}
+
+// Check if the value of a node is a filename that exists.
 async function checkFile(node) {
-    let exists = await eel.check_if_file_exists(node.value)();
-    if (exists) {
+    checkExists(node, async function() {
+        return await eel.check_if_file_exists(node.value)();
+    });
+}
+
+// Check if the value of a node is a directory that exists.
+async function checkFolder(node) {
+    checkExists(node, async function() {
+        return await eel.check_if_folder_exists(node.value)();
+    });
+}
+
+// Colour borders based on the result of an 'exist check'
+async function checkExists(node, existCheck) {
+    if (node.value === '' && !node.required) {
+        // If the input is empty and not required, don't make it look like it is missing
         node.style.border = "1px solid #458BC6";
     } else {
-        node.style.border = "1px solid #f44336";
+        let exists = await existCheck();
+        if (exists) {
+            node.style.border = "1px solid #458BC6";
+        } else {
+            node.style.border = "1px solid #f44336";
+        }
     }
     generateCurrentCommand();
 }
 
-// Ask the user for a folder and put it in a node with id=for_id.
-async function getFolder(for_id) {
-    document.getElementById(for_id).value = await eel.ask_folder()();
-}
-
 // Find the path separator for this OS
 function OSPathSep() {
-    if (window.navigator.userAgent.indexOf("Windows")!== -1) { return ';'; } else { return ':'; }
+    if (window.navigator.userAgent.indexOf("Windows") !== -1) { return ';'; } else { return ':'; }
 }
 
 // Open output folder
@@ -383,10 +403,10 @@ function setupAdvancedSwitchesAndInputs() {
         node.onclick = function () { switchButton(node); };
     }
     for (const node of document.querySelectorAll('*[id^="VALUE"]')) {
-        node.onkeyup = function () { generateCurrentCommand(); };
+        node.addEventListener('keyup', function () { generateCurrentCommand(); });
     }
     for (const node of document.querySelectorAll('*[id^="COMMASPLIT"]')) {
-        node.onkeyup = function () { generateCurrentCommand(); };
+        node.addEventListener('keyup', function () { generateCurrentCommand(); });
     }
     for (const node of document.querySelectorAll('select[id^="VALUE"]')) {
         node.onchange = function () { generateCurrentCommand(); };
