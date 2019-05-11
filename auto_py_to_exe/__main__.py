@@ -180,6 +180,12 @@ def check_if_file_exists(file):
 
 
 @eel.expose
+def check_if_folder_exists(file):
+    """ Checks if a folder exists """
+    return os.path.isdir(file)
+
+
+@eel.expose
 def convert_pre_check(file_path, one_file, output_folder):
     """ Checks if there is a possibility of a previous output being overwritten """
     if not os.path.exists(output_folder):

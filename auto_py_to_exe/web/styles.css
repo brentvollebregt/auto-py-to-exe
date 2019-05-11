@@ -207,3 +207,7 @@ input, select {
 #common-issue-link a:hover {
     color: #1c79c7;
 }
+
+[id|=VALUE] + .btn_search { /* Padding for search buttons by inputs */
+    margin-left: 4px;
+}
