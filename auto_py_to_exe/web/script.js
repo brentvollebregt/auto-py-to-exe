@@ -44,11 +44,16 @@ async function getFile(for_id, type) {
 
 // Check if the value of a node is a filename that exists. Set border colours based on if it exists.
 async function checkFile(node) {
-    let exists = await eel.check_if_file_exists(node.value)();
-    if (exists) {
+    if (node.value === '' && !node.required) {
+        // If the input is empty and not required, don't make it look like it is missing
         node.style.border = "1px solid #458BC6";
     } else {
-        node.style.border = "1px solid #f44336";
+        let exists = await eel.check_if_file_exists(node.value)();
+        if (exists) {
+            node.style.border = "1px solid #458BC6";
+        } else {
+            node.style.border = "1px solid #f44336";
+        }
     }
     generateCurrentCommand();
 }
@@ -60,7 +65,7 @@ async function getFolder(for_id) {
 
 // Find the path separator for this OS
 function OSPathSep() {
-    if (window.navigator.userAgent.indexOf("Windows")!== -1) { return ';'; } else { return ':'; }
+    if (window.navigator.userAgent.indexOf("Windows") !== -1) { return ';'; } else { return ':'; }
 }
 
 // Open output folder
@@ -383,10 +388,10 @@ function setupAdvancedSwitchesAndInputs() {
         node.onclick = function () { switchButton(node); };
     }
     for (const node of document.querySelectorAll('*[id^="VALUE"]')) {
-        node.onkeyup = function () { generateCurrentCommand(); };
+        node.addEventListener('keyup', function () { generateCurrentCommand(); });
     }
     for (const node of document.querySelectorAll('*[id^="COMMASPLIT"]')) {
-        node.onkeyup = function () { generateCurrentCommand(); };
+        node.addEventListener('keyup', function () { generateCurrentCommand(); });
     }
     for (const node of document.querySelectorAll('select[id^="VALUE"]')) {
         node.onchange = function () { generateCurrentCommand(); };

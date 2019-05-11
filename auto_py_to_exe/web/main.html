@@ -22,7 +22,7 @@
                 <div id="converter_settings">
                     <h1 class="section_header">Script Location</h1>
                     <div style="display: grid; grid-gap: 4px; grid-template-columns: 1fr 120px;">
-                        <input id="file" onkeyup="checkFile(this)" placeholder="Path to file">
+                        <input id="file" onkeyup="checkFile(this)" placeholder="Path to file" required>
                         <button class="btn_search" onclick="getFile('file', 'python')">Search</button>
                     </div>
 
@@ -91,7 +91,7 @@
                         <br><button id="OPTION-s" class="btn_choice btn_choice_greyed">-s Apply a symbol-table strip to the executable and shared libs<div class="info_btn" title="Apply a symbol-table strip to the executable and shared libs (not recommended for Windows)"></div></button>
                         <br><button id="OPTION--noupx" class="btn_choice btn_choice_greyed">--noupx Do not use UPX even if it is available<div class="info_btn" title="Do not use UPX even if it is available (works differently between Windows and *nix)"></div></button>
                         <h2 class="sub_header">Windows specific options</h2>
-                        --version-file<input id="VALUE--version-file" placeholder="FILE"><div class="info_btn" title="Add a version resource from FILE to the exe"></div>
+                        --version-file<input id="VALUE--version-file" placeholder="FILE" onkeyup="checkFile(this)"><button class="btn_search" onclick="getFile('VALUE--version-file', '')">Search</button><div class="info_btn" title="Add a version resource from FILE to the exe"></div>
                         <br>-m<input id="VALUE-m" placeholder="<FILE or XML>"><div class="info_btn" title="Add manifest FILE or XML to the exe"></div>
                         <br>-r<input id="VALUE-r" placeholder="RESOURCE"><div class="info_btn" title="Add or update a resource to a Windows executable. The RESOURCE is one to four items, FILE[,TYPE[,NAME[,LANGUAGE]]]. FILE can be a data file or an exe/dll. For data files, at least TYPE and NAME must be specified. LANGUAGE defaults to 0 or may be specified as wildcard * to update all resources of the given TYPE and NAME. For exe/dll files, all resources from FILE will be added/updated to the final executable if TYPE, NAME and LANGUAGE are omitted or specified as wildcard *.This option can be used multiple times."></div>
                         <br><button id="OPTION--uac-admin" class="btn_choice btn_choice_greyed">--uac-admin Creates a Manifest which will request elevation<div class="info_btn" title="Using this option creates a Manifest which will request elevation upon application restart."></div></button>
