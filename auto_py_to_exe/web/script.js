@@ -267,17 +267,68 @@ function generateCurrentCommand() {
 
 
 //---- Packaging Scripts and Files ----//
-// Convert
+
+const state = {
+    ready: 'STATE_READY',
+    packaging: 'STATE_PACKAGING',
+    complete: 'STATE_COMPLETE',
+};
+
+let current_state = state.ready;
+
+function setState(newState) {
+    // Sets up the UI for each different state
+    current_state = newState;
+    switch (newState) {
+        case state.ready:
+            // Clear output
+            document.getElementById('output').style.display = 'none';
+            document.getElementById('output').children[1].value = '';
+            document.getElementById('output').children[1].rows = "0";
+            // Set the main button back to initial value
+            document.getElementById('convert').innerHTML = "Convert .py to .exe";
+            // Hide open folder button
+            document.getElementById('btm_main_wrapper').style.display = 'block';
+            document.getElementById('openOutput').style.display = 'none';
+            // Hide common issue link
+            document.getElementById('common-issue-link').style.display = 'none';
+            return;
+        case state.packaging:
+            // Disable convert button
+            document.getElementById('convert').style.filter = 'grayscale(1)';
+            document.getElementById('convert').style.cursor = 'not-allowed';
+            document.getElementById('convert').innerHTML = "Converting...";
+            // Show output
+            document.getElementById('output').style.display = 'block';
+            return;
+        case state.complete:
+            // Re-enable convert button and re-purpose it
+            document.getElementById('convert').style.cursor = '';
+            document.getElementById('convert').style.filter = '';
+            document.getElementById('convert').innerHTML = "Clear Output";
+            // Show open folder button (beside "Clear Output" button)
+            document.getElementById('btm_main_wrapper').style.display = 'grid';
+            document.getElementById('btm_main_wrapper').style.gridGap = '4px';
+            document.getElementById('btm_main_wrapper').style.gridTemplateColumns = '1fr 1fr';
+            document.getElementById('openOutput').style.display = 'block';
+            // Show common issue link
+            document.getElementById('common-issue-link').style.display = 'block';
+            return;
+    }
+}
+
+// Convert (also handles clearing output)
 async function convert() {
+    if (current_state === state.packaging) {
+        return; // Can't do anything while packaging
+    } else if (current_state === state.complete) {
+        clearOutput(); // If packaging is complete, this buttons clears output
+        return;
+    } // Else we can continue with packaging
+
+    // Make sure a file is supplied (don't check it exists, they already have a warning)
     if (document.getElementById('file').value === "") {
         alert("Script location required");
-        return;
-    }
-    if (document.getElementById('convert').style.cursor !== '') {return;} // Means it's clickable
-    if (document.getElementById('convert').innerHTML === 'Converting...') {return;} // If it is not currently packaging
-    if (document.getElementById('convert').innerHTML === 'Clear Output') {
-        // If it is done, this buttons clears output
-        clearOutput();
         return;
     }
 
@@ -306,18 +357,14 @@ async function convert() {
     }
     // Check if Recursion Limit is enabled
     var disable_recursion_limit = !document.getElementById('disable_recursion_limit').classList.contains('btn_choice_greyed');
-    // Make a call to convert
+    // Make a call to convert and set the state to packaging
     eel.convert(command, output, disable_recursion_limit)();
-    // Set buttons
-    document.getElementById('convert').style.filter = 'grayscale(1)';
-    document.getElementById('convert').style.cursor = 'not-allowed';
-    document.getElementById('convert').innerHTML = "Converting...";
+    setState(state.packaging);
 }
 
 // Server output to client textarea
 eel.expose(addOutput);
 function addOutput(line) {
-    document.getElementById('output').style.display = 'block'; // Make sure it is shown
     document.getElementById('output').children[1].value += line; // Add the line
     if (!line.endsWith('\n')) {
         document.getElementById('output').children[1].value += '\n'; // If there was no new line, add one
@@ -331,32 +378,13 @@ function addOutput(line) {
 // Server notification for complete
 eel.expose(outputComplete);
 function outputComplete() {
-    document.getElementById('convert').style.cursor = ''; // Set cursor back to clickable
-    document.getElementById('convert').style.filter = ''; // Remove grayscale
-    document.getElementById('convert').innerHTML = "Clear Output"; // Re-purpose button to clear output
-    // Show open folder button
-    document.getElementById('btm_main_wrapper').style.display = 'grid';
-    document.getElementById('btm_main_wrapper').style.gridGap = '4px';
-    document.getElementById('btm_main_wrapper').style.gridTemplateColumns = '1fr 1fr';
-    document.getElementById('openOutput').style.display = 'block';
-    // Show common issue link
-    document.getElementById('common-issue-link').style.display = 'block';
+    setState(state.complete);
     window.scrollTo(0, document.body.scrollHeight);
 }
 
 // When user clicks "Clear Output"
 function clearOutput() {
-    // Clear #output
-    document.getElementById('output').style.display = 'none';
-    document.getElementById('output').children[1].value = '';
-    document.getElementById('output').children[1].rows = "0";
-    // Set the main button back to initial value
-    document.getElementById('convert').innerHTML = "Convert .py to .exe";
-    // Hide open folder button
-    document.getElementById('btm_main_wrapper').style.display = 'block';
-    document.getElementById('openOutput').style.display = 'none';
-    // Hide common issue link
-    document.getElementById('common-issue-link').style.display = 'none';
+    setState(state.ready);
 }
 
 
