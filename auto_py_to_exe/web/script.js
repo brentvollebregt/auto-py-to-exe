@@ -99,13 +99,9 @@ function openOutputFolder() {
 
 // Group end command data
 let command_data = {
-    "onefile" : false,
-    "console" : true,
-    "additional_files" : {},
-    "advanced" : {
-        "clean" : true,
-        "name" : ""
-    }
+    onefile: false,
+    console: true,
+    additional_files: {},
 };
 
 
@@ -146,50 +142,76 @@ function switchConsole(active) {
 async function additionalFilesAddFiles() {
     let files = await eel.ask_files()();
     for (file of files) {
-        additionalFilesAdd(file, true);
+        additionalFilesAdd(file, '.');
     }
 }
 
 // Add a single folder - request for folder input before
 async function additionalFilesAddFolder() {
     let folder = await eel.ask_folder()();
-    additionalFilesAdd(folder, false);
+    let destination;
+    if (folder.split('/').length > 1) { // If we can find the last folder in the path, use that
+        destination = folder.split('/').pop() + '/';
+    } else { // If we can't find a last folder, use assets/
+        destination = 'assets/';
+    }
+    additionalFilesAdd(folder, destination);
 }
 
 // Generic method to add files
-function additionalFilesAdd(src, is_file) {
+function additionalFilesAdd(src, destination) {
+    // Get root
     let parent_node = document.getElementById('additional_files_content');
-    let div = document.createElement('div');
+
+    // Generate a unique id
     let id = 'addFiles_' + Math.random().toString(36).substring(7);
-    while (Object.keys(command_data['additional_files']).indexOf(id) !== -1) {
+    while (Object.keys(command_data.additional_files).indexOf(id) !== -1) {
         id = 'addFiles_' + Math.random().toString(36).substring(7);
     }
-    div.innerHTML =
-        '<div style="margin: 1px 0;" id="' + id + '">\n' +
-        '<input placeholder="Source" onkeyup="additionalFilesEdit(\'' + id + '\')" style="max-width: 45%; width: 400px;">\n' +
-        '<input placeholder="Destination" onkeyup="additionalFilesEdit(\'' + id + '\')" style="max-width: 45%; width: 400px; margin-left: 0;">\n' +
-        '<img src="img/remove.svg" onclick="additionalFilesRemove(\'' + id + '\')" style="height: 20px; margin-bottom: -5px; cursor: pointer;">\n' +
-        '</div>';
-    parent_node.insertBefore(div.firstChild, document.getElementById('onefileAdditionalFilesNote'));
-    document.getElementById(id).children[0].value = src;
-    if (is_file) {
-        // If we were given a file, put it in the root by default
-        document.getElementById(id).children[1].value = '.';
-    } else {
-        if (src.split('/').length > 1) {
-            // If we can find the last folder in the path, use that
-            document.getElementById(id).children[1].value = src.split('/').pop() + '/';
-        } else {
-            // If we can't find a last folder, use assets/
-            document.getElementById(id).children[1].value = 'assets/';
-        }
-    }
 
-    command_data["additional_files"][id] = {
-        "file" : "",
-        "filename" : ""
+    // Generate HTML content
+    let localDivRoot = document.createElement('div');
+    localDivRoot.style.margin = '1px 0';
+    localDivRoot.id = id;
+
+    let source_node = document.createElement('input');
+    source_node.placeholder = 'Source';
+    source_node.addEventListener('keyup', e => { additionalFilesEdit(id) });
+    source_node.style.maxWidth = '45%';
+    source_node.style.width = '400px';
+    source_node.required = true;
+
+    let destination_node = document.createElement('input');
+    destination_node.placeholder = 'Destination';
+    destination_node.addEventListener('keyup', e => { additionalFilesEdit(id) });
+    destination_node.style.maxWidth = '45%';
+    destination_node.style.width = '400px';
+    destination_node.style.marginLeft = '5px';
+
+    let remove_node = document.createElement('img');
+    remove_node.src = 'img/remove.svg';
+    remove_node.addEventListener('click', e => { additionalFilesRemove(id) });
+    remove_node.style.height = '20px';
+    remove_node.style.marginBottom = '-5px';
+    remove_node.style.cursor = 'pointer';
+    remove_node.style.marginLeft = '5px';
+
+    localDivRoot.appendChild(source_node);
+    localDivRoot.appendChild(destination_node);
+    localDivRoot.appendChild(remove_node);
+
+    // Populate the fields
+    source_node.value = src;
+    destination_node.value = destination;
+
+    // Insert the node
+    parent_node.insertBefore(localDivRoot, document.getElementById('onefileAdditionalFilesNote'));
+
+    // Setup command data and then trigger command_data fill
+    command_data.additional_files[id] = {
+        source: '',
+        destination: ''
     };
-    generateCurrentCommand();
     additionalFilesEdit(id);
 }
 
@@ -203,8 +225,16 @@ function additionalFilesRemove(id) {
 
 // When file data is modified for an id, update it
 function additionalFilesEdit(id) {
-    command_data["additional_files"][id]["file"] = document.getElementById(id).children[0].value;
-    command_data["additional_files"][id]["filename"] = document.getElementById(id).children[1].value;
+    let node = document.getElementById(id);
+    let source_node = node.children[0];
+    let destination_node = node.children[1];
+    command_data.additional_files[id].source = source_node.value;
+    command_data.additional_files[id].destination = destination_node.value;
+
+    checkExists(source_node, async function() {
+        let path = source_node.value;
+        return await eel.check_if_file_exists(path)() || await eel.check_if_folder_exists(path)();
+    });
     generateCurrentCommand();
 }
 
@@ -225,12 +255,11 @@ function generateCurrentCommand() {
     if (document.getElementById("icon").value !== "") {
         command += '-i "' + document.getElementById("icon").value + '" ';
     }
-    if (Object.keys(command_data['additional_files']).length > 0) {
-        for (const id of Object.keys(command_data['additional_files'])) {
-            let src = document.getElementById(id).children[0].value;
-            let dst = document.getElementById(id).children[1].value;
-            command += '--add-data "' + src + '"' + OSPathSep() + '"' + dst + '" ';
-        }
+    if (Object.keys(command_data.additional_files).length > 0) {
+        Object.keys(command_data.additional_files).forEach(additional_file_id => {
+            let {source, destination} = command_data.additional_files[additional_file_id];
+            command += '--add-data "' + source + '"' + OSPathSep() + '"' + destination + '" ';
+        });
     }
     // Advanced
     // - Simple button flags
@@ -261,7 +290,7 @@ function generateCurrentCommand() {
 
     // Final
     command += document.getElementById('extra_command_data').value + '"' + document.getElementById('file').value + '"';
-    node.value = command
+    node.value = command;
 }
 
 
@@ -341,11 +370,11 @@ async function convert() {
     if (!output.endsWith('/')) { // Make sure the output ends with /
         output += '/'
     }
-    let command_split = command.split('"');
     let filename;
     if (document.getElementById('VALUE-n').value !== '') {
         filename = document.getElementById('VALUE-n').value + '.py';
     } else {
+        let command_split = command.split('"');
         filename = command_split[command_split.length-2].replace(/^.*[\\\/]/, '');
     }
     // Check and warn if a file will be overwritten
@@ -356,7 +385,7 @@ async function convert() {
         }
     }
     // Check if Recursion Limit is enabled
-    var disable_recursion_limit = !document.getElementById('disable_recursion_limit').classList.contains('btn_choice_greyed');
+    let disable_recursion_limit = !document.getElementById('disable_recursion_limit').classList.contains('btn_choice_greyed');
     // Make a call to convert and set the state to packaging
     eel.convert(command, output, disable_recursion_limit)();
     setState(state.packaging);
@@ -385,6 +414,98 @@ function outputComplete() {
 // When user clicks "Clear Output"
 function clearOutput() {
     setState(state.ready);
+}
+
+
+
+//---- Configuration Importing and Exporting ----//
+function getConfiguration() {
+    let config = {
+        command_data: {},
+        id_injectable: {},
+        switches: {}
+    };
+    // Command data
+    config.command_data = command_data;
+    // Injectable by id
+    config.id_injectable['file'] = document.getElementById('file').value;
+    config.id_injectable['icon'] = document.getElementById('icon').value;
+    config.id_injectable['output_location'] = document.getElementById('output_location').value;
+    config.id_injectable['extra_command_data'] = document.getElementById('extra_command_data').value;
+    document.querySelectorAll('*[id^="VALUE"], *[id^="COMMASPLIT"]').forEach(element => {
+        config.id_injectable[element.id] = element.value
+    });
+    // Option toggle buttons
+    document.querySelectorAll('*[id^="OPTION"], #disable_recursion_limit').forEach(element => {
+        config.switches[element.id] = !element.classList.contains('btn_choice_greyed');
+    });
+
+    return JSON.stringify(config);
+}
+
+async function setConfiguration(configString) {
+    let config;
+    try { // Check this is valid JSON
+        config = JSON.parse(configString);
+    }
+    catch (err) {
+        alert('Unable to parse configuration from file:\n' + err.message);
+        return false;
+    }
+    // Command data
+    command_data = config.command_data;
+    switchOnefile(command_data.onefile);
+    switchConsole(command_data.console);
+    Object.keys(config.command_data.additional_files).forEach(id => {
+        let { source, destination } = config.command_data.additional_files[id];
+        additionalFilesAdd(source, destination);
+    });
+    // Injectable by id
+    Object.keys(config.id_injectable).forEach(id => {
+        document.getElementById(id).value = config.id_injectable[id];
+        document.getElementById(id).dispatchEvent(new Event('keyup')); // Manually trigger for folder/file checks
+    });
+    // Option toggle buttons
+    Object.keys(config.switches).forEach(id => {
+        if (config.switches[id]) {
+            document.getElementById(id).classList.remove('btn_choice_greyed');
+        } else {
+            document.getElementById(id).classList.add('btn_choice_greyed');
+        }
+    });
+    // Trigger required events (to get things checked)
+    document.getElementById('file').dispatchEvent(new Event('keyup'));
+
+    generateCurrentCommand();
+    return true;
+}
+
+async function importConfigFromJSONFile() {
+    let filename = await eel.ask_file('json')();
+    let data = await eel.get_file_contents(filename)();
+    await setConfiguration(data);
+}
+
+async function importConfigFromClipboard() {
+    if (!navigator.clipboard) { // Check we can use navigator.clipboard
+        alert('Cannot use clipboard operations in this browser');
+        return;
+    }
+    const clipboardText = await navigator.clipboard.readText();
+    await setConfiguration(clipboardText);
+}
+
+async function exportConfigToJSONFile() {
+    let filename = await eel.ask_file_save_location('json')();
+    await eel.write_file_contents(filename, getConfiguration())();
+}
+
+async function exportConfigToClipboard() {
+    if (!navigator.clipboard) { // Check we can use navigator.clipboard
+        alert('Cannot use clipboard operations in this browser');
+        return;
+    }
+    await navigator.clipboard.writeText(getConfiguration());
 }
 
 
@@ -427,16 +548,12 @@ window.addEventListener('load', function () {
 
 // Setup onclicks for buttons and onkeyups for inputs
 function setupAdvancedSwitchesAndInputs() {
+    // General toggle click listeners
     for (const node of document.querySelectorAll('*[id^="OPTION"], #disable_recursion_limit')) {
-        node.onclick = function () { switchButton(node); };
+        node.addEventListener('click', e => { switchButton(node); });
     }
-    for (const node of document.querySelectorAll('*[id^="VALUE"]')) {
-        node.addEventListener('keyup', function () { generateCurrentCommand(); });
-    }
-    for (const node of document.querySelectorAll('*[id^="COMMASPLIT"]')) {
-        node.addEventListener('keyup', function () { generateCurrentCommand(); });
-    }
-    for (const node of document.querySelectorAll('select[id^="VALUE"]')) {
-        node.onchange = function () { generateCurrentCommand(); };
+    // Advanced input listeners
+    for (const node of document.querySelectorAll('*[id^="VALUE"], *[id^="COMMASPLIT"]')) {
+        node.addEventListener('change', e => { generateCurrentCommand(); });
     }
 }

@@ -16,9 +16,9 @@ except ImportError:
             print('For linux, you can install tkinter by executing: "sudo apt-get install python3-tk"')
             sys.exit(1)
 try:
-    from tkinter.filedialog import askopenfilename, askdirectory, askopenfilenames
+    from tkinter.filedialog import askopenfilename, askdirectory, askopenfilenames, asksaveasfilename
 except ImportError:
-    from tkFileDialog import askopenfilename, askdirectory, askopenfilenames
+    from tkFileDialog import askopenfilename, askdirectory, askopenfilenames, asksaveasfilename
 import argparse
 import os
 import platform
@@ -148,7 +148,7 @@ def ask_file(file_type):
         elif file_type == 'icon':
             file_types = [('Icon files', '*.ico')]
         else:
-            file_types = []#[('All files', '*')]
+            file_types = [('All files', '*')]
         file_path = askopenfilename(parent=root, filetypes=file_types)
     return file_path
 
@@ -174,6 +174,22 @@ def ask_folder():
 
 
 @eel.expose
+def ask_file_save_location(file_type):
+    root = Tk()
+    root.withdraw()
+    root.wm_attributes('-topmost', 1)
+    if file_type is None:
+        file_path = asksaveasfilename(parent=root)
+    else:
+        if file_type == 'json':
+            file_types = [('JSON Files', '*.json'), ('All files', '*')]
+        else:
+            file_types = [('All files', '*')]
+        file_path = asksaveasfilename(parent=root, filetypes=file_types)
+    return file_path
+
+
+@eel.expose
 def check_if_file_exists(file):
     """ Checks if a file exists """
     return os.path.isfile(file)
@@ -183,6 +199,19 @@ def check_if_file_exists(file):
 def check_if_folder_exists(file):
     """ Checks if a folder exists """
     return os.path.isdir(file)
+
+
+@eel.expose
+def get_file_contents(file):
+    with open(file) as f:
+        data = f.read()
+    return data
+
+
+@eel.expose
+def write_file_contents(file, data):
+    with open(file, 'w') as f:
+        f.write(data)
 
 
 @eel.expose

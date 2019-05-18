@@ -50,7 +50,7 @@
                     <div id="additional_files_content" style="display: none;">
                         <button class="btn_search" onclick="additionalFilesAddFiles()" style="margin: 0 0 5px 6px;">Add Files</button>
                         <button class="btn_search" onclick="additionalFilesAddFolder()">Add Folder</button>
-                        <button class="btn_search" onclick="additionalFilesAdd('')">Add Blank</button><br>
+                        <button class="btn_search" onclick="additionalFilesAdd('', '.')">Add Blank</button><br>
                         <p id="onefileAdditionalFilesNote" class="note" style="display: none;">Be careful when using additional files with onefile mode; <a href="https://stackoverflow.com/questions/7674790/bundling-data-files-with-pyinstaller-onefile/13790741#13790741" style="text-decoration: none;">read this</a> and update your code to work with pyinstaller.</p>
                         <p class="note">If you want to put additional files in the root directory, put a period (.) in the destination.</p>
                     </div>
@@ -79,7 +79,7 @@
                         <br>--additional-hooks-dir<input id="VALUE--additional-hooks-dir" placeholder="HOOKSPATH" onkeyup="checkFolder(this)"><button class="btn_search" onclick="getFolder('VALUE--additional-hooks-dir')">Browse</button><div class="info_btn" title="	An additional path to search for hooks. This option can be used multiple times."></div>
                         <br>--runtime-hook<input id="VALUE--runtime-hook" placeholder="RUNTIME_HOOKS"><div class="info_btn" title="Path to a custom runtime hook file. A runtime hook is code that is bundled with the executable and is executed before any other code or module to set up special features of the runtime environment. This option can be used multiple times."></div>
                         <br>--exclude-module<input id="COMMASPLIT--exclude-module" placeholder="EXCLUDES"><div class="info_btn" title="Optional module or package (the Python name, not the path name) that will be ignored (as though it was not found). This option can be used multiple times. Commas can be used to split package names in this input field (will be split later)."></div>
-                        <br>--key<input id="COMMASPLIT--key" placeholder="KEY"><div class="info_btn" title="The key used to encrypt Python bytecode. Must have the PyCrypto module installed. The key-string is a string of 16 characters which is used to encrypt each file of Python byte-code before it is stored in the archive inside the executable file."></div>
+                        <br>--key<input id="VALUE--key" placeholder="KEY"><div class="info_btn" title="The key used to encrypt Python bytecode. Must have the PyCrypto module installed. The key-string is a string of 16 characters which is used to encrypt each file of Python byte-code before it is stored in the archive inside the executable file."></div>
                         <h2 class="sub_header">How to generate</h2>
                         --debug<select id="VALUE--debug">
                             <option value=""></option>
@@ -104,10 +104,19 @@
                         <h2 class="sub_header">Rarely used special options</h2>
                         --runtime-tmpdir<input id="VALUE--runtime-tmpdir" placeholder="PATH" onkeyup="checkFolder(this)"><button class="btn_search" onclick="getFolder('VALUE--runtime-tmpdir')">Browse</button><div class="info_btn" title="Where to extract libraries and support files in onefile-mode. If this option is given, the bootloader will ignore any temp-folder location defined by the run-time OS. The _MEIxxxxxx-folder will be created here. Please use this option only if you know what you are doing."></div>
                         <br><button id="OPTION--bootloader-ignore-signals" class="btn_choice btn_choice_greyed">--bootloader-ignore-signals<div class="info_btn" title="Tell the bootloader to ignore signals rather than forwarding them to the child process. Useful in situations where e.g. a supervisor process signals both the bootloader and child (e.g. via a process group) to avoid signalling the child twice."></div></button>
+                        <h2 class="sub_header">Manual Command Entry</h2>
                         <div style="display: grid; grid-gap: 4px; grid-template-columns: 160px 1fr; margin-top: 2px;">
                             Extra Command Data:
                             <input id="extra_command_data" onkeyup="generateCurrentCommand()" placeholder="Flags and extra data (use this to add a flag more than once)">
                         </div>
+                        <h2 class="sub_header">Configuration Import and Export</h2>
+                        Import Config From:
+                        <button class="btn_search" onclick="importConfigFromJSONFile()">JSON File</button>
+                        <button class="btn_search" onclick="importConfigFromClipboard()">Clipboard</button>
+                        <br>
+                        Export Config To:
+                        <button class="btn_search" onclick="exportConfigToJSONFile()" style="margin-top: 2px;">JSON File</button>
+                        <button class="btn_search" onclick="exportConfigToClipboard()" style="margin-top: 2px;">Clipboard</button>
                     </div>
 
                     <h1 class="section_header">Current Command</h1>
