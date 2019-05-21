@@ -102,7 +102,7 @@ body {
 
 .sub_header { /* Headers in tabs */
     font-size: 17px;
-    margin: 2px;
+    margin: 10px 2px 4px 2px;
 }
 
 button { /* Generic button */
