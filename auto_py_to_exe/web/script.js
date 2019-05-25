@@ -31,9 +31,17 @@ function switchButton(node) {
 // Init method to tell the server we have started and get the file from the args if it exists
 async function onInit() {
     let init_data = await eel.ui_on_init()();
+
     // Setup file from args
-    document.getElementById('file').value = init_data.filename;
-    checkFile(document.getElementById('file'));
+    if (init_data.filename !== null) {
+        document.getElementById('file').value = init_data.filename;
+    }
+    await checkFile(document.getElementById('file'));
+
+    // Setup configuration
+    if (init_data.supplied_ui_configuration !== null) {
+        await setConfiguration(JSON.stringify(init_data.supplied_ui_configuration));
+    }
 }
 
 // Ask the user for a file and put it in a node with id=for_id. Re-check if exists to get rid of any red
@@ -482,8 +490,10 @@ async function setConfiguration(configString) {
 
 async function importConfigFromJSONFile() {
     let filename = await eel.ask_file('json')();
-    let data = await eel.get_file_contents(filename)();
-    await setConfiguration(data);
+    if (filename !== '') {
+        let data = await eel.get_file_contents(filename)();
+        await setConfiguration(data);
+    }
 }
 
 async function importConfigFromClipboard() {
@@ -497,7 +507,11 @@ async function importConfigFromClipboard() {
 
 async function exportConfigToJSONFile() {
     let filename = await eel.ask_file_save_location('json')();
-    await eel.write_file_contents(filename, getConfiguration())();
+    if (filename !== '') {
+        await eel.write_file_contents(filename, getConfiguration())();
+    } else {
+        alert('Please select a file to export config')
+    }
 }
 
 async function exportConfigToClipboard() {

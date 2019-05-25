@@ -5,7 +5,7 @@ try:
 except ImportError:
     try:
         from Tkinter import Tk
-    except:
+    except ImportError:
         # If no versions of tkinter exist (most likely linux) provide a message
         if sys.version_info.major < 3:
             print("Error: Tkinter not found")
@@ -27,6 +27,7 @@ import shlex
 import re
 import traceback
 import tempfile
+import json
 from . import __version__ as version
 
 
@@ -89,8 +90,8 @@ except ImportError:
     sys.exit(1)
 cs.stop()
 
-# Make sure PyInstaller 3.4 is being used with Python 3.7
-if sys.version_info == (3, 7) and not (float(pyi.__version__) >= 3.4):
+# Make sure PyInstaller 3.4 or above is being used with Python 3.7
+if sys.version_info >= (3, 7) and float(pyi.__version__) < 3.4:
     print('You will need PyInstaller 3.4 or above to use this with Python 3.7')
     print('Please upgrade PyInstaller: python -m pip install --upgrade PyInstaller')
     sys.exit(1)
@@ -101,6 +102,7 @@ DEFAULT_RECURSION_LIMIT = sys.getrecursionlimit()
 # Some variables to help with arguments and how they are passed around (can also be used when being imported)
 filename = None
 disable_chrome = False
+supplied_ui_configuration = None
 
 # Setup eels root folder
 web_location = 'web'
@@ -116,7 +118,8 @@ def ui_on_init():
     """ Called by the UI when opened. Used to pass initial values. """
     cs.ui_started = True
     return {
-        'filename': os.path.abspath(filename) if filename is not None else ''
+        'filename': os.path.abspath(filename) if filename is not None else None,
+        'supplied_ui_configuration': supplied_ui_configuration
     }
 
 
@@ -296,18 +299,51 @@ def move_project(src, dst):
         shutil.move(os.path.join(src, file_or_folder), dst)
 
 
+def config_file_argument_check(file_path):
+    """ Checks that a file path exists and contains a parseable json structure """
+    if not os.path.isfile(file_path):
+        raise argparse.ArgumentTypeError('Provided configuration file does not exist')
+
+    try:
+        with open(file_path, 'r') as file:
+            data = json.load(file)
+    except json.decoder.JSONDecodeError:
+        raise argparse.ArgumentTypeError('Provided configuration file content is not json')
+    except Exception as e:
+        raise argparse.ArgumentTypeError('Cannot parse provided configuration file:\n' + str(e))
+
+    return data
+
+
 def check_arguments():
     """ Check arguments passed """
     global filename
     global disable_chrome
+    global supplied_ui_configuration
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("filename", nargs='?', help="pass a file into the interface")
-    parser.add_argument("-nc", "--no-chrome", action="store_true", help="do not open in chromes app mode")
+    parser.add_argument(
+        "filename",
+        nargs='?',
+        help="pass a file into the interface"
+    )
+    parser.add_argument(
+        "-nc",
+        "--no-chrome",
+        action="store_true",
+        help="do not open in chromes app mode"
+    )
+    parser.add_argument(
+        "-c",
+        "--config",
+        nargs='?',
+        type=config_file_argument_check,
+        help="a json file that contains a UI configuration"
+    )
     args = parser.parse_args()
-    if args.filename is not None:
-        filename = args.filename
+    filename = args.filename
     disable_chrome = args.no_chrome
+    supplied_ui_configuration = args.config
 
 
 def run():
