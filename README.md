@@ -61,11 +61,18 @@ Now to run the application, execute ```python -m auto_py_to_exe```. A Chrome win
 *Easy.*
 
 ### Arguments
-Alternatively you can execute ```auto-py-to-exe [filename]```. This will open up the window with the filename in the script location.
+Usage: `auto-py-to-exe [-nc] [-c [CONFIG]] [filename]`
 
-You can also pass ```--no-chrome``` if you want to use your default browser and not chromes app mode; for example ```auto-py-to-exe --no-chrome my_script.py```.
+| Argument                       | Type       | Description                                                                                                                                          |
+|--------------------------------|------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
+| filename                       | positional | Pre-fill the "Script Location" field in the UI.                                                                                                      |
+| -nc, --no-chrome               | optional   | Open the UI using the default browser (which may be Chrome). Will not try to find Chrome                                                             |
+| -c [CONFIG], --config [CONFIG] | optional   | Provide a configuration file (json) to pre-fill the UI. These can be generated from the bottom of the advanced tab when you have setup your options. |
 
 > If you are running this package locally, you will need to call ```python -m auto_py_to_exe``` instead of ```auto-py-to-exe```
+
+### Configurations
+Instead of inserting the same data into the UI over and over again, you can export the current state of the UI by going to the section "Configuration Import and Export" at the bottom of the advanced tab and exporting a JSON string to the clipboard or a file. This can then be imported into the UI again to re-populate all fields.
 
 ## Video
 If you need something visual to help you get started, [I made a video for the original release of this project](https://youtu.be/OZSZHmWSOeM); some things may be different but the same concepts still apply.
