@@ -340,15 +340,24 @@ def check_arguments():
         type=config_file_argument_check,
         help="a json file that contains a UI configuration"
     )
+    parser.add_argument(
+        "--version",
+        action="store_true",
+        help="print the version - will not run the ui"
+    )
     args = parser.parse_args()
     filename = args.filename
     disable_chrome = args.no_chrome
     supplied_ui_configuration = args.config
 
+    if args.version:
+        print('auto-py-to-exe v' + version)
+        sys.exit(0)
 
-def run():
+
+def run(read_arguments=True):
     """ Open the interface """
-    if __name__ == '__main__':
+    if read_arguments:
         check_arguments()
     cs.start()
 
