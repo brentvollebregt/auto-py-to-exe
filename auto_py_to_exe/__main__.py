@@ -152,7 +152,11 @@ def ask_file(file_type):
             file_types = [('Icon files', '*.ico')]
         else:
             file_types = [('All files', '*')]
-        file_path = askopenfilename(parent=root, filetypes=file_types)
+
+        if platform.system() == 'Darwin': # Don't use filetypes on MacOS (it doesn't support them)
+            file_path = askopenfilename(parent=root)
+        else:
+            file_path = askopenfilename(parent=root, filetypes=file_types)
     return file_path
 
 
@@ -188,7 +192,11 @@ def ask_file_save_location(file_type):
             file_types = [('JSON Files', '*.json'), ('All files', '*')]
         else:
             file_types = [('All files', '*')]
-        file_path = asksaveasfilename(parent=root, filetypes=file_types)
+
+        if platform.system() == 'Darwin': # Don't use filetypes on MacOS (it doesn't support them)
+            file_path = asksaveasfilename(parent=root)
+        else:
+            file_path = asksaveasfilename(parent=root, filetypes=file_types)
     return file_path
 
 
