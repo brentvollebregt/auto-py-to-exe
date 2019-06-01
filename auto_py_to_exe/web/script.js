@@ -558,6 +558,8 @@ window.addEventListener('load', function () {
     checkInfoBar();
     setupAdvancedSwitchesAndInputs();
     onInit();
+    // If the server stops, close the UI
+    window.eel._websocket.addEventListener('close', e => {window.close()})
 });
 
 // Setup onclicks for buttons and onkeyups for inputs
