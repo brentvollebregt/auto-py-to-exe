@@ -126,7 +126,7 @@ function switchOnefile(active) {
         document.getElementById('onefile_inactive').classList.remove('btn_choice_greyed');
         document.getElementById('onefileAdditionalFilesNote').style.display = 'none';
     }
-    command_data['onefile'] = active;
+    command_data.onefile = active;
     generateCurrentCommand();
 }
 
@@ -139,7 +139,7 @@ function switchConsole(active) {
         document.getElementById('console_active').classList.add('btn_choice_greyed');
         document.getElementById('console_inactive').classList.remove('btn_choice_greyed');
     }
-    command_data['console'] = active;
+    command_data.console = active;
     generateCurrentCommand();
 }
 
@@ -227,7 +227,7 @@ function additionalFilesAdd(src, destination) {
 function additionalFilesRemove(id) {
     let block = document.getElementById(id);
     block.parentNode.removeChild(block);
-    delete command_data["additional_files"][id];
+    delete command_data.additional_files[id];
     generateCurrentCommand();
 }
 
@@ -254,10 +254,10 @@ function generateCurrentCommand() {
     let node = document.getElementById("current_command");
     let command = 'pyinstaller -y ';
     // Basic
-    if (command_data['onefile']) {
+    if (command_data.onefile) {
         command += "-F "
     }
-    if (!command_data['console']) {
+    if (!command_data.console) {
         command += "-w "
     }
     if (document.getElementById("icon").value !== "") {
@@ -386,7 +386,7 @@ async function convert() {
         filename = command_split[command_split.length-2].replace(/^.*[\\\/]/, '');
     }
     // Check and warn if a file will be overwritten
-    let check = await eel.convert_pre_check(filename, command_data['onefile'], output)();
+    let check = await eel.convert_pre_check(filename, command_data.onefile, output)();
     if (!check) {
         if(!confirm("File will overwrite current file\nContinue?")) {
             return;
@@ -436,11 +436,7 @@ function getConfiguration() {
     // Command data
     config.command_data = command_data;
     // Injectable by id
-    config.id_injectable['file'] = document.getElementById('file').value;
-    config.id_injectable['icon'] = document.getElementById('icon').value;
-    config.id_injectable['output_location'] = document.getElementById('output_location').value;
-    config.id_injectable['extra_command_data'] = document.getElementById('extra_command_data').value;
-    document.querySelectorAll('*[id^="VALUE"], *[id^="COMMASPLIT"]').forEach(element => {
+    document.querySelectorAll('*[id^="VALUE"], *[id^="COMMASPLIT"], #file, #icon, #output_location, #extra_command_data').forEach(element => {
         config.id_injectable[element.id] = element.value
     });
     // Option toggle buttons
