@@ -143,7 +143,7 @@ def ask_file(file_type):
     root = Tk()
     root.withdraw()
     root.wm_attributes('-topmost', 1)
-    if file_type is None:
+    if (file_type is None) or (platform.system() == "Darwin"):
         file_path = askopenfilename(parent=root)
     else:
         if file_type == 'python':
@@ -152,11 +152,8 @@ def ask_file(file_type):
             file_types = [('Icon files', '*.ico')]
         else:
             file_types = [('All files', '*')]
-
-        if platform.system() == 'Darwin': # Don't use filetypes on MacOS (it doesn't support them)
-            file_path = askopenfilename(parent=root)
-        else:
-            file_path = askopenfilename(parent=root, filetypes=file_types)
+        file_path = askopenfilename(parent=root, filetypes=file_types)
+    root.update()
     return file_path
 
 
@@ -167,6 +164,7 @@ def ask_files():
     root.withdraw()
     root.wm_attributes('-topmost', 1)
     file_paths = askopenfilenames(parent=root)
+    root.update()
     return file_paths
 
 
@@ -185,18 +183,15 @@ def ask_file_save_location(file_type):
     root = Tk()
     root.withdraw()
     root.wm_attributes('-topmost', 1)
-    if file_type is None:
+    if (file_type is None) or (platform.system() == "Darwin"):
         file_path = asksaveasfilename(parent=root)
     else:
         if file_type == 'json':
             file_types = [('JSON Files', '*.json'), ('All files', '*')]
         else:
             file_types = [('All files', '*')]
-
-        if platform.system() == 'Darwin': # Don't use filetypes on MacOS (it doesn't support them)
-            file_path = asksaveasfilename(parent=root)
-        else:
-            file_path = asksaveasfilename(parent=root, filetypes=file_types)
+        file_path = asksaveasfilename(parent=root, filetypes=file_types)
+    root.update()
     return file_path
 
 
