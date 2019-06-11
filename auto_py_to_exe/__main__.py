@@ -128,7 +128,7 @@ def open_output_folder(folder):
     """ Open the folder of there the package was moved to """
     folder_directory = os.path.abspath(folder) # Use absolute directories
     if platform.system() == 'Windows':
-        os.startfile(folder_directory, operation='explore')
+        os.startfile(folder_directory, 'explore')
     elif platform.system() == 'Linux':
         os.system('xdg-open "' + folder_directory + '"')
     elif platform.system() == 'Darwin':
