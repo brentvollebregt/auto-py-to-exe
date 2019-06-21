@@ -90,11 +90,16 @@ except ImportError:
     sys.exit(1)
 cs.stop()
 
-# Make sure PyInstaller 3.4 or above is being used with Python 3.7
-if sys.version_info >= (3, 7) and float(pyi.__version__) < 3.4:
-    print('You will need PyInstaller 3.4 or above to use this with Python 3.7')
-    print('Please upgrade PyInstaller: python -m pip install --upgrade PyInstaller')
-    sys.exit(1)
+
+try:
+    # Make sure PyInstaller 3.4 or above is being used with Python 3.7
+    if sys.version_info >= (3, 7) and float(pyi.__version__) < 3.4:
+        print('You will need PyInstaller 3.4 or above to use this with Python 3.7')
+        print('Please upgrade PyInstaller: python -m pip install --upgrade PyInstaller')
+        sys.exit(1)
+except ValueError:
+    # Dev branches will have pyi.__version__ as a string in the form X.Y.devZ+HASH. Ignore it if this is the case.
+    pass
 
 # Pre-defined variables by Python
 DEFAULT_RECURSION_LIMIT = sys.getrecursionlimit()
