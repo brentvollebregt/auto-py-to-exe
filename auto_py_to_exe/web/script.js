@@ -297,7 +297,7 @@ function generateCurrentCommand() {
     }
 
     // Final
-    command += document.getElementById('extra_command_data').value + '"' + document.getElementById('file').value + '"';
+    command += document.getElementById('extra_command_data').value + ' "' + document.getElementById('file').value + '"';
     node.value = command;
 }
 
