@@ -372,7 +372,8 @@ def run(read_arguments=True):
     cs.start()
 
     try:
-        if eel.chrome.get_instance_path() is not None and not disable_chrome:
+        chrome_instance_path = eel.chrome.get_instance_path()
+        if chrome_instance_path is not None and os.path.exists(chrome_instance_path) and not disable_chrome:
             eel.start('main.html', size=(650, 612), options={'port': 0})
         else:
             eel.start('main.html', size=(650, 612), options={'port': 0, 'mode': 'user selection'})
