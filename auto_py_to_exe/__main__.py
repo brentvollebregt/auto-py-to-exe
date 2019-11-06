@@ -372,11 +372,11 @@ def run(read_arguments=True):
     cs.start()
 
     try:
-        chrome_instance_path = eel.chrome.get_instance_path()
+        chrome_instance_path = eel.chrome.find_path()
         if chrome_instance_path is not None and os.path.exists(chrome_instance_path) and not disable_chrome:
-            eel.start('main.html', size=(650, 612), options={'port': 0})
+            eel.start('main.html', size=(650, 612), port=0)
         else:
-            eel.start('main.html', size=(650, 612), options={'port': 0, 'mode': 'user selection'})
+            eel.start('main.html', size=(650, 612), port=0, mode='user selection')
     except (SystemExit, KeyboardInterrupt):
         pass # This is what the bottle server raises
 
