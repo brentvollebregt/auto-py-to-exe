@@ -35,6 +35,9 @@ setup(
         'console_scripts': [
             'autopytoexe=auto_py_to_exe.__main__:run',
             'auto-py-to-exe=auto_py_to_exe.__main__:run'
-        ],
+        ], 'gui_scripts': [
+            'autopytoexe=auto_py_to_exe.__main__:run',
+            'auto-py-to-exe=auto_py_to_exe.__main__:run'
+        ]
     },
 )
