@@ -71,8 +71,13 @@ class CaptureStderr:
 
 # These modules capture stderr so we need to make sure they get our object
 cs = CaptureStderr()
-cs.add_filter('[0-9]+ ([a-z]|[A-Z])+: [0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3} - - \[[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}\] "GET')
-cs.add_filter('\s$')
+
+# PEP8 has some maximum line length guidelines, starting with
+# “Limit all lines to a maximum of 79 characters” and [0-9] == \d.
+regex_pattern = r'\d+ ([a-zA-Z])+?: \d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3} - - \[' \
+                r'\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}\] "GET'
+cs.add_filter(regex_pattern)
+cs.add_filter(r'\s$')
 cs.start()
 try:
     # Make sure PyInstaller is installed
