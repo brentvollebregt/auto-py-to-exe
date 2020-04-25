@@ -19,3 +19,17 @@ const expandSection = (sectionName) => {
         root.removeAttribute('data-expanded');
     }
 };
+
+// Mutually Exclusive Button Pair Toggle
+const meButtonPairToggle = (buttonGroupName) => {
+    const root = document.getElementById(`me-button-pair-${buttonGroupName}`);
+
+    // Since this only supports two buttons, we can just flip the toggled states
+    root.querySelectorAll('button').forEach(buttonNode => {
+        if (buttonNode.classList.contains('btn_choice_greyed')) {
+        buttonNode.classList.remove('btn_choice_greyed');
+    } else {
+        buttonNode.classList.add('btn_choice_greyed');
+    }
+    });
+};

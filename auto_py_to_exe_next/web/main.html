@@ -31,18 +31,26 @@
 
             <div>
                 <h2>Onefile</h2>
-                <button id="onefile_inactive" class="btn_choice" onclick="switchOnefile(false)">One Directory</button>
-                <button id="onefile_active" class="btn_choice btn_choice_greyed" onclick="switchOnefile(true)">
-                    One File
-                </button>
+                <div id="me-button-pair-onefile">
+                    <button id="onefile_inactive" class="btn_choice" onclick="meButtonPairToggle('onefile')">
+                        One Directory
+                    </button>
+                    <button id="onefile_active" class="btn_choice btn_choice_greyed" onclick="meButtonPairToggle('onefile')">
+                        One File
+                    </button>
+                </div>
             </div>
 
             <div>
                 <h2>Console Window</h2>
-                <button id="console_active" class="btn_choice" onclick="switchConsole(true)">Console Based</button>
-                <button id="console_inactive" class="btn_choice btn_choice_greyed" onclick="switchConsole(false)">
-                    Window Based (hide the console)
-                </button>
+                <div id="me-button-pair-console">
+                    <button id="console_active" class="btn_choice" onclick="meButtonPairToggle('console')">
+                        Console Based
+                    </button>
+                    <button id="console_inactive" class="btn_choice btn_choice_greyed" onclick="meButtonPairToggle('console')">
+                        Window Based (hide the console)
+                    </button>
+                </div>
             </div>
 
             <div id="section-icon">
