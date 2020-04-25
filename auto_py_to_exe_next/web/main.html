@@ -4,19 +4,92 @@
         <title>Auto Py To Exe</title>
         <script>
             window.eel = {
-                initialise: () => {},
+                initialise: () => {
+                },
             }
         </script>
         <script type="text/javascript" src="/eel.js"></script>
         <script type="text/javascript" src="/js/initialise.js"></script>
-        <link rel="stylesheet" href="/css/misc.css">
-        <link rel="stylesheet" href="/css/header.css">
+        <script type="text/javascript" src="/js/interface.js"></script>
+        <link rel="stylesheet" href="/styles.css">
     </head>
 
     <body>
-        <div id="header">
-            <a href="https://github.com/brentvollebregt/auto-py-to-exe" target="_blank"><img src="/favicon.ico"></a>
-            <a href="https://github.com/brentvollebregt/auto-py-to-exe" target="_blank"><h1>Auto Py to Exe</h1></a>
+        <div class="mid">
+            <div id="header">
+                <a href="https://github.com/brentvollebregt/auto-py-to-exe" target="_blank"><img src="/favicon.ico"></a>
+                <a href="https://github.com/brentvollebregt/auto-py-to-exe" target="_blank"><h1>Auto Py to Exe</h1></a>
+            </div>
+
+            <div>
+                <h2>Script Location</h2>
+                <div style="display: grid; grid-gap: 4px; grid-template-columns: 1fr 120px;">
+                    <input id="file" onkeyup="checkFile(this)" placeholder="Path to file" required>
+                    <button class="btn_search" onclick="getFile('file', 'python')">Browse</button>
+                </div>
+            </div>
+
+            <div>
+                <h2>Onefile</h2>
+                <button id="onefile_inactive" class="btn_choice" onclick="switchOnefile(false)">One Directory</button>
+                <button id="onefile_active" class="btn_choice btn_choice_greyed" onclick="switchOnefile(true)">
+                    One File
+                </button>
+            </div>
+
+            <div>
+                <h2>Console Window</h2>
+                <button id="console_active" class="btn_choice" onclick="switchConsole(true)">Console Based</button>
+                <button id="console_inactive" class="btn_choice btn_choice_greyed" onclick="switchConsole(false)">
+                    Window Based (hide the console)
+                </button>
+            </div>
+
+            <div id="section-icon">
+                <div class="header noselect" onclick="expandSection('icon')">
+                    <img src="img/chevron-square-up.svg" alt="Icon Section Chevron"/>
+                    <h2>Icon</h2>
+                </div>
+                <div class="content">
+                    <div style="display: grid; grid-gap: 4px; grid-template-columns: 1fr 120px;">
+                        <input id="icon" placeholder=".ico file" onkeyup="checkFile(this)">
+                        <button class="btn_search" onclick="getFile('icon', 'icon')">Browse</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="section-additional-files">
+                <div class="header noselect" onclick="expandSection('additional-files')">
+                    <img src="img/chevron-square-up.svg" alt="Additional Files Section Chevron"/>
+                    <h2>Additional Files</h2>
+                </div>
+                <div class="content">
+                    <button class="btn_search" onclick="additionalFilesAddFiles()" style="margin: 0 0 5px 6px;">
+                        Add Files
+                    </button>
+                    <button class="btn_search" onclick="additionalFilesAddFolder()">Add Folder</button>
+                    <button class="btn_search" onclick="additionalFilesAdd('', '.')">Add Blank</button>
+                    <br>
+                    <p id="onefileAdditionalFilesNote" class="note" style="display: none;">
+                        Be careful when using additional files with onefile mode;
+                        <a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">read this</a>
+                        and update your code to work with pyinstaller.
+                    </p>
+                    <p class="note">
+                        If you want to put additional files in the root directory, put a period (.) in the destination.
+                    </p>
+                </div>
+            </div>
+
+            <div id="section-advanced">
+                <div class="header noselect" onclick="expandSection('advanced')">
+                    <img src="img/chevron-square-up.svg" alt="Advanced Section Chevron"/>
+                    <h2>Advanced</h2>
+                </div>
+                <div class="content">
+                    <!-- TODO: Import -->
+                </div>
+            </div>
         </div>
     </body>
 </html>
