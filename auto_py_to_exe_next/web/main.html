@@ -3,14 +3,24 @@
     <head>
         <title>Auto Py To Exe</title>
         <script>
+            // Provided for type checking
             window.eel = {
-                initialise: () => {
-                },
+                initialise: () => ({
+                    filename: null,
+                    options: [],
+                    supplied_ui_configuration: {},
+                    warnings: []
+                }),
+                does_file_exist: (path) => false,
+                ask_file: () => ""
             }
         </script>
         <script type="text/javascript" src="/eel.js"></script>
         <script type="text/javascript" src="/js/initialise.js"></script>
+        <script type="text/javascript" src="/js/configuration.js"></script>
+        <script type="text/javascript" src="/js/events.js"></script>
         <script type="text/javascript" src="/js/interface.js"></script>
+        <script type="text/javascript" src="/js/utils.js"></script>
         <link rel="stylesheet" href="/css/general.css">
         <link rel="stylesheet" href="/css/main.css">
         <link rel="stylesheet" href="/css/utils.css">
@@ -26,18 +36,18 @@
             <div>
                 <h2>Script Location</h2>
                 <div class="filepath-browse-layout">
-                    <input id="file" onkeyup="checkFile(this)" placeholder="Path to file" required>
-                    <button class="btn_search" onclick="getFile('file', 'python')">Browse</button>
+                    <input id="entry-script" placeholder="Path to file" required>
+                    <button id="entry-script-search" class="btn_search">Browse</button>
                 </div>
             </div>
 
             <div>
                 <h2>Onefile</h2>
                 <div id="me-button-pair-onefile">
-                    <button class="btn_choice" onclick="meButtonPairToggle('onefile')">
+                    <button id="one-directory-button" class="btn_choice">
                         One Directory
                     </button>
-                    <button class="btn_choice btn_choice_greyed" onclick="meButtonPairToggle('onefile')">
+                    <button id="one-file-button" class="btn_choice btn_choice_greyed">
                         One File
                     </button>
                 </div>
@@ -46,10 +56,10 @@
             <div>
                 <h2>Console Window</h2>
                 <div id="me-button-pair-console">
-                    <button class="btn_choice" onclick="meButtonPairToggle('console')">
+                    <button id="console-based-button" class="btn_choice">
                         Console Based
                     </button>
-                    <button class="btn_choice btn_choice_greyed" onclick="meButtonPairToggle('console')">
+                    <button id="window-based-button" class="btn_choice btn_choice_greyed">
                         Window Based (hide the console)
                     </button>
                 </div>
@@ -62,8 +72,8 @@
                 </div>
                 <div class="content">
                     <div class="filepath-browse-layout">
-                        <input id="icon" placeholder=".ico file" onkeyup="checkFile(this)">
-                        <button class="btn_search" onclick="getFile('icon', 'icon')">Browse</button>
+                        <input id="icon-path" placeholder=".ico file">
+                        <button id="icon-path-search" class="btn_search">Browse</button>
                     </div>
                 </div>
             </div>
@@ -74,11 +84,11 @@
                     <h2>Additional Files</h2>
                 </div>
                 <div class="content">
-                    <button class="btn_search" onclick="additionalFilesAddFiles()" style="margin: 0 0 5px 6px;">
+                    <button id="additional-files-add-files-button" class="btn_search" style="margin: 0 0 5px 6px;">
                         Add Files
                     </button>
-                    <button class="btn_search" onclick="additionalFilesAddFolder()">Add Folder</button>
-                    <button class="btn_search" onclick="additionalFilesAdd('', '.')">Add Blank</button>
+                    <button id="additional-files-add-folder" class="btn_search">Add Folder</button>
+                    <button id="additional-files-add-blank" class="btn_search">Add Blank</button>
                     <br>
                     <p id="onefileAdditionalFilesNote" class="note" style="display: none;">
                         Be careful when using additional files with onefile mode;
@@ -108,7 +118,7 @@
 
             <div id="output">
                 <h2>Output</h2>
-                <textarea></textarea>
+                <textarea readonly></textarea>
             </div>
 
             <div id="common-issue-link">

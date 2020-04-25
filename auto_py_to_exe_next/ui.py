@@ -4,6 +4,8 @@ import eel
 
 from . import config
 from . import utils
+from .packaging import get_pyinstaller_options
+from . import dialogs
 
 
 # Setup eels root folder
@@ -15,8 +17,9 @@ def initialise():
     """ Called by the UI when opened. Used to pass initial values. """
     return {
         'filename': config.package_filename,
-        'supplied_ui_configuration': config.supplied_ui_configuration
-        # TODO Add warnings for unsupported versions and known issues
+        'supplied_ui_configuration': config.supplied_ui_configuration,
+        'options': get_pyinstaller_options(),
+        'warnings': []  # TODO Add warnings for unsupported versions and known issues {message, severity}
     }
 
 
@@ -27,7 +30,8 @@ def open_folder_in_explorer():
 
 @eel.expose
 def ask_file(file_type):
-    pass
+    """ Ask the user to select a file """
+    return dialogs.ask_file(file_type)
 
 
 @eel.expose

@@ -21,7 +21,7 @@ def __get_pyinstaller_argument_parser():
     return parser
 
 
-def __get_pyinstaller_options():
+def get_pyinstaller_options():
     parser = __get_pyinstaller_argument_parser()
 
     options = []
@@ -31,4 +31,7 @@ def __get_pyinstaller_options():
         del action.container
         options.append(action)
 
-    return options
+    return [o.__dict__ for o in options]
+
+
+# TODO https://pyinstaller.readthedocs.io/en/stable/usage.html#running-pyinstaller-from-python-code
