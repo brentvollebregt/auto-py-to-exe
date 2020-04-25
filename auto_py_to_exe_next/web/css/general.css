@@ -1,0 +1,107 @@
+@font-face {
+    font-family: 'Nunito';
+    src: url('../Nunito-Light.ttf');
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FBFBFB;
+    font-family: 'Nunito', Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    margin: 0 18px 10px 18px;
+}
+
+.mid { /* Global center alignment */
+    margin: auto;
+    max-width: 800px
+}
+
+
+/* Headers */
+
+h2 {
+    font-weight: normal;
+    font-size: 25px;
+    margin: 10px 0 2px 0;
+}
+
+.sub_header { /* Headers in tabs */
+    font-size: 17px;
+    margin: 10px 2px 4px 2px;
+}
+
+/* Buttons */
+
+button { /* Generic button */
+    cursor: pointer;
+    border-radius: 4px;
+    font-family: 'Nunito', Helvetica, Arial, sans-serif;
+    font-weight: 100;
+}
+
+.btn_choice {
+    border: 3px solid #458BC6;
+    color: #458BC6;
+    background: transparent;
+    padding: 8px;
+    margin-bottom: 2px;
+    transition: border 0.3s;
+}
+
+.btn_choice_greyed {
+    border: solid 3px #EEEEEE;
+    color: lightgrey;
+}
+
+.btn_choice.btn_choice_greyed:hover {
+    border: 3px solid #458BC6;
+}
+
+.info_btn { /* Information icon */
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAq0lEQVR4XnWQywrDIBBF82P+WPtXebiSbJKtq0jAtVAEwW0WIZ16p04aWjpwcbge5tU0Nfq+V13XteV9QDVX8i/Qrei5LAtt28ZCXuADf9dKxzzPhEgpsRDwKqwatCiiaZrIe09aazLGMOicAwi1qIh5xGAw50z7vtM4juyB+QFDCFzNWnt6DEpr0bquPMIwDKcnrXkZMWOMrAv0XqZufhf4C/ycR6JW/nvwF51vE+IcomqCAAAAAElFTkSuQmCC) -0px -0px no-repeat;
+    height: 10px;
+    width: 10px;
+    overflow: hidden;
+    margin-left: .25em;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.btn_search {
+    background: transparent;
+    border: 2px solid #458BC6;
+    height: 27px;
+    padding: 0 15px;
+    transition: background 0.3s;
+}
+
+.btn_search:hover {
+    background: #1c79c71a;
+}
+
+/* Inputs and Dropdowns  */
+
+input, select { /* Input and drop-downs */
+    padding: 4px;
+    border: 1px solid #458BC6;
+    margin-left: 6px;
+}
+
+/* Small notes */
+
+.note {
+    font-size: 14px;
+    font-style: italic;
+    margin: 8px 0 0 0;
+}
+
+/* Filepath-browse layout */
+
+.filepath-browse-layout {
+    display: grid;
+    grid-gap: 4px;
+    grid-template-columns: 1fr 120px;
+}

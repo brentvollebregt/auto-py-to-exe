@@ -11,7 +11,9 @@
         <script type="text/javascript" src="/eel.js"></script>
         <script type="text/javascript" src="/js/initialise.js"></script>
         <script type="text/javascript" src="/js/interface.js"></script>
-        <link rel="stylesheet" href="/styles.css">
+        <link rel="stylesheet" href="/css/general.css">
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/utils.css">
     </head>
 
     <body>
@@ -23,7 +25,7 @@
 
             <div>
                 <h2>Script Location</h2>
-                <div style="display: grid; grid-gap: 4px; grid-template-columns: 1fr 120px;">
+                <div class="filepath-browse-layout">
                     <input id="file" onkeyup="checkFile(this)" placeholder="Path to file" required>
                     <button class="btn_search" onclick="getFile('file', 'python')">Browse</button>
                 </div>
@@ -32,10 +34,10 @@
             <div>
                 <h2>Onefile</h2>
                 <div id="me-button-pair-onefile">
-                    <button id="onefile_inactive" class="btn_choice" onclick="meButtonPairToggle('onefile')">
+                    <button class="btn_choice" onclick="meButtonPairToggle('onefile')">
                         One Directory
                     </button>
-                    <button id="onefile_active" class="btn_choice btn_choice_greyed" onclick="meButtonPairToggle('onefile')">
+                    <button class="btn_choice btn_choice_greyed" onclick="meButtonPairToggle('onefile')">
                         One File
                     </button>
                 </div>
@@ -44,10 +46,10 @@
             <div>
                 <h2>Console Window</h2>
                 <div id="me-button-pair-console">
-                    <button id="console_active" class="btn_choice" onclick="meButtonPairToggle('console')">
+                    <button class="btn_choice" onclick="meButtonPairToggle('console')">
                         Console Based
                     </button>
-                    <button id="console_inactive" class="btn_choice btn_choice_greyed" onclick="meButtonPairToggle('console')">
+                    <button class="btn_choice btn_choice_greyed" onclick="meButtonPairToggle('console')">
                         Window Based (hide the console)
                     </button>
                 </div>
@@ -59,7 +61,7 @@
                     <h2>Icon</h2>
                 </div>
                 <div class="content">
-                    <div style="display: grid; grid-gap: 4px; grid-template-columns: 1fr 120px;">
+                    <div class="filepath-browse-layout">
                         <input id="icon" placeholder=".ico file" onkeyup="checkFile(this)">
                         <button class="btn_search" onclick="getFile('icon', 'icon')">Browse</button>
                     </div>
@@ -97,6 +99,33 @@
                 <div class="content">
                     <!-- TODO: Import -->
                 </div>
+            </div>
+
+            <div id="current-command">
+                <h2>Current Command</h2>
+                <textarea readonly></textarea>
+            </div>
+
+            <div id="output">
+                <h2>Output</h2>
+                <textarea></textarea>
+            </div>
+
+            <div id="common-issue-link">
+                Something wrong with your exe? Read
+                <a href="https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/" target="_blank">
+                    this post on how to fix common issues
+                </a>
+                for possible solutions.
+            </div>
+
+            <div id="package-button-wrapper">
+                <button id="package-button" onclick="convert()">
+                    Convert .py to .exe
+                </button>
+                <button id="open-output-folder-button" onclick="openOutputFolder()">
+                    Open Output Folder
+                </button>
             </div>
         </div>
     </body>
