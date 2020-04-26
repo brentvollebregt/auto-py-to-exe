@@ -139,7 +139,7 @@ const _createSubSectionInAdvanced = (title, options) => {
         // Help icon
         const helpNode = document.createElement('span');
         optionNode.appendChild(helpNode); // Put the icon inside the option text
-        helpNode.title = o.help;
+        helpNode.title = o.help.replace(/R\|/, '');
         helpNode.classList.add('info_icon');
 
         // Identify what type of inputs to use
@@ -149,13 +149,31 @@ const _createSubSectionInAdvanced = (title, options) => {
             const enableButton = document.createElement('button');
             container.appendChild(enableButton);
             enableButton.textContent = 'Enable';
-            enableButton.classList.add('unselected')
+            enableButton.classList.add('unselected');
+            enableButton.addEventListener('click', () => {
+                if (enableButton.classList.contains('unselected')) {
+                    modifyOption(o.dest, "", true);
+                    enableButton.classList.remove('unselected');
+                    enableButton.classList.add('selected');
+                } else {
+                    removeOption(o.dest, "");
+                    enableButton.classList.add('unselected');
+                    enableButton.classList.remove('selected');
+                }
+            });
 
         } else if (o.choices !== null) {
             container.classList.add('choice');
 
             const selectNode = document.createElement('select');
             container.appendChild(selectNode);
+            selectNode.addEventListener('change', (event) => {
+                if (event.target.value === '') {
+                    removeOption(o.dest, "");
+                } else {
+                    modifyOption(o.dest, "", event.target.value);
+                }
+            });
 
             const defaultOptionNode = document.createElement('option');
             selectNode.appendChild(defaultOptionNode);
@@ -165,6 +183,7 @@ const _createSubSectionInAdvanced = (title, options) => {
                 const optionNode = document.createElement('option');
                 selectNode.appendChild(optionNode);
                 optionNode.textContent = choice;
+                optionNode.value = choice;
             });
 
         } else if (o.default !== null || o.dest === 'upx_exclude') {
