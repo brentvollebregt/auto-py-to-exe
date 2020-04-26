@@ -85,11 +85,7 @@ const staticAndIgnoredArguments =[
 const sectionArguments = [
     {
         title: 'General Options',
-        arguments: ['upx_dir', 'ascii', 'clean_build', 'loglevel']
-    },
-    {
-        title: 'What to generate',
-        arguments: ['name']
+        arguments: ['upx_dir', 'ascii', 'clean_build', 'loglevel', 'name']
     },
     {
         title: 'What to bundle, where to search',
@@ -133,6 +129,7 @@ const _createSubSectionInAdvanced = (title, options) => {
         // Container
         const container = document.createElement('div');
         subSectionNode.appendChild(container);
+        container.classList.add('option-container');
 
         // Option title / name
         const optionNode = document.createElement('span');
@@ -141,9 +138,9 @@ const _createSubSectionInAdvanced = (title, options) => {
 
         // Help icon
         const helpNode = document.createElement('span');
-        container.appendChild(helpNode);
+        optionNode.appendChild(helpNode); // Put the icon inside the option text
         helpNode.title = o.help;
-        helpNode.textContent = '?TMP'; // TODO Remove when CSS styled
+        helpNode.classList.add('info_icon');
 
         // Identify what type of inputs to use
         if (o.nargs === 0) {
@@ -151,7 +148,8 @@ const _createSubSectionInAdvanced = (title, options) => {
 
             const enableButton = document.createElement('button');
             container.appendChild(enableButton);
-            enableButton.textContent = 'Enable'
+            enableButton.textContent = 'Enable';
+            enableButton.classList.add('unselected')
 
         } else if (o.choices !== null) {
             container.classList.add('choice');

@@ -18,7 +18,12 @@ window.addEventListener("load", async () => {
 
     // TODO Setup provided config json
 
-    // TODO Use initialisation_data.filename
+    // If a file is provided, put it in the script location
+    if (initialisation_data.filename !== null) {
+        const entryScriptNode = document.getElementById('entry-script');
+        entryScriptNode.value = initialisation_data.filename;
+        scriptLocationChange({ target: entryScriptNode });
+    }
 
     // TODO Display warnings with initialisation_data.warnings
 });

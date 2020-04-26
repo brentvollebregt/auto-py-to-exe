@@ -84,14 +84,31 @@ div[id*="section"] .content {
     cursor: pointer;
 }
 
-/* Patches (TODO Get rid of these in later progress) */
+/* Advanced tab */
 
-[id|=VALUE], [id|=COMMASPLIT] { /* Vertical spacing in advanced entries */
-    margin-bottom: 2px;
+#section-advanced .content .option-container { /* Option containers */
+    margin-top: 4px;
 }
 
-[id|=VALUE] + .btn_search { /* Padding for search buttons by inputs */
-    margin-left: 4px;
+#section-advanced .content .option-container > span { /* Option name */
+    margin-right: 14px;
+}
+
+#section-advanced .content .switch {
+
+}
+
+#section-advanced .content .choice {
+
+}
+
+#section-advanced .content .multiple-input {
+
+}
+
+#section-advanced .content .input {
+    display: grid;
+    grid-template-columns: auto 1fr;
 }
 
 /* Current Command */
