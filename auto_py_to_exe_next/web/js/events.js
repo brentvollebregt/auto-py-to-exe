@@ -4,7 +4,7 @@ Handle user events
 
 const scriptLocationChange = async (event) => {
     const value = event.target.value;
-    modifyOption('filenames', value);
+    modifyOption('filenames', '', value);
 
     if (await doesFileExist(value)) {
         event.target.style.border = "";
@@ -20,29 +20,37 @@ const scriptLocationSearch = async (event) => {
 };
 
 const oneFileOptionChange = (option) => (event) => {
+    const oneDirectoryButton = document.getElementById('one-directory-button');
+    const oneFileButton = document.getElementById('one-file-button');
+
     if (option === 'one-file') {
-
+        modifyOption('onefile', '', true);
+        oneDirectoryButton.classList.add('btn_choice_greyed');
+        oneFileButton.classList.remove('btn_choice_greyed');
     } else if (option === 'one-directory') {
-
+        modifyOption('onefile', '', false);
+        oneDirectoryButton.classList.remove('btn_choice_greyed');
+        oneFileButton.classList.add('btn_choice_greyed');
     } else {
         throw new Error('Incorrect option provided')
     }
-
-    // TODO Update internal config
-    // TODO Remove the mutually exclusive javascript button stuff, do it manually here to be 100% it's right
 };
 
 const consoleWindowOptionChange = (option) => (event) => {
+    const consoleButton = document.getElementById('console-based-button');
+    const windowButton = document.getElementById('window-based-button');
+
     if (option === 'console') {
-
+        modifyOption('console', '', true);
+        consoleButton.classList.remove('btn_choice_greyed');
+        windowButton.classList.add('btn_choice_greyed');
     } else if (option === 'window') {
-
+        modifyOption('console', '', false);
+        consoleButton.classList.add('btn_choice_greyed');
+        windowButton.classList.remove('btn_choice_greyed');
     } else {
         throw new Error('Incorrect option provided')
     }
-
-    // TODO Update internal config
-    // TODO Remove the mutually exclusive javascript button stuff, do it manually here to be 100% it's right
 };
 
 const iconLocationChange = (event) => {
@@ -92,4 +100,5 @@ const setupEvents = () => {
 
     // Call event methods to initially setup ui
     scriptLocationChange({ target: document.getElementById('entry-script') });
+    oneFileOptionChange('one-directory')(null);
 };
