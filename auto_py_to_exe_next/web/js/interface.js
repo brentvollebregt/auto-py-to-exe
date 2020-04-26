@@ -88,6 +88,10 @@ const sectionArguments = [
         arguments: ['upx_dir', 'ascii', 'clean_build', 'loglevel']
     },
     {
+        title: 'What to generate',
+        arguments: ['name']
+    },
+    {
         title: 'What to bundle, where to search',
         arguments: ['binaries', 'pathex', 'hiddenimports', 'hookspath', 'runtime_hooks', 'excludes', 'key']
     },
@@ -130,9 +134,55 @@ const _createSubSectionInAdvanced = (title, options) => {
         const container = document.createElement('div');
         subSectionNode.appendChild(container);
 
-        const optionNode = document.createElement('div');
+        // Option title / name
+        const optionNode = document.createElement('span');
         container.appendChild(optionNode);
         optionNode.textContent = o.option_strings[o.option_strings.length - 1];
+
+        // Help icon
+        const helpNode = document.createElement('span');
+        container.appendChild(helpNode);
+        helpNode.title = o.help;
+        helpNode.textContent = '?TMP'; // TODO Remove when CSS styled
+
+        // Identify what type of inputs to use
+        if (o.nargs === 0) {
+            container.classList.add('switch');
+
+            const enableButton = document.createElement('button');
+            container.appendChild(enableButton);
+            enableButton.textContent = 'Enable'
+
+        } else if (o.choices !== null) {
+            container.classList.add('choice');
+
+            const selectNode = document.createElement('select');
+            container.appendChild(selectNode);
+
+            const defaultOptionNode = document.createElement('option');
+            selectNode.appendChild(defaultOptionNode);
+            defaultOptionNode.textContent = '';
+
+            o.choices.map(choice => {
+                const optionNode = document.createElement('option');
+                selectNode.appendChild(optionNode);
+                optionNode.textContent = choice;
+            });
+
+        } else if (o.default !== null || o.dest === 'upx_exclude') {
+            container.classList.add('multiple-input');
+
+            const addButton = document.createElement('button');
+            container.appendChild(addButton);
+            addButton.textContent = 'Add';
+
+        } else {
+            container.classList.add('input');
+
+            const inputNode = document.createElement('input');
+            container.appendChild(inputNode);
+            inputNode.placeholder = o.metavar || 'Value'
+        }
     });
 };
 
@@ -151,12 +201,13 @@ const constructAdvancedSection = (pyinstallerOptions) => {
     const usedSectionArguments = flatMap(sectionArguments.map(s => s.arguments));
     const extraArguments = options.filter(o =>
         usedSectionArguments.indexOf(o.dest) === -1
-        && staticAndIgnoredArguments.indexOf(o.dest)
+        && staticAndIgnoredArguments.indexOf(o.dest) === -1
     );
     if (extraArguments.length > 0) {
+        console.log('extraArguments', extraArguments);
         _createSubSectionInAdvanced(
             'Other',
-            options.filter(o => extraArguments.indexOf(o.dest) !== -1)
+            extraArguments
         );
     }
 };
