@@ -53,14 +53,25 @@ const consoleWindowOptionChange = (option) => (event) => {
     }
 };
 
-const iconLocationChange = (event) => {
-    // TODO Update internal config
-    // TODO Check if file is valid
+const iconLocationChange = async (event) => {
+    const value = event.target.value;
+    if (value === "") {
+        removeOption('icon_file', '')
+    } else {
+        modifyOption('icon_file', '', value);
+    }
+
+    if (await doesFileExist(value) || value === "") {
+        event.target.style.border = "";
+    } else {
+        event.target.style.border = '1px solid rgb(244, 67, 54)';
+    }
 };
 
-const iconLocationSearch = (event) => {
-    // TODO Update internal config
-    // TODO Check if file is valid
+const iconLocationSearch = async (event) => {
+    const iconPathNode = document.getElementById('icon-path');
+    iconPathNode.value = await askForFile('icon');
+    await iconLocationChange({ target: iconPathNode });
 };
 
 const additionalFilesAddFiles = (event) => {
@@ -101,4 +112,5 @@ const setupEvents = () => {
     // Call event methods to initially setup ui
     scriptLocationChange({ target: document.getElementById('entry-script') });
     oneFileOptionChange('one-directory')(null);
+    consoleWindowOptionChange('console')(null);
 };
