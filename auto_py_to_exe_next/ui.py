@@ -100,8 +100,8 @@ def start(use_chrome_if_possible=True):
     """ Start the UI using Eel """
     try:
         if utils.can_use_chrome() and use_chrome_if_possible:
-            eel.start('main.html', size=(650, 612), port=0)
+            eel.start('main.html', size=(650, 650), port=0)
         else:
-            eel.start('main.html', size=(650, 612), port=0, mode='user selection')
+            eel.start('main.html', size=(650, 650), port=0, mode='user selection')
     except (SystemExit, KeyboardInterrupt):
         pass  # This is what the bottle server raises
