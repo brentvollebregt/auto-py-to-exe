@@ -2,26 +2,7 @@
 Handle the initialisation of the ui
 */
 
-let options = {};
-
-const setupOption = (option) => {
-
-};
-
-const constructAdvancedSection = (pyinstallerOptions) => {
-    options = pyinstallerOptions;
-
-    // Filter options we don't need to manually setup
-    const filteredOptions = options.filter(o =>
-        o.dest !== 'help'
-        && o.dest !== 'onefile' // Handles onefile and onedir
-        && o.dest !== 'specpath'
-    );
-
-    // Setup options left over
-
-    console.log('initialisation_data', pyinstallerOptions);
-};
+let options = [];
 
 // Get initialisation data from the server and setup the ui
 window.addEventListener("load", async () => {
@@ -36,6 +17,10 @@ window.addEventListener("load", async () => {
     constructAdvancedSection(initialisation_data.options);
 
     // TODO Setup provided config json
+
+    // TODO Use initialisation_data.filename
+
+    // TODO Display warnings with initialisation_data.warnings
 });
 
 // Trigger events to initially setup the ui

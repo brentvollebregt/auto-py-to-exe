@@ -16,8 +16,10 @@ const removeOption = (option, id) => {
 
 const generateCurrentCommand = () => {
     const entryScript = configuration.find(c => c.option === 'filenames');
-    // TODO
-    return `pyinstaller ${entryScript !== undefined ? entryScript.value : ''}`;
+
+    // TODO Use configuration in combination with options to build the command
+
+    return `pyinstaller "${entryScript !== undefined ? entryScript.value : ''}"`;
 };
 
 const updateCurrentCommandDisplay = () => {
@@ -25,4 +27,10 @@ const updateCurrentCommandDisplay = () => {
 };
 
 // Initial configuration
-let configuration = [];
+let configuration = [
+    {
+        option: 'noconfirm',
+        id: "",
+        value: true
+    }
+];
