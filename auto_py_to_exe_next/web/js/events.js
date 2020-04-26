@@ -5,12 +5,7 @@ Handle user events
 const scriptLocationChange = async (event) => {
     const value = event.target.value;
     modifyOption('filenames', '', value);
-
-    if (await doesFileExist(value)) {
-        event.target.style.border = "";
-    } else {
-        event.target.style.border = '1px solid rgb(244, 67, 54)';
-    }
+    colourInputBasedOnIfFileExists(event.target, false);
 };
 
 const scriptLocationSearch = async (event) => {
@@ -60,12 +55,7 @@ const iconLocationChange = async (event) => {
     } else {
         modifyOption('icon_file', '', value);
     }
-
-    if (await doesFileExist(value) || value === "") {
-        event.target.style.border = "";
-    } else {
-        event.target.style.border = '1px solid rgb(244, 67, 54)';
-    }
+    colourInputBasedOnIfFileExists(event.target, false);
 };
 
 const iconLocationSearch = async (event) => {
@@ -74,16 +64,23 @@ const iconLocationSearch = async (event) => {
     await iconLocationChange({ target: iconPathNode });
 };
 
-const additionalFilesAddFiles = (event) => {
-    // TODO Update internal config
+const additionalFilesAddFiles = async (event) => {
+    const files = await askForFiles();
+    if (files !== null) {
+        files.forEach(file => addAdditionalFile(file, '.'));
+    }
 };
 
-const additionalFilesAddFolder = (event) => {
-    // TODO Update internal config
+const additionalFilesAddFolder = async (event) => {
+    const folder = await askForFolder();
+    if (folder !== '') {
+        const destinationFolders = folder.split(/[/\\]/);
+        addAdditionalFile(folder, `${destinationFolders[destinationFolders.length - 1]}/`);
+    }
 };
 
 const additionalFilesAddBlank = (event) => {
-    // TODO Update internal config
+    addAdditionalFile('', '.');
 };
 
 const packageScript = (event) => {

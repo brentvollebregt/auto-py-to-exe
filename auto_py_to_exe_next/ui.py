@@ -36,12 +36,12 @@ def ask_file(file_type):
 
 @eel.expose
 def ask_files():
-    pass
+    return dialogs.ask_files()
 
 
 @eel.expose
 def ask_folder():
-    pass
+    return dialogs.ask_folder()
 
 
 @eel.expose

@@ -87,7 +87,6 @@ button { /* Generic button */
 input, select { /* Input and drop-downs */
     padding: 4px;
     border: 1px solid #458BC6;
-    margin-left: 6px;
 }
 
 /* Small notes */

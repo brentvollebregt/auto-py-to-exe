@@ -58,6 +58,30 @@ div[id*="section"] .header h2 {
 
 div[id*="section"] .content {
     display: none; /* Hide sections by default */
+    margin: 5px 10px 0 10px;
+}
+
+/* Additional Files */
+
+#datas-add-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 5px;
+}
+
+#datas-list div {
+    margin-top: 3px;
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+}
+
+#datas-list div *:not(:first-child) {
+    margin-left: 5px;
+}
+
+#datas-list div img {
+    height: 20px;
+    cursor: pointer;
 }
 
 /* Patches (TODO Get rid of these in later progress) */

@@ -40,3 +40,25 @@ def ask_file(file_type):
         file_path = askopenfilename(parent=root, filetypes=file_types)
     root.update()
     return file_path
+
+
+def ask_files():
+    """ Ask the user to select one or more files """
+    root = Tk()
+    root.withdraw()
+    root.wm_attributes('-topmost', 1)
+    file_paths = askopenfilenames(parent=root)
+    root.update()
+    if file_paths == "":
+        return None
+    else:
+        return file_paths
+
+
+def ask_folder():
+    """ Ask the user to select a folder """
+    root = Tk()
+    root.withdraw()
+    root.wm_attributes('-topmost', 1)
+    folder = askdirectory(parent=root)
+    return folder

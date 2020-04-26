@@ -12,7 +12,10 @@
                     warnings: []
                 }),
                 does_file_exist: (path) => false,
-                ask_file: () => ""
+                does_folder_exist: (path) => false,
+                ask_file: (file_type) => "",
+                ask_files: () => [],
+                ask_folder: () => "",
             }
         </script>
         <script type="text/javascript" src="/eel.js"></script>
@@ -84,12 +87,18 @@
                     <h2>Additional Files</h2>
                 </div>
                 <div class="content">
-                    <button id="additional-files-add-files-button" class="btn_search" style="margin: 0 0 5px 6px;">
-                        Add Files
-                    </button>
-                    <button id="additional-files-add-folder" class="btn_search">Add Folder</button>
-                    <button id="additional-files-add-blank" class="btn_search">Add Blank</button>
-                    <br>
+                    <div id="datas-add-buttons">
+                        <button id="additional-files-add-files-button" class="btn_search">
+                            Add Files
+                        </button>
+                        <button id="additional-files-add-folder" class="btn_search">
+                            Add Folder
+                        </button>
+                        <button id="additional-files-add-blank" class="btn_search">
+                            Add Blank
+                        </button>
+                    </div>
+                    <div id="datas-list"></div>
                     <p id="onefileAdditionalFilesNote" class="note" style="display: none;">
                         Be careful when using additional files with onefile mode;
                         <a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">read this</a>
