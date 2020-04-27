@@ -91,7 +91,7 @@ div[id*="section"] .content {
 }
 
 #section-advanced .content .option-container > span { /* Option name */
-    margin-right: 14px;
+    margin-right: 10px;
 }
 
 #section-advanced .content .switch {
@@ -109,6 +109,11 @@ div[id*="section"] .content {
 #section-advanced .content .input {
     display: grid;
     grid-template-columns: auto 1fr;
+    grid-gap: 5px;
+}
+
+#section-advanced .content .input.with-browse {
+    grid-template-columns: auto 1fr auto;
 }
 
 /* Current Command */

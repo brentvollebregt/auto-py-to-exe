@@ -20,10 +20,11 @@ const expandSection = (sectionName) => {
     }
 };
 
-const colourInputBasedOnIfFileExists = async (inputNode, allowedToBeADirectory) => {
+const colourInputBasedOnIfFileExists = async (inputNode, allowedToBeEmpty, allowedToBeFile, allowedToBeADirectory) => {
     const { value } = inputNode;
     if (
-        await doesFileExist(value)
+        (allowedToBeEmpty && value === "")
+        || (allowedToBeFile && await doesFileExist(value))
         || (allowedToBeADirectory && await doesFolderExist(value))
     ) {
         inputNode.style.border = "";
@@ -53,7 +54,7 @@ const addAdditionalFile = (source, destination) => {
     sourceInput.addEventListener('input', (event) => {
         const value = event.target.value;
         modifyOption('datas', id, [value, destinationInput.value]);
-        colourInputBasedOnIfFileExists(sourceInput, true);
+        colourInputBasedOnIfFileExists(sourceInput, false, true, true);
     });
     destinationInput.addEventListener('input', (event) => {
         const value = event.target.value;
@@ -69,7 +70,7 @@ const addAdditionalFile = (source, destination) => {
     datasList.appendChild(wrapper);
 };
 
-const staticAndIgnoredArguments =[
+const staticAndIgnoredOptions =[
     'help', // Will trigger an unwanted short circuit
     'filenames', // filenames is handled by static content
     'onefile', // onefile and onedir and handled by static content
@@ -82,36 +83,40 @@ const staticAndIgnoredArguments =[
     'noconfirm' // This always used by auto-py-to-exe (-y)
 ];
 
-const sectionArguments = [
+const sectionOptions = [
     {
         title: 'General Options',
-        arguments: ['upx_dir', 'ascii', 'clean_build', 'loglevel', 'name']
+        options: ['name', 'upx_dir', 'ascii', 'clean_build', 'loglevel']
     },
     {
         title: 'What to bundle, where to search',
-        arguments: ['binaries', 'pathex', 'hiddenimports', 'hookspath', 'runtime_hooks', 'excludes', 'key']
+        options: ['binaries', 'pathex', 'hiddenimports', 'hookspath', 'runtime_hooks', 'excludes', 'key']
     },
     {
         title: 'How to generate',
-        arguments: ['debug', 'strip', 'noupx', 'upx_exclude']
+        options: ['debug', 'strip', 'noupx', 'upx_exclude']
     },
     {
         title: 'Windows specific options',
-        arguments: ['version_file', 'manifest', 'resources', 'uac_admin', 'uac_uiaccess']
+        options: ['version_file', 'manifest', 'resources', 'uac_admin', 'uac_uiaccess']
     },
     {
         title: 'Windows Side-by-side Assembly searching options (advanced)',
-        arguments: ['win_private_assemblies', 'win_no_prefer_redirects']
+        options: ['win_private_assemblies', 'win_no_prefer_redirects']
     },
     {
         title: 'Mac OS X specific options',
-        arguments: ['bundle_identifier']
+        options: ['bundle_identifier']
     },
     {
         title: 'Rarely used special options',
-        arguments: ['runtime_tmpdir', 'bootloader_ignore_signals']
+        options: ['runtime_tmpdir', 'bootloader_ignore_signals']
     },
 ];
+
+// Options that expect file and directory paths
+const fileOptions = ['runtime_hooks', 'version_file', 'manifest', 'resources'];
+const directoryOptions = ['upx_dir', 'pathex', 'hookspath', 'runtime_tmpdir'];
 
 const _createSubSectionInAdvanced = (title, options) => {
     const parent = document.querySelector('#section-advanced .content');
@@ -186,6 +191,9 @@ const _createSubSectionInAdvanced = (title, options) => {
                 optionNode.value = choice;
             });
 
+        } else if (o.dest === 'binaries') {
+            // TODO
+
         } else if (o.default !== null || o.dest === 'upx_exclude') {
             container.classList.add('multiple-input');
 
@@ -196,9 +204,45 @@ const _createSubSectionInAdvanced = (title, options) => {
         } else {
             container.classList.add('input');
 
+            const isOptionFileBased = fileOptions.indexOf(o.dest) !== -1;
+            const isOptionDirectoryBased = directoryOptions.indexOf(o.dest) !== -1;
+
             const inputNode = document.createElement('input');
             container.appendChild(inputNode);
-            inputNode.placeholder = o.metavar || 'Value'
+            inputNode.placeholder = o.metavar || 'Value';
+            inputNode.addEventListener('input', (event) => {
+                if (event.target.value === '') {
+                    removeOption(o.dest, "");
+                } else {
+                    modifyOption(o.dest, "", event.target.value);
+                }
+
+                if (isOptionFileBased || isOptionDirectoryBased) {
+                    colourInputBasedOnIfFileExists(inputNode, true, isOptionFileBased, isOptionDirectoryBased);
+                }
+            });
+
+            if (isOptionFileBased) {
+                container.classList.add('with-browse');
+                const searchButton = document.createElement('button');
+                container.appendChild(searchButton);
+                searchButton.textContent = 'Browse for File';
+                searchButton.addEventListener('click', async () => {
+                    inputNode.value = await askForFile(null);
+                    inputNode.dispatchEvent(new Event('input'));
+                });
+            }
+
+            if (isOptionDirectoryBased) {
+                container.classList.add('with-browse');
+                const searchButton = document.createElement('button');
+                container.appendChild(searchButton);
+                searchButton.textContent = 'Browse for Folder';
+                searchButton.addEventListener('click', async () => {
+                    inputNode.value = await askForFolder(null);
+                    inputNode.dispatchEvent(new Event('input'));
+                });
+            }
         }
     });
 };
@@ -207,24 +251,23 @@ const constructAdvancedSection = (pyinstallerOptions) => {
     options = pyinstallerOptions;
 
     // Setup pre-defined sections
-    sectionArguments.forEach(section =>
+    sectionOptions.forEach(section =>
         _createSubSectionInAdvanced(
             section.title,
-            options.filter(o => section.arguments.indexOf(o.dest) !== -1)
+            options.filter(o => section.options.indexOf(o.dest) !== -1)
         )
     );
 
     // Setup extra arguments
-    const usedSectionArguments = flatMap(sectionArguments.map(s => s.arguments));
-    const extraArguments = options.filter(o =>
-        usedSectionArguments.indexOf(o.dest) === -1
-        && staticAndIgnoredArguments.indexOf(o.dest) === -1
+    const usedSectionOptions = flatMap(sectionOptions.map(s => s.options));
+    const extraOptions = options.filter(option =>
+        usedSectionOptions.indexOf(option.dest) === -1
+        && staticAndIgnoredOptions.indexOf(option.dest) === -1
     );
-    if (extraArguments.length > 0) {
-        console.log('extraArguments', extraArguments);
+    if (extraOptions.length > 0) {
         _createSubSectionInAdvanced(
             'Other',
-            extraArguments
+            extraOptions
         );
     }
 };
