@@ -9,7 +9,7 @@ from . import dialogs
 
 
 # Setup eels root folder
-eel.init(config.frontend_asset_folder)
+eel.init(config.FRONTEND_ASSET_FOLDER)
 
 
 @eel.expose
@@ -17,9 +17,11 @@ def initialise():
     """ Called by the UI when opened. Used to pass initial values. """
     return {
         'filename': config.package_filename,
-        'supplied_ui_configuration': config.supplied_ui_configuration,
+        'suppliedUiConfiguration': config.supplied_ui_configuration,
         'options': get_pyinstaller_options(),
-        'warnings': []  # TODO Add warnings for unsupported versions and known issues {message, severity}
+        'warnings': [],  # TODO Add warnings for unsupported versions and known issues {message, severity}
+        'pathSeparator': os.pathsep,
+        'defaultOutputFolder': config.DEFAULT_OUTPUT_FOLDER
     }
 
 

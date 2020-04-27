@@ -4,24 +4,31 @@ Handle the initialisation of the ui
 
 let options = [];
 
+let settings = {
+    pathSeparator: '',
+    outputFolder: ''
+};
+
 // Get initialisation data from the server and setup the ui
 window.addEventListener("load", async () => {
     // Get initialisation data from Python
-    const initialisation_data = await eel.initialise()();
-    options = initialisation_data.options;
+    const initialisationData = await eel.initialise()();
+    options = initialisationData.options;
+    settings.pathSeparator = initialisationData.pathSeparator;
+    settings.outputFolder = initialisationData.defaultOutputFolder;
 
     // Setup ui events (for static content)
     setupEvents();
 
     // Setup advanced section (for dynamic content)
-    constructAdvancedSection(initialisation_data.options);
+    constructAdvancedSection(initialisationData.options);
 
     // TODO Setup provided config json
 
     // If a file is provided, put it in the script location
-    if (initialisation_data.filename !== null) {
+    if (initialisationData.filename !== null) {
         const entryScriptNode = document.getElementById('entry-script');
-        entryScriptNode.value = initialisation_data.filename;
+        entryScriptNode.value = initialisationData.filename;
         scriptLocationChange({ target: entryScriptNode });
     }
 

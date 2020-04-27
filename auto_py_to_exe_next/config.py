@@ -6,7 +6,7 @@ import sys
 temporary_directory = None
 
 # Frontend
-frontend_asset_folder = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'web')
+FRONTEND_ASSET_FOLDER = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'web')
 
 # Pre-defined variables by Python
 DEFAULT_RECURSION_LIMIT = sys.getrecursionlimit()
@@ -15,3 +15,6 @@ DEFAULT_RECURSION_LIMIT = sys.getrecursionlimit()
 package_filename = None
 disable_chrome = False
 supplied_ui_configuration = dict()
+
+# Build
+DEFAULT_OUTPUT_FOLDER = os.path.abspath('output')
