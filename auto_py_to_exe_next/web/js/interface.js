@@ -196,7 +196,7 @@ const _createSubSectionInAdvanced = (title, options) => {
                 const inputNode = document.createElement('input');
                 valueContainer.appendChild(inputNode);
                 inputNode.value = initialValue;
-                inputNode.placeholder = o.metavar || 'Value';
+                inputNode.placeholder = o.metavar || 'VALUE';
                 colourInput(inputNode, false, isOptionFileBased, isOptionDirectoryBased);
                 inputNode.addEventListener('input', (event) => {
                     modifyOption(o.dest, id, event.target.value);
@@ -221,7 +221,7 @@ const _createSubSectionInAdvanced = (title, options) => {
 
             const inputNode = document.createElement('input');
             container.appendChild(inputNode);
-            inputNode.placeholder = o.metavar || 'Value';
+            inputNode.placeholder = o.metavar || 'VALUE';
             inputNode.addEventListener('input', (event) => {
                 if (event.target.value === '') {
                     removeOption(o.dest, "");

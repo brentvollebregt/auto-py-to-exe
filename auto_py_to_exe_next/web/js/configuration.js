@@ -37,7 +37,7 @@ const generateCurrentCommand = () => {
     }).filter(x => x !== null);
 
     const entryScript = configuration.find(c => c.option === 'filenames');
-    return `pyinstaller ${builtOptionsFromConfiguration.join(' ')} "${entryScript !== undefined ? entryScript.value : ''}"`;
+    return `pyinstaller ${builtOptionsFromConfiguration.join(' ')} ${nonPyinstallerConfiguration.manualArguments} "${entryScript !== undefined ? entryScript.value : ''}"`;
 };
 
 const updateCurrentCommandDisplay = () => {

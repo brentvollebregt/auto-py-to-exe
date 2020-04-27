@@ -106,6 +106,7 @@ const recursionLimitToggle = (enabled) => {
 
 const rawArgumentsChange = (event) => {
     nonPyinstallerConfiguration.manualArguments = event.target.value;
+    updateCurrentCommandDisplay();
 };
 
 const packageScript = (event) => {
