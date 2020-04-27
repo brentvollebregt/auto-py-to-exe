@@ -38,6 +38,10 @@ h3 {
     margin: 10px 2px 4px 2px;
 }
 
+h2 > small {
+    font-size: 13px;
+}
+
 /* Generic inputs */
 
 button, input, select {
