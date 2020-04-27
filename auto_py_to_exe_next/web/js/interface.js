@@ -34,40 +34,40 @@ const colourInput = async (inputNode, allowedToBeEmpty, allowedToBeFile, allowed
     }
 };
 
-const addAdditionalFile = (source, destination) => {
+const addDoubleInputForSrcDst = (parentNode, optionDest, source, destination, sourceCanBeFile, sourceCanBeDirectory) => {
     const id = generateId(16);
-    modifyOption('datas', id, [source, destination]);
+    modifyOption(optionDest, id, [source, destination]);
 
     // Construct visible inputs
     const wrapper = document.createElement('div');
+    parentNode.appendChild(wrapper);
     const sourceInput = document.createElement('input');
-    const destinationInput = document.createElement('input');
-    const removeButton = document.createElement('img');
     wrapper.appendChild(sourceInput);
+    const destinationInput = document.createElement('input');
     wrapper.appendChild(destinationInput);
+    const removeButton = document.createElement('img');
     wrapper.appendChild(removeButton);
 
-    // Setup values and event listeners
+    wrapper.classList.add('dual-value');
+
     sourceInput.value = source;
-    destinationInput.value = destination;
-    removeButton.src = 'img/remove.svg';
     sourceInput.addEventListener('input', (event) => {
         const value = event.target.value;
-        modifyOption('datas', id, [value, destinationInput.value]);
-        colourInput(sourceInput, false, true, true);
-    });
-    destinationInput.addEventListener('input', (event) => {
-        const value = event.target.value;
-        modifyOption('datas', id, [sourceInput.value, value]);
-    });
-    removeButton.addEventListener('click', () => {
-        removeOption('datas', id);
-        wrapper.remove();
+        modifyOption(optionDest, id, [value, destinationInput.value]);
+        colourInput(sourceInput, false, sourceCanBeFile, sourceCanBeDirectory);
     });
 
-    // Add the elements to the list
-    const datasList = document.getElementById('datas-list');
-    datasList.appendChild(wrapper);
+    destinationInput.value = destination;
+    destinationInput.addEventListener('input', (event) => {
+        const value = event.target.value;
+        modifyOption(optionDest, id, [sourceInput.value, value]);
+    });
+
+    removeButton.src = 'img/remove.svg';
+    removeButton.addEventListener('click', () => {
+        removeOption(optionDest, id);
+        wrapper.remove();
+    });
 };
 
 const staticAndIgnoredOptions =[
@@ -195,7 +195,21 @@ const _createSubSectionInAdvanced = (title, options) => {
 
         } else if (o.dest === 'binaries') {
             // Similar to datas (specific option value formatting)
-            // TODO Get this to use the same code as datas
+            container.classList.add('multiple-input');
+
+            const addButton = document.createElement('img');
+            container.appendChild(addButton);
+            addButton.src = 'img/plus.svg';
+
+            const valuesContainer = document.createElement('div');
+            container.appendChild(valuesContainer);
+
+            addButton.addEventListener('click', async () => {
+                const initialValue = await askForFile(null);
+                if (initialValue !== '') {
+                    addDoubleInputForSrcDst(valuesContainer, o.dest, initialValue, '.', true, false);
+                }
+            });
 
         } else if (o.default !== null || o.dest === 'upx_exclude') {
             // Multiple values

@@ -67,20 +67,25 @@ const iconLocationSearch = async (event) => {
 const additionalFilesAddFiles = async (event) => {
     const files = await askForFiles();
     if (files !== null) {
-        files.forEach(file => addAdditionalFile(file, '.'));
+        const datasListNode = document.getElementById('datas-list');
+        files.forEach(file => {
+            addDoubleInputForSrcDst(datasListNode, 'datas', file, '.', true, true);
+        });
     }
 };
 
 const additionalFilesAddFolder = async (event) => {
     const folder = await askForFolder();
     if (folder !== '') {
-        const destinationFolders = folder.split(/[/\\]/);
-        addAdditionalFile(folder, `${destinationFolders[destinationFolders.length - 1]}/`);
+        const datasListNode = document.getElementById('datas-list');
+        const destinationFolder = folder.split(/[/\\]/);
+        addDoubleInputForSrcDst(datasListNode, 'datas', folder, `${destinationFolder[destinationFolder.length - 1]}/`, true, true);
     }
 };
 
 const additionalFilesAddBlank = (event) => {
-    addAdditionalFile('', '.');
+    const datasListNode = document.getElementById('datas-list');
+    addDoubleInputForSrcDst(datasListNode, 'datas', '', '.', true, true);
 };
 
 const packageScript = (event) => {

@@ -111,6 +111,9 @@ div[id*="section"] .content {
     grid-gap: 4px;
     margin-top: 2px;
 }
+#section-advanced .content .multiple-input > div > div.dual-value {
+    grid-template-columns: 1fr 1fr auto;
+}
 
 #section-advanced .content .multiple-input > div > div > img {
     height: 100%;
