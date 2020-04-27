@@ -4,18 +4,15 @@ Handle the initialisation of the ui
 
 let options = [];
 
-let settings = {
-    pathSeparator: '',
-    outputFolder: ''
-};
+let pathSeparator = '';
 
 // Get initialisation data from the server and setup the ui
 window.addEventListener("load", async () => {
     // Get initialisation data from Python
     const initialisationData = await eel.initialise()();
     options = initialisationData.options;
-    settings.pathSeparator = initialisationData.pathSeparator;
-    settings.outputFolder = initialisationData.defaultOutputFolder;
+    pathSeparator = initialisationData.pathSeparator;
+    nonPyinstallerConfiguration.outputDirectory = initialisationData.defaultOutputFolder;
 
     // Setup ui events (for static content)
     setupEvents();
@@ -33,9 +30,4 @@ window.addEventListener("load", async () => {
     }
 
     // TODO Display warnings with initialisation_data.warnings
-});
-
-// Trigger events to initially setup the ui
-window.addEventListener("load", async () => {
-
 });

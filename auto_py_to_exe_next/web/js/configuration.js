@@ -31,7 +31,7 @@ const generateCurrentCommand = () => {
             const optionFlag = option.option_strings[option.option_strings.length - 1];
             const value = !Array.isArray(c.value)
                 ? c.value
-                : c.value.join(settings.pathSeparator);
+                : c.value.join(pathSeparator);
             return `${optionFlag} "${value}"`;
         }
     }).filter(x => x !== null);
@@ -52,3 +52,9 @@ let configuration = [
         value: true
     }
 ];
+
+let nonPyinstallerConfiguration = {
+    outputDirectory: '',
+    increaseRecursionLimit: true,
+    manualArguments: ''
+};

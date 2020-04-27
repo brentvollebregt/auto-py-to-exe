@@ -88,6 +88,26 @@ const additionalFilesAddBlank = (event) => {
     addDoubleInputForSrcDst(datasListNode, 'datas', '', '.', true, true);
 };
 
+const outputDirectoryChange = (event) => {
+    nonPyinstallerConfiguration.outputDirectory = event.target.value;
+};
+
+const recursionLimitToggle = (enabled) => {
+    nonPyinstallerConfiguration.increaseRecursionLimit = enabled;
+    const button = document.getElementById('recursion-limit-switch');
+    if (enabled) {
+        button.classList.add('selected');
+        button.classList.remove('unselected');
+    } else {
+        button.classList.remove('selected');
+        button.classList.add('unselected');
+    }
+};
+
+const rawArgumentsChange = (event) => {
+    nonPyinstallerConfiguration.manualArguments = event.target.value;
+};
+
 const packageScript = (event) => {
 
 };
@@ -97,17 +117,33 @@ const openOutputFolder = (event) => {
 };
 
 const setupEvents = () => {
+    // Script location
     document.getElementById('entry-script').addEventListener('input', scriptLocationChange);
     document.getElementById('entry-script-search').addEventListener('click', scriptLocationSearch);
+
+    // Output bundle type
     document.getElementById('one-directory-button').addEventListener('click', oneFileOptionChange('one-directory'));
     document.getElementById('one-file-button').addEventListener('click', oneFileOptionChange('one-file'));
+
+    // Console switch
     document.getElementById('console-based-button').addEventListener('click', consoleWindowOptionChange('console'));
     document.getElementById('window-based-button').addEventListener('click', consoleWindowOptionChange('window'));
+
+    // Icon
     document.getElementById('icon-path').addEventListener('input', iconLocationChange);
     document.getElementById('icon-path-search').addEventListener('click', iconLocationSearch);
+
+    // Additional files
     document.getElementById('additional-files-add-files-button').addEventListener('click', additionalFilesAddFiles);
     document.getElementById('additional-files-add-folder').addEventListener('click', additionalFilesAddFolder);
     document.getElementById('additional-files-add-blank').addEventListener('click', additionalFilesAddBlank);
+
+    // Settings
+    document.getElementById('output-directory').addEventListener('input', outputDirectoryChange);
+    document.getElementById('recursion-limit-switch').addEventListener('click', e => recursionLimitToggle(e.target.classList.contains('unselected')));
+    document.getElementById('raw-arguments').addEventListener('input', rawArgumentsChange);
+
+    // Build buttons
     document.getElementById('package-button').addEventListener('click', packageScript);
     document.getElementById('open-output-folder-button').addEventListener('click', openOutputFolder);
 
@@ -115,4 +151,7 @@ const setupEvents = () => {
     scriptLocationChange({ target: document.getElementById('entry-script') });
     oneFileOptionChange('one-directory')(null);
     consoleWindowOptionChange('console')(null);
+    document.getElementById('output-directory').value = nonPyinstallerConfiguration.outputDirectory;
+    recursionLimitToggle(nonPyinstallerConfiguration.increaseRecursionLimit);
+    document.getElementById('raw-arguments').value = nonPyinstallerConfiguration.manualArguments;
 };

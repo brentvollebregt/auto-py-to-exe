@@ -73,7 +73,6 @@ button:not(.selected):not(.unselected):hover { /* Apply hovers to non-state butt
 
 button.selected, button.unselected:hover {
     border-color: #458BC6;
-    color: #458BC6;
 }
 
 button.unselected {
