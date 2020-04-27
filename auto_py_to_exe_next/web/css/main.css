@@ -112,10 +112,6 @@ div[id*="section"] .content {
     margin-top: 2px;
 }
 
-#section-advanced .content .multiple-input > div > div.with-browse {
-    grid-template-columns: 1fr auto auto;
-}
-
 #section-advanced .content .multiple-input > div > div > img {
     height: 100%;
     padding: 2px 0;

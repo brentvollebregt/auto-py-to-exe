@@ -211,33 +211,31 @@ const _createSubSectionInAdvanced = (title, options) => {
             const valuesContainer = document.createElement('div');
             container.appendChild(valuesContainer);
 
-            addButton.addEventListener('click', () => {
+            addButton.addEventListener('click', async () => {
+                // Get initial value
+                let initialValue = '';
+                if (isOptionFileBased || isOptionDirectoryBased) {
+                    initialValue = isOptionFileBased ? await askForFile(null) : await askForFolder();
+                    if (initialValue === '') {
+                        return
+                    }
+                }
+
                 const id = generateId(16);
-                modifyOption(o.dest, id, '');
+                modifyOption(o.dest, id, initialValue);
 
                 const valueContainer = document.createElement('div');
                 valuesContainer.appendChild(valueContainer);
 
-                const valueNode = document.createElement('input');
-                valueContainer.appendChild(valueNode);
-                valueNode.value = '';
-                colourInput(valueNode, false, isOptionFileBased, isOptionDirectoryBased);
-                valueNode.addEventListener('input', (event) => {
+                const inputNode = document.createElement('input');
+                valueContainer.appendChild(inputNode);
+                inputNode.value = initialValue;
+                inputNode.placeholder = o.metavar || 'Value';
+                colourInput(inputNode, false, isOptionFileBased, isOptionDirectoryBased);
+                inputNode.addEventListener('input', (event) => {
                     modifyOption(o.dest, id, event.target.value);
-                    colourInput(valueNode, false, isOptionFileBased, isOptionDirectoryBased);
+                    colourInput(inputNode, false, isOptionFileBased, isOptionDirectoryBased);
                 });
-
-                // Show browse button if required (only file or folder - not both)
-                if (isOptionFileBased || isOptionDirectoryBased) {
-                    valueContainer.classList.add('with-browse');
-                    const searchButton = document.createElement('button');
-                    valueContainer.appendChild(searchButton);
-                    searchButton.textContent = isOptionFileBased ? 'Browse for File' : 'Browse for Folder';
-                    searchButton.addEventListener('click', async () => {
-                        valueNode.value = isOptionFileBased ? await askForFile(null) : await askForFolder();
-                        valueNode.dispatchEvent(new Event('input'));
-                    });
-                }
 
                 const removeButtonNode = document.createElement('img');
                 removeButtonNode.src = 'img/remove.svg';
