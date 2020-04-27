@@ -69,65 +69,49 @@ div[id*="section"] .content {
     grid-gap: 5px;
 }
 
-#datas-list div {
-    margin-top: 3px;
-    display: grid;
-    grid-template-columns: 1fr 1fr auto;
-}
-
-#datas-list div *:not(:first-child) {
-    margin-left: 5px;
-}
-
-#datas-list div img {
-    height: 100%;
-    padding: 2px 0;
-    cursor: pointer;
-}
-
 /* Advanced tab */
 
-#section-advanced .content .option-container { /* Option containers */
+.option-container { /* Option containers */
     margin-top: 4px;
 }
 
-#section-advanced .content .option-container > span { /* Option name */
+.option-container > span { /* Option name */
     margin-right: 10px;
 }
 
-#section-advanced .content .multiple-input > img {
+.option-container.multiple-input > img {
     height: 23px;
     vertical-align: middle;
     cursor: pointer;
 }
 
-#section-advanced .content .multiple-input > div {
+.option-container.multiple-input > div {
     margin-left: 20px;
 }
 
-#section-advanced .content .multiple-input > div > div {
+.option-container.multiple-input > div > div, #datas-list > div {
     display: grid;
     grid-template-columns: 1fr auto;
     grid-gap: 4px;
     margin-top: 2px;
 }
-#section-advanced .content .multiple-input > div > div.dual-value {
+.option-container.multiple-input > div > div.dual-value, #datas-list > div {
     grid-template-columns: 1fr 1fr auto;
 }
 
-#section-advanced .content .multiple-input > div > div > img {
+.option-container.multiple-input > div > div > img, #datas-list > div > img {
     height: 100%;
     padding: 2px 0;
     cursor: pointer;
 }
 
-#section-advanced .content .input {
+.option-container.input {
     display: grid;
     grid-template-columns: auto 1fr;
     grid-gap: 5px;
 }
 
-#section-advanced .content .input.with-browse {
+.option-container.input.with-browse {
     grid-template-columns: auto 1fr auto;
 }
 

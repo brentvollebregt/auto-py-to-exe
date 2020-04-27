@@ -130,9 +130,7 @@
                     <img src="img/chevron-square-up.svg" alt="Advanced Section Chevron"/>
                     <h2>Advanced</h2>
                 </div>
-                <div class="content">
-                    <!-- TODO: Import -->
-                </div>
+                <div class="content"></div>
             </div>
 
             <div id="section-settings">
@@ -141,10 +139,41 @@
                     <h2>Settings</h2>
                 </div>
                 <div class="content">
-                    <!-- TODO: Manual argument input -->
-                    <!-- TODO: Output directory -->
-                    <!-- TODO: Disable recursion limit override -->
-                    <!-- TODO: Configuration import/export (only to and from JSON files) -->
+                    <div>
+                        <h3>auto-py-to-exe Specific Options</h3>
+                        <div class="option-container input">
+                            <span>
+                                Output Directory
+                                <span title="The directory to put the output in." class="info_icon"></span>
+                            </span>
+                            <input placeholder="DIRECTORY" />
+<!--                            TODO LINK and set default -->
+                        </div>
+                        <div class="option-container switch">
+                            <span>
+                                Increase Recursion Limit
+                                <span title="Having this enabled will set the recursion limit to 5000 using sys.setrecursionlimit(5000)." class="info_icon"></span>
+                            </span>
+                            <button class="unselected">Enable</button>
+<!--                            TODO LINK and set default -->
+                        </div>
+                    </div>
+                    <div>
+                        <h3>Manually Provide Options</h3>
+                        <div class="option-container input">
+                            <span>
+                                Manual Argument Input
+                                <span title="Inject raw text into the generated command." class="info_icon"></span>
+                            </span>
+                            <input placeholder="DIRECTORY" />
+<!--                            TODO LINK and set default -->
+                        </div>
+                    </div>
+<!--                    <div>-->
+<!--                        <h3>Configuration</h3>-->
+<!--                        <button>Import Config From JSON File</button>-->
+<!--                        <button>Export Config To JSON File</button>-->
+<!--                    </div>-->
                 </div>
             </div>
 
