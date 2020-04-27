@@ -5,7 +5,7 @@ Handle user events
 const scriptLocationChange = async (event) => {
     const value = event.target.value;
     modifyOption('filenames', '', value);
-    colourInputBasedOnIfFileExists(event.target, false, true, false);
+    colourInput(event.target, false, true, false);
 };
 
 const scriptLocationSearch = async (event) => {
@@ -55,7 +55,7 @@ const iconLocationChange = async (event) => {
     } else {
         modifyOption('icon_file', '', value);
     }
-    colourInputBasedOnIfFileExists(event.target, true, true, false);
+    colourInput(event.target, true, true, false);
 };
 
 const iconLocationSearch = async (event) => {

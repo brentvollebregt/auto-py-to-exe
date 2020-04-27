@@ -53,6 +53,10 @@ button, input, select {
     font-weight: 100;
 }
 
+input:focus {
+    outline: none; /* Don't show outline so you can see the colour change */
+}
+
 button {
     cursor: pointer;
     border-radius: 4px;

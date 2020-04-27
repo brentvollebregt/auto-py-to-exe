@@ -20,10 +20,11 @@ const expandSection = (sectionName) => {
     }
 };
 
-const colourInputBasedOnIfFileExists = async (inputNode, allowedToBeEmpty, allowedToBeFile, allowedToBeADirectory) => {
+const colourInput = async (inputNode, allowedToBeEmpty, allowedToBeFile, allowedToBeADirectory) => {
     const { value } = inputNode;
     if (
-        (allowedToBeEmpty && value === "")
+        (allowedToBeEmpty && value === '')
+        || (!allowedToBeEmpty && value !== '' && !allowedToBeFile && !allowedToBeADirectory)
         || (allowedToBeFile && await doesFileExist(value))
         || (allowedToBeADirectory && await doesFolderExist(value))
     ) {
@@ -39,7 +40,6 @@ const addAdditionalFile = (source, destination) => {
 
     // Construct visible inputs
     const wrapper = document.createElement('div');
-    wrapper.id = `datas-${id}`;
     const sourceInput = document.createElement('input');
     const destinationInput = document.createElement('input');
     const removeButton = document.createElement('img');
@@ -54,7 +54,7 @@ const addAdditionalFile = (source, destination) => {
     sourceInput.addEventListener('input', (event) => {
         const value = event.target.value;
         modifyOption('datas', id, [value, destinationInput.value]);
-        colourInputBasedOnIfFileExists(sourceInput, false, true, true);
+        colourInput(sourceInput, false, true, true);
     });
     destinationInput.addEventListener('input', (event) => {
         const value = event.target.value;
@@ -195,15 +195,58 @@ const _createSubSectionInAdvanced = (title, options) => {
 
         } else if (o.dest === 'binaries') {
             // Similar to datas (specific option value formatting)
-            // TODO
+            // TODO Get this to use the same code as datas
 
         } else if (o.default !== null || o.dest === 'upx_exclude') {
             // Multiple values
             container.classList.add('multiple-input');
 
+            const isOptionFileBased = fileOptions.indexOf(o.dest) !== -1;
+            const isOptionDirectoryBased = directoryOptions.indexOf(o.dest) !== -1;
+
             const addButton = document.createElement('img');
             container.appendChild(addButton);
-            addButton.src = 'img/plus.svg'
+            addButton.src = 'img/plus.svg';
+
+            const valuesContainer = document.createElement('div');
+            container.appendChild(valuesContainer);
+
+            addButton.addEventListener('click', () => {
+                const id = generateId(16);
+                modifyOption(o.dest, id, '');
+
+                const valueContainer = document.createElement('div');
+                valuesContainer.appendChild(valueContainer);
+
+                const valueNode = document.createElement('input');
+                valueContainer.appendChild(valueNode);
+                valueNode.value = '';
+                colourInput(valueNode, false, isOptionFileBased, isOptionDirectoryBased);
+                valueNode.addEventListener('input', (event) => {
+                    modifyOption(o.dest, id, event.target.value);
+                    colourInput(valueNode, false, isOptionFileBased, isOptionDirectoryBased);
+                });
+
+                // Show browse button if required (only file or folder - not both)
+                if (isOptionFileBased || isOptionDirectoryBased) {
+                    valueContainer.classList.add('with-browse');
+                    const searchButton = document.createElement('button');
+                    valueContainer.appendChild(searchButton);
+                    searchButton.textContent = isOptionFileBased ? 'Browse for File' : 'Browse for Folder';
+                    searchButton.addEventListener('click', async () => {
+                        valueNode.value = isOptionFileBased ? await askForFile(null) : await askForFolder();
+                        valueNode.dispatchEvent(new Event('input'));
+                    });
+                }
+
+                const removeButtonNode = document.createElement('img');
+                removeButtonNode.src = 'img/remove.svg';
+                valueContainer.appendChild(removeButtonNode);
+                removeButtonNode.addEventListener('click', () => {
+                    valueContainer.remove();
+                    removeOption(o.dest, id);
+                });
+            });
 
         } else {
             // Single value
@@ -223,28 +266,18 @@ const _createSubSectionInAdvanced = (title, options) => {
                 }
 
                 if (isOptionFileBased || isOptionDirectoryBased) {
-                    colourInputBasedOnIfFileExists(inputNode, true, isOptionFileBased, isOptionDirectoryBased);
+                    colourInput(inputNode, true, isOptionFileBased, isOptionDirectoryBased);
                 }
             });
 
-            if (isOptionFileBased) {
+            // Show browse button if required (only file or folder - not both)
+            if (isOptionFileBased || isOptionDirectoryBased) {
                 container.classList.add('with-browse');
                 const searchButton = document.createElement('button');
                 container.appendChild(searchButton);
-                searchButton.textContent = 'Browse for File';
+                searchButton.textContent = isOptionFileBased ? 'Browse for File' : 'Browse for Folder';
                 searchButton.addEventListener('click', async () => {
-                    inputNode.value = await askForFile(null);
-                    inputNode.dispatchEvent(new Event('input'));
-                });
-            }
-
-            if (isOptionDirectoryBased) {
-                container.classList.add('with-browse');
-                const searchButton = document.createElement('button');
-                container.appendChild(searchButton);
-                searchButton.textContent = 'Browse for Folder';
-                searchButton.addEventListener('click', async () => {
-                    inputNode.value = await askForFolder(null);
+                    inputNode.value = isOptionFileBased ? await askForFile(null) : await askForFolder();
                     inputNode.dispatchEvent(new Event('input'));
                 });
             }

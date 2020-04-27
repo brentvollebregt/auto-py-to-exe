@@ -95,21 +95,30 @@ div[id*="section"] .content {
     margin-right: 10px;
 }
 
-#section-advanced .content .switch {
-
-}
-
-#section-advanced .content .choice {
-
-}
-
-#section-advanced .content .multiple-input {
-
-}
-
 #section-advanced .content .multiple-input > img {
     height: 23px;
     vertical-align: middle;
+    cursor: pointer;
+}
+
+#section-advanced .content .multiple-input > div {
+    margin-left: 20px;
+}
+
+#section-advanced .content .multiple-input > div > div {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-gap: 4px;
+    margin-top: 2px;
+}
+
+#section-advanced .content .multiple-input > div > div.with-browse {
+    grid-template-columns: 1fr auto auto;
+}
+
+#section-advanced .content .multiple-input > div > div > img {
+    height: 100%;
+    padding: 2px 0;
     cursor: pointer;
 }
 
