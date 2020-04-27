@@ -15,11 +15,29 @@ const removeOption = (option, id) => {
 };
 
 const generateCurrentCommand = () => {
+    const builtOptionsFromConfiguration = configuration.filter(c => c.option !== 'filenames').map(c => {
+        // Identify the options
+        const option = options.find(o => o.dest === c.option);
+
+        if (option.nargs === 0) {
+            // For switches, there are some switches for false switches that we can use
+            const potentialOption = options.find(o => o.dest === c.option && o.const === c.value);
+            if (potentialOption !== undefined) {
+                return potentialOption.option_strings[potentialOption.option_strings.length - 1];
+            } else {
+                return null; // If there is no alternate option, skip it as it won't be required
+            }
+        } else {
+            const optionFlag = option.option_strings[option.option_strings.length - 1];
+            const value = !Array.isArray(c.value)
+                ? c.value
+                : c.value.join(settings.pathSeparator);
+            return `${optionFlag} "${value}"`;
+        }
+    }).filter(x => x !== null);
+
     const entryScript = configuration.find(c => c.option === 'filenames');
-
-    // TODO Use configuration in combination with options to build the command
-
-    return `pyinstaller "${entryScript !== undefined ? entryScript.value : ''}"`;
+    return `pyinstaller ${builtOptionsFromConfiguration.join(' ')} "${entryScript !== undefined ? entryScript.value : ''}"`;
 };
 
 const updateCurrentCommandDisplay = () => {
