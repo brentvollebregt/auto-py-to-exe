@@ -18,6 +18,9 @@
                 ask_file: (file_type) => "",
                 ask_files: () => [],
                 ask_folder: () => "",
+                open_folder_in_explorer: (path) => {},
+                will_packaging_overwrite_existing: (file_path, one_file, output_folder) => true,
+                package: (command, non_pyinstaller_options) => {}
             }
         </script>
         <script type="text/javascript" src="/eel.js"></script>
@@ -196,10 +199,10 @@
             </div>
 
             <div id="package-button-wrapper">
-                <button id="package-button" onclick="convert()">
+                <button id="package-button">
                     Convert .py to .exe
                 </button>
-                <button id="open-output-folder-button" onclick="openOutputFolder()">
+                <button id="open-output-folder-button">
                     Open Output Folder
                 </button>
             </div>

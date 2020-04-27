@@ -26,8 +26,10 @@ def initialise():
 
 
 @eel.expose
-def open_folder_in_explorer():
-    pass
+def open_folder_in_explorer(path):
+    """ Open a folder in the local file explorer """
+    if not utils.open_output_folder(path):
+        pass  # TODO Send message saying this failed
 
 
 @eel.expose
@@ -46,9 +48,9 @@ def ask_folder():
     return dialogs.ask_folder()
 
 
-@eel.expose
-def ask_file_save(file_type):
-    pass
+# @eel.expose
+# def ask_file_save(file_type):
+#     pass
 
 
 @eel.expose
@@ -81,21 +83,30 @@ def write_configuration_file(file_path, configuration):
 
 @eel.expose
 def will_packaging_overwrite_existing(file_path, one_file, output_folder):
-    """ Identify if packaging a script will overwrite an existing output """
-    pass
+    """ Checks if there is a possibility of a previous output being overwritten """
+    if not os.path.exists(output_folder):
+        return False
+    no_extension = '.'.join(os.path.basename(file_path).split('.')[:-1])
+    if one_file:
+        if no_extension + '.exe' in os.listdir(output_folder):
+            return True
+    else:
+        if no_extension in os.listdir(output_folder):
+            return True
+    return False
 
 
 @eel.expose
-def package(command, output, disable_recursion_limit):
+def package(command, non_pyinstaller_options):
     """ Package the script provided using the options selected by the user """
-    # TODO Create an options dict that contains PyInstaller config and custom aut-py-to-exe config separately
+    recursion_limit_enabled = non_pyinstaller_options['increaseRecursionLimit']
+    output_directory = non_pyinstaller_options['outputDirectory']
 
-    # TODO Frontend config
-    # {
-    #   'pyinstaller': {},
-    #   'auto-py-to-exe': {}
-    # }
-    pass
+    print('command:', command)
+    print('recursion_limit_enabled:', recursion_limit_enabled)
+    print('output_directory:', output_directory)
+
+    # TODO
 
 
 def start(use_chrome_if_possible=True):

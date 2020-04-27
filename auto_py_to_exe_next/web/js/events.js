@@ -109,12 +109,22 @@ const rawArgumentsChange = (event) => {
     updateCurrentCommandDisplay();
 };
 
-const packageScript = (event) => {
+const packageScript = async (event) => {
+    // Pre-checks
+    const willOverwrite = await eel.will_packaging_overwrite_existing(
+        configuration.find(c => c.option === 'filenames').value,
+        configuration.find(c => c.option === 'onefile').value,
+        nonPyinstallerConfiguration.outputDirectory
+    )();
+    if (willOverwrite && !confirm("This action will overwrite a previous output in the output folder.\nContinue?")) {
+        return
+    }
 
+    eel.package(generateCurrentCommand(), nonPyinstallerConfiguration)();
 };
 
 const openOutputFolder = (event) => {
-
+    eel.open_folder_in_explorer(nonPyinstallerConfiguration.outputDirectory)();
 };
 
 const setupEvents = () => {
