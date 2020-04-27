@@ -80,7 +80,8 @@ div[id*="section"] .content {
 }
 
 #datas-list div img {
-    height: 20px;
+    height: 100%;
+    padding: 2px 0;
     cursor: pointer;
 }
 
@@ -104,6 +105,12 @@ div[id*="section"] .content {
 
 #section-advanced .content .multiple-input {
 
+}
+
+#section-advanced .content .multiple-input > img {
+    height: 23px;
+    vertical-align: middle;
+    cursor: pointer;
 }
 
 #section-advanced .content .input {

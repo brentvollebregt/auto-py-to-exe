@@ -149,6 +149,7 @@ const _createSubSectionInAdvanced = (title, options) => {
 
         // Identify what type of inputs to use
         if (o.nargs === 0) {
+            // Single switch toggle
             container.classList.add('switch');
 
             const enableButton = document.createElement('button');
@@ -168,6 +169,7 @@ const _createSubSectionInAdvanced = (title, options) => {
             });
 
         } else if (o.choices !== null) {
+            // Particular values allowed
             container.classList.add('choice');
 
             const selectNode = document.createElement('select');
@@ -192,16 +194,19 @@ const _createSubSectionInAdvanced = (title, options) => {
             });
 
         } else if (o.dest === 'binaries') {
+            // Similar to datas (specific option value formatting)
             // TODO
 
         } else if (o.default !== null || o.dest === 'upx_exclude') {
+            // Multiple values
             container.classList.add('multiple-input');
 
-            const addButton = document.createElement('button');
+            const addButton = document.createElement('img');
             container.appendChild(addButton);
-            addButton.textContent = 'Add';
+            addButton.src = 'img/plus.svg'
 
         } else {
+            // Single value
             container.classList.add('input');
 
             const isOptionFileBased = fileOptions.indexOf(o.dest) !== -1;
