@@ -28,11 +28,10 @@ const getCurrentConfiguration = () => {
 };
 
 const getNonPyinstallerConfiguration = () => {
-    // TODO
     return {
-        outputDirectory: '',
-        increaseRecursionLimit: true,
-        manualArguments: ''
+        outputDirectory: document.getElementById('output-directory').value,
+        increaseRecursionLimit: !document.getElementById('recursion-limit-switch').classList.contains('unselected'),
+        manualArguments: document.getElementById('raw-arguments').value
     };
 };
 

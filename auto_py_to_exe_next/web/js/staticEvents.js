@@ -140,12 +140,6 @@ const setupEvents = () => {
     oneFileOptionChange('one-directory')(null);
     consoleWindowOptionChange('console')(null);
 
-    // Initialise settings tab
-    const nonPyinstallerConfiguration = getNonPyinstallerConfiguration();
-    document.getElementById('output-directory').value = nonPyinstallerConfiguration.outputDirectory;
-    recursionLimitToggle(nonPyinstallerConfiguration.increaseRecursionLimit);
-    document.getElementById('raw-arguments').value = nonPyinstallerConfiguration.manualArguments;
-
     // Add configurationGetters
     const getEntryScript = () => (['filenames', document.getElementById('entry-script').value]);
     const getOnefile = () => (['onefile', document.getElementById('one-directory-button').classList.contains('unselected')]);

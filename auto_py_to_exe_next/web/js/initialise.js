@@ -72,6 +72,9 @@ window.addEventListener("load", async () => {
 
     // TODO Setup provided config json
 
+    // Setup nonPyinstallerConfiguration
+    document.getElementById('output-directory').value = initialisationData.defaultOutputFolder;
+
     // If a file is provided, put it in the script location
     if (initialisationData.filename !== null) {
         const entryScriptNode = document.getElementById('entry-script');
