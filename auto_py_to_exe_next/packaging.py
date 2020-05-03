@@ -35,3 +35,27 @@ def get_pyinstaller_options():
 
 
 # TODO https://pyinstaller.readthedocs.io/en/stable/usage.html#running-pyinstaller-from-python-code
+
+def package(pyinstaller_arguments, options, output_function=print):
+    """
+    Call PyInstaller to package a script using provided arguments and options.
+    All output is passed to functions provided.
+    :param pyinstaller_arguments: Arguments to supply to PyInstaller
+    :param options: auto-py-to-exe specific options for setup and cleaning up
+    :param output_function: A function to output messages to e.g. output_function("Output Message")
+    :return: Whether packaging was successful
+    """
+
+    output_function('PyInstaller Arguments: ' + pyinstaller_arguments)
+    output_function('Options: ' + str(options))
+
+    # TODO Replace
+
+    import time
+    for i in range(5):
+        time.sleep(1)
+        output_function('Time: ' + str(i))
+
+    # TODO End: Replace
+
+    return True

@@ -8,7 +8,7 @@ const configurationGetters = []; // Each function on this should either return n
 const getCurrentConfiguration = () => {
     const currentConfiguration = [
         {
-            optionDest: 'noconfirm', // TODO Make `optionDest`
+            optionDest: 'noconfirm',
             value: true
         }
     ];
@@ -61,7 +61,7 @@ const getCurrentCommand = () => {
     }).filter(x => x !== null);
 
     // Identify the entry script provided
-    const entryScriptConfig = currentConfiguration.find(c => c.option === 'filenames');
+    const entryScriptConfig = currentConfiguration.find(c => c.optionDest === 'filenames');
     const entryScript = entryScriptConfig === undefined ? "" : entryScriptConfig.value;
 
     return `pyinstaller ${builtConfiguration.join(' ')} ${getNonPyinstallerConfiguration().manualArguments} "${entryScript}"`;

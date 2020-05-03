@@ -88,17 +88,34 @@ const rawArgumentsChange = (event) => {
 };
 
 const packageScript = async (event) => {
+    if (packagingState === PACKAGING_STATE_PACKAGING) {  // Do not do anything while packaging
+        return;
+    }
+    if (packagingState === PACKAGING_STATE_COMPLETE) { // This is now the clear output button
+        setPackagingState(PACKAGING_STATE_READY);
+        return;
+    }
+
     // Pre-checks
+    const currentConfiguration = getCurrentConfiguration();
+    const entryScript = currentConfiguration.find(c => c.optionDest === 'filenames').value;
+
+    if (entryScript === '') {
+        alert('You have not provided your scripts location.\nPlease enter this at the top of the page.');
+        return;
+    }
+
     const willOverwrite = await eel.will_packaging_overwrite_existing(
-        configuration.find(c => c.option === 'filenames').value, // TODO Get
-        configuration.find(c => c.option === 'onefile').value, // TODO Get
+        entryScript,
+        currentConfiguration.find(c => c.optionDest === 'onefile').value,
         getNonPyinstallerConfiguration().outputDirectory
     )();
     if (willOverwrite && !confirm("This action will overwrite a previous output in the output folder.\nContinue?")) {
         return
     }
 
-    eel.package(getCurrentCommand(), getNonPyinstallerConfiguration())();
+    // If checks have passed, package the script
+    startPackaging();
 };
 
 const openOutputFolder = (event) => {

@@ -4,7 +4,7 @@ import eel
 
 from . import config
 from . import utils
-from .packaging import get_pyinstaller_options
+from . import packaging
 from . import dialogs
 
 
@@ -18,7 +18,7 @@ def initialise():
     return {
         'filename': config.package_filename,
         'suppliedUiConfiguration': config.supplied_ui_configuration,
-        'options': get_pyinstaller_options(),
+        'options': packaging.get_pyinstaller_options(),
         'warnings': [],  # TODO Add warnings for unsupported versions and known issues {message, severity}
         'pathSeparator': os.pathsep,
         'defaultOutputFolder': config.DEFAULT_OUTPUT_FOLDER
@@ -99,14 +99,28 @@ def will_packaging_overwrite_existing(file_path, one_file, output_folder):
 @eel.expose
 def package(command, non_pyinstaller_options):
     """ Package the script provided using the options selected by the user """
-    recursion_limit_enabled = non_pyinstaller_options['increaseRecursionLimit']
-    output_directory = non_pyinstaller_options['outputDirectory']
+    packaging_options = {
+        'increaseRecursionLimit': non_pyinstaller_options['increaseRecursionLimit'],
+        'outputDirectory': non_pyinstaller_options['outputDirectory'],
+    }
 
-    print('command:', command)
-    print('recursion_limit_enabled:', recursion_limit_enabled)
-    print('output_directory:', output_directory)
+    packaging_successful = packaging.package(
+        pyinstaller_arguments=command,
+        options=packaging_options,
+        output_function=send_message_to_ui_output
+    )
 
-    # TODO
+    eel.signalPackagingComplete(packaging_successful)()
+
+
+def show_message_in_ui_dialog(message):
+    """ Show a message in a dialog """
+    eel.showMessage(message)()
+
+
+def send_message_to_ui_output(message):
+    """ Show a message in the ui output """
+    eel.putMessageInOutput(message)()
 
 
 def start(use_chrome_if_possible=True):
