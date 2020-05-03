@@ -2,10 +2,11 @@
 Handle user events
 */
 
+// Top level inputs
+
 const scriptLocationChange = async (event) => {
-    const value = event.target.value;
-    modifyOption('filenames', '', value);
     colourInput(event.target, false, true, false);
+    updateCurrentCommandDisplay();
 };
 
 const scriptLocationSearch = async (event) => {
@@ -15,47 +16,28 @@ const scriptLocationSearch = async (event) => {
 };
 
 const oneFileOptionChange = (option) => (event) => {
-    if (option === 'one-file') {
-        modifyOption('onefile', '', true);
-    } else if (option === 'one-directory') {
-        modifyOption('onefile', '', false);
-    } else {
-        throw new Error('Incorrect option provided')
-    }
-
     const oneFileButton = document.getElementById('one-file-button');
     oneFileButton.classList.add(option === 'one-file' ? 'selected' : 'unselected');
     oneFileButton.classList.remove(option !== 'one-file' ? 'selected' : 'unselected');
     const oneDirectoryButton = document.getElementById('one-directory-button');
     oneDirectoryButton.classList.add(option === 'one-directory' ? 'selected' : 'unselected');
     oneDirectoryButton.classList.remove(option !== 'one-directory' ? 'selected' : 'unselected');
+    updateCurrentCommandDisplay();
 };
 
 const consoleWindowOptionChange = (option) => (event) => {
-    if (option === 'console') {
-        modifyOption('console', '', true);
-    } else if (option === 'window') {
-        modifyOption('console', '', false);
-    } else {
-        throw new Error('Incorrect option provided')
-    }
-
     const consoleButton = document.getElementById('console-based-button');
     consoleButton.classList.add(option === 'console' ? 'selected' : 'unselected');
     consoleButton.classList.remove(option !== 'console' ? 'selected' : 'unselected');
     const windowButton = document.getElementById('window-based-button');
     windowButton.classList.add(option === 'window' ? 'selected' : 'unselected');
     windowButton.classList.remove(option !== 'window' ? 'selected' : 'unselected');
+    updateCurrentCommandDisplay();
 };
 
 const iconLocationChange = async (event) => {
-    const value = event.target.value;
-    if (value === "") {
-        removeOption('icon_file', '')
-    } else {
-        modifyOption('icon_file', '', value);
-    }
     colourInput(event.target, true, true, false);
+    updateCurrentCommandDisplay();
 };
 
 const iconLocationSearch = async (event) => {
@@ -88,12 +70,9 @@ const additionalFilesAddBlank = (event) => {
     addDoubleInputForSrcDst(datasListNode, 'datas', '', '.', true, true);
 };
 
-const outputDirectoryChange = (event) => {
-    nonPyinstallerConfiguration.outputDirectory = event.target.value;
-};
+// Settings section events
 
 const recursionLimitToggle = (enabled) => {
-    nonPyinstallerConfiguration.increaseRecursionLimit = enabled;
     const button = document.getElementById('recursion-limit-switch');
     if (enabled) {
         button.classList.add('selected');
@@ -105,26 +84,25 @@ const recursionLimitToggle = (enabled) => {
 };
 
 const rawArgumentsChange = (event) => {
-    nonPyinstallerConfiguration.manualArguments = event.target.value;
     updateCurrentCommandDisplay();
 };
 
 const packageScript = async (event) => {
     // Pre-checks
     const willOverwrite = await eel.will_packaging_overwrite_existing(
-        configuration.find(c => c.option === 'filenames').value,
-        configuration.find(c => c.option === 'onefile').value,
-        nonPyinstallerConfiguration.outputDirectory
+        configuration.find(c => c.option === 'filenames').value, // TODO Get
+        configuration.find(c => c.option === 'onefile').value, // TODO Get
+        getNonPyinstallerConfiguration().outputDirectory
     )();
     if (willOverwrite && !confirm("This action will overwrite a previous output in the output folder.\nContinue?")) {
         return
     }
 
-    eel.package(generateCurrentCommand(), nonPyinstallerConfiguration)();
+    eel.package(getCurrentCommand(), getNonPyinstallerConfiguration())();
 };
 
 const openOutputFolder = (event) => {
-    eel.open_folder_in_explorer(nonPyinstallerConfiguration.outputDirectory)();
+    eel.open_folder_in_explorer(getNonPyinstallerConfiguration().outputDirectory)();
 };
 
 const setupEvents = () => {
@@ -150,7 +128,6 @@ const setupEvents = () => {
     document.getElementById('additional-files-add-blank').addEventListener('click', additionalFilesAddBlank);
 
     // Settings
-    document.getElementById('output-directory').addEventListener('input', outputDirectoryChange);
     document.getElementById('recursion-limit-switch').addEventListener('click', e => recursionLimitToggle(e.target.classList.contains('unselected')));
     document.getElementById('raw-arguments').addEventListener('input', rawArgumentsChange);
 
@@ -158,11 +135,27 @@ const setupEvents = () => {
     document.getElementById('package-button').addEventListener('click', packageScript);
     document.getElementById('open-output-folder-button').addEventListener('click', openOutputFolder);
 
-    // Call event methods to initially setup ui
+    // Initialise advanced tab
     scriptLocationChange({ target: document.getElementById('entry-script') });
     oneFileOptionChange('one-directory')(null);
     consoleWindowOptionChange('console')(null);
+
+    // Initialise settings tab
+    const nonPyinstallerConfiguration = getNonPyinstallerConfiguration();
     document.getElementById('output-directory').value = nonPyinstallerConfiguration.outputDirectory;
     recursionLimitToggle(nonPyinstallerConfiguration.increaseRecursionLimit);
     document.getElementById('raw-arguments').value = nonPyinstallerConfiguration.manualArguments;
+
+    // Add configurationGetters
+    const getEntryScript = () => (['filenames', document.getElementById('entry-script').value]);
+    const getOnefile = () => (['onefile', document.getElementById('one-directory-button').classList.contains('unselected')]);
+    const getConsole = () => (['console', document.getElementById('window-based-button').classList.contains('unselected')]);
+    const getIcon = () => {
+        const path = document.getElementById('icon-path').value;
+        return path === '' ? null : ['icon_file', path];
+    };
+    configurationGetters.push(getEntryScript);
+    configurationGetters.push(getOnefile);
+    configurationGetters.push(getConsole);
+    configurationGetters.push(getIcon);
 };

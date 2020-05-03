@@ -1,23 +1,13 @@
-/*
-Constant strings and lists
-*/
+const options_ignored = ['help'];
+const options_static = ['filenames', 'onefile', 'console', 'icon_file', 'datas'];
+const options_overridden = ['specpath', 'distpath', 'workpath', 'noconfirm'];
 
-// Options that are statically defined in the ui, overriden by auto-py-to-exe or not wanted
-const staticAndIgnoredOptions = [
-    'help', // Will trigger an unwanted short circuit
-    'filenames', // filenames is handled by static content
-    'onefile', // onefile and onedir and handled by static content
-    'console', // console and windowed and handled by static content
-    'icon_file', // icon_file is handled by static content
-    'datas', // datas is handled by static content
-    'specpath', // This is overrided by auto-py-to-exe
-    'distpath', // This is overrided by auto-py-to-exe
-    'workpath', // This is overrided by auto-py-to-exe
-    'noconfirm' // This always used by auto-py-to-exe (-y)
-];
+const options_inputTypeFile = ['runtime_hooks', 'version_file', 'manifest', 'resources'];
+const options_inputTypeDirectory = ['upx_dir', 'pathex', 'hookspath'];
+const options_inputTypeDoubleFileDest = ['datas', 'binaries'];
+const options_inputTypeDoubleDirectoryDest = ['datas'];
 
-// The options to go into each section in the advanced tab
-const sectionOptions = [
+const advancedSections = [
     {
         title: 'General Options',
         options: ['name', 'upx_dir', 'ascii', 'clean_build', 'loglevel']
@@ -48,6 +38,21 @@ const sectionOptions = [
     },
 ];
 
-// Options that expect file and directory paths
-const fileOptions = ['runtime_hooks', 'version_file', 'manifest', 'resources'];
-const directoryOptions = ['upx_dir', 'pathex', 'hookspath', 'runtime_tmpdir'];
+
+// String constants
+OPTION_IGNORED = 'OPTION_IGNORED';
+OPTION_STATIC = 'OPTION_STATIC';
+OPTION_OVERRIDDEN = 'OPTION_OVERRIDDEN';
+OPTION_SHOW = 'OPTION_SHOW';
+
+OPTION_INPUT_TYPE_SWITCH = 'OPTION_INPUT_TYPE_SWITCH';
+OPTION_INPUT_TYPE_DROPDOWN = 'OPTION_INPUT_TYPE_DROPDOWN';
+OPTION_INPUT_TYPE_INPUT = 'OPTION_INPUT_TYPE_INPUT';
+OPTION_INPUT_TYPE_MULTIPLE_INPUT = 'OPTION_INPUT_TYPE_MULTIPLE_INPUT';
+OPTION_INPUT_TYPE_DOUBLE_MULTIPLE_INPUT = 'OPTION_INPUT_TYPE_DOUBLE_MULTIPLE_INPUT';
+
+OPTION_INPUT_VALUE_TEXT = 'OPTION_INPUT_VALUE_TEXT';
+OPTION_INPUT_VALUE_FILE = 'OPTION_INPUT_VALUE_FILE';
+OPTION_INPUT_VALUE_DIRECTORY = 'OPTION_INPUT_VALUE_DIRECTORY';
+OPTION_INPUT_VALUE_DOUBLE_FILE_DEST = 'OPTION_INPUT_VALUE_DOUBLE_FILE_DEST';
+OPTION_INPUT_VALUE_DOUBLE_DIRECTORY_DEST = 'OPTION_INPUT_VALUE_DOUBLE_DIRECTORY_DEST';

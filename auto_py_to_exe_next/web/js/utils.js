@@ -2,8 +2,6 @@
 Util functions
 */
 
-const generateId = (length) => [...Array(length)].map(() => Math.random().toString(36)[2]).join('');
-
 const flatMap = (xs) => xs.reduce((x,y ) => x.concat(y), []); // Not all browsers have Array.flatMap
 
 const doesFileExist = async (path) => {

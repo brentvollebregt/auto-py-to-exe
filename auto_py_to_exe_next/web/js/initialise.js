@@ -6,19 +6,69 @@ let options = [];
 
 let pathSeparator = '';
 
+
+const buildUpOptions = (providedOptions) => {
+    return providedOptions.map(option => {
+        const name = option.dest;
+
+        let placement = OPTION_SHOW;
+        if (options_ignored.indexOf(name) !== -1) {
+            placement = OPTION_IGNORED;
+        } else if (options_static.indexOf(name) !== -1) {
+            placement = OPTION_STATIC;
+        } else if (options_overridden.indexOf(name) !== -1) {
+            placement = OPTION_OVERRIDDEN;
+        }
+
+        let inputType = OPTION_INPUT_TYPE_INPUT;
+        if (option.nargs === 0) {
+            inputType = OPTION_INPUT_TYPE_SWITCH
+        } else if (option.choices !== null) {
+            inputType = OPTION_INPUT_TYPE_DROPDOWN
+        } else if (option.dest === 'datas' || option.dest === 'binaries') {
+            inputType = OPTION_INPUT_TYPE_DOUBLE_MULTIPLE_INPUT
+        } else if (option.default !== null || option.dest === 'upx_exclude') {
+            inputType = OPTION_INPUT_TYPE_MULTIPLE_INPUT;
+        }
+
+        const allowedInputValues = [];
+        if (options_inputTypeFile.indexOf(name) !== -1) {
+            allowedInputValues.push(OPTION_INPUT_VALUE_FILE);
+        }
+        if (options_inputTypeDirectory.indexOf(name) !== -1) {
+            allowedInputValues.push(OPTION_INPUT_VALUE_DIRECTORY);
+        }
+        if (options_inputTypeDoubleFileDest.indexOf(name) !== -1) {
+            allowedInputValues.push(OPTION_INPUT_VALUE_DOUBLE_FILE_DEST);
+        }
+        if (options_inputTypeDoubleDirectoryDest.indexOf(name) !== -1) {
+            allowedInputValues.push(OPTION_INPUT_VALUE_DOUBLE_DIRECTORY_DEST);
+        }
+        if (allowedInputValues.length === 0) {
+            allowedInputValues.push(OPTION_INPUT_VALUE_TEXT);
+        }
+
+        return {
+            ...option,
+            placement,
+            inputType,
+            allowedInputValues
+        };
+    });
+};
+
 // Get initialisation data from the server and setup the ui
 window.addEventListener("load", async () => {
     // Get initialisation data from Python
     const initialisationData = await eel.initialise()();
-    options = initialisationData.options;
+    options = buildUpOptions(initialisationData.options);
     pathSeparator = initialisationData.pathSeparator;
-    nonPyinstallerConfiguration.outputDirectory = initialisationData.defaultOutputFolder;
 
-    // Setup ui events (for static content)
+    // Setup ui events (for static content) and setup initial state
     setupEvents();
 
     // Setup advanced section (for dynamic content)
-    constructAdvancedSection(initialisationData.options);
+    constructAdvancedSection(options);
 
     // TODO Setup provided config json
 
@@ -30,4 +80,7 @@ window.addEventListener("load", async () => {
     }
 
     // TODO Display warnings with initialisation_data.warnings
+
+    // Update the current command when setup is complete
+    updateCurrentCommandDisplay();
 });
