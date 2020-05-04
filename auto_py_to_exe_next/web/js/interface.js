@@ -62,7 +62,7 @@ const addDoubleInputForSrcDst = (parentNode, optionDest, source, destination, so
     });
 
     // Add configurationGetter
-    const configurationGetter = () => ([optionDest, [sourceInput.value, destinationInput.value]]);
+    const configurationGetter = () => ([optionDest, `${sourceInput.value}${pathSeparator}${destinationInput.value}`]);
     configurationGetters.push(configurationGetter);
 
     removeButton.src = 'img/remove.svg';

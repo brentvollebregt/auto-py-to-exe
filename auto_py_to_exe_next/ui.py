@@ -89,7 +89,7 @@ def write_configuration_file(file_path, configuration):
 @eel.expose
 def will_packaging_overwrite_existing(file_path, one_file, output_folder):
     """ Checks if there is a possibility of a previous output being overwritten """
-    return package.will_packaging_overwrite_existing(file_path, one_file, output_folder)
+    return packaging.will_packaging_overwrite_existing(file_path, one_file, output_folder)
 
 
 @eel.expose
@@ -101,11 +101,12 @@ def package(command, non_pyinstaller_options):
     }
 
     packaging_successful = packaging.package(
-        pyinstaller_arguments=command,
+        pyinstaller_command=command,
         options=packaging_options,
         output_function=send_message_to_ui_output
     )
 
+    send_message_to_ui_output('Complete.\n')
     eel.signalPackagingComplete(packaging_successful)()
 
 

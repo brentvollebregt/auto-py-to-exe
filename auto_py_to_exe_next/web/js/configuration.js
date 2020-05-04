@@ -39,7 +39,7 @@ const getCurrentCommand = () => {
     const currentConfiguration = getCurrentConfiguration();
 
     // Match configuration values with the correct flags
-    const builtConfiguration = currentConfiguration.filter(c => c.optionDest !== 'filenames').map(c => {
+    const optionsAndValues = currentConfiguration.filter(c => c.optionDest !== 'filenames').map(c => {
         // Identify the options
         const option = options.find(o => o.dest === c.optionDest);
 
@@ -53,10 +53,7 @@ const getCurrentCommand = () => {
             }
         } else {
             const optionFlag = option.option_strings[option.option_strings.length - 1];
-            const value = !Array.isArray(c.value)
-                ? c.value
-                : c.value.join(pathSeparator);
-            return `${optionFlag} "${value}"`;
+            return `${optionFlag} "${c.value}"`;
         }
     }).filter(x => x !== null);
 
@@ -64,7 +61,7 @@ const getCurrentCommand = () => {
     const entryScriptConfig = currentConfiguration.find(c => c.optionDest === 'filenames');
     const entryScript = entryScriptConfig === undefined ? "" : entryScriptConfig.value;
 
-    return `pyinstaller ${builtConfiguration.join(' ')} ${getNonPyinstallerConfiguration().manualArguments} "${entryScript}"`;
+    return `pyinstaller ${optionsAndValues.join(' ')} ${getNonPyinstallerConfiguration().manualArguments} "${entryScript}"`;
 };
 
 const updateCurrentCommandDisplay = () => {
