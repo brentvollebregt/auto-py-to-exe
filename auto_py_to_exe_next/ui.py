@@ -1,3 +1,4 @@
+import logging
 import os
 
 import eel
@@ -14,7 +15,11 @@ eel.init(config.FRONTEND_ASSET_FOLDER)
 
 @eel.expose
 def initialise():
-    """ Called by the UI when opened. Used to pass initial values. """
+    """ Called by the UI when opened. Used to pass initial values and setup state we couldn't set until now. """
+    # Stop Eel's websocket from logging to stderr so aggressively
+    logging.getLogger('geventwebsocket.handler').setLevel(logging.WARNING)
+
+    # Pass initial values to the client
     return {
         'filename': config.package_filename,
         'suppliedUiConfiguration': config.supplied_ui_configuration,
@@ -84,16 +89,7 @@ def write_configuration_file(file_path, configuration):
 @eel.expose
 def will_packaging_overwrite_existing(file_path, one_file, output_folder):
     """ Checks if there is a possibility of a previous output being overwritten """
-    if not os.path.exists(output_folder):
-        return False
-    no_extension = '.'.join(os.path.basename(file_path).split('.')[:-1])
-    if one_file:
-        if no_extension + '.exe' in os.listdir(output_folder):
-            return True
-    else:
-        if no_extension in os.listdir(output_folder):
-            return True
-    return False
+    return package.will_packaging_overwrite_existing(file_path, one_file, output_folder)
 
 
 @eel.expose

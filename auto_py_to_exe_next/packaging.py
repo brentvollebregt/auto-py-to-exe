@@ -1,4 +1,5 @@
 import argparse
+import os
 
 
 def __get_pyinstaller_argument_parser():
@@ -12,11 +13,13 @@ def __get_pyinstaller_argument_parser():
     add_build_options(parser)
     add_log_options(parser)
 
-    parser.add_argument('filenames', metavar='scriptname', nargs='+',
-                        help=("name of scriptfiles to be processed or "
-                              "exactly one .spec-file. If a .spec-file is "
-                              "specified, most options are unnecessary "
-                              "and are ignored."))  # From PyInstaller.__main__.run
+    parser.add_argument(
+        'filenames', metavar='scriptname', nargs='+',
+        help=("name of scriptfiles to be processed or "
+              "exactly one .spec-file. If a .spec-file is "
+              "specified, most options are unnecessary "
+              "and are ignored.")
+    )  # From PyInstaller.__main__.run
 
     return parser
 
@@ -34,7 +37,23 @@ def get_pyinstaller_options():
     return [o.__dict__ for o in options]
 
 
-# TODO https://pyinstaller.readthedocs.io/en/stable/usage.html#running-pyinstaller-from-python-code
+def will_packaging_overwrite_existing(file_path, one_file, output_folder):
+    """ Checks if there is a possibility of a previous output being overwritten. """
+    if not os.path.exists(output_folder):
+        return False
+    no_extension = '.'.join(os.path.basename(file_path).split('.')[:-1])
+    if one_file:
+        if no_extension + '.exe' in os.listdir(output_folder):
+            return True
+    else:
+        if no_extension in os.listdir(output_folder):
+            return True
+    return False
+
+
+def __move_package():
+    pass
+
 
 def package(pyinstaller_arguments, options, output_function=print):
     """
@@ -49,10 +68,12 @@ def package(pyinstaller_arguments, options, output_function=print):
     output_function('PyInstaller Arguments: ' + pyinstaller_arguments)
     output_function('Options: ' + str(options))
 
+    # TODO https://pyinstaller.readthedocs.io/en/stable/usage.html#running-pyinstaller-from-python-code
+
     # TODO Replace
 
     import time
-    for i in range(5):
+    for i in range(3):
         time.sleep(1)
         output_function('Time: ' + str(i))
 
