@@ -127,10 +127,18 @@ div[id*="section"] .content {
     display: none; /* Hidden by default */
 }
 
+#output.show {
+    display: block;
+}
+
 #output textarea {
     width: 100%;
     white-space: pre;
     overflow-y: hidden;
+}
+
+#output textarea.failure {
+    border-color: red;
 }
 
 /* Common issues link formatting */
@@ -139,7 +147,11 @@ div[id*="section"] .content {
     font-size: 12px;
     text-align: center;
     margin-bottom: 5px;
-    display: none;
+    display: none; /* Default to not shown */
+}
+
+#common-issue-link.show {
+    display: block;
 }
 
 #common-issue-link a {
@@ -154,7 +166,6 @@ div[id*="section"] .content {
 /* Package / Open Output Folder Buttons */
 
 #package-button-wrapper {
-    /*display: block; !* By default show the one  *!*/
     display: flex;
     justify-content: space-evenly;
 }
@@ -179,7 +190,17 @@ div[id*="section"] .content {
     background-color: #1c79c7;
 }
 
+#package-button:disabled {
+    background-color: #808080;
+    border-color: #808080;
+    cursor: not-allowed;
+}
+
 #open-output-folder-button {
     display: none; /* Default to not shown */
     margin-left: 4px;
+}
+
+#open-output-folder-button.show {
+    display: block;
 }
