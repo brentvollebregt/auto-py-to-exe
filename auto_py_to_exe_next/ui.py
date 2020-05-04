@@ -1,4 +1,3 @@
-import logging
 import os
 
 import eel
@@ -16,8 +15,7 @@ eel.init(config.FRONTEND_ASSET_FOLDER)
 @eel.expose
 def initialise():
     """ Called by the UI when opened. Used to pass initial values and setup state we couldn't set until now. """
-    # Stop Eel's websocket from logging to stderr so aggressively
-    logging.getLogger('geventwebsocket.handler').setLevel(logging.WARNING)
+    packaging.setup_pyinstaller_logging(send_message_to_ui_output)
 
     # Pass initial values to the client
     return {

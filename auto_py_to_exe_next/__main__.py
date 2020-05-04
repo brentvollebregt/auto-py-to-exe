@@ -1,4 +1,5 @@
 import argparse
+import logging
 import shutil
 import tempfile
 
@@ -12,6 +13,9 @@ def run():
     """ Open the interface """
     # Setup a temporary folder to build in
     config.temporary_directory = tempfile.mkdtemp()
+
+    # Suppress the global logger to only show error+ to the console
+    logging.getLogger().handlers[0].setLevel(logging.ERROR)
 
     # Start UI
     ui.start(not config.disable_chrome)

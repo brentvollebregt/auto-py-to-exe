@@ -1,4 +1,6 @@
 import argparse
+import io
+import logging
 import os
 import shlex
 import shutil
@@ -79,6 +81,23 @@ def __move_package(src, dst):
         shutil.move(os.path.join(src, file_or_folder), dst)
 
 
+class ForwardToFunctionStream(io.TextIOBase):
+    def __init__(self, output_function=print):
+        self.output_function = output_function
+
+    def write(self, string):
+        self.output_function(string)
+        return len(string)
+
+
+def setup_pyinstaller_logging(output_function=print):
+    """ Link PyInstallers logging to the ui """
+    logger = logging.getLogger('PyInstaller')
+    handler = logging.StreamHandler(ForwardToFunctionStream(output_function))
+    handler.setFormatter(logging.Formatter('%(relativeCreated)d %(levelname)s: %(message)s'))
+    logger.addHandler(handler)
+
+
 def package(pyinstaller_command, options, output_function=print):
     """
     Call PyInstaller to package a script using provided arguments and options.
@@ -131,6 +150,7 @@ def package(pyinstaller_command, options, output_function=print):
         output_function(traceback.format_exc())
 
     # Move project if there was no failure
+    output_function("\n")
     if not fail:
         output_function("Moving project to: {0}\n".format(output_directory))
         try:
@@ -139,7 +159,6 @@ def package(pyinstaller_command, options, output_function=print):
             output_function("Failed to move project, traceback follows:\n")
             output_function(traceback.format_exc())
     else:
-        output_function("\n")
         output_function("Project output will not be moved to output folder\n")
         return False
 
