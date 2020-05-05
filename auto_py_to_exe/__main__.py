@@ -62,6 +62,6 @@ if __name__ == '__main__':
 
     # If the user has asked for the version, print it, otherwise run the application
     if args.version:
-        print('auto-py-to-exe v' + __version__)
+        print('auto-py-to-exe ' + __version__)
     else:
         run()

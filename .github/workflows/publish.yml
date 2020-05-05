@@ -1,0 +1,100 @@
+name: Publish Master
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python-version: [2.7, 3.4, 3.5, 3.6, 3.7]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v1
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest
+
+      - name: Run tests for Python ${{ matrix.python-version }} on ${{ matrix.os }}
+        run: |
+          pip install -e .
+          pytest
+
+  publish:
+    needs: [test]
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 2
+
+      - name: Set up Python 3.7
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install setuptools wheel twine
+
+      - name: Check if version has changed
+        id: check_version_change
+        uses: salsify/action-detect-and-tag-new-version@v1
+        with:
+          create-tag: false
+          tag-template: '{VERSION}' # Need the raw version to identify the whl file
+          version-command: |
+            python -c "from auto_py_to_exe.__main__ import __version__ as v; print(v)"
+
+      - name: Continue if version has changed
+        if: steps.check_version_change.outputs.previous-version == steps.check_version_change.outputs.current-version
+        run: |
+          echo "Version has not changed: ${{ steps.check_version_change.outputs.current-version }}"
+          exit 1
+
+      - name: Build distribution
+        run: |
+          python setup.py sdist bdist_wheel --universal
+
+      - name: Publish package
+        uses: pypa/gh-action-pypi-publish@master
+        with:
+          user: __token__
+          password: ${{ secrets.pypi_password }}
+
+      - name: Create release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v${{ steps.check_version_change.outputs.current-version }}
+          release_name: v${{ steps.check_version_change.outputs.current-version }}
+          draft: false
+          prerelease: false
+
+      - name: Upload Binary to Release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./dist/auto_py_to_exe-${{ steps.check_version_change.outputs.current-version }}-py2.py3-none-any.whl
+          asset_name: auto_py_to_exe-${{ steps.check_version_change.outputs.current-version }}-py2.py3-none-any.whl
+          asset_content_type: application/x-wheel+zip
+
