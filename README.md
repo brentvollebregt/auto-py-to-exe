@@ -80,10 +80,14 @@ If you need something visual to help you get started, [I made a video for the or
 ## Issues Using the Tool
 If you're having issues with the packaged executable or using this tool in general, I recommend you read [my blog post on common issues when using auto-py-to-exe](https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/). This post covers things you should know about packaging Python scripts and fixes for things that commonly go wrong.
 
-### Making GitHub Issues
-Before making an issue on GitHub, make sure you have read through the blog post above and tried to [debug your application](https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/#debugging). Also please take some time to look through [older GitHub issues](https://github.com/brentvollebregt/auto-py-to-exe/issues?q=) to see if your issue has already been discussed.
+## Testing
+Tests are located in `tests/` and are run using pytest:
 
-A lot of questions commonly asked relate to the fact that people have not tried debugging their application themselves. Please make sure you do this otherwise it makes it a lot harder to help.
+```
+$ pip install pytest
+$ pip install -e .
+$ pytest
+```
 
 ## Screenshots
 ![Empty interface](https://i.imgur.com/dd0LC2n.png)
