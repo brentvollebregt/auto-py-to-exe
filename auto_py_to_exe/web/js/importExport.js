@@ -6,11 +6,12 @@ const importConfiguration = (configuration) => {
             configurationSetters[optionDest](value);
         } else {
             // TODO Warn user?
+            // TODO noconfirm is expected to come here
         }
     });
 
     // setup nonPyinstallerOptions
-    // TODO Add support for recursion-limit-switch (should most likely have setters and getters for these also)
+    recursionLimitToggle(configuration.nonPyinstallerOptions.increaseRecursionLimit);
     document.getElementById('raw-arguments').value = configuration.nonPyinstallerOptions.manualArguments;
 };
 
@@ -21,7 +22,7 @@ const _collectDataToExport = () => {
     return {
         version: "auto-py-to-exe-configuration_v1",
         pyinstallerOptions: getCurrentConfiguration(),
-        nonPyinstallerOptions: getNonPyinstallerConfiguration()
+        nonPyinstallerOptions: nonPyinstallerConfiguration
     }
 };
 

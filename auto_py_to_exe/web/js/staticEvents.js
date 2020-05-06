@@ -204,4 +204,6 @@ const setupEvents = () => {
 
     // Soft initialise (to trigger any required initial events)
     setEntryScript('');
+    setOnefile(false);
+    setConsole(true);
 };

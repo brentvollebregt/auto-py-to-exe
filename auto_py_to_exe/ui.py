@@ -81,7 +81,7 @@ def export_configuration(configuration):
     file_path = dialogs.ask_file_save_location('json')
     if file_path is not None:
         with open(file_path, 'w') as f:
-            json.dump(configuration, f)
+            json.dump(configuration, f, indent=True)
 
 
 @eel.expose
