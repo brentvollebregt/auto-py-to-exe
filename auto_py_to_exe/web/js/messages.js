@@ -1,9 +1,3 @@
-eel.expose(showMessage);
-function showMessage(message) {
-    console.log('Dialog', message);
-    // TODO
-}
-
 eel.expose(putMessageInOutput);
 function putMessageInOutput(message) {
     const outputNode = document.querySelector('#output textarea');

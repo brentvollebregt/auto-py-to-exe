@@ -1,3 +1,4 @@
+import json
 import os
 
 import eel
@@ -51,11 +52,6 @@ def ask_folder():
     return dialogs.ask_folder()
 
 
-# @eel.expose
-# def ask_file_save(file_type):
-#     pass
-
-
 @eel.expose
 def does_file_exist(file_path):
     """ Checks if a file exists """
@@ -69,19 +65,23 @@ def does_folder_exist(path):
 
 
 @eel.expose
-def get_configuration_file(file_path):
+def import_configuration():
     """ Get configuration data from a file """
-    # TODO Validate and filter to only pass known values
-    pass
+    file_path = dialogs.ask_file('json')
+    if file_path is not None:
+        with open(file_path) as f:
+            return json.load(f)
+    else:
+        return None
 
 
 @eel.expose
-def write_configuration_file(file_path, configuration):
+def export_configuration(configuration):
     """ Write configuration data to a file """
-    # TODO Write a custom object and have these values in the output.
-    # TODO Put version details to allow for backwards comparability
-    # TODO Will need the get/write to pass though functions to ensure all versions work.
-    pass
+    file_path = dialogs.ask_file_save_location('json')
+    if file_path is not None:
+        with open(file_path, 'w') as f:
+            json.dump(configuration, f)
 
 
 @eel.expose
@@ -106,11 +106,6 @@ def package(command, non_pyinstaller_options):
 
     send_message_to_ui_output('Complete.\n')
     eel.signalPackagingComplete(packaging_successful)()
-
-
-def show_message_in_ui_dialog(message):
-    """ Show a message in a dialog """
-    eel.showMessage(message)()
 
 
 def send_message_to_ui_output(message):

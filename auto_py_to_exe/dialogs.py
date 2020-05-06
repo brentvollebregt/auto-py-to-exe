@@ -62,3 +62,28 @@ def ask_folder():
     root.wm_attributes('-topmost', 1)
     folder = askdirectory(parent=root)
     return folder
+
+
+def ask_file_save_location(file_type):
+    """ Ask the user where to save a file """
+    root = Tk()
+    root.withdraw()
+    root.wm_attributes('-topmost', 1)
+
+    if (file_type is None) or (platform.system() == "Darwin"):
+        file_path = asksaveasfilename(parent=root)
+    else:
+        if file_type == 'json':
+            file_types = [('JSON Files', '*.json'), ('All files', '*')]
+        else:
+            file_types = [('All files', '*')]
+        file_path = asksaveasfilename(parent=root, filetypes=file_types)
+    root.update()
+
+    if file_path != '':
+        if file_type == 'json':
+            return file_path if file_path.endswith('.json') else file_path + '.json'
+        else:
+            return file_path
+    else:
+        return None

@@ -70,16 +70,17 @@ window.addEventListener("load", async () => {
     // Setup advanced section (for dynamic content)
     constructAdvancedSection(options);
 
-    // TODO Setup provided config json
+    // Setup json config file is supplied
+    if (initialisationData.suppliedUiConfiguration !== null) {
+        importConfiguration(initialisationData.suppliedUiConfiguration);
+    }
 
     // Setup nonPyinstallerConfiguration
     document.getElementById('output-directory').value = initialisationData.defaultOutputFolder;
 
     // If a file is provided, put it in the script location
     if (initialisationData.filename !== null) {
-        const entryScriptNode = document.getElementById('entry-script');
-        entryScriptNode.value = initialisationData.filename;
-        scriptLocationChange({ target: entryScriptNode });
+        configurationSetters['filenames'](initialisationData.filename);
     }
 
     // TODO Display warnings with initialisation_data.warnings
@@ -88,5 +89,5 @@ window.addEventListener("load", async () => {
     updateCurrentCommandDisplay();
 
     // If the server stops, close the UI
-    window.eel._websocket.addEventListener('close', e => {window.close()});
+    window.eel._websocket.addEventListener('close', e => window.close());
 });

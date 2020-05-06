@@ -14,7 +14,7 @@ DEFAULT_RECURSION_LIMIT = sys.getrecursionlimit()
 # Argument-influenced configuration
 package_filename = None
 disable_chrome = False
-supplied_ui_configuration = dict()
+supplied_ui_configuration = None
 
 # Build
 DEFAULT_OUTPUT_FOLDER = os.path.abspath('output')

@@ -46,7 +46,7 @@ if __name__ == '__main__':
         nargs='?',
         type=validation.argparse_file_json,
         help="a json file containing a UI configuration",
-        default=dict()
+        default=None
     )
     parser.add_argument(
         "--version",

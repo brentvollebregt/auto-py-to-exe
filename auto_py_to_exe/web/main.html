@@ -20,7 +20,9 @@
                 ask_folder: () => "",
                 open_folder_in_explorer: (path) => {},
                 will_packaging_overwrite_existing: (file_path, one_file, output_folder) => true,
-                package: (command, non_pyinstaller_options) => {}
+                package: (command, non_pyinstaller_options) => {},
+                import_configuration: () => {},
+                export_configuration: (configuration) => {}
             }
         </script>
         <script type="text/javascript" src="/eel.js"></script>
@@ -32,6 +34,7 @@
         <script type="text/javascript" src="/js/utils.js"></script>
         <script type="text/javascript" src="/js/messages.js"></script>
         <script type="text/javascript" src="/js/packaging.js"></script>
+        <script type="text/javascript" src="/js/importExport.js"></script>
         <link rel="stylesheet" href="/css/general.css">
         <link rel="stylesheet" href="/css/main.css">
         <link rel="stylesheet" href="/css/utils.css">
@@ -171,11 +174,11 @@
                             <input id="raw-arguments" placeholder="ARGUMENTS" />
                         </div>
                     </div>
-<!--                    <div>-->
-<!--                        <h3>Configuration</h3>-->
-<!--                        <button>Import Config From JSON File</button>-->
-<!--                        <button>Export Config To JSON File</button>-->
-<!--                    </div>-->
+                    <div>
+                        <h3>Configuration</h3>
+                        <button id="configuration-import">Import Config From JSON File</button>
+                        <button id="configuration-export">Export Config To JSON File</button>
+                    </div>
                 </div>
             </div>
 

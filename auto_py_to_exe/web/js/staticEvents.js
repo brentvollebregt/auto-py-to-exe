@@ -147,15 +147,12 @@ const setupEvents = () => {
     // Settings
     document.getElementById('recursion-limit-switch').addEventListener('click', e => recursionLimitToggle(e.target.classList.contains('unselected')));
     document.getElementById('raw-arguments').addEventListener('input', rawArgumentsChange);
+    document.getElementById('configuration-import').addEventListener('click', () => onConfigurationImport());
+    document.getElementById('configuration-export').addEventListener('click', () => onConfigurationExport());
 
     // Build buttons
     document.getElementById('package-button').addEventListener('click', packageScript);
     document.getElementById('open-output-folder-button').addEventListener('click', openOutputFolder);
-
-    // Initialise advanced tab
-    scriptLocationChange({ target: document.getElementById('entry-script') });
-    oneFileOptionChange('one-directory')(null);
-    consoleWindowOptionChange('console')(null);
 
     // Add configurationGetters
     const getEntryScript = () => (['filenames', document.getElementById('entry-script').value]);
@@ -169,4 +166,42 @@ const setupEvents = () => {
     configurationGetters.push(getOnefile);
     configurationGetters.push(getConsole);
     configurationGetters.push(getIcon);
+
+    // Add configurationSetters
+    const setEntryScript = (value) => {
+        document.getElementById('entry-script').value = value;
+        scriptLocationChange({ target: document.getElementById('entry-script') });
+    };
+    const setOnefile = (value) => {
+        if (value) {
+            document.getElementById('one-directory-button').classList.add('unselected');
+            document.getElementById('one-file-button').classList.remove('unselected');
+        } else {
+            document.getElementById('one-directory-button').classList.remove('unselected');
+            document.getElementById('one-file-button').classList.add('unselected');
+        }
+    };
+    const setConsole = (value) => {
+        if (value) {
+            document.getElementById('console-based-button').classList.remove('unselected');
+            document.getElementById('window-based-button').classList.add('unselected');
+        } else {
+            document.getElementById('console-based-button').classList.add('unselected');
+            document.getElementById('window-based-button').classList.remove('unselected');
+        }
+    };
+    const setAdditionalFile = (value) => {
+        const datasListNode = document.getElementById('datas-list');
+        const [val1, val2] = value.split(pathSeparator);
+        addDoubleInputForSrcDst(datasListNode, 'datas', val1, val2, true, true);
+    };
+    const setIcon = (value) => document.getElementById('icon-path').value = value;
+    configurationSetters['filenames'] = setEntryScript;
+    configurationSetters['onefile'] = setOnefile;
+    configurationSetters['console'] = setConsole;
+    configurationSetters['datas'] = setAdditionalFile;
+    configurationSetters['icon_file'] = setIcon;
+
+    // Soft initialise (to trigger any required initial events)
+    setEntryScript('');
 };

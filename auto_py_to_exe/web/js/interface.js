@@ -117,9 +117,9 @@ const _createSubSectionInAdvanced = (title, options) => {
             enableButton.textContent = 'Enable';
             enableButton.classList.add('unselected');
 
-            // When clicked, toggle the value
-            enableButton.addEventListener('click', () => {
-                if (enableButton.classList.contains('unselected')) {
+            // Function used to set the value of the switch
+            const setValue = (enabled) => {
+                if (enabled) {
                     enableButton.classList.remove('unselected');
                     enableButton.classList.add('selected');
                 } else {
@@ -127,11 +127,19 @@ const _createSubSectionInAdvanced = (title, options) => {
                     enableButton.classList.remove('selected');
                 }
                 updateCurrentCommandDisplay();
+            };
+
+            // When clicked, toggle the value
+            enableButton.addEventListener('click', () => {
+                setValue(!enableButton.classList.contains('selected'));
             });
 
             // Add configurationGetter
             const configurationGetter = () => ([o.dest, !enableButton.classList.contains('unselected')]);
             configurationGetters.push(configurationGetter);
+
+            // Add configurationSetter
+            configurationSetters[o.dest] = setValue;
 
         } else if (o.inputType === OPTION_INPUT_TYPE_DROPDOWN) {
             container.classList.add('choice');
@@ -161,6 +169,16 @@ const _createSubSectionInAdvanced = (title, options) => {
                 return value === '' ? null : [o.dest, value];
             };
             configurationGetters.push(configurationGetter);
+
+            // Add configurationSetter
+            configurationSetters[o.dest] = (value) => {
+                if (o.choices.indexOf(value) !== 1) {
+                    selectNode.value = value;
+                } else {
+                    selectNode.value = '';
+                }
+                selectNode.dispatchEvent(new Event('change'));
+            };
 
         } else if (o.inputType === OPTION_INPUT_TYPE_INPUT) {
             container.classList.add('input');
@@ -199,6 +217,12 @@ const _createSubSectionInAdvanced = (title, options) => {
             };
             configurationGetters.push(configurationGetter);
 
+            // Add configurationSetter
+            configurationSetters[o.dest] = (value) => {
+                inputNode.value = value;
+                inputNode.dispatchEvent(new Event('input'));
+            };
+
         } else if (o.inputType === OPTION_INPUT_TYPE_MULTIPLE_INPUT) {
             container.classList.add('multiple-input');
 
@@ -214,17 +238,7 @@ const _createSubSectionInAdvanced = (title, options) => {
             const valuesContainer = document.createElement('div');
             container.appendChild(valuesContainer);
 
-            // Event to add a new input pair
-            addButton.addEventListener('click', async () => {
-                // Get initial value
-                let initialValue = '';
-                if (isOptionFileBased || isOptionDirectoryBased) {
-                    initialValue = isOptionFileBased ? await askForFile(null) : await askForFolder();
-                    if (initialValue === '') {
-                        return
-                    }
-                }
-
+            const addValue = (value) => {
                 // Container to hold the pair
                 const valueContainer = document.createElement('div');
                 valuesContainer.appendChild(valueContainer);
@@ -232,7 +246,7 @@ const _createSubSectionInAdvanced = (title, options) => {
                 // Value input
                 const inputNode = document.createElement('input');
                 valueContainer.appendChild(inputNode);
-                inputNode.value = initialValue;
+                inputNode.value = value;
                 inputNode.placeholder = o.metavar || 'VALUE';
                 colourInput(inputNode, false, isOptionFileBased, isOptionDirectoryBased);
                 inputNode.addEventListener('input', (event) => {
@@ -256,7 +270,25 @@ const _createSubSectionInAdvanced = (title, options) => {
                 });
 
                 updateCurrentCommandDisplay();
+            };
+
+            // Event to add a new input pair
+            addButton.addEventListener('click', async () => {
+                // Get initial value
+                let initialValue = '';
+                if (isOptionFileBased || isOptionDirectoryBased) {
+                    initialValue = isOptionFileBased ? await askForFile(null) : await askForFolder();
+                    if (initialValue === '') {
+                        return;
+                    }
+                }
+                addValue(initialValue);
             });
+
+            // Add configurationSetter
+            configurationSetters[o.dest] = (value) => {
+                addValue(value);
+            };
 
         } else if (o.inputType === OPTION_INPUT_TYPE_DOUBLE_MULTIPLE_INPUT) {
             container.classList.add('multiple-input');
@@ -285,6 +317,12 @@ const _createSubSectionInAdvanced = (title, options) => {
 
                 addDoubleInputForSrcDst(valuesContainer, o.dest, initialValue, '.', true, false);
             });
+
+            // Add configurationSetter
+            configurationSetters[o.dest] = (value) => {
+                const [val1, val2] = value.split(pathSeparator);
+                addDoubleInputForSrcDst(valuesContainer, o.dest, val1, val2, true, false);
+            };
         }
     });
 };
