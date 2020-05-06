@@ -1,13 +1,15 @@
 import os
 import subprocess
 
-from helpers import TemporaryDirectory, PythonScriptAsFile
+from helpers import TemporaryDirectory, PythonScriptAsFile, os_allow
 
 from auto_py_to_exe.packaging import package
 from auto_py_to_exe import config as auto_py_to_exe_config
 
 
+@os_allow(['Windows'])
 def test_basic_packaging():
+    """ Test a basic packaging setup on Windows """
     filename = 'script.py'
     content = 'print("Test")'
 

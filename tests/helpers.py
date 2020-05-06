@@ -1,4 +1,5 @@
 import os
+import platform
 import shutil
 import tempfile
 
@@ -32,3 +33,13 @@ class TemporaryDirectory:
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         shutil.rmtree(self.directory)
+
+
+def os_allow(operating_systems):
+    """ A decorator to only allow specific operating systems to run a function """
+    def decorator(function):
+        def wrapper(*args, **kwargs):
+            if platform.system() in operating_systems:
+                return function(*args, **kwargs)
+        return wrapper
+    return decorator
