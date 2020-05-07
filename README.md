@@ -10,12 +10,13 @@
     <a href="https://pypi.org/project/auto-py-to-exe/"><img src="https://img.shields.io/pypi/pyversions/auto-py-to-exe.svg" alt="PyPI Supported Versions"></a>
     <a href="https://pypi.org/project/auto-py-to-exe/"><img src="https://img.shields.io/pypi/l/auto-py-to-exe.svg" alt="License"></a>
     <a href="http://pepy.tech/project/auto-py-to-exe"><img src="http://pepy.tech/badge/auto-py-to-exe" alt="Downloads"></a>
+    <a href="https://pyinstaller.readthedocs.io/en/stable/requirements.html"><img src="https://img.shields.io/badge/platform-windows%20%7C%20linux%20%7C%20macos-lightgrey" alt="Supported Platforms"></a>
 </p>
 
 ## Getting Started
 
 ### Prerequisites
- - Python : Python >= 2.7 ( including 3.7 🎉 )
+ - Python : Python >= 2.7 up to Python 3.7 (see [here](https://github.com/pyinstaller/pyinstaller/issues/4311) for 3.8)
 
 *To have the interface displayed in the images, you will need chrome. If chrome is not installed or --no-chrome is supplied, the default browser will be used.*
 
@@ -63,11 +64,11 @@ Now to run the application, execute ```python -m auto_py_to_exe```. A Chrome win
 ### Arguments
 Usage: `auto-py-to-exe [-nc] [-c [CONFIG]] [filename]`
 
-| Argument                       | Type       | Description                                                                                                                                          |
-|--------------------------------|------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
-| filename                       | positional | Pre-fill the "Script Location" field in the UI.                                                                                                      |
-| -nc, --no-chrome               | optional   | Open the UI using the default browser (which may be Chrome). Will not try to find Chrome                                                             |
-| -c [CONFIG], --config [CONFIG] | optional   | Provide a configuration file (json) to pre-fill the UI. These can be generated from the bottom of the advanced tab when you have setup your options. |
+| Argument                       | Type       | Description                                                                                         |
+|--------------------------------|------------|-----------------------------------------------------------------------------------------------------|
+| filename                       | positional | Pre-fill the "Script Location" field in the UI.                                                     |
+| -nc, --no-chrome               | optional   | Open the UI using the default browser (which may be Chrome). Will not try to find Chrome            |
+| -c [CONFIG], --config [CONFIG] | optional   | Provide a configuration file (json) to pre-fill the UI. These can be generated in the settings tab. |
 
 > If you are running this package locally, you will need to call ```python -m auto_py_to_exe``` instead of ```auto-py-to-exe```
 

@@ -1,9 +1,9 @@
-name: Publish Master
+name: Publish On Tag
 
 on:
   push:
-    branches:
-    - master
+    tags:
+      - 'v*'
 
 jobs:
   test:
@@ -38,8 +38,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-        with:
-          fetch-depth: 2
 
       - name: Set up Python 3.7
         uses: actions/setup-python@v1
@@ -52,19 +50,19 @@ jobs:
           pip install -r requirements.txt
           pip install setuptools wheel twine
 
-      - name: Check if version has changed
-        id: check_version_change
-        uses: salsify/action-detect-and-tag-new-version@v1
-        with:
-          create-tag: false
-          tag-template: '{VERSION}' # Need the raw version to identify the whl file
-          version-command: |
-            python -c "from auto_py_to_exe.__main__ import __version__ as v; print(v)"
-
-      - name: Continue if version has changed
-        if: steps.check_version_change.outputs.previous-version == steps.check_version_change.outputs.current-version
+      - name: Get module version
+        id: get_module_version
+        shell: bash
         run: |
-          echo "Version has not changed: ${{ steps.check_version_change.outputs.current-version }}"
+          version=$(python -c "from auto_py_to_exe import __version__ as v; print(v)")
+          echo "Module version: $version"
+          echo "::set-output name=version::$version"
+
+      - name: Fail on tag and module version mismatch
+        if: (!endsWith(github.ref, steps.get_module_version.outputs.version))
+        run: |
+          echo "Ref that triggered release: ${{ github.ref }}"
+          echo "Current module version: ${{ steps.get_module_version.outputs.version }}"
           exit 1
 
       - name: Build distribution
@@ -83,8 +81,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: v${{ steps.check_version_change.outputs.current-version }}
-          release_name: v${{ steps.check_version_change.outputs.current-version }}
+          tag_name: v${{ steps.get_module_version.outputs.version }}
+          release_name: v${{ steps.get_module_version.outputs.version }}
           draft: false
           prerelease: false
 
@@ -94,7 +92,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./dist/auto_py_to_exe-${{ steps.check_version_change.outputs.current-version }}-py2.py3-none-any.whl
-          asset_name: auto_py_to_exe-${{ steps.check_version_change.outputs.current-version }}-py2.py3-none-any.whl
+          asset_path: ./dist/auto_py_to_exe-${{ steps.get_module_version.outputs.version }}-py2.py3-none-any.whl
+          asset_name: auto_py_to_exe-${{ steps.get_module_version.outputs.version }}-py2.py3-none-any.whl
           asset_content_type: application/x-wheel+zip
-
