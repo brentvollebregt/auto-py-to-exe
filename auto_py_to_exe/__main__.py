@@ -1,5 +1,6 @@
 import argparse
 import logging
+import os
 import shutil
 import tempfile
 
@@ -50,6 +51,13 @@ def run():
         default=None
     )
     parser.add_argument(
+        "-o",
+        "--output-dir",
+        nargs='?',
+        help="the directory to put output in",
+        default='output'
+    )
+    parser.add_argument(
         "--version",
         action="store_true",
         help="print the version - will not run the ui"
@@ -60,6 +68,7 @@ def run():
     config.package_filename = args.filename
     config.disable_chrome = args.no_chrome
     config.supplied_ui_configuration = args.config
+    config.default_output_directory = os.path.abspath(args.output_dir)
 
     # If the user has asked for the version, print it, otherwise run the application
     if args.version:

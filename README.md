@@ -69,6 +69,7 @@ Usage: `auto-py-to-exe [-nc] [-c [CONFIG]] [filename]`
 | filename                       | positional | Pre-fill the "Script Location" field in the UI.                                                     |
 | -nc, --no-chrome               | optional   | Open the UI using the default browser (which may be Chrome). Will not try to find Chrome            |
 | -c [CONFIG], --config [CONFIG] | optional   | Provide a configuration file (json) to pre-fill the UI. These can be generated in the settings tab. |
+| -o [PATH], --output-dir [PATH] | optional   | Set the default output directory. This can still be changed in the ui.                              |
 
 > If you are running this package locally, you will need to call ```python -m auto_py_to_exe``` instead of ```auto-py-to-exe```
 

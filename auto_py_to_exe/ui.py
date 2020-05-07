@@ -25,7 +25,7 @@ def initialise():
         'options': packaging.get_pyinstaller_options(),
         'warnings': [],  # TODO Add warnings for unsupported versions and known issues {message, severity}
         'pathSeparator': os.pathsep,
-        'defaultOutputFolder': config.DEFAULT_OUTPUT_FOLDER
+        'defaultOutputFolder': config.default_output_directory
     }
 
 
