@@ -39,7 +39,11 @@ def ask_file(file_type):
             file_types = [('All files', '*')]
         file_path = askopenfilename(parent=root, filetypes=file_types)
     root.update()
-    return file_path
+
+    if file_path == "":
+        return None
+    else:
+        return file_path
 
 
 def ask_files():
@@ -49,6 +53,7 @@ def ask_files():
     root.wm_attributes('-topmost', 1)
     file_paths = askopenfilenames(parent=root)
     root.update()
+
     if file_paths == "":
         return None
     else:
@@ -61,7 +66,12 @@ def ask_folder():
     root.withdraw()
     root.wm_attributes('-topmost', 1)
     folder = askdirectory(parent=root)
-    return folder
+    root.update()
+
+    if folder == "":
+        return None
+    else:
+        return folder
 
 
 def ask_file_save_location(file_type):

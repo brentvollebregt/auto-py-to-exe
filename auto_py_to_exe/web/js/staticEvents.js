@@ -11,8 +11,12 @@ const scriptLocationChange = async (event) => {
 
 const scriptLocationSearch = async (event) => {
     const entryScriptNode = document.getElementById('entry-script');
-    entryScriptNode.value = await askForFile('python');
-    await scriptLocationChange({ target: entryScriptNode });
+    console.log(scriptLocationSearch);
+    const value = await askForFile('python');
+    if (value !== null) {
+        entryScriptNode.value = value;
+        await scriptLocationChange({ target: entryScriptNode });
+    }
 };
 
 const oneFileOptionChange = (option) => (event) => {
@@ -42,8 +46,11 @@ const iconLocationChange = async (event) => {
 
 const iconLocationSearch = async (event) => {
     const iconPathNode = document.getElementById('icon-path');
-    iconPathNode.value = await askForFile('icon');
-    await iconLocationChange({ target: iconPathNode });
+    const value = await askForFile('icon');
+    if (value !== null) {
+        iconPathNode.value = value;
+        await iconLocationChange({ target: iconPathNode });
+    }
 };
 
 const additionalFilesAddFiles = async (event) => {
