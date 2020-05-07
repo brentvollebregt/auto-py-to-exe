@@ -2,7 +2,7 @@
 <p align="center">A .py to .exe converter using a simple graphical interface and <a href="http://www.pyinstaller.org/">PyInstaller</a> in Python.</p>
 
 <p align="center">
-    <img src="https://i.imgur.com/EuUlayC.png" alt="Empty interface">
+    <img src="https://nitratine.net/posts/auto-py-to-exe/feature.png" alt="Empty interface">
 </p>
 
 <p align="center">
@@ -91,8 +91,8 @@ $ pytest
 ```
 
 ## Screenshots
-![Empty interface](https://i.imgur.com/dd0LC2n.png)
 
-![Filled out](https://i.imgur.com/f3TEnZI.png)
-
-![Converting](https://i.imgur.com/MjdONcC.png)
+| <!-- -->    | <!-- -->    |
+|-------------|-------------|
+| [![Empty interface](https://nitratine.net/posts/auto-py-to-exe/empty-interface.png)](https://nitratine.net/posts/auto-py-to-exe/empty-interface.png) | [![Filled out](https://nitratine.net/posts/auto-py-to-exe/filled-out.png)](https://nitratine.net/posts/auto-py-to-exe/filled-out.png) |
+| [![Converting](https://nitratine.net/posts/auto-py-to-exe/converting.png)](https://nitratine.net/posts/auto-py-to-exe/converting.png) | [![Completed](https://nitratine.net/posts/auto-py-to-exe/completed.png)](https://nitratine.net/posts/auto-py-to-exe/completed.png) |
