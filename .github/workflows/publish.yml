@@ -1,0 +1,97 @@
+name: Publish On Tag
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python-version: [2.7, 3.5, 3.6, 3.7]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v1
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest
+
+      - name: Run tests for Python ${{ matrix.python-version }} on ${{ matrix.os }}
+        run: |
+          pip install -e .
+          pytest
+
+  publish:
+    needs: [test]
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python 3.7
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install setuptools wheel twine
+
+      - name: Get module version
+        id: get_module_version
+        shell: bash
+        run: |
+          version=$(python -c "from auto_py_to_exe import __version__ as v; print(v)")
+          echo "Module version: $version"
+          echo "::set-output name=version::$version"
+
+      - name: Fail on tag and module version mismatch
+        if: (!endsWith(github.ref, steps.get_module_version.outputs.version))
+        run: |
+          echo "Ref that triggered release: ${{ github.ref }}"
+          echo "Current module version: ${{ steps.get_module_version.outputs.version }}"
+          exit 1
+
+      - name: Build distribution
+        run: |
+          python setup.py sdist bdist_wheel --universal
+
+      - name: Publish package
+        uses: pypa/gh-action-pypi-publish@master
+        with:
+          user: __token__
+          password: ${{ secrets.pypi_password }}
+
+      - name: Create release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v${{ steps.get_module_version.outputs.version }}
+          release_name: v${{ steps.get_module_version.outputs.version }}
+          draft: false
+          prerelease: false
+
+      - name: Upload Binary to Release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./dist/auto_py_to_exe-${{ steps.get_module_version.outputs.version }}-py2.py3-none-any.whl
+          asset_name: auto_py_to_exe-${{ steps.get_module_version.outputs.version }}-py2.py3-none-any.whl
+          asset_content_type: application/x-wheel+zip

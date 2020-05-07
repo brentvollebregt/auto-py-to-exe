@@ -1,8 +1,14 @@
+# IDE + Environment
 .idea/
 venv/
 output/
+__pycache__/
+
+# Build
 .pyc
 build/
 dist/
-__pycache__/
 *.egg-info/
+
+# pytest
+.pytest_cache

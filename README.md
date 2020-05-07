@@ -1,5 +1,5 @@
 <h1 align="center">Auto PY to EXE</h1>
-<p align="center">A .py to .exe converter using a simple graphical interface built using <a href="https://github.com/ChrisKnott/Eel">Eel</a> and <a href="http://www.pyinstaller.org/">PyInstaller</a> in Python.</p>
+<p align="center">A .py to .exe converter using a simple graphical interface and <a href="http://www.pyinstaller.org/">PyInstaller</a> in Python.</p>
 
 <p align="center">
     <img src="https://i.imgur.com/EuUlayC.png" alt="Empty interface">
@@ -10,12 +10,13 @@
     <a href="https://pypi.org/project/auto-py-to-exe/"><img src="https://img.shields.io/pypi/pyversions/auto-py-to-exe.svg" alt="PyPI Supported Versions"></a>
     <a href="https://pypi.org/project/auto-py-to-exe/"><img src="https://img.shields.io/pypi/l/auto-py-to-exe.svg" alt="License"></a>
     <a href="http://pepy.tech/project/auto-py-to-exe"><img src="http://pepy.tech/badge/auto-py-to-exe" alt="Downloads"></a>
+    <a href="https://pyinstaller.readthedocs.io/en/stable/requirements.html"><img src="https://img.shields.io/badge/platform-windows%20%7C%20linux%20%7C%20macos-lightgrey" alt="Supported Platforms"></a>
 </p>
 
 ## Getting Started
 
 ### Prerequisites
- - Python : Python >= 2.7 ( including 3.7 🎉 )
+ - Python : Python >= 2.7 up to Python 3.7 (see [here](https://github.com/pyinstaller/pyinstaller/issues/4311) for 3.8)
 
 *To have the interface displayed in the images, you will need chrome. If chrome is not installed or --no-chrome is supplied, the default browser will be used.*
 
@@ -63,11 +64,11 @@ Now to run the application, execute ```python -m auto_py_to_exe```. A Chrome win
 ### Arguments
 Usage: `auto-py-to-exe [-nc] [-c [CONFIG]] [filename]`
 
-| Argument                       | Type       | Description                                                                                                                                          |
-|--------------------------------|------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
-| filename                       | positional | Pre-fill the "Script Location" field in the UI.                                                                                                      |
-| -nc, --no-chrome               | optional   | Open the UI using the default browser (which may be Chrome). Will not try to find Chrome                                                             |
-| -c [CONFIG], --config [CONFIG] | optional   | Provide a configuration file (json) to pre-fill the UI. These can be generated from the bottom of the advanced tab when you have setup your options. |
+| Argument                       | Type       | Description                                                                                         |
+|--------------------------------|------------|-----------------------------------------------------------------------------------------------------|
+| filename                       | positional | Pre-fill the "Script Location" field in the UI.                                                     |
+| -nc, --no-chrome               | optional   | Open the UI using the default browser (which may be Chrome). Will not try to find Chrome            |
+| -c [CONFIG], --config [CONFIG] | optional   | Provide a configuration file (json) to pre-fill the UI. These can be generated in the settings tab. |
 
 > If you are running this package locally, you will need to call ```python -m auto_py_to_exe``` instead of ```auto-py-to-exe```
 
@@ -80,10 +81,14 @@ If you need something visual to help you get started, [I made a video for the or
 ## Issues Using the Tool
 If you're having issues with the packaged executable or using this tool in general, I recommend you read [my blog post on common issues when using auto-py-to-exe](https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/). This post covers things you should know about packaging Python scripts and fixes for things that commonly go wrong.
 
-### Making GitHub Issues
-Before making an issue on GitHub, make sure you have read through the blog post above and tried to [debug your application](https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/#debugging). Also please take some time to look through [older GitHub issues](https://github.com/brentvollebregt/auto-py-to-exe/issues?q=) to see if your issue has already been discussed.
+## Testing
+Tests are located in `tests/` and are run using pytest:
 
-A lot of questions commonly asked relate to the fact that people have not tried debugging their application themselves. Please make sure you do this otherwise it makes it a lot harder to help.
+```
+$ pip install pytest
+$ pip install -e .
+$ pytest
+```
 
 ## Screenshots
 ![Empty interface](https://i.imgur.com/dd0LC2n.png)
