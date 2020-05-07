@@ -205,8 +205,11 @@ const _createSubSectionInAdvanced = (title, options) => {
                 container.appendChild(searchButton);
                 searchButton.textContent = isOptionFileBased ? 'Browse for File' : 'Browse for Folder';
                 searchButton.addEventListener('click', async () => {
-                    inputNode.value = isOptionFileBased ? await askForFile(null) : await askForFolder();
-                    inputNode.dispatchEvent(new Event('input'));
+                    const value = isOptionFileBased ? await askForFile(null) : await askForFolder();
+                    if (value !== null) {
+                        inputNode.value = value;
+                        inputNode.dispatchEvent(new Event('input'));
+                    }
                 });
             }
 
@@ -278,7 +281,7 @@ const _createSubSectionInAdvanced = (title, options) => {
                 let initialValue = '';
                 if (isOptionFileBased || isOptionDirectoryBased) {
                     initialValue = isOptionFileBased ? await askForFile(null) : await askForFolder();
-                    if (initialValue === '') {
+                    if (initialValue === null) {
                         return;
                     }
                 }
@@ -310,7 +313,7 @@ const _createSubSectionInAdvanced = (title, options) => {
                 let initialValue = '';
                 if (isOptionFileBased || isOptionDirectoryBased) {
                     initialValue = isOptionFileBased ? await askForFile(null) : await askForFolder();
-                    if (initialValue === '') {
+                    if (initialValue === null) {
                         return
                     }
                 }

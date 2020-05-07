@@ -1,5 +1,9 @@
 # Changelog
 
+### 2.7.1
+- Fixed binary not reading arguments
+- Fixed input being emptied when canceling file dialogs
+
 ## 2.7.0
 - Completely refactored project
     - Code separation

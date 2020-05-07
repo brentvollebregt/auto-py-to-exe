@@ -9,7 +9,7 @@ from . import validation
 from . import ui
 
 
-def run():
+def start_ui():
     """ Open the interface """
     # Setup a temporary folder to build in
     config.temporary_directory = tempfile.mkdtemp()
@@ -24,7 +24,8 @@ def run():
     shutil.rmtree(config.temporary_directory)
 
 
-if __name__ == '__main__':
+def run():
+    """ Module entry point """
     # Parse arguments
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -64,4 +65,8 @@ if __name__ == '__main__':
     if args.version:
         print('auto-py-to-exe ' + __version__)
     else:
-        run()
+        start_ui()
+
+
+if __name__ == '__main__':
+    run()
