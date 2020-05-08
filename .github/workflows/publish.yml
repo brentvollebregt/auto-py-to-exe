@@ -93,13 +93,20 @@ jobs:
               fi \
             done < CHANGELOG.md
           )"
+
           echo "Documented changes:"
           echo "$changes"
           echo ""
-          changes="${changes//'%'/'%25'}"
-          changes="${changes//$'\n'/'%0A'}"
-          changes="${changes//$'\r'/'%0D'}"
-          echo "::set-output name=changes::$changes"
+
+          if [[ $changes == "" ]]; then \
+          	echo "Changes have not been documented"; \
+          	exit 1; \
+          else \
+          	changes="${changes//'%'/'%25'}"; \
+          	changes="${changes//$'\n'/'%0A'}"; \
+          	changes="${changes//$'\r'/'%0D'}"; \
+          	echo "::set-output name=changes::$changes"; \
+          fi
 
       - name: Build distribution
         run: |
