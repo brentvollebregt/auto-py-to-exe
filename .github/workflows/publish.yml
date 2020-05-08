@@ -73,6 +73,34 @@ jobs:
           echo "Current module version: ${{ steps.get_module_version.outputs.version }}"
           exit 1
 
+      - name: Get documented version changes from CHANGELOG.md
+        id: get_documented_changes
+        shell: bash
+        run: |
+          changes="$(
+            found_version=0; \
+            while IFS= read -r line; do \
+              if [[ $found_version == 0 ]]; then\
+                if [[ $line == *"${{ steps.get_module_version.outputs.version }}"* && $line == "##"* ]]; then \
+                  found_version=1; \
+                fi \
+              else \
+              if [[ $line == "##"* ]]; then \
+                found_version=0; \
+              else \
+                echo "$line"; \
+              fi \
+              fi \
+            done < CHANGELOG.md
+          )"
+          echo "Documented changes:"
+          echo "$changes"
+          echo ""
+          changes="${changes//'%'/'%25'}"
+          changes="${changes//$'\n'/'%0A'}"
+          changes="${changes//$'\r'/'%0D'}"
+          echo "::set-output name=changes::$changes"
+
       - name: Build distribution
         run: |
           python setup.py sdist bdist_wheel --universal
@@ -93,6 +121,7 @@ jobs:
           release_name: v${{ steps.get_module_version.outputs.version }}
           draft: false
           prerelease: false
+          body: ${{ steps.get_documented_changes.outputs.changes }}
 
       - name: Upload Binary to Release
         uses: actions/upload-release-asset@v1
