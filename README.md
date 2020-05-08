@@ -16,7 +16,7 @@
 ## Getting Started
 
 ### Prerequisites
- - Python : Python >= 2.7 up to Python 3.7 (see [here](https://github.com/pyinstaller/pyinstaller/issues/4311) for 3.8)
+ - Python : Python 2.7 / 3.5-3.7 (see [here](https://github.com/pyinstaller/pyinstaller/issues/4311) for 3.8)
 
 *To have the interface displayed in the images, you will need chrome. If chrome is not installed or --no-chrome is supplied, the default browser will be used.*
 
