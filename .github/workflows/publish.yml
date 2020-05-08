@@ -6,6 +6,14 @@ on:
       - 'v*'
 
 jobs:
+  initial-checks:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Only allow tags on master to be published
+        if: github.event.base_ref != 'refs/heads/master'
+        run: exit 1
+
   test:
     runs-on: ${{ matrix.os }}
     strategy:
