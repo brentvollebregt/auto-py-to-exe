@@ -23,7 +23,7 @@ def initialise():
         'filename': config.package_filename,
         'suppliedUiConfiguration': config.supplied_ui_configuration,
         'options': packaging.get_pyinstaller_options(),
-        'warnings': [],  # TODO Add warnings for unsupported versions and known issues {message, severity}
+        'warnings': utils.get_warnings(),
         'pathSeparator': os.pathsep,
         'defaultOutputFolder': config.default_output_directory
     }

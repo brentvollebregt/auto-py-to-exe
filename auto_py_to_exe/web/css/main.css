@@ -34,6 +34,29 @@
     to { -webkit-mask-position: -50%; }
 }
 
+/* Warnings */
+
+#warnings {
+    font-size: 13px;
+}
+
+#warnings > div {
+    background: #fff3cd;
+    border: 1px solid #a0987c;
+    border-radius: 4px;
+    margin: 10px 0;
+    padding: 8px;
+}
+
+#warnings > div > p {
+    margin: 0;
+}
+
+#warnings > div > a {
+    margin-left: auto;
+    text-decoration: none;
+}
+
 /* Sections */
 
 div[id*="section"] {
