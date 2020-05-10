@@ -1,5 +1,6 @@
 import argparse
 import json
+import logging
 import os
 
 
@@ -25,3 +26,10 @@ def argparse_file_json(file_path):
         raise argparse.ArgumentTypeError('Cannot parse provided configuration file:\n' + str(e))
 
     return data
+
+
+def argparse_logging_level(level):
+    """ Validates that a string value is a valid logging level and returns the corresponding value. """
+    if hasattr(logging, level.upper()):
+        return level.upper()
+    raise argparse.ArgumentTypeError('Invalid logging level: ' + str(level))

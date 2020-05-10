@@ -62,7 +62,7 @@ Now to run the application, execute ```python -m auto_py_to_exe```. A Chrome win
 *Easy.*
 
 ### Arguments
-Usage: `auto-py-to-exe [-nc] [-c [CONFIG]] [filename]`
+Usage: `auto-py-to-exe [-nc] [-c [CONFIG]] [-o [PATH]] [filename]`
 
 | Argument                       | Type       | Description                                                                                         |
 |--------------------------------|------------|-----------------------------------------------------------------------------------------------------|

@@ -10,13 +10,13 @@ from . import validation
 from . import ui
 
 
-def start_ui():
+def start_ui(logging_level):
     """ Open the interface """
     # Setup a temporary folder to build in
     config.temporary_directory = tempfile.mkdtemp()
 
     # Suppress the global logger to only show error+ to the console
-    logging.getLogger().handlers[0].setLevel(logging.ERROR)
+    logging.getLogger().handlers[0].setLevel(logging_level)
 
     # Start UI
     ui.start(not config.disable_chrome)
@@ -58,6 +58,14 @@ def run():
         default='output'
     )
     parser.add_argument(
+        "--logging-level",
+        nargs='?',
+        type=validation.argparse_logging_level,
+        choices=['DEBUG', 'INFO', 'WARNING', 'ERROR', 'CRITICAL'],
+        help="the level to use for logging - defaults to ERROR",
+        default='ERROR'
+    )
+    parser.add_argument(
         "--version",
         action="store_true",
         help="print the version - will not run the ui"
@@ -74,7 +82,8 @@ def run():
     if args.version:
         print('auto-py-to-exe ' + __version__)
     else:
-        start_ui()
+        logging_level = getattr(logging, args.logging_level)
+        start_ui(logging_level)
 
 
 if __name__ == '__main__':
