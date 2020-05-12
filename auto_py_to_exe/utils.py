@@ -1,9 +1,19 @@
+import io
 import os
 import platform
 import sys
 
 from eel import chrome
 from PyInstaller import __version__ as pyinstaller_version
+
+
+class ForwardToFunctionStream(io.TextIOBase):
+    def __init__(self, output_function=print):
+        self.output_function = output_function
+
+    def write(self, string):
+        self.output_function(string)
+        return len(string)
 
 
 def can_use_chrome():

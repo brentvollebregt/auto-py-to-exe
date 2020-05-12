@@ -12,11 +12,11 @@ from . import ui
 
 def start_ui(logging_level):
     """ Open the interface """
-    # Setup a temporary folder to build in
-    config.temporary_directory = tempfile.mkdtemp()
-
     # Suppress the global logger to only show error+ to the console
     logging.getLogger().handlers[0].setLevel(logging_level)
+
+    # Setup a temporary folder to build in
+    config.temporary_directory = tempfile.mkdtemp()
 
     # Start UI
     ui.start(not config.disable_chrome)

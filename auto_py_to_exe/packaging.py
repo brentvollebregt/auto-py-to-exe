@@ -1,7 +1,6 @@
 from __future__ import print_function
 
 import argparse
-import io
 import logging
 import os
 import shlex
@@ -13,6 +12,9 @@ from . import config
 from . import __version__ as version
 
 from PyInstaller.__main__ import run as run_pyinstaller
+
+
+logger = logging.getLogger(__name__)
 
 
 def __get_pyinstaller_argument_parser():
@@ -83,45 +85,26 @@ def __move_package(src, dst):
         shutil.move(os.path.join(src, file_or_folder), dst)
 
 
-class ForwardToFunctionStream(io.TextIOBase):
-    def __init__(self, output_function=print):
-        self.output_function = output_function
-
-    def write(self, string):
-        self.output_function(string)
-        return len(string)
-
-
-def setup_pyinstaller_logging(output_function=print):
-    """ Link PyInstallers logging to the ui """
-    logger = logging.getLogger('PyInstaller')
-    handler = logging.StreamHandler(ForwardToFunctionStream(output_function))
-    handler.setFormatter(logging.Formatter('%(relativeCreated)d %(levelname)s: %(message)s'))
-    logger.addHandler(handler)
-
-
-def package(pyinstaller_command, options, output_function=print):
+def package(pyinstaller_command, options):
     """
     Call PyInstaller to package a script using provided arguments and options.
-    All output is passed to functions provided.
     :param pyinstaller_command: Command to supply to PyInstaller
     :param options: auto-py-to-exe specific options for setup and cleaning up
-    :param output_function: A function to output messages to e.g. output_function("Output Message")
     :return: Whether packaging was successful
     """
 
     # Show current version
-    output_function("Running auto-py-to-exe v" + version)
+    logger.info("Running auto-py-to-exe v" + version)
 
     # Notify the user of the workspace and setup building to it
-    output_function("Building directory: {}\n".format(config.temporary_directory))
+    logger.info("Building directory: {}".format(config.temporary_directory))
 
     # Override arguments
     dist_path = os.path.join(config.temporary_directory, 'application')
     build_path = os.path.join(config.temporary_directory, 'build')
     extra_args = ['--distpath', dist_path] + ['--workpath', build_path] + ['--specpath', config.temporary_directory]
 
-    output_function('Provided command: {}\n'.format(pyinstaller_command))
+    logger.info('Provided command: {}'.format(pyinstaller_command))
 
     # Setup options
     increase_recursion_limit = options['increaseRecursionLimit']
@@ -129,7 +112,7 @@ def package(pyinstaller_command, options, output_function=print):
 
     if increase_recursion_limit:
         sys.setrecursionlimit(5000)
-        output_function("Recursion Limit is set to 5000\n")
+        logger.info("Recursion Limit is set to 5000")
     else:
         sys.setrecursionlimit(config.DEFAULT_RECURSION_LIMIT)
 
@@ -142,26 +125,25 @@ def package(pyinstaller_command, options, output_function=print):
         sys.argv = shlex.split(pyinstaller_command) + extra_args  # Put command into sys.argv and extra args
 
         # Display the command we are using and leave a space to separate out PyInstallers logs
-        output_function('Executing: {}\n'.format(' '.join(sys.argv)))
-        output_function('\n')
+        logger.info('Executing: {}'.format(' '.join(sys.argv)))
+        logger.info('')
 
         run_pyinstaller()
     except:
         fail = True
-        output_function("An error occurred, traceback follows:\n")
-        output_function(traceback.format_exc())
+        logger.exception("An error occurred while packaging")
 
     # Move project if there was no failure
-    output_function("\n")
+    logger.info("")
     if not fail:
-        output_function("Moving project to: {0}\n".format(output_directory))
+        logger.info("Moving project to: {0}".format(output_directory))
         try:
             __move_package(dist_path, output_directory)
         except:
-            output_function("Failed to move project, traceback follows:\n")
-            output_function(traceback.format_exc())
+            logger.error("Failed to move project")
+            logger.exception(traceback.format_exc())
     else:
-        output_function("Project output will not be moved to output folder\n")
+        logger.info("Project output will not be moved to output folder")
         return False
 
     # Set complete
