@@ -1,4 +1,5 @@
 import json
+import logging
 import os
 
 import eel
@@ -13,19 +14,32 @@ from . import dialogs
 eel.init(config.FRONTEND_ASSET_FOLDER)
 
 
+def __setup_logging_ui_forwarding():
+    """ Setup forwarding of logs by PyInstaller and auto-py-to-exe to the ui """
+    pyinstaller_logger = logging.getLogger('PyInstaller')
+    handler = logging.StreamHandler(utils.ForwardToFunctionStream(send_message_to_ui_output))
+    handler.setFormatter(logging.Formatter('%(relativeCreated)d %(levelname)s: %(message)s'))
+    pyinstaller_logger.addHandler(handler)
+
+    module_logger = logging.getLogger('auto_py_to_exe')
+    handler = logging.StreamHandler(utils.ForwardToFunctionStream(send_message_to_ui_output))
+    handler.setFormatter(logging.Formatter('%(message)s'))
+    module_logger.addHandler(handler)
+
+
 @eel.expose
 def initialise():
     """ Called by the UI when opened. Used to pass initial values and setup state we couldn't set until now. """
-    packaging.setup_pyinstaller_logging(send_message_to_ui_output)
+    __setup_logging_ui_forwarding()
 
     # Pass initial values to the client
     return {
         'filename': config.package_filename,
         'suppliedUiConfiguration': config.supplied_ui_configuration,
         'options': packaging.get_pyinstaller_options(),
-        'warnings': [],  # TODO Add warnings for unsupported versions and known issues {message, severity}
+        'warnings': utils.get_warnings(),
         'pathSeparator': os.pathsep,
-        'defaultOutputFolder': config.DEFAULT_OUTPUT_FOLDER
+        'defaultOutputFolder': config.default_output_directory
     }
 
 
@@ -101,7 +115,6 @@ def package(command, non_pyinstaller_options):
     packaging_successful = packaging.package(
         pyinstaller_command=command,
         options=packaging_options,
-        output_function=send_message_to_ui_output
     )
 
     send_message_to_ui_output('Complete.\n')

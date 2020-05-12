@@ -15,6 +15,4 @@ DEFAULT_RECURSION_LIMIT = sys.getrecursionlimit()
 package_filename = None
 disable_chrome = False
 supplied_ui_configuration = None
-
-# Build
-DEFAULT_OUTPUT_FOLDER = os.path.abspath('output')
+default_output_directory = os.path.abspath('output')

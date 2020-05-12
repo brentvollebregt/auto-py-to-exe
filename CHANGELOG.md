@@ -1,20 +1,28 @@
 # Changelog
 
+### 2.7.2
+- Made warnings appear at the top of the ui when using versions of PyInstaller/Python that a known to conflict
+- Added argument --output-dir to set the default output directory
+- Added argument --logging-level to override logging level for console output
+- Added helpful links to the top of the ui
+- Removed Python 3.4 from supported versions as it is not officially supported by PyInstaller anymore
+- Some other build and background improvements
+
 ### 2.7.1
 - Fixed binary not reading arguments
-- Fixed input being emptied when canceling file dialogs
+- Fixed input being emptied when cancelling file dialogs
 
 ## 2.7.0
 - Completely refactored project
     - Code separation
     - Cleaned up logging silencing
-    - Advanced tab is build dynamically to support newly added PyInstaller commands
+    - Advanced tab is built dynamically to support newly added PyInstaller commands
     - Added "Settings" ui tab for non-PyInstaller settings
     - Better input colouring for inputs expecting files/directories
 - Started adding tests to help support multiple operating systems and versions of Python more confidently.
 - Automatic deployments on tag
 
-*Note: This does introduce a different format for exported configuration json files which causes older configuration files to be incompatible.*
+*Note: This introduces a different format for exported configuration json files which causes older configuration files to be incompatible.*
 
 ### 2.6.6
 - Added support for Eel 0.11.0

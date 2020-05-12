@@ -83,7 +83,8 @@ window.addEventListener("load", async () => {
         configurationSetters['filenames'](initialisationData.filename);
     }
 
-    // TODO Display warnings with initialisation_data.warnings
+    // Display any warnings provided
+    setupWarnings(initialisationData.warnings);
 
     // Update the current command when setup is complete
     updateCurrentCommandDisplay();

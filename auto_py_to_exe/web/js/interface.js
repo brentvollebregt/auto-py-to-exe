@@ -354,3 +354,31 @@ const constructAdvancedSection = () => {
         );
     }
 };
+
+const setupWarnings = (warnings) => {
+    if (warnings.length === 0) {
+        return
+    }
+
+    const warningsRootNode = document.getElementById('warnings');
+
+    warnings.forEach(warning => {
+        // Create wrapper
+        const wrapperNode = document.createElement('div');
+        warningsRootNode.appendChild(wrapperNode);
+
+        // Create message
+        const messageNode = document.createElement('p');
+        wrapperNode.appendChild(messageNode);
+        messageNode.innerText = warning.message;
+
+        // Add link is provided
+        if (warning.link !== null) {
+            const linkNodeContainer = document.createElement('a');
+            wrapperNode.appendChild(linkNodeContainer);
+            linkNodeContainer.href = warning.link;
+            linkNodeContainer.innerText = 'Read more here.';
+            linkNodeContainer.target = '_blank';
+        }
+    });
+};

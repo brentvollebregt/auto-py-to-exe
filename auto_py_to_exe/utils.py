@@ -1,7 +1,19 @@
+import io
 import os
 import platform
+import sys
 
 from eel import chrome
+from PyInstaller import __version__ as pyinstaller_version
+
+
+class ForwardToFunctionStream(io.TextIOBase):
+    def __init__(self, output_function=print):
+        self.output_function = output_function
+
+    def write(self, string):
+        self.output_function(string)
+        return len(string)
 
 
 def can_use_chrome():
@@ -22,3 +34,25 @@ def open_output_folder(folder):
     else:
         return False
     return True
+
+
+def get_warnings():
+    warnings = []
+
+    try:
+        # Make sure PyInstaller 3.4 or above is being used with Python 3.7
+        if sys.version_info >= (3, 7) and float(pyinstaller_version) < 3.4:
+            warnings.append({
+                'message': 'You will need PyInstaller 3.4 or above to use this with Python 3.7\nPlease upgrade PyInstaller: python -m pip install --upgrade PyInstaller',
+                'link': None
+            })
+    except ValueError:
+        pass  # Dev branches will have pyinstaller_version as a string in the form X.Y.devZ+HASH. Ignore it if this is the case.
+
+    if sys.version_info >= (3, 8):
+        warnings.append({
+            'message': 'Currently, PyInstaller does not support Python 3.8 fully - some side effects may occur when using PyInstaller with Python 3.8. You can fix this by using an earlier version of Python.',
+            'link': 'https://github.com/pyinstaller/pyinstaller/issues/4311'
+        })
+
+    return warnings
