@@ -1,28 +1,33 @@
 /* Header */
 
 #header {
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr auto;
     margin-top: 18px;
 }
 
-#header img {
+#header .title {
+    display: flex;
+    align-items: center;
+}
+
+#header .title img {
     height: 41px;
 }
 
-#header h1 {
+#header .title h1 {
     font-weight: 100;
     font-size: 30px;
     color: #666666;
     margin: 0 0 0 10px;
 }
 
-#header > a {
+#header .title > a {
     display: inherit;
     text-decoration: none;
 }
 
-#header > a:hover {
+#header .title > a:hover {
     -webkit-mask-image: linear-gradient(-75deg, rgb(0, 0, 0) 30%, rgba(0, 0, 0, 0.50) 50%, rgb(0, 0, 0) 70%);
     -webkit-mask-size: 200%;
     animation: shine 2s;
@@ -32,6 +37,33 @@
 @-webkit-keyframes shine {
     from { -webkit-mask-position: 150%; }
     to { -webkit-mask-position: -50%; }
+}
+
+#header .extra-links {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+#header .extra-links a {
+    font-size: 15px;
+    text-decoration: none;
+    filter: grayscale(1);
+    transition: filter 0.3s;
+    color: #458BC6;
+}
+
+#header .extra-links a:hover {
+    filter: grayscale(0);
+}
+
+#header .extra-links a img {
+    height: 20px;
+    vertical-align: text-bottom;
+}
+
+#header .extra-links a:not(:first-child) img {
+    margin-top: 4px;
 }
 
 /* Warnings */
