@@ -1,9 +1,12 @@
 # Changelog
 
+### 2.7.3
+- Merged [#96](https://github.com/brentvollebregt/auto-py-to-exe/pull/96): Fixed Python 2.7 compatibility
+
 ### 2.7.2
 - Made warnings appear at the top of the ui when using versions of PyInstaller/Python that a known to conflict
-- Added argument --output-dir to set the default output directory
-- Added argument --logging-level to override logging level for console output
+- Added argument `--output-dir` to set the default output directory
+- Added argument `--logging-level` to override logging level for console output
 - Added helpful links to the top of the ui
 - Removed Python 3.4 from supported versions as it is not officially supported by PyInstaller anymore
 - Some other build and background improvements
