@@ -10,6 +10,12 @@ from . import packaging
 from . import dialogs
 
 
+class UIOpenMode:
+    NONE = 0
+    CHROME = 1
+    USER_DEFAULT = 2
+
+
 # Setup eels root folder
 eel.init(config.FRONTEND_ASSET_FOLDER)
 
@@ -126,12 +132,17 @@ def send_message_to_ui_output(message):
     eel.putMessageInOutput(message)()
 
 
-def start(use_chrome_if_possible=True):
+def start(open_mode):
     """ Start the UI using Eel """
     try:
-        if utils.can_use_chrome() and use_chrome_if_possible:
+        chrome_available = utils.can_use_chrome()
+        if open_mode == UIOpenMode.CHROME and chrome_available:
             eel.start('main.html', size=(650, 650), port=0)
+        elif open_mode == UIOpenMode.USER_DEFAULT or (open_mode == UIOpenMode.CHROME and not chrome_available):
+            eel.start('main.html', size=(650, 650), port=0, mode='user default')
         else:
-            eel.start('main.html', size=(650, 650), port=0, mode='user selection')
+            port = utils.get_port()
+            print('Server starting at http://localhost:' + str(port))
+            eel.start('main.html', size=(650, 650), host='localhost', port=port, mode=None)
     except (SystemExit, KeyboardInterrupt):
         pass  # This is what the bottle server raises

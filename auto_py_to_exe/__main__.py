@@ -19,7 +19,7 @@ def start_ui(logging_level):
     config.temporary_directory = tempfile.mkdtemp()
 
     # Start UI
-    ui.start(not config.disable_chrome)
+    ui.start(config.ui_open_mode)
 
     # Remove temporary folder to clean up from builds
     shutil.rmtree(config.temporary_directory)
@@ -41,6 +41,12 @@ def run():
         "--no-chrome",
         action="store_true",
         help="do not open in chromes app mode",
+    )
+    parser.add_argument(
+        "-nu",
+        "--no-ui",
+        action="store_true",
+        help="do not open a browser to show the application and simply print out where it's being hosted from",
     )
     parser.add_argument(
         "-c",
@@ -74,9 +80,15 @@ def run():
 
     # Setup config from arguments
     config.package_filename = args.filename
-    config.disable_chrome = args.no_chrome
     config.supplied_ui_configuration = args.config
     config.default_output_directory = os.path.abspath(args.output_dir)
+
+    if args.no_ui:
+        config.ui_open_mode = config.UIOpenMode.NONE
+    elif args.no_chrome:
+        config.ui_open_mode = config.UIOpenMode.USER_DEFAULT
+    else:
+        config.ui_open_mode = config.UIOpenMode.CHROME
 
     # If the user has asked for the version, print it, otherwise run the application
     if args.version:
