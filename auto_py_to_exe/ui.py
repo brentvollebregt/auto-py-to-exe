@@ -143,6 +143,6 @@ def start(open_mode):
         else:
             port = utils.get_port()
             print('Server starting at http://localhost:' + str(port) + '/index.html')
-            eel.start('index.html', size=(650, 650), host='localhost', port=port, mode=None)
+            eel.start('index.html', size=(650, 650), host='localhost', port=port, mode=None, close_callback=lambda x, y: None)
     except (SystemExit, KeyboardInterrupt):
         pass  # This is what the bottle server raises

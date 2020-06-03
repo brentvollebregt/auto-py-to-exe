@@ -40,20 +40,21 @@ def run():
         "-nc",
         "--no-chrome",
         action="store_true",
-        help="do not open in chromes app mode",
+        help="do not open in chrome's app mode",
     )
     parser.add_argument(
         "-nu",
         "--no-ui",
         action="store_true",
-        help="do not open a browser to show the application and simply print out where it's being hosted from",
+        help="do not open a browser to show the application and simply print out where it's being hosted from. "
+             "When using this option, you must manually stop the application using Ctrl+C",
     )
     parser.add_argument(
         "-c",
         "--config",
         nargs='?',
         type=validation.argparse_file_json,
-        help="a json file containing a UI configuration",
+        help="provide a json file containing a UI configuration to pre-populate the ui",
         default=None
     )
     parser.add_argument(
