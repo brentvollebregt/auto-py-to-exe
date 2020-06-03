@@ -1,5 +1,9 @@
 # Changelog
 
+### 2.7.4
+- Fixed [#99](https://github.com/brentvollebregt/auto-py-to-exe/pull/96): Added `--no-ui` to tell the application to not open the ui and simply print out the address that the server is running on.
+    - When using this option, the server will keep running until manually stopped (Ctrl + C).
+
 ### 2.7.3
 - Merged [#96](https://github.com/brentvollebregt/auto-py-to-exe/pull/96): Fixed Python 2.7 compatibility
 
