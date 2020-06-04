@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'Nunito';
-    src: url('../Nunito-Light.ttf');
+    font-family: 'Ubuntu';
+    src: url('../Fonts/Ubuntu-Regular.ttf');
 }
 
 * {
@@ -9,7 +9,7 @@
 
 body {
     background-color: #FBFBFB;
-    font-family: 'Nunito', Helvetica, Arial, sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     font-weight: 100;
     margin: 0 18px 10px 18px;
 }
@@ -45,7 +45,7 @@ h2 > small {
 /* Generic inputs */
 
 button, input, select {
-    border: 1px solid #458BC6;
+    border: 2px solid #458BC6;
     border-radius: 4px;
     padding: 4px;
 
