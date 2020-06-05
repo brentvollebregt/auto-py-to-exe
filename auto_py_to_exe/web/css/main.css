@@ -174,9 +174,7 @@ div[id*="section"] .content {
 
 #current-command textarea {
     width: 100%;
-    border-style: solid;
-    border-width: 2px;
-    border-color: #458BC6;
+    border: 2px solid #458BC6;
     border-radius: 4px;
 }
 
@@ -194,9 +192,7 @@ div[id*="section"] .content {
     width: 100%;
     white-space: pre;
     overflow-y: hidden;
-    border-style: solid;
-    border-width: 2px;
-    border-color: #458BC6;
+    border: 2px solid #458BC6;
     border-radius: 4px;
 }
 
