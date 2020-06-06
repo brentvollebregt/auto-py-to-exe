@@ -45,7 +45,7 @@ h2 > small {
 /* Generic inputs */
 
 button, input, select {
-    border: 2px solid #458BC6;
+    border: 1px solid #458BC6;
     border-radius: 4px;
     padding: 4px;
 
@@ -58,7 +58,7 @@ input:focus {
 }
 
 button {
-    border: 2px solid;
+    border: 2px solid #458BC6;
     cursor: pointer;
     border-radius: 4px;
     background: transparent;
