@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'Ubuntu';
-    src: url('../Fonts/Ubuntu-Regular.ttf');
+    font-family: 'Varela-Round';
+    src: url('../fonts/VarelaRound-Regular.ttf');
 }
 
 * {
@@ -9,7 +9,7 @@
 
 body {
     background-color: #FBFBFB;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Varela-Round', sans-serif;
     font-weight: 100;
     margin: 0 18px 10px 18px;
 }
@@ -49,7 +49,7 @@ button, input, select {
     border-radius: 4px;
     padding: 4px;
 
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Varela-Round', sans-serif;
     font-weight: 100;
 }
 
@@ -58,13 +58,12 @@ input:focus {
 }
 
 button {
+    border: 2px solid;
     cursor: pointer;
     border-radius: 4px;
     background: transparent;
     padding: 3px 8px;
     transition: border 0.3s, background 0.3s;
-    border-style: solid;
-    border-width: 2px;
 }
 
 button:not(.selected):not(.unselected):hover { /* Apply hovers to non-state buttons */
