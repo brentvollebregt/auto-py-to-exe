@@ -48,7 +48,8 @@ const getCurrentCommand = () => {
             // For switches, there are some switches for false switches that we can use
             const potentialOption = options.find(o => o.dest === c.optionDest && o.const === c.value);
             if (potentialOption !== undefined) {
-                return potentialOption.option_strings[potentialOption.option_strings.length - 1];
+                // If there's only one potential flag, use it, otherwise use the second one
+                return potentialOption.option_strings[potentialOption.option_strings.length === 1 ? 0 : 1];
             } else {
                 return null; // If there is no alternate option, skip it as it won't be required
             }
