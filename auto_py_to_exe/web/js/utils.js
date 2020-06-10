@@ -23,3 +23,11 @@ const askForFiles = async () => {
 const askForFolder = async () => {
     return await eel.ask_folder()();
 };
+
+const chooseOptionString = (optionStrings) => {
+    // Try not to use compressed flags
+    if (optionStrings[0].length === 2 && optionStrings.length > 1) {
+        return optionStrings[1];
+    }
+    return optionStrings[0];
+};
