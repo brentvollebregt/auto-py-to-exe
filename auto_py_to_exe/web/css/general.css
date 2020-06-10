@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'Varela-Round';
-    src: url('../fonts/VarelaRound-Regular.ttf');
+    font-family: 'Nunito';
+    src: url('../fonts/Nunito-Light.ttf');
 }
 
 * {
@@ -9,7 +9,7 @@
 
 body {
     background-color: #FBFBFB;
-    font-family: 'Varela-Round', sans-serif;
+    font-family: 'Nunito', Helvetica, Arial, sans-serif;
     font-weight: 100;
     margin: 0 18px 10px 18px;
 }
@@ -49,7 +49,7 @@ button, input, select {
     border-radius: 4px;
     padding: 4px;
 
-    font-family: 'Varela-Round', sans-serif;
+    font-family: 'Nunito', Helvetica, Arial, sans-serif;
     font-weight: 100;
 }
 
