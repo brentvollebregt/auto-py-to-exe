@@ -1,7 +1,12 @@
 # Changelog
 
+### 2.7.5
+- Fixed [#100](https://github.com/brentvollebregt/auto-py-to-exe/issues/100): Use Eel 0.12.4
+- Fixed [#103](https://github.com/brentvollebregt/auto-py-to-exe/issues/103): Use `--console`/`--windowed` instead of `--nowindowed`/`--noconsole`
+- Be more consistent when choosing option strings - found in [#104](https://github.com/brentvollebregt/auto-py-to-exe/issues/104)
+
 ### 2.7.4
-- Fixed [#99](https://github.com/brentvollebregt/auto-py-to-exe/pull/96): Added `--no-ui` to tell the application to not open the ui and simply print out the address that the server is running on.
+- Fixed [#99](https://github.com/brentvollebregt/auto-py-to-exe/issues/99): Added `--no-ui` to tell the application to not open the ui and simply print out the address that the server is running on.
     - When using this option, the server will keep running until manually stopped (Ctrl + C).
 
 ### 2.7.3

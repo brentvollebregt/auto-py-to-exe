@@ -100,7 +100,7 @@ const _createSubSectionInAdvanced = (title, options) => {
         // Option title / name
         const optionNode = document.createElement('span');
         container.appendChild(optionNode);
-        optionNode.textContent = o.option_strings[o.option_strings.length - 1];
+        optionNode.textContent = chooseOptionString(o.option_strings);
 
         // Help icon
         const helpNode = document.createElement('span');
