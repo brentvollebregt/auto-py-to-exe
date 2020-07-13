@@ -7,8 +7,22 @@
     box-sizing: border-box;
 }
 
+:root {
+    --background: #FBFBFB;
+    --primary: #458BC6;
+    --primary-darker: #1c79c7;
+    --primary-transparent: #1c79c71a;
+    --error: red;
+    --unselected: lightgrey;
+    --disabled: #808080;
+
+    --title: #666666;
+    --warning-background: #fff3cd;
+    --warning-border: #a0987c;
+}
+
 body {
-    background-color: #FBFBFB;
+    background-color: var(--background);
     font-family: 'Nunito', Helvetica, Arial, sans-serif;
     font-weight: 100;
     margin: 0 18px 10px 18px;
@@ -18,7 +32,6 @@ body {
     margin: auto;
     max-width: 800px
 }
-
 
 /* Headers */
 
@@ -45,7 +58,7 @@ h2 > small {
 /* Generic inputs */
 
 button, input, select {
-    border: 1px solid #458BC6;
+    border: 1px solid var(--primary);
     border-radius: 4px;
     padding: 4px;
 
@@ -68,16 +81,16 @@ button {
 }
 
 button:not(.selected):not(.unselected):hover { /* Apply hovers to non-state buttons */
-    background: #1c79c71a;
+    background: var(--primary-transparent);
 }
 
 button.selected, button.unselected:hover {
-    border-color: #458BC6;
+    border-color: var(--primary);
 }
 
 button.unselected {
-    border-color: lightgrey;
-    color: lightgrey;
+    border-color: var(--unselected);
+    color: var(--unselected);
 }
 
 button.large {
