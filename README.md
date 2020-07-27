@@ -1,5 +1,5 @@
 <h1 align="center">Auto PY to EXE</h1>
-<p align="center">A .py to .exe converter using a simple graphical interface and <a href="http://www.pyinstaller.org/">PyInstaller</a> in Python.</p>
+<p align="center">A .py to .exe converter using a simple graphical interface and <a href="https://www.pyinstaller.org/">PyInstaller</a> in Python.</p>
 
 <p align="center">
     <img src="https://nitratine.net/posts/auto-py-to-exe/feature.png" alt="Empty interface">
@@ -9,7 +9,7 @@
     <a href="https://pypi.org/project/auto-py-to-exe/"><img src="https://img.shields.io/pypi/v/auto-py-to-exe.svg" alt="PyPI Version"></a>
     <a href="https://pypi.org/project/auto-py-to-exe/"><img src="https://img.shields.io/pypi/pyversions/auto-py-to-exe.svg" alt="PyPI Supported Versions"></a>
     <a href="https://pypi.org/project/auto-py-to-exe/"><img src="https://img.shields.io/pypi/l/auto-py-to-exe.svg" alt="License"></a>
-    <a href="http://pepy.tech/project/auto-py-to-exe"><img src="http://pepy.tech/badge/auto-py-to-exe" alt="Downloads"></a>
+    <a href="https://pepy.tech/project/auto-py-to-exe"><img src="https://static.pepy.tech/badge/auto-py-to-exe/month" alt="Downloads Per Month"></a>
     <a href="https://pyinstaller.readthedocs.io/en/stable/requirements.html"><img src="https://img.shields.io/badge/platform-windows%20%7C%20linux%20%7C%20macos-lightgrey" alt="Supported Platforms"></a>
 </p>
 

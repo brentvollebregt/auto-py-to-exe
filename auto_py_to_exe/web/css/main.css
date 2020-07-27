@@ -18,7 +18,7 @@
 #header .title h1 {
     font-weight: 100;
     font-size: 30px;
-    color: #666666;
+    color: var(--title);
     margin: 0 0 0 10px;
 }
 
@@ -50,7 +50,7 @@
     text-decoration: none;
     filter: grayscale(1);
     transition: filter 0.3s;
-    color: #458BC6;
+    color: var(--primary);
 }
 
 #header .extra-links a:hover {
@@ -73,8 +73,8 @@
 }
 
 #warnings > div {
-    background: #fff3cd;
-    border: 1px solid #a0987c;
+    background: var(--warning-background);
+    border: 1px solid var(--warning-border);
     border-radius: 4px;
     margin: 10px 0;
     padding: 8px;
@@ -193,7 +193,7 @@ div[id*="section"] .content {
 }
 
 #output textarea.failure {
-    border-color: red;
+    border-color: var(--error);
 }
 
 /* Common issues link formatting */
@@ -211,11 +211,11 @@ div[id*="section"] .content {
 
 #common-issue-link a {
     text-decoration: none;
-    color: #458BC6
+    color: var(--primary);
 }
 
 #common-issue-link a:hover {
-    color: #1c79c7;
+    color: var(--primary-darker);
 }
 
 /* Package / Open Output Folder Buttons */
@@ -227,8 +227,8 @@ div[id*="section"] .content {
 
 #package-button, #open-output-folder-button {
     width: 100%;
-    background-color: #458BC6;
-    border: 1px solid #458BC6;
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
     font-size: 15px;
     color: white;
     height: 38px;
@@ -242,12 +242,12 @@ div[id*="section"] .content {
 }
 
 #package-button:hover, #open-output-folder-button:hover {
-    background-color: #1c79c7;
+    background-color: var(--primary-darker);
 }
 
 #package-button:disabled {
-    background-color: #808080;
-    border-color: #808080;
+    background-color: var(--disabled);
+    border-color: var(--disabled);
     cursor: not-allowed;
 }
 
