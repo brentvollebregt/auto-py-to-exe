@@ -1,5 +1,9 @@
 # Changelog
 
+### 2.7.6
+- Updated CSS colour references
+- Fixed 404 image link
+
 ### 2.7.5
 - Fixed [#100](https://github.com/brentvollebregt/auto-py-to-exe/issues/100): Use Eel 0.12.4
 - Fixed [#103](https://github.com/brentvollebregt/auto-py-to-exe/issues/103): Use `--console`/`--windowed` instead of `--nowindowed`/`--noconsole`
