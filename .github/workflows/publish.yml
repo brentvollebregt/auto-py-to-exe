@@ -41,7 +41,7 @@ jobs:
           pytest
 
   publish:
-    needs: [test]
+    needs: [initial-checks, test]
     runs-on: ubuntu-latest
 
     steps:
