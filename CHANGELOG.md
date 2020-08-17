@@ -1,6 +1,6 @@
 # Changelog
 
-### 2.7.7
+### 2.7.8
 - Fix regressed additional files note when using onefile
 
 ### 2.7.6
