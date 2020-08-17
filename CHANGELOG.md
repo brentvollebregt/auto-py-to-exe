@@ -1,5 +1,8 @@
 # Changelog
 
+### 2.7.7
+- Fix regressed additional files note when using onefile
+
 ### 2.7.6
 - Updated CSS colour references
 - Fixed 404 image link

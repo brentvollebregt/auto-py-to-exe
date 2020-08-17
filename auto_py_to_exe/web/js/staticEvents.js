@@ -20,6 +20,8 @@ const scriptLocationSearch = async (event) => {
 };
 
 const oneFileOptionChange = (option) => (event) => {
+    const onefileAdditionalFilesNote = document.getElementById('onefileAdditionalFilesNote');
+    onefileAdditionalFilesNote.style.display = option === 'one-file' ? 'block' : 'none'; // Show the note if one-file is being used
     const oneFileButton = document.getElementById('one-file-button');
     oneFileButton.classList.add(option === 'one-file' ? 'selected' : 'unselected');
     oneFileButton.classList.remove(option !== 'one-file' ? 'selected' : 'unselected');
