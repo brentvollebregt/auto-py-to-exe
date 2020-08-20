@@ -16,12 +16,10 @@ setup(
     packages=['auto_py_to_exe'],
     include_package_data=True,
     install_requires=['Eel==0.12.4', 'pyinstaller>=3.4'],
-    python_requires='>=2.7',
+    python_requires='>=3.5',
     classifiers=[
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',

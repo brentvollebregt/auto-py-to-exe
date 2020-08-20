@@ -16,9 +16,11 @@
 ## Getting Started
 
 ### Prerequisites
- - Python : Python 2.7 / 3.5-3.7 (see [here](https://github.com/pyinstaller/pyinstaller/issues/4311) for 3.8)
+ - Python : 3.5-3.7 (see [here](https://github.com/pyinstaller/pyinstaller/issues/4311) for 3.8)
 
 *To have the interface displayed in the images, you will need chrome. If chrome is not installed or --no-chrome is supplied, the default browser will be used.*
+
+> As of [PyInstaller 4.0](https://github.com/pyinstaller/pyinstaller/releases/tag/v4.0), Python 2.7 is no longer supported. Read "[Python 2.7 Support](#python-27-support)" below for steps on how to use this tool with Python 2.7.
 
 ### Installation and Usage
 #### Installing Via [PyPI](https://pypi.org/project/auto-py-to-exe/)
@@ -82,6 +84,9 @@ If you need something visual to help you get started, [I made a video for the or
 
 ## Issues Using the Tool
 If you're having issues with the packaged executable or using this tool in general, I recommend you read [my blog post on common issues when using auto-py-to-exe](https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=readme_link&utm_campaign=auto_py_to_exe_help). This post covers things you should know about packaging Python scripts and fixes for things that commonly go wrong.
+
+## Python 2.7 Support
+As of [PyInstaller v4.0](https://github.com/pyinstaller/pyinstaller/releases/tag/v4.0) released on Aug 9 2020, Python 2.7 is no longer supported; although you can still use this tool with Python 2.7 by installing an older version of PyInstaller. [PyInstaller v3.6](https://github.com/pyinstaller/pyinstaller/releases/tag/v3.6) was the last version that supported Python 2.7; to install this, first uninstall any existing versions of PyInstaller and then execute `python -m pip install pyinstaller==3.6`.
 
 ## Testing
 Tests are located in `tests/` and are run using pytest:
