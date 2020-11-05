@@ -1,0 +1,21 @@
+{
+  "name": "GoogleTasks JSON to TXT",
+  "version": "0.0.1",
+  "homepage": "https://github.com/thethales/GoogleTasksJSONtoTXT",
+  "repository": "github:thethales/GoogleTasksJSONtoTXT",
+  "author": "thethales",
+  "description": "A very simple tool to convert Google Tasks Takeout JSON file format to plain TXT files.",
+  "main": "run_gui.py",
+  "keywords": [
+    "Google Tasks",
+    "Google Tasks Takeout",
+    "JSON",
+    "TXT"
+  ],
+  "license": "MIT License",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@brentvollebregt/auto-py-to-exe": "^2.7.8"
+  }
+}
