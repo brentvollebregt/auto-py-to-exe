@@ -15,7 +15,7 @@ setup(
     keywords=['gui', 'executable'],
     packages=['auto_py_to_exe'],
     include_package_data=True,
-    install_requires=['Eel==0.12.4', 'pyinstaller>=3.4'],
+    install_requires=['Eel==0.12.4', 'pyinstaller>=4.1'],
     python_requires='>=3.5',
     classifiers=[
         'License :: OSI Approved :: MIT License',
@@ -24,6 +24,8 @@ setup(
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
         'Operating System :: Microsoft :: Windows',
         'Operating System :: POSIX :: Linux',
     ],

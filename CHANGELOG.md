@@ -1,5 +1,8 @@
 # Changelog
 
+### 2.7.9
+- Added support for Python 3.8 and 3.9 by making [PyInstaller 4.1](https://pypi.org/project/pyinstaller/4.1/) a required dependency
+
 ### 2.7.8
 - Fix regressed additional files note when using onefile
 
