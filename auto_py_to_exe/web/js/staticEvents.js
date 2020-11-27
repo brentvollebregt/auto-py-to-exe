@@ -81,6 +81,14 @@ const additionalFilesAddBlank = (event) => {
 
 // Settings section events
 
+const outputDirectorySearch = async (event) => {
+    const folder = await askForFolder();
+    if (folder !== '') {
+        const outputDirectoryInput = document.getElementById('output-directory');
+        outputDirectoryInput.value = folder;
+    }
+};
+
 const recursionLimitToggle = (enabled) => {
     const button = document.getElementById('recursion-limit-switch');
     if (enabled) {
@@ -154,6 +162,7 @@ const setupEvents = () => {
     document.getElementById('additional-files-add-blank').addEventListener('click', additionalFilesAddBlank);
 
     // Settings
+    document.getElementById('output-directory-search').addEventListener('click', outputDirectorySearch);
     document.getElementById('recursion-limit-switch').addEventListener('click', e => recursionLimitToggle(e.target.classList.contains('unselected')));
     document.getElementById('raw-arguments').addEventListener('input', rawArgumentsChange);
     document.getElementById('configuration-import').addEventListener('click', () => onConfigurationImport());
