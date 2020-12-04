@@ -44,18 +44,25 @@ def get_warnings():
     try:
         # Make sure PyInstaller 3.4 or above is being used with Python 3.7
         if sys.version_info >= (3, 7) and float(pyinstaller_version) < 3.4:
+            message = 'You will need PyInstaller 3.4 or above to use this tool with Python 3.7'
+            message += '\nPlease upgrade PyInstaller: python -m pip install pyinstaller --upgrade'
             warnings.append({
-                'message': 'You will need PyInstaller 3.4 or above to use this with Python 3.7\nPlease upgrade PyInstaller: python -m pip install --upgrade PyInstaller',
+                'message': message,
                 'link': None
             })
     except ValueError:
         pass  # Dev branches will have pyinstaller_version as a string in the form X.Y.devZ+HASH. Ignore it if this is the case.
 
-    if sys.version_info >= (3, 8):
-        warnings.append({
-            'message': 'Currently, PyInstaller does not support Python 3.8 fully - some side effects may occur when using PyInstaller with Python 3.8. You can fix this by using an earlier version of Python.',
-            'link': 'https://github.com/pyinstaller/pyinstaller/issues/4311'
-        })
+    try:
+        if sys.version_info.major == 3 and (sys.version_info.minor == 8 or sys.version_info.minor == 9) and float(pyinstaller_version) < 4.1:
+            message = 'PyInstaller 4.0 and below do not officially support Python 3.8 and 3.9 - you are currently using PyInstaller {pyinstaller_version}'.format(pyinstaller_version=pyinstaller_version)
+            message += '\nIt is highly recommended to update your version of PyInstaller using: python -m pip install pyinstaller --upgrade'
+            warnings.append({
+                'message': message,
+                'link': None
+            })
+    except ValueError:
+        pass  # Dev branches will have pyinstaller_version as a string in the form X.Y.devZ+HASH. Ignore it if this is the case.
 
     return warnings
 
