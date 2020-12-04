@@ -1,5 +1,8 @@
 # Changelog
 
+### 2.7.11
+- Add warning about PyInstaller < 4.1 support for Python 3.8 and 3.9
+
 ### 2.7.10
 - [#142](https://github.com/brentvollebregt/auto-py-to-exe/issues/142): Added browse button for output directory
 
