@@ -52,7 +52,7 @@
                         <img src="https://github.githubassets.com/favicons/favicon.png" alt="GitHub favicon" />
                     </a>
                     <a href="https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=application_link&utm_campaign=auto_py_to_exe_help&utm_content=top" target="_blank">
-                        Help Post
+                        帮助帖子
                         <img src="https://nitratine.net/static/img/favicon-384x384.png" alt="Nitratine favicon" />
                     </a>
                 </div>
@@ -61,7 +61,8 @@
             <div id="warnings"></div>
 
             <div>
-                <h2>Script Location</h2>
+                <h2>由jiangzhe汉化</h2>
+                <h2>脚本位置</h2>
                 <div class="filepath-browse-layout">
                     <input id="entry-script" placeholder="Path to file" required>
                     <button id="entry-script-search">Browse</button>
@@ -70,30 +71,30 @@
 
             <div>
                 <h2>
-                    Onefile
+                    一个文件
                     <small>(--onedir / --onefile)</small>
                 </h2>
                 <div>
                     <button id="one-directory-button" class="large">
-                        One Directory
+                        一个目录
                     </button>
                     <button id="one-file-button" class="large">
-                        One File
+                        一个文件
                     </button>
                 </div>
             </div>
 
             <div>
                 <h2>
-                    Console Window
+                    控制台窗口
                     <small>(--console / --windowed)</small>
                 </h2>
                 <div>
                     <button id="console-based-button" class="large">
-                        Console Based
+                        基于控制台的
                     </button>
                     <button id="window-based-button" class="large">
-                        Window Based (hide the console)
+                        基于窗口的 (隐藏控制台)
                     </button>
                 </div>
             </div>
@@ -102,7 +103,7 @@
                 <div class="header noselect" onclick="expandSection('icon')">
                     <img src="img/chevron-square-up.svg" alt="Icon Section Chevron"/>
                     <h2>
-                        Icon
+                        图标
                         <small>(--icon)</small>
                     </h2>
                 </div>
@@ -118,30 +119,30 @@
                 <div class="header noselect" onclick="expandSection('additional-files')">
                     <img src="img/chevron-square-up.svg" alt="Additional Files Section Chevron"/>
                     <h2>
-                        Additional Files
+                        附加文件
                         <small>(--add-data)</small>
                     </h2>
                 </div>
                 <div class="content">
                     <div id="datas-add-buttons">
                         <button id="additional-files-add-files-button">
-                            Add Files
+                            添加文件
                         </button>
                         <button id="additional-files-add-folder">
-                            Add Folder
+                            添加目录
                         </button>
                         <button id="additional-files-add-blank">
-                            Add Blank
+                            添加空白
                         </button>
                     </div>
                     <div id="datas-list"></div>
                     <p id="onefileAdditionalFilesNote" class="note" style="display: none;">
-                        Be careful when using additional files with onefile mode;
+                        使用单文件模式的附加文件时要小心;
                         <a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">read this</a>
-                        and update your code to work with PyInstaller.
+                        并更新您的代码以使用PyInstaller。
                     </p>
                     <p class="note">
-                        If you want to put files in the root directory, put a period (.) in the destination.
+                        如果要将文件放到根目录中，请在目标目录中输入句点(.)。
                     </p>
                 </div>
             </div>
@@ -149,7 +150,7 @@
             <div id="section-advanced">
                 <div class="header noselect" onclick="expandSection('advanced')">
                     <img src="img/chevron-square-up.svg" alt="Advanced Section Chevron"/>
-                    <h2>Advanced</h2>
+                    <h2>高级</h2>
                 </div>
                 <div class="content"></div>
             </div>
@@ -157,15 +158,15 @@
             <div id="section-settings">
                 <div class="header noselect" onclick="expandSection('settings')">
                     <img src="img/chevron-square-up.svg" alt="Advanced Section Chevron"/>
-                    <h2>Settings</h2>
+                    <h2>设置</h2>
                 </div>
                 <div class="content">
                     <div>
-                        <h3>auto-py-to-exe Specific Options</h3>
+                        <h3>auto-py-to-exe 特定的选项</h3>
                         <div class="option-container input">
                             <span>
-                                Output Directory
-                                <span title="The directory to put the output in. Will be created if it doesn't exist" class="info_icon"></span>
+                                输出路径
+                                <span title="用于放置输出的目录。如果不存在，将创建该目录" class="info_icon"></span>
                             </span>
                             <div class="filepath-browse-layout">
                                 <input id="output-directory" placeholder="DIRECTORY">
@@ -174,54 +175,54 @@
                         </div>
                         <div class="option-container switch">
                             <span>
-                                Increase Recursion Limit
-                                <span title="Having this enabled will set the recursion limit to 5000 using sys.setrecursionlimit(5000)." class="info_icon"></span>
+                                增加递归限制
+                                <span title="启用此功能将使用sys.setrecursionlimit（5000）将递归限制设置为5000。" class="info_icon"></span>
                             </span>
                             <button id="recursion-limit-switch">Enable</button>
                         </div>
                     </div>
                     <div>
-                        <h3>Manually Provide Options</h3>
+                        <h3>手动提供选项</h3>
                         <div class="option-container input">
                             <span>
-                                Manual Argument Input
-                                <span title="Inject raw text into the generated command." class="info_icon"></span>
+                                手动参数输入
+                                <span title="将原始文本插入到生成的命令中。" class="info_icon"></span>
                             </span>
                             <input id="raw-arguments" placeholder="ARGUMENTS" />
                         </div>
                     </div>
                     <div>
-                        <h3>Configuration</h3>
-                        <button id="configuration-import">Import Config From JSON File</button>
-                        <button id="configuration-export">Export Config To JSON File</button>
+                        <h3>配置</h3>
+                        <button id="configuration-import">从JSON文件导入配置</button>
+                        <button id="configuration-export">将配置导出到JSON文件</button>
                     </div>
                 </div>
             </div>
 
             <div id="current-command">
-                <h2>Current Command</h2>
+                <h2>当前命令</h2>
                 <textarea readonly></textarea>
             </div>
 
             <div id="output">
-                <h2>Output</h2>
+                <h2>输出</h2>
                 <textarea readonly></textarea>
             </div>
 
             <div id="common-issue-link">
-                Something wrong with your exe? Read
+                你的exe有问题? 阅读
                 <a href="https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=application_link&utm_campaign=auto_py_to_exe_help&utm_content=bottom" target="_blank">
-                    this post on how to fix common issues
+                    这篇文章是关于如何修复常见问题的
                 </a>
-                for possible solutions.
+                寻找可能的解决方案。
             </div>
 
             <div id="package-button-wrapper">
                 <button id="package-button">
-                    Convert .py to .exe
+                    将.py转换为.exe
                 </button>
                 <button id="open-output-folder-button">
-                    Open Output Folder
+                    打开输出路径
                 </button>
             </div>
         </div>

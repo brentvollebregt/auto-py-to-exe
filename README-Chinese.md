@@ -22,7 +22,7 @@
 
 *要在图像中显示界面，您需要使用Chrome。如果未安装Chrome或提供了--no-chrome 参数，则将使用默认浏览器。*
 
-> 从[PyInstaller 4.0](https://github.com/pyinstaller/pyinstaller/releases/tag/v4.0)开始，不再支持Python 2.7。有关如何在Python2.7中使用此工具的步骤，请阅读下面的“[Python 2.7 支持](#python-27-支持)”
+> 从 [PyInstaller 4.0](https://github.com/pyinstaller/pyinstaller/releases/tag/v4.0) 开始，不再支持Python 2.7。有关如何在Python2.7中使用此工具的步骤，请阅读下面的“[Python 2.7 支持](#python-27-支持)”
 
 ### 安装和使用
 #### 通过 [PyPI](https://pypi.org/project/auto-py-to-exe/) 安装

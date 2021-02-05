@@ -9,31 +9,31 @@ const options_inputTypeDoubleDirectoryDest = ['datas'];
 
 const advancedSections = [
     {
-        title: 'General Options',
+        title: '常规选项',
         options: ['name', 'upx_dir', 'ascii', 'clean_build', 'loglevel']
     },
     {
-        title: 'What to bundle, where to search',
+        title: '捆绑什么，搜索哪里',
         options: ['binaries', 'pathex', 'hiddenimports', 'hookspath', 'runtime_hooks', 'excludes', 'key']
     },
     {
-        title: 'How to generate',
+        title: '如何生成',
         options: ['debug', 'strip', 'noupx', 'upx_exclude']
     },
     {
-        title: 'Windows specific options',
+        title: 'Windows特定选项',
         options: ['version_file', 'manifest', 'resources', 'uac_admin', 'uac_uiaccess']
     },
     {
-        title: 'Windows Side-by-side Assembly searching options (advanced)',
+        title: '窗口并排汇编搜索选项(高级)  Windows Side-by-side Assembly searching options (advanced)',
         options: ['win_private_assemblies', 'win_no_prefer_redirects']
     },
     {
-        title: 'Mac OS X specific options',
+        title: 'Mac OS X特定选项',
         options: ['bundle_identifier']
     },
     {
-        title: 'Rarely used special options',
+        title: '很少使用的特殊选项',
         options: ['runtime_tmpdir', 'bootloader_ignore_signals']
     },
 ];
