@@ -13,7 +13,7 @@
     <a href="https://pyinstaller.readthedocs.io/en/stable/requirements.html"><img src="https://img.shields.io/badge/platform-windows%20%7C%20linux%20%7C%20macos-lightgrey" alt="Supported Platforms"></a>
 </p>
 
-### To read README in English, press [me](\README.md)
+### To read README in English, press [here](https://github.com/jiangzhe11/auto-py-to-exe/blob/master/README.md)
 
 ## 让我们开始！
 
@@ -22,7 +22,7 @@
 
 *要在图像中显示界面，您需要使用Chrome。如果未安装Chrome或提供了--no-chrome 参数，则将使用默认浏览器。*
 
-> 从[PyInstaller 4.0](https://github.com/pyinstaller/pyinstaller/releases/tag/v4.0)开始，不再支持Python 2.7。有关如何在Python2.7中使用此工具的步骤，请阅读下面的“[Python 2.7 支持](#python-27-support)”
+> 从[PyInstaller 4.0](https://github.com/pyinstaller/pyinstaller/releases/tag/v4.0)开始，不再支持Python 2.7。有关如何在Python2.7中使用此工具的步骤，请阅读下面的“[Python 2.7 支持](#python-27-支持)”
 
 ### 安装和使用
 #### 通过 [PyPI](https://pypi.org/project/auto-py-to-exe/) 安装
@@ -111,3 +111,5 @@ $ pytest
 | - | - |
 | [![Empty interface](https://nitratine.net/posts/auto-py-to-exe/empty-interface.png)](https://nitratine.net/posts/auto-py-to-exe/empty-interface.png) | [![Filled out](https://nitratine.net/posts/auto-py-to-exe/filled-out.png)](https://nitratine.net/posts/auto-py-to-exe/filled-out.png) |
 | [![Converting](https://nitratine.net/posts/auto-py-to-exe/converting.png)](https://nitratine.net/posts/auto-py-to-exe/converting.png) | [![Completed](https://nitratine.net/posts/auto-py-to-exe/completed.png)](https://nitratine.net/posts/auto-py-to-exe/completed.png) |
+
+中文翻译：jiangzhe
