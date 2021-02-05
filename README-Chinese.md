@@ -13,7 +13,7 @@
     <a href="https://pyinstaller.readthedocs.io/en/stable/requirements.html"><img src="https://img.shields.io/badge/platform-windows%20%7C%20linux%20%7C%20macos-lightgrey" alt="Supported Platforms"></a>
 </p>
 
-### To read README in English, press [here](https://github.com/jiangzhe11/auto-py-to-exe/blob/master/README.md)
+### To read README in English, press [here](./README.md)
 
 ## 让我们开始！
 
