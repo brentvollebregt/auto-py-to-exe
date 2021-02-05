@@ -13,6 +13,8 @@
     <a href="https://pyinstaller.readthedocs.io/en/stable/requirements.html"><img src="https://img.shields.io/badge/platform-windows%20%7C%20linux%20%7C%20macos-lightgrey" alt="Supported Platforms"></a>
 </p>
 
+### 阅读中文版的README ，点击 [这里](\README-Chinese.md)
+
 ## Getting Started
 
 ### Prerequisites
