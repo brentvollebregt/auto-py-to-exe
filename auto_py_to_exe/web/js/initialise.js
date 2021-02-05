@@ -89,6 +89,9 @@ window.addEventListener("load", async () => {
     // Update the current command when setup is complete
     updateCurrentCommandDisplay();
 
+    // Try to translate to the default browser language
+    translate();
+
     // If the server stops, close the UI
     window.eel._websocket.addEventListener('close', e => window.close());
 });

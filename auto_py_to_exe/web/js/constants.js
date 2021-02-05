@@ -9,31 +9,31 @@ const options_inputTypeDoubleDirectoryDest = ['datas'];
 
 const advancedSections = [
     {
-        title: 'General Options',
+        titleI18nPath: 'dynamic.title.generalOptions',
         options: ['name', 'upx_dir', 'ascii', 'clean_build', 'loglevel']
     },
     {
-        title: 'What to bundle, where to search',
+        titleI18nPath: 'dynamic.title.whatToBundleWhereToSearch',
         options: ['binaries', 'pathex', 'hiddenimports', 'hookspath', 'runtime_hooks', 'excludes', 'key']
     },
     {
-        title: 'How to generate',
+        titleI18nPath: 'dynamic.title.howToGenerate',
         options: ['debug', 'strip', 'noupx', 'upx_exclude']
     },
     {
-        title: 'Windows specific options',
+        titleI18nPath: 'dynamic.title.windowsSpecificOptions',
         options: ['version_file', 'manifest', 'resources', 'uac_admin', 'uac_uiaccess']
     },
     {
-        title: 'Windows Side-by-side Assembly searching options (advanced)',
+        titleI18nPath: 'dynamic.title.windowsSideBySideAssemblySearchingOptions',
         options: ['win_private_assemblies', 'win_no_prefer_redirects']
     },
     {
-        title: 'Mac OS X specific options',
+        titleI18nPath: 'dynamic.title.macOsxSpecificOptions',
         options: ['bundle_identifier']
     },
     {
-        title: 'Rarely used special options',
+        titleI18nPath: 'dynamic.title.rarelyUsedSpecialOptions',
         options: ['runtime_tmpdir', 'bootloader_ignore_signals']
     },
 ];

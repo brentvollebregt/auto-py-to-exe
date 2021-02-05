@@ -11,7 +11,6 @@ const scriptLocationChange = async (event) => {
 
 const scriptLocationSearch = async (event) => {
     const entryScriptNode = document.getElementById('entry-script');
-    console.log(scriptLocationSearch);
     const value = await askForFile('python');
     if (value !== null) {
         entryScriptNode.value = value;
@@ -118,7 +117,7 @@ const packageScript = async (event) => {
     const entryScript = currentConfiguration.find(c => c.optionDest === 'filenames').value;
 
     if (entryScript === '') {
-        alert('You have not provided your scripts location.\nPlease enter this at the top of the page.');
+        alert(getTranslation('nonDom.alert.noScriptsLocationProvided'));
         return;
     }
 
@@ -127,7 +126,7 @@ const packageScript = async (event) => {
         currentConfiguration.find(c => c.optionDest === 'onefile').value,
         getNonPyinstallerConfiguration().outputDirectory
     )();
-    if (willOverwrite && !confirm("This action will overwrite a previous output in the output folder.\nContinue?")) {
+    if (willOverwrite && !confirm(getTranslation('nonDom.alert.overwritePreviousOutput'))) {
         return
     }
 
