@@ -387,3 +387,17 @@ const setupWarnings = (warnings) => {
         }
     });
 };
+
+const setupLanguageSelection = () => {
+    const languageSelectNode = document.getElementById('language-selection');
+    languageSelectNode.addEventListener('change', (event) => {
+        translate(event.target.value);
+    });
+    supportedLanguages.forEach(language => {
+        const option = document.createElement('option');
+        option.innerText = language.name;
+        option.value = language.code;
+        languageSelectNode.appendChild(option);
+    });
+    languageSelectNode.value = currentLanguage;
+};

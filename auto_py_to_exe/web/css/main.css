@@ -66,6 +66,11 @@
     margin-top: 4px;
 }
 
+#header .extra-links #language-selection {
+    margin-top: 4px;
+    padding: 0 6px;
+}
+
 /* Warnings */
 
 #warnings {

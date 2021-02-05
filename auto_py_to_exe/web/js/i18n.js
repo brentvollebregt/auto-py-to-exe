@@ -268,7 +268,7 @@ const translate = (language) => {
 
         // If there is a translation, translate otherwise use the default language
         if (translationBlock !== undefined && translationBlock[language] !== undefined) {
-          element.innerHTML = translationBlock[language];
+            element.innerHTML = translationBlock[language];
         } else {
             element.innerHTML = translationBlock[_defaultLanguage];
         }
@@ -281,9 +281,9 @@ const translate = (language) => {
         const translationBlock = keys.reduce((obj, i) => obj[i], translationMap);
 
         if (translationBlock !== undefined && translationBlock[language] !== undefined) {
-          element.placeholder = translationBlock[language];
+            element.placeholder = translationBlock[language];
         } else {
-            element.innerHTML = translationBlock[_defaultLanguage];
+            element.placeholder = translationBlock[_defaultLanguage];
         }
     });
 
@@ -294,9 +294,9 @@ const translate = (language) => {
         const translationBlock = keys.reduce((obj, i) => obj[i], translationMap);
 
         if (translationBlock !== undefined && translationBlock[language] !== undefined) {
-          element.title = translationBlock[language];
+            element.title = translationBlock[language];
         } else {
-            element.innerHTML = translationBlock[_defaultLanguage];
+            element.title = translationBlock[_defaultLanguage];
         }
     });
 };
@@ -318,7 +318,7 @@ const _getLanguage = () => {
 };
 
 const _checkLanguageIsSupportedOrDefault = (language) => {
-    if (supportedLanguages.indexOf(language) !== -1) {
+    if (supportedLanguages.map(x => x.code).indexOf(language) !== -1) {
         return language;
     } else {
         return _defaultLanguage;
@@ -337,5 +337,14 @@ const getTranslation = (path) => {
 };
 
 const _defaultLanguage = 'en';
-const supportedLanguages = ['en', 'zh'];
+const supportedLanguages = [
+    {
+        name: 'English',
+        code: 'en',
+    },
+    {
+        name: 'Chinese (中文)',
+        code: 'zh',
+    },
+];
 let currentLanguage = _checkLanguageIsSupportedOrDefault(_getLanguage()); // Keeps track of the current language

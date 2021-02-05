@@ -67,6 +67,9 @@ window.addEventListener("load", async () => {
     // Setup ui events (for static content) and setup initial state
     setupEvents();
 
+    // Setup language selection
+    setupLanguageSelection();
+
     // Setup advanced section (for dynamic content)
     constructAdvancedSection(options);
 
