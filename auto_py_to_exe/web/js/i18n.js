@@ -3,155 +3,155 @@ const translationMap = {
         title: {
             scriptLocation: {
                 en: 'Script Location',
-                zh: ''
+                zh: '脚本位置'
             },
             oneFile: {
                 en: 'Onefile',
-                zh: ''
+                zh: '单文件'
             },
             consoleWindow: {
                 en: 'Console Window',
-                zh: ''
+                zh: '控制台窗口'
             },
             icon: {
                 en: 'Icon',
-                zh: ''
+                zh: '图标'
             },
             additionalFiles: {
                 en: 'Additional Files',
-                zh: ''
+                zh: '附加文件'
             },
             advanced: {
                 en: 'Advanced',
-                zh: ''
+                zh: '高级'
             },
             settings: {
                 en: 'Settings',
-                zh: ''
+                zh: '设置'
             },
             currentCommand: {
                 en: 'Current Command',
-                zh: ''
+                zh: '当前命令'
             },
             output: {
                 en: 'Output',
-                zh: ''
+                zh: '输出'
             },
             specificOptions: {
                 en: 'auto-py-to-exe Specific Options',
-                zh: ''
+                zh: 'auto-py-to-exe 特定的选项'
             },
             outputDirectory: {
                 en: 'Output Directory',
-                zh: ''
+                zh: '输出路径'
             },
             increaseRecursionLimit: {
                 en: 'Increase Recursion Limit',
-                zh: ''
+                zh: '增加递归限制'
             },
             manuallyProvideOptions: {
                 en: 'Manually Provide Options',
-                zh: ''
+                zh: '手动提供选项'
             },
             manualArgumentInput: {
                 en: 'Manual Argument Input',
-                zh: ''
+                zh: '手动参数输入'
             },
             configuration: {
                 en: 'Configuration',
-                zh: ''
+                zh: '配置'
             }
         },
         button: {
             browse: {
                 en: 'Browse',
-                zh: ''
+                zh: '浏览'
             },
             oneDirectory: {
                 en: 'One Directory',
-                zh: ''
+                zh: '单目录'
             },
             oneFile: {
                 en: 'One File',
-                zh: ''
+                zh: '单文件'
             },
             consoleBased: {
                 en: 'Console Based',
-                zh: ''
+                zh: '基于控制台的'
             },
             windowBased: {
                 en: 'Window Based (hide the console)',
-                zh: ''
+                zh: '基于窗口的 (隐藏控制台)'
             },
             addFiles: {
                 en: 'Add Files',
-                zh: ''
+                zh: '添加文件'
             },
             addFolder: {
                 en: 'Add Folder',
-                zh: ''
+                zh: '添加目录'
             },
             addBlank: {
                 en: 'Add Blank',
-                zh: ''
+                zh: '添加空白'
             },
             importConfig: {
                 en: 'Import Config From JSON File',
-                zh: ''
+                zh: '从JSON文件导入配置'
             },
             exportConfig: {
                 en: 'Export Config To JSON File',
-                zh: ''
+                zh: '将配置导出到JSON文件'
             },
             convert: {
                 en: 'Convert .py to .exe',
-                zh: ''
+                zh: '将.PY转换为.EXE'
             },
             openOutputFolder: {
                 en: 'Open Output Folder',
-                zh: ''
+                zh: '打开输出目录'
             },
             enable: {
                 en: 'Enable',
-                zh: ''
+                zh: '开启'
             }
         },
         links: {
             helpPost: {
                 en: 'Help Post',
-                zh: ''
+                zh: '帮助帖子'
             }
         },
         placeholders: {
             pathToFile: {
                 en: 'Path to file',
-                zh: ''
+                zh: '文件路径'
             },
             icoFile: {
                 en: '.ico file',
-                zh: ''
+                zh: '图标路径'
             },
             directory: {
                 en: 'DIRECTORY',
-                zh: ''
+                zh: '目录'
             },
             arguments: {
                 en: 'ARGUMENTS',
-                zh: ''
+                zh: '参数'
             },
         },
         helpText: {
             outputDirectory: {
                 en: 'The directory to put the output in. Will be created if it doesn\'t exist',
-                zh: ''
+                zh: '用于放置输出的目录。如果不存在，将创建该目录'
             },
             increaseRecursionLimit: {
                 en: 'Having this enabled will set the recursion limit to 5000 using sys.setrecursionlimit(5000).',
-                zh: ''
+                zh: '启用此功能将使用sys.setrecursionlimit（5000）将递归限制设置为5000。'
             },
             manualArgumentInput: {
                 en: 'Inject raw text into the generated command.',
-                zh: ''
+                zh: '将原始文本插入到生成的命令中。'
             }
         },
         notes: {
@@ -159,11 +159,13 @@ const translationMap = {
                 en: 'Be careful when using additional files with onefile mode;\n' +
                     '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">read this</a>\n' +
                     'and update your code to work with PyInstaller.',
-                zh: ''
+                zh: '使用单文件模式的附加文件时要小心;\n'+
+                    '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">read this</a>\n' +
+                    '并更新您的代码以使用PyInstaller。'
             },
             rootDirectory: {
                 en: 'If you want to put files in the root directory, put a period (.) in the destination.',
-                zh: ''
+                zh: '如果要将文件放到根目录中，请在目标目录中输入句点(.)。'
             },
             somethingWrongWithOutput: {
                 en: 'Something wrong with your exe? Read\n' +
@@ -171,7 +173,11 @@ const translationMap = {
                     '    this post on how to fix common issues\n' +
                     '</a>\n' +
                     'for possible solutions.',
-                zh: ''
+                zh: '你的exe有问题? 阅读' +
+                    '<a href="https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=application_link&utm_campaign=auto_py_to_exe_help&utm_content=bottom" target="_blank">\n' +
+                    '    这篇文章是关于如何修复常见问题的\n' +
+                    '</a>\n' +
+                    '寻找可能的解决方案。'
             }
         }
     },
@@ -181,57 +187,57 @@ const translationMap = {
             // For the usage of constants.js:advancedSections
             generalOptions: {
                 en: 'General Options',
-                zh: ''
+                zh: '常规选项'
             },
             whatToBundleWhereToSearch: {
                 en: 'What to bundle, where to search',
-                zh: ''
+                zh: '捆绑什么，搜索哪里'
             },
             howToGenerate: {
                 en: 'How to generate',
-                zh: ''
+                zh: '如何生成'
             },
             windowsSpecificOptions: {
                 en: 'Windows specific options',
-                zh: ''
+                zh: 'Windows特定选项'
             },
             windowsSideBySideAssemblySearchingOptions: {
                 en: 'Windows Side-by-side Assembly searching options (advanced)',
-                zh: ''
+                zh: '窗口并排汇编搜索选项(高级)'
             },
             macOsxSpecificOptions: {
                 en: 'Mac OS X specific options',
-                zh: ''
+                zh: 'Mac OS X特定选项'
             },
             rarelyUsedSpecialOptions: {
                 en: 'Rarely used special options',
-                zh: ''
+                zh: '很少使用的特殊选项'
             },
             other: {
                 en: 'Other',
-                zh: ''
+                zh: '其他'
             },
         },
         button: {
             // For the usage of interface.js_createSubSectionInAdvanced
             browseForFile: {
                 en: 'Browse for File',
-                zh: ''
+                zh: '浏览文件'
             },
             browseForFolder: {
                 en: 'Browse for Folder',
-                zh: ''
+                zh: '浏览文件夹'
             },
             enable: {
                 en: 'Enable',
-                zh: ''
+                zh: '开启'
             },
             converting: {
                 en: 'Converting...',
-                zh: ''
+                zh: '转换中······'
             },
             clearOutput: {
-                en: 'Clear Output',
+                en: '清除输出',
                 zh: ''
             },
         }
@@ -241,11 +247,11 @@ const translationMap = {
         alert: {
             noScriptsLocationProvided: {
                 en: 'You have not provided your scripts location.\nPlease enter this at the top of the page.',
-                zh: ''
+                zh: '您尚未提供脚本位置。\n请在页面顶部输入。'
             },
             overwritePreviousOutput: {
                 en: 'This action will overwrite a previous output in the output folder.\nContinue?',
-                zh: ''
+                zh: '此操作将覆盖输出文件夹中以前的输出。\n是否继续？'
             }
         },
     }
@@ -343,7 +349,7 @@ const supportedLanguages = [
         code: 'en',
     },
     {
-        name: 'Chinese (中文)',
+        name: 'Chinese Simplified (简体中文)',
         code: 'zh',
     },
 ];
