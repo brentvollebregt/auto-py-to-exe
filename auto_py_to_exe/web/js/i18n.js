@@ -237,8 +237,8 @@ const translationMap = {
                 zh: '转换中······'
             },
             clearOutput: {
-                en: '清除输出',
-                zh: ''
+                en: 'Clear Output',
+                zh: '清除输出f'
             },
         }
     },
