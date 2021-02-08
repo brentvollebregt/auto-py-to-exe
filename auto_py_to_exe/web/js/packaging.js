@@ -17,7 +17,8 @@ const setPackagingState = (newState) => {
             outputTextAreaNode.rows = 0;
             outputTextAreaNode.classList.remove('failure');
             // Set the main button back to initial value
-            convertButtonNode.innerHTML = "Convert .py to .exe";
+            convertButtonNode.dataset.i18n = "ui.button.convert";
+            convertButtonNode.innerHTML = getTranslation(convertButtonNode.dataset.i18n);
             // Hide open folder button
             openOutputButtonNode.classList.remove('show');
             // Hide common issue link
@@ -26,14 +27,16 @@ const setPackagingState = (newState) => {
         case PACKAGING_STATE_PACKAGING:
             // Disable convert button
             convertButtonNode.disabled = true;
-            convertButtonNode.innerHTML = "Converting...";
+            convertButtonNode.dataset.i18n = "dynamic.button.converting";
+            convertButtonNode.innerHTML = getTranslation(convertButtonNode.dataset.i18n);
             // Show output
             outputSectionNode.classList.add('show');
             return;
         case PACKAGING_STATE_COMPLETE:
             // Re-enable convert button and re-purpose it
             convertButtonNode.disabled = false;
-            convertButtonNode.innerHTML = "Clear Output";
+            convertButtonNode.dataset.i18n = "dynamic.button.clearOutput";
+            convertButtonNode.innerHTML = getTranslation(convertButtonNode.dataset.i18n);
             // Show open folder button (beside "Clear Output" button)
             openOutputButtonNode.classList.add('show');
             // Show common issue link

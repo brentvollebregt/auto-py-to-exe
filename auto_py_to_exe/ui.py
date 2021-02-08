@@ -137,12 +137,12 @@ def start(open_mode):
     try:
         chrome_available = utils.can_use_chrome()
         if open_mode == UIOpenMode.CHROME and chrome_available:
-            eel.start('index.html', size=(650, 650), port=0)
+            eel.start('index.html', size=(650, 672), port=0)
         elif open_mode == UIOpenMode.USER_DEFAULT or (open_mode == UIOpenMode.CHROME and not chrome_available):
-            eel.start('index.html', size=(650, 650), port=0, mode='user default')
+            eel.start('index.html', size=(650, 672), port=0, mode='user default')
         else:
             port = utils.get_port()
             print('Server starting at http://localhost:' + str(port) + '/index.html')
-            eel.start('index.html', size=(650, 650), host='localhost', port=port, mode=None, close_callback=lambda x, y: None)
+            eel.start('index.html', size=(650, 672), host='localhost', port=port, mode=None, close_callback=lambda x, y: None)
     except (SystemExit, KeyboardInterrupt):
         pass  # This is what the bottle server raises

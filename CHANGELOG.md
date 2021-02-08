@@ -1,5 +1,9 @@
 # Changelog
 
+### 2.8.0
+- Added translation handler
+- [#153](https://github.com/brentvollebregt/auto-py-to-exe/issues/153): Added Chinese translations
+
 ### 2.7.11
 - Add warning about PyInstaller < 4.1 support for Python 3.8 and 3.9
 

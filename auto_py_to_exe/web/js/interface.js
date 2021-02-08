@@ -77,7 +77,7 @@ const addDoubleInputForSrcDst = (parentNode, optionDest, source, destination, so
 };
 
 
-const _createSubSectionInAdvanced = (title, options) => {
+const _createSubSectionInAdvanced = (title, i18nPath, options) => {
     const parent = document.querySelector('#section-advanced .content');
 
     // The div wrapping the whole section
@@ -88,6 +88,7 @@ const _createSubSectionInAdvanced = (title, options) => {
     const subSectionTitleNode = document.createElement('h3');
     subSectionTitleNode.textContent = title;
     subSectionTitleNode.classList.add('noselect');
+    subSectionTitleNode.dataset.i18n = i18nPath;
     subSectionNode.appendChild(subSectionTitleNode);
 
     // Setup options
@@ -114,7 +115,8 @@ const _createSubSectionInAdvanced = (title, options) => {
             // Add button
             const enableButton = document.createElement('button');
             container.appendChild(enableButton);
-            enableButton.textContent = 'Enable';
+            enableButton.dataset.i18n = 'dynamic.button.enable';
+            enableButton.textContent = getTranslation(enableButton.dataset.i18n);
             enableButton.classList.add('unselected');
 
             // Function used to set the value of the switch
@@ -203,7 +205,8 @@ const _createSubSectionInAdvanced = (title, options) => {
                 container.classList.add('with-browse');
                 const searchButton = document.createElement('button');
                 container.appendChild(searchButton);
-                searchButton.textContent = isOptionFileBased ? 'Browse for File' : 'Browse for Folder';
+                searchButton.dataset.i18n = isOptionFileBased ? 'dynamic.button.browseForFile' : 'dynamic.button.browseForFolder';
+                searchButton.textContent = getTranslation(searchButton.dataset.i18n);
                 searchButton.addEventListener('click', async () => {
                     const value = isOptionFileBased ? await askForFile(null) : await askForFolder();
                     if (value !== null) {
@@ -334,7 +337,8 @@ const constructAdvancedSection = () => {
     // Setup pre-defined sections
     advancedSections.forEach(section =>
         _createSubSectionInAdvanced(
-            section.title,
+            getTranslation(section.titleI18nPath),
+            section.titleI18nPath,
             options.filter(o => section.options.indexOf(o.dest) !== -1)
         )
     );
@@ -349,7 +353,8 @@ const constructAdvancedSection = () => {
     );
     if (extraOptions.length > 0) {
         _createSubSectionInAdvanced(
-            'Other',
+            getTranslation('dynamic.title.other'),
+            'dynamic.title.other',
             extraOptions
         );
     }
@@ -381,4 +386,18 @@ const setupWarnings = (warnings) => {
             linkNodeContainer.target = '_blank';
         }
     });
+};
+
+const setupLanguageSelection = () => {
+    const languageSelectNode = document.getElementById('language-selection');
+    languageSelectNode.addEventListener('change', (event) => {
+        translate(event.target.value);
+    });
+    supportedLanguages.forEach(language => {
+        const option = document.createElement('option');
+        option.innerText = language.name;
+        option.value = language.code;
+        languageSelectNode.appendChild(option);
+    });
+    languageSelectNode.value = currentLanguage;
 };
