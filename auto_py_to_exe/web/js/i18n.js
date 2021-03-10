@@ -352,5 +352,9 @@ const supportedLanguages = [
         name: 'Chinese Simplified (简体中文)',
         code: 'zh',
     },
+    {
+        name: 'Thai (ภาษาไทย)',
+        code: 'th',
+    },
 ];
 let currentLanguage = _checkLanguageIsSupportedOrDefault(_getLanguage()); // Keeps track of the current language
