@@ -40,7 +40,7 @@ def ask_file(file_type):
         file_path = askopenfilename(parent=root, filetypes=file_types)
     root.update()
 
-    if file_path == "":
+    if not isinstance(file_path, str) or file_path == "":
         return None
     else:
         return file_path
