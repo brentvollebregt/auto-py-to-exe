@@ -19,6 +19,8 @@
     --title: #666666;
     --warning-background: #fff3cd;
     --warning-border: #a0987c;
+
+    --border-radius: 4px;
 }
 
 body {
@@ -59,7 +61,7 @@ h2 > small {
 
 button, input, select {
     border: 1px solid var(--primary);
-    border-radius: 4px;
+    border-radius: var(--border-radius);
     padding: 4px;
 
     font-family: 'Nunito', Helvetica, Arial, sans-serif;
@@ -72,7 +74,7 @@ input:focus {
 
 button {
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: var(--border-radius);
     background: transparent;
     padding: 3px 8px;
     transition: border 0.3s, background 0.3s;

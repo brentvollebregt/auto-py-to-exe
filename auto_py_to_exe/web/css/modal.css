@@ -1,0 +1,44 @@
+:root {
+    --modal-offset: 0;
+    --modal-padding: 100px;
+    --modal-fallback-color: rgba(0, 0, 0, 0.4);
+    --modal-coverage-area: 100%;
+}
+
+.modal-coverage {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: var(--modal-padding);
+  left: var(--modal-offset);
+  top: var(--modal-offset);
+  width: var(--modal-coverage-area);
+  height: var(--modal-coverage-area);
+  overflow: auto;
+  background-color: var(--modal-fallback-color);
+}
+
+
+.modal-content {
+  background-color: var(--background);
+  margin: auto;
+  padding: 20px;
+  border: 1px solid var(--primary);
+  border-radius: var(--border-radius);
+  width: 80%;
+}
+
+
+.close-btn {
+  color: var(--primary);
+  float: right;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: var(--primary-darker);
+  text-decoration: none;
+  cursor: pointer;
+}
