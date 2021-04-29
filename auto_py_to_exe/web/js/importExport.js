@@ -29,8 +29,17 @@ const _collectDataToExport = () => {
 };
 
 const onConfigurationImport = async () => {
-    const data = await eel.import_configuration()();
-    importConfiguration(data);
+    // TODO: Check default values
+    // TODO: Add i18n
+
+    const response = await displayModal(
+        "Override current configuration?",
+        "Some configuration fields contain custom values. Do you want to override them?");
+
+    if (response === "Yes") {
+        const data = await eel.import_configuration()();
+        importConfiguration(data);
+    }
 };
 
 const onConfigurationExport = async () => {

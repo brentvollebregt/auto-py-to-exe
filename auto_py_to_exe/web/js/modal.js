@@ -36,6 +36,7 @@ const displayModal = (title, description, confirmLabel='Yes', declineLabel='No')
         footer.classList.add('modal-section', 'modal-footer');
 
         const confirmButton = document.createElement('button');
+        confirmButton.classList.add('confirm-btn');
         confirmButton.innerText = confirmLabel;
         footer.appendChild(confirmButton);
 
