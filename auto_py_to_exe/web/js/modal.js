@@ -1,4 +1,17 @@
-const displayModal = (title, description, buttonOptions=['Yes', 'No'], closeEvent="Close") => {
+/*
+* Renders the native JS modal over the window.
+* Returns selected option from **buttonOptions** list.
+*
+* Input:
+*   - title: string
+*   - description: string
+*   - [optional] buttonOptions: string[] = ['Yes', 'No']
+*   - [optional]: closeEvent: string = 'Close'
+*
+* Returns:
+*   - Promise<string>
+ */
+const displayModal = (title, description, buttonOptions=['Yes', 'No'], closeEvent='Close') => {
     const buildHeader = (_title) => {
       const header = document.createElement('div');
       header.classList.add('modal-section', 'modal-header');
