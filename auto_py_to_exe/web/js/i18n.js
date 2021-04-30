@@ -240,6 +240,24 @@ const translationMap = {
                 en: 'Clear Output',
                 zh: '清除输出f'
             },
+        },
+        modal: {
+            configModalTitle: {
+                en: 'Override current configuration?',
+                zh: '覆盖当前配置？'
+            },
+            configModalDescription: {
+                en: 'All previously inserted values will be erased.',
+                zh: '所有先前插入的值将被删除。'
+            },
+            configModalConfirmButton: {
+                en: 'Confirm',
+                zh: '确认'
+            },
+            configModalCancelButton: {
+                en: 'Cancel',
+                zh: '取消'
+            }
         }
     },
     // Things like alerts

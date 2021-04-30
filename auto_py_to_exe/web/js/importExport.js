@@ -30,14 +30,16 @@ const _collectDataToExport = () => {
 
 const onConfigurationImport = async () => {
     // TODO: Check default values
-    // TODO: Add i18n
 
     const response = await displayModal(
-        'Override current configuration?',
-        'All previously inserted values will be erased.',
-        ['Confirm', 'Decline']);
+        getTranslation('dynamic.modal.configModalTitle'),
+        getTranslation('dynamic.modal.configModalDescription'),
+        [
+            getTranslation('dynamic.modal.configModalConfirmButton'),
+            getTranslation('dynamic.modal.configModalCancelButton')
+        ]);
 
-    if (response === 'Confirm') {
+    if (response === getTranslation('dynamic.modal.configModalConfirmButton')) {
         const data = await eel.import_configuration()();
         importConfiguration(data);
     }
