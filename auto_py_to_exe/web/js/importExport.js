@@ -29,20 +29,21 @@ const _collectDataToExport = () => {
 };
 
 const onConfigurationImport = async () => {
-    // TODO: Check default values
+    if (!isCommandDefault()) {
+        const response = await displayModal(
+            getTranslation('dynamic.modal.configModalTitle'),
+            getTranslation('dynamic.modal.configModalDescription'),
+            [
+                getTranslation('dynamic.modal.configModalConfirmButton'),
+                getTranslation('dynamic.modal.configModalCancelButton')
+            ]);
 
-    const response = await displayModal(
-        getTranslation('dynamic.modal.configModalTitle'),
-        getTranslation('dynamic.modal.configModalDescription'),
-        [
-            getTranslation('dynamic.modal.configModalConfirmButton'),
-            getTranslation('dynamic.modal.configModalCancelButton')
-        ]);
-
-    if (response === getTranslation('dynamic.modal.configModalConfirmButton')) {
-        const data = await eel.import_configuration()();
-        importConfiguration(data);
+        if (response !== getTranslation('dynamic.modal.configModalConfirmButton'))
+            return;
     }
+
+    const data = await eel.import_configuration()();
+    importConfiguration(data);
 };
 
 const onConfigurationExport = async () => {
