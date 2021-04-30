@@ -33,10 +33,11 @@ const onConfigurationImport = async () => {
     // TODO: Add i18n
 
     const response = await displayModal(
-        "Override current configuration?",
-        "Some configuration fields contain custom values. Do you want to override them?");
+        'Override current configuration?',
+        'All previously inserted values will be erased.',
+        ['Confirm', 'Decline']);
 
-    if (response === "Yes") {
+    if (response === 'Confirm') {
         const data = await eel.import_configuration()();
         importConfiguration(data);
     }

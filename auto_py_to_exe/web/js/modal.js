@@ -1,4 +1,4 @@
-const displayModal = (title, description, confirmLabel='Yes', declineLabel='No') => {
+const displayModal = (title, description, buttonOptions=['Yes', 'No'], closeEvent="Close") => {
     const buildHeader = (_title) => {
       const header = document.createElement('div');
       header.classList.add('modal-section', 'modal-header');
@@ -32,22 +32,21 @@ const displayModal = (title, description, confirmLabel='Yes', declineLabel='No')
     }
 
     const buildFooter = () => {
+        const footerButtons = [];
         const footer = document.createElement('div');
         footer.classList.add('modal-section', 'modal-footer');
 
-        const confirmButton = document.createElement('button');
-        confirmButton.classList.add('confirm-btn');
-        confirmButton.innerText = confirmLabel;
-        footer.appendChild(confirmButton);
-
-        const declineButton = document.createElement('button');
-        declineButton.innerText = declineLabel;
-        footer.appendChild(declineButton);
+        for (const label of buttonOptions) {
+            const footerButton = document.createElement('button');
+            footerButton.classList.add('modal-btn');
+            footerButton.innerText = label;
+            footer.appendChild(footerButton);
+            footerButtons.push(footerButton);
+        }
 
         return {
             footer: footer,
-            confirmButton: confirmButton,
-            declineButton: declineButton
+            footerButtons: footerButtons
         }
     }
 
@@ -57,11 +56,11 @@ const displayModal = (title, description, confirmLabel='Yes', declineLabel='No')
     const headerElement = buildHeader(title);
     const bodyElement = buildBody(description);
     const footerElement = buildFooter();
+    const footerButtons = footerElement.footerButtons;
 
     const clearEventListeners = () => {
         headerElement.closeButton.removeEventListener('click', (_) => {});
-        footerElement.confirmButton.removeEventListener('click', (_) => {});
-        footerElement.declineButton.removeEventListener('click', (_) => {});
+        footerButtons.forEach((button) => button.removeEventListener('click', (_) => {}));
     };
 
     const modalContent = document.createElement('div');
@@ -78,21 +77,16 @@ const displayModal = (title, description, confirmLabel='Yes', declineLabel='No')
             clearEventListeners();
             modalArea.removeChild(modalContent);
             modalArea.classList.add('modal-coverage-hidden');
-            resolve(declineLabel);
+            resolve(closeEvent);
         });
 
-        footerElement.confirmButton.addEventListener('click', (_) => {
-            clearEventListeners();
-            modalArea.removeChild(modalContent);
-            modalArea.classList.add('modal-coverage-hidden');
-            resolve(confirmLabel);
-        });
-
-        footerElement.declineButton.addEventListener('click', (_) => {
-            clearEventListeners();
-            modalArea.removeChild(modalContent);
-            modalArea.classList.add('modal-coverage-hidden');
-            resolve(declineLabel);
-        });
+        for (const [label, button] of zip(buttonOptions, footerButtons)) {
+            button.addEventListener('click', (_) => {
+                clearEventListeners();
+                modalArea.removeChild(modalContent);
+                modalArea.classList.add('modal-coverage-hidden');
+                resolve(label);
+            });
+        }
     })
 };
