@@ -1,20 +1,18 @@
 const importConfiguration = (configuration) => {
     // TODO Check for version to support older versions
 
-    if ('pyinstallerOptions' in configuration) {
-        configuration.pyinstallerOptions.forEach(({optionDest, value}) => {
-            if (configurationSetters.hasOwnProperty(optionDest)) {
-                configurationSetters[optionDest](value);
-            } else {
-                // TODO Warn user?
-                // TODO noconfirm is expected to come here
-            }
-        });
+    configuration.pyinstallerOptions.forEach(({ optionDest, value }) => {
+        if (configurationSetters.hasOwnProperty(optionDest)) {
+            configurationSetters[optionDest](value);
+        } else {
+            // TODO Warn user?
+            // TODO noconfirm is expected to come here
+        }
+    });
 
-        // setup nonPyinstallerOptions
-        recursionLimitToggle(configuration.nonPyinstallerOptions.increaseRecursionLimit);
-        document.getElementById('raw-arguments').value = configuration.nonPyinstallerOptions.manualArguments;
-    }
+    // setup nonPyinstallerOptions
+    recursionLimitToggle(configuration.nonPyinstallerOptions.increaseRecursionLimit);
+    document.getElementById('raw-arguments').value = configuration.nonPyinstallerOptions.manualArguments;
 };
 
 const _collectDataToExport = () => {
