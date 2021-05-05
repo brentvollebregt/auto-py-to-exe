@@ -26,10 +26,11 @@
 .modal-content {
   background-color: var(--background);
   margin: auto;
-  padding: 20px;
+  padding: 16px;
   border: 2px solid var(--primary);
   border-radius: var(--border-radius);
   width: 80%;
+  max-width: 600px;
 }
 
 
@@ -51,8 +52,8 @@
   padding: 4px;
 }
 
-.modal-header {
-  padding-bottom: 12px;
+.modal-header h2 {
+    margin: 0;
 }
 
 .modal-footer {
