@@ -1,5 +1,8 @@
 # Changelog
 
+### 2.9.0
+- [#168](https://github.com/brentvollebregt/auto-py-to-exe/issues/168): Confirmation dialog on overriding configuration values on import
+
 ### 2.8.0
 - Added translation handler
 - [#153](https://github.com/brentvollebregt/auto-py-to-exe/issues/153): Added Chinese translations
