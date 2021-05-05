@@ -68,3 +68,7 @@ const getCurrentCommand = () => {
 const updateCurrentCommandDisplay = () => {
     document.querySelector('#current-command textarea').value = getCurrentCommand();
 };
+
+const isCommandDefault = () => {
+    return getCurrentCommand() === 'pyinstaller --noconfirm --onedir --console  ""';
+}

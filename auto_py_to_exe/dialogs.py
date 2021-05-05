@@ -40,10 +40,18 @@ def ask_file(file_type):
         file_path = askopenfilename(parent=root, filetypes=file_types)
     root.update()
 
-    if file_path == "":
-        return None
-    else:
-        return file_path
+    """
+    File dialog has 3 types of responses:
+     - An empty tuple '()', when no files/folders were selected;
+     - A single string '<filepath>', when a single file/folder was selected;
+     - A tuple of strings '(<filepath1, ..., filepathN>)', when a multiple files/folders were selected;
+
+    So bool() operator returns following values for the cases:
+     - bool(()) -> False;
+     - bool('<filepath>') -> True;
+     - bool(('<filepath1>', ..., '<filepathN>')) -> True;
+    """
+    return file_path if bool(file_path) else None
 
 
 def ask_files():
@@ -54,10 +62,18 @@ def ask_files():
     file_paths = askopenfilenames(parent=root)
     root.update()
 
-    if file_paths == "":
-        return None
-    else:
-        return file_paths
+    """
+    File dialog has 3 types of responses:
+     - An empty tuple '()', when no files/folders were selected;
+     - A single string '<filepath>', when a single file/folder was selected;
+     - A tuple of strings '(<filepath1, ..., filepathN>)', when a multiple files/folders were selected;
+
+    So bool() operator returns following values for the cases:
+     - bool(()) -> False;
+     - bool('<filepath>') -> True;
+     - bool(('<filepath1>', ..., '<filepathN>')) -> True;
+    """
+    return file_paths if bool(file_paths) else None
 
 
 def ask_folder():
@@ -68,10 +84,18 @@ def ask_folder():
     folder = askdirectory(parent=root)
     root.update()
 
-    if folder == "":
-        return None
-    else:
-        return folder
+    """
+    File dialog has 3 types of responses:
+     - An empty tuple '()', when no files/folders were selected;
+     - A single string '<filepath>', when a single file/folder was selected;
+     - A tuple of strings '(<filepath1, ..., filepathN>)', when a multiple files/folders were selected;
+
+    So bool() operator returns following values for the cases:
+     - bool(()) -> False;
+     - bool('<filepath>') -> True;
+     - bool(('<filepath1>', ..., '<filepathN>')) -> True;
+    """
+    return folder if bool(folder) else None
 
 
 def ask_file_save_location(file_type):
@@ -90,7 +114,18 @@ def ask_file_save_location(file_type):
         file_path = asksaveasfilename(parent=root, filetypes=file_types)
     root.update()
 
-    if file_path != '':
+    """
+    File dialog has 3 types of responses:
+     - An empty tuple '()', when no files/folders were selected;
+     - A single string '<filepath>', when a single file/folder was selected;
+     - A tuple of strings '(<filepath1, ..., filepathN>)', when a multiple files/folders were selected;
+
+    So bool() operator returns following values for the cases:
+     - bool(()) -> False;
+     - bool('<filepath>') -> True;
+     - bool(('<filepath1>', ..., '<filepathN>')) -> True;
+    """
+    if bool(file_path):
         if file_type == 'json':
             return file_path if file_path.endswith('.json') else file_path + '.json'
         else:
