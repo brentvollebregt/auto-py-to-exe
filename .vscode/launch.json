@@ -1,0 +1,11 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run auto-py-to-exe",
+            "type": "python",
+            "request": "launch",
+            "module": "auto_py_to_exe"
+        },
+    ]
+}
