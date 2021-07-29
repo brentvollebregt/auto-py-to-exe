@@ -1,5 +1,8 @@
 # Changelog
 
+### 2.10.0
+- [#166](https://github.com/brentvollebregt/auto-py-to-exe/issues/166): Added a warning for usage of Python from the Windows Store
+
 ### 2.9.0
 - [#168](https://github.com/brentvollebregt/auto-py-to-exe/issues/168): Confirmation dialog on overriding configuration values on import
 
