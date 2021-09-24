@@ -78,8 +78,10 @@ window.addEventListener("load", async () => {
         importConfiguration(initialisationData.suppliedUiConfiguration);
     }
 
-    // Setup nonPyinstallerConfiguration
-    document.getElementById('output-directory').value = initialisationData.defaultOutputFolder;
+    // Set the output directory to the default if it hasn't already been set by `initialisationData.suppliedUiConfiguration`
+    if (document.getElementById('output-directory').value === '') {
+        document.getElementById('output-directory').value = initialisationData.defaultOutputFolder;
+    }
 
     // If a file is provided, put it in the script location
     if (initialisationData.filename !== null) {

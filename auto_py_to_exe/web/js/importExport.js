@@ -13,6 +13,9 @@ const importConfiguration = (configuration) => {
     // setup nonPyinstallerOptions
     recursionLimitToggle(configuration.nonPyinstallerOptions.increaseRecursionLimit);
     document.getElementById('raw-arguments').value = configuration.nonPyinstallerOptions.manualArguments;
+    if ('outputDirectory' in configuration.nonPyinstallerOptions) {
+        document.getElementById('output-directory').value = configuration.nonPyinstallerOptions.outputDirectory;
+    }
 };
 
 const _collectDataToExport = () => {
