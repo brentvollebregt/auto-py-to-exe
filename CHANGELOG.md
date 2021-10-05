@@ -1,5 +1,8 @@
 # Changelog
 
+### 2.10.1
+- [#197](https://github.com/brentvollebregt/auto-py-to-exe/issues/197): Allow the output directory to be set from an imported JSON configuration file
+
 ### 2.10.0
 - [#166](https://github.com/brentvollebregt/auto-py-to-exe/issues/166): Added a warning for usage of Python from the Windows Store
 
