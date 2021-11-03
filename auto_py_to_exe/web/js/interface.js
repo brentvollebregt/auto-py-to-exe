@@ -112,10 +112,16 @@ const _createSubSectionInAdvanced = (title, i18nPath, options) => {
         if (o.inputType === OPTION_INPUT_TYPE_SWITCH) {
             container.classList.add('switch');
 
-            // Add button
+            // Add button (take note of the target argument state using `const`)
             const enableButton = document.createElement('button');
             container.appendChild(enableButton);
-            enableButton.dataset.i18n = 'dynamic.button.enable';
+            if (o.const === true) {
+                enableButton.dataset.i18n = 'dynamic.button.enable';
+            } else if (o.const === false)  {
+                enableButton.dataset.i18n = 'dynamic.button.disable';
+            } else {
+                throw new Error("Unknown o.const value: " + JSON.stringify(o));
+            }
             enableButton.textContent = getTranslation(enableButton.dataset.i18n);
             enableButton.classList.add('unselected');
 
@@ -142,6 +148,11 @@ const _createSubSectionInAdvanced = (title, i18nPath, options) => {
 
             // Add configurationSetter
             configurationSetters[o.dest] = setValue;
+
+            // Allow a default value of `true` to come through
+            if (o.default === true) {
+                setValue(true);
+            }
 
         } else if (o.inputType === OPTION_INPUT_TYPE_DROPDOWN) {
             container.classList.add('choice');
