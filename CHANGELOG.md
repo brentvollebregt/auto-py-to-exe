@@ -1,5 +1,10 @@
 # Changelog
 
+### 2.11.0
+- [#205](https://github.com/brentvollebregt/auto-py-to-exe/issues/205): Added support for PyInstaller 4.6 and its new options
+- Dropped support for Python 3.5
+- Added support for Python 3.10
+
 ### 2.10.1
 - [#197](https://github.com/brentvollebregt/auto-py-to-exe/issues/197): Allow the output directory to be set from an imported JSON configuration file
 
