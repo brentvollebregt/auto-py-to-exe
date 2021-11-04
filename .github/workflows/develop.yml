@@ -1,6 +1,7 @@
 name: Test Develop
 
 on:
+  workflow_dispatch:
   push:
     branches:
     - develop
@@ -11,7 +12,10 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
-        python-version: [3.5, 3.6, 3.7]
+        python-version: ["3.6", "3.7", "3.8", "3.9", "3.10"]
+        exclude:
+          - os: macos-latest
+            python-version: "3.6"
 
     steps:
       - uses: actions/checkout@v2

@@ -18,7 +18,7 @@
 ## Getting Started
 
 ### Prerequisites
- - Python : 3.5-3.10
+ - Python : 3.6-3.10
 
 *To have the interface displayed in the images, you will need chrome. If chrome is not installed or --no-chrome is supplied, the default browser will be used.*
 
