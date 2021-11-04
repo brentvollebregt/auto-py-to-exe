@@ -197,6 +197,9 @@ const translationMap = {
                 en: 'How to generate',
                 zh: '如何生成'
             },
+            windowsAndMacOsXSpecificOptions: {
+                en: 'Windows And Mac Os X Specific Options',
+            },
             windowsSpecificOptions: {
                 en: 'Windows specific options',
                 zh: 'Windows特定选项'
@@ -231,6 +234,10 @@ const translationMap = {
             enable: {
                 en: 'Enable',
                 zh: '开启'
+            },
+            disable: {
+                en: 'Disable',
+                zh: '关掉'
             },
             converting: {
                 en: 'Converting...',

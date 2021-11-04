@@ -41,10 +41,11 @@ def open_output_folder(folder):
 def get_warnings():
     warnings = []
 
+    # Make sure PyInstaller 3.4 or above is being used with Python 3.7
     try:
-        # Make sure PyInstaller 3.4 or above is being used with Python 3.7
         if sys.version_info >= (3, 7) and float(pyinstaller_version) < 3.4:
-            message = 'You will need PyInstaller 3.4 or above to use this tool with Python 3.7'
+            message = 'You will need PyInstaller 3.4 or above to use this tool with Python 3.7.'
+            message += '\nYou are currently using PyInstaller {pyinstaller_version}.'.format(pyinstaller_version=pyinstaller_version)
             message += '\nPlease upgrade PyInstaller: python -m pip install pyinstaller --upgrade'
             warnings.append({
                 'message': message,
@@ -53,10 +54,25 @@ def get_warnings():
     except ValueError:
         pass  # Dev branches will have pyinstaller_version as a string in the form X.Y.devZ+HASH. Ignore it if this is the case.
 
+    # Make sure PyInstaller 4.0 or above is being used with Python 3.8 and 3.9
     try:
         if sys.version_info.major == 3 and (sys.version_info.minor == 8 or sys.version_info.minor == 9) and float(pyinstaller_version) < 4.1:
-            message = 'PyInstaller 4.0 and below do not officially support Python 3.8 and 3.9 - you are currently using PyInstaller {pyinstaller_version}'.format(pyinstaller_version=pyinstaller_version)
+            message = 'PyInstaller 4.0 and below does not officially support Python 3.8 and 3.9.'
+            message += '\nYou are currently using PyInstaller {pyinstaller_version}.'.format(pyinstaller_version=pyinstaller_version)
             message += '\nIt is highly recommended to update your version of PyInstaller using: python -m pip install pyinstaller --upgrade'
+            warnings.append({
+                'message': message,
+                'link': None
+            })
+    except ValueError:
+        pass  # Dev branches will have pyinstaller_version as a string in the form X.Y.devZ+HASH. Ignore it if this is the case.
+
+    # Make sure PyInstaller 4.6 or above is being used with Python 3.10
+    try:
+        if sys.version_info.major == 3 and sys.version_info.minor == 10 and float(pyinstaller_version) < 4.6:
+            message = 'You will need PyInstaller 4.6 or above to use this tool with Python 3.10.'
+            message += '\nYou are currently using PyInstaller {pyinstaller_version}.'.format(pyinstaller_version=pyinstaller_version)
+            message += '\nPlease upgrade PyInstaller: python -m pip install pyinstaller --upgrade'
             warnings.append({
                 'message': message,
                 'link': None

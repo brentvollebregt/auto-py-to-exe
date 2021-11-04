@@ -1,2 +1,2 @@
 Eel==0.12.4
-PyInstaller>=4.1
+PyInstaller>=4.6

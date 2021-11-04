@@ -2,7 +2,7 @@ const options_ignored = ['help'];
 const options_static = ['filenames', 'onefile', 'console', 'icon_file', 'datas'];
 const options_overridden = ['specpath', 'distpath', 'workpath', 'noconfirm'];
 
-const options_inputTypeFile = ['runtime_hooks', 'version_file', 'manifest', 'resources'];
+const options_inputTypeFile = ['runtime_hooks', 'version_file', 'manifest', 'resources', 'splash'];
 const options_inputTypeDirectory = ['upx_dir', 'pathex', 'hookspath'];
 const options_inputTypeDoubleFileDest = ['datas', 'binaries'];
 const options_inputTypeDoubleDirectoryDest = ['datas'];
@@ -14,15 +14,19 @@ const advancedSections = [
     },
     {
         titleI18nPath: 'dynamic.title.whatToBundleWhereToSearch',
-        options: ['binaries', 'pathex', 'hiddenimports', 'hookspath', 'runtime_hooks', 'excludes', 'key']
+        options: ['binaries', 'pathex', 'hiddenimports', 'collect_submodules', 'collect_data', 'collect_binaries', 'collect_all', 'copy_metadata', 'recursive_copy_metadata', 'splash', 'hookspath', 'runtime_hooks', 'excludes', 'key']
     },
     {
         titleI18nPath: 'dynamic.title.howToGenerate',
-        options: ['debug', 'strip', 'noupx', 'upx_exclude']
+        options: ['debug', 'python_options', 'strip', 'noupx', 'upx_exclude']
+    },
+    {
+        titleI18nPath: 'dynamic.title.windowsAndMacOsXSpecificOptions',
+        options: ['disable_windowed_traceback']
     },
     {
         titleI18nPath: 'dynamic.title.windowsSpecificOptions',
-        options: ['version_file', 'manifest', 'resources', 'uac_admin', 'uac_uiaccess']
+        options: ['version_file', 'manifest', 'embed_manifest', 'resources', 'uac_admin', 'uac_uiaccess']
     },
     {
         titleI18nPath: 'dynamic.title.windowsSideBySideAssemblySearchingOptions',
@@ -30,7 +34,7 @@ const advancedSections = [
     },
     {
         titleI18nPath: 'dynamic.title.macOsxSpecificOptions',
-        options: ['bundle_identifier']
+        options: ['bundle_identifier', 'target_arch', 'codesign_identity', 'entitlements_file']
     },
     {
         titleI18nPath: 'dynamic.title.rarelyUsedSpecialOptions',
