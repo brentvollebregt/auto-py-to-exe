@@ -39,7 +39,7 @@ $ auto-py-to-exe
 ```
 $ git clone https://github.com/brentvollebregt/auto-py-to-exe.git
 $ cd auto-py-to-exe
-$ python setup.py install
+$ sudo python setup.py install
 ```
 Then to run it, execute the following in the terminal:
 ```
