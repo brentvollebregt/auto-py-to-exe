@@ -103,4 +103,5 @@ window.addEventListener("load", async () => {
     window.eel._websocket.addEventListener('close', e => window.close());
 
     console.log("Application initialised");
+    document.getElementById('spinner-root').style.display = 'none';
 });
