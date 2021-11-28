@@ -10,19 +10,23 @@ from . import validation
 from . import ui
 
 
-def start_ui(logging_level):
+def start_ui(logging_level, build_directory_override):
     """ Open the interface """
     # Suppress the global logger to only show error+ to the console
     logging.getLogger().handlers[0].setLevel(logging_level)
 
-    # Setup a temporary folder to build in
-    config.temporary_directory = tempfile.mkdtemp()
+    # Setup the build folder
+    if build_directory_override is None:
+        config.temporary_directory = tempfile.mkdtemp()
+    else:
+        config.temporary_directory = build_directory_override
 
     # Start UI
     ui.start(config.ui_open_mode)
 
-    # Remove temporary folder to clean up from builds
-    shutil.rmtree(config.temporary_directory)
+    # Remove build folder to clean up from builds (if we created it)
+    if build_directory_override is None:
+        shutil.rmtree(config.temporary_directory)
 
 
 def run():
@@ -65,6 +69,13 @@ def run():
         default='output'
     )
     parser.add_argument(
+        "-bdo",
+        "--build-directory-override",
+        nargs='?',
+        help="a directory for build files (overrides the default)",
+        default=None
+    )
+    parser.add_argument(
         "--logging-level",
         nargs='?',
         type=validation.argparse_logging_level,
@@ -91,12 +102,16 @@ def run():
     else:
         config.ui_open_mode = config.UIOpenMode.CHROME
 
+    # Validate --build-directory-override exists if supplied
+    if (args.build_directory_override is not None) and (not os.path.isdir(args.build_directory_override)):
+        raise ValueError("--build-directory-override must be a directory")
+
     # If the user has asked for the version, print it, otherwise run the application
     if args.version:
         print('auto-py-to-exe ' + __version__)
     else:
         logging_level = getattr(logging, args.logging_level)
-        start_ui(logging_level)
+        start_ui(logging_level, args.build_directory_override)
 
 
 if __name__ == '__main__':

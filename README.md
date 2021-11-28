@@ -68,13 +68,15 @@ Now to run the application, execute ```python -m auto_py_to_exe```. A Chrome win
 ### Arguments
 Usage: `auto-py-to-exe [-nc] [-c [CONFIG]] [-o [PATH]] [filename]`
 
-| Argument                       | Type       | Description                                                                                                     |
-|--------------------------------|------------|-----------------------------------------------------------------------------------------------------------------|
-| filename                       | positional | Pre-fill the "Script Location" field in the UI.                                                                 |
-| -nc, --no-chrome               | optional   | Open the UI using the default browser (which may be Chrome). Will not try to find Chrome.                       |
-| -nu, --no-ui                   | optional   | Don't try to open the UI in a browser and simply print out the address that the application can be accessed at. |
-| -c [CONFIG], --config [CONFIG] | optional   | Provide a configuration file (json) to pre-fill the UI. These can be generated in the settings tab.             |
-| -o [PATH], --output-dir [PATH] | optional   | Set the default output directory. This can still be changed in the ui.                                          |
+| Argument                                                     | Type                | Description                                                                                                                |
+| ------------------------------------------------------------ | ------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| filename                                                     | positional/optional | Pre-fill the "Script Location" field in the UI.                                                                            |
+| -nc, --no-chrome                                             | optional            | Open the UI using the default browser (which may be Chrome). Will not try to find Chrome.                                  |
+| -nu, --no-ui                                                 | optional            | Don't try to open the UI in a browser and simply print out the address that the application can be accessed at.            |
+| -c [CONFIG], --config [CONFIG]                               | optional            | Provide a configuration file (json) to pre-fill the UI. These can be generated in the settings tab.                        |
+| -o [PATH], --output-dir [PATH]                               | optional            | Set the default output directory. This can still be changed in the ui.                                                     |
+| -bdo [FOLDER_PATH], --build-directory-override [FOLDER_PATH] | optional            | Override the default build directory. Useful if you need to whitelist a folder to stop your antivirus from removing files. |
+
 
 > If you are running this package locally, you will need to call ```python -m auto_py_to_exe``` instead of ```auto-py-to-exe```
 
