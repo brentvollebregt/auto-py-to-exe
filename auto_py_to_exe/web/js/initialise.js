@@ -60,7 +60,9 @@ const buildUpOptions = (providedOptions) => {
 // Get initialisation data from the server and setup the ui
 window.addEventListener("load", async () => {
     // Get initialisation data from Python
+    console.log("Getting initialisation data");
     const initialisationData = await eel.initialise()();
+    console.log("Received initialisation data");
     options = buildUpOptions(initialisationData.options);
     pathSeparator = initialisationData.pathSeparator;
 
@@ -99,4 +101,6 @@ window.addEventListener("load", async () => {
 
     // If the server stops, close the UI
     window.eel._websocket.addEventListener('close', e => window.close());
+
+    console.log("Application initialised");
 });
