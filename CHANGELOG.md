@@ -1,5 +1,10 @@
 # Changelog
 
+### 2.12.0
+- [#211](https://github.com/brentvollebregt/auto-py-to-exe/pull/211): Added Traditional Chinese translations
+- [#218](https://github.com/brentvollebregt/auto-py-to-exe/issues/218): Added build directory override argument (`--build-directory-override`)
+- [#221](https://github.com/brentvollebregt/auto-py-to-exe/issues/221): Added an overlay spinner to hide content until the UI is initialised
+
 ### 2.11.0
 - [#205](https://github.com/brentvollebregt/auto-py-to-exe/issues/205): Added support for PyInstaller 4.6 and its new options
 - Dropped support for Python 3.5
