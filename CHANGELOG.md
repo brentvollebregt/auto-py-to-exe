@@ -1,5 +1,8 @@
 # Changelog
 
+### 2.13.0
+- Added Russian (Русский) translations
+
 ### 2.12.0
 - [#211](https://github.com/brentvollebregt/auto-py-to-exe/pull/211): Added Traditional Chinese translations
 - [#218](https://github.com/brentvollebregt/auto-py-to-exe/issues/218): Added build directory override argument (`--build-directory-override`)
