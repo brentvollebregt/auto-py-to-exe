@@ -91,6 +91,17 @@ If you need something visual to help you get started, [I made a video for the or
 ## Issues Using the Tool
 If you're having issues with the packaged executable or using this tool in general, I recommend you read [my blog post on common issues when using auto-py-to-exe](https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=readme_link&utm_campaign=auto_py_to_exe_help). This post covers things you should know about packaging Python scripts and fixes for things that commonly go wrong.
 
+## Translations
+
+| Language                       | Translator                                  | Translated                           |
+| ------------------------------ | ------------------------------------------- | ------------------------------------ |
+| English                        | -                                           | UI and README                        |
+| Chinese Simplified (简体中文)  | [jiangzhe11](https://github.com/jiangzhe11) | UI and [README](./README-Chinese.md) |
+| Chinese Traditional (繁體中文) | [startgo](https://github.com/ystartgo)      | UI                                   |
+| Russian (Русский)              | Oleg                                        | UI                                   |
+
+> Want to add a translation for another language? Update [i18n.js](https://github.com/brentvollebregt/auto-py-to-exe/blob/master/auto_py_to_exe/web/js/i18n.js) and submit a PR or attach it in an issue.
+
 ## Python 2.7 Support
 As of [PyInstaller v4.0](https://github.com/pyinstaller/pyinstaller/releases/tag/v4.0) released on Aug 9 2020, Python 2.7 is no longer supported; although you can still use this tool with Python 2.7 by installing an older version of PyInstaller. [PyInstaller v3.6](https://github.com/pyinstaller/pyinstaller/releases/tag/v3.6) was the last version that supported Python 2.7; to install this, first uninstall any existing versions of PyInstaller and then execute `python -m pip install pyinstaller==3.6`.
 
