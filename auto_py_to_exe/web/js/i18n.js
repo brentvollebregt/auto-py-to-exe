@@ -2,90 +2,105 @@ const translationMap = {
     ui: { // Static UI elements
         title: {
             scriptLocation: {
+                de: 'Script Pfad',
                 en: 'Script Location',
                 zh: '脚本位置',
                 zh_tw: '腳本位置',
                 ru: 'Расположение скрипта'
             },
             oneFile: {
+                de: 'Eine Datei',
                 en: 'Onefile',
                 zh: '单文件',
                 zh_tw: '單檔案',
                 ru: 'Один файл'
             },
             consoleWindow: {
+                de: 'Konsolen Anwendung',
                 en: 'Console Window',
                 zh: '控制台窗口',
                 zh_tw: '控制台視窗',
                 ru: 'Консольное приложение'
             },
             icon: {
+                de: 'Icon',
                 en: 'Icon',
                 zh: '图标',
                 zh_tw: '圖示',
                 ru: 'Иконка'
             },
-            additionalFiles: {
+            additionalFiles: 
+                de: 'Dateien hinzufügen',
                 en: 'Additional Files',
                 zh: '附加文件',
                 zh_tw: '附加檔案',
                 ru: 'Дополнительные файлы'
             },
             advanced: {
+                de: 'Erweitert',
                 en: 'Advanced',
                 zh: '高级',
                 zh_tw: '進階',
                 ru: 'Расширенные'
             },
             settings: {
+                de: 'Einstellungen',
                 en: 'Settings',
                 zh: '设置',
                 zh_tw: '設定',
                 ru: 'Настройки'
             },
             currentCommand: {
+                de: 'Aktueller Befehl',
                 en: 'Current Command',
                 zh: '当前命令',
                 zh_tw: '當前命令',
                 ru: 'Текущая команда'
             },
             output: {
+                de: 'Ausgabe',
                 en: 'Output',
                 zh: '输出',
                 zh_tw: '輸出',
                 ru: 'Вывод'
             },
             specificOptions: {
+                en: 'auto-py-to-exe spezifische Optionen',
                 en: 'auto-py-to-exe Specific Options',
                 zh: 'auto-py-to-exe 特定的选项',
                 zh_tw: 'auto-py-to-exe 特定的選項',
                 ru: 'Особые параметры auto-py-to-exe'
             },
             outputDirectory: {
+                de: 'Ausgabeverzeichnis',
                 en: 'Output Directory',
                 zh: '输出路径',
                 zh_tw: '輸出路徑',
                 ru: 'Папка Вывода'
             },
             increaseRecursionLimit: {
+                de: 'Erhöhen der Rekursionsbegrenzung',
                 en: 'Increase Recursion Limit',
                 zh: '增加递归限制',
                 zh_tw: '增加遞歸限制',
                 ru: 'Увеличить Лимит Рекурсии'
             },
             manuallyProvideOptions: {
+                de: 'Optionen manuell eingeben',
                 en: 'Manually Provide Options',
                 zh: '手动提供选项',
                 zh_tw: '手動提供選項',
                 ru: 'Вручную Указанные Параметры'
             },
             manualArgumentInput: {
+                de: 'Manuelle Argumenteingabe',
                 en: 'Manual Argument Input',
                 zh: '手动参数输入',
                 zh_tw: '手動參數輸入',
                 ru: 'Ручной Ввод Аргументов'
             },
             configuration: {
+                de: 'Konfiguration',
                 en: 'Configuration',
                 zh: '配置',
                 zh_tw: '配置',
@@ -100,30 +115,35 @@ const translationMap = {
                 ru: 'Расположение'
             },
             oneDirectory: {
+                de: 'Ein Verzeichnis',
                 en: 'One Directory',
                 zh: '单目录',
                 zh_tw: '單目錄',
                 ru: 'Одна Папка'
             },
             oneFile: {
+                de: 'Eine Datei',
                 en: 'One File',
                 zh: '单文件',
                 zh_tw: '單檔案',
                 ru: 'Один файл'
             },
             consoleBased: {
+                de: 'Befehlszeilenbasiert',
                 en: 'Console Based',
                 zh: '基于控制台的',
                 zh_tw: '基於控制台',
                 ru: 'Консольное Приложение'
             },
             windowBased: {
+                de: 'Fensterbasiert (Befehlszeile ausblenden)',
                 en: 'Window Based (hide the console)',
                 zh: '基于窗口的 (隐藏控制台)',
                 zh_tw: '基於視窗 (隱藏控制台)',
                 ru: 'Оконное Приложение (скрыть консоль)'
             },
             addFiles: {
+                de: 'Dateien hinzufügen',
                 en: 'Add Files',
                 zh: '添加文件',
                 zh_tw: '新增檔案',
