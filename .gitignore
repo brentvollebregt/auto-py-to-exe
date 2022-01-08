@@ -1,6 +1,6 @@
 # IDE + Environment
 .idea/
-venv/
+.venv/
 output/
 __pycache__/
 

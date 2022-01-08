@@ -80,6 +80,15 @@ def get_warnings():
     except ValueError:
         pass  # Dev branches will have pyinstaller_version as a string in the form X.Y.devZ+HASH. Ignore it if this is the case.
 
+    # If Python 3.10.0 is being used, we are probably going to see `IndexError: tuple index out of range`.
+    if sys.version_info.major == 3 and sys.version_info.minor == 10 and sys.version.micro == 0:
+        message = 'You are using Python 3.10.0. This version of Python has a bug that causes PyInstaller to fail.'
+        message += '\nPlease upgrade to Python 3.10.1 or above.'
+        warnings.append({
+            'message': message,
+            'link': "https://github.com/brentvollebregt/auto-py-to-exe/issues/215"
+        })
+
     # Make sure we are not using Python from the Windows Store
     if "Packages\PythonSoftwareFoundation.Python." in sys.executable:
         message = 'It looks like you may be using Python from the Windows Store, the Python binary you are currently using is at:'

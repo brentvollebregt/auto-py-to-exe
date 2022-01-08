@@ -1,5 +1,9 @@
 # Changelog
 
+### 2.14.0
+
+- [#215](https://github.com/brentvollebregt/auto-py-to-exe/issues/215): Added warning when using Python 3.10.0
+
 ### 2.13.0
 - Added Russian (Русский) translations
 
