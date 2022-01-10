@@ -81,7 +81,7 @@ def get_warnings():
         pass  # Dev branches will have pyinstaller_version as a string in the form X.Y.devZ+HASH. Ignore it if this is the case.
 
     # If Python 3.10.0 is being used, we are probably going to see `IndexError: tuple index out of range`.
-    if sys.version_info.major == 3 and sys.version_info.minor == 10 and sys.version.micro == 0:
+    if sys.version_info.major == 3 and sys.version_info.minor == 10 and sys.version_info.micro == 0:
         message = 'You are using Python 3.10.0. This version of Python has a bug that causes PyInstaller to fail.'
         message += '\nPlease upgrade to Python 3.10.1 or above.'
         warnings.append({
