@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.14.1
+
+- [#230](https://github.com/brentvollebregt/auto-py-to-exe/pull/230): Fixed application failing to launch
+
 ### 2.14.0
 
 - [#215](https://github.com/brentvollebregt/auto-py-to-exe/issues/215): Added warning when using Python 3.10.0
