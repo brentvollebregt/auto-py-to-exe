@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.15.0
+
+- [#228](https://github.com/brentvollebregt/auto-py-to-exe/pull/228): Added German translations
+- [#231 ](https://github.com/brentvollebregt/auto-py-to-exe/issues/231 ): Added Brazilian Portuguese translations
+
 ## 2.14.1
 
 - [#230](https://github.com/brentvollebregt/auto-py-to-exe/pull/230): Fixed application failing to launch

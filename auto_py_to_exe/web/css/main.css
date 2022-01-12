@@ -71,6 +71,10 @@
     padding: 0 6px;
 }
 
+#language-selection {
+    max-width: 200px;
+}
+
 /* Warnings */
 
 #warnings {
