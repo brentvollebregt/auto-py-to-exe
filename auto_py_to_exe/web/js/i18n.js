@@ -13,7 +13,7 @@ const translationMap = {
                 zh: '单文件',
                 zh_tw: '單檔案',
                 ru: 'Один файл',
-                 de: 'Eine Datei'
+                de: 'Eine Datei'
             },
             consoleWindow: {
                 en: 'Console Window',
@@ -29,7 +29,7 @@ const translationMap = {
                 ru: 'Иконка',
                 de: 'Icon',
             },
-            additionalFiles: 
+            additionalFiles: {
                 en: 'Additional Files',
                 zh: '附加文件',
                 zh_tw: '附加檔案',
@@ -62,7 +62,7 @@ const translationMap = {
                 zh: '输出',
                 zh_tw: '輸出',
                 ru: 'Вывод',
-                de: 'Ausgabe'                
+                de: 'Ausgabe'
             },
             specificOptions: {
                 en: 'auto-py-to-exe Specific Options',
@@ -76,7 +76,7 @@ const translationMap = {
                 zh: '输出路径',
                 zh_tw: '輸出路徑',
                 ru: 'Папка Вывода',
-                de: 'Ausgabeverzeichnis'                
+                de: 'Ausgabeverzeichnis'
             },
             increaseRecursionLimit: {
                 en: 'Increase Recursion Limit',
@@ -127,7 +127,7 @@ const translationMap = {
                 zh: '单文件',
                 zh_tw: '單檔案',
                 ru: 'Один файл',
-                de: 'Eine Datei'                
+                de: 'Eine Datei'
             },
             consoleBased: {
                 en: 'Console Based',
@@ -141,14 +141,14 @@ const translationMap = {
                 zh: '基于窗口的 (隐藏控制台)',
                 zh_tw: '基於視窗 (隱藏控制台)',
                 ru: 'Оконное Приложение (скрыть консоль)',
-                de: 'Fensterbasiert (Befehlszeile ausblenden)'                
+                de: 'Fensterbasiert (Befehlszeile ausblenden)'
             },
             addFiles: {
                 en: 'Add Files',
                 zh: '添加文件',
                 zh_tw: '新增檔案',
                 ru: 'Добавить Файлы',
-                de: 'Dateien hinzufügen'                
+                de: 'Dateien hinzufügen'
             },
             addFolder: {
                 en: 'Add Folder',
@@ -332,7 +332,7 @@ const translationMap = {
             windowsAndMacOsXSpecificOptions: {
                 en: 'Windows And Mac Os X Specific Options',
                 zh_tw: 'Windows 和 Mac Os X 特定選項',
-                ru: 'Настройки для Windows и Mac Os X'
+                ru: 'Настройки для Windows и Mac Os X',
                 de: 'Windows und Mac Os X spezifische Optionen',
             },
             windowsSpecificOptions: {
@@ -340,28 +340,28 @@ const translationMap = {
                 zh: 'Windows特定选项',
                 zh_tw: 'Windows 特定選項',
                 ru: 'Настройки для Windows',
-                en: 'Windows spezifische Optionen',
+                de: 'Windows spezifische Optionen',
             },
             windowsSideBySideAssemblySearchingOptions: {
                 en: 'Windows Side-by-side Assembly searching options (advanced)',
                 zh: '窗口并排汇编搜索选项(高级)',
                 zh_tw: '視窗並排彙編搜尋選項(進階)',
-                ru: 'Параметры поиска параллельных сборок Windows (дополнительно)'
+                ru: 'Параметры поиска параллельных сборок Windows (дополнительно)',
                 de: 'Windows Side-by-side Suchoptionen (Erweitert)',
             },
             macOsxSpecificOptions: {
                 en: 'Mac OS X specific options',
                 zh: 'Mac OS X特定选项',
                 zh_tw: 'Mac OS X 特定選項',
-                ru: 'Настройки для Mac OS X'
-                en: 'Mac OS X spezifische Optionen'
+                ru: 'Настройки для Mac OS X',
+                de: 'Mac OS X spezifische Optionen'
             },
             rarelyUsedSpecialOptions: {
                 en: 'Rarely used special options',
                 zh: '很少使用的特殊选项',
                 zh_tw: '很少使用的特殊選項',
                 ru: 'Редко используемые дополнительные опции',
-                en: 'Selten genuzte Spezialoptionen',
+                de: 'Selten genuzte Spezialoptionen',
             },
             other: {
                 en: 'Other',
@@ -422,7 +422,7 @@ const translationMap = {
                 zh: '覆盖当前配置？',
                 zh_tw: '覆蓋當前配置？',
                 ru: 'Перезаписать текущие настройки?',
-                en: 'Aktuelle Konfiguration überschreiben?',
+                de: 'Aktuelle Konfiguration überschreiben?',
             },
             configModalDescription: {
                 en: 'All previously inserted values will be erased.',
@@ -455,13 +455,13 @@ const translationMap = {
                 zh: '您尚未提供脚本位置。\n请在页面顶部输入。',
                 zh_tw: '您尚未提供腳本位置。\n請在頁面頂部輸入。',
                 ru: 'Вы не указали расположение скрипта.\nУкажите его в самом верху страницы',
-                 en: 'Keinen Pfad zum Skript angegeben.\nBitte den Pfad zum Skript oben in der Seite eingeben.',
+                de: 'Keinen Pfad zum Skript angegeben.\nBitte den Pfad zum Skript oben in der Seite eingeben.',
             },
             overwritePreviousOutput: {
                 en: 'This action will overwrite a previous output in the output folder.\nContinue?',
                 zh: '此操作将覆盖输出文件夹中以前的输出。\n是否继续？',
                 zh_tw: '此操作將覆蓋輸出檔案夾中以前的輸出。\n是否繼續？',
-                ru: 'Это действие перезапишет предыдущий вывод в папке вывода.\nПродолжить?'
+                ru: 'Это действие перезапишет предыдущий вывод в папке вывода.\nПродолжить?',
                 de: 'Diese Aktion wird vorige Ausgaben im Ausgabeverzeichnis überschreiben.\nWeitermachen?'
             }
         },
@@ -571,8 +571,8 @@ const supportedLanguages = [
         name: 'Russian (Русский)',
         code: 'ru',
     },
-        {
-        name: 'Deutsch',
+    {
+        name: 'German (Deutsch)',
         code: 'de',
     }
 ];
