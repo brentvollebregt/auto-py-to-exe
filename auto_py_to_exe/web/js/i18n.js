@@ -7,20 +7,23 @@ const translationMap = {
                 zh_tw: '腳本位置',
                 ru: 'Расположение скрипта',
                 de: 'Script Pfad',
+                pt_br: 'Localização do Script',
             },
             oneFile: {
                 en: 'Onefile',
                 zh: '单文件',
                 zh_tw: '單檔案',
                 ru: 'Один файл',
-                de: 'Eine Datei'
+                de: 'Eine Datei',
+                pt_br: 'Arquivo Único',
             },
             consoleWindow: {
                 en: 'Console Window',
                 zh: '控制台窗口',
                 zh_tw: '控制台視窗',
                 ru: 'Консольное приложение',
-                de: 'Konsolen Anwendung'
+                de: 'Konsolen Anwendung',
+                pt_br: 'Janela do Console',
             },
             icon: {
                 en: 'Icon',
@@ -28,13 +31,15 @@ const translationMap = {
                 zh_tw: '圖示',
                 ru: 'Иконка',
                 de: 'Icon',
+                pt_br: 'Ícone',
             },
             additionalFiles: {
                 en: 'Additional Files',
                 zh: '附加文件',
                 zh_tw: '附加檔案',
                 ru: 'Дополнительные файлы',
-                de: 'Dateien hinzufügen'
+                de: 'Dateien hinzufügen',
+                pt_br: 'Arquivos Adicionais',
             },
             advanced: {
                 en: 'Advanced',
@@ -42,69 +47,79 @@ const translationMap = {
                 zh_tw: '進階',
                 ru: 'Расширенные',
                 de: 'Erweitert',
+                pt_br: 'Avançado',
             },
             settings: {
                 en: 'Settings',
                 zh: '设置',
                 zh_tw: '設定',
                 ru: 'Настройки',
-                de: 'Einstellungen'
+                de: 'Einstellungen',
+                pt_br: 'Configurações',
             },
             currentCommand: {
                 en: 'Current Command',
                 zh: '当前命令',
                 zh_tw: '當前命令',
                 ru: 'Текущая команда',
-                de: 'Aktueller Befehl'
+                de: 'Aktueller Befehl',
+                pt_br: 'Comando Atual',
             },
             output: {
                 en: 'Output',
                 zh: '输出',
                 zh_tw: '輸出',
                 ru: 'Вывод',
-                de: 'Ausgabe'
+                de: 'Ausgabe',
+                pt_br: 'Saída',
             },
             specificOptions: {
                 en: 'auto-py-to-exe Specific Options',
                 zh: 'auto-py-to-exe 特定的选项',
                 zh_tw: 'auto-py-to-exe 特定的選項',
                 ru: 'Особые параметры auto-py-to-exe',
-                de: 'auto-py-to-exe spezifische Optionen'
+                de: 'auto-py-to-exe spezifische Optionen',
+                pt_br: 'Opções Específicas auto-py-to-exe',
             },
             outputDirectory: {
                 en: 'Output Directory',
                 zh: '输出路径',
                 zh_tw: '輸出路徑',
                 ru: 'Папка Вывода',
-                de: 'Ausgabeverzeichnis'
+                de: 'Ausgabeverzeichnis',
+                pt_br: 'Diretório de Saída',
             },
             increaseRecursionLimit: {
                 en: 'Increase Recursion Limit',
                 zh: '增加递归限制',
                 zh_tw: '增加遞歸限制',
                 ru: 'Увеличить Лимит Рекурсии',
-                de: 'Erhöhen der Rekursionsbegrenzung'
+                de: 'Erhöhen der Rekursionsbegrenzung',
+                pt_br: 'Limite de Recursividade',
             },
             manuallyProvideOptions: {
                 en: 'Manually Provide Options',
                 zh: '手动提供选项',
                 zh_tw: '手動提供選項',
                 ru: 'Вручную Указанные Параметры',
-                de: 'Optionen manuell eingeben'
+                de: 'Optionen manuell eingeben',
+                pt_br: 'Opções Manuais',
             },
             manualArgumentInput: {
                 en: 'Manual Argument Input',
                 zh: '手动参数输入',
                 zh_tw: '手動參數輸入',
                 ru: 'Ручной Ввод Аргументов',
-                de: 'Manuelle Argumenteingabe'
+                de: 'Manuelle Argumenteingabe',
+                pt_br: 'Argumentos de Entrada',
             },
             configuration: {
                 en: 'Configuration',
                 zh: '配置',
                 zh_tw: '配置',
                 ru: 'Конфигурация',
-                de: 'Konfiguration'
+                de: 'Konfiguration',
+                pt_br: 'Configuração',
             }
         },
         button: {
@@ -113,91 +128,104 @@ const translationMap = {
                 zh: '浏览',
                 zh_tw: '瀏覽',
                 ru: 'Расположение',
-                de: 'Durchsuchen'
+                de: 'Durchsuchen',
+                pt_br: 'Exibir',
             },
             oneDirectory: {
                 en: 'One Directory',
                 zh: '单目录',
                 zh_tw: '單目錄',
                 ru: 'Одна Папка',
-                de: 'Ein Verzeichnis'
+                de: 'Ein Verzeichnis',
+                pt_br: 'Um Diretório',
             },
             oneFile: {
                 en: 'One File',
                 zh: '单文件',
                 zh_tw: '單檔案',
                 ru: 'Один файл',
-                de: 'Eine Datei'
+                de: 'Eine Datei',
+                pt_br: 'Um Arquivo',
             },
             consoleBased: {
                 en: 'Console Based',
                 zh: '基于控制台的',
                 zh_tw: '基於控制台',
                 ru: 'Консольное Приложение',
-                de: 'Befehlszeilenbasiert'
+                de: 'Befehlszeilenbasiert',
+                pt_br: 'Baseado em Console',
             },
             windowBased: {
                 en: 'Window Based (hide the console)',
                 zh: '基于窗口的 (隐藏控制台)',
                 zh_tw: '基於視窗 (隱藏控制台)',
                 ru: 'Оконное Приложение (скрыть консоль)',
-                de: 'Fensterbasiert (Befehlszeile ausblenden)'
+                de: 'Fensterbasiert (Befehlszeile ausblenden)',
+                pt_br: 'Baseado em Janela (ocultar o console)',
             },
             addFiles: {
                 en: 'Add Files',
                 zh: '添加文件',
                 zh_tw: '新增檔案',
                 ru: 'Добавить Файлы',
-                de: 'Dateien hinzufügen'
+                de: 'Dateien hinzufügen',
+                pt_br: 'Adicionar Arquivos',
             },
             addFolder: {
                 en: 'Add Folder',
                 zh: '添加目录',
                 zh_tw: '新增目錄',
                 ru: 'Добавить Папку',
-                de: 'Verzeichnis hinzufügen'
+                de: 'Verzeichnis hinzufügen',
+                pt_br: 'Adicionar Pasta',
             },
             addBlank: {
                 en: 'Add Blank',
                 zh: '添加空白',
                 zh_tw: '新增空白',
                 ru: 'Добавить шаблон',
-                de: 'Leerzeichen hinzufügen'
+                de: 'Leerzeichen hinzufügen',
+                pt_br: 'Adicionar em Branco',
             },
             importConfig: {
                 en: 'Import Config From JSON File',
                 zh: '从JSON文件导入配置',
                 zh_tw: '從 JSON 檔案導入配置',
                 ru: 'Импортировать Конфигурацию из JSON Файла',
-                de: 'Konfiguration aus JSON-Datei importieren'
+                de: 'Konfiguration aus JSON-Datei importieren',
+                pt_br: 'Importar Config de Arquivo JSON',
             },
             exportConfig: {
                 en: 'Export Config To JSON File',
                 zh: '将配置导出到JSON文件',
                 zh_tw: '將配置導出到 JSON 檔案',
                 ru: 'Экспортировать Конфигурацию в JSON Файл',
-                de: 'Konfiguration in JSON-Datei exportieren'
+                de: 'Konfiguration in JSON-Datei exportieren',
+                pt_br: 'Exportar Config para Arquivo JSON',
             },
             convert: {
                 en: 'Convert .py to .exe',
                 zh: '将.PY转换为.EXE',
                 zh_tw: '將.PY 轉換為 .EXE',
                 ru: 'Конвертировать .py В .exe',
-                de: 'Konvertiere .py in .exe'
+                de: 'Konvertiere .py in .exe',
+                pt_br: 'Converter .py para .exe',
             },
             openOutputFolder: {
                 en: 'Open Output Folder',
                 zh: '打开输出目录',
                 zh_tw: '打開輸出目錄',
                 ru: 'Открыть Папку Вывода',
-                de: 'Ausgabeverzeichnis öffnen'
+                de: 'Ausgabeverzeichnis öffnen',
+                pt_br: 'Abrir Pasta de Saída',
             },
             enable: {
                 en: 'Enable',
                 zh: '开启',
                 zh_tw: '開啟',
                 ru: 'Включить',
-                de: 'Aktivieren'
+                de: 'Aktivieren',
+                pt_br: 'Habilitar',
             },
         },
         links: {
@@ -206,7 +234,8 @@ const translationMap = {
                 zh: '帮助帖子',
                 zh_tw: '幫助文章',
                 ru: 'Справка',
-                de: 'Hilfe-Post'
+                de: 'Hilfe-Post',
+                pt_br: 'Post Ajuda',
             }
         },
         placeholders: {
@@ -215,28 +244,32 @@ const translationMap = {
                 zh: '文件路径',
                 zh_tw: '檔案路徑',
                 ru: 'Путь к файлу',
-                de: 'Pfad zur Datei'
+                de: 'Pfad zur Datei',
+                pt_br: 'Caminhao para Arquivo',
             },
             icoFile: {
                 en: '.ico file',
                 zh: '图标路径',
                 zh_tw: '圖示路徑',
                 ru: '.ico файл',
-                de: '.ico Datei'
+                de: '.ico Datei',
+                pt_br: 'Arquivo .ico',
             },
             directory: {
                 en: 'DIRECTORY',
                 zh: '目录',
                 zh_tw: '目錄',
                 ru: 'Директория',
-                de: 'VERZEICHNIS'
+                de: 'VERZEICHNIS',
+                pt_br: 'DIRETÓRIO',
             },
             arguments: {
                 en: 'ARGUMENTS',
                 zh: '参数',
                 zh_tw: '參數',
                 ru: 'Аргументы',
-                de: 'ARGUMENTE'
+                de: 'ARGUMENTE',
+                pt_br: 'ARGUMENTOS',
             }
         },
         helpText: {
@@ -244,19 +277,22 @@ const translationMap = {
                 en: 'The directory to put the output in. Will be created if it doesn\'t exist',
                 zh: '用于放置输出的目录。如果不存在，将创建该目录',
                 zh_tw: '用於放置輸出的目錄如果不存在，將自動創建該目錄',
-                ru: 'Папка, в которую переместиться итоговое приложение. Будет создано при необходимости.'
+                ru: 'Папка, в которую переместиться итоговое приложение. Будет создано при необходимости.',
+                pt_br: 'O diretório para colocar a saída. Será criado se não existir',
             },
             increaseRecursionLimit: {
                 en: 'Having this enabled will set the recursion limit to 5000 using sys.setrecursionlimit(5000).',
                 zh: '启用此功能将使用sys.setrecursionlimit（5000）将递归限制设置为5000。',
                 zh_tw: '啟用此功能將使用 sys.setrecursionlimit（5000）將遞歸限制設置為5000。',
-                ru: 'Если включено установит лимит рекурсии равный 5000 с помощью sys.setrecursionlimit(5000).'
+                ru: 'Если включено установит лимит рекурсии равный 5000 с помощью sys.setrecursionlimit(5000).',
+                pt_br: 'Ativar isso definirá o limite de recursão para 5000 usando sys.setrecursionlimit(5000)',
             },
             manualArgumentInput: {
                 en: 'Inject raw text into the generated command.',
                 zh: '将原始文本插入到生成的命令中。',
                 zh_tw: '將原始文字插入到產生的命令中。',
-                ru: 'Вставит текст в итоговую команду'
+                ru: 'Вставит текст в итоговую команду',
+                pt_br: 'Injete texto bruto no comando gerado.',
             }
         },
         notes: {
@@ -273,12 +309,16 @@ const translationMap = {
                 ru: 'Будьте внимательны при использовании дополнительных файлов в режиме одного файла;\n' +
                     '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">Прочитайте Это</a>\n' +
                     'и обновите свой код для работы с PyInstaller.',
+                pt_br: 'Tenha cuidado ao usar arquivos adicionais com o modo de arquivo único;\n' +
+                    '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">read this</a>\n' +
+                    'and update your code to work with PyInstaller.',
             },
             rootDirectory: {
                 en: 'If you want to put files in the root directory, put a period (.) in the destination.',
                 zh: '如果要将文件放到根目录中，请在目标目录中输入句点(.)。',
                 zh_tw: '如果要將檔案放到根目錄中，請在目標目錄中輸入句點(.)。',
-                ru: 'Если вы хотите расположить файлы в главной директории, вставьте точку (.) в начале пути.'
+                ru: 'Если вы хотите расположить файлы в главной директории, вставьте точку (.) в начале пути.',
+                pt_br: 'Se você quiser colocar arquivos no diretório raiz, coloque um ponto (.) no destino.',
             },
             somethingWrongWithOutput: {
                 en: 'Something wrong with your exe? Read\n' +
@@ -301,6 +341,11 @@ const translationMap = {
                     '    эту справку, с описанием большинства проблем\n' +
                     '</a>\n' +
                     'чтобы решить свою.',
+                pt_br: 'Algo errado com seu exe? Read\n' +
+                    '<a href="https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=application_link&utm_campaign=auto_py_to_exe_help&utm_content=bottom" target="_blank">\n' +
+                    '    este post fala sobre os problemas comuns\n' +
+                    '</a>\n' +
+                    ' e possíveis soluções.',
             }
         }
     },
@@ -313,27 +358,31 @@ const translationMap = {
                 zh: '常规选项',
                 zh_tw: '一般選項',
                 ru: 'Основные Настройки',
-                de: 'Allgemeine Optionen'    
+                de: 'Allgemeine Optionen',
+                pt_br: 'Opções Gerais',
             },
             whatToBundleWhereToSearch: {
                 en: 'What to bundle, where to search',
                 zh: '捆绑什么，搜索哪里',
                 zh_tw: '怎樣捆綁，哪裡搜尋',
                 ru: 'Что используется и где это искать',
-                de: 'Was zusammenfassen, wo suchen'    
+                de: 'Was zusammenfassen, wo suchen',
+                pt_br: 'O que agrupar, onde pesquisar',
             },
             howToGenerate: {
                 en: 'How to generate',
                 zh: '如何生成',
                 zh_tw: '如何產生',
                 ru: 'Настройки генератора',
-                de: 'Wie generieren...?'
+                de: 'Wie generieren...?',
+                pt_br: 'Como gerar',
             },
             windowsAndMacOsXSpecificOptions: {
                 en: 'Windows And Mac Os X Specific Options',
                 zh_tw: 'Windows 和 Mac Os X 特定選項',
                 ru: 'Настройки для Windows и Mac Os X',
                 de: 'Windows und Mac Os X spezifische Optionen',
+                pt_br: 'Opções específicas Windows e Mac Os X',
             },
             windowsSpecificOptions: {
                 en: 'Windows specific options',
@@ -341,6 +390,7 @@ const translationMap = {
                 zh_tw: 'Windows 特定選項',
                 ru: 'Настройки для Windows',
                 de: 'Windows spezifische Optionen',
+                pt_br: 'Opções específicas Windows',
             },
             windowsSideBySideAssemblySearchingOptions: {
                 en: 'Windows Side-by-side Assembly searching options (advanced)',
@@ -348,13 +398,15 @@ const translationMap = {
                 zh_tw: '視窗並排彙編搜尋選項(進階)',
                 ru: 'Параметры поиска параллельных сборок Windows (дополнительно)',
                 de: 'Windows Side-by-side Suchoptionen (Erweitert)',
+                pt_br: 'Opções de pesquisa dSide-by-side Assembly do Windows (avançado)',
             },
             macOsxSpecificOptions: {
                 en: 'Mac OS X specific options',
                 zh: 'Mac OS X特定选项',
                 zh_tw: 'Mac OS X 特定選項',
                 ru: 'Настройки для Mac OS X',
-                de: 'Mac OS X spezifische Optionen'
+                de: 'Mac OS X spezifische Optionen',
+                pt_br: 'Opções específicas Mac OS X',
             },
             rarelyUsedSpecialOptions: {
                 en: 'Rarely used special options',
@@ -362,13 +414,15 @@ const translationMap = {
                 zh_tw: '很少使用的特殊選項',
                 ru: 'Редко используемые дополнительные опции',
                 de: 'Selten genuzte Spezialoptionen',
+                pt_br: 'Opções especiais raramente usadas',
             },
             other: {
                 en: 'Other',
                 zh: '其他',
                 zh_tw: '其它',
                 ru: 'Другое',
-                de: 'Andere'
+                de: 'Andere',
+                pt_br: 'Outros',
             },
         },
         button: {
@@ -378,42 +432,48 @@ const translationMap = {
                 zh: '浏览文件',
                 zh_tw: '瀏覽檔案',
                 ru: 'Поиск файла',
-                de: 'Datei suchen'    
+                de: 'Datei suchen',
+                pt_br: 'Procurar arquivo',
             },
             browseForFolder: {
                 en: 'Browse for Folder',
                 zh: '浏览文件夹',
                 zh_tw: '瀏覽檔案夾',
                 ru: 'Поиск Папки',
-                de: 'Verzeichnis suchen'
+                de: 'Verzeichnis suchen',
+                pt_br: 'Procurar Pasta',
             },
             enable: {
                 en: 'Enable',
                 zh: '开启',
                 zh_tw: '開啟',
                 ru: 'Включить',
-                de: 'Aktivieren'
+                de: 'Aktivieren',
+                pt_br: 'Habilitar',
             },
             disable: {
                 en: 'Disable',
                 zh: '关掉',
                 zh_tw: '關閉',
                 ru: 'Выключить',
-                de: 'Deaktivieren'
+                de: 'Deaktivieren',
+                pt_br: 'Desabilitar',
             },
             converting: {
                 en: 'Converting...',
                 zh: '转换中······',
                 zh_tw: '轉換中······',
                 ru: 'Преобразование...',
-                de: 'Konvertierung...'
+                de: 'Konvertierung...',
+                pt_br: 'Convertendo...',
             },
             clearOutput: {
                 en: 'Clear Output',
                 zh: '清除输出f',
                 zh_tw: '清除輸出',
                 ru: 'Отчистить Вывод',
-                de: 'Ausgabe löschen'
+                de: 'Ausgabe löschen',
+                pt_br: 'Limpar Saída',
             },
         },
         modal: {
@@ -423,27 +483,31 @@ const translationMap = {
                 zh_tw: '覆蓋當前配置？',
                 ru: 'Перезаписать текущие настройки?',
                 de: 'Aktuelle Konfiguration überschreiben?',
+                pt_br: 'Substituir a configuração atual?',
             },
             configModalDescription: {
                 en: 'All previously inserted values will be erased.',
                 zh: '所有先前插入的值将被删除。',
                 zh_tw: '所有先前插入的值將被刪除。',
                 ru: 'Все ранее текущие значения будут удалены.',
-                de: 'Alle zuvor eingegebenen Werte werden gelöscht.'
+                de: 'Alle zuvor eingegebenen Werte werden gelöscht.',
+                pt_br: 'Todos os valores inseridos anteriormente serão apagados.',
             },
             configModalConfirmButton: {
                 en: 'Confirm',
                 zh: '确认',
                 zh_tw: '確認',
                 ru: 'Подтвердить',
-                de: 'Bestätigen'
+                de: 'Bestätigen',
+                pt_br: 'Confirma',
             },
             configModalCancelButton: {
                 en: 'Cancel',
                 zh: '取消',
                 zh_tw: '取消',
                 ru: 'Отмена',
-                de: 'Abbrechen'
+                de: 'Abbrechen',
+                pt_br: 'Cancela',
             }
         }
     },
@@ -456,13 +520,15 @@ const translationMap = {
                 zh_tw: '您尚未提供腳本位置。\n請在頁面頂部輸入。',
                 ru: 'Вы не указали расположение скрипта.\nУкажите его в самом верху страницы',
                 de: 'Keinen Pfad zum Skript angegeben.\nBitte den Pfad zum Skript oben in der Seite eingeben.',
+                pt_br: 'Você não forneceu o local dos seus scripts.\nPor favor, insira-o na parte superior da página.',
             },
             overwritePreviousOutput: {
                 en: 'This action will overwrite a previous output in the output folder.\nContinue?',
                 zh: '此操作将覆盖输出文件夹中以前的输出。\n是否继续？',
                 zh_tw: '此操作將覆蓋輸出檔案夾中以前的輸出。\n是否繼續？',
                 ru: 'Это действие перезапишет предыдущий вывод в папке вывода.\nПродолжить?',
-                de: 'Diese Aktion wird vorige Ausgaben im Ausgabeverzeichnis überschreiben.\nWeitermachen?'
+                de: 'Diese Aktion wird vorige Ausgaben im Ausgabeverzeichnis überschreiben.\nWeitermachen?',
+                pt_br: 'Esta ação substituirá uma saída anterior na pasta de saída.\nContinuar?',
             }
         },
     }
@@ -574,6 +640,10 @@ const supportedLanguages = [
     {
         name: 'German (Deutsch)',
         code: 'de',
-    }
+    },
+    {
+        name: 'Brazilian Portuguese (Português Brasileiro)',
+        code: 'pt_br'
+    },
 ];
 let currentLanguage = _checkLanguageIsSupportedOrDefault(_getLanguage()); // Keeps track of the current language
