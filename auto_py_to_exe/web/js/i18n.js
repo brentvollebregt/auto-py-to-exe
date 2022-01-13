@@ -626,6 +626,10 @@ const supportedLanguages = [
         code: 'en',
     },
     {
+        name: 'Brazilian Portuguese (Português Brasileiro)',
+        code: 'pt_br'
+    },
+    {
         name: 'Chinese Simplified (简体中文)',
         code: 'zh',
     },
@@ -634,16 +638,12 @@ const supportedLanguages = [
         code: 'zh_tw',
     },
     {
-        name: 'Russian (Русский)',
-        code: 'ru',
-    },
-    {
         name: 'German (Deutsch)',
         code: 'de',
     },
     {
-        name: 'Brazilian Portuguese (Português Brasileiro)',
-        code: 'pt_br'
+        name: 'Russian (Русский)',
+        code: 'ru',
     },
 ];
 let currentLanguage = _checkLanguageIsSupportedOrDefault(_getLanguage()); // Keeps track of the current language
