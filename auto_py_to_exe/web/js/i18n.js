@@ -8,6 +8,7 @@ const translationMap = {
                 ru: 'Расположение скрипта',
                 de: 'Script Pfad',
                 pt_br: 'Localização do Script',
+                sp: 'Localización del Script',
             },
             oneFile: {
                 en: 'Onefile',
@@ -16,6 +17,7 @@ const translationMap = {
                 ru: 'Один файл',
                 de: 'Eine Datei',
                 pt_br: 'Arquivo Único',
+                sp: 'Archivo Único',
             },
             consoleWindow: {
                 en: 'Console Window',
@@ -24,6 +26,7 @@ const translationMap = {
                 ru: 'Консольное приложение',
                 de: 'Konsolen Anwendung',
                 pt_br: 'Janela do Console',
+                sp: 'Consola de Windows',
             },
             icon: {
                 en: 'Icon',
@@ -32,6 +35,7 @@ const translationMap = {
                 ru: 'Иконка',
                 de: 'Icon',
                 pt_br: 'Ícone',
+                sp: 'Icono',
             },
             additionalFiles: {
                 en: 'Additional Files',
@@ -40,6 +44,7 @@ const translationMap = {
                 ru: 'Дополнительные файлы',
                 de: 'Dateien hinzufügen',
                 pt_br: 'Arquivos Adicionais',
+                sp: 'Archivos adicionales',
             },
             advanced: {
                 en: 'Advanced',
@@ -48,6 +53,7 @@ const translationMap = {
                 ru: 'Расширенные',
                 de: 'Erweitert',
                 pt_br: 'Avançado',
+                sp: 'Avanzado',
             },
             settings: {
                 en: 'Settings',
@@ -56,6 +62,7 @@ const translationMap = {
                 ru: 'Настройки',
                 de: 'Einstellungen',
                 pt_br: 'Configurações',
+                sp: 'Configuraciones',
             },
             currentCommand: {
                 en: 'Current Command',
@@ -64,6 +71,7 @@ const translationMap = {
                 ru: 'Текущая команда',
                 de: 'Aktueller Befehl',
                 pt_br: 'Comando Atual',
+                sp: 'Comando Actual',
             },
             output: {
                 en: 'Output',
@@ -72,6 +80,7 @@ const translationMap = {
                 ru: 'Вывод',
                 de: 'Ausgabe',
                 pt_br: 'Saída',
+                sp: 'Salida',
             },
             specificOptions: {
                 en: 'auto-py-to-exe Specific Options',
@@ -80,6 +89,7 @@ const translationMap = {
                 ru: 'Особые параметры auto-py-to-exe',
                 de: 'auto-py-to-exe spezifische Optionen',
                 pt_br: 'Opções Específicas auto-py-to-exe',
+                sp: 'Opciones Específicas auto-py-to-exe',
             },
             outputDirectory: {
                 en: 'Output Directory',
@@ -88,6 +98,7 @@ const translationMap = {
                 ru: 'Папка Вывода',
                 de: 'Ausgabeverzeichnis',
                 pt_br: 'Diretório de Saída',
+                sp: 'Directorio de Salida',
             },
             increaseRecursionLimit: {
                 en: 'Increase Recursion Limit',
@@ -96,6 +107,7 @@ const translationMap = {
                 ru: 'Увеличить Лимит Рекурсии',
                 de: 'Erhöhen der Rekursionsbegrenzung',
                 pt_br: 'Limite de Recursividade',
+                sp: 'Límite de Recursividad',
             },
             manuallyProvideOptions: {
                 en: 'Manually Provide Options',
@@ -104,6 +116,7 @@ const translationMap = {
                 ru: 'Вручную Указанные Параметры',
                 de: 'Optionen manuell eingeben',
                 pt_br: 'Opções Manuais',
+                sp: 'Opciones Manuales',
             },
             manualArgumentInput: {
                 en: 'Manual Argument Input',
@@ -112,6 +125,7 @@ const translationMap = {
                 ru: 'Ручной Ввод Аргументов',
                 de: 'Manuelle Argumenteingabe',
                 pt_br: 'Argumentos de Entrada',
+                sp: 'Argumentos de Entrada',
             },
             configuration: {
                 en: 'Configuration',
@@ -120,6 +134,7 @@ const translationMap = {
                 ru: 'Конфигурация',
                 de: 'Konfiguration',
                 pt_br: 'Configuração',
+                sp: 'Configuración'
             }
         },
         button: {
@@ -130,6 +145,7 @@ const translationMap = {
                 ru: 'Расположение',
                 de: 'Durchsuchen',
                 pt_br: 'Exibir',
+                sp: 'Mostrar',
             },
             oneDirectory: {
                 en: 'One Directory',
@@ -138,6 +154,7 @@ const translationMap = {
                 ru: 'Одна Папка',
                 de: 'Ein Verzeichnis',
                 pt_br: 'Um Diretório',
+                sp: 'Un directorio',
             },
             oneFile: {
                 en: 'One File',
@@ -146,6 +163,7 @@ const translationMap = {
                 ru: 'Один файл',
                 de: 'Eine Datei',
                 pt_br: 'Um Arquivo',
+                sp: 'Un Archivo',
             },
             consoleBased: {
                 en: 'Console Based',
@@ -154,6 +172,7 @@ const translationMap = {
                 ru: 'Консольное Приложение',
                 de: 'Befehlszeilenbasiert',
                 pt_br: 'Baseado em Console',
+                sp: 'Consola básica',
             },
             windowBased: {
                 en: 'Window Based (hide the console)',
@@ -162,6 +181,7 @@ const translationMap = {
                 ru: 'Оконное Приложение (скрыть консоль)',
                 de: 'Fensterbasiert (Befehlszeile ausblenden)',
                 pt_br: 'Baseado em Janela (ocultar o console)',
+                sp: 'Consola de Windows (Ocultar consola)',
             },
             addFiles: {
                 en: 'Add Files',
@@ -170,6 +190,7 @@ const translationMap = {
                 ru: 'Добавить Файлы',
                 de: 'Dateien hinzufügen',
                 pt_br: 'Adicionar Arquivos',
+                sp: 'Añadir archivos',
             },
             addFolder: {
                 en: 'Add Folder',
@@ -178,6 +199,7 @@ const translationMap = {
                 ru: 'Добавить Папку',
                 de: 'Verzeichnis hinzufügen',
                 pt_br: 'Adicionar Pasta',
+                sp: 'Añadir carpeta',
             },
             addBlank: {
                 en: 'Add Blank',
@@ -186,6 +208,7 @@ const translationMap = {
                 ru: 'Добавить шаблон',
                 de: 'Leerzeichen hinzufügen',
                 pt_br: 'Adicionar em Branco',
+                sp: 'Añadir en blanco',
             },
             importConfig: {
                 en: 'Import Config From JSON File',
@@ -194,6 +217,7 @@ const translationMap = {
                 ru: 'Импортировать Конфигурацию из JSON Файла',
                 de: 'Konfiguration aus JSON-Datei importieren',
                 pt_br: 'Importar Config de Arquivo JSON',
+                sp: 'Importar Configuración de Archivo JSON',
             },
             exportConfig: {
                 en: 'Export Config To JSON File',
@@ -202,6 +226,7 @@ const translationMap = {
                 ru: 'Экспортировать Конфигурацию в JSON Файл',
                 de: 'Konfiguration in JSON-Datei exportieren',
                 pt_br: 'Exportar Config para Arquivo JSON',
+                sp: 'Exportar Configuración para Archivo JSON',
             },
             convert: {
                 en: 'Convert .py to .exe',
@@ -210,6 +235,7 @@ const translationMap = {
                 ru: 'Конвертировать .py В .exe',
                 de: 'Konvertiere .py in .exe',
                 pt_br: 'Converter .py para .exe',
+                sp: 'Convertir .py a .exe',
             },
             openOutputFolder: {
                 en: 'Open Output Folder',
@@ -218,6 +244,7 @@ const translationMap = {
                 ru: 'Открыть Папку Вывода',
                 de: 'Ausgabeverzeichnis öffnen',
                 pt_br: 'Abrir Pasta de Saída',
+                sp: 'Abrir Carpeta de Destino',
             },
             enable: {
                 en: 'Enable',
@@ -226,6 +253,7 @@ const translationMap = {
                 ru: 'Включить',
                 de: 'Aktivieren',
                 pt_br: 'Habilitar',
+                sp: 'Habilitar',
             },
         },
         links: {
@@ -236,6 +264,7 @@ const translationMap = {
                 ru: 'Справка',
                 de: 'Hilfe-Post',
                 pt_br: 'Post Ajuda',
+                sp: 'Ayuda',
             }
         },
         placeholders: {
@@ -246,6 +275,7 @@ const translationMap = {
                 ru: 'Путь к файлу',
                 de: 'Pfad zur Datei',
                 pt_br: 'Caminhao para Arquivo',
+                sp: 'Ruta de archivo',
             },
             icoFile: {
                 en: '.ico file',
@@ -254,6 +284,7 @@ const translationMap = {
                 ru: '.ico файл',
                 de: '.ico Datei',
                 pt_br: 'Arquivo .ico',
+                sp: 'Archivo .ico',
             },
             directory: {
                 en: 'DIRECTORY',
@@ -262,6 +293,7 @@ const translationMap = {
                 ru: 'Директория',
                 de: 'VERZEICHNIS',
                 pt_br: 'DIRETÓRIO',
+                sp: 'Directorio',
             },
             arguments: {
                 en: 'ARGUMENTS',
@@ -270,6 +302,7 @@ const translationMap = {
                 ru: 'Аргументы',
                 de: 'ARGUMENTE',
                 pt_br: 'ARGUMENTOS',
+                sp: 'ARGUMENTOS',
             }
         },
         helpText: {
@@ -279,6 +312,7 @@ const translationMap = {
                 zh_tw: '用於放置輸出的目錄如果不存在，將自動創建該目錄',
                 ru: 'Папка, в которую переместиться итоговое приложение. Будет создано при необходимости.',
                 pt_br: 'O diretório para colocar a saída. Será criado se não existir',
+                sp: 'El directorio para colocar el archivo de salida. Será creado si no existe',
             },
             increaseRecursionLimit: {
                 en: 'Having this enabled will set the recursion limit to 5000 using sys.setrecursionlimit(5000).',
@@ -286,6 +320,7 @@ const translationMap = {
                 zh_tw: '啟用此功能將使用 sys.setrecursionlimit（5000）將遞歸限制設置為5000。',
                 ru: 'Если включено установит лимит рекурсии равный 5000 с помощью sys.setrecursionlimit(5000).',
                 pt_br: 'Ativar isso definirá o limite de recursão para 5000 usando sys.setrecursionlimit(5000)',
+                sp: 'Al activar esto se definirá el límite de recursión a 5000 usando sys.setrecursionlimit(5000)',
             },
             manualArgumentInput: {
                 en: 'Inject raw text into the generated command.',
@@ -293,6 +328,7 @@ const translationMap = {
                 zh_tw: '將原始文字插入到產生的命令中。',
                 ru: 'Вставит текст в итоговую команду',
                 pt_br: 'Injete texto bruto no comando gerado.',
+                sp: 'Inserte texto bruto en el comando generado',
             }
         },
         notes: {
@@ -312,6 +348,9 @@ const translationMap = {
                 pt_br: 'Tenha cuidado ao usar arquivos adicionais com o modo de arquivo único;\n' +
                     '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">read this</a>\n' +
                     'and update your code to work with PyInstaller.',
+                sp: 'Tenga cuidado al utilizar archivos adicionales con el modo de un solo archivo;\n' +
+                    '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">read this</a>\n' +
+                    'and update your code to work with PyInstaller.',
             },
             rootDirectory: {
                 en: 'If you want to put files in the root directory, put a period (.) in the destination.',
@@ -319,6 +358,7 @@ const translationMap = {
                 zh_tw: '如果要將檔案放到根目錄中，請在目標目錄中輸入句點(.)。',
                 ru: 'Если вы хотите расположить файлы в главной директории, вставьте точку (.) в начале пути.',
                 pt_br: 'Se você quiser colocar arquivos no diretório raiz, coloque um ponto (.) no destino.',
+                sp: 'Si quiere poner los archivos en el directorio raíz, ponga un punto (.) en el destino.',
             },
             somethingWrongWithOutput: {
                 en: 'Something wrong with your exe? Read\n' +
@@ -346,6 +386,11 @@ const translationMap = {
                     '    este post fala sobre os problemas comuns\n' +
                     '</a>\n' +
                     ' e possíveis soluções.',
+                sp: 'Algo fue mal con tu exe? Lea \n' +
+                    '<a href="https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=application_link&utm_campaign=auto_py_to_exe_help&utm_content=bottom" target="_blank">\n' +
+                    '    este post contiene posibles problemas comunes\n' +
+                    '</a>\n' +
+                    'y posibles soluciones.',
             }
         }
     },
@@ -360,6 +405,7 @@ const translationMap = {
                 ru: 'Основные Настройки',
                 de: 'Allgemeine Optionen',
                 pt_br: 'Opções Gerais',
+                sp: 'Opciones generales',
             },
             whatToBundleWhereToSearch: {
                 en: 'What to bundle, where to search',
@@ -368,6 +414,7 @@ const translationMap = {
                 ru: 'Что используется и где это искать',
                 de: 'Was zusammenfassen, wo suchen',
                 pt_br: 'O que agrupar, onde pesquisar',
+                sp: 'Qué agrupar, dónde buscar',
             },
             howToGenerate: {
                 en: 'How to generate',
@@ -376,6 +423,7 @@ const translationMap = {
                 ru: 'Настройки генератора',
                 de: 'Wie generieren...?',
                 pt_br: 'Como gerar',
+                sp: 'Como generar',
             },
             windowsAndMacOsXSpecificOptions: {
                 en: 'Windows And Mac Os X Specific Options',
@@ -383,6 +431,7 @@ const translationMap = {
                 ru: 'Настройки для Windows и Mac Os X',
                 de: 'Windows und Mac Os X spezifische Optionen',
                 pt_br: 'Opções específicas Windows e Mac Os X',
+                sp: 'Opciones específicas Windows y Mac Os X',
             },
             windowsSpecificOptions: {
                 en: 'Windows specific options',
@@ -391,6 +440,7 @@ const translationMap = {
                 ru: 'Настройки для Windows',
                 de: 'Windows spezifische Optionen',
                 pt_br: 'Opções específicas Windows',
+                sp: 'Opciones específicas Windows',
             },
             windowsSideBySideAssemblySearchingOptions: {
                 en: 'Windows Side-by-side Assembly searching options (advanced)',
@@ -399,6 +449,7 @@ const translationMap = {
                 ru: 'Параметры поиска параллельных сборок Windows (дополнительно)',
                 de: 'Windows Side-by-side Suchoptionen (Erweitert)',
                 pt_br: 'Opções de pesquisa dSide-by-side Assembly do Windows (avançado)',
+                sp: 'Opciones de búsqueda de ensamblaje en paralelo para Windows (avanzadas)',
             },
             macOsxSpecificOptions: {
                 en: 'Mac OS X specific options',
@@ -407,6 +458,7 @@ const translationMap = {
                 ru: 'Настройки для Mac OS X',
                 de: 'Mac OS X spezifische Optionen',
                 pt_br: 'Opções específicas Mac OS X',
+                sp: 'Opciones específicas Mac OS X',
             },
             rarelyUsedSpecialOptions: {
                 en: 'Rarely used special options',
@@ -415,6 +467,7 @@ const translationMap = {
                 ru: 'Редко используемые дополнительные опции',
                 de: 'Selten genuzte Spezialoptionen',
                 pt_br: 'Opções especiais raramente usadas',
+                sp: 'Opciones especiales raramente usadas',
             },
             other: {
                 en: 'Other',
@@ -423,6 +476,7 @@ const translationMap = {
                 ru: 'Другое',
                 de: 'Andere',
                 pt_br: 'Outros',
+                sp: 'Otros',
             },
         },
         button: {
@@ -434,6 +488,7 @@ const translationMap = {
                 ru: 'Поиск файла',
                 de: 'Datei suchen',
                 pt_br: 'Procurar arquivo',
+                sp: 'Buscar archivo',
             },
             browseForFolder: {
                 en: 'Browse for Folder',
@@ -442,6 +497,7 @@ const translationMap = {
                 ru: 'Поиск Папки',
                 de: 'Verzeichnis suchen',
                 pt_br: 'Procurar Pasta',
+                sp: 'Buscar carpeta',
             },
             enable: {
                 en: 'Enable',
@@ -450,6 +506,7 @@ const translationMap = {
                 ru: 'Включить',
                 de: 'Aktivieren',
                 pt_br: 'Habilitar',
+                sp: 'Habilitar',
             },
             disable: {
                 en: 'Disable',
@@ -458,6 +515,7 @@ const translationMap = {
                 ru: 'Выключить',
                 de: 'Deaktivieren',
                 pt_br: 'Desabilitar',
+                sp: 'Deshabilitar',
             },
             converting: {
                 en: 'Converting...',
@@ -466,6 +524,7 @@ const translationMap = {
                 ru: 'Преобразование...',
                 de: 'Konvertierung...',
                 pt_br: 'Convertendo...',
+                sp: 'Convirtiendo...',
             },
             clearOutput: {
                 en: 'Clear Output',
@@ -474,6 +533,7 @@ const translationMap = {
                 ru: 'Отчистить Вывод',
                 de: 'Ausgabe löschen',
                 pt_br: 'Limpar Saída',
+                sp: 'Limpiar Salida',
             },
         },
         modal: {
@@ -484,6 +544,7 @@ const translationMap = {
                 ru: 'Перезаписать текущие настройки?',
                 de: 'Aktuelle Konfiguration überschreiben?',
                 pt_br: 'Substituir a configuração atual?',
+                sp: 'Sustituir configuración actual?',
             },
             configModalDescription: {
                 en: 'All previously inserted values will be erased.',
@@ -492,6 +553,7 @@ const translationMap = {
                 ru: 'Все ранее текущие значения будут удалены.',
                 de: 'Alle zuvor eingegebenen Werte werden gelöscht.',
                 pt_br: 'Todos os valores inseridos anteriormente serão apagados.',
+                sp: 'Todos los valores insertados previamente serán borrados',
             },
             configModalConfirmButton: {
                 en: 'Confirm',
@@ -500,6 +562,7 @@ const translationMap = {
                 ru: 'Подтвердить',
                 de: 'Bestätigen',
                 pt_br: 'Confirma',
+                sp: 'Confirmar',
             },
             configModalCancelButton: {
                 en: 'Cancel',
@@ -508,6 +571,7 @@ const translationMap = {
                 ru: 'Отмена',
                 de: 'Abbrechen',
                 pt_br: 'Cancela',
+                sp: 'Cancelar',
             }
         }
     },
@@ -521,6 +585,7 @@ const translationMap = {
                 ru: 'Вы не указали расположение скрипта.\nУкажите его в самом верху страницы',
                 de: 'Keinen Pfad zum Skript angegeben.\nBitte den Pfad zum Skript oben in der Seite eingeben.',
                 pt_br: 'Você não forneceu o local dos seus scripts.\nPor favor, insira-o na parte superior da página.',
+                sp: 'No ha facilitado la ubicación de sus guiones. \nPor favor, introdúzcala en la parte superior de la página.
             },
             overwritePreviousOutput: {
                 en: 'This action will overwrite a previous output in the output folder.\nContinue?',
@@ -529,6 +594,7 @@ const translationMap = {
                 ru: 'Это действие перезапишет предыдущий вывод в папке вывода.\nПродолжить?',
                 de: 'Diese Aktion wird vorige Ausgaben im Ausgabeverzeichnis überschreiben.\nWeitermachen?',
                 pt_br: 'Esta ação substituirá uma saída anterior na pasta de saída.\nContinuar?',
+                sp: 'Esta acción sobrescribirá una salida anterior en la carpeta de salida.\n¿Continuar?',
             }
         },
     }
@@ -645,5 +711,9 @@ const supportedLanguages = [
         name: 'Russian (Русский)',
         code: 'ru',
     },
+    {
+        name: 'Español',
+        code: 'sp',
+    },     
 ];
 let currentLanguage = _checkLanguageIsSupportedOrDefault(_getLanguage()); // Keeps track of the current language
