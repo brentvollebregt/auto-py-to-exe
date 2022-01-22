@@ -1,5 +1,5 @@
 <h1 align="center">Auto PY to EXE</h1>
-<p align="center">A .py to .exe converter using a simple graphical interface and <a href="https://www.pyinstaller.org/">PyInstaller</a> in Python.</p>
+<p align="center">A .py to .exe converter using a simple graphical interface and <a href="https://pyinstaller.readthedocs.io/en/stable/index.html">PyInstaller</a> in Python.</p>
 
 <p align="center">
     <img src="https://nitratine.net/posts/auto-py-to-exe/feature.png" alt="Empty interface">
