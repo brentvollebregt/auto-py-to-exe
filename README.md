@@ -15,6 +15,12 @@
 
 阅读中文版的README ，点击 [这里](./README-Chinese.md)
 
+## Demo
+
+<p align="center">
+    <img src="https://nitratine.net/posts/auto-py-to-exe/auto-py-to-exe-demo.gif" alt="auto-py-to-exe Demo">
+</p>
+
 ## Getting Started
 
 ### Prerequisites
