@@ -704,7 +704,7 @@ const supportedLanguages = [
         code: 'zh_tw',
     },
     {
-        name: 'Español',
+        name: 'Spanish (Español)',
         code: 'sp',
     },
     {
