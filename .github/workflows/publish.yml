@@ -23,6 +23,8 @@ jobs:
         exclude:
           - os: macos-latest
             python-version: "3.6"
+          - os: windows-latest
+            python-version: "3.6"
 
     steps:
       - uses: actions/checkout@v2
