@@ -9,6 +9,7 @@ const translationMap = {
                 de: 'Script Pfad',
                 pt_br: 'Localização do Script',
                 sp: 'Localización del Script',
+                tr: 'Script Konumu',
             },
             oneFile: {
                 en: 'Onefile',
@@ -18,6 +19,7 @@ const translationMap = {
                 de: 'Eine Datei',
                 pt_br: 'Arquivo Único',
                 sp: 'Archivo Único',
+                tr: 'Tek Dosya',
             },
             consoleWindow: {
                 en: 'Console Window',
@@ -27,6 +29,7 @@ const translationMap = {
                 de: 'Konsolen Anwendung',
                 pt_br: 'Janela do Console',
                 sp: 'Consola de Windows',
+                tr: 'Konsol Penceresi',
             },
             icon: {
                 en: 'Icon',
@@ -36,6 +39,7 @@ const translationMap = {
                 de: 'Icon',
                 pt_br: 'Ícone',
                 sp: 'Icono',
+                tr: 'Simge',
             },
             additionalFiles: {
                 en: 'Additional Files',
@@ -45,6 +49,7 @@ const translationMap = {
                 de: 'Dateien hinzufügen',
                 pt_br: 'Arquivos Adicionais',
                 sp: 'Archivos adicionales',
+                tr: 'Ek dosyalar',
             },
             advanced: {
                 en: 'Advanced',
@@ -54,6 +59,7 @@ const translationMap = {
                 de: 'Erweitert',
                 pt_br: 'Avançado',
                 sp: 'Avanzado',
+                tr: 'Daha Fazla',
             },
             settings: {
                 en: 'Settings',
@@ -63,6 +69,7 @@ const translationMap = {
                 de: 'Einstellungen',
                 pt_br: 'Configurações',
                 sp: 'Configuraciones',
+                tr: 'Ayarlar',
             },
             currentCommand: {
                 en: 'Current Command',
@@ -72,6 +79,7 @@ const translationMap = {
                 de: 'Aktueller Befehl',
                 pt_br: 'Comando Atual',
                 sp: 'Comando Actual',
+                tr: 'Geçerli Komut',
             },
             output: {
                 en: 'Output',
@@ -81,6 +89,7 @@ const translationMap = {
                 de: 'Ausgabe',
                 pt_br: 'Saída',
                 sp: 'Salida',
+                tr: 'Çıktı',
             },
             specificOptions: {
                 en: 'auto-py-to-exe Specific Options',
@@ -90,6 +99,7 @@ const translationMap = {
                 de: 'auto-py-to-exe spezifische Optionen',
                 pt_br: 'Opções Específicas auto-py-to-exe',
                 sp: 'Opciones Específicas auto-py-to-exe',
+                tr: 'auto-py-to-exe ye Özel Seçenekler',
             },
             outputDirectory: {
                 en: 'Output Directory',
@@ -99,6 +109,7 @@ const translationMap = {
                 de: 'Ausgabeverzeichnis',
                 pt_br: 'Diretório de Saída',
                 sp: 'Directorio de Salida',
+                tr: 'Çıktı Dizini',
             },
             increaseRecursionLimit: {
                 en: 'Increase Recursion Limit',
@@ -108,6 +119,7 @@ const translationMap = {
                 de: 'Erhöhen der Rekursionsbegrenzung',
                 pt_br: 'Limite de Recursividade',
                 sp: 'Límite de Recursividad',
+                tr: 'Özyineleme Sınırını Artırın',
             },
             manuallyProvideOptions: {
                 en: 'Manually Provide Options',
