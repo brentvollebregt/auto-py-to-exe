@@ -324,7 +324,7 @@ const translationMap = {
                 de: 'VERZEICHNIS',
                 pt_br: 'DIRETÓRIO',
                 sp: 'Directorio',
-                tr: '.ico Dosyasi',
+                tr: 'Dizin',
             },
             arguments: {
                 en: 'ARGUMENTS',
