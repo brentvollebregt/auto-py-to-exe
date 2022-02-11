@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.17.0
+
+🚀 Enhancements
+
+- [#241](https://github.com/brentvollebregt/auto-py-to-exe/pull/241): Added Turkish translations
+
+🏆 Contributors
+
+- [mcagriaksoy](https://github.com/mcagriaksoy)
+
 ## 2.16.0
 
 🚀 Enhancements
