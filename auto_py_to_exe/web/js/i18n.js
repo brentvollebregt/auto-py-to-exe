@@ -334,7 +334,7 @@ const translationMap = {
                 de: 'ARGUMENTE',
                 pt_br: 'ARGUMENTOS',
                 sp: 'ARGUMENTOS',
-                tr: 'DİZİN',
+                tr: 'ARGÜMANLAR',
             }
         },
         helpText: {
