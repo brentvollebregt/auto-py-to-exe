@@ -109,6 +109,7 @@ If you're having issues with the packaged executable or using this tool in gener
 | Spanish (Español)                           | [enriiquee](https://github.com/enriiquee)   | UI                                   |
 | German (Deutsch)                            | [hebens](https://github.com/hebens)         | UI (partial)                         |
 | Russian (Русский)                           | Oleg                                        | UI                                   |
+| Turkish (Türkçe )                           | [mcagriaksoy](https://github.com/mcagriaksoy)| UI                                  |
 
 > Want to add a translation for another language? Update [i18n.js](https://github.com/brentvollebregt/auto-py-to-exe/blob/master/auto_py_to_exe/web/js/i18n.js) and submit a PR or attach it in an issue.
 
