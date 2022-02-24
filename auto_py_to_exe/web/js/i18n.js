@@ -529,7 +529,7 @@ const translationMap = {
                 pt_br: 'Opções específicas Windows e Mac Os X',
                 sp: 'Opciones específicas Windows y Mac Os X',
                 tr: 'Windows ve Mac Os X\'e Özel Seçenekler',
-                th:'ตัวเลือกเฉพาะของ Windows และ Mac Os X'
+                th: 'ตัวเลือกเฉพาะของ Windows และ Mac Os X',
             },
             windowsSpecificOptions: {
                 en: 'Windows specific options',
