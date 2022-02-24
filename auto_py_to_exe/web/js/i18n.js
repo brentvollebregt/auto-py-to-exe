@@ -21,7 +21,7 @@ const translationMap = {
                 pt_br: 'Arquivo Único',
                 sp: 'Archivo Único',
                 tr: 'Tek Dosya',
-                th:'หนึ่งไฟล์',
+                th: 'หนึ่งไฟล์',
             },
             consoleWindow: {
                 en: 'Console Window',
