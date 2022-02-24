@@ -98,7 +98,6 @@ const translationMap = {
                 pt_br: 'Saída',
                 sp: 'Salida',
                 tr: 'Çıktı',
-                th:'Output',
             },
             specificOptions: {
                 en: 'auto-py-to-exe Specific Options',
