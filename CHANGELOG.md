@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.18.0
+
+🚀 Enhancements
+
+- [#247](https://github.com/brentvollebregt/auto-py-to-exe/pull/247): Added Thai translations
+
+🏆 Contributors
+
+- [Teerut Srithongdee](https://github.com/Teerut26)
+
 ## 2.17.0
 
 🚀 Enhancements
