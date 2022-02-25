@@ -855,6 +855,5 @@ const supportedLanguages = [
         name: 'Turkish (Türkçe)',
         code: 'tr',
     },
-    
 ];
 let currentLanguage = _checkLanguageIsSupportedOrDefault(_getLanguage()); // Keeps track of the current language
