@@ -32,7 +32,7 @@ const translationMap = {
                 pt_br: 'Janela do Console',
                 sp: 'Consola de Windows',
                 tr: 'Konsol Penceresi',
-                th:'หน้าต่างคอนโซล',
+                th: 'หน้าต่างคอนโซล',
             },
             icon: {
                 en: 'Icon',
@@ -43,7 +43,7 @@ const translationMap = {
                 pt_br: 'Ícone',
                 sp: 'Icono',
                 tr: 'Simge',
-                th:'ไอคอน',
+                th: 'ไอคอน',
             },
             additionalFiles: {
                 en: 'Additional Files',
@@ -54,7 +54,7 @@ const translationMap = {
                 pt_br: 'Arquivos Adicionais',
                 sp: 'Archivos adicionales',
                 tr: 'Ek dosyalar',
-                th:'ไฟล์เพิ่มเติม',
+                th: 'ไฟล์เพิ่มเติม',
             },
             advanced: {
                 en: 'Advanced',
@@ -65,7 +65,7 @@ const translationMap = {
                 pt_br: 'Avançado',
                 sp: 'Avanzado',
                 tr: 'Daha Fazla',
-                th:'ขั้นสูง',
+                th: 'ขั้นสูง',
             },
             settings: {
                 en: 'Settings',
@@ -76,7 +76,7 @@ const translationMap = {
                 pt_br: 'Configurações',
                 sp: 'Configuraciones',
                 tr: 'Ayarlar',
-                th:'การตั้งค่า',
+                th: 'การตั้งค่า',
             },
             currentCommand: {
                 en: 'Current Command',
@@ -87,7 +87,7 @@ const translationMap = {
                 pt_br: 'Comando Atual',
                 sp: 'Comando Actual',
                 tr: 'Geçerli Komut',
-                th:'คำสั่งปัจจุบัน',
+                th: 'คำสั่งปัจจุบัน',
             },
             output: {
                 en: 'Output',
@@ -108,7 +108,7 @@ const translationMap = {
                 pt_br: 'Opções Específicas auto-py-to-exe',
                 sp: 'Opciones Específicas auto-py-to-exe',
                 tr: 'auto-py-to-exe ye Özel Seçenekler',
-                th:'auto-py-to-exe ตัวเลือกเฉพาะ',
+                th: 'auto-py-to-exe ตัวเลือกเฉพาะ',
             },
             outputDirectory: {
                 en: 'Output Directory',
@@ -119,7 +119,7 @@ const translationMap = {
                 pt_br: 'Diretório de Saída',
                 sp: 'Directorio de Salida',
                 tr: 'Çıktı Dizini',
-                th:'Output Directory',
+                th: 'Output Directory',
             },
             increaseRecursionLimit: {
                 en: 'Increase Recursion Limit',
@@ -130,7 +130,7 @@ const translationMap = {
                 pt_br: 'Limite de Recursividade',
                 sp: 'Límite de Recursividad',
                 tr: 'Özyineleme Sınırını Artırın',
-                th:'ขีด จำกัด การเรียกซ้ำ',
+                th: 'ขีด จำกัด การเรียกซ้ำ',
             },
             manuallyProvideOptions: {
                 en: 'Manually Provide Options',
@@ -141,7 +141,7 @@ const translationMap = {
                 pt_br: 'Opções Manuais',
                 sp: 'Opciones Manuales',
                 tr: 'Seçenekleri Manuel Olarak Sağlayın',
-                th:'ระบุตัวเลือกด้วยตนเอง',
+                th: 'ระบุตัวเลือกด้วยตนเอง',
             },
             manualArgumentInput: {
                 en: 'Manual Argument Input',
@@ -152,7 +152,7 @@ const translationMap = {
                 pt_br: 'Argumentos de Entrada',
                 sp: 'Argumentos de Entrada',
                 tr: 'Manuel Argüman Girişi',
-                th:'ระบุตัวเลือกด้วยตนเอง',
+                th: 'ระบุตัวเลือกด้วยตนเอง',
             },
             configuration: {
                 en: 'Configuration',
@@ -163,7 +163,7 @@ const translationMap = {
                 pt_br: 'Configuração',
                 sp: 'Configuración',
                 tr: 'Yapılandırma',
-                th:'การกำหนดค่า',
+                th: 'การกำหนดค่า',
             }
         },
         button: {
@@ -176,7 +176,7 @@ const translationMap = {
                 pt_br: 'Exibir',
                 sp: 'Mostrar',
                 tr: 'Araştır',
-                th:'เลือก',
+                th: 'เลือก',
             },
             oneDirectory: {
                 en: 'One Directory',
@@ -187,7 +187,7 @@ const translationMap = {
                 pt_br: 'Um Diretório',
                 sp: 'Un directorio',
                 tr: 'Tek Dizin',
-                th:'หนึ่งไดเรกทอรี',
+                th: 'หนึ่งไดเรกทอรี',
             },
             oneFile: {
                 en: 'One File',
@@ -198,7 +198,7 @@ const translationMap = {
                 pt_br: 'Um Arquivo',
                 sp: 'Un Archivo',
                 tr: 'Tek Dosya',
-                th:'ไฟล์เดียว',
+                th: 'ไฟล์เดียว',
             },
             consoleBased: {
                 en: 'Console Based',
@@ -209,7 +209,7 @@ const translationMap = {
                 pt_br: 'Baseado em Console',
                 sp: 'Consola básica',
                 tr: 'Konsol Tabanlı',
-                th:'คอนโซล',
+                th: 'คอนโซล',
             },
             windowBased: {
                 en: 'Window Based (hide the console)',
@@ -220,7 +220,7 @@ const translationMap = {
                 pt_br: 'Baseado em Janela (ocultar o console)',
                 sp: 'Consola de Windows (Ocultar consola)',
                 tr: 'Pencere Tabanlı (Konsolu gizleyin)',
-                th:'หน้าต่าง (ซ่อนคอนโซล)',
+                th: 'หน้าต่าง (ซ่อนคอนโซล)',
             },
             addFiles: {
                 en: 'Add Files',
@@ -519,7 +519,7 @@ const translationMap = {
                 pt_br: 'Como gerar',
                 sp: 'Como generar',
                 tr: 'Nasıl oluşturulur',
-                th:'วิธีการ generate'
+                th: 'วิธีการ generate',
             },
             windowsAndMacOsXSpecificOptions: {
                 en: 'Windows And Mac Os X Specific Options',
@@ -540,7 +540,7 @@ const translationMap = {
                 pt_br: 'Opções específicas Windows',
                 sp: 'Opciones específicas Windows',
                 tr: 'Windows\'a özel seçenekler',
-                th:'ตัวเลือกเฉพาะของ Windows'
+                th: 'ตัวเลือกเฉพาะของ Windows',
             },
             windowsSideBySideAssemblySearchingOptions: {
                 en: 'Windows Side-by-side Assembly searching options (advanced)',
@@ -551,7 +551,7 @@ const translationMap = {
                 pt_br: 'Opções de pesquisa dSide-by-side Assembly do Windows (avançado)',
                 sp: 'Opciones de búsqueda de ensamblaje en paralelo para Windows (avanzadas)',
                 tr: 'Windows Yan Yana Montaj arama seçenekleri (gelişmiş)',
-                th:'ตัวเลือกการค้นหา Assembly ของ Windows Side-by-side (ขั้นสูง)'
+                th: 'ตัวเลือกการค้นหา Assembly ของ Windows Side-by-side (ขั้นสูง)',
             },
             macOsxSpecificOptions: {
                 en: 'Mac OS X specific options',
@@ -562,7 +562,7 @@ const translationMap = {
                 pt_br: 'Opções específicas Mac OS X',
                 sp: 'Opciones específicas Mac OS X',
                 tr: 'Mac OS X\'e özel seçenekler',
-                th:'ตัวเลือกเฉพาะของ Mac OS X'
+                th: 'ตัวเลือกเฉพาะของ Mac OS X',
             },
             rarelyUsedSpecialOptions: {
                 en: 'Rarely used special options',
@@ -573,7 +573,7 @@ const translationMap = {
                 pt_br: 'Opções especiais raramente usadas',
                 sp: 'Opciones especiales raramente usadas',
                 tr: 'Nadiren kullanılan özel seçenekler',
-                th:'ตัวเลือกพิเศษ (ไม่ค่อยได้ใช้)'
+                th: 'ตัวเลือกพิเศษ (ไม่ค่อยได้ใช้)',
             },
             other: {
                 en: 'Other',
@@ -584,7 +584,7 @@ const translationMap = {
                 pt_br: 'Outros',
                 sp: 'Otros',
                 tr: 'Diğer',
-                th:'อื่นๆ'
+                th: 'อื่นๆ',
             },
         },
         button: {
@@ -598,7 +598,7 @@ const translationMap = {
                 pt_br: 'Procurar arquivo',
                 sp: 'Buscar archivo',
                 tr: 'Dosyaya Gözat',
-                th:'เรียกดูไฟล์'
+                th: 'เรียกดูไฟล์',
             },
             browseForFolder: {
                 en: 'Browse for Folder',
@@ -609,7 +609,7 @@ const translationMap = {
                 pt_br: 'Procurar Pasta',
                 sp: 'Buscar carpeta',
                 tr: 'Klasöre Gözat',
-                th:'เรียกดูโฟลเดอร์'
+                th: 'เรียกดูโฟลเดอร์',
             },
             enable: {
                 en: 'Enable',
@@ -620,7 +620,7 @@ const translationMap = {
                 pt_br: 'Habilitar',
                 sp: 'Habilitar',
                 tr: 'Aktif',
-                th:'เปิดใช้งาน'
+                th: 'เปิดใช้งาน',
             },
             disable: {
                 en: 'Disable',
@@ -631,7 +631,7 @@ const translationMap = {
                 pt_br: 'Desabilitar',
                 sp: 'Deshabilitar',
                 tr: 'Devre Dışı',
-                th:'ปิดการใช้งาน',
+                th: 'ปิดการใช้งาน',
             },
             converting: {
                 en: 'Converting...',
@@ -642,7 +642,7 @@ const translationMap = {
                 pt_br: 'Convertendo...',
                 sp: 'Convirtiendo...',
                 tr: 'Dönüştürülüyor...',
-                th:'กำลังแปลง...',
+                th: 'กำลังแปลง...',
             },
             clearOutput: {
                 en: 'Clear Output',
@@ -653,7 +653,7 @@ const translationMap = {
                 pt_br: 'Limpar Saída',
                 sp: 'Limpiar Salida',
                 tr: 'Çıktıyı Temizle',
-                th:'Clear Output',
+                th: 'Clear Output',
             },
         },
         modal: {
@@ -666,7 +666,7 @@ const translationMap = {
                 pt_br: 'Substituir a configuração atual?',
                 sp: 'Sustituir configuración actual?',
                 tr: 'Geçerli yapılandırma geçersiz kılınsın mı?',
-                th:'เขียนทับการกำหนดค่าปัจจุบัน?',
+                th: 'เขียนทับการกำหนดค่าปัจจุบัน?',
             },
             configModalDescription: {
                 en: 'All previously inserted values will be erased.',
@@ -677,7 +677,7 @@ const translationMap = {
                 pt_br: 'Todos os valores inseridos anteriormente serão apagados.',
                 sp: 'Todos los valores insertados previamente serán borrados',
                 tr: 'Önceden girilen tüm değerler silinecek.',
-                th:'ค่าที่ใส่ไว้ก่อนหน้านี้จะถูกลบ',
+                th: 'ค่าที่ใส่ไว้ก่อนหน้านี้จะถูกลบ',
             },
             configModalConfirmButton: {
                 en: 'Confirm',
@@ -688,7 +688,7 @@ const translationMap = {
                 pt_br: 'Confirma',
                 sp: 'Confirmar',
                 tr: 'Onayla',
-                th:'ยืนยัน',
+                th: 'ยืนยัน',
             },
             configModalCancelButton: {
                 en: 'Cancel',
@@ -699,7 +699,7 @@ const translationMap = {
                 pt_br: 'Cancela',
                 sp: 'Cancelar',
                 tr: 'İptal',
-                th:'ยกเลิก',
+                th: 'ยกเลิก',
             }
         }
     },
@@ -715,7 +715,7 @@ const translationMap = {
                 pt_br: 'Você não forneceu o local dos seus scripts.\nPor favor, insira-o na parte superior da página.',
                 sp: 'No ha facilitado la ubicación de sus guiones. \nPor favor, introdúzcala en la parte superior de la página.',
                 tr: 'Komut dosyanızın konumunu belirtmediniz.\nLütfen bunu sayfanın en üstüne girin.',
-                th:'คุณยังไม่ได้ระบุตำแหน่งสคริปต์ของคุณ\nโปรดป้อนข้อมูลนี้ที่ด้านบนของหน้า',
+                th: 'คุณยังไม่ได้ระบุตำแหน่งสคริปต์ของคุณ\nโปรดป้อนข้อมูลนี้ที่ด้านบนของหน้า',
             },
             overwritePreviousOutput: {
                 en: 'This action will overwrite a previous output in the output folder.\nContinue?',
@@ -726,7 +726,7 @@ const translationMap = {
                 pt_br: 'Esta ação substituirá uma saída anterior na pasta de saída.\nContinuar?',
                 sp: 'Esta acción sobrescribirá una salida anterior en la carpeta de salida.\n¿Continuar?',
                 tr: 'Bu eylem, çıktı klasöründeki önceki bir çıktının üzerine yazacak.\nDevam edilsin mi?',
-                th:'การดำเนินการนี้จะเขียนทับเอาต์พุตก่อนหน้าในโฟลเดอร์เอาต์พุต\nทำต่อหรือไม่',
+                th: 'การดำเนินการนี้จะเขียนทับเอาต์พุตก่อนหน้าในโฟลเดอร์เอาต์พุต\nทำต่อหรือไม่',
             }
         },
     }
