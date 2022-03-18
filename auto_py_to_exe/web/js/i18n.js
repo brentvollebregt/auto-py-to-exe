@@ -240,7 +240,7 @@ const translationMap = {
                 sp: 'Consola de Windows (Ocultar consola)',
                 tr: 'Pencere Tabanlı (Konsolu gizleyin)',
                 th: 'หน้าต่าง (ซ่อนคอนโซล)',
-                fr: 'Basé sur windows (la console n''est pas visible')',
+                fr: 'Basé sur windows (la console n''est pas visible)',
             },
             addFiles: {
                 en: 'Add Files',
@@ -890,6 +890,10 @@ const supportedLanguages = [
         code: 'en',
     },
     {
+        name: 'French (Français)',
+        code: 'fr',
+    },
+    {
         name: 'Brazilian Portuguese (Português Brasileiro)',
         code: 'pt_br'
     },
@@ -921,9 +925,6 @@ const supportedLanguages = [
         name: 'Turkish (Türkçe)',
         code: 'tr',
     },
-    {
-        name: 'French (Français)',
-        code: 'fr',
-    },
+    
 ];
 let currentLanguage = _checkLanguageIsSupportedOrDefault(_getLanguage()); // Keeps track of the current language
