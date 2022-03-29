@@ -36,7 +36,7 @@ def run():
     parser.add_argument(
         "filename",
         nargs='?',
-        type=validation.argparse_file_eists,
+        type=validation.argparse_file_exists,
         help="pass a file into the interface",
         default=None
     )

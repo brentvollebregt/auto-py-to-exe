@@ -4,8 +4,8 @@ import logging
 import os
 
 
-def argparse_file_eists(file_path):
-    """ Validates whether a file exists """
+def argparse_file_exists(file_path):
+    """ Validates whether a file exists. """
     if not os.path.isfile(file_path):
         raise argparse.ArgumentTypeError('File does not exist')
 
