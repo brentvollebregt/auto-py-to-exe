@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.18.1
+
+🐛 Bug Fixes
+
+- [259](https://github.com/brentvollebregt/auto-py-to-exe/issues/259): Fix PyInstaller 4.10 warnings
+
 ## 2.18.0
 
 🚀 Enhancements
