@@ -6,7 +6,7 @@ import socket
 import sys
 
 from eel import chrome
-from PyInstaller import __version__ as pyinstaller_version
+from PyInstaller import __version__ as pyinstaller_version_string
 
 
 class ForwardToFunctionStream(io.TextIOBase):
@@ -41,11 +41,23 @@ def open_output_folder(folder):
 def get_warnings():
     warnings = []
 
+    try:
+        pyinstaller_version = parse_version_tuple(pyinstaller_version_string)
+    except ValueError:
+        message = 'Unable to parse PyInstaller version - this may be because you aren\'t using an official release.'
+        message += '\nYou are currently using PyInstaller {pyinstaller_version}.'.format(pyinstaller_version=pyinstaller_version_string)
+        message += '\nIf this is an official release, please report this issue on GitHub.'
+        warnings.append({
+            'message': message,
+            'link': None
+        })
+        return warnings
+
     # Make sure PyInstaller 3.4 or above is being used with Python 3.7
     try:
-        if sys.version_info >= (3, 7) and float(pyinstaller_version) < 3.4:
+        if sys.version_info >= (3, 7) and pyinstaller_version < (3, 4):
             message = 'You will need PyInstaller 3.4 or above to use this tool with Python 3.7.'
-            message += '\nYou are currently using PyInstaller {pyinstaller_version}.'.format(pyinstaller_version=pyinstaller_version)
+            message += '\nYou are currently using PyInstaller {pyinstaller_version}.'.format(pyinstaller_version=pyinstaller_version_string)
             message += '\nPlease upgrade PyInstaller: python -m pip install pyinstaller --upgrade'
             warnings.append({
                 'message': message,
@@ -56,9 +68,9 @@ def get_warnings():
 
     # Make sure PyInstaller 4.0 or above is being used with Python 3.8 and 3.9
     try:
-        if sys.version_info.major == 3 and (sys.version_info.minor == 8 or sys.version_info.minor == 9) and float(pyinstaller_version) < 4.1:
+        if sys.version_info.major == 3 and (sys.version_info.minor == 8 or sys.version_info.minor == 9) and pyinstaller_version < (4, 1):
             message = 'PyInstaller 4.0 and below does not officially support Python 3.8 and 3.9.'
-            message += '\nYou are currently using PyInstaller {pyinstaller_version}.'.format(pyinstaller_version=pyinstaller_version)
+            message += '\nYou are currently using PyInstaller {pyinstaller_version}.'.format(pyinstaller_version=pyinstaller_version_string)
             message += '\nIt is highly recommended to update your version of PyInstaller using: python -m pip install pyinstaller --upgrade'
             warnings.append({
                 'message': message,
@@ -69,9 +81,9 @@ def get_warnings():
 
     # Make sure PyInstaller 4.6 or above is being used with Python 3.10
     try:
-        if sys.version_info.major == 3 and sys.version_info.minor == 10 and float(pyinstaller_version) < 4.6:
+        if sys.version_info.major == 3 and sys.version_info.minor == 10 and pyinstaller_version < (4, 6):
             message = 'You will need PyInstaller 4.6 or above to use this tool with Python 3.10.'
-            message += '\nYou are currently using PyInstaller {pyinstaller_version}.'.format(pyinstaller_version=pyinstaller_version)
+            message += '\nYou are currently using PyInstaller {pyinstaller_version}.'.format(pyinstaller_version=pyinstaller_version_string)
             message += '\nPlease upgrade PyInstaller: python -m pip install pyinstaller --upgrade'
             warnings.append({
                 'message': message,
@@ -110,3 +122,8 @@ def get_port():
     port = sock.getsockname()[1]
     sock.close()
     return port
+
+
+def parse_version_tuple(version_string):
+    """ Turn a version string into a tuple of integers e.g. "1.2.3" -> (1, 2, 3) """
+    return tuple(map(int, (version_string.split("."))))
