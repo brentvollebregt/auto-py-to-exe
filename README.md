@@ -106,6 +106,7 @@ If you're having issues with the packaged executable or using this tool in gener
 | Chinese Simplified (简体中文)               | [jiangzhe11](https://github.com/jiangzhe11)   | UI and [README](./README-Chinese.md) |
 | Chinese Traditional (繁體中文)              | [startgo](https://github.com/ystartgo)        | UI                                   |
 | English                                     | -                                             | UI and README                        |
+| French (Français)                           | [flaviedesp](https://github.com/flaviedesp)   | UI                                   |
 | German (Deutsch)                            | [hebens](https://github.com/hebens)           | UI (partial)                         |
 | Russian (Русский)                           | Oleg                                          | UI                                   |
 | Spanish (Español)                           | [enriiquee](https://github.com/enriiquee)     | UI                                   |

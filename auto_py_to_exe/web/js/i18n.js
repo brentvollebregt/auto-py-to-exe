@@ -240,7 +240,7 @@ const translationMap = {
                 sp: 'Consola de Windows (Ocultar consola)',
                 tr: 'Pencere Tabanlı (Konsolu gizleyin)',
                 th: 'หน้าต่าง (ซ่อนคอนโซล)',
-                fr: 'Basé sur windows (la console n''est pas visible)',
+                fr: 'Basé sur windows (la console n\'est pas visible)',
             },
             addFiles: {
                 en: 'Add Files',
@@ -288,7 +288,7 @@ const translationMap = {
                 sp: 'Importar Configuración de Archivo JSON',
                 tr: 'Yapılandırmayı JSON Dosyasından İçe Aktar',
                 th: 'นำเข้าการตั้งค่า (ไฟล์ JSON)',
-                fr: 'Importation de la configuration d''un fichier JSON',
+                fr: 'Importation de la configuration d\'un fichier JSON',
             },
             exportConfig: {
                 en: 'Export Config To JSON File',
@@ -349,7 +349,7 @@ const translationMap = {
                 sp: 'Ayuda',
                 tr: 'Yardım',
                 th: 'บทความช่วยเหลือ',
-                fr: 'Message d''aide', 
+                fr: 'Message d\'aide', 
             }
         },
         placeholders: {
@@ -412,7 +412,7 @@ const translationMap = {
                 sp: 'El directorio para colocar el archivo de salida. Será creado si no existe',
                 tr: 'Çıktının yerleştirileceği dizin. Mevcut değilse oluşturulacaktır.',
                 th: 'Directory สำหรับ Output ไฟล์ จะถูกสร้างขึ้น ถ้า Directory นั้นไม่มี',
-                fr: 'Le répertoire sera créé s'il n'existe pas.',
+                fr: 'Le répertoire sera créé s\'il n\'existe pas.',
             },
             increaseRecursionLimit: {
                 en: 'Having this enabled will set the recursion limit to 5000 using sys.setrecursionlimit(5000).',
@@ -423,7 +423,7 @@ const translationMap = {
                 sp: 'Al activar esto se definirá el límite de recursión a 5000 usando sys.setrecursionlimit(5000)',
                 tr: 'Bunun etkinleştirilmesi, sys.setrecursionlimit(5000) kullanılarak yineleme sınırını 5000\'e ayarlayacaktır.',
                 th: 'การเปิดใช้งานนี้จะตั้งค่าขีดจำกัดการเรียกซ้ำเป็น 5000 โดยใช้ sys.setrecursionlimit(5000)',
-                fr: 'L''activation de cette option définira la limite de récursivité à 5000 en utilisant sys.setrecursionlimit(5000).', 
+                fr: 'L\'activation de cette option définira la limite de récursivité à 5000 en utilisant sys.setrecursionlimit(5000).', 
             },
             manualArgumentInput: {
                 en: 'Inject raw text into the generated command.',
@@ -465,7 +465,7 @@ const translationMap = {
                     'และอัปเดต code ของคุณเพื่อทำงานกับ PyInstaller',
                 fr: 'Soyez prudent lorsque vous utilisez des fichiers supplémentaires avec le mode onefile;\n' +
                     '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">read this</a>\n' +
-                    'et mettez à jour votre code pour qu''il fonctionne avec PyInstaller.',
+                    'et mettez à jour votre code pour qu\'il fonctionne avec PyInstaller.',
                 
             },
             rootDirectory: {
@@ -727,7 +727,7 @@ const translationMap = {
                 sp: 'Sustituir configuración actual?',
                 tr: 'Geçerli yapılandırma geçersiz kılınsın mı?',
                 th: 'เขียนทับการกำหนดค่าปัจจุบัน?',
-                fr: 'Remplacer la configuration actuelle ?',
+                fr: 'Remplacer la configuration actuelle ?',
             },
             configModalDescription: {
                 en: 'All previously inserted values will be erased.',
@@ -780,7 +780,7 @@ const translationMap = {
                 sp: 'No ha facilitado la ubicación de sus guiones. \nPor favor, introdúzcala en la parte superior de la página.',
                 tr: 'Komut dosyanızın konumunu belirtmediniz.\nLütfen bunu sayfanın en üstüne girin.',
                 th: 'คุณยังไม่ได้ระบุตำแหน่งสคริปต์ของคุณ\nโปรดป้อนข้อมูลนี้ที่ด้านบนของหน้า',
-                fr: 'Vous n''avez pas fourni l''emplacement de vos scripts.\nVeuillez le saisir en haut de la page.',
+                fr: 'Vous n\'avez pas fourni l\'emplacement de vos scripts.\nVeuillez le saisir en haut de la page.',
             },
             overwritePreviousOutput: {
                 en: 'This action will overwrite a previous output in the output folder.\nContinue?',
@@ -792,7 +792,7 @@ const translationMap = {
                 sp: 'Esta acción sobrescribirá una salida anterior en la carpeta de salida.\n¿Continuar?',
                 tr: 'Bu eylem, çıktı klasöründeki önceki bir çıktının üzerine yazacak.\nDevam edilsin mi?',
                 th: 'การดำเนินการนี้จะเขียนทับเอาต์พุตก่อนหน้าในโฟลเดอร์เอาต์พุต\nทำต่อหรือไม่',
-                fr: 'Cette action écrasera une sortie précédente dans le dossier de sortie.\nContinuer ?',
+                fr: 'Cette action écrasera une sortie précédente dans le dossier de sortie.\nContinuer ?',
             }
         },
     }
@@ -890,10 +890,6 @@ const supportedLanguages = [
         code: 'en',
     },
     {
-        name: 'French (Français)',
-        code: 'fr',
-    },
-    {
         name: 'Brazilian Portuguese (Português Brasileiro)',
         code: 'pt_br'
     },
@@ -904,6 +900,10 @@ const supportedLanguages = [
     {
         name: 'Chinese Traditional (繁體中文)',
         code: 'zh_tw',
+    },
+    {
+        name: 'French (Français)',
+        code: 'fr',
     },
     {
         name: 'Spanish (Español)',
@@ -925,6 +925,5 @@ const supportedLanguages = [
         name: 'Turkish (Türkçe)',
         code: 'tr',
     },
-    
 ];
 let currentLanguage = _checkLanguageIsSupportedOrDefault(_getLanguage()); // Keeps track of the current language
