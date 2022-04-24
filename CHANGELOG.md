@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.19.0
+
+🚀 Enhancements
+
+- [252](https://github.com/brentvollebregt/auto-py-to-exe/pull/252): Added French translations
+
 ## 2.18.2
 
 🏠 Internal
