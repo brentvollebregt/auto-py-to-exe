@@ -432,7 +432,7 @@ const translationMap = {
                 tr: 'ARGÜMANLAR',
                 th: 'อาร์กิวเมนต์',
                 fr: 'ARGUMENTS',
-                it 'OPZIONI',
+                it: 'OPZIONI',
             }
         },
         helpText: {
