@@ -108,11 +108,12 @@ If you're having issues with the packaged executable or using this tool in gener
 | English                                     | -                                             | UI and README                        |
 | French (Français)                           | [flaviedesp](https://github.com/flaviedesp)   | UI                                   |
 | German (Deutsch)                            | [hebens](https://github.com/hebens)           | UI (partial)                         |
+| Indonesian (Bahasa Indonesia)               | [MarvinZhong](https://github.com/MarvinZhong) | UI                                   |
+| Italian (Italiano)                          | [itsEmax64](https://github.com/itsEmax64)     | UI                                   |
 | Russian (Русский)                           | Oleg                                          | UI                                   |
 | Spanish (Español)                           | [enriiquee](https://github.com/enriiquee)     | UI                                   |
 | Thai (ภาษาไทย)                              | [teerut26](https://github.com/teerut26)       | UI (partial)                         |
 | Turkish (Türkçe)                            | [mcagriaksoy](https://github.com/mcagriaksoy) | UI                                   |
-| Italian (Italiano)                          | [itsEmax64](https://github.com/itsEmax64)     | UI                                   |
 
 > Want to add a translation for another language? Update [i18n.js](https://github.com/brentvollebregt/auto-py-to-exe/blob/master/auto_py_to_exe/web/js/i18n.js) and submit a PR or attach it in an issue.
 

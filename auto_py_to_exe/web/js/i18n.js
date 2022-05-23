@@ -1016,10 +1016,6 @@ const getTranslation = (path) => {
 const _defaultLanguage = 'en';
 const supportedLanguages = [
     {
-        name: 'English',
-        code: 'en',
-    },
-    {
         name: 'Brazilian Portuguese (Português Brasileiro)',
         code: 'pt_br'
     },
@@ -1032,24 +1028,32 @@ const supportedLanguages = [
         code: 'zh_tw',
     },
     {
+        name: 'English',
+        code: 'en',
+    },
+    {
         name: 'French (Français)',
         code: 'fr',
-    },
-    {
-        name: 'Spanish (Español)',
-        code: 'sp',
-    },
-    {
-        name: 'Italian (Italiano)',
-        code: 'it',
     },
     {
         name: 'German (Deutsch)',
         code: 'de',
     },
     {
+        name: 'Indonesian (Bahasa Indonesia)',
+        code: 'id',
+    },
+    {
+        name: 'Italian (Italiano)',
+        code: 'it',
+    },
+    {
         name: 'Russian (Русский)',
         code: 'ru',
+    },
+    {
+        name: 'Spanish (Español)',
+        code: 'sp',
     },
     {
         name: 'Thai (ภาษาไทย)',
@@ -1058,10 +1062,6 @@ const supportedLanguages = [
     {
         name: 'Turkish (Türkçe)',
         code: 'tr',
-    },
-    {
-        name: 'Indonesian (Bahasa Indonesia)',
-        code: 'id',
     },
 ];
 let currentLanguage = _checkLanguageIsSupportedOrDefault(_getLanguage()); // Keeps track of the current language
