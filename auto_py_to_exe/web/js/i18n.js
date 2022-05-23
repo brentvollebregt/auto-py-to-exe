@@ -13,6 +13,7 @@ const translationMap = {
                 th: 'ตำแหน่งสคริปต์',
                 fr: 'Emplacement des scripts',
                 it: 'Locazione script',
+                id: 'Lokasi script',
             },
             oneFile: {
                 en: 'Onefile',
@@ -26,6 +27,7 @@ const translationMap = {
                 th: 'หนึ่งไฟล์',
                 fr: 'un fichier',
                 it: 'Un file',
+                id: 'Satu Berkas',
             },
             consoleWindow: {
                 en: 'Console Window',
@@ -39,6 +41,7 @@ const translationMap = {
                 th: 'หน้าต่างคอนโซล',
                 fr: 'Console Windows',
                 it: 'Finestra console',
+                id: 'Jendela konsol',
             },
             icon: {
                 en: 'Icon',
@@ -52,6 +55,7 @@ const translationMap = {
                 th: 'ไอคอน',
                 fr: 'Icone',
                 it: 'Icona',
+                id: 'Ikon',
             },
             additionalFiles: {
                 en: 'Additional Files',
@@ -65,6 +69,7 @@ const translationMap = {
                 th: 'ไฟล์เพิ่มเติม',
                 fr: 'Fichiers additionnels',
                 it: 'File addizionali',
+                id: 'File tambahan',
             },
             advanced: {
                 en: 'Advanced',
@@ -78,6 +83,7 @@ const translationMap = {
                 th: 'ขั้นสูง',
                 fr: 'Paramètres avancées',
                 it: 'Opzioni avanzate',
+                id: 'Lanjutan',
             },
             settings: {
                 en: 'Settings',
@@ -91,6 +97,7 @@ const translationMap = {
                 th: 'การตั้งค่า',
                 fr: 'Paramètres',
                 it: 'Impostazioni',
+                id: 'Pengaturan',
             },
             currentCommand: {
                 en: 'Current Command',
@@ -104,6 +111,7 @@ const translationMap = {
                 th: 'คำสั่งปัจจุบัน',
                 fr: 'Commande',
                 it: 'Comando',
+                id: 'Perintah saat ini',
             },
             output: {
                 en: 'Output',
@@ -116,6 +124,7 @@ const translationMap = {
                 tr: 'Çıktı',
                 fr: 'Sortie',
                 it: 'Output',
+                id: 'Keluaran',
             },
             specificOptions: {
                 en: 'auto-py-to-exe Specific Options',
@@ -129,6 +138,7 @@ const translationMap = {
                 th: 'auto-py-to-exe ตัวเลือกเฉพาะ',
                 fr: 'Options spécifiques',
                 it: 'Opzioni specifiche auto-py-to-exe',
+                id: 'Pilihan Spesifik auto-py-to-exe',
             },
             outputDirectory: {
                 en: 'Output Directory',
@@ -142,6 +152,7 @@ const translationMap = {
                 th: 'Output Directory',
                 fr: 'Repertoire de sortie',
                 it: 'Cartella di output',
+                id: 'Direktori Keluaran',
             },
             increaseRecursionLimit: {
                 en: 'Increase Recursion Limit',
@@ -155,6 +166,7 @@ const translationMap = {
                 th: 'ขีด จำกัด การเรียกซ้ำ',
                 fr:'Augmenter la limite de récursivité',
                 it: 'Aumenta limite recursione',
+                id: 'Tingkatkan Batas Pengulangan',
             },
             manuallyProvideOptions: {
                 en: 'Manually Provide Options',
@@ -168,6 +180,7 @@ const translationMap = {
                 th: 'ระบุตัวเลือกด้วยตนเอง',
                 fr: 'Fournir manuellement des options',
                 it: 'Opzioni manuali',
+                id: 'Berikan Opsi secara manual',
             },
             manualArgumentInput: {
                 en: 'Manual Argument Input',
@@ -181,6 +194,7 @@ const translationMap = {
                 th: 'ระบุตัวเลือกด้วยตนเอง',
                 fr: 'Saisie manuelle des arguments',
                 it: 'Input opzioni manuali',
+                id: 'Masukkan Argumen secara manual',
             },
             configuration: {
                 en: 'Configuration',
@@ -194,6 +208,7 @@ const translationMap = {
                 th: 'การกำหนดค่า',
                 fr: 'Paramétrage',
                 it: 'Configurazione',
+                id: 'Konfigurasi',
             }
         },
         button: {
@@ -209,6 +224,7 @@ const translationMap = {
                 th: 'เลือก',
                 fr: 'Navigateur',
                 it: 'Sfoglia',
+                id: 'Telusuri',
             },
             oneDirectory: {
                 en: 'One Directory',
@@ -222,6 +238,7 @@ const translationMap = {
                 th: 'หนึ่งไดเรกทอรี',
                 fr: 'un répertoire',
                 it: 'Una cartella',
+                id: 'Satu Direktori',
             },
             oneFile: {
                 en: 'One File',
@@ -235,6 +252,7 @@ const translationMap = {
                 th: 'ไฟล์เดียว',
                 fr: 'Un fichier',
                 it: 'Un file',
+                id: 'Satu Berkas',
             },
             consoleBased: {
                 en: 'Console Based',
@@ -248,6 +266,7 @@ const translationMap = {
                 th: 'คอนโซล',
                 fr: 'Présence de la console',
                 it: 'Mostra console',
+                id: 'Berdasarkan Konsol',
             },
             windowBased: {
                 en: 'Window Based (hide the console)',
@@ -261,6 +280,7 @@ const translationMap = {
                 th: 'หน้าต่าง (ซ่อนคอนโซล)',
                 fr: 'Basé sur windows (la console n\'est pas visible)',
                 it: 'Mostra finestra (nascondi la console)',
+                id: 'Berdasarkan Jendela (sembunyikan konsol)',
             },
             addFiles: {
                 en: 'Add Files',
@@ -274,6 +294,7 @@ const translationMap = {
                 th: 'เพิ่มไฟล์',
                 fr: 'Ajout de fichiers',
                 it: 'Aggiungi file',
+                id: 'Tambahkan Berkas',
             },
             addFolder: {
                 en: 'Add Folder',
@@ -286,7 +307,8 @@ const translationMap = {
                 tr: 'Klasör Ekle',
                 th: 'เพิ่มแฟ้มใหม่',
                 fr: 'Ajout de dossiers',
-                it: 'Aggiungi cartelle'
+                it: 'Aggiungi cartelle',
+                id: 'Tambahkan Folder',
             },
             addBlank: {
                 en: 'Add Blank',
@@ -300,6 +322,7 @@ const translationMap = {
                 th: 'เพิ่มช่องว่าง',
                 fr: 'Ajout de pages',
                 it: 'Aggiungi vuoto',
+                id: 'Tambahkan Kosong',
             },
             importConfig: {
                 en: 'Import Config From JSON File',
@@ -313,6 +336,7 @@ const translationMap = {
                 th: 'นำเข้าการตั้งค่า (ไฟล์ JSON)',
                 fr: 'Importation de la configuration d\'un fichier JSON',
                 it: 'Importa configurazione da file JSON',
+                id: 'Impor Config dari Berkas JSON',
             },
             exportConfig: {
                 en: 'Export Config To JSON File',
@@ -325,6 +349,7 @@ const translationMap = {
                 th: 'ส่งออกการตั้งค่า (ไฟล์ JSON)',
                 fr: 'Exportation de la configuration vers un fichier JSON',
                 it: 'Esporta configurazione su un file JSON',
+                id: 'Ekspor Config ke Berkas JSON',
             },
             convert: {
                 en: 'Convert .py to .exe',
@@ -338,6 +363,7 @@ const translationMap = {
                 th: 'เริ่มการแปลงไฟล์',
                 fr: 'Convert. .py vers .exe',
                 it: 'Converti .py a .exe',
+                id: 'Konversi .py ke .exe',
             },
             openOutputFolder: {
                 en: 'Open Output Folder',
@@ -351,6 +377,7 @@ const translationMap = {
                 th: 'เปิดโฟลเดอร์ผลลัพธ์',
                 fr: 'Ouvrir le dossier de sortie',
                 it: 'Apri cartella di destinazione',
+                id: 'Buka Folder Keluaran',
             },
             enable: {
                 en: 'Enable',
@@ -364,6 +391,7 @@ const translationMap = {
                 th: 'เปิดใช้งาน',
                 fr: 'Autorisé',
                 it: 'Abilita',
+                id: 'Aktifkan',
             },
         },
         links: {
@@ -379,6 +407,7 @@ const translationMap = {
                 th: 'บทความช่วยเหลือ',
                 fr: 'Message d\'aide',
                 it: 'Aiuto',
+                id: 'Post Bantuan',
             }
         },
         placeholders: {
@@ -394,6 +423,7 @@ const translationMap = {
                 th: 'เส้นทางไปยังไฟล์',
                 fr: 'Chemin vers le fichier',
                 it: 'Percorso file',
+                id: 'Jalur ke berkas',
             },
             icoFile: {
                 en: '.ico file',
@@ -407,6 +437,7 @@ const translationMap = {
                 th: '.ico ไฟล์',
                 fr: '.ico fichier',
                 it: '.ico file',
+                id: '.ico berkas',
             },
             directory: {
                 en: 'DIRECTORY',
@@ -420,6 +451,7 @@ const translationMap = {
                 th: 'ไดเรกทอรี',
                 fr: 'REPERTOIRE',
                 it: 'CARTELLA',
+                id: 'DIREKTORI',
             },
             arguments: {
                 en: 'ARGUMENTS',
@@ -433,6 +465,7 @@ const translationMap = {
                 th: 'อาร์กิวเมนต์',
                 fr: 'ARGUMENTS',
                 it: 'OPZIONI',
+                id: 'ARGUMEN',
             }
         },
         helpText: {
@@ -447,6 +480,7 @@ const translationMap = {
                 th: 'Directory สำหรับ Output ไฟล์ จะถูกสร้างขึ้น ถ้า Directory นั้นไม่มี',
                 fr: 'Le répertoire sera créé s\'il n\'existe pas.',
                 it: 'Cartella dove mettere l\'output, sarà creata se non esiste.',
+                id: 'Direktori untuk menyimpan output. Akan dibuat jika tidak ada',
             },
             increaseRecursionLimit: {
                 en: 'Having this enabled will set the recursion limit to 5000 using sys.setrecursionlimit(5000).',
@@ -459,6 +493,7 @@ const translationMap = {
                 th: 'การเปิดใช้งานนี้จะตั้งค่าขีดจำกัดการเรียกซ้ำเป็น 5000 โดยใช้ sys.setrecursionlimit(5000)',
                 fr: 'L\'activation de cette option définira la limite de récursivité à 5000 en utilisant sys.setrecursionlimit(5000).',
                 it: 'Abilitando questa opzione imposterà il limite di recursione a 5000 utilizzando sys.setrecursionlimit(5000).',
+                id: 'Dengan mengaktifkan ini, pengaturan limit rekursi akan diatur ke 5000 menggunakan sys.setrecursionlimit(5000)',
             },
             manualArgumentInput: {
                 en: 'Inject raw text into the generated command.',
@@ -471,6 +506,7 @@ const translationMap = {
                 th: 'ใส่ raw text ลงในคำสั่งที่สร้างขึ้น',
                 fr: 'Injectez du texte brut dans la commande générée.',
                 it: 'Inserisci testo forzatamente alla fine del comando generato.',
+                id: 'Masukkan teks mentah ke dalam command yang dibuat',
             }
         },
         notes: {
@@ -505,7 +541,9 @@ const translationMap = {
                 it: 'Fai attenzione quando usi più di un file in modalità un file;\n' +
                     '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">leggi qui (articolo in inglese)</a>\n' +
                     'e aggiorna il tuo codice per funzionare con PyInstaller.',
-                
+                id: 'Berhati-hati saat menggunakan berkas tambahan dengan mode onefile;\n' +
+                    '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">baca ini</a>\n' +
+                    'dan perbarui kode Anda untuk bekerja dengan PyInstaller.',
             },
             rootDirectory: {
                 en: 'If you want to put files in the root directory, put a period (.) in the destination.',
@@ -518,7 +556,7 @@ const translationMap = {
                 th: 'หากคุณต้องการใส่ไฟล์ในไดเร็กทอรีราก ให้ใส่จุด (.) ที่ปลายทาง',
                 fr: 'Si vous souhaitez placer des fichiers dans le répertoire racine, mettez un point (.) dans la destination.',
                 it: 'Se vuoi mettere file nella cartella radice, inserisci (.) nella destinazione',
-                
+                id: 'Jika Anda ingin menyimpan berkas di direktori root, tambahkan titik (.) di tujuan.',
             },
             somethingWrongWithOutput: {
                 en: 'Something wrong with your exe? Read\n' +
@@ -571,6 +609,11 @@ const translationMap = {
                     '    questo articolo su come risolvere problemi comuni (articolo in inglese)\n' +
                     '</a>\n' +
                     'per possibili soluzioni.',
+                id: 'Ada yang salah dengan exe Anda? Baca\n' +
+                    '<a href="https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=application_link&utm_campaign=auto_py_to_exe_help&utm_content=bottom" target="_blank">\n' +
+                    '    artikel ini untuk menyelesaikan masalah-masalah umum\n' +
+                    '</a>\n' +
+                    'yang mungkin.',
             }
         }
     },
@@ -590,6 +633,7 @@ const translationMap = {
                 th: 'ตัวเลือกทั่วไป',
                 fr: 'Options Générales',
                 it: 'Opzioni generali',
+                id: 'Pilihan Umum',
             },
             whatToBundleWhereToSearch: {
                 en: 'What to bundle, where to search',
@@ -603,6 +647,7 @@ const translationMap = {
                 th: 'What to bundle, ค้นหาที่ไหน',
                 fr: 'Quoi regrouper, où chercher',
                 it: 'Cosa ragruppare, dove cercare',
+                id: 'Apa yang dibundling, dimana cari',
             },
             howToGenerate: {
                 en: 'How to generate',
@@ -616,6 +661,7 @@ const translationMap = {
                 th: 'วิธีการ generate',
                 fr: 'Comment générer',
                 it: 'Come generare',
+                id: 'Bagaimana cara generate',
             },
             windowsAndMacOsXSpecificOptions: {
                 en: 'Windows And Mac Os X Specific Options',
@@ -628,6 +674,7 @@ const translationMap = {
                 th: 'ตัวเลือกเฉพาะของ Windows และ Mac Os X',
                 fr: 'Windows et Mac Os X options specifiques',
                 it: 'Opzioni specifice Windows e Mac OS X',
+                id: 'Pilihan Windows dan Mac Os X',
             },
             windowsSpecificOptions: {
                 en: 'Windows specific options',
@@ -641,6 +688,7 @@ const translationMap = {
                 th: 'ตัวเลือกเฉพาะของ Windows',
                 fr: 'Options spécifiques à Windows',
                 it: 'Opzioni specifice Windows',
+                id: 'Pilihan Windows',
             },
             windowsSideBySideAssemblySearchingOptions: {
                 en: 'Windows Side-by-side Assembly searching options (advanced)',
@@ -654,6 +702,7 @@ const translationMap = {
                 th: 'ตัวเลือกการค้นหา Assembly ของ Windows Side-by-side (ขั้นสูง)',
                 fr: 'Options de recherche Windows Side-by-side Assembly (avancées)',
                 it: 'Opzioni ricerca Windows Side-by-side Assembly (avanzato)',
+                id: 'Pilihan pencarian Assembly Windows Side-by-side (lanjutan)',
             },
             macOsxSpecificOptions: {
                 en: 'Mac OS X specific options',
@@ -667,6 +716,7 @@ const translationMap = {
                 th: 'ตัวเลือกเฉพาะของ Mac OS X',
                 fr: 'Options spécifiques pour Mac Os X',
                 it: 'Opzioni specifiche Mac Os X',
+                id: 'Pilihan Mac Os X',
             },
             rarelyUsedSpecialOptions: {
                 en: 'Rarely used special options',
@@ -680,6 +730,7 @@ const translationMap = {
                 th: 'ตัวเลือกพิเศษ (ไม่ค่อยได้ใช้)',
                 fr: 'Options spéciales rarement utilisées',
                 it: 'Opzioni speciali raramente utilizzate',
+                id: 'Pilihan khusus yang jarang digunakan',
             },
             other: {
                 en: 'Other',
@@ -693,6 +744,7 @@ const translationMap = {
                 th: 'อื่นๆ',
                 fr: 'Autres',
                 it: 'Altro',
+                id: 'Lainnya',
             },
         },
         button: {
@@ -709,6 +761,7 @@ const translationMap = {
                 th: 'เรียกดูไฟล์',
                 fr: 'Rechercher un fichier',
                 it: 'Sfoglia file',
+                id: 'Telusuri berkas',
             },
             browseForFolder: {
                 en: 'Browse for Folder',
@@ -722,6 +775,7 @@ const translationMap = {
                 th: 'เรียกดูโฟลเดอร์',
                 fr: 'Rechercher un dossier',
                 it: 'Sfoglia archivio',
+                id: 'Telusuri folder',
             },
             enable: {
                 en: 'Enable',
@@ -735,6 +789,7 @@ const translationMap = {
                 th: 'เปิดใช้งาน',
                 fr: 'Activer',
                 it: 'Abilita',
+                id: 'Aktifkan',
             },
             disable: {
                 en: 'Disable',
@@ -748,6 +803,7 @@ const translationMap = {
                 th: 'ปิดการใช้งาน',
                 fr: 'Désactiver',
                 it: 'Disabilita',
+                id: 'Matikan',
             },
             converting: {
                 en: 'Converting...',
@@ -761,6 +817,7 @@ const translationMap = {
                 th: 'กำลังแปลง...',
                 fr: 'Conversion...',
                 it: 'Conversione in corso...',
+                id: 'Mengkonversi...',
             },
             clearOutput: {
                 en: 'Clear Output',
@@ -774,6 +831,7 @@ const translationMap = {
                 th: 'Clear Output',
                 fr: 'Effacer la sortie',
                 it: 'Cancella output',
+                id: 'Clear Output',
             },
         },
         modal: {
@@ -789,6 +847,7 @@ const translationMap = {
                 th: 'เขียนทับการกำหนดค่าปัจจุบัน?',
                 fr: 'Remplacer la configuration actuelle ?',
                 it: 'Sovrascrivi la confugurazione corrente?',
+                id: 'Timpa konfigurasi saat ini?',
             },
             configModalDescription: {
                 en: 'All previously inserted values will be erased.',
@@ -802,6 +861,7 @@ const translationMap = {
                 th: 'ค่าที่ใส่ไว้ก่อนหน้านี้จะถูกลบ',
                 fr: 'Toutes les valeurs précédemment insérées seront effacées.',
                 it: 'Tutti i valori inseriti sarranno cancellati.',
+                id: 'Semua nilai yang sebelumnya dimasukkan akan dihapus.',
             },
             configModalConfirmButton: {
                 en: 'Confirm',
@@ -815,6 +875,7 @@ const translationMap = {
                 th: 'ยืนยัน',
                 fr: 'confimer',
                 it: 'Conferma',
+                id: 'Konfirmasi',
             },
             configModalCancelButton: {
                 en: 'Cancel',
@@ -828,6 +889,7 @@ const translationMap = {
                 th: 'ยกเลิก',
                 fr: 'Annuler',
                 it: 'Annulla',
+                id: 'Batal',
             }
         }
     },
@@ -846,6 +908,7 @@ const translationMap = {
                 th: 'คุณยังไม่ได้ระบุตำแหน่งสคริปต์ของคุณ\nโปรดป้อนข้อมูลนี้ที่ด้านบนของหน้า',
                 fr: 'Vous n\'avez pas fourni l\'emplacement de vos scripts.\nVeuillez le saisir en haut de la page.',
                 it: 'Non hai provvisto la posizione dei tuoi script.\nPerfavore inserisci questo all\'inizio della pagina',
+                id: 'Anda belum menyediakan lokasi skrip Anda.\nSilakan masukkan di atas halaman.',
             },
             overwritePreviousOutput: {
                 en: 'This action will overwrite a previous output in the output folder.\nContinue?',
@@ -859,6 +922,7 @@ const translationMap = {
                 th: 'การดำเนินการนี้จะเขียนทับเอาต์พุตก่อนหน้าในโฟลเดอร์เอาต์พุต\nทำต่อหรือไม่',
                 fr: 'Cette action écrasera une sortie précédente dans le dossier de sortie.\nContinuer ?',
                 it: 'Questa azione sovrascriverà un output precedente nella cartella di output.\nContinuare?',
+                id: 'Tindakan ini akan menimpa sebuah output sebelumnya di folder output.\nLanjutkan?',
             }
         },
     }
@@ -994,6 +1058,10 @@ const supportedLanguages = [
     {
         name: 'Turkish (Türkçe)',
         code: 'tr',
+    },
+    {
+        name: 'Indonesian (Bahasa Indonesia)',
+        code: 'id',
     },
 ];
 let currentLanguage = _checkLanguageIsSupportedOrDefault(_getLanguage()); // Keeps track of the current language
