@@ -566,7 +566,7 @@ const translationMap = {
                     ' ce post sur la façon de résoudre les problèmes courants\n' +
                     '</a>\n' +
                     'pour les solutions possibles.',
-                en: 'Qualcosa è andato storto con il tuo exe? leggi\n' +
+                it: 'Qualcosa è andato storto con il tuo exe? leggi\n' +
                     '<a href="https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=application_link&utm_campaign=auto_py_to_exe_help&utm_content=bottom" target="_blank">\n' +
                     '    questo articolo su come risolvere problemi comuni (articolo in inglese)\n' +
                     '</a>\n' +
