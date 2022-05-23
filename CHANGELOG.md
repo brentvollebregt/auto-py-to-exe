@@ -1,22 +1,38 @@
 # Changelog
 
+## 2.20.0
+
+🚀 Enhancements
+
+- [#272](https://github.com/brentvollebregt/auto-py-to-exe/pull/272): Added Italian translations
+- [#274](https://github.com/brentvollebregt/auto-py-to-exe/pull/274): Added Indonesian translations
+
+🏆 Contributors
+
+- [itsEmax64](https://github.com/itsEmax64)
+- [Marvin](https://github.com/MarvinZhong)
+
 ## 2.19.0
 
 🚀 Enhancements
 
-- [252](https://github.com/brentvollebregt/auto-py-to-exe/pull/252): Added French translations
+- [#252](https://github.com/brentvollebregt/auto-py-to-exe/pull/252): Added French translations
+
+🏆 Contributors
+
+- [DESPORTES](https://github.com/flaviedesp)
 
 ## 2.18.2
 
 🏠 Internal
 
-- [261](https://github.com/brentvollebregt/auto-py-to-exe/issues/261): Use latest version of Eel
+- [#261](https://github.com/brentvollebregt/auto-py-to-exe/issues/261): Use latest version of Eel
 
 ## 2.18.1
 
 🐛 Bug Fixes
 
-- [259](https://github.com/brentvollebregt/auto-py-to-exe/issues/259): Fix PyInstaller 4.10 warnings
+- [#259](https://github.com/brentvollebregt/auto-py-to-exe/issues/259): Fix PyInstaller 4.10 warnings
 
 ## 2.18.0
 
@@ -50,12 +66,25 @@
 
 ## 2.15.0
 
+🚀 Enhancements
+
 - [#228](https://github.com/brentvollebregt/auto-py-to-exe/pull/228): Added German translations
-- [#231](https://github.com/brentvollebregt/auto-py-to-exe/issues/231 ): Added Brazilian Portuguese translations
+- [#231](https://github.com/brentvollebregt/auto-py-to-exe/issues/231): Added Brazilian Portuguese translations
+
+🏆 Contributors
+
+- [hebens](https://github.com/hebens)
+- [Marley Adriano](https://github.com/marleyas)
 
 ## 2.14.1
 
+🐛 Bug Fixes
+
 - [#230](https://github.com/brentvollebregt/auto-py-to-exe/pull/230): Fixed application failing to launch
+
+🏆 Contributors
+
+- [BoubouleTheCutestHamster](https://github.com/boubouleuh)
 
 ### 2.14.0
 

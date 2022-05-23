@@ -1064,4 +1064,5 @@ const supportedLanguages = [
         code: 'tr',
     },
 ];
+
 let currentLanguage = _checkLanguageIsSupportedOrDefault(_getLanguage()); // Keeps track of the current language
