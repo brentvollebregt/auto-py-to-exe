@@ -15,7 +15,7 @@ setup(
     keywords=['gui', 'executable'],
     packages=['auto_py_to_exe'],
     include_package_data=True,
-    install_requires=['Eel==0.12.4', 'pyinstaller>=4.6'],
+    install_requires=['Eel==0.14.0', 'pyinstaller>=4.6'],
     python_requires='>=3.6',
     classifiers=[
         'License :: OSI Approved :: MIT License',
