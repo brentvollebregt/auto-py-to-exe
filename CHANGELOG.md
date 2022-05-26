@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.20.1
+
+🐛 Bug Fixes
+
+- Match dependencies in setup.py with requirements.txt
+
 ## 2.20.0
 
 🚀 Enhancements
