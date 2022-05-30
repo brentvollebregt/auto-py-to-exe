@@ -7,6 +7,11 @@ assignees: brentvollebregt
 
 ---
 
+**Quick Checks For You**
+- [ ] I have read/searched in the [help post](https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe)
+- [ ] I have [searched other issues](https://github.com/brentvollebregt/auto-py-to-exe/issues?q=is%3Aissue+) looking for an issue similar to mine
+- [ ] I have made sure my applicaiton/script runs before trying to package
+
 **Describe the bug**
 A clear and concise description of what the bug is.
 
