@@ -45,7 +45,8 @@ def initialise():
         'options': packaging.get_pyinstaller_options(),
         'warnings': utils.get_warnings(),
         'pathSeparator': os.pathsep,
-        'defaultOutputFolder': config.default_output_directory
+        'defaultOutputFolder': config.default_output_directory,
+        'languageHint': config.language_hint
     }
 
 

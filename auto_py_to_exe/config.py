@@ -22,3 +22,4 @@ package_filename = None
 ui_open_mode = UIOpenMode.CHROME
 supplied_ui_configuration = None
 default_output_directory = os.path.abspath('output')
+language_hint = None

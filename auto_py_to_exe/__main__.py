@@ -76,6 +76,14 @@ def run():
         default=None
     )
     parser.add_argument(
+        "-lang",
+        "--language",
+        nargs='?',
+        help="hint the language to use by default - language codes can be found in the README",
+        default=None,
+        metavar='LANGUAGE_CODE'
+    )
+    parser.add_argument(
         "--logging-level",
         nargs='?',
         type=validation.argparse_logging_level,
@@ -94,6 +102,7 @@ def run():
     config.package_filename = args.filename
     config.supplied_ui_configuration = args.config
     config.default_output_directory = os.path.abspath(args.output_dir)
+    config.language_hint = args.language
 
     if args.no_ui:
         config.ui_open_mode = config.UIOpenMode.NONE

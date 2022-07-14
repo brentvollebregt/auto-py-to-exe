@@ -75,14 +75,15 @@ Now to run the application, execute ```python -m auto_py_to_exe```. A Chrome win
 ### Arguments
 Usage: `auto-py-to-exe [-nc] [-c [CONFIG]] [-o [PATH]] [filename]`
 
-| Argument                                                     | Type                | Description                                                                                                                |
-| ------------------------------------------------------------ | ------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| filename                                                     | positional/optional | Pre-fill the "Script Location" field in the UI.                                                                            |
-| -nc, --no-chrome                                             | optional            | Open the UI using the default browser (which may be Chrome). Will not try to find Chrome.                                  |
-| -nu, --no-ui                                                 | optional            | Don't try to open the UI in a browser and simply print out the address that the application can be accessed at.            |
-| -c [CONFIG], --config [CONFIG]                               | optional            | Provide a configuration file (json) to pre-fill the UI. These can be generated in the settings tab.                        |
-| -o [PATH], --output-dir [PATH]                               | optional            | Set the default output directory. This can still be changed in the ui.                                                     |
-| -bdo [FOLDER_PATH], --build-directory-override [FOLDER_PATH] | optional            | Override the default build directory. Useful if you need to whitelist a folder to stop your antivirus from removing files. |
+| Argument                                                     | Type                | Description                                                                                                                       |
+| ------------------------------------------------------------ | ------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| filename                                                     | positional/optional | Pre-fill the "Script Location" field in the UI.                                                                                   |
+| -nc, --no-chrome                                             | optional            | Open the UI using the default browser (which may be Chrome). Will not try to find Chrome.                                         |
+| -nu, --no-ui                                                 | optional            | Don't try to open the UI in a browser and simply print out the address that the application can be accessed at.                   |
+| -c [CONFIG], --config [CONFIG]                               | optional            | Provide a configuration file (json) to pre-fill the UI. These can be generated in the settings tab.                               |
+| -o [PATH], --output-dir [PATH]                               | optional            | Set the default output directory. This can still be changed in the ui.                                                            |
+| -bdo [FOLDER_PATH], --build-directory-override [FOLDER_PATH] | optional            | Override the default build directory. Useful if you need to whitelist a folder to stop your antivirus from removing files.        |
+| -lang [LANGUAGE_CODE], --language [LANGUAGE_CODE]            | optional            | Hint the UI what language it should default to when opening. Language codes can be found in the table under "Translations" below. |
 
 
 > If you are running this package locally, you will need to call ```python -m auto_py_to_exe``` instead of ```auto-py-to-exe```
@@ -100,20 +101,20 @@ If you're having issues with the packaged executable or using this tool in gener
 
 ## Translations
 
-| Language                                    | Translator                                    | Translated                           |
-| ------------------------------------------- | --------------------------------------------- | ------------------------------------ |
-| Brazilian Portuguese (Português Brasileiro) | [marleyas](https://github.com/marleyas)       | UI (partial)                         |
-| Chinese Simplified (简体中文)               | [jiangzhe11](https://github.com/jiangzhe11)   | UI and [README](./README-Chinese.md) |
-| Chinese Traditional (繁體中文)              | [startgo](https://github.com/ystartgo)        | UI                                   |
-| English                                     | -                                             | UI and README                        |
-| French (Français)                           | [flaviedesp](https://github.com/flaviedesp)   | UI                                   |
-| German (Deutsch)                            | [hebens](https://github.com/hebens)           | UI (partial)                         |
-| Indonesian (Bahasa Indonesia)               | [MarvinZhong](https://github.com/MarvinZhong) | UI                                   |
-| Italian (Italiano)                          | [itsEmax64](https://github.com/itsEmax64)     | UI                                   |
-| Russian (Русский)                           | Oleg                                          | UI                                   |
-| Spanish (Español)                           | [enriiquee](https://github.com/enriiquee)     | UI                                   |
-| Thai (ภาษาไทย)                              | [teerut26](https://github.com/teerut26)       | UI (partial)                         |
-| Turkish (Türkçe)                            | [mcagriaksoy](https://github.com/mcagriaksoy) | UI                                   |
+| Language                                    | Code  | Translator                                    | Translated                           |
+| ------------------------------------------- | ----- | --------------------------------------------- | ------------------------------------ |
+| Brazilian Portuguese (Português Brasileiro) | pt_br | [marleyas](https://github.com/marleyas)       | UI (partial)                         |
+| Chinese Simplified (简体中文)               | zh    | [jiangzhe11](https://github.com/jiangzhe11)   | UI and [README](./README-Chinese.md) |
+| Chinese Traditional (繁體中文)              | zh_tw | [startgo](https://github.com/ystartgo)        | UI                                   |
+| English                                     | en    | -                                             | UI and README                        |
+| French (Français)                           | fr    | [flaviedesp](https://github.com/flaviedesp)   | UI                                   |
+| German (Deutsch)                            | de    | [hebens](https://github.com/hebens)           | UI (partial)                         |
+| Indonesian (Bahasa Indonesia)               | id    | [MarvinZhong](https://github.com/MarvinZhong) | UI                                   |
+| Italian (Italiano)                          | it    | [itsEmax64](https://github.com/itsEmax64)     | UI                                   |
+| Russian (Русский)                           | ru    | Oleg                                          | UI                                   |
+| Spanish (Español)                           | sp    | [enriiquee](https://github.com/enriiquee)     | UI                                   |
+| Thai (ภาษาไทย)                              | th    | [teerut26](https://github.com/teerut26)       | UI (partial)                         |
+| Turkish (Türkçe)                            | tr    | [mcagriaksoy](https://github.com/mcagriaksoy) | UI                                   |
 
 > Want to add a translation for another language? Update [i18n.js](https://github.com/brentvollebregt/auto-py-to-exe/blob/master/auto_py_to_exe/web/js/i18n.js) and submit a PR or attach it in an issue.
 

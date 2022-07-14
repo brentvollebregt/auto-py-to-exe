@@ -97,7 +97,7 @@ window.addEventListener("load", async () => {
     updateCurrentCommandDisplay();
 
     // Try to translate to the default browser language
-    translate();
+    translate(initialisationData.languageHint);
 
     // If the server stops, close the UI
     window.eel._websocket.addEventListener('close', e => window.close());

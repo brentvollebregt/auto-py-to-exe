@@ -937,6 +937,10 @@ const translate = (language) => {
     language = _checkLanguageIsSupportedOrDefault(language);
     currentLanguage = language;
 
+    // Update the language selector incase this call didn't come from the dropdown
+    const languageSelectNode = document.getElementById('language-selection');
+    languageSelectNode.value = currentLanguage;
+
     // Update text inside elements
     const elementsToTranslate = document.querySelectorAll("[data-i18n]");
     elementsToTranslate.forEach(element => {
