@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.21.0
+
+🚀 Enhancements
+
+- [#286](https://github.com/brentvollebregt/auto-py-to-exe/issues/286): Added ability to set language in cli arguments (e.g. `--language sp`)
+
 ## 2.20.1
 
 🐛 Bug Fixes
