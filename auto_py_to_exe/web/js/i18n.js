@@ -1134,7 +1134,7 @@ const supportedLanguages = [
         code: 'tr',
     },
     {
-        name: 'Ελληνικά (Greek)',
+        name: 'Greek (Ελληνικά)',
         code: 'gr',
     },
 ];
