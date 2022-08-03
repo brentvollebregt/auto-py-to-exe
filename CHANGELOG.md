@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.21.1
+
+🐛 Bug Fixes
+
+- [#286](https://github.com/brentvollebregt/auto-py-to-exe/issues/290): Fixed configuration import not clearing existing values before inserting new values (now done using a reload)
+- Fixed icon path not validating after import
+
 ## 2.21.0
 
 🚀 Enhancements
