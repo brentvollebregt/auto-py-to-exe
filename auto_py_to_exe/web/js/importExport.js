@@ -44,8 +44,7 @@ const onConfigurationImport = async () => {
     }
 
     const data = await eel.import_configuration()();
-    // Put the config in the URL and then reload - this stops us from having to manually clear and re-validate fields
-    window.location.href = window.location.href + "?configuration=" + encodeURIComponent(JSON.stringify(data));
+    importConfiguration(data);
 };
 
 const onConfigurationExport = async () => {

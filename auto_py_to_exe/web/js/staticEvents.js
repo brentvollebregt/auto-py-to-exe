@@ -212,11 +212,7 @@ const setupEvents = () => {
         const [val1, val2] = value.split(pathSeparator);
         addDoubleInputForSrcDst(datasListNode, 'datas', val1, val2, true, true);
     };
-    const setIcon = (value) => {
-        document.getElementById('icon-path').value = value;
-        iconLocationChange({ target: document.getElementById('icon-path') });
-    };
-    
+    const setIcon = (value) => document.getElementById('icon-path').value = value;
     configurationSetters['filenames'] = setEntryScript;
     configurationSetters['onefile'] = setOnefile;
     configurationSetters['console'] = setConsole;

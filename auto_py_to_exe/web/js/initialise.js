@@ -75,20 +75,9 @@ window.addEventListener("load", async () => {
     // Setup advanced section (for dynamic content)
     constructAdvancedSection(options);
 
-    // Setup json config file if supplied - check URL first and then see what was given from the host
-    const queryStringParameters = new URLSearchParams(window.location.search)
-    const configInQueryString = queryStringParameters.get('configuration');
-    if (configInQueryString !== null) {
-        const configInQueryStringParsed = JSON.parse(configInQueryString);
-        importConfiguration(configInQueryStringParsed);
-
-        // Now clear the `configuration` value in the query string so reloading will not pick it back up
-        queryStringParameters.delete('configuration');
-        window.history.replaceState(null, null, window.location.pathname);
-    } else {
-        if (initialisationData.suppliedUiConfiguration !== null) {
-            importConfiguration(initialisationData.suppliedUiConfiguration);
-        }
+    // Setup json config file is supplied
+    if (initialisationData.suppliedUiConfiguration !== null) {
+        importConfiguration(initialisationData.suppliedUiConfiguration);
     }
 
     // Set the output directory to the default if it hasn't already been set by `initialisationData.suppliedUiConfiguration`
