@@ -542,7 +542,7 @@ const translationMap = {
                 fr: 'Injectez du texte brut dans la commande générée.',
                 it: 'Inserisci testo forzatamente alla fine del comando generato.',
                 id: 'Masukkan teks mentah ke dalam command yang dibuat',
-                cz: 'Vložit text do vygenerovaného příkazu.'
+                cz: 'Vložit text do vygenerovaného příkazu.',
             }
         },
         notes: {
@@ -658,6 +658,7 @@ const translationMap = {
                     '<a href="https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=application_link&utm_campaign=auto_py_to_exe_help&utm_content=bottom" target="_blank">\n' +
                     '    tento příspěvek na jak opravit běžné chyby\n' +
                     '</a>.\n' +
+                    'pro možné řešení.',
             }
         }
     },
@@ -767,7 +768,7 @@ const translationMap = {
                 fr: 'Options spécifiques pour Mac Os X',
                 it: 'Opzioni specifiche Mac Os X',
                 id: 'Pilihan Mac Os X',
-                cz: 'Mac OS X specifické nastavení', 
+                cz: 'Mac OS X specifické nastavení',
             },
             rarelyUsedSpecialOptions: {
                 en: 'Rarely used special options',
@@ -922,7 +923,7 @@ const translationMap = {
                 fr: 'Toutes les valeurs précédemment insérées seront effacées.',
                 it: 'Tutti i valori inseriti sarranno cancellati.',
                 id: 'Semua nilai yang sebelumnya dimasukkan akan dihapus.',
-                cz: 'Všechny předchozí hodnoty budou smazány.'
+                cz: 'Všechny předchozí hodnoty budou smazány.',
             },
             configModalConfirmButton: {
                 en: 'Confirm',
@@ -1097,6 +1098,10 @@ const supportedLanguages = [
         code: 'zh_tw',
     },
     {
+        name: 'Czech (Čeština)',
+        code: 'cz',
+    },
+    {
         name: 'English',
         code: 'en',
     },
@@ -1131,10 +1136,6 @@ const supportedLanguages = [
     {
         name: 'Turkish (Türkçe)',
         code: 'tr',
-    },
-    {
-        name: 'Czech (Čeština)',
-        code: 'cz',
     },
 ];
 
