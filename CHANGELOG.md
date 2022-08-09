@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.22.0
+
+🚀 Enhancements
+
+- [#297](https://github.com/brentvollebregt/auto-py-to-exe/pull/297): Added Czech translations
+
+🏆 Contributors
+
+- [Matto](https://github.com/Matto58)
+
 ## 2.21.1
 
 🐛 Bug Fixes
