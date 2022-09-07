@@ -110,6 +110,7 @@ If you're having issues with the packaged executable or using this tool in gener
 | English                                     | en    | -                                             | UI and README                        |
 | French (Français)                           | fr    | [flaviedesp](https://github.com/flaviedesp)   | UI                                   |
 | German (Deutsch)                            | de    | [hebens](https://github.com/hebens)           | UI (partial)                         |
+| Greek (Ελληνικά)                            | gr    | [sofronas](https://github.com/sofronas)       | UI                                   |
 | Indonesian (Bahasa Indonesia)               | id    | [MarvinZhong](https://github.com/MarvinZhong) | UI                                   |
 | Italian (Italiano)                          | it    | [itsEmax64](https://github.com/itsEmax64)     | UI                                   |
 | Russian (Русский)                           | ru    | Oleg                                          | UI                                   |
