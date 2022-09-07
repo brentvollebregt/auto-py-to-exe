@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.23.0
+
+🚀 Enhancements
+
+- [#292](https://github.com/brentvollebregt/auto-py-to-exe/pull/292): Added Greek translations
+
+🏆 Contributors
+
+- [Konstantinos](https://github.com/sofronas)
+
 ## 2.22.0
 
 🚀 Enhancements
