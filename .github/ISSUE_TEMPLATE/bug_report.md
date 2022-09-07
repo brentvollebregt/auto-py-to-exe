@@ -22,7 +22,7 @@ Steps to reproduce the behavior:
 3. Scroll down to '....'
 4. See error
 
-> If you have example code, please provide a [minimal reproducible example](https://en.wikipedia.org/wiki/Minimal_reproducible_example).
+> If you have example code, please provide a [minimal reproducible example](https://stackoverflow.com/help/minimal-reproducible-example).
 
 **Expected behavior**
 A clear and concise description of what you expected to happen.
