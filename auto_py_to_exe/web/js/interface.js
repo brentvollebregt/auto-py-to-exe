@@ -65,13 +65,18 @@ const addDoubleInputForSrcDst = (parentNode, optionDest, source, destination, so
     const configurationGetter = () => ([optionDest, `${sourceInput.value}${pathSeparator}${destinationInput.value}`]);
     configurationGetters.push(configurationGetter);
 
-    removeButton.src = 'img/remove.svg';
-    removeButton.addEventListener('click', () => {
+    // Setup removal
+    const onRemove = () => {
         wrapper.remove();
         const configurationGetterIndex = configurationGetters.indexOf(configurationGetter);
         configurationGetters.splice(configurationGetterIndex, 1);
+        const configurationCleanerIndex = configurationCleaners.indexOf(onRemove);
+        configurationCleaners.splice(configurationCleanerIndex, 1);
         updateCurrentCommandDisplay();
-    });
+    }
+    removeButton.src = 'img/remove.svg';
+    removeButton.addEventListener('click', onRemove);
+    configurationCleaners.push(onRemove);
 
     updateCurrentCommandDisplay();
 };
@@ -149,6 +154,9 @@ const _createSubSectionInAdvanced = (title, i18nPath, options) => {
             // Add configurationSetter
             configurationSetters[o.dest] = setValue;
 
+            // Add configurationCleaner
+            configurationCleaners.push(() => setValue(false));
+
             // Allow a default value of `true` to come through
             if (o.default === true) {
                 setValue(true);
@@ -192,6 +200,12 @@ const _createSubSectionInAdvanced = (title, i18nPath, options) => {
                 }
                 selectNode.dispatchEvent(new Event('change'));
             };
+
+            // Add configurationCleaner
+            configurationCleaners.push(() => {
+                selectNode.value = '';
+                selectNode.dispatchEvent(new Event('change'));
+            });
 
         } else if (o.inputType === OPTION_INPUT_TYPE_INPUT) {
             container.classList.add('input');
@@ -240,6 +254,12 @@ const _createSubSectionInAdvanced = (title, i18nPath, options) => {
                 inputNode.dispatchEvent(new Event('input'));
             };
 
+            // Add configurationCleaner
+            configurationCleaners.push(() => {
+                inputNode.value = '';
+                inputNode.dispatchEvent(new Event('input'));
+            });
+
         } else if (o.inputType === OPTION_INPUT_TYPE_MULTIPLE_INPUT) {
             container.classList.add('multiple-input');
 
@@ -279,12 +299,18 @@ const _createSubSectionInAdvanced = (title, i18nPath, options) => {
                 const removeButtonNode = document.createElement('img');
                 removeButtonNode.src = 'img/remove.svg';
                 valueContainer.appendChild(removeButtonNode);
-                removeButtonNode.addEventListener('click', () => {
+                const onRemove = () => {
                     valueContainer.remove();
                     const configurationGetterIndex = configurationGetters.indexOf(configurationGetter);
                     configurationGetters.splice(configurationGetterIndex, 1);
+                    const configurationCleanerIndex = configurationCleaners.indexOf(onRemove);
+                    configurationCleaners.splice(configurationCleanerIndex, 1);
                     updateCurrentCommandDisplay();
-                });
+                }
+                removeButtonNode.addEventListener('click', onRemove);
+
+                // Add configurationCleaner
+                configurationCleaners.push(onRemove);
 
                 updateCurrentCommandDisplay();
             };

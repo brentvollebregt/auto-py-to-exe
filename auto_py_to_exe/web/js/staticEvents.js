@@ -212,12 +212,20 @@ const setupEvents = () => {
         const [val1, val2] = value.split(pathSeparator);
         addDoubleInputForSrcDst(datasListNode, 'datas', val1, val2, true, true);
     };
-    const setIcon = (value) => document.getElementById('icon-path').value = value;
+    const setIcon = (value) => {
+        document.getElementById('icon-path').value = value;
+        document.getElementById('icon-path').dispatchEvent(new Event('input'));
+    };
     configurationSetters['filenames'] = setEntryScript;
     configurationSetters['onefile'] = setOnefile;
     configurationSetters['console'] = setConsole;
     configurationSetters['datas'] = setAdditionalFile;
     configurationSetters['icon_file'] = setIcon;
+
+    configurationCleaners.push(() => setEntryScript('')); // filenames
+    configurationCleaners.push(() => setOnefile(false)); // onefile
+    configurationCleaners.push(() => setConsole(false)); // console
+    configurationCleaners.push(() => setIcon('')); // icon_file
 
     // Soft initialise (to trigger any required initial events)
     setEntryScript('');

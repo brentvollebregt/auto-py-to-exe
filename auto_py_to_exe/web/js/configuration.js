@@ -2,8 +2,9 @@
 Handle configuration modifications
 */
 
-const configurationGetters = []; // Each function on this should either return null or [option.dest, value]
+const configurationGetters = []; // Each function in this should either return null or [option.dest, value]
 const configurationSetters = {}; // dest: fn(value) => void, used to set option values
+const configurationCleaners = []; // Each function in this should clear a dest value
 
 // Get option-value pairs [[option, value], ...]
 const getCurrentConfiguration = () => {

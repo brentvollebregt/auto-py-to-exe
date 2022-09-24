@@ -1,6 +1,9 @@
 const importConfiguration = (configuration) => {
     // TODO Check for version to support older versions
 
+    // Re-init UI by clearing everything (copy the array first as it will be mutated during the iteration)
+    [...configurationCleaners].forEach(cleaner => cleaner());
+
     configuration.pyinstallerOptions.forEach(({ optionDest, value }) => {
         if (configurationSetters.hasOwnProperty(optionDest)) {
             configurationSetters[optionDest](value);
