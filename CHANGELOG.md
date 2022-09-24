@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.23.1
+
+🐛 Bug Fixes
+
+- [#306](https://github.com/brentvollebregt/auto-py-to-exe/issues/306): Move to a non-reload based configuration import to fix issues with Eel server stopping on reload
+- Fix icon input not validating after configuration import
+
+
 ## 2.23.0
 
 🚀 Enhancements
