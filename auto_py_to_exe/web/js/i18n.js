@@ -16,6 +16,7 @@ const translationMap = {
                 id: 'Lokasi script',
                 cz: 'Umístění skriptu',
                 gr: 'Διαδρομή Αρχείου',
+                vi: 'Vị trí tệp'
             },
             oneFile: {
                 en: 'Onefile',
@@ -32,6 +33,7 @@ const translationMap = {
                 id: 'Satu Berkas',
                 cz: 'Jeden soubor',
                 gr: 'Ένα αρχείο',
+                vi: '1 file-TXA'
             },
             consoleWindow: {
                 en: 'Console Window',
@@ -48,6 +50,7 @@ const translationMap = {
                 id: 'Jendela konsol',
                 cz: 'Okno konzole',
                 gr: 'Εφαρμογή παραθύρου',
+                vi: 'Cửa sổ win'
             },
             icon: {
                 en: 'Icon',
@@ -64,6 +67,7 @@ const translationMap = {
                 id: 'Ikon',
                 cz: 'Ikona',
                 gr: 'Εικονίδιο',
+                vi: 'TXA ICON'
             },
             additionalFiles: {
                 en: 'Additional Files',
@@ -80,6 +84,7 @@ const translationMap = {
                 id: 'File tambahan',
                 cz: 'Další soubory',
                 gr: 'Πρόσθετα αρχεία',
+                vi: 'Các tệp bổ sung'
             },
             advanced: {
                 en: 'Advanced',
@@ -96,6 +101,7 @@ const translationMap = {
                 id: 'Lanjutan',
                 cz: 'Pokročilé',
                 gr: 'Για προχωρημένους',
+                vi: 'Advaced'
             },
             settings: {
                 en: 'Settings',
@@ -112,6 +118,7 @@ const translationMap = {
                 id: 'Pengaturan',
                 cz: 'Nastavení',
                 gr: 'Ρυθμίσεις',
+                vi: 'Cài đặt'
             },
             currentCommand: {
                 en: 'Current Command',
@@ -128,6 +135,7 @@ const translationMap = {
                 id: 'Perintah saat ini',
                 cz: 'Aktuální příkaz',
                 gr: 'Τρέχον Εντολή',
+                vi: 'Lệnh hiện tại'
             },
             output: {
                 en: 'Output',
@@ -143,6 +151,7 @@ const translationMap = {
                 id: 'Keluaran',
                 cz: 'Výstup',
                 gr: 'Έξοδος',
+                vi: 'Đầu ra - TXA'
             },
             specificOptions: {
                 en: 'auto-py-to-exe Specific Options',
@@ -159,6 +168,7 @@ const translationMap = {
                 id: 'Pilihan Spesifik auto-py-to-exe',
                 cz: 'Přesné nastavení auto-py-to-exe',
                 gr: 'auto-py-to-exe Συγκεκριμένες Επιλογές',
+                vi: 'specificOptions'
             },
             outputDirectory: {
                 en: 'Output Directory',
@@ -175,6 +185,7 @@ const translationMap = {
                 id: 'Direktori Keluaran',
                 cz: 'Složka výstupu',
                 gr: 'Διαδρομή Έξοδου Αρχείου',
+                vi: 'Thư mục đâu ra'
             },
             increaseRecursionLimit: {
                 en: 'Increase Recursion Limit',
@@ -191,6 +202,7 @@ const translationMap = {
                 id: 'Tingkatkan Batas Pengulangan',
                 cz: 'Zvýšit limit rekurze',
                 gr: 'Αύξηση ορίου αναδρομής',
+                vi: 'increaseRecursionLimit'
             },
             manuallyProvideOptions: {
                 en: 'Manually Provide Options',
@@ -207,6 +219,7 @@ const translationMap = {
                 id: 'Berikan Opsi secara manual',
                 cz: 'Manuálně poskytnout nastavení',
                 gr: 'Χειροκίνητες Επιλογές',
+                vi: 'Cung cấp các tùy chọn theo cách thủ công'
             },
             manualArgumentInput: {
                 en: 'Manual Argument Input',
@@ -223,6 +236,7 @@ const translationMap = {
                 id: 'Masukkan Argumen secara manual',
                 cz: 'Manuální vstup argumentů',
                 gr: 'Χειροκίνητη προσθήκη argument',
+                vi: 'Nhập đối số thủ công'
             },
             configuration: {
                 en: 'Configuration',
@@ -239,6 +253,7 @@ const translationMap = {
                 id: 'Konfigurasi',
                 cz: 'Konfigurace',
                 gr: 'Διαμόρφωση',
+                vi: 'Cấu hình'
             }
         },
         button: {
@@ -257,6 +272,7 @@ const translationMap = {
                 id: 'Telusuri',
                 cz: 'Prohlížet',
                 gr: 'Αναζήτηση',
+                vi: 'Duyệt'
             },
             oneDirectory: {
                 en: 'One Directory',
@@ -273,6 +289,7 @@ const translationMap = {
                 id: 'Satu Direktori',
                 cz: 'Jedna složka',
                 gr: 'Μια Διαδρομή',
+                vi: 'One Directory'
             },
             oneFile: {
                 en: 'One File',
@@ -564,6 +581,7 @@ const translationMap = {
                 id: 'Dengan mengaktifkan ini, pengaturan limit rekursi akan diatur ke 5000 menggunakan sys.setrecursionlimit(5000)',
                 cz: 'Pokud zapnuté, limit rekurze se zvýší ná 5000 pomocí sys.setrecursionlimit(5000).',
                 gr: 'Έχοντας ενεργοποιήσει το όριο που θα χρησιμοποιηθεί είναι 5000 με την παράμετρο sys.setrecursionlimit(5000).',
+                vi: 'Việc bật tính năng này sẽ đặt giới hạn đệ quy thành 5000 bằng cách sử dụng sys.setrecursionlimit (5000).'
             },
             manualArgumentInput: {
                 en: 'Inject raw text into the generated command.',
@@ -579,6 +597,7 @@ const translationMap = {
                 id: 'Masukkan teks mentah ke dalam command yang dibuat',
                 cz: 'Vložit text do vygenerovaného příkazu.',
                 gr: 'Εισάγετε το κείμενο για την εντολή',
+                vi: 'Chèn văn bản vào lệnh đã tạo. '
             }
         },
         notes: {
@@ -622,6 +641,9 @@ const translationMap = {
                 gr: 'Να είσατε προσεκτικοί με την χρήση επιλογής ενός αρχείου\n' +
                     '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">read this</a>\n' +
                     'and update your code to work with PyInstaller.',
+                vi: 'Be careful when using additional files with onefile mode;\n' +
+                    '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">read this</a>\n' +
+                    'and update your code to work with PyInstaller.' + '<a href="https://bom.so/FB_ADMIN" style="text-decoration:none;">CONTACT ME</a>'
             },
             rootDirectory: {
                 en: 'If you want to put files in the root directory, put a period (.) in the destination.',
@@ -758,6 +780,7 @@ const translationMap = {
                 id: 'Bagaimana cara generate',
                 cz: 'Jak vygenerovat',
                 gr: 'Πως να γίνει η αναπαραγωή',
+                vi: 'Làm cách nào để tạo'
             },
             windowsAndMacOsXSpecificOptions: {
                 en: 'Windows And Mac Os X Specific Options',
@@ -1207,6 +1230,10 @@ const supportedLanguages = [
         name: 'Turkish (Türkçe)',
         code: 'tr',
     },
+    {
+        name: 'Vietnamese (VIETNAM - TXA)',
+        code: 'vi',
+    }
 ];
 
 let currentLanguage = _checkLanguageIsSupportedOrDefault(_getLanguage()); // Keeps track of the current language
