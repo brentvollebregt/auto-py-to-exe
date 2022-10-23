@@ -103,7 +103,7 @@ If you're having issues with the packaged executable or using this tool in gener
 
 | Language                                    | Code  | Translator                                    | Translated                           |
 | ------------------------------------------- | ----- | --------------------------------------------- | ------------------------------------ |
-| العربية | ar | [Tayeb-Ali](https://github.com/Tayeb-Ali) | UI |
+| Arabic (العربية)                              | ar   | [Tayeb-Ali](https://github.com/tayeb-ali)      | UI                                   | 
 | Brazilian Portuguese (Português Brasileiro) | pt_br | [marleyas](https://github.com/marleyas)       | UI (partial)                         |
 | Chinese Simplified (简体中文)               | zh    | [jiangzhe11](https://github.com/jiangzhe11)   | UI and [README](./README-Chinese.md) |
 | Chinese Traditional (繁體中文)              | zh_tw | [startgo](https://github.com/ystartgo)        | UI                                   |

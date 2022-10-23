@@ -441,7 +441,7 @@ const translationMap = {
                 id: 'Konversi .py ke .exe',
                 cz: 'Převést .py na .exe',
                 gr: 'Μετατροπή .py σε .exe',
-                ar: 'تحويل .py إلى. exe'
+                ar: 'تحويل .py إلى. exe',
             },
             openOutputFolder: {
                 en: 'Open Output Folder',
@@ -1219,7 +1219,7 @@ const getTranslation = (path) => {
 const _defaultLanguage = 'en';
 const supportedLanguages = [
     {
-        name: 'العربية',
+        name: 'Arabic (العربية)',
         code: 'ar'
     },
     {
