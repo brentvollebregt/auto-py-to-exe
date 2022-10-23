@@ -658,7 +658,7 @@ const translationMap = {
                 gr: 'Να είσατε προσεκτικοί με την χρήση επιλογής ενός αρχείου\n' +
                     '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">read this</a>\n' +
                     'and update your code to work with PyInstaller.',
-                    ar: 'كن حذرًا عند استخدام ملفات إضافية مع وضع الملف الواحد ؛ \n'+ 
+                ar: 'كن حذرًا عند استخدام ملفات إضافية مع وضع الملف الواحد ؛ \n' +
                     '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">اقرا هذا</a>\n' +
                     'وقم بتحديث التعليمات البرمجية الخاصة بك للعمل مع PyInstaller.',
             },
