@@ -676,7 +676,8 @@ const translationMap = {
                 id: 'Jika Anda ingin menyimpan berkas di direktori root, tambahkan titik (.) di tujuan.',
                 cz: 'Pokud chcete přidat soubory do kořenové složky, přidejte tečku (.) do destinace.',
                 gr: 'Έαν θέλετε να εισάγετε τα αρχεία σας στον κεντρικό φάκελο απλά τοποθετήστε μια τελεία (.) στον προορισμό',
-                ar: 'إذا كنت تريد وضع الملفات في الدليل الجذر ، فضع نقطة (.) في الوجهة.'
+                ar: 'إذا كنت تريد وضع الملفات في الدليل الجذر ، فضع نقطة (.) في الوجهة.',
+
             },
             somethingWrongWithOutput: {
                 en: 'Something wrong with your exe? Read\n' +
