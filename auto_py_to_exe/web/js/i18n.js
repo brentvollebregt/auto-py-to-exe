@@ -16,6 +16,7 @@ const translationMap = {
                 id: 'Lokasi script',
                 cz: 'Umístění skriptu',
                 gr: 'Διαδρομή Αρχείου',
+                ar: 'موقع البرنامج النصي',
             },
             oneFile: {
                 en: 'Onefile',
@@ -32,6 +33,7 @@ const translationMap = {
                 id: 'Satu Berkas',
                 cz: 'Jeden soubor',
                 gr: 'Ένα αρχείο',
+                ar: 'ملف',
             },
             consoleWindow: {
                 en: 'Console Window',
@@ -48,6 +50,7 @@ const translationMap = {
                 id: 'Jendela konsol',
                 cz: 'Okno konzole',
                 gr: 'Εφαρμογή παραθύρου',
+                ar: 'نافذة وحدة التحكم',
             },
             icon: {
                 en: 'Icon',
@@ -64,6 +67,7 @@ const translationMap = {
                 id: 'Ikon',
                 cz: 'Ikona',
                 gr: 'Εικονίδιο',
+                ar: 'أيقونة',
             },
             additionalFiles: {
                 en: 'Additional Files',
@@ -80,6 +84,7 @@ const translationMap = {
                 id: 'File tambahan',
                 cz: 'Další soubory',
                 gr: 'Πρόσθετα αρχεία',
+                ar: 'ملفات إضافية',
             },
             advanced: {
                 en: 'Advanced',
@@ -96,6 +101,7 @@ const translationMap = {
                 id: 'Lanjutan',
                 cz: 'Pokročilé',
                 gr: 'Για προχωρημένους',
+                ar: 'متقدم',
             },
             settings: {
                 en: 'Settings',
@@ -112,6 +118,7 @@ const translationMap = {
                 id: 'Pengaturan',
                 cz: 'Nastavení',
                 gr: 'Ρυθμίσεις',
+                ar: 'إعدادات',
             },
             currentCommand: {
                 en: 'Current Command',
@@ -128,6 +135,7 @@ const translationMap = {
                 id: 'Perintah saat ini',
                 cz: 'Aktuální příkaz',
                 gr: 'Τρέχον Εντολή',
+                ar: 'الأمر الحالي',
             },
             output: {
                 en: 'Output',
@@ -143,6 +151,7 @@ const translationMap = {
                 id: 'Keluaran',
                 cz: 'Výstup',
                 gr: 'Έξοδος',
+                ar: 'المخرجات',
             },
             specificOptions: {
                 en: 'auto-py-to-exe Specific Options',
@@ -159,6 +168,7 @@ const translationMap = {
                 id: 'Pilihan Spesifik auto-py-to-exe',
                 cz: 'Přesné nastavení auto-py-to-exe',
                 gr: 'auto-py-to-exe Συγκεκριμένες Επιλογές',
+                ar: 'خيارات محددة auto-py-to-exe',
             },
             outputDirectory: {
                 en: 'Output Directory',
@@ -175,6 +185,7 @@ const translationMap = {
                 id: 'Direktori Keluaran',
                 cz: 'Složka výstupu',
                 gr: 'Διαδρομή Έξοδου Αρχείου',
+                ar: 'دليل المخرجات',
             },
             increaseRecursionLimit: {
                 en: 'Increase Recursion Limit',
@@ -191,6 +202,7 @@ const translationMap = {
                 id: 'Tingkatkan Batas Pengulangan',
                 cz: 'Zvýšit limit rekurze',
                 gr: 'Αύξηση ορίου αναδρομής',
+                ar: 'زيادة حد التكرار',
             },
             manuallyProvideOptions: {
                 en: 'Manually Provide Options',
@@ -207,6 +219,7 @@ const translationMap = {
                 id: 'Berikan Opsi secara manual',
                 cz: 'Manuálně poskytnout nastavení',
                 gr: 'Χειροκίνητες Επιλογές',
+                ar: 'قم بتوفير الخيارات يدويًا',
             },
             manualArgumentInput: {
                 en: 'Manual Argument Input',
@@ -223,6 +236,7 @@ const translationMap = {
                 id: 'Masukkan Argumen secara manual',
                 cz: 'Manuální vstup argumentů',
                 gr: 'Χειροκίνητη προσθήκη argument',
+                ar: 'إدخال المُعْطَيات يدوي',
             },
             configuration: {
                 en: 'Configuration',
@@ -239,6 +253,7 @@ const translationMap = {
                 id: 'Konfigurasi',
                 cz: 'Konfigurace',
                 gr: 'Διαμόρφωση',
+                ar: 'ترتيب',
             }
         },
         button: {
@@ -257,6 +272,7 @@ const translationMap = {
                 id: 'Telusuri',
                 cz: 'Prohlížet',
                 gr: 'Αναζήτηση',
+                ar: 'تصفح',
             },
             oneDirectory: {
                 en: 'One Directory',
@@ -273,6 +289,7 @@ const translationMap = {
                 id: 'Satu Direktori',
                 cz: 'Jedna složka',
                 gr: 'Μια Διαδρομή',
+                ar: 'دليل واحد',
             },
             oneFile: {
                 en: 'One File',
@@ -289,6 +306,7 @@ const translationMap = {
                 id: 'Satu Berkas',
                 cz: 'Jeden soubor',
                 gr: 'Ένα Αρχείο',
+                ar: 'ملف واحد',
             },
             consoleBased: {
                 en: 'Console Based',
@@ -305,6 +323,7 @@ const translationMap = {
                 id: 'Berdasarkan Konsol',
                 cz: 'V konzoli',
                 gr: 'Βασιμένο σε Παράθυρο Κονσόλας',
+                ar: 'قائم على وحدة التحكم',
             },
             windowBased: {
                 en: 'Window Based (hide the console)',
@@ -321,6 +340,7 @@ const translationMap = {
                 id: 'Berdasarkan Jendela (sembunyikan konsol)',
                 cz: 'V okně (skrýt konzoli)',
                 gr: 'Βασισμένο σε Παράθυρο (απόκρυψη κονσόλας)',
+                ar: 'قائم على النافذة (إخفاء وحدة التحكم)',
             },
             addFiles: {
                 en: 'Add Files',
@@ -337,6 +357,7 @@ const translationMap = {
                 id: 'Tambahkan Berkas',
                 cz: 'Přidat soubory',
                 gr: 'Προσθήκη Αρχείων',
+                ar: 'إضافة ملفات',
             },
             addFolder: {
                 en: 'Add Folder',
@@ -353,6 +374,7 @@ const translationMap = {
                 id: 'Tambahkan Folder',
                 cz: 'Přidat složku',
                 gr: 'Προσθήκη Φακέλου',
+                ar: 'أضف مجلدًا',
             },
             addBlank: {
                 en: 'Add Blank',
@@ -369,6 +391,7 @@ const translationMap = {
                 id: 'Tambahkan Kosong',
                 cz: 'Přidat prázdný',
                 gr: 'Προσθήκη Κενού Αρχείου',
+                ar: 'أضف فارغًا',
             },
             importConfig: {
                 en: 'Import Config From JSON File',
@@ -385,6 +408,7 @@ const translationMap = {
                 id: 'Impor Config dari Berkas JSON',
                 cz: 'Importovat konfiguraci z JSON souboru',
                 gr: 'Εισαγωγή Ρυθμίσεων από JSON αρχείο',
+                ar: 'استيراد التكوين من ملف JSON',
             },
             exportConfig: {
                 en: 'Export Config To JSON File',
@@ -400,6 +424,7 @@ const translationMap = {
                 id: 'Ekspor Config ke Berkas JSON',
                 cz: 'Exportovat konfiguraci do JSON souboru',
                 gr: 'Εξαγωγή ρυθμίσεων σε αρχείο JSON',
+                ar: 'تصدير التكوين إلى ملف JSON',
             },
             convert: {
                 en: 'Convert .py to .exe',
@@ -416,6 +441,7 @@ const translationMap = {
                 id: 'Konversi .py ke .exe',
                 cz: 'Převést .py na .exe',
                 gr: 'Μετατροπή .py σε .exe',
+                ar: 'تحويل .py إلى. exe',
             },
             openOutputFolder: {
                 en: 'Open Output Folder',
@@ -432,6 +458,7 @@ const translationMap = {
                 id: 'Buka Folder Keluaran',
                 cz: 'Otevřít složku výstupu',
                 gr: 'Άνοιγμα φακέλου εξαγωγής αρχείου',
+                ar: 'فتح مجلد المخرجات',
             },
             enable: {
                 en: 'Enable',
@@ -448,6 +475,7 @@ const translationMap = {
                 id: 'Aktifkan',
                 cz: 'Povolit',
                 gr: 'Συμπερίληψη',
+                ar: 'يُمكَِن',
             },
         },
         links: {
@@ -466,6 +494,7 @@ const translationMap = {
                 id: 'Post Bantuan',
                 cz: 'Příspěvek pomoci',
                 gr: 'Βοήθεια',
+                ar: 'مساعدة آخر',
             }
         },
         placeholders: {
@@ -484,6 +513,7 @@ const translationMap = {
                 id: 'Jalur ke berkas',
                 cz: 'Cesta k souboru',
                 gr: 'Διαδρομή στο αρχείο',
+                ar: 'مسار الملف',
             },
             icoFile: {
                 en: '.ico file',
@@ -500,6 +530,7 @@ const translationMap = {
                 id: '.ico berkas',
                 cz: '.ico soubor',
                 gr: 'Αρχείο .ico',
+                ar: 'ملف .ico',
             },
             directory: {
                 en: 'DIRECTORY',
@@ -516,6 +547,7 @@ const translationMap = {
                 id: 'DIREKTORI',
                 cz: 'SLOŽKA',
                 gr: 'Ευρετήριο',
+                ar: 'الدليل',
             },
             arguments: {
                 en: 'ARGUMENTS',
@@ -532,6 +564,7 @@ const translationMap = {
                 id: 'ARGUMEN',
                 cz: 'ARGUMENTY',
                 gr: 'Παράμετροι',
+                ar: 'المعطيات',
             }
         },
         helpText: {
@@ -549,6 +582,7 @@ const translationMap = {
                 id: 'Direktori untuk menyimpan output. Akan dibuat jika tidak ada',
                 cz: 'Složka kde bude výstup. Bude vytvořena pokud neexistuje.',
                 gr: 'Εάν δεν υπάρχει ο φάκελος εξόδου, θα δημιουργηθεί.',
+                ar: 'الدليل المراد وضع الإخراج فيه. سيتم إنشاؤه إذا لم يكن موجودًا',
             },
             increaseRecursionLimit: {
                 en: 'Having this enabled will set the recursion limit to 5000 using sys.setrecursionlimit(5000).',
@@ -564,6 +598,7 @@ const translationMap = {
                 id: 'Dengan mengaktifkan ini, pengaturan limit rekursi akan diatur ke 5000 menggunakan sys.setrecursionlimit(5000)',
                 cz: 'Pokud zapnuté, limit rekurze se zvýší ná 5000 pomocí sys.setrecursionlimit(5000).',
                 gr: 'Έχοντας ενεργοποιήσει το όριο που θα χρησιμοποιηθεί είναι 5000 με την παράμετρο sys.setrecursionlimit(5000).',
+                ar: 'سيؤدي تمكين هذا إلى تعيين حد العودية على 5000 باستخدام sys.setrecursionlimit (5000).',
             },
             manualArgumentInput: {
                 en: 'Inject raw text into the generated command.',
@@ -579,6 +614,7 @@ const translationMap = {
                 id: 'Masukkan teks mentah ke dalam command yang dibuat',
                 cz: 'Vložit text do vygenerovaného příkazu.',
                 gr: 'Εισάγετε το κείμενο για την εντολή',
+                ar: 'أدخل نصًا خامًا في الأمر الذي تم إنشاؤه.',
             }
         },
         notes: {
@@ -622,6 +658,9 @@ const translationMap = {
                 gr: 'Να είσατε προσεκτικοί με την χρήση επιλογής ενός αρχείου\n' +
                     '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">read this</a>\n' +
                     'and update your code to work with PyInstaller.',
+                ar: 'كن حذرًا عند استخدام ملفات إضافية مع وضع الملف الواحد ؛ \n' +
+                    '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">اقرا هذا</a>\n' +
+                    'وقم بتحديث التعليمات البرمجية الخاصة بك للعمل مع PyInstaller.',
             },
             rootDirectory: {
                 en: 'If you want to put files in the root directory, put a period (.) in the destination.',
@@ -637,6 +676,7 @@ const translationMap = {
                 id: 'Jika Anda ingin menyimpan berkas di direktori root, tambahkan titik (.) di tujuan.',
                 cz: 'Pokud chcete přidat soubory do kořenové složky, přidejte tečku (.) do destinace.',
                 gr: 'Έαν θέλετε να εισάγετε τα αρχεία σας στον κεντρικό φάκελο απλά τοποθετήστε μια τελεία (.) στον προορισμό',
+                ar: 'إذا كنت تريد وضع الملفات في الدليل الجذر ، فضع نقطة (.) في الوجهة.',
             },
             somethingWrongWithOutput: {
                 en: 'Something wrong with your exe? Read\n' +
@@ -704,6 +744,11 @@ const translationMap = {
                     '    this post on how to fix common issues\n' +
                     '</a>\n' +
                     'για πιθανές λύσεις.',
+                ar: 'شيء خاطئ مع exe الخاص بك؟ اقرأ\n' +
+                    '<a href="https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=application_link&utm_campaign=auto_py_to_exe_help&utm_content=bottom" target="_blank">\n' +
+                    '   هذا المنشور حول كيفية إصلاح المشكلات الشائعة\n' +
+                    '</a>\n' +
+                    'للحلول الممكنة.',
             }
         }
     },
@@ -726,6 +771,7 @@ const translationMap = {
                 id: 'Pilihan Umum',
                 cz: 'Obyčejné nastavení',
                 gr: 'Γενικές Παράμετροι',
+                ar: 'خيارات عامة',
             },
             whatToBundleWhereToSearch: {
                 en: 'What to bundle, where to search',
@@ -742,6 +788,7 @@ const translationMap = {
                 id: 'Apa yang dibundling, dimana cari',
                 cz: 'Co přibalit, kde hledat',
                 gr: 'Που θέλετε να γίνει η αναζήση;',
+                ar: 'ماذا تحزم ، أين تبحث',
             },
             howToGenerate: {
                 en: 'How to generate',
@@ -758,6 +805,7 @@ const translationMap = {
                 id: 'Bagaimana cara generate',
                 cz: 'Jak vygenerovat',
                 gr: 'Πως να γίνει η αναπαραγωή',
+                ar: 'كيف تنشئ',
             },
             windowsAndMacOsXSpecificOptions: {
                 en: 'Windows And Mac Os X Specific Options',
@@ -773,6 +821,7 @@ const translationMap = {
                 id: 'Pilihan Windows dan Mac Os X',
                 cz: 'Windows a Mac OS X specifické nastavení',
                 gr: 'Συγκεκριμένες Επιλογές για Windows και Mac Os X',
+                ar: 'خيارات محددة لنظام التشغيل Windows و Mac OS X',
             },
             windowsSpecificOptions: {
                 en: 'Windows specific options',
@@ -789,6 +838,7 @@ const translationMap = {
                 id: 'Pilihan Windows',
                 cz: 'Windows specifické nastavení',
                 gr: 'Συγκεκριμένες Επιλογές για Windows',
+                ar: 'خيارات Windows المحددة',
             },
             windowsSideBySideAssemblySearchingOptions: {
                 en: 'Windows Side-by-side Assembly searching options (advanced)',
@@ -805,6 +855,7 @@ const translationMap = {
                 id: 'Pilihan pencarian Assembly Windows Side-by-side (lanjutan)',
                 cz: 'Windows Side-by-side Assembly nastavení hledání (pokročilé)',
                 gr: 'Εργαλεία αναζήτησης για Windows με Assembly (για προχωρημένους)',
+                ar: 'خيارات البحث عن تجميع Windows جنبًا إلى جنب (متقدمة)',
             },
             macOsxSpecificOptions: {
                 en: 'Mac OS X specific options',
@@ -821,6 +872,7 @@ const translationMap = {
                 id: 'Pilihan Mac Os X',
                 cz: 'Mac OS X specifické nastavení',
                 gr: 'Συγκεκριμένες Επιλογές για  Mac Os X',
+                ar: 'خيارات محددة لنظام التشغيل Mac OS X',
             },
             rarelyUsedSpecialOptions: {
                 en: 'Rarely used special options',
@@ -837,6 +889,7 @@ const translationMap = {
                 id: 'Pilihan khusus yang jarang digunakan',
                 cz: 'Málo používané speciální nastavení',
                 gr: 'Σπάνιες χρησιμοποιημένες επιλογές',
+                ar: 'نادرًا ما يتم استخدام خيارات خاصة',
             },
             other: {
                 en: 'Other',
@@ -853,6 +906,7 @@ const translationMap = {
                 id: 'Lainnya',
                 cz: 'Ostatní',
                 gr: 'Διάφορα',
+                ar: 'آخر',
             },
         },
         button: {
@@ -872,6 +926,7 @@ const translationMap = {
                 id: 'Telusuri berkas',
                 cz: 'Hledat soubor',
                 gr: 'Αναζήτηση Αρχείου',
+                ar: 'تصفح بحثًا عن ملف',
             },
             browseForFolder: {
                 en: 'Browse for Folder',
@@ -888,6 +943,7 @@ const translationMap = {
                 id: 'Telusuri folder',
                 cz: 'Hledat složku',
                 gr: 'Αναζητήση Φακέλου',
+                ar: 'قم بالاستعراض بحثًا عن مجلد',
             },
             enable: {
                 en: 'Enable',
@@ -904,6 +960,7 @@ const translationMap = {
                 id: 'Aktifkan',
                 cz: 'Zapnout',
                 gr: 'Ενεργοποιήση',
+                ar: 'يُمكَِن',
             },
             disable: {
                 en: 'Disable',
@@ -920,6 +977,7 @@ const translationMap = {
                 id: 'Matikan',
                 cz: 'Vypnout',
                 gr: 'Απερνογοποιήση',
+                ar: 'تعطيل',
             },
             converting: {
                 en: 'Converting...',
@@ -936,6 +994,7 @@ const translationMap = {
                 id: 'Mengkonversi...',
                 cz: 'Probíhá konverze...',
                 gr: 'Μετατροπή...',
+                ar: 'التحويل...',
             },
             clearOutput: {
                 en: 'Clear Output',
@@ -952,6 +1011,7 @@ const translationMap = {
                 id: 'Clear Output',
                 cz: 'Smazat výstup',
                 gr: 'Καθαρισμός Εξόδου',
+                ar: 'مسح المخرجات',
             },
         },
         modal: {
@@ -970,6 +1030,7 @@ const translationMap = {
                 id: 'Timpa konfigurasi saat ini?',
                 cz: 'Přepsat aktuální konfiguraci?',
                 gr: 'Εγγραφή ρυθμίσεων πάνω στις υπάρχουσες ρυθμίσεις;',
+                ar: 'هل تريد تجاوز التكوين الحالي؟',
             },
             configModalDescription: {
                 en: 'All previously inserted values will be erased.',
@@ -986,6 +1047,7 @@ const translationMap = {
                 id: 'Semua nilai yang sebelumnya dimasukkan akan dihapus.',
                 cz: 'Všechny předchozí hodnoty budou smazány.',
                 gr: 'Όλες οι προηγούμενες τιμές θα σβηστούν.',
+                ar: 'سيتم مسح جميع القيم المدرجة مسبقًا.',
             },
             configModalConfirmButton: {
                 en: 'Confirm',
@@ -1002,6 +1064,7 @@ const translationMap = {
                 id: 'Konfirmasi',
                 cz: 'Potvrdit',
                 gr: 'Επιβεβαίωση',
+                ar: 'أكد',
             },
             configModalCancelButton: {
                 en: 'Cancel',
@@ -1018,6 +1081,7 @@ const translationMap = {
                 id: 'Batal',
                 cz: 'Zrušit',
                 gr: 'Ακύρωση',
+                ar: 'إلغاء',
             }
         }
     },
@@ -1039,6 +1103,7 @@ const translationMap = {
                 id: 'Anda belum menyediakan lokasi skrip Anda.\nSilakan masukkan di atas halaman.',
                 cz: 'Chybí místo skriptu.\nProsím přidejte místo nahoře.',
                 gr: 'Δεν έχετε δώσει την τοποθεσία των αρχείων.\nΠαρακαλώ δώστε την τοποθεσία στην αρχή της σελίδας.',
+                ar: 'لم تقم بتوفير موقع البرامج النصية الخاصة بك. \ n الرجاء إدخال هذا في أعلى الصفحة.',
             },
             overwritePreviousOutput: {
                 en: 'This action will overwrite a previous output in the output folder.\nContinue?',
@@ -1055,6 +1120,7 @@ const translationMap = {
                 id: 'Tindakan ini akan menimpa sebuah output sebelumnya di folder output.\nLanjutkan?',
                 cz: 'Toto přepíše předchozí výstup.\nPokračovat?',
                 gr: 'Αυτή η ενέργεια θα διαγράψει τιην προηγούμενη έξοδο αρχείου στον φάκελο εξόδου.\nΝα συνεχίσω;',
+                ar: 'سيؤدي هذا الإجراء إلى الكتابة فوق الإخراج السابق في مجلد الإخراج. \ n هل تريد المتابعة؟',
             }
         },
     }
@@ -1151,6 +1217,10 @@ const getTranslation = (path) => {
 
 const _defaultLanguage = 'en';
 const supportedLanguages = [
+    {
+        name: 'Arabic (العربية)',
+        code: 'ar'
+    },
     {
         name: 'Brazilian Portuguese (Português Brasileiro)',
         code: 'pt_br'
