@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.24.0
+
+🚀 Enhancements
+
+- [#319](https://github.com/brentvollebregt/auto-py-to-exe/pull/319): Added Arabic translations
+
+🏆 Contributors
+
+- [ELTAYEB ALI](https://github.com/Tayeb-Ali)
+
 ## 2.23.1
 
 🐛 Bug Fixes
