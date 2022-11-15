@@ -1,246 +1,263 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Auto Py To Exe</title>
-        <script>
-            // Provided for type checking
-            window.eel = {
-                initialise: () => ({
-                    filename: null,
-                    options: [],
-                    suppliedUiConfiguration: {},
-                    warnings: [],
-                    pathSeparator: '',
-                    defaultOutputFolder: '',
-                    languageHint: ''
-                }),
-                does_file_exist: (path) => false,
-                does_folder_exist: (path) => false,
-                ask_file: (file_type) => "",
-                ask_files: () => [],
-                ask_folder: () => "",
-                open_folder_in_explorer: (path) => {},
-                will_packaging_overwrite_existing: (file_path, one_file, output_folder) => true,
-                package: (command, non_pyinstaller_options) => {},
-                import_configuration: () => {},
-                export_configuration: (configuration) => {}
-            }
-        </script>
-        <script type="text/javascript" src="/eel.js"></script>
-        <script type="text/javascript" src="/js/constants.js"></script>
-        <script type="text/javascript" src="/js/i18n.js"></script>
-        <script type="text/javascript" src="/js/initialise.js"></script>
-        <script type="text/javascript" src="/js/configuration.js"></script>
-        <script type="text/javascript" src="/js/staticEvents.js"></script>
-        <script type="text/javascript" src="/js/interface.js"></script>
-        <script type="text/javascript" src="/js/utils.js"></script>
-        <script type="text/javascript" src="/js/modal.js"></script>
-        <script type="text/javascript" src="/js/messages.js"></script>
-        <script type="text/javascript" src="/js/packaging.js"></script>
-        <script type="text/javascript" src="/js/importExport.js"></script>
-        <link rel="stylesheet" href="/css/general.css">
-        <link rel="stylesheet" href="/css/main.css">
-        <link rel="stylesheet" href="/css/modal.css">
-    </head>
 
-    <body>
-        <div class="mid">
-            <div id="header">
-                <div class="title">
-                    <a href="https://github.com/brentvollebregt/auto-py-to-exe" target="_blank"><img src="/favicon.ico" /></a>
-                    <a href="https://github.com/brentvollebregt/auto-py-to-exe" target="_blank"><h1>Auto Py to Exe</h1></a>
-                </div>
-                <div class="extra-links">
-                    <a href="https://github.com/brentvollebregt/auto-py-to-exe" target="_blank">
-                        GitHub
-                        <img src="https://github.githubassets.com/favicons/favicon.png" alt="GitHub favicon" />
-                    </a>
-                    <a href="https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=application_link&utm_campaign=auto_py_to_exe_help&utm_content=top" target="_blank">
-                        <span data-i18n="ui.links.helpPost">Help Post</span>
-                        <img src="https://nitratine.net/static/img/favicon-384x384.png" alt="Nitratine favicon" />
-                    </a>
-                    <span>
-                        <label for="language-selection"><small>Language: </small></label>
-                        <select id="language-selection"></select>
-                    </span>
-                </div>
-            </div>
+<head>
+    <title>Auto Py To Exe</title>
+    <script>
+        // Provided for type checking
+        window.eel = {
+            initialise: () => ({
+                filename: null,
+                options: [],
+                suppliedUiConfiguration: {},
+                warnings: [],
+                pathSeparator: '',
+                defaultOutputFolder: '',
+                languageHint: ''
+            }),
+            does_file_exist: (path) => false,
+            does_folder_exist: (path) => false,
+            ask_file: (file_type) => "",
+            ask_files: () => [],
+            ask_folder: () => "",
+            open_folder_in_explorer: (path) => { },
+            will_packaging_overwrite_existing: (file_path, one_file, output_folder) => true,
+            package: (command, non_pyinstaller_options) => { },
+            import_configuration: () => { },
+            export_configuration: (configuration) => { }
+        }
+    </script>
+    <script type="text/javascript" src="/eel.js"></script>
+    <script type="text/javascript" src="/js/constants.js"></script>
+    <script type="text/javascript" src="/js/i18n.js"></script>
+    <script type="text/javascript" src="/js/initialise.js"></script>
+    <script type="text/javascript" src="/js/configuration.js"></script>
+    <script type="text/javascript" src="/js/staticEvents.js"></script>
+    <script type="text/javascript" src="/js/interface.js"></script>
+    <script type="text/javascript" src="/js/utils.js"></script>
+    <script type="text/javascript" src="/js/modal.js"></script>
+    <script type="text/javascript" src="/js/messages.js"></script>
+    <script type="text/javascript" src="/js/packaging.js"></script>
+    <script type="text/javascript" src="/js/importExport.js"></script>
+    <link rel="stylesheet" href="/css/general.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/modal.css">
+</head>
 
-            <div id="warnings"></div>
-
-            <div>
-                <h2 data-i18n="ui.title.scriptLocation">Script Location</h2>
-                <div class="filepath-browse-layout">
-                    <input id="entry-script" placeholder="Path to file" required data-i18n_placeholder="ui.placeholders.pathToFile">
-                    <button id="entry-script-search" data-i18n="ui.button.browse">Browse</button>
-                </div>
-            </div>
-
-            <div>
-                <h2>
-                    <span data-i18n="ui.title.oneFile">Onefile</span>
-                    <small>(--onedir / --onefile)</small>
-                </h2>
-                <div>
-                    <button id="one-directory-button" class="large" data-i18n="ui.button.oneDirectory">
-                        One Directory
-                    </button>
-                    <button id="one-file-button" class="large" data-i18n="ui.button.oneFile">
-                        One File
-                    </button>
-                </div>
-            </div>
-
-            <div>
-                <h2>
-                    <span data-i18n="ui.title.consoleWindow">Console Window</span>
-                    <small>(--console / --windowed)</small>
-                </h2>
-                <div>
-                    <button id="console-based-button" class="large" data-i18n="ui.button.consoleBased">
-                        Console Based
-                    </button>
-                    <button id="window-based-button" class="large" data-i18n="ui.button.windowBased">
-                        Window Based (hide the console)
-                    </button>
-                </div>
-            </div>
-
-            <div id="section-icon">
-                <div class="header noselect" onclick="expandSection('icon')">
-                    <img src="img/chevron-square-up.svg" alt="Icon Section Chevron"/>
-                    <h2>
-                        <span data-i18n="ui.title.icon">Icon</span>
-                        <small>(--icon)</small>
-                    </h2>
-                </div>
-                <div class="content">
-                    <div class="filepath-browse-layout">
-                        <input id="icon-path" placeholder=".ico file" data-i18n_placeholder="ui.placeholders.icoFile">
-                        <button id="icon-path-search" data-i18n="ui.button.browse">Browse</button>
-                    </div>
-                </div>
-            </div>
-
-            <div id="section-additional-files">
-                <div class="header noselect" onclick="expandSection('additional-files')">
-                    <img src="img/chevron-square-up.svg" alt="Additional Files Section Chevron"/>
-                    <h2>
-                        <span data-i18n="ui.title.additionalFiles">Additional Files</span>
-                        <small>(--add-data)</small>
-                    </h2>
-                </div>
-                <div class="content">
-                    <div id="datas-add-buttons">
-                        <button id="additional-files-add-files-button" data-i18n="ui.button.addFiles">
-                            Add Files
-                        </button>
-                        <button id="additional-files-add-folder" data-i18n="ui.button.addFolder">
-                            Add Folder
-                        </button>
-                        <button id="additional-files-add-blank" data-i18n="ui.button.addBlank">
-                            Add Blank
-                        </button>
-                    </div>
-                    <div id="datas-list"></div>
-                    <p id="onefileAdditionalFilesNote" class="note" style="display: none;" data-i18n="ui.notes.oneFileAdditionalFilesNote">
-                        Be careful when using additional files with onefile mode;
-                        <a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">read this</a>
-                        and update your code to work with PyInstaller.
-                    </p>
-                    <p class="note" data-i18n="ui.notes.rootDirectory">
-                        If you want to put files in the root directory, put a period (.) in the destination.
-                    </p>
-                </div>
-            </div>
-
-            <div id="section-advanced">
-                <div class="header noselect" onclick="expandSection('advanced')">
-                    <img src="img/chevron-square-up.svg" alt="Advanced Section Chevron"/>
-                    <h2 data-i18n="ui.title.advanced">Advanced</h2>
-                </div>
-                <div class="content"></div>
-            </div>
-
-            <div id="section-settings">
-                <div class="header noselect" onclick="expandSection('settings')">
-                    <img src="img/chevron-square-up.svg" alt="Advanced Section Chevron"/>
-                    <h2 data-i18n="ui.title.settings">Settings</h2>
-                </div>
-                <div class="content">
-                    <div>
-                        <h3 data-i18n="ui.title.specificOptions">auto-py-to-exe Specific Options</h3>
-                        <div class="option-container input">
-                            <span>
-                                <span data-i18n="ui.title.outputDirectory">Output Directory</span>
-                                <span title="The directory to put the output in. Will be created if it doesn't exist" class="info_icon" data-i18n_title="ui.helpText.outputDirectory"></span>
-                            </span>
-                            <div class="filepath-browse-layout">
-                                <input id="output-directory" placeholder="DIRECTORY" data-i18n_placeholder="ui.placeholders.directory">
-                                <button id="output-directory-search" data-i18n="ui.button.browse">Browse</button>
-                            </div>
-                        </div>
-                        <div class="option-container switch">
-                            <span>
-                                <span data-i18n="ui.title.increaseRecursionLimit">Increase Recursion Limit</span>
-                                <span title="Having this enabled will set the recursion limit to 5000 using sys.setrecursionlimit(5000)." class="info_icon" data-i18n_title="ui.helpText.increaseRecursionLimit"></span>
-                            </span>
-                            <button id="recursion-limit-switch" data-i18n="ui.button.enable">Enable</button>
-                        </div>
-                    </div>
-                    <div>
-                        <h3 data-i18n="ui.title.manuallyProvideOptions">Manually Provide Options</h3>
-                        <div class="option-container input">
-                            <span>
-                                <span data-i18n="ui.title.manualArgumentInput">Manual Argument Input</span>
-                                <span title="Inject raw text into the generated command." class="info_icon" data-i18n_title="ui.helpText.manualArgumentInput"></span>
-                            </span>
-                            <input id="raw-arguments" placeholder="ARGUMENTS" data-i18n_placeholder="ui.placeholders.arguments" />
-                        </div>
-                    </div>
-                    <div>
-                        <h3 data-i18n="ui.title.configuration">Configuration</h3>
-                        <button id="configuration-import" data-i18n="ui.button.importConfig">Import Config From JSON File</button>
-                        <button id="configuration-export" data-i18n="ui.button.exportConfig">Export Config To JSON File</button>
-                    </div>
-                </div>
-            </div>
-
-            <div id="current-command">
-                <h2 data-i18n="ui.title.currentCommand">Current Command</h2>
-                <textarea readonly></textarea>
-            </div>
-
-            <div id="output">
-                <h2 data-i18n="ui.title.output">Output</h2>
-                <textarea readonly></textarea>
-            </div>
-
-            <div id="common-issue-link" data-i18n="ui.notes.somethingWrongWithOutput">
-                Something wrong with your exe? Read
-                <a href="https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=application_link&utm_campaign=auto_py_to_exe_help&utm_content=bottom" target="_blank">
-                    this post on how to fix common issues
+<body>
+    <div class="mid">
+        <div id="header">
+            <div class="title">
+                <a href="https://github.com/brentvollebregt/auto-py-to-exe" target="_blank"><img
+                        src="/favicon.ico" /></a>
+                <a href="https://github.com/brentvollebregt/auto-py-to-exe" target="_blank">
+                    <h1>Auto Py to Exe</h1>
                 </a>
-                for possible solutions.
             </div>
-
-            <div id="package-button-wrapper">
-                <button id="package-button" data-i18n="ui.button.convert">
-                    Convert .py to .exe
-                </button>
-                <button id="open-output-folder-button" data-i18n="ui.button.openOutputFolder">
-                    Open Output Folder
-                </button>
+            <div class="extra-links">
+                <a href="https://github.com/brentvollebregt/auto-py-to-exe" target="_blank">
+                    GitHub
+                    <img src="https://github.githubassets.com/favicons/favicon.png" alt="GitHub favicon" />
+                </a>
+                <a href="https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=application_link&utm_campaign=auto_py_to_exe_help&utm_content=top"
+                    target="_blank">
+                    <span data-i18n="ui.links.helpPost">Help Post</span>
+                    <img src="https://nitratine.net/static/img/favicon-384x384.png" alt="Nitratine favicon" />
+                </a>
+                <span>
+                    <label for="language-selection"><small data-i18n="ui.title.language">Language: </small></label>
+                    <select id="language-selection"></select>
+                </span>
             </div>
         </div>
 
-        <div id="modal-area" class="modal-coverage modal-coverage-hidden"></div>
+        <div id="warnings"></div>
 
-        <div id="spinner-root" class="loading-spinner-wrapper">
+        <div>
+            <h2 data-i18n="ui.title.scriptLocation">Script Location</h2>
+            <div class="filepath-browse-layout">
+                <input id="entry-script" placeholder="Path to file" required
+                    data-i18n_placeholder="ui.placeholders.pathToFile">
+                <button id="entry-script-search" data-i18n="ui.button.browse">Browse</button>
+            </div>
+        </div>
+
+        <div>
+            <h2>
+                <span data-i18n="ui.title.oneFile">Onefile</span>
+                <small>(--onedir / --onefile)</small>
+            </h2>
             <div>
-                <div class="loading-spinner"></div>
-                <span class="loading-label">Initializing...</span>
+                <button id="one-directory-button" class="large" data-i18n="ui.button.oneDirectory">
+                    One Directory
+                </button>
+                <button id="one-file-button" class="large" data-i18n="ui.button.oneFile">
+                    One File
+                </button>
             </div>
         </div>
-    </body>
+
+        <div>
+            <h2>
+                <span data-i18n="ui.title.consoleWindow">Console Window</span>
+                <small>(--console / --windowed)</small>
+            </h2>
+            <div>
+                <button id="console-based-button" class="large" data-i18n="ui.button.consoleBased">
+                    Console Based
+                </button>
+                <button id="window-based-button" class="large" data-i18n="ui.button.windowBased">
+                    Window Based (hide the console)
+                </button>
+            </div>
+        </div>
+
+        <div id="section-icon">
+            <div class="header noselect" onclick="expandSection('icon')">
+                <img src="img/chevron-square-up.svg" alt="Icon Section Chevron" />
+                <h2>
+                    <span data-i18n="ui.title.icon">Icon</span>
+                    <small>(--icon)</small>
+                </h2>
+            </div>
+            <div class="content">
+                <div class="filepath-browse-layout">
+                    <input id="icon-path" placeholder=".ico file" data-i18n_placeholder="ui.placeholders.icoFile">
+                    <button id="icon-path-search" data-i18n="ui.button.browse">Browse</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="section-additional-files">
+            <div class="header noselect" onclick="expandSection('additional-files')">
+                <img src="img/chevron-square-up.svg" alt="Additional Files Section Chevron" />
+                <h2>
+                    <span data-i18n="ui.title.additionalFiles">Additional Files</span>
+                    <small>(--add-data)</small>
+                </h2>
+            </div>
+            <div class="content">
+                <div id="datas-add-buttons">
+                    <button id="additional-files-add-files-button" data-i18n="ui.button.addFiles">
+                        Add Files
+                    </button>
+                    <button id="additional-files-add-folder" data-i18n="ui.button.addFolder">
+                        Add Folder
+                    </button>
+                    <button id="additional-files-add-blank" data-i18n="ui.button.addBlank">
+                        Add Blank
+                    </button>
+                </div>
+                <div id="datas-list"></div>
+                <p id="onefileAdditionalFilesNote" class="note" style="display: none;"
+                    data-i18n="ui.notes.oneFileAdditionalFilesNote">
+                    Be careful when using additional files with onefile mode;
+                    <a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">read this</a>
+                    and update your code to work with PyInstaller.
+                </p>
+                <p class="note" data-i18n="ui.notes.rootDirectory">
+                    If you want to put files in the root directory, put a period (.) in the destination.
+                </p>
+            </div>
+        </div>
+
+        <div id="section-advanced">
+            <div class="header noselect" onclick="expandSection('advanced')">
+                <img src="img/chevron-square-up.svg" alt="Advanced Section Chevron" />
+                <h2 data-i18n="ui.title.advanced">Advanced</h2>
+            </div>
+            <div class="content"></div>
+        </div>
+
+        <div id="section-settings">
+            <div class="header noselect" onclick="expandSection('settings')">
+                <img src="img/chevron-square-up.svg" alt="Advanced Section Chevron" />
+                <h2 data-i18n="ui.title.settings">Settings</h2>
+            </div>
+            <div class="content">
+                <div>
+                    <h3 data-i18n="ui.title.specificOptions">auto-py-to-exe Specific Options</h3>
+                    <div class="option-container input">
+                        <span>
+                            <span data-i18n="ui.title.outputDirectory">Output Directory</span>
+                            <span title="The directory to put the output in. Will be created if it doesn't exist"
+                                class="info_icon" data-i18n_title="ui.helpText.outputDirectory"></span>
+                        </span>
+                        <div class="filepath-browse-layout">
+                            <input id="output-directory" placeholder="DIRECTORY"
+                                data-i18n_placeholder="ui.placeholders.directory">
+                            <button id="output-directory-search" data-i18n="ui.button.browse">Browse</button>
+                        </div>
+                    </div>
+                    <div class="option-container switch">
+                        <span>
+                            <span data-i18n="ui.title.increaseRecursionLimit">Increase Recursion Limit</span>
+                            <span
+                                title="Having this enabled will set the recursion limit to 5000 using sys.setrecursionlimit(5000)."
+                                class="info_icon" data-i18n_title="ui.helpText.increaseRecursionLimit"></span>
+                        </span>
+                        <button id="recursion-limit-switch" data-i18n="ui.button.enable">Enable</button>
+                    </div>
+                </div>
+                <div>
+                    <h3 data-i18n="ui.title.manuallyProvideOptions">Manually Provide Options</h3>
+                    <div class="option-container input">
+                        <span>
+                            <span data-i18n="ui.title.manualArgumentInput">Manual Argument Input</span>
+                            <span title="Inject raw text into the generated command." class="info_icon"
+                                data-i18n_title="ui.helpText.manualArgumentInput"></span>
+                        </span>
+                        <input id="raw-arguments" placeholder="ARGUMENTS"
+                            data-i18n_placeholder="ui.placeholders.arguments" />
+                    </div>
+                </div>
+                <div>
+                    <h3 data-i18n="ui.title.configuration">Configuration</h3>
+                    <button id="configuration-import" data-i18n="ui.button.importConfig">Import Config From JSON
+                        File</button>
+                    <button id="configuration-export" data-i18n="ui.button.exportConfig">Export Config To JSON
+                        File</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="current-command">
+            <h2 data-i18n="ui.title.currentCommand">Current Command</h2>
+            <textarea readonly></textarea>
+        </div>
+
+        <div id="output">
+            <h2 data-i18n="ui.title.output">Output</h2>
+            <textarea readonly></textarea>
+        </div>
+
+        <div id="common-issue-link" data-i18n="ui.notes.somethingWrongWithOutput">
+            Something wrong with your exe? Read
+            <a href="https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=application_link&utm_campaign=auto_py_to_exe_help&utm_content=bottom"
+                target="_blank">
+                this post on how to fix common issues
+            </a>
+            for possible solutions.
+        </div>
+
+        <div id="package-button-wrapper">
+            <button id="package-button" data-i18n="ui.button.convert">
+                Convert .py to .exe
+            </button>
+            <button id="open-output-folder-button" data-i18n="ui.button.openOutputFolder">
+                Open Output Folder
+            </button>
+        </div>
+    </div>
+
+    <div id="modal-area" class="modal-coverage modal-coverage-hidden"></div>
+
+    <div id="spinner-root" class="loading-spinner-wrapper">
+        <div>
+            <div class="loading-spinner"></div>
+            <span class="loading-label">Initializing...</span>
+        </div>
+    </div>
+</body>
+
 </html>
