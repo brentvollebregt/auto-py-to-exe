@@ -171,7 +171,7 @@ const translationMap = {
                 de: 'Ausgabe',
                 pt_br: 'Saída',
                 sp: 'Salida',
-                sp_la: 'Exportado',
+                sp_la: 'Salida',
                 tr: 'Çıktı',
                 fr: 'Sortie',
                 it: 'Output',
@@ -769,9 +769,8 @@ const translationMap = {
                     'y posibles soluciones.',
                 sp_la: 'Algo fue mal con tu archivo .exe? Lea \n' +
                     '<a href="https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=application_link&utm_campaign=auto_py_to_exe_help&utm_content=bottom" target="_blank">\n' +
-                    '    este post contiene posibles soluciones a problemas comunes\n' +
-                    '</a>\n' +
-                    'y posibles soluciones.',
+                    '    este post contiene posibles soluciones a problemas comunes' +
+                    '</a>.\n',
                 tr: 'exe\'nizde bir sorun mu var? Oku\n' +
                     '<a href="https://nitratine.net/blog/post/issues-while-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=application_link&utm_campaign=auto_py_to_exe_help&utm_content=bottom" target="_blank">\ n' +
                     ' yaygın sorunların nasıl çözüleceğiyle ilgili bu gönderiye bakin\n' +
