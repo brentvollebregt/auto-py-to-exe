@@ -105,8 +105,8 @@ If you're having issues with the packaged executable or using this tool in gener
 | ------------------------------------------- | ----- | --------------------------------------------- | ------------------------------------ |
 | Arabic (العربية)                            | ar    | [Tayeb-Ali](https://github.com/tayeb-ali)     | UI                                   |
 | Brazilian Portuguese (Português Brasileiro) | pt_br | [marleyas](https://github.com/marleyas)       | UI (partial)                         |
-| Chinese Simplified (简体中文)               | zh    | [jiangzhe11](https://github.com/jiangzhe11)   | UI and [README](./README-Chinese.md) |
-| Chinese Traditional (繁體中文)              | zh_tw | [startgo](https://github.com/ystartgo)        | UI                                   |
+| Chinese Simplified  (简体中文)               | zh    | [jiangzhe11](https://github.com/jiangzhe11)   | UI and [README](./README-Chinese.md) |
+| Chinese Traditional  (繁體中文)              | zh_tw | [startgo](https://github.com/ystartgo)        | UI                                   |
 | Czech                                       | cz    | [Matto58](https://github.com/Matto58)         | UI                                   |
 | English                                     | en    | -                                             | UI and README                        |
 | French (Français)                           | fr    | [flaviedesp](https://github.com/flaviedesp)   | UI                                   |
@@ -116,6 +116,7 @@ If you're having issues with the packaged executable or using this tool in gener
 | Italian (Italiano)                          | it    | [itsEmax64](https://github.com/itsEmax64)     | UI                                   |
 | Russian (Русский)                           | ru    | Oleg                                          | UI                                   |
 | Spanish (Español)                           | sp    | [enriiquee](https://github.com/enriiquee)     | UI                                   |
+| Spanish Latam (Español Latam)               | sp_la | [Matyrela](https://github.com/Matyrela)       | UI                                   |
 | Thai (ภาษาไทย)                              | th    | [teerut26](https://github.com/teerut26)       | UI (partial)                         |
 | Turkish (Türkçe)                            | tr    | [mcagriaksoy](https://github.com/mcagriaksoy) | UI                                   |
 
