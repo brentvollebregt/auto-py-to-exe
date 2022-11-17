@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.24.1
+
+🚀 Enhancements
+
+- [#327](https://github.com/brentvollebregt/auto-py-to-exe/issues/327): Added support for Python 3.11
+
 ## 2.24.0
 
 🚀 Enhancements
