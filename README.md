@@ -116,6 +116,7 @@ If you're having issues with the packaged executable or using this tool in gener
 | Italian (Italiano)                          | it    | [itsEmax64](https://github.com/itsEmax64)     | UI                                   |
 | Russian (Русский)                           | ru    | Oleg                                          | UI                                   |
 | Spanish (Español)                           | sp    | [enriiquee](https://github.com/enriiquee)     | UI                                   |
+| Spanish Latam (Español Latam)               | sp_la | [Matyrela](https://github.com/Matyrela)       | UI                                   |
 | Thai (ภาษาไทย)                              | th    | [teerut26](https://github.com/teerut26)       | UI (partial)                         |
 | Turkish (Türkçe)                            | tr    | [mcagriaksoy](https://github.com/mcagriaksoy) | UI                                   |
 
