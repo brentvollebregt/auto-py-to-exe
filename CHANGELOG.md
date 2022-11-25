@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.25.0
+
+🚀 Enhancements
+
+- [#329](https://github.com/brentvollebregt/auto-py-to-exe/pull/329): Added Spanish Latam translations
+
+🏆 Contributors
+
+- [Matías Varela](https://github.com/Matyrela)
+
 ## 2.24.1
 
 🚀 Enhancements
