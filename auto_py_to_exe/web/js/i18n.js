@@ -1366,7 +1366,8 @@ const getTranslation = (path) => {
 };
 
 const _defaultLanguage = 'en';
-const supportedLanguages = [{
+const supportedLanguages = [
+    {
         name: 'Arabic (العربية)',
         code: 'ar'
     },
