@@ -18,6 +18,7 @@ const translationMap = {
                 cz: 'Umístění skriptu',
                 gr: 'Διαδρομή Αρχείου',
                 ar: 'موقع البرنامج النصي',
+                sr: 'Lokacija skripte',
             },
             language: {
                 en: 'Language',
@@ -36,6 +37,7 @@ const translationMap = {
                 cz: 'Idiom',
                 gr: 'ιδίωμα',
                 ar: 'لغة. مثل',
+                sr: 'Jezik',
             },
             oneFile: {
                 en: 'Onefile',
@@ -54,6 +56,7 @@ const translationMap = {
                 cz: 'Jeden soubor',
                 gr: 'Ένα αρχείο',
                 ar: 'ملف',
+                sr: 'Jedana datoteka',
             },
             consoleWindow: {
                 en: 'Console Window',
@@ -72,6 +75,7 @@ const translationMap = {
                 cz: 'Okno konzole',
                 gr: 'Εφαρμογή παραθύρου',
                 ar: 'نافذة وحدة التحكم',
+                sr: 'Konzolni prozor',
             },
             icon: {
                 en: 'Icon',
@@ -90,6 +94,7 @@ const translationMap = {
                 cz: 'Ikona',
                 gr: 'Εικονίδιο',
                 ar: 'أيقونة',
+                sr: 'Ikona',
             },
             additionalFiles: {
                 en: 'Additional Files',
@@ -108,6 +113,7 @@ const translationMap = {
                 cz: 'Další soubory',
                 gr: 'Πρόσθετα αρχεία',
                 ar: 'ملفات إضافية',
+                sr: 'Dodatne datoteke',
             },
             advanced: {
                 en: 'Advanced',
@@ -126,6 +132,7 @@ const translationMap = {
                 cz: 'Pokročilé',
                 gr: 'Για προχωρημένους',
                 ar: 'متقدم',
+                sr: 'Napredno',
             },
             settings: {
                 en: 'Settings',
@@ -144,6 +151,7 @@ const translationMap = {
                 cz: 'Nastavení',
                 gr: 'Ρυθμίσεις',
                 ar: 'إعدادات',
+                sr: 'Postavke',
             },
             currentCommand: {
                 en: 'Current Command',
@@ -162,6 +170,7 @@ const translationMap = {
                 cz: 'Aktuální příkaz',
                 gr: 'Τρέχον Εντολή',
                 ar: 'الأمر الحالي',
+                sr: 'Trenutna komanda',
             },
             output: {
                 en: 'Output',
@@ -179,6 +188,7 @@ const translationMap = {
                 cz: 'Výstup',
                 gr: 'Έξοδος',
                 ar: 'المخرجات',
+                sr: 'Izlaz (Output)',
             },
             specificOptions: {
                 en: 'auto-py-to-exe Specific Options',
@@ -197,6 +207,7 @@ const translationMap = {
                 cz: 'Přesné nastavení auto-py-to-exe',
                 gr: 'auto-py-to-exe Συγκεκριμένες Επιλογές',
                 ar: 'خيارات محددة auto-py-to-exe',
+                sr: 'Precizno podešavanje auto-py-to-exe-a',
             },
             outputDirectory: {
                 en: 'Output Directory',
@@ -215,6 +226,7 @@ const translationMap = {
                 cz: 'Složka výstupu',
                 gr: 'Διαδρομή Έξοδου Αρχείου',
                 ar: 'دليل المخرجات',
+                sr: 'Izlazni direktorijum',
             },
             increaseRecursionLimit: {
                 en: 'Increase Recursion Limit',
@@ -233,6 +245,7 @@ const translationMap = {
                 cz: 'Zvýšit limit rekurze',
                 gr: 'Αύξηση ορίου αναδρομής',
                 ar: 'زيادة حد التكرار',
+                sr: 'Povećaj granicu rekurzije',
             },
             manuallyProvideOptions: {
                 en: 'Manually Provide Options',
@@ -251,6 +264,7 @@ const translationMap = {
                 cz: 'Manuálně poskytnout nastavení',
                 gr: 'Χειροκίνητες Επιλογές',
                 ar: 'قم بتوفير الخيارات يدويًا',
+                sr: 'Ručno unesi podešavanja',
             },
             manualArgumentInput: {
                 en: 'Manual Argument Input',
@@ -269,6 +283,7 @@ const translationMap = {
                 cz: 'Manuální vstup argumentů',
                 gr: 'Χειροκίνητη προσθήκη argument',
                 ar: 'إدخال المُعْطَيات يدوي',
+                sr: 'Ručni unos argumenata',
             },
             configuration: {
                 en: 'Configuration',
@@ -287,6 +302,7 @@ const translationMap = {
                 cz: 'Konfigurace',
                 gr: 'Διαμόρφωση',
                 ar: 'ترتيب',
+                sr: 'Konfiguracija',
             }
         },
         button: {
@@ -307,6 +323,7 @@ const translationMap = {
                 cz: 'Prohlížet',
                 gr: 'Αναζήτηση',
                 ar: 'تصفح',
+                sr: 'Pronađi',
             },
             oneDirectory: {
                 en: 'One Directory',
@@ -325,6 +342,7 @@ const translationMap = {
                 cz: 'Jedna složka',
                 gr: 'Μια Διαδρομή',
                 ar: 'دليل واحد',
+                sr: 'Jedan direktorijum',
             },
             oneFile: {
                 en: 'One File',
@@ -343,6 +361,7 @@ const translationMap = {
                 cz: 'Jeden soubor',
                 gr: 'Ένα Αρχείο',
                 ar: 'ملف واحد',
+                sr: 'Jedana datoteka',
             },
             consoleBased: {
                 en: 'Console Based',
@@ -361,6 +380,7 @@ const translationMap = {
                 cz: 'V konzoli',
                 gr: 'Βασιμένο σε Παράθυρο Κονσόλας',
                 ar: 'قائم على وحدة التحكم',
+                sr: 'Konzolna aplikacija',
             },
             windowBased: {
                 en: 'Window Based (hide the console)',
@@ -379,6 +399,7 @@ const translationMap = {
                 cz: 'V okně (skrýt konzoli)',
                 gr: 'Βασισμένο σε Παράθυρο (απόκρυψη κονσόλας)',
                 ar: 'قائم على النافذة (إخفاء وحدة التحكم)',
+                sr: 'Aplikacija sa prozorom (sakrij konzolu)',
             },
             addFiles: {
                 en: 'Add Files',
@@ -397,6 +418,7 @@ const translationMap = {
                 cz: 'Přidat soubory',
                 gr: 'Προσθήκη Αρχείων',
                 ar: 'إضافة ملفات',
+                sr: 'Dodaj datoteku',
             },
             addFolder: {
                 en: 'Add Folder',
@@ -415,6 +437,7 @@ const translationMap = {
                 cz: 'Přidat složku',
                 gr: 'Προσθήκη Φακέλου',
                 ar: 'أضف مجلدًا',
+                sr: 'Dodaj direktorijum',
             },
             addBlank: {
                 en: 'Add Blank',
@@ -433,6 +456,7 @@ const translationMap = {
                 cz: 'Přidat prázdný',
                 gr: 'Προσθήκη Κενού Αρχείου',
                 ar: 'أضف فارغًا',
+                sr: 'Dodaj prazno',
             },
             importConfig: {
                 en: 'Import Config From JSON File',
@@ -451,6 +475,7 @@ const translationMap = {
                 cz: 'Importovat konfiguraci z JSON souboru',
                 gr: 'Εισαγωγή Ρυθμίσεων από JSON αρχείο',
                 ar: 'استيراد التكوين من ملف JSON',
+                sr: 'Učitaj konfiguracuju iz JSON datoteke',
             },
             exportConfig: {
                 en: 'Export Config To JSON File',
@@ -468,6 +493,7 @@ const translationMap = {
                 cz: 'Exportovat konfiguraci do JSON souboru',
                 gr: 'Εξαγωγή ρυθμίσεων σε αρχείο JSON',
                 ar: 'تصدير التكوين إلى ملف JSON',
+                sr: 'Sačuvaj konfiguracuju kao JSON datoteku',
             },
             convert: {
                 en: 'Convert .py to .exe',
@@ -486,6 +512,7 @@ const translationMap = {
                 cz: 'Převést .py na .exe',
                 gr: 'Μετατροπή .py σε .exe',
                 ar: 'تحويل .py إلى. exe',
+                sr: 'Konvertuj .py u .exe',
             },
             openOutputFolder: {
                 en: 'Open Output Folder',
@@ -504,6 +531,7 @@ const translationMap = {
                 cz: 'Otevřít složku výstupu',
                 gr: 'Άνοιγμα φακέλου εξαγωγής αρχείου',
                 ar: 'فتح مجلد المخرجات',
+                sr: 'Otvori izlazni direktorijum',
             },
             enable: {
                 en: 'Enable',
@@ -522,6 +550,7 @@ const translationMap = {
                 cz: 'Povolit',
                 gr: 'Συμπερίληψη',
                 ar: 'يُمكَِن',
+                sr: 'Omogući',
             },
         },
         links: {
@@ -542,6 +571,7 @@ const translationMap = {
                 cz: 'Příspěvek pomoci',
                 gr: 'Βοήθεια',
                 ar: 'مساعدة آخر',
+                sr: 'Pomoć',
             }
         },
         placeholders: {
@@ -562,6 +592,7 @@ const translationMap = {
                 cz: 'Cesta k souboru',
                 gr: 'Διαδρομή στο αρχείο',
                 ar: 'مسار الملف',
+                sr: 'Putanja datoteke',
             },
             icoFile: {
                 en: '.ico file',
@@ -580,6 +611,7 @@ const translationMap = {
                 cz: '.ico soubor',
                 gr: 'Αρχείο .ico',
                 ar: 'ملف .ico',
+                sr: '.ico datoteka',
             },
             directory: {
                 en: 'DIRECTORY',
@@ -598,6 +630,7 @@ const translationMap = {
                 cz: 'SLOŽKA',
                 gr: 'Ευρετήριο',
                 ar: 'الدليل',
+                sr: 'Direktorijum',
             },
             arguments: {
                 en: 'ARGUMENTS',
@@ -616,6 +649,7 @@ const translationMap = {
                 cz: 'ARGUMENTY',
                 gr: 'Παράμετροι',
                 ar: 'المعطيات',
+                sr: 'Argumenti',
             }
         },
         helpText: {
@@ -635,6 +669,7 @@ const translationMap = {
                 cz: 'Složka kde bude výstup. Bude vytvořena pokud neexistuje.',
                 gr: 'Εάν δεν υπάρχει ο φάκελος εξόδου, θα δημιουργηθεί.',
                 ar: 'الدليل المراد وضع الإخراج فيه. سيتم إنشاؤه إذا لم يكن موجودًا',
+                sr: 'Direktorijum za izlaz. Napraviće se ako ne postoji.',
             },
             increaseRecursionLimit: {
                 en: 'Having this enabled will set the recursion limit to 5000 using sys.setrecursionlimit(5000).',
@@ -652,6 +687,7 @@ const translationMap = {
                 cz: 'Pokud zapnuté, limit rekurze se zvýší ná 5000 pomocí sys.setrecursionlimit(5000).',
                 gr: 'Έχοντας ενεργοποιήσει το όριο που θα χρησιμοποιηθεί είναι 5000 με την παράμετρο sys.setrecursionlimit(5000).',
                 ar: 'سيؤدي تمكين هذا إلى تعيين حد العودية على 5000 باستخدام sys.setrecursionlimit (5000).',
+                sr: 'Ako je omogućeno, ograničenje rekurzije će biti povećano na 5000 korišćenjem sys.setrecursionlimit(5000).',
             },
             manualArgumentInput: {
                 en: 'Inject raw text into the generated command.',
@@ -669,6 +705,7 @@ const translationMap = {
                 cz: 'Vložit text do vygenerovaného příkazu.',
                 gr: 'Εισάγετε το κείμενο για την εντολή',
                 ar: 'أدخل نصًا خامًا في الأمر الذي تم إنشاؤه.',
+                sr: 'Ubaci tekst u generisanu komandu.',
             }
         },
         notes: {
@@ -718,6 +755,9 @@ const translationMap = {
                 ar: 'كن حذرًا عند استخدام ملفات إضافية مع وضع الملف الواحد ؛ \n' +
                     '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">اقرا هذا</a>\n' +
                     'وقم بتحديث التعليمات البرمجية الخاصة بك للعمل مع PyInstaller.',
+                sr: 'Budi oprezan kada koristiš dodatne datoteke u režimu jedne datoteke;\n' +
+                    '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">pročitaj ovo (na engleskom)</a>\n' +
+                    'i ažuriraj svoj kod da bi radio sa PyInstaller.',
             },
             rootDirectory: {
                 en: 'If you want to put files in the root directory, put a period (.) in the destination.',
@@ -735,6 +775,7 @@ const translationMap = {
                 cz: 'Pokud chcete přidat soubory do kořenové složky, přidejte tečku (.) do destinace.',
                 gr: 'Έαν θέλετε να εισάγετε τα αρχεία σας στον κεντρικό φάκελο απλά τοποθετήστε μια τελεία (.) στον προορισμό',
                 ar: 'إذا كنت تريد وضع الملفات في الدليل الجذر ، فضع نقطة (.) في الوجهة.',
+                sr: 'Ako želiš da dodaš datoteke u osnovni direktorijum (tzv. root), dodaj tačku (.) u odredištu.,
             },
             somethingWrongWithOutput: {
                 en: 'Something wrong with your exe? Read\n' +
@@ -811,6 +852,11 @@ const translationMap = {
                     '   هذا المنشور حول كيفية إصلاح المشكلات الشائعة\n' +
                     '</a>\n' +
                     'للحلول الممكنة.',
+                sr: 'Nešto nije u redu sa tvojim exe-om? Pročitaj\n' +
+                    '<a href="https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=application_link&utm_campaign=auto_py_to_exe_help&utm_content=bottom" target="_blank">\n' +
+                    '    ovaj post o tome kako da popraviš česte greške,\n' +
+                    '</a>\n' +
+                    'za moguća rešenja problema.',
             }
         }
     },
@@ -835,6 +881,7 @@ const translationMap = {
                 cz: 'Obyčejné nastavení',
                 gr: 'Γενικές Παράμετροι',
                 ar: 'خيارات عامة',
+                sr: 'Osnovna podešavanja',
             },
             whatToBundleWhereToSearch: {
                 en: 'What to bundle, where to search',
@@ -853,6 +900,7 @@ const translationMap = {
                 cz: 'Co přibalit, kde hledat',
                 gr: 'Που θέλετε να γίνει η αναζήση;',
                 ar: 'ماذا تحزم ، أين تبحث',
+                sr: 'Šta uključiti, gde ga naći',
             },
             howToGenerate: {
                 en: 'How to generate',
@@ -871,6 +919,7 @@ const translationMap = {
                 cz: 'Jak vygenerovat',
                 gr: 'Πως να γίνει η αναπαραγωή',
                 ar: 'كيف تنشئ',
+                sr: 'Kako generisati',
             },
             windowsAndMacOsXSpecificOptions: {
                 en: 'Windows And Mac Os X Specific Options',
@@ -888,6 +937,7 @@ const translationMap = {
                 cz: 'Windows a Mac OS X specifické nastavení',
                 gr: 'Συγκεκριμένες Επιλογές για Windows και Mac Os X',
                 ar: 'خيارات محددة لنظام التشغيل Windows و Mac OS X',
+                sr: 'Specifična podešavanja za Windows i Mac Os X',
             },
             windowsSpecificOptions: {
                 en: 'Windows specific options',
@@ -906,6 +956,7 @@ const translationMap = {
                 cz: 'Windows specifické nastavení',
                 gr: 'Συγκεκριμένες Επιλογές για Windows',
                 ar: 'خيارات Windows المحددة',
+                sr: 'Specifična podešavanja za Windows',
             },
             windowsSideBySideAssemblySearchingOptions: {
                 en: 'Windows Side-by-side Assembly searching options (advanced)',
@@ -924,6 +975,7 @@ const translationMap = {
                 cz: 'Windows Side-by-side Assembly nastavení hledání (pokročilé)',
                 gr: 'Εργαλεία αναζήτησης για Windows με Assembly (για προχωρημένους)',
                 ar: 'خيارات البحث عن تجميع Windows جنبًا إلى جنب (متقدمة)',
+                sr: 'Windows Side-by-side Assembly podešavanja pretrage (napredno)',
             },
             macOsxSpecificOptions: {
                 en: 'Mac OS X specific options',
@@ -942,6 +994,7 @@ const translationMap = {
                 cz: 'Mac OS X specifické nastavení',
                 gr: 'Συγκεκριμένες Επιλογές για  Mac Os X',
                 ar: 'خيارات محددة لنظام التشغيل Mac OS X',
+                sr: 'Specifična podešavanja za Mac OS X',
             },
             rarelyUsedSpecialOptions: {
                 en: 'Rarely used special options',
@@ -960,6 +1013,7 @@ const translationMap = {
                 cz: 'Málo používané speciální nastavení',
                 gr: 'Σπάνιες χρησιμοποιημένες επιλογές',
                 ar: 'نادرًا ما يتم استخدام خيارات خاصة',
+                sr: 'Retko korišćena podešavanja',
             },
             other: {
                 en: 'Other',
@@ -978,6 +1032,7 @@ const translationMap = {
                 cz: 'Ostatní',
                 gr: 'Διάφορα',
                 ar: 'آخر',
+                sr: 'Ostalo',
             },
         },
         button: {
@@ -999,6 +1054,7 @@ const translationMap = {
                 cz: 'Hledat soubor',
                 gr: 'Αναζήτηση Αρχείου',
                 ar: 'تصفح بحثًا عن ملف',
+                sr: 'Pronađi datoteku',
             },
             browseForFolder: {
                 en: 'Browse for Folder',
@@ -1017,6 +1073,7 @@ const translationMap = {
                 cz: 'Hledat složku',
                 gr: 'Αναζητήση Φακέλου',
                 ar: 'قم بالاستعراض بحثًا عن مجلد',
+                sr: 'Pronađi direktorijum',
             },
             enable: {
                 en: 'Enable',
@@ -1035,6 +1092,7 @@ const translationMap = {
                 cz: 'Zapnout',
                 gr: 'Ενεργοποιήση',
                 ar: 'يُمكَِن',
+                sr: 'Omogući',
             },
             disable: {
                 en: 'Disable',
@@ -1053,6 +1111,7 @@ const translationMap = {
                 cz: 'Vypnout',
                 gr: 'Απερνογοποιήση',
                 ar: 'تعطيل',
+                sr: 'Onemogući',
             },
             converting: {
                 en: 'Converting...',
@@ -1071,6 +1130,7 @@ const translationMap = {
                 cz: 'Probíhá konverze...',
                 gr: 'Μετατροπή...',
                 ar: 'التحويل...',
+                sr: 'Konvertovanje...',
             },
             clearOutput: {
                 en: 'Clear Output',
@@ -1089,6 +1149,7 @@ const translationMap = {
                 cz: 'Smazat výstup',
                 gr: 'Καθαρισμός Εξόδου',
                 ar: 'مسح المخرجات',
+                sr: 'Očisti izlaz',
             },
         },
         modal: {
@@ -1109,6 +1170,7 @@ const translationMap = {
                 cz: 'Přepsat aktuální konfiguraci?',
                 gr: 'Εγγραφή ρυθμίσεων πάνω στις υπάρχουσες ρυθμίσεις;',
                 ar: 'هل تريد تجاوز التكوين الحالي؟',
+                sr: 'Zameniti trenutnu konfiguraciju?',
             },
             configModalDescription: {
                 en: 'All previously inserted values will be erased.',
@@ -1127,6 +1189,7 @@ const translationMap = {
                 cz: 'Všechny předchozí hodnoty budou smazány.',
                 gr: 'Όλες οι προηγούμενες τιμές θα σβηστούν.',
                 ar: 'سيتم مسح جميع القيم المدرجة مسبقًا.',
+                sr: 'Sve prethodne vrednosti će biti izbrisane.',
             },
             configModalConfirmButton: {
                 en: 'Confirm',
@@ -1145,6 +1208,7 @@ const translationMap = {
                 cz: 'Potvrdit',
                 gr: 'Επιβεβαίωση',
                 ar: 'أكد',
+                sr: 'Potvrdi',
             },
             configModalCancelButton: {
                 en: 'Cancel',
@@ -1163,6 +1227,7 @@ const translationMap = {
                 cz: 'Zrušit',
                 gr: 'Ακύρωση',
                 ar: 'إلغاء',
+                sr: 'Otkaži',
             }
         }
     },
@@ -1186,6 +1251,7 @@ const translationMap = {
                 cz: 'Chybí místo skriptu.\nProsím přidejte místo nahoře.',
                 gr: 'Δεν έχετε δώσει την τοποθεσία των αρχείων.\nΠαρακαλώ δώστε την τοποθεσία στην αρχή της σελίδας.',
                 ar: 'لم تقم بتوفير موقع البرامج النصية الخاصة بك. \ n الرجاء إدخال هذا في أعلى الصفحة.',
+                sr: 'Nis naveo lokaciju tvoje skripte.\nNavedi lokaciju na vrhu stranice',
             },
             overwritePreviousOutput: {
                 en: 'This action will overwrite a previous output in the output folder.\nContinue?',
@@ -1204,6 +1270,7 @@ const translationMap = {
                 cz: 'Toto přepíše předchozí výstup.\nPokračovat?',
                 gr: 'Αυτή η ενέργεια θα διαγράψει τιην προηγούμενη έξοδο αρχείου στον φάκελο εξόδου.\nΝα συνεχίσω;',
                 ar: 'سيؤدي هذا الإجراء إلى الكتابة فوق الإخراج السابق في مجلد الإخراج. \ n هل تريد المتابعة؟',
+                sr: 'Ovo će zameniti prethodni izlaz u izlaznom direktorijumu.\nNastavi?',
             }
         },
     }
@@ -1299,8 +1366,7 @@ const getTranslation = (path) => {
 };
 
 const _defaultLanguage = 'en';
-const supportedLanguages = [
-    {
+const supportedLanguages = [{
         name: 'Arabic (العربية)',
         code: 'ar'
     },
@@ -1355,6 +1421,10 @@ const supportedLanguages = [
     {
         name: 'Spanish Latam (Español Latam)',
         code: 'sp_la',
+    },
+    {
+        name: 'Srpski (Serbian)',
+        code: 'sr',
     },
     {
         name: 'Thai (ภาษาไทย)',
