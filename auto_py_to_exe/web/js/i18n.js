@@ -1416,16 +1416,16 @@ const supportedLanguages = [
         code: 'ru',
     },
     {
+        name: 'Serbian (Srpski)',
+        code: 'sr',
+    },
+    {
         name: 'Spanish (Español)',
         code: 'sp',
     },
     {
         name: 'Spanish Latam (Español Latam)',
         code: 'sp_la',
-    },
-    {
-        name: 'Serbian (Srpski)',
-        code: 'sr',
     },
     {
         name: 'Thai (ภาษาไทย)',
