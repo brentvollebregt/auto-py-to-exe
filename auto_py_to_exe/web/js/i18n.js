@@ -1251,7 +1251,7 @@ const translationMap = {
                 cz: 'Chybí místo skriptu.\nProsím přidejte místo nahoře.',
                 gr: 'Δεν έχετε δώσει την τοποθεσία των αρχείων.\nΠαρακαλώ δώστε την τοποθεσία στην αρχή της σελίδας.',
                 ar: 'لم تقم بتوفير موقع البرامج النصية الخاصة بك. \ n الرجاء إدخال هذا في أعلى الصفحة.',
-                sr: 'Nis naveo lokaciju tvoje skripte.\nNavedi lokaciju na vrhu stranice',
+                sr: 'Nisi naveo lokaciju tvoje skripte.\nNavedi lokaciju na vrhu stranice',
             },
             overwritePreviousOutput: {
                 en: 'This action will overwrite a previous output in the output folder.\nContinue?',
