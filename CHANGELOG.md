@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.26.0
+
+🚀 Enhancements
+
+- [#331](https://github.com/brentvollebregt/auto-py-to-exe/pull/331): Added Serbian translations
+
+🏆 Contributors
+
+- [rina](https://github.com/sweatshirts)
+
 ## 2.25.0
 
 🚀 Enhancements
