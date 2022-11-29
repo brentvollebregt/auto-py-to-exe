@@ -7,10 +7,10 @@ assignees: brentvollebregt
 
 ---
 
-**Quick Checks For You**
+**Quick Checks**
 - [ ] I have read/searched in the [help post](https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe)
-- [ ] I have [searched other issues](https://github.com/brentvollebregt/auto-py-to-exe/issues?q=is%3Aissue+) looking for an issue similar to mine
-- [ ] I have made sure my applicaiton/script runs before trying to package
+- [ ] I have [searched other issues](https://github.com/brentvollebregt/auto-py-to-exe/issues?q=is%3Aissue+), looking for an issue similar to mine
+- [ ] I have made sure my application/script runs before trying to package 
 
 **Describe the bug**
 A clear and concise description of what the bug is.
@@ -27,7 +27,7 @@ Steps to reproduce the behavior:
 **Expected behavior**
 A clear and concise description of what you expected to happen.
 
-**Screenshots**
+**Screenshots (optional)**
 If applicable, add screenshots to help explain your problem.
 
 **Your Environment:**
@@ -36,5 +36,5 @@ If applicable, add screenshots to help explain your problem.
 - PyInstaller version (`pip show pyinstaller`):
 - Eel version (`pip show eel`): 
 
-**Additional context**
+**Additional context (optional)**
 Add any other context about the problem here.
