@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.26.1
+
+🐛 Bug Fixes
+
+- [#346](https://github.com/brentvollebregt/auto-py-to-exe/pull/346): Fix Chinese translation error
+
+🏆 Contributors
+
+- [Mark Melendez](https://github.com/Melendez1209)
+
 ## 2.26.0
 
 🚀 Enhancements
