@@ -22,8 +22,8 @@ const translationMap = {
             },
             language: {
                 en: 'Language',
-                zh: '成语',
-                zh_tw: '成語',
+                zh: '语言',
+                zh_tw: '語言',
                 ru: 'идиома',
                 de: 'Idiom',
                 pt_br: 'Idioma',
