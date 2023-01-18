@@ -420,7 +420,7 @@ const translationMap = {
                 gr: 'Βασισμένο σε Παράθυρο (απόκρυψη κονσόλας)',
                 ar: 'قائم على النافذة (إخفاء وحدة التحكم)',
                 sr: 'Aplikacija sa prozorom (sakrij konzolu)',
-                ja: 'ウィンドウベース (コンソールを非表示にする)'
+                ja: 'ウィンドウベース (コンソールを非表示にする)',
             },
             addFiles: {
                 en: 'Add Files',
@@ -643,7 +643,7 @@ const translationMap = {
                 gr: 'Αρχείο .ico',
                 ar: 'ملف .ico',
                 sr: '.ico datoteka',
-                ja: '.ico ファイル'
+                ja: '.ico ファイル',
             },
             directory: {
                 en: 'DIRECTORY',
