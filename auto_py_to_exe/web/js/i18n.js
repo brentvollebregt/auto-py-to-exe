@@ -824,90 +824,56 @@ const translationMap = {
                 ja: 'ルートディレクトリにファイルを置きたい場合は、移動先にピリオド (.) を入れます。',
             },
             somethingWrongWithOutput: {
-                en: 'Something wrong with your exe? Read\n' +
-                    `<a href="${helpPostUrl}" target="_blank">\n` +
-                    '    this post on how to fix common issues\n' +
-                    '</a>\n' +
-                    'for possible solutions.',
-                zh: '你的exe有问题? 阅读' +
-                    `<a href="${helpPostUrl}" target="_blank">\n` +
-                    '    这篇文章是关于如何修复常见问题的\n' +
-                    '</a>\n' +
-                    '寻找可能的解决方案。',
-                zh_tw: '您的 exe 有問題? 請閱讀' +
-                    `<a href="${helpPostUrl}" target="_blank">\n` +
-                    '    這篇文章是關於如何修復常見的問題\n' +
-                    '</a>\n' +
-                    '尋找可能的解決方案。',
-                ru: 'Что-то не так с вашим exe? Прочитайте\n' +
-                    `<a href="${helpPostUrl}" target="_blank">\n` +
-                    '    эту справку, с описанием большинства проблем\n' +
-                    '</a>\n' +
-                    'чтобы решить свою.',
-                pt_br: 'Algo errado com seu exe? Read\n' +
-                    `<a href="${helpPostUrl}" target="_blank">\n` +
-                    '    este post fala sobre os problemas comuns\n' +
-                    '</a>\n' +
+                en: 'Something wrong with your exe? Read ' +
+                    `<a href="${helpPostUrl}" target="_blank">this post on how to fix common issues</a>` +
+                    ' for possible solutions.',
+                zh: '你的exe有问题? 阅读 ' +
+                    `<a href="${helpPostUrl}" target="_blank">这篇文章是关于如何修复常见问题的` +
+                    ' 寻找可能的解决方案。',
+                zh_tw: '您的 exe 有問題? 請閱讀 ' +
+                    `<a href="${helpPostUrl}" target="_blank">這篇文章是關於如何修復常見的問題</a>` +
+                    ' 尋找可能的解決方案。',
+                ru: 'Что-то не так с вашим exe? Прочитайте ' +
+                    `<a href="${helpPostUrl}" target="_blank">эту справку, с описанием большинства проблем</a>` +
+                    ' чтобы решить свою.',
+                pt_br: 'Algo errado com seu exe? Read ' +
+                    `<a href="${helpPostUrl}" target="_blank">este post fala sobre os problemas comuns</a>` +
                     ' e possíveis soluções.',
-                sp: 'Algo fue mal con tu exe? Lea \n' +
-                    `<a href="${helpPostUrl}" target="_blank">\n` +
-                    '    este post contiene posibles problemas comunes\n' +
-                    '</a>\n' +
-                    'y posibles soluciones.',
-                sp_la: 'Algo fue mal con tu archivo .exe? Lea \n' +
-                    `<a href="${helpPostUrl}" target="_blank">\n` +
-                    '    este post contiene posibles soluciones a problemas comunes' +
-                    '</a>.\n',
-                tr: 'exe\'nizde bir sorun mu var? Oku\n' +
-                    `<a href="${helpPostUrl}" target="_blank">\n` +
-                    ' yaygın sorunların nasıl çözüleceğiyle ilgili bu gönderiye bakin\n' +
-                    '</a>\n' +
-                    'olası çözümler için.',
-                th: 'มีอะไรผิดปกติกับ exe ของคุณ? อ่าน\n' +
-                    `<a href="${helpPostUrl}" target="_blank">\n` +
-                    ' โพสต์เกี่ยวกับวิธีแก้ไขปัญหาทั่วไป\n' +
-                    '</a>\n' +
-                    'สำหรับวิธีแก้ปัญหาที่เป็นไปได้',
-                fr: 'Quelque chose ne va pas avec votre exe? Lire\n' +
-                    `<a href="${helpPostUrl}" target="_blank">\n` +
-                    ' ce post sur la façon de résoudre les problèmes courants\n' +
-                    '</a>\n' +
-                    'pour les solutions possibles.',
-                it: 'Qualcosa è andato storto con il tuo exe? leggi\n' +
-                    `<a href="${helpPostUrl}" target="_blank">\n` +
-                    '    questo articolo su come risolvere problemi comuni (articolo in inglese)\n' +
-                    '</a>\n' +
-                    'per possibili soluzioni.',
-                id: 'Ada yang salah dengan exe Anda? Baca\n' +
-                    `<a href="${helpPostUrl}" target="_blank">\n` +
-                    '    artikel ini untuk menyelesaikan masalah-masalah umum\n' +
-                    '</a>\n' +
-                    'yang mungkin.',
-                cz: 'Něco špatně s exe souborem? Přečtěte si\n' +
-                    `<a href="${helpPostUrl}" target="_blank">\n` +
-                    '    tento příspěvek na jak opravit běžné chyby\n' +
-                    '</a>.\n' +
-                    'pro možné řešení.',
-                gr: 'Πήγε κάτι στραβά με το εκτελέσιμο (exe); Διαβάστε\n' +
-                    `<a href="${helpPostUrl}" target="_blank">\n` +
-                    '    this post on how to fix common issues\n' +
-                    '</a>\n' +
-                    'για πιθανές λύσεις.',
-                ar: 'شيء خاطئ مع exe الخاص بك؟ اقرأ\n' +
-                    `<a href="${helpPostUrl}" target="_blank">\n` +
-                    '   هذا المنشور حول كيفية إصلاح المشكلات الشائعة\n' +
-                    '</a>\n' +
-                    'للحلول الممكنة.',
-                sr: 'Nešto nije u redu sa tvojim exe-om? Pročitaj\n' +
-                    `<a href="${helpPostUrl}" target="_blank">\n` +
-                    '    ovaj post o tome kako da popraviš česte greške,\n' +
-                    '</a>\n' +
-                    'za moguća rešenja problema.',
-                ja: 'exeに不具合がありますか？\n' +
-                    `<a href="${helpPostUrl}" target="_blank">\n` +
-                    '    よくある問題を解決する方法についての記事\n' +
-                    '</a>\n' +
-                    'をご覧ください。',
+                sp: 'Algo fue mal con tu exe? Lea ' +
+                    `<a href="${helpPostUrl}" target="_blank">este post contiene posibles problemas comunes</a>` +
+                    ' y posibles soluciones.',
+                sp_la: 'Algo fue mal con tu archivo .exe? Lea ' +
+                    `<a href="${helpPostUrl}" target="_blank">este post contiene posibles soluciones a problemas comunes</a>.`,
+                tr: 'exe\'nizde bir sorun mu var? Oku ' +
+                    `<a href="${helpPostUrl}" target="_blank">yaygın sorunların nasıl çözüleceğiyle ilgili bu gönderiye bakin</a>` +
+                    ' olası çözümler için.',
+                th: 'มีอะไรผิดปกติกับ exe ของคุณ? อ่าน ' +
+                    `<a href="${helpPostUrl}" target="_blank">โพสต์เกี่ยวกับวิธีแก้ไขปัญหาทั่วไป</a>` +
+                    ' สำหรับวิธีแก้ปัญหาที่เป็นไปได้',
+                fr: 'Quelque chose ne va pas avec votre exe? Lire ' +
+                    `<a href="${helpPostUrl}" target="_blank">ce post sur la façon de résoudre les problèmes courants</a>` +
+                    ' pour les solutions possibles.',
+                it: 'Qualcosa è andato storto con il tuo exe? leggi ' +
+                    `<a href="${helpPostUrl}" target="_blank">questo articolo su come risolvere problemi comuni (articolo in inglese)</a>` +
+                    ' per possibili soluzioni.',
+                id: 'Ada yang salah dengan exe Anda? Baca ' +
+                    `<a href="${helpPostUrl}" target="_blank">artikel ini untuk menyelesaikan masalah-masalah umum</a>` +
+                    ' yang mungkin.',
+                cz: 'Něco špatně s exe souborem? Přečtěte si ' +
+                    `<a href="${helpPostUrl}" target="_blank">tento příspěvek na jak opravit běžné chyby</a>` +
+                    ' pro možné řešení.',
+                gr: 'Πήγε κάτι στραβά με το εκτελέσιμο (exe); Διαβάστε ' +
+                    `<a href="${helpPostUrl}" target="_blank">this post on how to fix common issues</a>` +
+                    ' για πιθανές λύσεις.',
+                ar: 'شيء خاطئ مع exe الخاص بك؟ اقرأ ' +
+                    `<a href="${helpPostUrl}" target="_blank">هذا المنشور حول كيفية إصلاح المشكلات الشائعة</a>` +
+                    ' للحلول الممكنة.',
+                sr: 'Nešto nije u redu sa tvojim exe-om? Pročitaj ' +
+                    `<a href="${helpPostUrl}" target="_blank">ovaj post o tome kako da popraviš česte greške,</a>` +
+                    ' za moguća rešenja problema.',
+                ja: 'exeに不具合がありますか？ ' +
+                    `<a href="${helpPostUrl}" target="_blank">よくある問題を解決する方法についての記事</a>` +
+                    ' をご覧ください。',
             }
         }
     },
