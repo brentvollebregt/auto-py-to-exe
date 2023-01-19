@@ -1,5 +1,19 @@
 # Changelog
 
+## 2.27.0
+
+🚀 Enhancements
+
+- [#346](https://github.com/brentvollebregt/auto-py-to-exe/pull/355): Added Japanese translations
+
+🐛 Bug Fixes
+
+- Fixed broken links for some translations
+
+🏆 Contributors
+
+- [NattyanTV](https://github.com/nattyan-tv)
+
 ## 2.26.1
 
 🐛 Bug Fixes
