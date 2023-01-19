@@ -1,3 +1,8 @@
+// Constants used in translation map
+const applicationName = 'auto-py-to-exe';
+const helpPostUrl = 'https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=application_link&utm_campaign=auto_py_to_exe_help&utm_content=bottom'
+
+// Translation mappings
 const translationMap = {
     ui: { // Static UI elements
         title: {
@@ -201,24 +206,24 @@ const translationMap = {
                 ja: '出力',
             },
             specificOptions: {
-                en: 'auto-py-to-exe Specific Options',
-                zh: 'auto-py-to-exe 特定的选项',
-                zh_tw: 'auto-py-to-exe 特定的選項',
-                ru: 'Особые параметры auto-py-to-exe',
-                de: 'auto-py-to-exe spezifische Optionen',
-                pt_br: 'Opções Específicas auto-py-to-exe',
-                sp: 'Opciones Específicas auto-py-to-exe',
-                sp_la: 'Opciones Específicas auto-py-to-exe',
-                tr: 'auto-py-to-exe ye Özel Seçenekler',
-                th: 'auto-py-to-exe ตัวเลือกเฉพาะ',
+                en: `${applicationName} Specific Options`,
+                zh: `${applicationName} 特定的选项`,
+                zh_tw: `${applicationName} 特定的選項`,
+                ru: `Особые параметры ${applicationName}`,
+                de: `${applicationName} spezifische Optionen`,
+                pt_br: `Opções Específicas ${applicationName}`,
+                sp: `Opciones Específicas ${applicationName}`,
+                sp_la: `Opciones Específicas ${applicationName}`,
+                tr: `${applicationName} ye Özel Seçenekler`,
+                th: `${applicationName} ตัวเลือกเฉพาะ`,
                 fr: 'Options spécifiques',
-                it: 'Opzioni specifiche auto-py-to-exe',
-                id: 'Pilihan Spesifik auto-py-to-exe',
-                cz: 'Přesné nastavení auto-py-to-exe',
-                gr: 'auto-py-to-exe Συγκεκριμένες Επιλογές',
-                ar: 'خيارات محددة auto-py-to-exe',
+                it: `Opzioni specifiche ${applicationName}`,
+                id: `Pilihan Spesifik ${applicationName}`,
+                cz: `Přesné nastavení ${applicationName}`,
+                gr: `${applicationName} Συγκεκριμένες Επιλογές`,
+                ar: `خيارات محددة ${applicationName}`,
                 sr: 'Precizno podešavanje auto-py-to-exe-a',
-                ja: 'auto-py-to-exe 固有の設定',
+                ja: `${applicationName} 固有の設定`,
             },
             outputDirectory: {
                 en: 'Output Directory',
@@ -820,86 +825,86 @@ const translationMap = {
             },
             somethingWrongWithOutput: {
                 en: 'Something wrong with your exe? Read\n' +
-                    '<a href="https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=application_link&utm_campaign=auto_py_to_exe_help&utm_content=bottom" target="_blank">\n' +
+                    `<a href="${helpPostUrl}" target="_blank">\n` +
                     '    this post on how to fix common issues\n' +
                     '</a>\n' +
                     'for possible solutions.',
                 zh: '你的exe有问题? 阅读' +
-                    '<a href="https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=application_link&utm_campaign=auto_py_to_exe_help&utm_content=bottom" target="_blank">\n' +
+                    `<a href="${helpPostUrl}" target="_blank">\n` +
                     '    这篇文章是关于如何修复常见问题的\n' +
                     '</a>\n' +
                     '寻找可能的解决方案。',
                 zh_tw: '您的 exe 有問題? 請閱讀' +
-                    '<a href="https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=application_link&utm_campaign=auto_py_to_exe_help&utm_content=bottom" target="_blank">\n' +
+                    `<a href="${helpPostUrl}" target="_blank">\n` +
                     '    這篇文章是關於如何修復常見的問題\n' +
                     '</a>\n' +
                     '尋找可能的解決方案。',
                 ru: 'Что-то не так с вашим exe? Прочитайте\n' +
-                    '<a href="https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=application_link&utm_campaign=auto_py_to_exe_help&utm_content=bottom" target="_blank">\n' +
+                    `<a href="${helpPostUrl}" target="_blank">\n` +
                     '    эту справку, с описанием большинства проблем\n' +
                     '</a>\n' +
                     'чтобы решить свою.',
                 pt_br: 'Algo errado com seu exe? Read\n' +
-                    '<a href="https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=application_link&utm_campaign=auto_py_to_exe_help&utm_content=bottom" target="_blank">\n' +
+                    `<a href="${helpPostUrl}" target="_blank">\n` +
                     '    este post fala sobre os problemas comuns\n' +
                     '</a>\n' +
                     ' e possíveis soluções.',
                 sp: 'Algo fue mal con tu exe? Lea \n' +
-                    '<a href="https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=application_link&utm_campaign=auto_py_to_exe_help&utm_content=bottom" target="_blank">\n' +
+                    `<a href="${helpPostUrl}" target="_blank">\n` +
                     '    este post contiene posibles problemas comunes\n' +
                     '</a>\n' +
                     'y posibles soluciones.',
                 sp_la: 'Algo fue mal con tu archivo .exe? Lea \n' +
-                    '<a href="https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=application_link&utm_campaign=auto_py_to_exe_help&utm_content=bottom" target="_blank">\n' +
+                    `<a href="${helpPostUrl}" target="_blank">\n` +
                     '    este post contiene posibles soluciones a problemas comunes' +
                     '</a>.\n',
                 tr: 'exe\'nizde bir sorun mu var? Oku\n' +
-                    '<a href="https://nitratine.net/blog/post/issues-while-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=application_link&utm_campaign=auto_py_to_exe_help&utm_content=bottom" target="_blank">\ n' +
+                    `<a href="${helpPostUrl}" target="_blank">\n` +
                     ' yaygın sorunların nasıl çözüleceğiyle ilgili bu gönderiye bakin\n' +
                     '</a>\n' +
                     'olası çözümler için.',
                 th: 'มีอะไรผิดปกติกับ exe ของคุณ? อ่าน\n' +
-                    '<a href="https://nitratine.net/blog/post/issues-while-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=application_link&utm_campaign=auto_py_to_exe_help&utm_content=bottom" target="_blank">\ n' +
+                    `<a href="${helpPostUrl}" target="_blank">\n` +
                     ' โพสต์เกี่ยวกับวิธีแก้ไขปัญหาทั่วไป\n' +
                     '</a>\n' +
                     'สำหรับวิธีแก้ปัญหาที่เป็นไปได้',
                 fr: 'Quelque chose ne va pas avec votre exe? Lire\n' +
-                    '<a href="https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=application_link&utm_campaign=auto_py_to_exe_help&utm_content=bottom" target="_blank">\n' +
+                    `<a href="${helpPostUrl}" target="_blank">\n` +
                     ' ce post sur la façon de résoudre les problèmes courants\n' +
                     '</a>\n' +
                     'pour les solutions possibles.',
                 it: 'Qualcosa è andato storto con il tuo exe? leggi\n' +
-                    '<a href="https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=application_link&utm_campaign=auto_py_to_exe_help&utm_content=bottom" target="_blank">\n' +
+                    `<a href="${helpPostUrl}" target="_blank">\n` +
                     '    questo articolo su come risolvere problemi comuni (articolo in inglese)\n' +
                     '</a>\n' +
                     'per possibili soluzioni.',
                 id: 'Ada yang salah dengan exe Anda? Baca\n' +
-                    '<a href="https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=application_link&utm_campaign=auto_py_to_exe_help&utm_content=bottom" target="_blank">\n' +
+                    `<a href="${helpPostUrl}" target="_blank">\n` +
                     '    artikel ini untuk menyelesaikan masalah-masalah umum\n' +
                     '</a>\n' +
                     'yang mungkin.',
                 cz: 'Něco špatně s exe souborem? Přečtěte si\n' +
-                    '<a href="https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=application_link&utm_campaign=auto_py_to_exe_help&utm_content=bottom" target="_blank">\n' +
+                    `<a href="${helpPostUrl}" target="_blank">\n` +
                     '    tento příspěvek na jak opravit běžné chyby\n' +
                     '</a>.\n' +
                     'pro možné řešení.',
                 gr: 'Πήγε κάτι στραβά με το εκτελέσιμο (exe); Διαβάστε\n' +
-                    '<a href="https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=application_link&utm_campaign=auto_py_to_exe_help&utm_content=bottom" target="_blank">\n' +
+                    `<a href="${helpPostUrl}" target="_blank">\n` +
                     '    this post on how to fix common issues\n' +
                     '</a>\n' +
                     'για πιθανές λύσεις.',
                 ar: 'شيء خاطئ مع exe الخاص بك؟ اقرأ\n' +
-                    '<a href="https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=application_link&utm_campaign=auto_py_to_exe_help&utm_content=bottom" target="_blank">\n' +
+                    `<a href="${helpPostUrl}" target="_blank">\n` +
                     '   هذا المنشور حول كيفية إصلاح المشكلات الشائعة\n' +
                     '</a>\n' +
                     'للحلول الممكنة.',
                 sr: 'Nešto nije u redu sa tvojim exe-om? Pročitaj\n' +
-                    '<a href="https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=application_link&utm_campaign=auto_py_to_exe_help&utm_content=bottom" target="_blank">\n' +
+                    `<a href="${helpPostUrl}" target="_blank">\n` +
                     '    ovaj post o tome kako da popraviš česte greške,\n' +
                     '</a>\n' +
                     'za moguća rešenja problema.',
                 ja: 'exeに不具合がありますか？\n' +
-                    '<a href="https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=application_link&utm_campaign=auto_py_to_exe_help&utm_content=bottom" target="_blank">\n' +
+                    `<a href="${helpPostUrl}" target="_blank">\n` +
                     '    よくある問題を解決する方法についての記事\n' +
                     '</a>\n' +
                     'をご覧ください。',
