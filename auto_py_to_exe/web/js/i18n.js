@@ -816,7 +816,7 @@ const translationMap = {
                 gr: 'Έαν θέλετε να εισάγετε τα αρχεία σας στον κεντρικό φάκελο απλά τοποθετήστε μια τελεία (.) στον προορισμό',
                 ar: 'إذا كنت تريد وضع الملفات في الدليل الجذر ، فضع نقطة (.) في الوجهة.',
                 sr: 'Ako želiš da dodaš datoteke u osnovni direktorijum (tzv. root), dodaj tačku (.) u odredištu.',
-                ja: 'ルートディレクトリにファイルを置きたい場合は、移動先にピリオド (.) を入れます。'
+                ja: 'ルートディレクトリにファイルを置きたい場合は、移動先にピリオド (.) を入れます。',
             },
             somethingWrongWithOutput: {
                 en: 'Something wrong with your exe? Read\n' +
@@ -1027,7 +1027,7 @@ const translationMap = {
                 gr: 'Εργαλεία αναζήτησης για Windows με Assembly (για προχωρημένους)',
                 ar: 'خيارات البحث عن تجميع Windows جنبًا إلى جنب (متقدمة)',
                 sr: 'Windows Side-by-side Assembly podešavanja pretrage (napredno)',
-                ja: 'Windows Side-by-side アセンブリ検索オプション (上級者向け)'
+                ja: 'Windows Side-by-side アセンブリ検索オプション (上級者向け)',
             },
             macOsxSpecificOptions: {
                 en: 'Mac OS X specific options',
@@ -1047,7 +1047,7 @@ const translationMap = {
                 gr: 'Συγκεκριμένες Επιλογές για  Mac Os X',
                 ar: 'خيارات محددة لنظام التشغيل Mac OS X',
                 sr: 'Specifična podešavanja za Mac OS X',
-                ja: 'Mac OS X 固有の設定'
+                ja: 'Mac OS X 固有の設定',
             },
             rarelyUsedSpecialOptions: {
                 en: 'Rarely used special options',
