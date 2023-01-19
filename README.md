@@ -116,6 +116,7 @@ If you believe you have found an issue with this tool, please [create an issue](
 | Greek (Ελληνικά)                            | gr    | [sofronas](https://github.com/sofronas)       | UI                                   |
 | Indonesian (Bahasa Indonesia)               | id    | [MarvinZhong](https://github.com/MarvinZhong) | UI                                   |
 | Italian (Italiano)                          | it    | [itsEmax64](https://github.com/itsEmax64)     | UI                                   |
+| Japanese (日本語)                           | ja    | [NattyanTV](https://github.com/nattyan-tv)     | UI                                   |
 | Russian (Русский)                           | ru    | Oleg                                          | UI                                   |
 | Spanish (Español)                           | sp    | [enriiquee](https://github.com/enriiquee)     | UI                                   |
 | Spanish Latam (Español Latam)               | sp_la | [Matyrela](https://github.com/Matyrela)       | UI                                   |

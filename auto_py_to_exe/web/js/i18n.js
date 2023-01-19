@@ -19,6 +19,7 @@ const translationMap = {
                 gr: 'Διαδρομή Αρχείου',
                 ar: 'موقع البرنامج النصي',
                 sr: 'Lokacija skripte',
+                ja: 'スクリプトの場所',
             },
             language: {
                 en: 'Language',
@@ -38,6 +39,7 @@ const translationMap = {
                 gr: 'ιδίωμα',
                 ar: 'لغة. مثل',
                 sr: 'Jezik',
+                ja: '言語',
             },
             oneFile: {
                 en: 'Onefile',
@@ -57,6 +59,7 @@ const translationMap = {
                 gr: 'Ένα αρχείο',
                 ar: 'ملف',
                 sr: 'Jedana datoteka',
+                ja: '1つのファイル',
             },
             consoleWindow: {
                 en: 'Console Window',
@@ -76,6 +79,7 @@ const translationMap = {
                 gr: 'Εφαρμογή παραθύρου',
                 ar: 'نافذة وحدة التحكم',
                 sr: 'Konzolni prozor',
+                ja: 'コンソール画面',
             },
             icon: {
                 en: 'Icon',
@@ -95,6 +99,7 @@ const translationMap = {
                 gr: 'Εικονίδιο',
                 ar: 'أيقونة',
                 sr: 'Ikona',
+                ja: 'アイコン',
             },
             additionalFiles: {
                 en: 'Additional Files',
@@ -114,6 +119,7 @@ const translationMap = {
                 gr: 'Πρόσθετα αρχεία',
                 ar: 'ملفات إضافية',
                 sr: 'Dodatne datoteke',
+                ja: '追加ファイル',
             },
             advanced: {
                 en: 'Advanced',
@@ -133,6 +139,7 @@ const translationMap = {
                 gr: 'Για προχωρημένους',
                 ar: 'متقدم',
                 sr: 'Napredno',
+                ja: '高度な設定',
             },
             settings: {
                 en: 'Settings',
@@ -152,6 +159,7 @@ const translationMap = {
                 gr: 'Ρυθμίσεις',
                 ar: 'إعدادات',
                 sr: 'Postavke',
+                ja: '設定',
             },
             currentCommand: {
                 en: 'Current Command',
@@ -171,6 +179,7 @@ const translationMap = {
                 gr: 'Τρέχον Εντολή',
                 ar: 'الأمر الحالي',
                 sr: 'Trenutna komanda',
+                ja: '現在のコマンド',
             },
             output: {
                 en: 'Output',
@@ -189,6 +198,7 @@ const translationMap = {
                 gr: 'Έξοδος',
                 ar: 'المخرجات',
                 sr: 'Izlaz (Output)',
+                ja: '出力',
             },
             specificOptions: {
                 en: 'auto-py-to-exe Specific Options',
@@ -208,6 +218,7 @@ const translationMap = {
                 gr: 'auto-py-to-exe Συγκεκριμένες Επιλογές',
                 ar: 'خيارات محددة auto-py-to-exe',
                 sr: 'Precizno podešavanje auto-py-to-exe-a',
+                ja: 'auto-py-to-exe 固有の設定',
             },
             outputDirectory: {
                 en: 'Output Directory',
@@ -227,6 +238,7 @@ const translationMap = {
                 gr: 'Διαδρομή Έξοδου Αρχείου',
                 ar: 'دليل المخرجات',
                 sr: 'Izlazni direktorijum',
+                ja: '出力先ディレクトリ',
             },
             increaseRecursionLimit: {
                 en: 'Increase Recursion Limit',
@@ -246,6 +258,7 @@ const translationMap = {
                 gr: 'Αύξηση ορίου αναδρομής',
                 ar: 'زيادة حد التكرار',
                 sr: 'Povećaj granicu rekurzije',
+                ja: '再帰回数の上限を増やす',
             },
             manuallyProvideOptions: {
                 en: 'Manually Provide Options',
@@ -265,6 +278,7 @@ const translationMap = {
                 gr: 'Χειροκίνητες Επιλογές',
                 ar: 'قم بتوفير الخيارات يدويًا',
                 sr: 'Ručno unesi podešavanja',
+                ja: '手動設定',
             },
             manualArgumentInput: {
                 en: 'Manual Argument Input',
@@ -284,6 +298,7 @@ const translationMap = {
                 gr: 'Χειροκίνητη προσθήκη argument',
                 ar: 'إدخال المُعْطَيات يدوي',
                 sr: 'Ručni unos argumenata',
+                ja: '手動指定引数',
             },
             configuration: {
                 en: 'Configuration',
@@ -303,6 +318,7 @@ const translationMap = {
                 gr: 'Διαμόρφωση',
                 ar: 'ترتيب',
                 sr: 'Konfiguracija',
+                ja: '構成',
             }
         },
         button: {
@@ -324,6 +340,7 @@ const translationMap = {
                 gr: 'Αναζήτηση',
                 ar: 'تصفح',
                 sr: 'Pronađi',
+                ja: '開く',
             },
             oneDirectory: {
                 en: 'One Directory',
@@ -343,6 +360,7 @@ const translationMap = {
                 gr: 'Μια Διαδρομή',
                 ar: 'دليل واحد',
                 sr: 'Jedan direktorijum',
+                ja: '1つのディレクトリ',
             },
             oneFile: {
                 en: 'One File',
@@ -362,6 +380,7 @@ const translationMap = {
                 gr: 'Ένα Αρχείο',
                 ar: 'ملف واحد',
                 sr: 'Jedana datoteka',
+                ja: '1つのファイル',
             },
             consoleBased: {
                 en: 'Console Based',
@@ -381,6 +400,7 @@ const translationMap = {
                 gr: 'Βασιμένο σε Παράθυρο Κονσόλας',
                 ar: 'قائم على وحدة التحكم',
                 sr: 'Konzolna aplikacija',
+                ja: 'コンソールベース',
             },
             windowBased: {
                 en: 'Window Based (hide the console)',
@@ -400,6 +420,7 @@ const translationMap = {
                 gr: 'Βασισμένο σε Παράθυρο (απόκρυψη κονσόλας)',
                 ar: 'قائم على النافذة (إخفاء وحدة التحكم)',
                 sr: 'Aplikacija sa prozorom (sakrij konzolu)',
+                ja: 'ウィンドウベース (コンソールを非表示にする)',
             },
             addFiles: {
                 en: 'Add Files',
@@ -419,6 +440,7 @@ const translationMap = {
                 gr: 'Προσθήκη Αρχείων',
                 ar: 'إضافة ملفات',
                 sr: 'Dodaj datoteku',
+                ja: 'ファイルの追加',
             },
             addFolder: {
                 en: 'Add Folder',
@@ -438,6 +460,7 @@ const translationMap = {
                 gr: 'Προσθήκη Φακέλου',
                 ar: 'أضف مجلدًا',
                 sr: 'Dodaj direktorijum',
+                ja: 'フォルダの追加',
             },
             addBlank: {
                 en: 'Add Blank',
@@ -457,6 +480,7 @@ const translationMap = {
                 gr: 'Προσθήκη Κενού Αρχείου',
                 ar: 'أضف فارغًا',
                 sr: 'Dodaj prazno',
+                ja: '空白の追加',
             },
             importConfig: {
                 en: 'Import Config From JSON File',
@@ -476,6 +500,7 @@ const translationMap = {
                 gr: 'Εισαγωγή Ρυθμίσεων από JSON αρχείο',
                 ar: 'استيراد التكوين من ملف JSON',
                 sr: 'Učitaj konfiguracuju iz JSON datoteke',
+                ja: '構成をJSONファイルからインポート',
             },
             exportConfig: {
                 en: 'Export Config To JSON File',
@@ -494,6 +519,7 @@ const translationMap = {
                 gr: 'Εξαγωγή ρυθμίσεων σε αρχείο JSON',
                 ar: 'تصدير التكوين إلى ملف JSON',
                 sr: 'Sačuvaj konfiguracuju kao JSON datoteku',
+                ja: '構成をJSONファイルへエクスポート',
             },
             convert: {
                 en: 'Convert .py to .exe',
@@ -513,6 +539,7 @@ const translationMap = {
                 gr: 'Μετατροπή .py σε .exe',
                 ar: 'تحويل .py إلى. exe',
                 sr: 'Konvertuj .py u .exe',
+                ja: '.pyを.exeに変換',
             },
             openOutputFolder: {
                 en: 'Open Output Folder',
@@ -532,6 +559,7 @@ const translationMap = {
                 gr: 'Άνοιγμα φακέλου εξαγωγής αρχείου',
                 ar: 'فتح مجلد المخرجات',
                 sr: 'Otvori izlazni direktorijum',
+                ja: '出力フォルダを開く',
             },
             enable: {
                 en: 'Enable',
@@ -551,6 +579,7 @@ const translationMap = {
                 gr: 'Συμπερίληψη',
                 ar: 'يُمكَِن',
                 sr: 'Omogući',
+                ja: '有効',
             },
         },
         links: {
@@ -572,6 +601,7 @@ const translationMap = {
                 gr: 'Βοήθεια',
                 ar: 'مساعدة آخر',
                 sr: 'Pomoć',
+                ja: 'ヘルプ記事',
             }
         },
         placeholders: {
@@ -593,6 +623,7 @@ const translationMap = {
                 gr: 'Διαδρομή στο αρχείο',
                 ar: 'مسار الملف',
                 sr: 'Putanja datoteke',
+                ja: 'ファイルのパス',
             },
             icoFile: {
                 en: '.ico file',
@@ -612,6 +643,7 @@ const translationMap = {
                 gr: 'Αρχείο .ico',
                 ar: 'ملف .ico',
                 sr: '.ico datoteka',
+                ja: '.ico ファイル',
             },
             directory: {
                 en: 'DIRECTORY',
@@ -631,6 +663,7 @@ const translationMap = {
                 gr: 'Ευρετήριο',
                 ar: 'الدليل',
                 sr: 'Direktorijum',
+                ja: 'ディレクトリ',
             },
             arguments: {
                 en: 'ARGUMENTS',
@@ -650,6 +683,7 @@ const translationMap = {
                 gr: 'Παράμετροι',
                 ar: 'المعطيات',
                 sr: 'Argumenti',
+                ja: '引数',
             }
         },
         helpText: {
@@ -670,6 +704,7 @@ const translationMap = {
                 gr: 'Εάν δεν υπάρχει ο φάκελος εξόδου, θα δημιουργηθεί.',
                 ar: 'الدليل المراد وضع الإخراج فيه. سيتم إنشاؤه إذا لم يكن موجودًا',
                 sr: 'Direktorijum za izlaz. Napraviće se ako ne postoji.',
+                ja: '出力したものを置くディレクトリ。存在しない場合は作成されます。',
             },
             increaseRecursionLimit: {
                 en: 'Having this enabled will set the recursion limit to 5000 using sys.setrecursionlimit(5000).',
@@ -688,6 +723,7 @@ const translationMap = {
                 gr: 'Έχοντας ενεργοποιήσει το όριο που θα χρησιμοποιηθεί είναι 5000 με την παράμετρο sys.setrecursionlimit(5000).',
                 ar: 'سيؤدي تمكين هذا إلى تعيين حد العودية على 5000 باستخدام sys.setrecursionlimit (5000).',
                 sr: 'Ako je omogućeno, ograničenje rekurzije će biti povećano na 5000 korišćenjem sys.setrecursionlimit(5000).',
+                ja: 'これを有効にすると、sys.setrecursionlimit(5000)を使い、再帰回数の上限を5000にします。',
             },
             manualArgumentInput: {
                 en: 'Inject raw text into the generated command.',
@@ -706,6 +742,7 @@ const translationMap = {
                 gr: 'Εισάγετε το κείμενο για την εντολή',
                 ar: 'أدخل نصًا خامًا في الأمر الذي تم إنشاؤه.',
                 sr: 'Ubaci tekst u generisanu komandu.',
+                ja: '生成されたコマンドにテキストを挿入する。',
             }
         },
         notes: {
@@ -758,6 +795,9 @@ const translationMap = {
                 sr: 'Budi oprezan kada koristiš dodatne datoteke u režimu jedne datoteke;\n' +
                     '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">pročitaj ovo (na engleskom)</a>\n' +
                     'i ažuriraj svoj kod da bi radio sa PyInstaller.',
+                ja: '1つのファイルモードで追加ファイルを使用する際は、注意が必要です。;\n' +
+                    '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">こちら (原文記事)</a>\n' +
+                    'で、PyInstallerで動作するようにコードを変更してください。',
             },
             rootDirectory: {
                 en: 'If you want to put files in the root directory, put a period (.) in the destination.',
@@ -776,6 +816,7 @@ const translationMap = {
                 gr: 'Έαν θέλετε να εισάγετε τα αρχεία σας στον κεντρικό φάκελο απλά τοποθετήστε μια τελεία (.) στον προορισμό',
                 ar: 'إذا كنت تريد وضع الملفات في الدليل الجذر ، فضع نقطة (.) في الوجهة.',
                 sr: 'Ako želiš da dodaš datoteke u osnovni direktorijum (tzv. root), dodaj tačku (.) u odredištu.',
+                ja: 'ルートディレクトリにファイルを置きたい場合は、移動先にピリオド (.) を入れます。',
             },
             somethingWrongWithOutput: {
                 en: 'Something wrong with your exe? Read\n' +
@@ -857,6 +898,11 @@ const translationMap = {
                     '    ovaj post o tome kako da popraviš česte greške,\n' +
                     '</a>\n' +
                     'za moguća rešenja problema.',
+                ja: 'exeに不具合がありますか？\n' +
+                    '<a href="https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=application_link&utm_campaign=auto_py_to_exe_help&utm_content=bottom" target="_blank">\n' +
+                    '    よくある問題を解決する方法についての記事\n' +
+                    '</a>\n' +
+                    'をご覧ください。',
             }
         }
     },
@@ -882,6 +928,7 @@ const translationMap = {
                 gr: 'Γενικές Παράμετροι',
                 ar: 'خيارات عامة',
                 sr: 'Osnovna podešavanja',
+                ja: '一般設定',
             },
             whatToBundleWhereToSearch: {
                 en: 'What to bundle, where to search',
@@ -901,6 +948,7 @@ const translationMap = {
                 gr: 'Που θέλετε να γίνει η αναζήση;',
                 ar: 'ماذا تحزم ، أين تبحث',
                 sr: 'Šta uključiti, gde ga naći',
+                ja: '何を同梱するか、どこを探すか',
             },
             howToGenerate: {
                 en: 'How to generate',
@@ -920,6 +968,7 @@ const translationMap = {
                 gr: 'Πως να γίνει η αναπαραγωή',
                 ar: 'كيف تنشئ',
                 sr: 'Kako generisati',
+                ja: 'どのように生成するか',
             },
             windowsAndMacOsXSpecificOptions: {
                 en: 'Windows And Mac Os X Specific Options',
@@ -938,6 +987,7 @@ const translationMap = {
                 gr: 'Συγκεκριμένες Επιλογές για Windows και Mac Os X',
                 ar: 'خيارات محددة لنظام التشغيل Windows و Mac OS X',
                 sr: 'Specifična podešavanja za Windows i Mac Os X',
+                ja: 'WindowsとMac OS X 固有の設定',
             },
             windowsSpecificOptions: {
                 en: 'Windows specific options',
@@ -957,6 +1007,7 @@ const translationMap = {
                 gr: 'Συγκεκριμένες Επιλογές για Windows',
                 ar: 'خيارات Windows المحددة',
                 sr: 'Specifična podešavanja za Windows',
+                ja: 'Windows固有の設定',
             },
             windowsSideBySideAssemblySearchingOptions: {
                 en: 'Windows Side-by-side Assembly searching options (advanced)',
@@ -976,6 +1027,7 @@ const translationMap = {
                 gr: 'Εργαλεία αναζήτησης για Windows με Assembly (για προχωρημένους)',
                 ar: 'خيارات البحث عن تجميع Windows جنبًا إلى جنب (متقدمة)',
                 sr: 'Windows Side-by-side Assembly podešavanja pretrage (napredno)',
+                ja: 'Windows Side-by-side アセンブリ検索オプション (上級者向け)',
             },
             macOsxSpecificOptions: {
                 en: 'Mac OS X specific options',
@@ -995,6 +1047,7 @@ const translationMap = {
                 gr: 'Συγκεκριμένες Επιλογές για  Mac Os X',
                 ar: 'خيارات محددة لنظام التشغيل Mac OS X',
                 sr: 'Specifična podešavanja za Mac OS X',
+                ja: 'Mac OS X 固有の設定',
             },
             rarelyUsedSpecialOptions: {
                 en: 'Rarely used special options',
@@ -1014,6 +1067,7 @@ const translationMap = {
                 gr: 'Σπάνιες χρησιμοποιημένες επιλογές',
                 ar: 'نادرًا ما يتم استخدام خيارات خاصة',
                 sr: 'Retko korišćena podešavanja',
+                ja: 'あまり使われない設定',
             },
             other: {
                 en: 'Other',
@@ -1033,6 +1087,7 @@ const translationMap = {
                 gr: 'Διάφορα',
                 ar: 'آخر',
                 sr: 'Ostalo',
+                ja: 'その他',
             },
         },
         button: {
@@ -1055,6 +1110,7 @@ const translationMap = {
                 gr: 'Αναζήτηση Αρχείου',
                 ar: 'تصفح بحثًا عن ملف',
                 sr: 'Pronađi datoteku',
+                ja: 'ファイルを参照',
             },
             browseForFolder: {
                 en: 'Browse for Folder',
@@ -1074,6 +1130,7 @@ const translationMap = {
                 gr: 'Αναζητήση Φακέλου',
                 ar: 'قم بالاستعراض بحثًا عن مجلد',
                 sr: 'Pronađi direktorijum',
+                ja: 'フォルダを参照',
             },
             enable: {
                 en: 'Enable',
@@ -1093,6 +1150,7 @@ const translationMap = {
                 gr: 'Ενεργοποιήση',
                 ar: 'يُمكَِن',
                 sr: 'Omogući',
+                ja: '有効',
             },
             disable: {
                 en: 'Disable',
@@ -1112,6 +1170,7 @@ const translationMap = {
                 gr: 'Απερνογοποιήση',
                 ar: 'تعطيل',
                 sr: 'Onemogući',
+                ja: '無効',
             },
             converting: {
                 en: 'Converting...',
@@ -1131,6 +1190,7 @@ const translationMap = {
                 gr: 'Μετατροπή...',
                 ar: 'التحويل...',
                 sr: 'Konvertovanje...',
+                ja: '変換中...',
             },
             clearOutput: {
                 en: 'Clear Output',
@@ -1150,6 +1210,7 @@ const translationMap = {
                 gr: 'Καθαρισμός Εξόδου',
                 ar: 'مسح المخرجات',
                 sr: 'Očisti izlaz',
+                ja: '出力のクリア',
             },
         },
         modal: {
@@ -1171,6 +1232,7 @@ const translationMap = {
                 gr: 'Εγγραφή ρυθμίσεων πάνω στις υπάρχουσες ρυθμίσεις;',
                 ar: 'هل تريد تجاوز التكوين الحالي؟',
                 sr: 'Zameniti trenutnu konfiguraciju?',
+                ja: '現在の構成を上書きしてもよろしいですか？',
             },
             configModalDescription: {
                 en: 'All previously inserted values will be erased.',
@@ -1190,6 +1252,7 @@ const translationMap = {
                 gr: 'Όλες οι προηγούμενες τιμές θα σβηστούν.',
                 ar: 'سيتم مسح جميع القيم المدرجة مسبقًا.',
                 sr: 'Sve prethodne vrednosti će biti izbrisane.',
+                ja: '挿入されている値は全て削除されます。',
             },
             configModalConfirmButton: {
                 en: 'Confirm',
@@ -1209,6 +1272,7 @@ const translationMap = {
                 gr: 'Επιβεβαίωση',
                 ar: 'أكد',
                 sr: 'Potvrdi',
+                ja: '確認',
             },
             configModalCancelButton: {
                 en: 'Cancel',
@@ -1228,6 +1292,7 @@ const translationMap = {
                 gr: 'Ακύρωση',
                 ar: 'إلغاء',
                 sr: 'Otkaži',
+                ja: 'キャンセル',
             }
         }
     },
@@ -1252,6 +1317,7 @@ const translationMap = {
                 gr: 'Δεν έχετε δώσει την τοποθεσία των αρχείων.\nΠαρακαλώ δώστε την τοποθεσία στην αρχή της σελίδας.',
                 ar: 'لم تقم بتوفير موقع البرامج النصية الخاصة بك. \ n الرجاء إدخال هذا في أعلى الصفحة.',
                 sr: 'Nisi naveo lokaciju tvoje skripte.\nNavedi lokaciju na vrhu stranice',
+                ja: 'スクリプトの位置が入力されていません。\nページ上部に入力してください。',
             },
             overwritePreviousOutput: {
                 en: 'This action will overwrite a previous output in the output folder.\nContinue?',
@@ -1271,6 +1337,7 @@ const translationMap = {
                 gr: 'Αυτή η ενέργεια θα διαγράψει τιην προηγούμενη έξοδο αρχείου στον φάκελο εξόδου.\nΝα συνεχίσω;',
                 ar: 'سيؤدي هذا الإجراء إلى الكتابة فوق الإخراج السابق في مجلد الإخراج. \ n هل تريد المتابعة؟',
                 sr: 'Ovo će zameniti prethodni izlaz u izlaznom direktorijumu.\nNastavi?',
+                ja: 'この操作により、出力フォルダー内の以前の出力が上書きされます。\n続けてもよろしいですか？',
             }
         },
     }
@@ -1410,6 +1477,10 @@ const supportedLanguages = [
     {
         name: 'Italian (Italiano)',
         code: 'it',
+    },
+    {
+        name: 'Japanese (日本語)',
+        code: 'ja',
     },
     {
         name: 'Russian (Русский)',
