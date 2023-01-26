@@ -751,6 +751,26 @@ const translationMap = {
             }
         },
         notes: {
+            invalidIcoFormatWarning: {
+                en: 'Warning: this file is not a valid .ico file',
+                zh: '警告：此文件不是有效的 .ico 文件',
+                zh_tw: '警告：此文件不是有效的 .ico 文件',
+                ru: 'Предупреждение: этот файл не является допустимым файлом .ico',
+                de: 'Warnung: Diese Datei ist keine gültige ICO-Datei',
+                pt_br: 'Aviso: este arquivo não é um arquivo .ico válido',
+                sp: 'Advertencia: este archivo no es un archivo .ico válido',
+                sp_la: 'Advertencia: este archivo no es un archivo .ico válido',
+                tr: 'Uyarı: Bu dosya geçerli bir .ico dosyası değil',
+                th: 'คำเตือน: ไฟล์นี้ไม่ใช่ไฟล์ .ico ที่ถูกต้อง',
+                fr: "Attention: ce fichier n'est pas un fichier .ico valide",
+                it: 'Attenzione: questo file non è un file .ico valido',
+                id: 'Peringatan: file ini bukan file .ico yang valid',
+                cz: 'Upozornění: Tento soubor není platným souborem .ico',
+                gr: 'Προειδοποίηση: αυτό το αρχείο δεν είναι έγκυρο αρχείο .ico',
+                ar: 'تحذير: هذا الملف ليس ملف .ico صالح',
+                sr: 'Упозорење: ова датотека није важећа .ицо датотека',
+                ja: '警告: このファイルは有効な .ico ファイルではありません',
+            },
             oneFileAdditionalFilesNote: {
                 en: 'Be careful when using additional files with onefile mode;\n' +
                     '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">read this</a>\n' +

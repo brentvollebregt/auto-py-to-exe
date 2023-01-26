@@ -41,8 +41,17 @@ const consoleWindowOptionChange = (option) => (event) => {
 };
 
 const iconLocationChange = async (event) => {
-    colourInput(event.target, true, true, false);
+    const valid = await colourInput(event.target, true, true, false);
     updateCurrentCommandDisplay();
+
+    // If valid and a value exists, show the message if the file is not an ico file
+    const warningElement = document.getElementById('icon-invalid-warning');
+    if (valid && event.target.value !== "") {
+        const isIcoFile = await isFileAnIco(event.target.value);
+        warningElement.style.display = isIcoFile === false ? 'block' : 'none'; // isIcoFile is boolean | null
+    } else {
+        warningElement.style.display = 'none';
+    }
 };
 
 const iconLocationSearch = async (event) => {

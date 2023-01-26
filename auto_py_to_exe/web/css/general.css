@@ -128,6 +128,13 @@ button.large {
     grid-template-columns: 1fr 120px;
 }
 
+/* Icon-specific */
+
+#icon-invalid-warning {
+    font-size: 14px;
+    padding-top: 4px;
+}
+
 /* Utils */
 
 .noselect { /* Don't select tab text */

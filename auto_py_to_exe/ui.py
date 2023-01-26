@@ -86,6 +86,21 @@ def does_folder_exist(path):
 
 
 @eel.expose
+def is_file_an_ico(file_path):
+    """ Checks if a file is an ico file """
+    if not os.path.isfile(file_path):
+        return None
+
+    # Open the file and read the first 4 bytes
+    with open(file_path, 'rb') as f:
+        data = f.read(4)
+        if data == b'\x00\x00\x01\x00':
+            return True
+        else:
+            return False
+
+
+@eel.expose
 def import_configuration():
     """ Get configuration data from a file """
     file_path = dialogs.ask_file('json')

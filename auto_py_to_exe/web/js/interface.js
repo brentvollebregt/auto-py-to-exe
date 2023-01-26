@@ -21,7 +21,7 @@ const expandSection = (sectionName) => {
     }
 };
 
-// Colour an input based on the "allowed" arguments
+// Colour an input based on the "allowed" arguments. Returns whether the field is valid or not
 const colourInput = async (inputNode, allowedToBeEmpty, allowedToBeFile, allowedToBeADirectory) => {
     const { value } = inputNode;
     if (
@@ -31,8 +31,10 @@ const colourInput = async (inputNode, allowedToBeEmpty, allowedToBeFile, allowed
         || (allowedToBeADirectory && await doesFolderExist(value))
     ) {
         inputNode.style.border = "";
+        return true;
     } else {
         inputNode.style.border = '1px solid rgb(244, 67, 54)';
+        return false;
     }
 };
 

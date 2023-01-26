@@ -19,6 +19,7 @@
                 ask_file: (file_type) => "",
                 ask_files: () => [],
                 ask_folder: () => "",
+                is_file_an_ico: (file_path) => null,
                 open_folder_in_explorer: (path) => {},
                 will_packaging_overwrite_existing: (file_path, one_file, output_folder) => true,
                 package: (command, non_pyinstaller_options) => {},
@@ -120,6 +121,12 @@
                     <div class="filepath-browse-layout">
                         <input id="icon-path" placeholder=".ico file" data-i18n_placeholder="ui.placeholders.icoFile">
                         <button id="icon-path-search" data-i18n="ui.button.browse">Browse</button>
+                    </div>
+                    <div>
+                        <span id="icon-invalid-warning" style="display: none;">
+                            ⚠️
+                            <span data-i18n="ui.notes.invalidIcoFormatWarning">Warning: this file is not a valid .ico file</span>
+                        </span>
                     </div>
                 </div>
             </div>

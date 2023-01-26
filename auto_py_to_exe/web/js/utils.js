@@ -33,6 +33,10 @@ const askForFolder = async () => {
     return await eel.ask_folder()();
 };
 
+const isFileAnIco = async (file_path) => {
+    return await eel.is_file_an_ico(file_path)();
+};
+
 const chooseOptionString = (optionStrings) => {
     // Try not to use compressed flags
     if (optionStrings[0].length === 2 && optionStrings.length > 1) {
