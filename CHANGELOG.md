@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.28.0
+
+🚀 Enhancements
+
+- Display a warning when an icon file is not a legitimate .ico file
+
 ## 2.27.0
 
 🚀 Enhancements
