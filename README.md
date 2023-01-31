@@ -99,7 +99,9 @@ If you need something visual to help you get started, [I made a video for the or
 ## Issues Using the Tool
 If you're having issues with the packaged executable or using this tool in general, I recommend you read [my blog post on common issues when using auto-py-to-exe](https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=readme_link&utm_campaign=auto_py_to_exe_help). This post covers things you should know about packaging Python scripts and fixes for things that commonly go wrong.
 
-If you believe you have found an issue with this tool, please [create an issue](https://github.com/brentvollebregt/auto-py-to-exe/issues/new/choose) (click "Get started") and fill out the template provided by the "Bug report" option. If your issue is only associated with your application, please do not create an issue in this repository - instead, comment on the help post, video or create a new discussion.
+If you believe you've found an issue with this tool, please [create an issue](https://github.com/brentvollebregt/auto-py-to-exe/issues/new/choose) (click "Get started") and fill out the template provided by the "Bug report" option. If your issue is only associated with your application, please do not create an issue in this repository - instead, comment on the help post, video or create a new discussion.
+
+> When filling out the template, be sure to clearly explain what's happening, give reproduction steps and a [minimal reproducible example](https://stackoverflow.com/help/minimal-reproducible-example) and explain what you believe should have happened. Without these, it's going to take longer to identify the issue.
 
 ## Translations
 
