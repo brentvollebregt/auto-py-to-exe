@@ -4,7 +4,6 @@ about: Create a report to help improve the application
 title: ''
 labels: bug
 assignees: brentvollebregt
-
 ---
 
 **Quick Checks**
@@ -13,28 +12,27 @@ assignees: brentvollebregt
 - [ ] I have made sure my application/script runs before trying to package 
 
 **Describe the bug**
-A clear and concise description of what the bug is.
+A clear and concise description of what the bug is. If you have an error message, please paste it here (not in a screenshot).
 
 **To Reproduce**
-Steps to reproduce the behavior:
+Steps to reproduce the behavior (install dependencies, do this in the auto-py-to-exe UI):
 1. Go to '...'
 2. Click on '....'
 3. Scroll down to '....'
 4. See error
 
-> If you have example code, please provide a [minimal reproducible example](https://stackoverflow.com/help/minimal-reproducible-example).
+```python
+# If you have example code, please provide a minimal reproducible example: 
+# https://stackoverflow.com/help/minimal-reproducible-example
+
+print("Hello World")
+```
 
 **Expected behavior**
 A clear and concise description of what you expected to happen.
-
-**Screenshots (optional)**
-If applicable, add screenshots to help explain your problem.
 
 **Your Environment:**
 - Python version (`python --version`):
 - auto-py-to-exe version (`pip show auto-py-to-exe`):
 - PyInstaller version (`pip show pyinstaller`):
 - Eel version (`pip show eel`): 
-
-**Additional context (optional)**
-Add any other context about the problem here.
