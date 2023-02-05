@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.29.0
+
+🚀 Enhancements
+
+- [#331](https://github.com/brentvollebregt/auto-py-to-exe/pull/360): Added Ukrainian translations
+
+🏆 Contributors
+
+- [AndrejGorodnij](https://github.com/AndrejGorodnij)
+
 ## 2.28.0
 
 🚀 Enhancements
