@@ -820,8 +820,8 @@ const translationMap = {
                     '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">read this</a>\n' +
                     '並更新您的代碼以使用 PyInstaller。',
                 ua: 'Будьте уважні під час використання додаткових файлів в режимі onefile;' +
-                '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">Прочитайте це</a>\n' +
-                'і оновіть свій код для подальшого використання PyInstaller.',
+                    '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">Прочитайте це</a>\n' +
+                    'і оновіть свій код для подальшого використання PyInstaller.',
                 ru: 'Будьте внимательны при использовании дополнительных файлов в режиме одного файла;\n' +
                     '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">Прочитайте Это</a>\n' +
                     'и обновите свой код для работы с PyInstaller.',
