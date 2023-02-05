@@ -125,7 +125,7 @@ If you believe you've found an issue with this tool, please [create an issue](ht
 | Serbian                                     | sr    | [rina](https://github.com/sweatshirts)        | UI                                   |
 | Thai (ภาษาไทย)                              | th    | [teerut26](https://github.com/teerut26)       | UI (partial)                         |
 | Turkish (Türkçe)                            | tr    | [mcagriaksoy](https://github.com/mcagriaksoy) | UI                                   |
-
+| Ukrainian (Українська)                      | ua    | [AndrejGorodnij](https://github.com/AndrejGorodnij) | UI                                   |
 > Want to add a translation for another language? Update [i18n.js](https://github.com/brentvollebregt/auto-py-to-exe/blob/master/auto_py_to_exe/web/js/i18n.js) and submit a PR or attach it in an issue.
 
 ## Python 2.7 Support
