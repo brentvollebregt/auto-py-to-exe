@@ -1,6 +1,7 @@
 from __future__ import print_function
 import io
 import os
+from pathlib import Path
 import platform
 import socket
 import sys
@@ -24,11 +25,18 @@ def can_use_chrome():
     return chrome_instance_path is not None and os.path.exists(chrome_instance_path)
 
 
-def open_output_folder(folder):
-    """ Open a folder in the local file explorer """
-    folder_directory = os.path.abspath(folder)
+def open_output_in_explorer(output_directory, input_filename, is_one_file):
+    """ Open the output in the local file explorer """
+    folder_directory = os.path.abspath(output_directory)
     if platform.system() == 'Windows':
-        os.startfile(folder_directory, 'explore')
+        # For windows, we can highlight the file in the explorer window
+        target_base_to_open = Path(input_filename).stem + ('.exe' if is_one_file else '')
+        target_path_to_open = Path(folder_directory) / target_base_to_open
+        if target_path_to_open.exists():
+            os.popen(f'explorer /select,"{target_path_to_open}"')
+        else:
+            # If the file doesn't exist, just open the folder)
+            os.startfile(folder_directory, 'explore')
     elif platform.system() == 'Linux':
         os.system('xdg-open "' + folder_directory + '"')
     elif platform.system() == 'Darwin':

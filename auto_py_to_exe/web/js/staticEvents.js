@@ -144,7 +144,10 @@ const packageScript = async (event) => {
 };
 
 const openOutputFolder = (event) => {
-    eel.open_folder_in_explorer(getNonPyinstallerConfiguration().outputDirectory)();
+    const currentConfiguration = getCurrentConfiguration();
+    const entryScript = currentConfiguration.find(c => c.optionDest === 'filenames').value;
+    const isOneFile = currentConfiguration.find(c => c.optionDest === 'onefile').value
+    eel.open_output_in_explorer(getNonPyinstallerConfiguration().outputDirectory, entryScript, isOneFile)();
 };
 
 const setupEvents = () => {

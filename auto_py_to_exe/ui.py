@@ -51,10 +51,9 @@ def initialise():
 
 
 @eel.expose
-def open_folder_in_explorer(path):
-    """ Open a folder in the local file explorer """
-    if not utils.open_output_folder(path):
-        pass  # TODO Send message saying this failed
+def open_output_in_explorer(output_directory, input_filename, is_one_file):
+    """ Open a file in the local file explorer """
+    utils.open_output_in_explorer(output_directory, input_filename, is_one_file)
 
 
 @eel.expose
