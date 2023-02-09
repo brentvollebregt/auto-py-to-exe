@@ -1,0 +1,20 @@
+name: Issue Hello
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v5
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `👋 Hi, just a reminder that if you haven't read [the help post](https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/) yet, give it a read to see if your issue is covered in it and make sure to follow [the debugging section](https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/#debugging).\n\nAlso please note, as stated in the README, if your issue is only associated with your application and not auto-py-to-exe itself, please do not create an issue in this repository - instead, comment on the help [post](https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/), [video](https://youtu.be/OZSZHmWSOeM) or create a [new discussion](https://github.com/brentvollebregt/auto-py-to-exe/discussions).`
+            })
