@@ -179,7 +179,8 @@ const _createSubSectionInAdvanced = (title, i18nPath, options) => {
             selectNode.appendChild(defaultOptionNode);
             defaultOptionNode.textContent = '';
 
-            o.choices.map(choice => {
+            const choices = Object.keys(o.choices);
+            choices.map(choice => {
                 const optionNode = document.createElement('option');
                 selectNode.appendChild(optionNode);
                 optionNode.textContent = choice;
@@ -195,7 +196,7 @@ const _createSubSectionInAdvanced = (title, i18nPath, options) => {
 
             // Add configurationSetter
             configurationSetters[o.dest] = (value) => {
-                if (o.choices.indexOf(value) !== 1) {
+                if (choices.indexOf(value) !== 1) {
                     selectNode.value = value;
                 } else {
                     selectNode.value = '';
