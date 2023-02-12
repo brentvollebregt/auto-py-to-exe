@@ -179,7 +179,7 @@ const _createSubSectionInAdvanced = (title, i18nPath, options) => {
             selectNode.appendChild(defaultOptionNode);
             defaultOptionNode.textContent = '';
 
-            const choices = Object.keys(o.choices);
+            const choices = Array.isArray(o.choices) ? o.choices : Object.keys(o.choices);
             choices.map(choice => {
                 const optionNode = document.createElement('option');
                 selectNode.appendChild(optionNode);
