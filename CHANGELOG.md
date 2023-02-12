@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.29.1
+
+🐛 Bug Fixes
+
+- [#364](https://github.com/brentvollebregt/auto-py-to-exe/issues/364): Fixed PyInstaller 5.8.0 not allowing the UI to load
+
 ## 2.29.0
 
 🚀 Enhancements
