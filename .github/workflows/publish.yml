@@ -25,7 +25,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
 
@@ -48,7 +48,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Set up Python 3.7
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v4
         with:
           python-version: 3.7
 
@@ -64,7 +64,7 @@ jobs:
         run: |
           version=$(python -c "from auto_py_to_exe import __version__ as v; print(v)")
           echo "Module version: $version"
-          echo "::set-output name=version::$version"
+          echo "version=$version" >> $GITHUB_OUTPUT
 
       - name: Fail on tag and module version mismatch
         if: (!endsWith(github.ref, steps.get_module_version.outputs.version))
@@ -105,7 +105,7 @@ jobs:
           	changes="${changes//'%'/'%25'}"; \
           	changes="${changes//$'\n'/'%0A'}"; \
           	changes="${changes//$'\r'/'%0D'}"; \
-          	echo "::set-output name=changes::$changes"; \
+          	echo "changes=$changes" >> $GITHUB_OUTPUT; \
           fi
 
       - name: Build distribution
@@ -120,22 +120,12 @@ jobs:
 
       - name: Create release
         id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: softprops/action-gh-release@v1
         with:
           tag_name: v${{ steps.get_module_version.outputs.version }}
-          release_name: v${{ steps.get_module_version.outputs.version }}
+          name: v${{ steps.get_module_version.outputs.version }}
           draft: false
           prerelease: false
           body: ${{ steps.get_documented_changes.outputs.changes }}
-
-      - name: Upload Binary to Release
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./dist/auto_py_to_exe-${{ steps.get_module_version.outputs.version }}-py2.py3-none-any.whl
-          asset_name: auto_py_to_exe-${{ steps.get_module_version.outputs.version }}-py2.py3-none-any.whl
-          asset_content_type: application/x-wheel+zip
+          files: |
+            ./dist/auto_py_to_exe-${{ steps.get_module_version.outputs.version }}-py2.py3-none-any.whl
