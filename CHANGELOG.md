@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.29.2
+
+🐛 Bug Fixes
+
+- Fixed --debug choices not rendering correctly
+
 ## 2.29.1
 
 🐛 Bug Fixes
