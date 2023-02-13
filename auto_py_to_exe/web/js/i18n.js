@@ -732,7 +732,7 @@ const translationMap = {
                 zh_tw: '用於放置輸出的目錄如果不存在，將自動創建該目錄',
                 ua: 'Директорія, в яку буде зібрано кінцевий застосунок. Буде створено за необхідності',
                 ru: 'Папка, в которую переместиться итоговое приложение. Будет создано при необходимости.',
-                de: 'Augabeverzeichnis. Wird erzeugt wenn es nicht existiert',
+                de: 'Ausgabeverzeichnis. Wird erzeugt wenn es nicht existiert',
                 pt_br: 'O diretório para colocar a saída. Será criado se não existir',
                 sp: 'El directorio para colocar el archivo de salida. Será creado si no existe',
                 sp_la: 'El directorio para colocar el archivo de salida. Será creado si no existe',
