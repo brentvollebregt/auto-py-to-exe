@@ -828,7 +828,7 @@ const translationMap = {
                 ru: 'Будьте внимательны при использовании дополнительных файлов в режиме одного файла;\n' +
                     '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">Прочитайте Это</a>\n' +
                     'и обновите свой код для работы с PyInstaller.',
-                de: 'Vorsicht bei Verwendung von zusätzlichen Dateien im Modus _Eine Datei_;\n' +
+                de: 'Vorsicht bei Verwendung von zusätzlichen Dateien im Modus "Eine Datei";\n' +
                     '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">Siehe</a>\n' +
                     'und aktualisiere den Code zur Verwendung mit PyInstaller.',
                 pt_br: 'Tenha cuidado ao usar arquivos adicionais com o modo de arquivo único;\n' +
@@ -878,7 +878,7 @@ const translationMap = {
                 ua: 'Якщо хочете розмістити файли в основній директорії, додайте крапку (.) на початку шляху.',
                 ru: 'Если вы хотите расположить файлы в главной директории, вставьте точку (.) в начале пути.',
                 pt_br: 'Se você quiser colocar arquivos no diretório raiz, coloque um ponto (.) no destino.',
-                de: 'Um Dateien in Rootverzeichnis zu speichern, verwende einen Punkt (.) bei der Angabe des Zielverzeichnisses.',
+                de: 'Um Dateien im Rootverzeichnis zu speichern, verwende einen Punkt (.) bei der Angabe des Zielverzeichnisses.',
                 sp: 'Si quiere poner los archivos en el directorio raíz, ponga un punto (.) en el destino.',
                 sp_la: 'Si quiere poner los archivos en el directorio raíz, ponga un punto (.) en el destino.',
                 tr: 'Dosyaları kök dizine koymak istiyorsanız, hedefe nokta (.) koyun.',
@@ -1003,7 +1003,7 @@ const translationMap = {
                 zh_tw: '如何產生',
                 ua: 'Налаштування генератора',
                 ru: 'Настройки генератора',
-                de: 'Wie generieren?',
+                de: 'Wie generieren',
                 pt_br: 'Como gerar',
                 sp: 'Como generar',
                 sp_la: 'Como generar',
@@ -1023,7 +1023,7 @@ const translationMap = {
                 zh_tw: 'Windows 和 Mac Os X 特定選項',
                 ua: 'Налаштування для Windows та Mac OS X',
                 ru: 'Настройки для Windows и Mac Os X',
-                de: 'Windows- und macOS-spezifische Optionen',
+                de: 'Windows und macOS-spezifische Optionen',
                 pt_br: 'Opções específicas Windows e Mac Os X',
                 sp: 'Opciones específicas Windows y Mac Os X',
                 sp_la: 'Opciones específicas de Windows y de Mac Os X',
@@ -1236,7 +1236,7 @@ const translationMap = {
                 zh_tw: '轉換中······',
                 ua: 'Конвертація...',
                 ru: 'Преобразование...',
-                de: 'Konvertierung ...',
+                de: 'Konvertierung...',
                 pt_br: 'Convertendo...',
                 sp: 'Convirtiendo...',
                 sp_la: 'Generando...',
