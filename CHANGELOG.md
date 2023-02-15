@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.30.0
+
+🚀 Enhancements
+
+- [#344](https://github.com/brentvollebregt/auto-py-to-exe/issues/344) Highlight file/folder when viewing output in Windows
+- [#365](https://github.com/brentvollebregt/auto-py-to-exe/pull/365): Update German translations
+
+🏆 Contributors
+
+- [ackhh](https://github.com/ackhh)
+
 ## 2.29.2
 
 🐛 Bug Fixes
@@ -16,7 +27,7 @@
 
 🚀 Enhancements
 
-- [#331](https://github.com/brentvollebregt/auto-py-to-exe/pull/360): Added Ukrainian translations
+- [#360](https://github.com/brentvollebregt/auto-py-to-exe/pull/360): Added Ukrainian translations
 
 🏆 Contributors
 
@@ -32,7 +43,7 @@
 
 🚀 Enhancements
 
-- [#346](https://github.com/brentvollebregt/auto-py-to-exe/pull/355): Added Japanese translations
+- [#355](https://github.com/brentvollebregt/auto-py-to-exe/pull/355): Added Japanese translations
 
 🐛 Bug Fixes
 
@@ -120,7 +131,7 @@
 
 🐛 Bug Fixes
 
-- [#286](https://github.com/brentvollebregt/auto-py-to-exe/issues/290): Fixed configuration import not clearing existing values before inserting new values (now done using a reload)
+- [#290](https://github.com/brentvollebregt/auto-py-to-exe/issues/290): Fixed configuration import not clearing existing values before inserting new values (now done using a reload)
 - Fixed icon path not validating after import
 
 ## 2.21.0
