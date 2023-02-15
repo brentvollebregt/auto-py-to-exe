@@ -1023,7 +1023,7 @@ const translationMap = {
                 zh_tw: 'Windows 和 Mac Os X 特定選項',
                 ua: 'Налаштування для Windows та Mac OS X',
                 ru: 'Настройки для Windows и Mac Os X',
-                de: 'Windows und macOS-spezifische Optionen',
+                de: 'Windows- und macOS-spezifische Optionen',
                 pt_br: 'Opções específicas Windows e Mac Os X',
                 sp: 'Opciones específicas Windows y Mac Os X',
                 sp_la: 'Opciones específicas de Windows y de Mac Os X',
