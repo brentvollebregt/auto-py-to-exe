@@ -12,7 +12,7 @@ const translationMap = {
                 zh_tw: '腳本位置',
                 ua: 'Місцезнаходження скрипта',
                 ru: 'Расположение скрипта',
-                de: 'Script Pfad',
+                de: 'Scriptpfad',
                 pt_br: 'Localização do Script',
                 sp: 'Localización del Script',
                 sp_la: 'Ubicacion del archivo',
@@ -33,7 +33,7 @@ const translationMap = {
                 zh_tw: '語言',
                 ua: 'Мова',
                 ru: 'идиома',
-                de: 'Idiom',
+                de: 'Sprache',
                 pt_br: 'Idioma',
                 sp: 'Idioma',
                 sp_la: 'Idioma',
@@ -732,6 +732,7 @@ const translationMap = {
                 zh_tw: '用於放置輸出的目錄如果不存在，將自動創建該目錄',
                 ua: 'Директорія, в яку буде зібрано кінцевий застосунок. Буде створено за необхідності',
                 ru: 'Папка, в которую переместиться итоговое приложение. Будет создано при необходимости.',
+                de: 'Ausgabeverzeichnis. Wird erzeugt wenn es nicht existiert',
                 pt_br: 'O diretório para colocar a saída. Será criado se não existir',
                 sp: 'El directorio para colocar el archivo de salida. Será creado si no existe',
                 sp_la: 'El directorio para colocar el archivo de salida. Será creado si no existe',
@@ -752,6 +753,7 @@ const translationMap = {
                 zh_tw: '啟用此功能將使用 sys.setrecursionlimit（5000）將遞歸限制設置為5000。',
                 ua: 'Якщо увімкнено, встановить ліміт глибини рекурсії рівний 5000 використовуючи sys.setrecursionlimit(5000).',
                 ru: 'Если включено установит лимит рекурсии равный 5000 с помощью sys.setrecursionlimit(5000).',
+                de: 'Setzt das Rekursionslimit auf 5000 per sys.setrecursionlimit(5000).',
                 pt_br: 'Ativar isso definirá o limite de recursão para 5000 usando sys.setrecursionlimit(5000)',
                 sp: 'Al activar esto se definirá el límite de recursión a 5000 usando sys.setrecursionlimit(5000)',
                 sp_la: 'Al activar esto se definirá el límite de recursión a 5000 usando sys.setrecursionlimit(5000)',
@@ -772,6 +774,7 @@ const translationMap = {
                 zh_tw: '將原始文字插入到產生的命令中。',
                 ua: 'Додасть текст в кінцеву команду',
                 ru: 'Вставит текст в итоговую команду',
+                de: 'Text zum generierten Befehl hinzufügen.',
                 pt_br: 'Injete texto bruto no comando gerado.',
                 sp: 'Inserte texto bruto en el comando generado',
                 sp_la: 'Inserte texto bruto en el comando generado',
@@ -794,7 +797,7 @@ const translationMap = {
                 zh_tw: '警告：此文件不是有效的 .ico 文件',
                 ua: 'Попередження: це недопустимий файл .ico',
                 ru: 'Предупреждение: этот файл не является допустимым файлом .ico',
-                de: 'Warnung: Diese Datei ist keine gültige ICO-Datei',
+                de: 'Warnung: Diese Datei ist keine gültige .ico-Datei',
                 pt_br: 'Aviso: este arquivo não é um arquivo .ico válido',
                 sp: 'Advertencia: este archivo no es un archivo .ico válido',
                 sp_la: 'Advertencia: este archivo no es un archivo .ico válido',
@@ -825,6 +828,9 @@ const translationMap = {
                 ru: 'Будьте внимательны при использовании дополнительных файлов в режиме одного файла;\n' +
                     '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">Прочитайте Это</a>\n' +
                     'и обновите свой код для работы с PyInstaller.',
+                de: 'Vorsicht bei Verwendung von zusätzlichen Dateien im Modus "Eine Datei";\n' +
+                    '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">Siehe</a>\n' +
+                    'und aktualisiere den Code zur Verwendung mit PyInstaller.',
                 pt_br: 'Tenha cuidado ao usar arquivos adicionais com o modo de arquivo único;\n' +
                     '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">read this</a>\n' +
                     'and update your code to work with PyInstaller.',
@@ -872,6 +878,7 @@ const translationMap = {
                 ua: 'Якщо хочете розмістити файли в основній директорії, додайте крапку (.) на початку шляху.',
                 ru: 'Если вы хотите расположить файлы в главной директории, вставьте точку (.) в начале пути.',
                 pt_br: 'Se você quiser colocar arquivos no diretório raiz, coloque um ponto (.) no destino.',
+                de: 'Um Dateien im Rootverzeichnis zu speichern, verwende einen Punkt (.) bei der Angabe des Zielverzeichnisses.',
                 sp: 'Si quiere poner los archivos en el directorio raíz, ponga un punto (.) en el destino.',
                 sp_la: 'Si quiere poner los archivos en el directorio raíz, ponga un punto (.) en el destino.',
                 tr: 'Dosyaları kök dizine koymak istiyorsanız, hedefe nokta (.) koyun.',
@@ -900,6 +907,9 @@ const translationMap = {
                 ru: 'Что-то не так с вашим exe? Прочитайте ' +
                     `<a href="${helpPostUrl}" target="_blank">эту справку, с описанием большинства проблем</a>` +
                     ' чтобы решить свою.',
+                de: 'Probleme mit der .exe-Datei? Lies ' +
+                    `<a href="${helpPostUrl}" target="_blank">diesen Artikel zur Behebung von bekannten Problemen</a>` +
+                    ' für mögliche Lösungen.',
                 pt_br: 'Algo errado com seu exe? Read ' +
                     `<a href="${helpPostUrl}" target="_blank">este post fala sobre os problemas comuns</a>` +
                     ' e possíveis soluções.',
@@ -993,7 +1003,7 @@ const translationMap = {
                 zh_tw: '如何產生',
                 ua: 'Налаштування генератора',
                 ru: 'Настройки генератора',
-                de: 'Wie generieren...?',
+                de: 'Wie generieren',
                 pt_br: 'Como gerar',
                 sp: 'Como generar',
                 sp_la: 'Como generar',
@@ -1013,7 +1023,7 @@ const translationMap = {
                 zh_tw: 'Windows 和 Mac Os X 特定選項',
                 ua: 'Налаштування для Windows та Mac OS X',
                 ru: 'Настройки для Windows и Mac Os X',
-                de: 'Windows und Mac Os X spezifische Optionen',
+                de: 'Windows- und macOS-spezifische Optionen',
                 pt_br: 'Opções específicas Windows e Mac Os X',
                 sp: 'Opciones específicas Windows y Mac Os X',
                 sp_la: 'Opciones específicas de Windows y de Mac Os X',
@@ -1034,7 +1044,7 @@ const translationMap = {
                 zh_tw: 'Windows 特定選項',
                 ua: 'Налаштування для Windows',
                 ru: 'Настройки для Windows',
-                de: 'Windows spezifische Optionen',
+                de: 'Windows-spezifische Optionen',
                 pt_br: 'Opções específicas Windows',
                 sp: 'Opciones específicas Windows',
                 sp_la: 'Opciones específicas de Windows',
@@ -1076,7 +1086,7 @@ const translationMap = {
                 zh_tw: 'Mac OS X 特定選項',
                 ua: 'Налаштування для Mac OS X',
                 ru: 'Настройки для Mac OS X',
-                de: 'Mac OS X spezifische Optionen',
+                de: 'macOS-spezifische Optionen',
                 pt_br: 'Opções específicas Mac OS X',
                 sp: 'Opciones específicas Mac OS X',
                 sp_la: 'Opciones específicas de Mac OS X',
@@ -1097,7 +1107,7 @@ const translationMap = {
                 zh_tw: '很少使用的特殊選項',
                 ua: 'Додаткові опції, що рідко використовуються',
                 ru: 'Редко используемые дополнительные опции',
-                de: 'Selten genuzte Spezialoptionen',
+                de: 'Selten genutzte Spezialoptionen',
                 pt_br: 'Opções especiais raramente usadas',
                 sp: 'Opciones especiales raramente usadas',
                 sp_la: 'Opciones especiales raramente usadas',
@@ -1359,7 +1369,7 @@ const translationMap = {
                 zh_tw: '您尚未提供腳本位置。\n請在頁面頂部輸入。',
                 ua: 'Ви не вказали місцезнаходження скрипта.\nВкажіть його на початку сторінки.',
                 ru: 'Вы не указали расположение скрипта.\nУкажите его в самом верху страницы',
-                de: 'Keinen Pfad zum Skript angegeben.\nBitte den Pfad zum Skript oben in der Seite eingeben.',
+                de: 'Kein Pfad zum Skript angegeben.\nBitte den Pfad zum Skript oben in der Seite eingeben.',
                 pt_br: 'Você não forneceu o local dos seus scripts.\nPor favor, insira-o na parte superior da página.',
                 sp: 'No ha facilitado la ubicación de sus guiones. \nPor favor, introdúzcala en la parte superior de la página.',
                 sp_la: 'No ha facilitado la ubicación de sus guiones. \nPor favor, introdúzcala en la parte superior de la página.',
@@ -1380,7 +1390,7 @@ const translationMap = {
                 zh_tw: '此操作將覆蓋輸出檔案夾中以前的輸出。\n是否繼續？',
                 ua: 'Ця дія перезапише поперденій вивід у кінцевій директорії.\nПродовжуємо?',
                 ru: 'Это действие перезапишет предыдущий вывод в папке вывода.\nПродолжить?',
-                de: 'Diese Aktion wird vorige Ausgaben im Ausgabeverzeichnis überschreiben.\nWeitermachen?',
+                de: 'Diese Aktion wird vorige Ausgaben im Ausgabeverzeichnis überschreiben.\nFortsetzen?',
                 pt_br: 'Esta ação substituirá uma saída anterior na pasta de saída.\nContinuar?',
                 sp: 'Esta acción sobrescribirá una salida anterior en la carpeta de salida.\n¿Continuar?',
                 sp_la: 'Esta acción sobrescribirá una salida anterior en la carpeta de salida.\n¿Desea continuar?',
