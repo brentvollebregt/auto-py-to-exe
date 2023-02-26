@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.31.0
+
+🚀 Enhancements
+
+- Added Polish translations
+
+🏆 Contributors
+
+- Translations provided over email by Arek
+
 ## 2.30.0
 
 🚀 Enhancements
