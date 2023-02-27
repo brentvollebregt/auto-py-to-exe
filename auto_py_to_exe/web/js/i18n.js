@@ -70,7 +70,7 @@ const translationMap = {
                 ar: 'ملف',
                 sr: 'Jedana datoteka',
                 ja: '1つのファイル',
-                pl: 'Jeden plik',
+                pl: 'Wynik konwersji skryptu',
             },
             consoleWindow: {
                 en: 'Console Window',
@@ -92,7 +92,7 @@ const translationMap = {
                 ar: 'نافذة وحدة التحكم',
                 sr: 'Konzolni prozor',
                 ja: 'コンソール画面',
-                pl: 'Okno konsoli',
+                pl: 'Wygląd aplikacji po konwersji .py',
             },
             icon: {
                 en: 'Icon',
@@ -114,7 +114,7 @@ const translationMap = {
                 ar: 'أيقونة',
                 sr: 'Ikona',
                 ja: 'アイコン',
-                pl: 'Ikona',
+                pl: 'Dodanie ikony',
             },
             additionalFiles: {
                 en: 'Additional Files',
@@ -136,7 +136,7 @@ const translationMap = {
                 ar: 'ملفات إضافية',
                 sr: 'Dodatne datoteke',
                 ja: '追加ファイル',
-                pl: 'Dodatkowe pliki',
+                pl: 'Dodanie dodatkowych plików',
             },
             advanced: {
                 en: 'Advanced',
@@ -202,7 +202,7 @@ const translationMap = {
                 ar: 'الأمر الحالي',
                 sr: 'Trenutna komanda',
                 ja: '現在のコマンド',
-                pl: 'Aktualne polecenie',
+                pl: 'Aktualnie stworzone polecenie konwersji',
             },
             output: {
                 en: 'Output',
@@ -289,7 +289,7 @@ const translationMap = {
                 ar: 'زيادة حد التكرار',
                 sr: 'Povećaj granicu rekurzije',
                 ja: '再帰回数の上限を増やす',
-                pl: 'Zwiękenie limitu rekursji',
+                pl: 'Zwiększenie limitu rekursji',
             },
             manuallyProvideOptions: {
                 en: 'Manually Provide Options',
@@ -379,7 +379,7 @@ const translationMap = {
                 ar: 'تصفح',
                 sr: 'Pronađi',
                 ja: '開く',
-                pl: 'Przejrzyj',
+                pl: 'Przeglądaj',
             },
             oneDirectory: {
                 en: 'One Directory',
@@ -445,7 +445,7 @@ const translationMap = {
                 ar: 'قائم على وحدة التحكم',
                 sr: 'Konzolna aplikacija',
                 ja: 'コンソールベース',
-                pl: 'W konsoli',
+                pl: 'Aplikacja w konsoli',
             },
             windowBased: {
                 en: 'Window Based (hide the console)',
@@ -489,7 +489,7 @@ const translationMap = {
                 ar: 'إضافة ملفات',
                 sr: 'Dodaj datoteku',
                 ja: 'ファイルの追加',
-                pl: 'Dodanie plików',
+                pl: 'Dodaj pliki',
             },
             addFolder: {
                 en: 'Add Folder',
@@ -511,7 +511,7 @@ const translationMap = {
                 ar: 'أضف مجلدًا',
                 sr: 'Dodaj direktorijum',
                 ja: 'フォルダの追加',
-                pl: 'Dodaj folder',
+                pl: 'Dodaj katalog',
             },
             addBlank: {
                 en: 'Add Blank',
@@ -1107,7 +1107,7 @@ const translationMap = {
                 ar: 'خيارات Windows المحددة',
                 sr: 'Specifična podešavanja za Windows',
                 ja: 'Windows固有の設定',
-                pl: 'opcje dla systemu Windows',
+                pl: 'Opcje dla systemu Windows',
             },
             windowsSideBySideAssemblySearchingOptions: {
                 en: 'Windows Side-by-side Assembly searching options (advanced)',

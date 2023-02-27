@@ -8,7 +8,7 @@
 
 🏆 Contributors
 
-- Translations provided over email by Arek
+- [Akuczaku](https://github.com/Akuczaku) (through email)
 
 ## 2.30.0
 
