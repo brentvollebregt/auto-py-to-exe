@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.31.1
+
+🐛 Bug Fixes
+
+- Corrected Polish translations
+
+🏆 Contributors
+
+- [Akuczaku](https://github.com/Akuczaku) (through email)
+
 ## 2.31.0
 
 🚀 Enhancements
