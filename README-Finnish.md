@@ -113,6 +113,7 @@ Jos uskot, että olet löytänyt ongelman työkalun kanssa, ole hyvä ja [luo "i
 | kiina (perinteinen) (繁體中文)                   | zh_tw | [startgo](https://github.com/ystartgo)                                 | Käyttöliittymä                                  |
 | tšekki                                          | cz    | [Matto58](https://github.com/Matto58)                                  | Käyttöliittymä                                  |
 | englanti (English)                              | en    | -                                                                      | Käyttöliittymä ja README                        |
+| suomi                                           | fi     | [ZapX5](https://github.com/ZapX5)                                     | Käyttöliittymä ja [README](./README-Finnish.md) |
 | ranska (Français)                               | fr    | [flaviedesp](https://github.com/flaviedesp)                            | Käyttöliittymä                                  |
 | saksa (Deutsch)                                 | de    | [hebens](https://github.com/hebens), [ackhh](https://github.com/ackhh) | Käyttöliittymä                                  |
 | kreikka (Ελληνικά)                              | gr    | [sofronas](https://github.com/sofronas)                                | Käyttöliittymä                                  |
@@ -126,7 +127,6 @@ Jos uskot, että olet löytänyt ongelman työkalun kanssa, ole hyvä ja [luo "i
 | thai (ภาษาไทย)                                 | th    | [teerut26](https://github.com/teerut26)                               | Käyttöliittymä (osittain)                        |
 | turkki (Türkçe)                                 | tr     | [mcagriaksoy](https://github.com/mcagriaksoy)                         | Käyttöliittymä                                  |
 | ukraina (Українська)                            | ua     | [AndrejGorodnij](https://github.com/AndrejGorodnij)                   | Käyttöliittymä                                  |
-| suomi                                           | fi     | [ZapX5](https://github.com/ZapX5)                                     | Käyttöliittymä ja [README](./README-Finnish.md) |
 
 > Haluatko lisätä uuden kielen? Päivitä [i18n.js-tiedostoa](https://github.com/brentvollebregt/auto-py-to-exe/blob/master/auto_py_to_exe/web/js/i18n.js) ja lähetä Pull Request tai liitä se "issue":en.
 

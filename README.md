@@ -113,6 +113,7 @@ If you believe you've found an issue with this tool, please [create an issue](ht
 | Chinese Traditional (繁體中文)              | zh_tw | [startgo](https://github.com/ystartgo)                                 | UI                                   |
 | Czech                                       | cz    | [Matto58](https://github.com/Matto58)                                  | UI                                   |
 | English                                     | en    | -                                                                      | UI and README                        |
+| Finnish (Suomen kieli)                      | fi    | [ZapX5](https://github.com/ZapX5)                                      | UI and [README](./README-Finnish.md) |
 | French (Français)                           | fr    | [flaviedesp](https://github.com/flaviedesp)                            | UI                                   |
 | German (Deutsch)                            | de    | [hebens](https://github.com/hebens), [ackhh](https://github.com/ackhh) | UI                                   |
 | Greek (Ελληνικά)                            | gr    | [sofronas](https://github.com/sofronas)                                | UI                                   |
@@ -126,7 +127,6 @@ If you believe you've found an issue with this tool, please [create an issue](ht
 | Thai (ภาษาไทย)                              | th    | [teerut26](https://github.com/teerut26)                                | UI (partial)                         |
 | Turkish (Türkçe)                            | tr    | [mcagriaksoy](https://github.com/mcagriaksoy)                          | UI                                   |
 | Ukrainian (Українська)                      | ua    | [AndrejGorodnij](https://github.com/AndrejGorodnij)                    | UI                                   |
-| Finnish (Suomen kieli)                      | fi    | [ZapX5](https://github.com/ZapX5)                                      | UI and [README](./README-Finnish.md) |
 
 > Want to add a translation for another language? Update [i18n.js](https://github.com/brentvollebregt/auto-py-to-exe/blob/master/auto_py_to_exe/web/js/i18n.js) and submit a PR or attach it in an issue.
 

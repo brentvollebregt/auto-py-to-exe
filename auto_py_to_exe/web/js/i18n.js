@@ -1657,6 +1657,10 @@ const supportedLanguages = [
         code: 'en',
     },
     {
+        name: 'Finnish (Suomen kieli)',
+        code: 'fi',
+    },
+    {
         name: 'French (Français)',
         code: 'fr',
     },
@@ -1711,10 +1715,6 @@ const supportedLanguages = [
     {
         name: 'Ukrainian (Українська)',
         code: 'ua',
-    },
-    {
-        name: 'Finnish (Suomen kieli)',
-        code: 'fi',
     },
 ];
 
