@@ -75,38 +75,33 @@ jobs:
 
       - name: Get documented version changes from CHANGELOG.md
         id: get_documented_changes
-        shell: bash
+        shell: python
         run: |
-          changes="$(
-            found_version=0; \
-            while IFS= read -r line; do \
-              if [[ $found_version == 0 ]]; then\
-                if [[ $line == *"${{ steps.get_module_version.outputs.version }}"* && $line == "##"* ]]; then \
-                  found_version=1; \
-                fi \
-              else \
-              if [[ $line == "##"* ]]; then \
-                found_version=0; \
-              else \
-                echo "$line"; \
-              fi \
-              fi \
-            done < CHANGELOG.md
-          )"
+          import string
+          import os
+          import random
+          import re
 
-          echo "Documented changes:"
-          echo "$changes"
-          echo ""
+          with open("CHANGELOG.md", "r") as f:
+              changelog = f.read()
 
-          if [[ $changes == "" ]]; then \
-          	echo "Changes have not been documented"; \
-          	exit 1; \
-          else \
-          	changes="${changes//'%'/'%25'}"; \
-          	changes="${changes//$'\n'/'%0A'}"; \
-          	changes="${changes//$'\r'/'%0D'}"; \
-          	echo "changes=$changes" >> $GITHUB_OUTPUT; \
-          fi
+          version = "${{ steps.get_module_version.outputs.version }}"
+          pattern = r"##\s*{}\s*\n((?:.|\n)*?)(?:\n##\s*|\Z)".format(re.escape(version))
+          changes = re.search(pattern, changelog).group(1).strip()
+
+          if changes == "":
+              print(f"Changes were not detected in CHANGELOG.md for version {version}")
+              exit(1)
+
+          footer = f"\n\n---\n\n[🌐 auto-py-to-exe {version} on PyPI](https://pypi.org/project/auto-py-to-exe/{version}/)"
+          changes += footer
+          print(changes)
+
+          # Writing multiline strings to output: https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#multiline-strings
+          github_output_file_path = os.getenv('GITHUB_OUTPUT')
+          delimiter = ''.join(random.choice(string.ascii_uppercase) for i in range(20))
+          with open(github_output_file_path, "a") as github_output_file:
+              github_output_file.write(f"changes<<{delimiter}\n{changes}\n{delimiter}")
 
       - name: Build distribution
         run: |
