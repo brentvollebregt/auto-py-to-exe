@@ -16,6 +16,8 @@
 
 阅读中文版的README ，点击 [这里](./README-Chinese.md)
 
+Suomenkieliset käyttöohjeet löydät [täältä](./README-Finnish.md)
+
 ## Demo
 
 <p align="center">

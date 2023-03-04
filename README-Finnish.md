@@ -103,33 +103,6 @@ Jos uskot, että olet löytänyt ongelman työkalun kanssa, ole hyvä ja [luo "i
 
 > Kun täytät pohjaa, varmista että selität ongelman tarkasti, anna vaiheet tuottaa ongelma uudestaan ja [minimaalista uudelleentuotettavaa esimerkkiä (linkki englanniksi)](https://stackoverflow.com/help/minimal-reproducible-example) ja selitä mitä uskot että olisi pitänyt tapahtua. Ilman näitä, ongelman havaitseminen kestää pidempään
 
-## Käännökset (03/03/2023)
-
-| Kieli                                           | Koodi  | Kääntäjä                                                              | Kääntänyt                                       |
-| ----------------------------------------------- | ------ | --------------------------------------------------------------------- | ---------------------------------------------- |
-| arabia (العربية)                                | ar    | [Tayeb-Ali](https://github.com/tayeb-ali)                             | Käyttöliittymä                                  |
-| Brasilian portugali (Português Brasileiro)      | pt_br | [marleyas](https://github.com/marleyas)                                | Käyttöliittymä (osittain)                       |
-| kiina (yksinkertaistettu) (简体中文)             | zh    | [jiangzhe11](https://github.com/jiangzhe11)                            | Käyttöliittymä ja [README](./README-Chinese.md) |
-| kiina (perinteinen) (繁體中文)                   | zh_tw | [startgo](https://github.com/ystartgo)                                 | Käyttöliittymä                                  |
-| tšekki                                          | cz    | [Matto58](https://github.com/Matto58)                                  | Käyttöliittymä                                  |
-| englanti (English)                              | en    | -                                                                      | Käyttöliittymä ja README                        |
-| suomi                                           | fi     | [ZapX5](https://github.com/ZapX5)                                     | Käyttöliittymä ja [README](./README-Finnish.md) |
-| ranska (Français)                               | fr    | [flaviedesp](https://github.com/flaviedesp)                            | Käyttöliittymä                                  |
-| saksa (Deutsch)                                 | de    | [hebens](https://github.com/hebens), [ackhh](https://github.com/ackhh) | Käyttöliittymä                                  |
-| kreikka (Ελληνικά)                              | gr    | [sofronas](https://github.com/sofronas)                                | Käyttöliittymä                                  |
-| indonesia (Bahasa Indonesia)                    | id    | [MarvinZhong](https://github.com/MarvinZhong)                          | Käyttöliittymä                                  |
-| italia (Italiano)                               | it    | [itsEmax64](https://github.com/itsEmax64)                              | Käyttöliittymä                                  |
-| japani (日本語)                                  | ja    | [NattyanTV](https://github.com/nattyan-tv)                             | Käyttöliittymä                                  |
-| venäjä (Русский)                                | ru    | Oleg                                                                   | Käyttöliittymä                                  |
-| espanja (Español)                               | sp    | [enriiquee](https://github.com/enriiquee)                              | Käyttöliittymä                                  |
-| espanja (Latinalainen Amerikka) (Español Latam) | sp_la | [Matyrela](https://github.com/Matyrela)                                | Käyttöliittymä                                  |
-| serbia                                          | sr    | [rina](https://github.com/sweatshirts)                                 | Käyttöliittymä                                  |
-| thai (ภาษาไทย)                                 | th    | [teerut26](https://github.com/teerut26)                               | Käyttöliittymä (osittain)                        |
-| turkki (Türkçe)                                 | tr     | [mcagriaksoy](https://github.com/mcagriaksoy)                         | Käyttöliittymä                                  |
-| ukraina (Українська)                            | ua     | [AndrejGorodnij](https://github.com/AndrejGorodnij)                   | Käyttöliittymä                                  |
-
-> Haluatko lisätä uuden kielen? Päivitä [i18n.js-tiedostoa](https://github.com/brentvollebregt/auto-py-to-exe/blob/master/auto_py_to_exe/web/js/i18n.js) ja lähetä Pull Request tai liitä se "issue":en.
-
 ## Python 2.7 Tuki
 [PyInstaller v4.0:sta lähtien (englanniksi)](https://github.com/pyinstaller/pyinstaller/releases/tag/v4.0) (julkaistu elokuun 9. päivä 2020), Python 2.7 ei ole enää tuettu; tosin voit käyttää tätä työkalua Python 2.7:n kanssa asentamalla vanhemman version PyInstallerista.[PyInstaller v3.6 (englanniksi)](https://github.com/pyinstaller/pyinstaller/releases/tag/v3.6) oli viimeinen versio joka tuki Python 2.7:ää; Asentaaksesi tämän, ensin poista olemassaolevat versiot PyInstallerista ja käytä komentoa `python -m pip install pyinstaller==3.6`.
 
