@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.32.0
+
+🚀 Enhancements
+
+- [#373](https://github.com/brentvollebregt/auto-py-to-exe/pull/373): Added Finnish translations
+
+🏆 Contributors
+
+- [ZapX5](https://github.com/ZapX5)
+
 ## 2.31.1
 
 🐛 Bug Fixes
@@ -24,7 +34,7 @@
 
 🚀 Enhancements
 
-- [#344](https://github.com/brentvollebregt/auto-py-to-exe/issues/344) Highlight file/folder when viewing output in Windows
+- [#344](https://github.com/brentvollebregt/auto-py-to-exe/issues/344): Highlight file/folder when viewing output in Windows
 - [#365](https://github.com/brentvollebregt/auto-py-to-exe/pull/365): Update German translations
 
 🏆 Contributors
