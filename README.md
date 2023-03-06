@@ -44,6 +44,8 @@ Then to run it, execute the following in the terminal:
 $ auto-py-to-exe
 ```
 
+> If you have more than one version of Python installed, you can use `python -m auto_py_to_exe` instead of `auto-py-to-exe`.
+
 ### Installing Via [GitHub](https://github.com/brentvollebregt/auto-py-to-exe)
 ```
 $ git clone https://github.com/brentvollebregt/auto-py-to-exe.git
