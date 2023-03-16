@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.33.0
+
+🚀 Enhancements
+
+- Support more versions of Eel
+
 ## 2.32.0
 
 🚀 Enhancements
