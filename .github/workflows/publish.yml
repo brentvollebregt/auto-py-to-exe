@@ -108,7 +108,7 @@ jobs:
           python setup.py sdist bdist_wheel --universal
 
       - name: Publish package
-        uses: pypa/gh-action-pypi-publish@release/v1
+        uses: pypa/gh-action-pypi-publish@c7f29f7adef1a245bd91520e94867e5c6eedddcc
         with:
           user: __token__
           password: ${{ secrets.pypi_password }}
