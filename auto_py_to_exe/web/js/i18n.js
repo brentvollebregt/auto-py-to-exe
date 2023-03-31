@@ -1,6 +1,7 @@
 // Constants used in translation map
 const applicationName = 'auto-py-to-exe';
-const helpPostUrl = 'https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=application_link&utm_campaign=auto_py_to_exe_help&utm_content=bottom'
+const helpPostLinkAnchorTagContents = 'href="https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=application_link&utm_campaign=auto_py_to_exe_help&utm_content=bottom" target="_blank"';
+const onFileModeAdditionalFilesHelpAnchorTagContents = 'href="https://stackoverflow.com/a/13790741/" target="_blank" style="text-decoration: none;"';
 
 // Translation mappings
 const translationMap = {
@@ -890,67 +891,67 @@ const translationMap = {
             },
             oneFileAdditionalFilesNote: {
                 en: 'Be careful when using additional files with onefile mode;\n' +
-                    '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">read this</a>\n' +
+                    `<a ${onFileModeAdditionalFilesHelpAnchorTagContents}>read this</a>\n` +
                     'and update your code to work with PyInstaller.',
                 zh: '使用单文件模式的附加文件时要小心;\n' +
-                    '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">read this</a>\n' +
+                    `<a ${onFileModeAdditionalFilesHelpAnchorTagContents}>read this</a>\n` +
                     '并更新您的代码以使用PyInstaller。',
                 zh_tw: '使用單檔案模式的附加檔案時要小心;\n' +
-                    '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">read this</a>\n' +
+                    `<a ${onFileModeAdditionalFilesHelpAnchorTagContents}>read this</a>\n` +
                     '並更新您的代碼以使用 PyInstaller。',
                 ua: 'Будьте уважні під час використання додаткових файлів в режимі onefile;' +
-                    '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">Прочитайте це</a>\n' +
+                    `<a ${onFileModeAdditionalFilesHelpAnchorTagContents}>Прочитайте це</a>\n` +
                     'і оновіть свій код для подальшого використання PyInstaller.',
                 ru: 'Будьте внимательны при использовании дополнительных файлов в режиме одного файла;\n' +
-                    '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">Прочитайте Это</a>\n' +
+                    `<a ${onFileModeAdditionalFilesHelpAnchorTagContents}>Прочитайте Это</a>\n` +
                     'и обновите свой код для работы с PyInstaller.',
                 de: 'Vorsicht bei Verwendung von zusätzlichen Dateien im Modus "Eine Datei";\n' +
-                    '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">Siehe</a>\n' +
+                    `<a ${onFileModeAdditionalFilesHelpAnchorTagContents}>Siehe</a>\n` +
                     'und aktualisiere den Code zur Verwendung mit PyInstaller.',
                 pt_br: 'Tenha cuidado ao usar arquivos adicionais com o modo de arquivo único;\n' +
-                    '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">read this</a>\n' +
+                    `<a ${onFileModeAdditionalFilesHelpAnchorTagContents}>read this</a>\n` +
                     'and update your code to work with PyInstaller.',
                 sp: 'Tenga cuidado al utilizar archivos adicionales con el modo de un solo archivo;\n' +
-                    '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">read this</a>\n' +
+                    `<a ${onFileModeAdditionalFilesHelpAnchorTagContents}>read this</a>\n` +
                     'and update your code to work with PyInstaller.',
                 sp_la: 'Tenga cuidado al utilizar archivos adicionales con el modo de un solo archivo;\n' +
-                    '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">read this</a>\n' +
+                    `<a ${onFileModeAdditionalFilesHelpAnchorTagContents}>read this</a>\n` +
                     'y actualiza tu codigo para funcionar con PyInstaller.',
                 tr: 'Tek dosya modunda ek dosyalar kullanırken dikkatli olun;\n' +
-                    '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">read this</a>\n' +
+                    `<a ${onFileModeAdditionalFilesHelpAnchorTagContents}>read this</a>\n` +
                     've kodunuzu PyInstaller ile çalışacak şekilde güncelleyin.',
                 th: 'โปรดใช้ความระมัดระวัง เมื่อใช้ไฟล์เพิ่มเติมกับโหมด onefile;\n' +
-                    '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">read this</a>\n' +
+                    `<a ${onFileModeAdditionalFilesHelpAnchorTagContents}>read this</a>\n` +
                     'และอัปเดต code ของคุณเพื่อทำงานกับ PyInstaller',
                 fr: 'Soyez prudent lorsque vous utilisez des fichiers supplémentaires avec le mode onefile;\n' +
-                    '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">read this</a>\n' +
+                    `<a ${onFileModeAdditionalFilesHelpAnchorTagContents}>read this</a>\n` +
                     'et mettez à jour votre code pour qu\'il fonctionne avec PyInstaller.',
                 it: 'Fai attenzione quando usi più di un file in modalità un file;\n' +
-                    '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">leggi qui (articolo in inglese)</a>\n' +
+                    `<a ${onFileModeAdditionalFilesHelpAnchorTagContents}>leggi qui (articolo in inglese)</a>\n` +
                     'e aggiorna il tuo codice per funzionare con PyInstaller.',
                 id: 'Berhati-hati saat menggunakan berkas tambahan dengan mode onefile;\n' +
-                    '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">baca ini</a>\n' +
+                    `<a ${onFileModeAdditionalFilesHelpAnchorTagContents}>baca ini</a>\n` +
                     'dan perbarui kode Anda untuk bekerja dengan PyInstaller.',
                 cz: 'Buďte opatrní když přidáváte soubory s režimem jednoho souboru;\n' +
-                    '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">přečtěte si tohle (stránka v angličtině)</a>\n' +
+                    `<a ${onFileModeAdditionalFilesHelpAnchorTagContents}>přečtěte si tohle (stránka v angličtině)</a>\n` +
                     'a aktualizujte kód tak aby fungoval s PyInstaller.',
                 gr: 'Να είσατε προσεκτικοί με την χρήση επιλογής ενός αρχείου\n' +
-                    '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">read this</a>\n' +
+                    `<a ${onFileModeAdditionalFilesHelpAnchorTagContents}>read this</a>\n` +
                     'and update your code to work with PyInstaller.',
                 ar: 'كن حذرًا عند استخدام ملفات إضافية مع وضع الملف الواحد ؛ \n' +
-                    '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">اقرا هذا</a>\n' +
+                    `<a ${onFileModeAdditionalFilesHelpAnchorTagContents}>اقرا هذا</a>\n` +
                     'وقم بتحديث التعليمات البرمجية الخاصة بك للعمل مع PyInstaller.',
                 sr: 'Budi oprezan kada koristiš dodatne datoteke u režimu jedne datoteke;\n' +
-                    '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">pročitaj ovo (na engleskom)</a>\n' +
+                    `<a ${onFileModeAdditionalFilesHelpAnchorTagContents}>pročitaj ovo (na engleskom)</a>\n` +
                     'i ažuriraj svoj kod da bi radio sa PyInstaller.',
                 ja: '1つのファイルモードで追加ファイルを使用する際は、注意が必要です。;\n' +
-                    '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">こちら (原文記事)</a>\n' +
+                    `<a ${onFileModeAdditionalFilesHelpAnchorTagContents}>こちら (原文記事)</a>\n` +
                     'で、PyInstallerで動作するようにコードを変更してください。',
                 pl: 'Należy zachować ostrożność przy używaniu dodatkowych plików w trybie jednoplikowym;\n' +
-                    '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">Czytaj to</a>\n' +
+                    `<a ${onFileModeAdditionalFilesHelpAnchorTagContents}>Czytaj to</a>\n` +
                     'i zaktualizuj swój kod, aby działał z PyInstaller.',
                 fi: 'Ole varovainen kun käytät lisätiedostoja yhden tiedoston tilassa;\n' +
-                    '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">Lue tämä (englanniksi)</a>\n' +
+                    `<a ${onFileModeAdditionalFilesHelpAnchorTagContents}>Lue tämä (englanniksi)</a>\n` +
                     'ja päivitä koodisi toimimaan PyInstallerin kanssa.',
             },
             rootDirectory: {
@@ -978,65 +979,65 @@ const translationMap = {
             },
             somethingWrongWithOutput: {
                 en: 'Something wrong with your exe? Read ' +
-                    `<a href="${helpPostUrl}" target="_blank">this post on how to fix common issues</a>` +
+                    `<a ${helpPostLinkAnchorTagContents}>this post on how to fix common issues</a>` +
                     ' for possible solutions.',
                 zh: '你的exe有问题? 阅读 ' +
-                    `<a href="${helpPostUrl}" target="_blank">这篇文章是关于如何修复常见问题的` +
+                    `<a ${helpPostLinkAnchorTagContents}>这篇文章是关于如何修复常见问题的` +
                     ' 寻找可能的解决方案。',
                 zh_tw: '您的 exe 有問題? 請閱讀 ' +
-                    `<a href="${helpPostUrl}" target="_blank">這篇文章是關於如何修復常見的問題</a>` +
+                    `<a ${helpPostLinkAnchorTagContents}>這篇文章是關於如何修復常見的問題</a>` +
                     ' 尋找可能的解決方案。',
                 ua: 'Щось не так з вашим EXE? Можете з легкістю знайти відповідь' +
-                    `<a href="${helpPostUrl}" target="_blank">тут, ознайомившись з описом більшості проблем</a>`,
+                    `<a ${helpPostLinkAnchorTagContents}>тут, ознайомившись з описом більшості проблем</a>`,
                 ru: 'Что-то не так с вашим exe? Прочитайте ' +
-                    `<a href="${helpPostUrl}" target="_blank">эту справку, с описанием большинства проблем</a>` +
+                    `<a ${helpPostLinkAnchorTagContents}>эту справку, с описанием большинства проблем</a>` +
                     ' чтобы решить свою.',
                 de: 'Probleme mit der .exe-Datei? Lies ' +
-                    `<a href="${helpPostUrl}" target="_blank">diesen Artikel zur Behebung von bekannten Problemen</a>` +
+                    `<a ${helpPostLinkAnchorTagContents}>diesen Artikel zur Behebung von bekannten Problemen</a>` +
                     ' für mögliche Lösungen.',
                 pt_br: 'Algo errado com seu exe? Read ' +
-                    `<a href="${helpPostUrl}" target="_blank">este post fala sobre os problemas comuns</a>` +
+                    `<a ${helpPostLinkAnchorTagContents}>este post fala sobre os problemas comuns</a>` +
                     ' e possíveis soluções.',
                 sp: 'Algo fue mal con tu exe? Lea ' +
-                    `<a href="${helpPostUrl}" target="_blank">este post contiene posibles problemas comunes</a>` +
+                    `<a ${helpPostLinkAnchorTagContents}>este post contiene posibles problemas comunes</a>` +
                     ' y posibles soluciones.',
                 sp_la: 'Algo fue mal con tu archivo .exe? Lea ' +
-                    `<a href="${helpPostUrl}" target="_blank">este post contiene posibles soluciones a problemas comunes</a>.`,
+                    `<a ${helpPostLinkAnchorTagContents}>este post contiene posibles soluciones a problemas comunes</a>.`,
                 tr: 'exe\'nizde bir sorun mu var? Oku ' +
-                    `<a href="${helpPostUrl}" target="_blank">yaygın sorunların nasıl çözüleceğiyle ilgili bu gönderiye bakin</a>` +
+                    `<a ${helpPostLinkAnchorTagContents}>yaygın sorunların nasıl çözüleceğiyle ilgili bu gönderiye bakin</a>` +
                     ' olası çözümler için.',
                 th: 'มีอะไรผิดปกติกับ exe ของคุณ? อ่าน ' +
-                    `<a href="${helpPostUrl}" target="_blank">โพสต์เกี่ยวกับวิธีแก้ไขปัญหาทั่วไป</a>` +
+                    `<a ${helpPostLinkAnchorTagContents}>โพสต์เกี่ยวกับวิธีแก้ไขปัญหาทั่วไป</a>` +
                     ' สำหรับวิธีแก้ปัญหาที่เป็นไปได้',
                 fr: 'Quelque chose ne va pas avec votre exe? Lire ' +
-                    `<a href="${helpPostUrl}" target="_blank">ce post sur la façon de résoudre les problèmes courants</a>` +
+                    `<a ${helpPostLinkAnchorTagContents}>ce post sur la façon de résoudre les problèmes courants</a>` +
                     ' pour les solutions possibles.',
                 it: 'Qualcosa è andato storto con il tuo exe? leggi ' +
-                    `<a href="${helpPostUrl}" target="_blank">questo articolo su come risolvere problemi comuni (articolo in inglese)</a>` +
+                    `<a ${helpPostLinkAnchorTagContents}>questo articolo su come risolvere problemi comuni (articolo in inglese)</a>` +
                     ' per possibili soluzioni.',
                 id: 'Ada yang salah dengan exe Anda? Baca ' +
-                    `<a href="${helpPostUrl}" target="_blank">artikel ini untuk menyelesaikan masalah-masalah umum</a>` +
+                    `<a ${helpPostLinkAnchorTagContents}>artikel ini untuk menyelesaikan masalah-masalah umum</a>` +
                     ' yang mungkin.',
                 cz: 'Něco špatně s exe souborem? Přečtěte si ' +
-                    `<a href="${helpPostUrl}" target="_blank">tento příspěvek na jak opravit běžné chyby</a>` +
+                    `<a ${helpPostLinkAnchorTagContents}>tento příspěvek na jak opravit běžné chyby</a>` +
                     ' pro možné řešení.',
                 gr: 'Πήγε κάτι στραβά με το εκτελέσιμο (exe); Διαβάστε ' +
-                    `<a href="${helpPostUrl}" target="_blank">this post on how to fix common issues</a>` +
+                    `<a ${helpPostLinkAnchorTagContents}>this post on how to fix common issues</a>` +
                     ' για πιθανές λύσεις.',
                 ar: 'شيء خاطئ مع exe الخاص بك؟ اقرأ ' +
-                    `<a href="${helpPostUrl}" target="_blank">هذا المنشور حول كيفية إصلاح المشكلات الشائعة</a>` +
+                    `<a ${helpPostLinkAnchorTagContents}>هذا المنشور حول كيفية إصلاح المشكلات الشائعة</a>` +
                     ' للحلول الممكنة.',
                 sr: 'Nešto nije u redu sa tvojim exe-om? Pročitaj ' +
-                    `<a href="${helpPostUrl}" target="_blank">ovaj post o tome kako da popraviš česte greške,</a>` +
+                    `<a ${helpPostLinkAnchorTagContents}>ovaj post o tome kako da popraviš česte greške,</a>` +
                     ' za moguća rešenja problema.',
                 ja: 'exeに不具合がありますか？ ' +
-                    `<a href="${helpPostUrl}" target="_blank">よくある問題を解決する方法についての記事</a>` +
+                    `<a ${helpPostLinkAnchorTagContents}>よくある問題を解決する方法についての記事</a>` +
                     ' をご覧ください。',
                 pl: 'Coś nie tak z twoim exe? Przeczytaj ' +
-                    `<a href="${helpPostUrl}" target="_blank">ten post o tym, jak naprawić typowe problemy</a>` +
+                    `<a ${helpPostLinkAnchorTagContents}>ten post o tym, jak naprawić typowe problemy</a>` +
                     'w celu uzyskania możliwych rozwiązań ',
                 fi: 'Tuliko vastaan ongelmia= lue' +
-                    `<a href="${helpPostUrl}" target="_blank">tämä postaus (englanniksi) niin näet yleiset ongelmat</a>` +
+                    `<a ${helpPostLinkAnchorTagContents}>tämä postaus (englanniksi) niin näet yleiset ongelmat</a>` +
                     ' ja mahdolliset ratkaisut.',
             }
         }
