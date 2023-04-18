@@ -124,6 +124,7 @@ If you believe you've found an issue with this tool, please [create an issue](ht
 | Indonesian (Bahasa Indonesia)               | id    | [MarvinZhong](https://github.com/MarvinZhong)                          | UI                                   |
 | Italian (Italiano)                          | it    | [itsEmax64](https://github.com/itsEmax64)                              | UI                                   |
 | Japanese (日本語)                           | ja    | [NattyanTV](https://github.com/nattyan-tv)                             | UI                                   |
+| Persian (قارسی)                           | fa    | [DrunkLeen](https://github.com/drunkleen)                             | UI                                   |
 | Russian (Русский)                           | ru    | Oleg                                                                   | UI                                   |
 | Spanish (Español)                           | sp    | [enriiquee](https://github.com/enriiquee)                              | UI                                   |
 | Spanish Latam (Español Latam)               | sp_la | [Matyrela](https://github.com/Matyrela)                                | UI                                   |

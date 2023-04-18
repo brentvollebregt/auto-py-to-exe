@@ -3,6 +3,15 @@
     src: url('../Nunito-Light.ttf');
 }
 
+@font-face {
+    font-family: 'Vazirmatn';
+    src: url('../Vazirmatn-Light.ttf');
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -25,7 +34,7 @@
 
 body {
     background-color: var(--background);
-    font-family: 'Nunito', Helvetica, Arial, sans-serif;
+    font-family: 'Vazirmatn', 'Nunito', Helvetica, Arial, sans-serif;
     font-weight: 100;
     margin: 0 18px 10px 18px;
 }
@@ -64,7 +73,7 @@ button, input, select {
     border-radius: var(--border-radius);
     padding: 4px;
 
-    font-family: 'Nunito', Helvetica, Arial, sans-serif;
+    font-family: 'Vazirmatn', 'Nunito', Helvetica, Arial, sans-serif;
     font-weight: 100;
 }
 
