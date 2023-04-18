@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.34.0
+
+🚀 Enhancements
+
+- [#387](https://github.com/brentvollebregt/auto-py-to-exe/pull/387): Added Persian translations
+
+🏆 Contributors
+
+- [DrunkLeen](https://github.com/drunkleen)
+
 ## 2.33.0
 
 🚀 Enhancements
