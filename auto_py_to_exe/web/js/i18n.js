@@ -30,6 +30,7 @@ const translationMap = {
                 ja: 'スクリプトの場所',
                 pl: 'Lokalizacja skryptu',
                 fi: 'Skriptin sijainti',
+                vi: 'Vị trí tập lệnh',
             },
             language: {
                 en: 'Language',
@@ -54,6 +55,7 @@ const translationMap = {
                 ja: '言語',
                 pl: 'Język',
                 fi: 'Kieli',
+                vi: 'Ngôn ngữ',
             },
             oneFile: {
                 en: 'Onefile',
@@ -78,6 +80,7 @@ const translationMap = {
                 ja: '1つのファイル',
                 pl: 'Wynik konwersji skryptu',
                 fi: 'Yksi tiedosto',
+                vi: 'Một tập tin',
             },
             consoleWindow: {
                 en: 'Console Window',
@@ -102,6 +105,7 @@ const translationMap = {
                 ja: 'コンソール画面',
                 pl: 'Wygląd aplikacji po konwersji .py',
                 fi: 'Konsoli-ikkuna',
+                vi: 'Cửa sổ bảng điều khiển',
             },
             icon: {
                 en: 'Icon',
@@ -126,6 +130,7 @@ const translationMap = {
                 ja: 'アイコン',
                 pl: 'Dodanie ikony',
                 fi: 'Kuvake',
+                vi: 'Biểu tượng',
             },
             additionalFiles: {
                 en: 'Additional Files',
@@ -150,6 +155,7 @@ const translationMap = {
                 ja: '追加ファイル',
                 pl: 'Dodanie dodatkowych plików',
                 fi: 'Lisätiedostot',
+                vi: 'Các tệp bổ sung',
             },
             advanced: {
                 en: 'Advanced',
@@ -174,6 +180,7 @@ const translationMap = {
                 ja: '高度な設定',
                 pl: 'Parametry zaawansowane',
                 fi: 'Lisävaihtoehdot',
+                vi: 'Trình độ cao',
             },
             settings: {
                 en: 'Settings',
@@ -198,6 +205,7 @@ const translationMap = {
                 ja: '設定',
                 pl: 'Ustawienia',
                 fi: 'Asetukset',
+                vi: 'Cài đặt',
             },
             currentCommand: {
                 en: 'Current Command',
@@ -222,6 +230,7 @@ const translationMap = {
                 ja: '現在のコマンド',
                 pl: 'Aktualnie stworzone polecenie konwersji',
                 fi: 'Tämänhetkinen komento',
+                vi: 'Lệnh hiện tại',
             },
             output: {
                 en: 'Output',
@@ -245,6 +254,7 @@ const translationMap = {
                 ja: '出力',
                 pl: 'Wyjście',
                 fi: 'Ulostulo',
+                vi: 'Lối ra',
             },
             specificOptions: {
                 en: `${applicationName} Specific Options`,
@@ -269,6 +279,7 @@ const translationMap = {
                 ja: `${applicationName} 固有の設定`,
                 pl: `${applicationName} Opcje szczególne`,
                 fi: `${applicationName} Tarkat asetukset`,
+                vi: `${applicationName} Cài đặt chính xác`,
             },
             outputDirectory: {
                 en: 'Output Directory',
@@ -293,6 +304,7 @@ const translationMap = {
                 ja: '出力先ディレクトリ',
                 pl: 'Katalog wyjściowy',
                 fi: 'Ulostulon kansio',
+                vi: 'Thư mục đầu ra',
             },
             increaseRecursionLimit: {
                 en: 'Increase Recursion Limit',
@@ -317,6 +329,7 @@ const translationMap = {
                 ja: '再帰回数の上限を増やす',
                 pl: 'Zwiększenie limitu rekursji',
                 fi: 'Nosta rekursioiden rajaa',
+                vi: 'Tăng giới hạn đệ quy',
             },
             manuallyProvideOptions: {
                 en: 'Manually Provide Options',
@@ -341,6 +354,7 @@ const translationMap = {
                 ja: '手動設定',
                 pl: 'Opcje manualne',
                 fi: 'Säädä asetuksia manuaalisesti',
+                vi: 'Cung cấp cài đặt theo cách thủ công',
             },
             manualArgumentInput: {
                 en: 'Manual Argument Input',
@@ -365,6 +379,7 @@ const translationMap = {
                 ja: '手動指定引数',
                 pl: 'Manualne wprowadzanie argumentów',
                 fi: 'Manuaaliset argumentit',
+                vi: 'Nhập thủ công các đối số',
             },
             configuration: {
                 en: 'Configuration',
@@ -389,6 +404,7 @@ const translationMap = {
                 ja: '構成',
                 pl: 'Konfiguracja',
                 fi: 'Konfiguraatio',
+                vi: 'Cấu hình',
             }
         },
         button: {
@@ -415,6 +431,7 @@ const translationMap = {
                 ja: '開く',
                 pl: 'Przeglądaj',
                 fi: 'Selaa',
+                vi: 'Xem',
             },
             oneDirectory: {
                 en: 'One Directory',
@@ -439,6 +456,7 @@ const translationMap = {
                 ja: '1つのディレクトリ',
                 pl: 'Jeden katalog',
                 fi: 'Yksi kansio',
+                vi: 'Một thư mục',
             },
             oneFile: {
                 en: 'One File',
@@ -463,6 +481,7 @@ const translationMap = {
                 ja: '1つのファイル',
                 pl: 'Jeden plik',
                 fi: 'Yksi tiedosto',
+                vi: 'Một tập tin',
             },
             consoleBased: {
                 en: 'Console Based',
@@ -487,6 +506,7 @@ const translationMap = {
                 ja: 'コンソールベース',
                 pl: 'Aplikacja w konsoli',
                 fi: 'Konsolipohjainen',
+                vi: 'Trong bảng điều khiển',
             },
             windowBased: {
                 en: 'Window Based (hide the console)',
@@ -511,6 +531,7 @@ const translationMap = {
                 ja: 'ウィンドウベース (コンソールを非表示にする)',
                 pl: 'Aplikacja okienkowa (ukrycie konsoli)',
                 fi: 'Ikkunapohjainen (piilota konsoli)',
+                vi: 'Trong cửa sổ (ẩn bàn điều khiển)',
             },
             addFiles: {
                 en: 'Add Files',
@@ -535,6 +556,7 @@ const translationMap = {
                 ja: 'ファイルの追加',
                 pl: 'Dodaj pliki',
                 fi: 'Lisää tiedostoja',
+                vi: 'Thêm các tập tin',
             },
             addFolder: {
                 en: 'Add Folder',
@@ -559,6 +581,7 @@ const translationMap = {
                 ja: 'フォルダの追加',
                 pl: 'Dodaj katalog',
                 fi: 'Lisää kansio',
+                vi: 'Thêm thư mục',
             },
             addBlank: {
                 en: 'Add Blank',
@@ -583,6 +606,7 @@ const translationMap = {
                 ja: '空白の追加',
                 pl: 'Dodaj puste pole',
                 fi: 'Lisää tyhjä',
+                vi: 'Thêm trống',
             },
             importConfig: {
                 en: 'Import Config From JSON File',
@@ -607,6 +631,7 @@ const translationMap = {
                 ja: '構成をJSONファイルからインポート',
                 pl: 'Import konfiguracji z pliku JSON',
                 fi: 'Tuo konfiguraatio JSON-tiedostosta',
+                vi: 'Nhập cấu hình từ tệp JSON',
             },
             exportConfig: {
                 en: 'Export Config To JSON File',
@@ -630,6 +655,7 @@ const translationMap = {
                 ja: '構成をJSONファイルへエクスポート',
                 pl: 'Eksport konfiguracji do pliku JSON',
                 fi: 'Vie konfiguraatio JSON-tiedostoon',
+                vi: 'Xuất cấu hình sang tệp JSON',
             },
             convert: {
                 en: 'Convert .py to .exe',
@@ -654,6 +680,7 @@ const translationMap = {
                 ja: '.pyを.exeに変換',
                 pl: 'Konwertuj .py na .exe', 
                 fi: 'Muunna .py-tiedosto .exe-tiedostoksi',
+                vi: 'Chuyển đổi .py sang .exe',
             },
             openOutputFolder: {
                 en: 'Open Output Folder',
@@ -678,6 +705,7 @@ const translationMap = {
                 ja: '出力フォルダを開く',
                 pl: 'Otwórz katalog wyjściowy',
                 fi: 'Avaa ulostulon kansio',
+                vi: 'Mở thư mục đầu ra',
             },
             enable: {
                 en: 'Enable',
@@ -702,6 +730,7 @@ const translationMap = {
                 ja: '有効',
                 pl: 'Włączyć', 
                 fi: 'Aktivoi',
+                vi: 'Cho phép',
             },
         },
         links: {
@@ -728,6 +757,7 @@ const translationMap = {
                 ja: 'ヘルプ記事',
                 pl: 'Pomoc',
                 fi: 'Apua (Englanniksi)',
+                vi: 'Đăng trợ giúp',
             }
         },
         placeholders: {
@@ -754,6 +784,7 @@ const translationMap = {
                 ja: 'ファイルのパス',
                 pl: 'Ścieżka pliku',
                 fi: 'Polku tiedostoon',
+                vi: 'Đường dẫn tập tin',
             },
             icoFile: {
                 en: '.ico file',
@@ -778,6 +809,7 @@ const translationMap = {
                 ja: '.ico ファイル',
                 pl: 'plik .ico',
                 fi: '.ico tiedosto',
+                vi: 'tập tin .ico',
             },
             directory: {
                 en: 'DIRECTORY',
@@ -802,6 +834,7 @@ const translationMap = {
                 ja: 'ディレクトリ',
                 pl: 'KATALOG',
                 fi: 'KANSIO',
+                vi: 'THÀNH PHẦN',
             },
             arguments: {
                 en: 'ARGUMENTS',
@@ -826,6 +859,7 @@ const translationMap = {
                 ja: '引数',
                 pl: 'ARGUMENTY',
                 fi: 'ARGUMENTIT',
+                vi: 'TRANH LUẬN',
             }
         },
         helpText: {
@@ -852,6 +886,7 @@ const translationMap = {
                 ja: '出力したものを置くディレクトリ。存在しない場合は作成されます。',
                 pl: 'Katalog, w którym należy umieścić dane wyjściowe. Zostanie utworzony, jeśli nie istnieje.',
                 fi: 'Kansio johon valmis .exe-tiedosto laitetaan. Kansio luodaan, jos se ei ole jo olemassa.',
+                vi: 'Thư mục chứa đầu ra. Nó sẽ được tạo ra nếu nó không tồn tại.',
             },
             increaseRecursionLimit: {
                 en: 'Having this enabled will set the recursion limit to 5000 using sys.setrecursionlimit(5000).',
@@ -876,6 +911,7 @@ const translationMap = {
                 ja: 'これを有効にすると、sys.setrecursionlimit(5000)を使い、再帰回数の上限を5000にします。',
                 pl: 'Przy włączeniu tego ustawimy limit rekurencji na 5000 używając sys.setrecursionlimit(5000).',
                 fi: 'Tämän kytkeminen päälle asettaa 5000 rekursiorajaksi käyttämällä sys.setrecursionlimit(5000).',
+                vi: 'Nếu được bật, giới hạn đệ quy được tăng lên 5000 bằng cách sử dụng sys.setrecursionlimit(5000).',
             },
             manualArgumentInput: {
                 en: 'Inject raw text into the generated command.',
@@ -900,6 +936,7 @@ const translationMap = {
                 ja: '生成されたコマンドにテキストを挿入する。',
                 pl: 'Wstrzyknij raw tekst do wygenerowanego polecenia.',
                 fi: 'Lisää raakaa tekstiä generoituun komentoon',
+                vi: 'Dán văn bản vào lệnh đã tạo.',
             }
         },
         notes: {
@@ -926,6 +963,7 @@ const translationMap = {
                 ja: '警告: このファイルは有効な .ico ファイルではありません',
                 pl: 'Ostrzeżenie: ten plik nie jest prawidłowym plikiem .ico',
                 fi: 'Varoitus: tämä tiedosto ei ole kelpaava .ico-tiedosto',
+                vi: 'Cảnh báo: tệp này không phải là tệp .ico hợp lệ',
             },
             oneFileAdditionalFilesNote: {
                 en: 'Be careful when using additional files with onefile mode;\n' +
@@ -994,6 +1032,9 @@ const translationMap = {
                 fi: 'Ole varovainen kun käytät lisätiedostoja yhden tiedoston tilassa;\n' +
                     `<a ${onFileModeAdditionalFilesHelpAnchorTagContents}>Lue tämä (englanniksi)</a>\n` +
                     'ja päivitä koodisi toimimaan PyInstallerin kanssa.',
+                    vi: 'Hãy cẩn thận khi thêm tệp với chế độ tệp đơn;\n' +
+                    '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">přečtěte si tohle (stránka v angličtině)</a>\n' +
+                    'và cập nhật mã để hoạt động với PyInstaller.',
             },
             rootDirectory: {
                 en: 'If you want to put files in the root directory, put a period (.) in the destination.',
@@ -1018,6 +1059,7 @@ const translationMap = {
                 ja: 'ルートディレクトリにファイルを置きたい場合は、移動先にピリオド (.) を入れます。',
                 pl: 'Jeśli chcesz umieścić pliki w katalogu głównym, postaw kropkę (.) w miejscu przeznaczenia.',
                 fi: 'Jos haluat laittaa tiedostoja juurikansioon, laita piste (.) kohteeseen.',
+                vi: 'Nếu bạn muốn thêm tệp vào thư mục gốc, hãy thêm dấu chấm (.) vào đích.',
             },
             somethingWrongWithOutput: {
                 en: 'Something wrong with your exe? Read ' +
@@ -1084,6 +1126,11 @@ const translationMap = {
                 fi: 'Tuliko vastaan ongelmia= lue' +
                     `<a ${helpPostLinkAnchorTagContents}>tämä postaus (englanniksi) niin näet yleiset ongelmat</a>` +
                     ' ja mahdolliset ratkaisut.',
+                vi: 'Đã xảy ra sự cố với tệp exe? Đọc\n' +
+                    '<a href="https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=application_link&utm_campaign=auto_py_to_exe_help&utm_content=bottom" target="_blank">\n' +
+                    '    bài đăng này về cách khắc phục các lỗi phổ biến\n' +
+                    '</a>.\n' +
+                    'cho một giải pháp có thể.',
             }
         }
     },
@@ -1114,6 +1161,7 @@ const translationMap = {
                 ja: '一般設定',
                 pl: 'Opcje generalne',
                 fi: 'Yleiset asetukset',
+                vi: 'Cài đặt đơn giản',
             },
             whatToBundleWhereToSearch: {
                 en: 'What to bundle, where to search',
@@ -1138,6 +1186,7 @@ const translationMap = {
                 ja: '何を同梱するか、どこを探すか',
                 pl: 'Co połączyć, gdzie szukać',
                 fi: 'Mitä paketoida, mistä etsiä',
+                vi: 'Gói gì, tìm ở đâu',
             },
             howToGenerate: {
                 en: 'How to generate',
@@ -1162,6 +1211,7 @@ const translationMap = {
                 ja: 'どのように生成するか',
                 pl: 'Jak wygenerować',
                 fi: 'Miten generoida',
+                vi: 'Làm thế nào để tạo ra',
             },
             windowsAndMacOsXSpecificOptions: {
                 en: 'Windows And Mac Os X Specific Options',
@@ -1185,6 +1235,7 @@ const translationMap = {
                 ja: 'WindowsとMac OS X 固有の設定',
                 pl: 'Opcje specyficzne dla systemów Windows i Mac Os X',
                 fi: 'Yksilölliset asetukset Windowsille ja macOSille',
+                vi: 'Cài đặt cụ thể của Windows và Mac OS X',
             },
             windowsSpecificOptions: {
                 en: 'Windows specific options',
@@ -1209,6 +1260,7 @@ const translationMap = {
                 ja: 'Windows固有の設定',
                 pl: 'Opcje dla systemu Windows',
                 fi: 'Yksilälliset asetukset Windowsille',
+                vi: 'Cài đặt cụ thể của Windows',
             },
             windowsSideBySideAssemblySearchingOptions: {
                 en: 'Windows Side-by-side Assembly searching options (advanced)',
@@ -1233,6 +1285,7 @@ const translationMap = {
                 ja: 'Windows Side-by-side アセンブリ検索オプション (上級者向け)',
                 pl: 'Windows Side-by-side Assembly opcje przeszukiwania(zaawansowane)',
                 fi: 'Windows Side-by-side Assembly etsimisasetukset (edistynyt)',
+                vi: 'Windows Side-by-side Cài đặt tìm kiếm hội (nâng cao)',
             },
             macOsxSpecificOptions: {
                 en: 'Mac OS X specific options',
@@ -1257,6 +1310,7 @@ const translationMap = {
                 ja: 'Mac OS X 固有の設定',
                 pl: 'Mac OS X opcje specyficzne',
                 fi: 'Yksilölliset asetukset macOSille',
+                vi: 'Cài đặt cụ thể của Mac OS X',
             },
             rarelyUsedSpecialOptions: {
                 en: 'Rarely used special options',
@@ -1281,6 +1335,7 @@ const translationMap = {
                 ja: 'あまり使われない設定',
                 pl: 'Rzadko wykorzystywane opcje specjalne',
                 fi: 'Harvoin käytetyt erikoisasetukset',
+                vi: 'Các cài đặt đặc biệt hiếm khi được sử dụng',
             },
             other: {
                 en: 'Other',
@@ -1305,6 +1360,7 @@ const translationMap = {
                 ja: 'その他',
                 pl: 'Inne',
                 fi: 'Muu',
+                vi: 'Khác',
             },
         },
         button: {
@@ -1332,6 +1388,7 @@ const translationMap = {
                 ja: 'ファイルを参照',
                 pl: 'Przeglądaj w celu znalezienia pliku',
                 fi: 'Selaa tiedostoja',
+                vi: 'Tìm kiếm tập tin',
             },
             browseForFolder: {
                 en: 'Browse for Folder',
@@ -1356,6 +1413,7 @@ const translationMap = {
                 ja: 'フォルダを参照',
                 pl: 'Przeglądaj w celu znalezienia katalogu',
                 fi: 'Selaa kansioita',
+                vi: 'Thư mục tìm kiếm',
             },
             enable: {
                 en: 'Enable',
@@ -1380,6 +1438,7 @@ const translationMap = {
                 ja: '有効',
                 pl: 'Włączenie',
                 fi: 'Aktivoi',
+                vi: 'Bật',
             },
             disable: {
                 en: 'Disable',
@@ -1404,6 +1463,7 @@ const translationMap = {
                 ja: '無効',
                 pl: 'Wyłączenie',
                 fi: 'Deaktivoi',
+                vi: 'Tắt',
             },
             converting: {
                 en: 'Converting...',
@@ -1428,6 +1488,7 @@ const translationMap = {
                 ja: '変換中...',
                 pl: 'Konwertowanie...',
                 fi: 'Muunnetaan...',
+                vi: 'Chuyển đổi...',
             },
             clearOutput: {
                 en: 'Clear Output',
@@ -1452,6 +1513,7 @@ const translationMap = {
                 ja: '出力のクリア',
                 pl: 'Wyczyść wyjście',
                 fi: 'Tyhjennä ulostulo',
+                vi: 'Xóa đầu ra',
             },
         },
         modal: {
@@ -1478,6 +1540,7 @@ const translationMap = {
                 ja: '現在の構成を上書きしてもよろしいですか？',
                 pl: 'Zastąpić aktualną konfigurację?',
                 fi: 'Korvaa nykyinen konfiguraatio?',
+                vi: 'Ghi đè lên cấu hình hiện tại?',
             },
             configModalDescription: {
                 en: 'All previously inserted values will be erased.',
@@ -1502,6 +1565,7 @@ const translationMap = {
                 ja: '挿入されている値は全て削除されます。',
                 pl: 'Wszystkie wcześniej wprowadzone wartości zostaną wymazane.',
                 fi: 'Kaikki aikaisemmin syötetyt arvot nollataan.',
+                vi: 'Tất cả các giá trị trước đó sẽ bị xóa.',
             },
             configModalConfirmButton: {
                 en: 'Confirm',
@@ -1526,6 +1590,7 @@ const translationMap = {
                 ja: '確認',
                 pl: 'Potwierdź',
                 fi: 'Vahvista',
+                vi: 'Xác nhận',
             },
             configModalCancelButton: {
                 en: 'Cancel',
@@ -1550,6 +1615,7 @@ const translationMap = {
                 ja: 'キャンセル',
                 pl: 'Anuluj',
                 fi: 'Peruuta',
+                vi: 'Hủy bỏ',
             }
         }
     },
@@ -1579,6 +1645,7 @@ const translationMap = {
                 ja: 'スクリプトの位置が入力されていません。\nページ上部に入力してください。',
                 pl: 'Nie podałeś swojej lokalizacji skryptów.\nProszę wpisać ją na górze strony.',
                 fi: 'Et ole antanut skriptien sijaintia.\nSyötä se sivun yläpäässä.',
+                vi: 'Thiếu không gian tập lệnh.\nVui lòng thêm không gian ở trên.',
             },
             overwritePreviousOutput: {
                 en: 'This action will overwrite a previous output in the output folder.\nContinue?',
@@ -1603,6 +1670,7 @@ const translationMap = {
                 ja: 'この操作により、出力フォルダー内の以前の出力が上書きされます。\n続けてもよろしいですか？',
                 pl: 'Ta akcja spowoduje nadpisanie poprzedniego katalogu wyjściowego na nowy katalog wyjściowy.\nKontynować?',
                 fi: 'Tämä toiminto korvaa aikaisemman ulostulon ulostulokansiosta.\nOletko varma?',
+                vi: 'Điều này sẽ ghi đè lên đầu ra trước đó.\nTiếp tục?',
             }
         },
     }
@@ -1786,6 +1854,10 @@ const supportedLanguages = [
     {
         name: 'Ukrainian (Українська)',
         code: 'ua',
+    },
+    {
+        name: 'Tiếng Việt (VietNam)',
+        code: 'vi',
     },
 ];
 
