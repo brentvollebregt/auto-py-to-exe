@@ -109,30 +109,30 @@ If you believe you've found an issue with this tool, please [create an issue](ht
 
 ## Translations
 
-| Language                                    | Code  | Translator                                                             | Translated                           |
-| ------------------------------------------- | ----- | ---------------------------------------------------------------------- | ------------------------------------ |
-| Arabic (العربية)                            | ar    | [Tayeb-Ali](https://github.com/tayeb-ali)                              | UI                                   |
-| Brazilian Portuguese (Português Brasileiro) | pt_br | [marleyas](https://github.com/marleyas)                                | UI (partial)                         |
-| Chinese Simplified (简体中文)               | zh    | [jiangzhe11](https://github.com/jiangzhe11)                            | UI and [README](./README-Chinese.md) |
-| Chinese Traditional (繁體中文)              | zh_tw | [startgo](https://github.com/ystartgo)                                 | UI                                   |
-| Czech                                       | cz    | [Matto58](https://github.com/Matto58)                                  | UI                                   |
-| English                                     | en    | -                                                                      | UI and README                        |
-| Finnish (Suomen kieli)                      | fi    | [ZapX5](https://github.com/ZapX5)                                      | UI and [README](./README-Finnish.md) |
-| French (Français)                           | fr    | [flaviedesp](https://github.com/flaviedesp)                            | UI                                   |
-| German (Deutsch)                            | de    | [hebens](https://github.com/hebens), [ackhh](https://github.com/ackhh) | UI                                   |
-| Greek (Ελληνικά)                            | gr    | [sofronas](https://github.com/sofronas)                                | UI                                   |
-| Indonesian (Bahasa Indonesia)               | id    | [MarvinZhong](https://github.com/MarvinZhong)                          | UI                                   |
-| Italian (Italiano)                          | it    | [itsEmax64](https://github.com/itsEmax64)                              | UI                                   |
-| Japanese (日本語)                           | ja    | [NattyanTV](https://github.com/nattyan-tv)                             | UI                                   |
-| Persian (قارسی)                           | fa    | [DrunkLeen](https://github.com/drunkleen)                             | UI                                   |
-| Russian (Русский)                           | ru    | Oleg                                                                   | UI                                   |
-| Spanish (Español)                           | sp    | [enriiquee](https://github.com/enriiquee)                              | UI                                   |
-| Spanish Latam (Español Latam)               | sp_la | [Matyrela](https://github.com/Matyrela)                                | UI                                   |
-| Serbian                                     | sr    | [rina](https://github.com/sweatshirts)                                 | UI                                   |
-| Thai (ภาษาไทย)                              | th    | [teerut26](https://github.com/teerut26)                                | UI (partial)                         |
-| Turkish (Türkçe)                            | tr    | [mcagriaksoy](https://github.com/mcagriaksoy)                          | UI                                   |
-| Ukrainian (Українська)                      | ua    | [AndrejGorodnij](https://github.com/AndrejGorodnij)                    | UI                                   |
-| Vietnamese (Tiếng Việt)                     | vi    | [7777Hecker](https://github.com/7777Hecker)                            | UI                                   |
+| Language                                    | Translator                                                             | Translated                           |
+| ------------------------------------------- | ---------------------------------------------------------------------- | ------------------------------------ |
+| Arabic (العربية)                            | [Tayeb-Ali](https://github.com/tayeb-ali)                              | UI                                   |
+| Brazilian Portuguese (Português Brasileiro) | [marleyas](https://github.com/marleyas)                                | UI (partial)                         |
+| Chinese Simplified (简体中文)               | [jiangzhe11](https://github.com/jiangzhe11)                            | UI and [README](./README-Chinese.md) |
+| Chinese Traditional (繁體中文)              | [startgo](https://github.com/ystartgo)                                 | UI                                   |
+| Czech                                       | [Matto58](https://github.com/Matto58)                                  | UI                                   |
+| English                                     | -                                                                      | UI and README                        |
+| Finnish (Suomen kieli)                      | [ZapX5](https://github.com/ZapX5)                                      | UI and [README](./README-Finnish.md) |
+| French (Français)                           | [flaviedesp](https://github.com/flaviedesp)                            | UI                                   |
+| German (Deutsch)                            | [hebens](https://github.com/hebens), [ackhh](https://github.com/ackhh) | UI                                   |
+| Greek (Ελληνικά)                            | [sofronas](https://github.com/sofronas)                                | UI                                   |
+| Indonesian (Bahasa Indonesia)               | [MarvinZhong](https://github.com/MarvinZhong)                          | UI                                   |
+| Italian (Italiano)                          | [itsEmax64](https://github.com/itsEmax64)                              | UI                                   |
+| Japanese (日本語)                           | [NattyanTV](https://github.com/nattyan-tv)                             | UI                                   |
+| Persian (قارسی)                             | [DrunkLeen](https://github.com/drunkleen)                              | UI                                   |
+| Russian (Русский)                           | Oleg                                                                   | UI                                   |
+| Spanish (Español)                           | [enriiquee](https://github.com/enriiquee)                              | UI                                   |
+| Spanish Latam (Español Latam)               | [Matyrela](https://github.com/Matyrela)                                | UI                                   |
+| Serbian                                     | [rina](https://github.com/sweatshirts)                                 | UI                                   |
+| Thai (ภาษาไทย)                              | [teerut26](https://github.com/teerut26)                                | UI (partial)                         |
+| Turkish (Türkçe)                            | [mcagriaksoy](https://github.com/mcagriaksoy)                          | UI                                   |
+| Ukrainian (Українська)                      | [AndrejGorodnij](https://github.com/AndrejGorodnij)                    | UI                                   |
+| Vietnamese (Tiếng Việt)                     | [7777Hecker](https://github.com/7777Hecker)                            | UI                                   |
 
 > Want to add a translation for another language? Update [i18n.js](https://github.com/brentvollebregt/auto-py-to-exe/blob/master/auto_py_to_exe/web/js/i18n.js) and submit a PR or attach it in an issue.
 
