@@ -132,6 +132,7 @@ If you believe you've found an issue with this tool, please [create an issue](ht
 | Thai (ภาษาไทย)                              | th    | [teerut26](https://github.com/teerut26)                                | UI (partial)                         |
 | Turkish (Türkçe)                            | tr    | [mcagriaksoy](https://github.com/mcagriaksoy)                          | UI                                   |
 | Ukrainian (Українська)                      | ua    | [AndrejGorodnij](https://github.com/AndrejGorodnij)                    | UI                                   |
+| Vietnamese (Tiếng Việt)                     | vi    | [7777Hecker](https://github.com/7777Hecker)                            | UI                                   |
 
 > Want to add a translation for another language? Update [i18n.js](https://github.com/brentvollebregt/auto-py-to-exe/blob/master/auto_py_to_exe/web/js/i18n.js) and submit a PR or attach it in an issue.
 
