@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.35.0
+
+🚀 Enhancements
+
+- [#390](https://github.com/brentvollebregt/auto-py-to-exe/pull/390): Added Vietnamese translations
+
+🏆 Contributors
+
+- [7777Hecker](https://github.com/7777Hecker)
+
 ## 2.34.0
 
 🚀 Enhancements
