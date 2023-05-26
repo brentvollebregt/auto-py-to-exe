@@ -1032,8 +1032,8 @@ const translationMap = {
                 fi: 'Ole varovainen kun käytät lisätiedostoja yhden tiedoston tilassa;\n' +
                     `<a ${onFileModeAdditionalFilesHelpAnchorTagContents}>Lue tämä (englanniksi)</a>\n` +
                     'ja päivitä koodisi toimimaan PyInstallerin kanssa.',
-                    vi: 'Hãy cẩn thận khi thêm tệp với chế độ tệp đơn;\n' +
-                    '<a href="https://stackoverflow.com/a/13790741/" style="text-decoration: none;">přečtěte si tohle (stránka v angličtině)</a>\n' +
+                vi: 'Hãy cẩn thận khi thêm tệp với chế độ tệp đơn;\n' +
+                    `<a ${onFileModeAdditionalFilesHelpAnchorTagContents}>přečtěte si tohle (stránka v angličtině)</a>\n` +
                     'và cập nhật mã để hoạt động với PyInstaller.',
             },
             rootDirectory: {
@@ -1122,15 +1122,13 @@ const translationMap = {
                     ' をご覧ください。',
                 pl: 'Coś nie tak z twoim exe? Przeczytaj ' +
                     `<a ${helpPostLinkAnchorTagContents}>ten post o tym, jak naprawić typowe problemy</a>` +
-                    'w celu uzyskania możliwych rozwiązań ',
+                    ' w celu uzyskania możliwych rozwiązań ',
                 fi: 'Tuliko vastaan ongelmia= lue' +
                     `<a ${helpPostLinkAnchorTagContents}>tämä postaus (englanniksi) niin näet yleiset ongelmat</a>` +
                     ' ja mahdolliset ratkaisut.',
-                vi: 'Đã xảy ra sự cố với tệp exe? Đọc\n' +
-                    '<a href="https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=application_link&utm_campaign=auto_py_to_exe_help&utm_content=bottom" target="_blank">\n' +
-                    '    bài đăng này về cách khắc phục các lỗi phổ biến\n' +
-                    '</a>.\n' +
-                    'cho một giải pháp có thể.',
+                vi: 'Đã xảy ra sự cố với tệp exe? Đọc ' +
+                    `<a ${helpPostLinkAnchorTagContents}>bài đăng này về cách khắc phục các lỗi phổ biến</a>` +
+                    ' cho một giải pháp có thể.',
             }
         }
     },
@@ -1856,7 +1854,7 @@ const supportedLanguages = [
         code: 'ua',
     },
     {
-        name: 'Tiếng Việt (VietNam)',
+        name: 'Vietnamese (Tiếng Việt)',
         code: 'vi',
     },
 ];
