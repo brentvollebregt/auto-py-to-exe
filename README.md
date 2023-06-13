@@ -112,7 +112,7 @@ If you believe you've found an issue with this tool, please [create an issue](ht
 | Language                                    | Translator                                                             | Translated                           |
 | ------------------------------------------- | ---------------------------------------------------------------------- | ------------------------------------ |
 | Arabic (العربية)                            | [Tayeb-Ali](https://github.com/tayeb-ali)                              | UI                                   |
-| Brazilian Portuguese (Português Brasileiro) | [marleyas](https://github.com/marleyas)                                | UI (partial)                         |
+| Brazilian Portuguese (Português Brasileiro) | [marleyas](https://github.com/marleyas), [reneoliveirajr](https://github.com/reneoliveirajr) | UI             |
 | Chinese Simplified (简体中文)               | [jiangzhe11](https://github.com/jiangzhe11)                            | UI and [README](./README-Chinese.md) |
 | Chinese Traditional (繁體中文)              | [startgo](https://github.com/ystartgo)                                 | UI                                   |
 | Czech                                       | [Matto58](https://github.com/Matto58)                                  | UI                                   |
