@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.36.0
+
+🚀 Enhancements
+
+- [#399](https://github.com/brentvollebregt/auto-py-to-exe/pull/399): Updated Brazilian Portuguese translations
+
+🏆 Contributors
+
+- [reneoliveirajr](https://github.com/reneoliveirajr)
+
 ## 2.35.0
 
 🚀 Enhancements
