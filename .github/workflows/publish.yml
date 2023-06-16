@@ -10,9 +10,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
       - name: Only allow tags on master to be published
-        if: github.event.base_ref != 'refs/heads/master'
-        run: exit 1
+        run: |
+          tag_commit=$(git rev-parse ${{ github.ref }})
+          master_commit=$(git rev-parse origin/master)
+          
+          if [ "$tag_commit" = "$master_commit" ]; then
+            echo "The tag and master are pointing to the same commit."
+          else
+            echo "The tag ($tag_commit) and master ($master_commit) are not pointing to the same commit."
+            exit 1
+          fi
 
   test:
     runs-on: ${{ matrix.os }}
