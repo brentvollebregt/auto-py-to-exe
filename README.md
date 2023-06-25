@@ -18,6 +18,8 @@
 
 Suomenkieliset käyttöohjeet löydät [täältä](./README-Finnish.md)
 
+Türkçe Talimatları [burada](./README-Turkish.md) bulabilirsiniz.
+
 ## Demo
 
 <p align="center">
@@ -130,7 +132,7 @@ If you believe you've found an issue with this tool, please [create an issue](ht
 | Spanish Latam (Español Latam)               | [Matyrela](https://github.com/Matyrela)                                | UI                                   |
 | Serbian                                     | [rina](https://github.com/sweatshirts)                                 | UI                                   |
 | Thai (ภาษาไทย)                              | [teerut26](https://github.com/teerut26)                                | UI (partial)                         |
-| Turkish (Türkçe)                            | [mcagriaksoy](https://github.com/mcagriaksoy)                          | UI                                   |
+| Turkish (Türkçe)                            | [mcagriaksoy](https://github.com/mcagriaksoy)                          | UI and [README](./README-Turkish.md) |
 | Ukrainian (Українська)                      | [AndrejGorodnij](https://github.com/AndrejGorodnij)                    | UI                                   |
 | Vietnamese (Tiếng Việt)                     | [7777Hecker](https://github.com/7777Hecker)                            | UI                                   |
 
