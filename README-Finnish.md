@@ -16,6 +16,8 @@
 
 阅读中文版的README ，点击 [这里](./README-Chinese.md)
 
+Türkçe Talimatları [burada](./README-Turkish.md) bulabilirsiniz.
+
 ## Demo
 
 <p align="center">
