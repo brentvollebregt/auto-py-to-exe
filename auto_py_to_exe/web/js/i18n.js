@@ -187,7 +187,7 @@ const translationMap = {
                 pl: 'Parametry zaawansowane',
                 fi: 'Lisävaihtoehdot',
                 vi: 'Trình độ cao',
-                nl: 'Geadvanceerd',
+                nl: 'Geanvanceerd',
             },
             settings: {
                 en: 'Settings',
@@ -448,7 +448,7 @@ const translationMap = {
                 pl: 'Przeglądaj',
                 fi: 'Selaa',
                 vi: 'Xem',
-                nl: 'Knop',
+                nl: 'Zoeken',
             },
             oneDirectory: {
                 en: 'One Directory',
@@ -1282,7 +1282,7 @@ const translationMap = {
                 pl: 'Opcje specyficzne dla systemów Windows i macOS X',
                 fi: 'Yksilölliset asetukset Windowsille ja macOSille',
                 vi: 'Cài đặt cụ thể của Windows và macOS X',
-                nl: 'Windows an macOS X Specifieke Opties',
+                nl: 'Windows en macOS X Specifieke Opties',
             },
             windowsSpecificOptions: {
                 en: 'Windows specific options',
@@ -1334,7 +1334,7 @@ const translationMap = {
                 pl: 'Windows Side-by-side Assembly opcje przeszukiwania(zaawansowane)',
                 fi: 'Windows Side-by-side Assembly etsimisasetukset (edistynyt)',
                 vi: 'Windows Side-by-side Cài đặt tìm kiếm hội (nâng cao)',
-                nl: 'Windows Zijde-Bij-Zijde Sazmenvoeging Zoek Opties (geadvanceerd)',
+                nl: 'Windows Zijde-bij-Zijde Samenvoeging Zoek Opties (geadvanceerd)',
             },
             macOsxSpecificOptions: {
                 en: 'macOS X specific options',
