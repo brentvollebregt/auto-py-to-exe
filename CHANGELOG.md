@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.37.0
+
+🚀 Enhancements
+
+- [#404](https://github.com/brentvollebregt/auto-py-to-exe/pull/404): Added Turkish translated README
+- [#413](https://github.com/brentvollebregt/auto-py-to-exe/issues/413): Added Dutch translations
+
+🏆 Contributors
+
+- [Mehmet Çağrı Aksoy](https://github.com/mcagriaksoy)
+- [barremans](https://github.com/barremans)
+
 ## 2.36.0
 
 🚀 Enhancements
