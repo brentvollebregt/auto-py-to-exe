@@ -20,6 +20,8 @@ Suomenkieliset käyttöohjeet löydät [täältä](./README-Finnish.md)
 
 Türkçe Talimatları [burada](./README-Turkish.md) bulabilirsiniz.
 
+دستور العمل های [فارسی](./README.md)
+
 ## Demo
 
 <p align="center">
@@ -126,7 +128,7 @@ If you believe you've found an issue with this tool, please [create an issue](ht
 | Indonesian (Bahasa Indonesia)               | [MarvinZhong](https://github.com/MarvinZhong)                          | UI                                   |
 | Italian (Italiano)                          | [itsEmax64](https://github.com/itsEmax64)                              | UI                                   |
 | Japanese (日本語)                           | [NattyanTV](https://github.com/nattyan-tv)                             | UI                                   |
-| Persian (قارسی)                             | [DrunkLeen](https://github.com/drunkleen)                              | UI                                   |
+| Persian (فارسی)                             | [DrunkLeen](https://github.com/drunkleen), [Ar.dst](https://github.com/Ar-dst)                              | UI, [README](./README-Persian.md)                                   |
 | Russian (Русский)                           | Oleg                                                                   | UI                                   |
 | Spanish (Español)                           | [enriiquee](https://github.com/enriiquee)                              | UI                                   |
 | Spanish Latam (Español Latam)               | [Matyrela](https://github.com/Matyrela)                                | UI                                   |
