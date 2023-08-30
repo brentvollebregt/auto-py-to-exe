@@ -18,6 +18,8 @@
 
 Suomenkieliset käyttöohjeet löydät [täältä](./README-Finnish.md)
 
+دستور العمل های [فارسی](./README-Persian.md)
+
 ## Demo
 
 <p align="center">

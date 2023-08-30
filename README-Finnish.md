@@ -18,6 +18,8 @@
 
 Türkçe Talimatları [burada](./README-Turkish.md) bulabilirsiniz.
 
+دستور العمل های [فارسی](./README-Persian.md)
+
 ## Demo
 
 <p align="center">
