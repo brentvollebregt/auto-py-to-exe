@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.38.0
+
+🚀 Enhancements
+
+- [#404](https://github.com/brentvollebregt/auto-py-to-exe/pull/422): Added Persian translated README
+- [#404](https://github.com/brentvollebregt/auto-py-to-exe/pull/425): Added Korean translations
+
+🏆 Contributors
+
+- [Ar.dst](https://github.com/Ar-dst)
+- [jhk1090](https://github.com/jhk1090)
+
 ## 2.37.0
 
 🚀 Enhancements
