@@ -86,7 +86,7 @@ const translationMap = {
                 fi: 'Yksi tiedosto',
                 vi: 'Một tập tin',
                 nl: 'Een Bestand',
-                ko: "단독 파일 여부",
+                ko: "단일 파일 여부",
             },
             consoleWindow: {
                 en: 'Console Window',
@@ -1217,7 +1217,7 @@ const translationMap = {
                     `<a ${helpPostLinkAnchorTagContents}>dit artikel hoe men algemene problemen oplost</a>` +
                     ' voor mogelijke oplossingen.',
                 ko: 'exe 파일에 문제가 있나요? ' +
-                    `<a ${helpPostLinkAnchorTagContents}>자주 발생하는 오류 수정 방법에 대한 문서</a>` +
+                    `<a ${helpPostLinkAnchorTagContents}>자주 발생하는 오류의 수정 방법을 다룬 문서</a>` +
                     '를 읽어서 문제를 해결해보세요',
             }
         }
@@ -1278,7 +1278,7 @@ const translationMap = {
                 fi: 'Mitä paketoida, mistä etsiä',
                 vi: 'Gói gì, tìm ở đâu',
                 nl: 'Wat samenbrengen, waar te  zoeken',
-                ko: "무엇을 번들로 묶을 지 그리고 어디서 검색할 지",
+                ko: "번들 묶기 옵션 및 검색 옵션",
             },
             howToGenerate: {
                 en: 'How to generate',
@@ -1305,7 +1305,7 @@ const translationMap = {
                 fi: 'Miten generoida',
                 vi: 'Làm thế nào để tạo ra',
                 nl: 'Hoe te genereren',
-                ko: "어떻게 생성할 지",
+                ko: "생성 옵션",
             },
             windowsAndMacOsXSpecificOptions: {
                 en: 'Windows And macOS X Specific Options',
