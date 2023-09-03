@@ -59,7 +59,7 @@ const translationMap = {
                 fi: 'Kieli',
                 vi: 'Ngôn ngữ',
                 nl: 'Taal',
-                ko: "한국어",
+                ko: "언어",
             },
             oneFile: {
                 en: 'Onefile',
