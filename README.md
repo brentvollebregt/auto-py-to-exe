@@ -22,6 +22,8 @@ Türkçe Talimatları [burada](./README-Turkish.md) bulabilirsiniz.
 
 دستور العمل های [فارسی](./README-Persian.md)
 
+한국어로 된 설명은 [여기](./README-Korean.md)를 참고하세요.
+
 ## Demo
 
 <p align="center">
@@ -128,6 +130,7 @@ If you believe you've found an issue with this tool, please [create an issue](ht
 | Indonesian (Bahasa Indonesia)               | [MarvinZhong](https://github.com/MarvinZhong)                          | UI                                   |
 | Italian (Italiano)                          | [itsEmax64](https://github.com/itsEmax64)                              | UI                                   |
 | Japanese (日本語)                           | [NattyanTV](https://github.com/nattyan-tv)                             | UI                                   |
+| Korean (한국어)                           | [jhk1090](https://github.com/jhk1090)                             | UI and [README](./README-Korean.md)                                   |
 | Persian (فارسی)                             | [DrunkLeen](https://github.com/drunkleen), [Ar.dst](https://github.com/Ar-dst)                              | UI and [README](./README-Persian.md)                                   |
 | Russian (Русский)                           | Oleg                                                                   | UI                                   |
 | Spanish (Español)                           | [enriiquee](https://github.com/enriiquee)                              | UI                                   |
