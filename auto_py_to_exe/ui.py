@@ -10,6 +10,9 @@ from . import packaging
 from . import dialogs
 
 
+LOGGING_HANDLER_NAME = 'auto-py-to-exe logging handler'
+
+
 class UIOpenMode:
     NONE = 0
     CHROME = 1
@@ -22,15 +25,21 @@ eel.init(config.FRONTEND_ASSET_FOLDER)
 
 def __setup_logging_ui_forwarding():
     """ Setup forwarding of logs by PyInstaller and auto-py-to-exe to the ui """
+
     pyinstaller_logger = logging.getLogger('PyInstaller')
-    handler = logging.StreamHandler(utils.ForwardToFunctionStream(send_message_to_ui_output))
-    handler.setFormatter(logging.Formatter('%(relativeCreated)d %(levelname)s: %(message)s'))
-    pyinstaller_logger.addHandler(handler)
+    # Make sure to check if the handler has already been setup so it doesn't get re-added on reload
+    if not any([i.get_name() == LOGGING_HANDLER_NAME for i in pyinstaller_logger.handlers]):
+        handler = logging.StreamHandler(utils.ForwardToFunctionStream(send_message_to_ui_output))
+        handler.set_name(LOGGING_HANDLER_NAME)
+        handler.setFormatter(logging.Formatter('%(relativeCreated)d %(levelname)s: %(message)s'))
+        pyinstaller_logger.addHandler(handler)
 
     module_logger = logging.getLogger('auto_py_to_exe')
-    handler = logging.StreamHandler(utils.ForwardToFunctionStream(send_message_to_ui_output))
-    handler.setFormatter(logging.Formatter('%(message)s'))
-    module_logger.addHandler(handler)
+    if not any([i.get_name() == LOGGING_HANDLER_NAME for i in module_logger.handlers]):
+        handler = logging.StreamHandler(utils.ForwardToFunctionStream(send_message_to_ui_output))
+        handler.set_name(LOGGING_HANDLER_NAME)
+        handler.setFormatter(logging.Formatter('%(message)s'))
+        module_logger.addHandler(handler)
 
 
 @eel.expose
