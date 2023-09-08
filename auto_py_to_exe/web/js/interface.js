@@ -2,6 +2,24 @@
 Handle visual events
 */
 
+// Toggle theme (triggered by clicking moon or sun)
+const toggleTheme = () => {
+    const root = document.querySelector("body");
+    const darkThemeButton = document.querySelector(".dark-theme-button");
+    const lightThemeButton = document.querySelector(".light-theme-button");
+    
+    if (root.getAttribute('data-dark-theme') === null) {
+        // dark
+        darkThemeButton.style.display = "none";
+        lightThemeButton.style.display = "inline";
+        root.setAttribute('data-dark-theme', '');
+    } else {
+        darkThemeButton.style.display = "inline";
+        lightThemeButton.style.display = "none";
+        root.removeAttribute('data-dark-theme');
+    }
+}
+
 // Expand a section (typically triggered by clicking on a section heading)
 const expandSection = (sectionName) => {
     const root = document.getElementById(`section-${sectionName}`);

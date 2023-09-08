@@ -71,6 +71,13 @@
     padding: 0 6px;
 }
 
+#header .extra-links #theme img {
+    display: none;
+    height: 25px;
+    margin-top: 4px;
+    user-select: none;
+}
+
 #language-selection {
     max-width: 200px;
 }

@@ -66,6 +66,10 @@
                         </label>
                         <select id="language-selection"></select>
                     </span>
+                    <span id="theme" onclick="toggleTheme()">
+                        <img src="img/moon.svg" class="dark-theme-button" style="display: inline;" />
+                        <img src="img/sun.svg" class="light-theme-button" />
+                    </span>
                 </div>
             </div>
 
@@ -251,5 +255,18 @@
                 <span class="loading-label">Initializing...</span>
             </div>
         </div>
+        
+        <script>
+            // Check if user's default color scheme is dark
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                const root = document.querySelector("body");
+                const darkThemeButton = document.querySelector(".dark-theme-button");
+                const lightThemeButton = document.querySelector(".light-theme-button");
+
+                darkThemeButton.style.display = "none";
+                lightThemeButton.style.display = "inline";
+                root.setAttribute('data-dark-theme', '');
+            }
+        </script>
     </body>
 </html>
