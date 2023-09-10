@@ -445,16 +445,16 @@ const setupLanguageSelection = () => {
 // Toggle theme (triggered by clicking moon or sun)
 const _toggleTheme = () => {
     const root = document.querySelector("body");
-    const onDarkThemeLabel = document.querySelector("#on-dark-theme-label");
-    const onLightThemeLabel = document.querySelector("#on-light-theme-label");
+    const onDarkThemeButton = document.querySelector("#on-dark-theme-button");
+    const onLightThemeButton = document.querySelector("#on-light-theme-button");
     
     if (root.classList.contains('dark-theme')) {
-        onLightThemeLabel.style.display = "inline";
-        onDarkThemeLabel.style.display = "none";
+        onLightThemeButton.style.display = "inline";
+        onDarkThemeButton.style.display = "none";
     } else {
         // dark
-        onLightThemeLabel.style.display = "none";
-        onDarkThemeLabel.style.display = "inline";
+        onLightThemeButton.style.display = "none";
+        onDarkThemeButton.style.display = "inline";
     }
 
     root.classList.toggle("dark-theme")
@@ -467,12 +467,6 @@ const setupTheme = () => {
     toggleButton.addEventListener('click', _toggleTheme);
 
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        const root = document.querySelector("body");
-        const onDarkThemeLabel = document.querySelector("#on-dark-theme-label");
-        const onLightThemeLabel = document.querySelector("#on-light-theme-label");
-
-        onLightThemeLabel.style.display = "none";
-        onDarkThemeLabel.style.display = "inline";
-        root.classList.add('dark-theme')
+        _toggleTheme()
     }
 }
