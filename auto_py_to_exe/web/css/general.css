@@ -29,9 +29,9 @@
     --border-radius: 4px;
 }
 
-[data-dark-theme] {
+.dark-theme {
     --background: #15131E;
-    --unselected: rgb(95, 95, 95);
+    --unselected: #5f5f5f;
     --text: #ffffff;
 
     --title: #e2e2e2;
@@ -41,7 +41,6 @@
     box-sizing: border-box;
     color: var(--text);
 }
-
 
 body {
     background-color: var(--background);

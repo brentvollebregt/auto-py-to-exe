@@ -19,21 +19,6 @@ const importConfiguration = (configuration) => {
     if ('outputDirectory' in configuration.nonPyinstallerOptions) {
         document.getElementById('output-directory').value = configuration.nonPyinstallerOptions.outputDirectory;
     }
-    if ('useDarkTheme' in configuration.nonPyinstallerOptions) {
-        const root = document.querySelector("body");
-        const darkThemeButton = document.querySelector(".dark-theme-button");
-        const lightThemeButton = document.querySelector(".light-theme-button");
-
-        if (configuration.nonPyinstallerOptions.useDarkTheme) {
-            darkThemeButton.style.display = "none";
-            lightThemeButton.style.display = "inline";
-            root.setAttribute('data-dark-theme', '');
-        } else {
-            darkThemeButton.style.display = "inline";
-            lightThemeButton.style.display = "none";
-            root.removeAttribute('data-dark-theme');
-        }
-    }
 };
 
 const _collectDataToExport = () => {

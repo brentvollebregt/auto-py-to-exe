@@ -33,8 +33,7 @@ const getNonPyinstallerConfiguration = () => {
     return {
         outputDirectory: document.getElementById('output-directory').value,
         increaseRecursionLimit: !document.getElementById('recursion-limit-switch').classList.contains('unselected'),
-        manualArguments: document.getElementById('raw-arguments').value,
-        useDarkTheme: document.querySelector("body").hasAttribute("data-dark-theme")
+        manualArguments: document.getElementById('raw-arguments').value
     };
 };
 

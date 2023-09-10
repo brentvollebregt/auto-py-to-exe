@@ -2,24 +2,6 @@
 Handle visual events
 */
 
-// Toggle theme (triggered by clicking moon or sun)
-const toggleTheme = () => {
-    const root = document.querySelector("body");
-    const darkThemeButton = document.querySelector(".dark-theme-button");
-    const lightThemeButton = document.querySelector(".light-theme-button");
-    
-    if (root.getAttribute('data-dark-theme') === null) {
-        // dark
-        darkThemeButton.style.display = "none";
-        lightThemeButton.style.display = "inline";
-        root.setAttribute('data-dark-theme', '');
-    } else {
-        darkThemeButton.style.display = "inline";
-        lightThemeButton.style.display = "none";
-        root.removeAttribute('data-dark-theme');
-    }
-}
-
 // Expand a section (typically triggered by clicking on a section heading)
 const expandSection = (sectionName) => {
     const root = document.getElementById(`section-${sectionName}`);
@@ -459,3 +441,38 @@ const setupLanguageSelection = () => {
     });
     languageSelectNode.value = currentLanguage;
 };
+
+// Toggle theme (triggered by clicking moon or sun)
+const _toggleTheme = () => {
+    const root = document.querySelector("body");
+    const onDarkThemeLabel = document.querySelector("#on-dark-theme-label");
+    const onLightThemeLabel = document.querySelector("#on-light-theme-label");
+    
+    if (root.classList.contains('dark-theme')) {
+        onLightThemeLabel.style.display = "inline";
+        onDarkThemeLabel.style.display = "none";
+    } else {
+        // dark
+        onLightThemeLabel.style.display = "none";
+        onDarkThemeLabel.style.display = "inline";
+    }
+
+    root.classList.toggle("dark-theme")
+}
+
+// Check if user's default color scheme is dark
+const setupTheme = () => {
+    const toggleButton = document.querySelector("span#theme");
+
+    toggleButton.addEventListener('click', _toggleTheme);
+
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        const root = document.querySelector("body");
+        const onDarkThemeLabel = document.querySelector("#on-dark-theme-label");
+        const onLightThemeLabel = document.querySelector("#on-light-theme-label");
+
+        onLightThemeLabel.style.display = "none";
+        onDarkThemeLabel.style.display = "inline";
+        root.classList.add('dark-theme')
+    }
+}
