@@ -1,11 +1,25 @@
 # Changelog
 
+## 2.39.0
+
+🚀 Enhancements
+
+- [#427](https://github.com/brentvollebregt/auto-py-to-exe/pull/427): Added dark mode theme
+
+🐛 Bug Fixes
+
+- [#426](https://github.com/brentvollebregt/auto-py-to-exe/issues/426): Stopped creating more than one logging handler on UI reload
+
+🏆 Contributors
+
+- [jhk1090](https://github.com/jhk1090)
+
 ## 2.38.0
 
 🚀 Enhancements
 
-- [#404](https://github.com/brentvollebregt/auto-py-to-exe/pull/422): Added Persian translated README
-- [#404](https://github.com/brentvollebregt/auto-py-to-exe/pull/425): Added Korean translations
+- [#422](https://github.com/brentvollebregt/auto-py-to-exe/pull/422): Added Persian translated README
+- [#425](https://github.com/brentvollebregt/auto-py-to-exe/pull/425): Added Korean translations
 
 🏆 Contributors
 
