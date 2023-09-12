@@ -441,3 +441,32 @@ const setupLanguageSelection = () => {
     });
     languageSelectNode.value = currentLanguage;
 };
+
+// Toggle theme (triggered by clicking moon or sun)
+const _toggleTheme = () => {
+    const root = document.querySelector("body");
+    const onDarkThemeButton = document.querySelector("#on-dark-theme-button");
+    const onLightThemeButton = document.querySelector("#on-light-theme-button");
+    
+    if (root.classList.contains('dark-theme')) {
+        onLightThemeButton.style.display = "inline";
+        onDarkThemeButton.style.display = "none";
+    } else {
+        // dark
+        onLightThemeButton.style.display = "none";
+        onDarkThemeButton.style.display = "inline";
+    }
+
+    root.classList.toggle("dark-theme")
+}
+
+// Check if user's default color scheme is dark
+const setupTheme = () => {
+    const toggleButton = document.querySelector("span#theme");
+
+    toggleButton.addEventListener('click', _toggleTheme);
+
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        _toggleTheme()
+    }
+}

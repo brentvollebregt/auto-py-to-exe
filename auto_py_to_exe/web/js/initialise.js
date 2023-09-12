@@ -66,6 +66,9 @@ window.addEventListener("load", async () => {
     options = buildUpOptions(initialisationData.options);
     pathSeparator = initialisationData.pathSeparator;
 
+    // Setup user's default color scheme
+    setupTheme();
+
     // Setup ui events (for static content) and setup initial state
     setupEvents();
 

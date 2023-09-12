@@ -12,10 +12,6 @@
     unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF;
 }
 
-* {
-    box-sizing: border-box;
-}
-
 :root {
     --background: #FBFBFB;
     --primary: #458BC6;
@@ -24,12 +20,26 @@
     --error: red;
     --unselected: lightgrey;
     --disabled: #808080;
+    --text: #000000;
 
     --title: #666666;
     --warning-background: #fff3cd;
     --warning-border: #a0987c;
 
     --border-radius: 4px;
+}
+
+.dark-theme {
+    --background: #15131E;
+    --unselected: #5f5f5f;
+    --text: #ffffff;
+
+    --title: #e2e2e2;
+}
+
+* {
+    box-sizing: border-box;
+    color: var(--text);
 }
 
 body {
@@ -75,6 +85,10 @@ button, input, select {
 
     font-family: 'Vazirmatn', 'Nunito', Helvetica, Arial, sans-serif;
     font-weight: 100;
+}
+
+input, select, textarea, select option {
+    background-color: var(--background);
 }
 
 input:focus {

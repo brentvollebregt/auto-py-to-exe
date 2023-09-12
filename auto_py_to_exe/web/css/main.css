@@ -45,11 +45,20 @@
     text-align: right;
 }
 
+#header .extra-links #theme img {
+    height: 20px;
+    user-select: none;
+    cursor: pointer;
+}
+
 #header .extra-links a {
-    font-size: 15px;
-    text-decoration: none;
     filter: grayscale(1);
     transition: filter 0.3s;
+    text-decoration: none;
+}
+
+#header .extra-links a span {
+    font-size: 15px;
     color: var(--primary);
 }
 
