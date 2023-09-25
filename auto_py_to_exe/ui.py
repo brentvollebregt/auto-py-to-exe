@@ -68,7 +68,7 @@ def initialise():
         'suppliedUiConfiguration': config.supplied_ui_configuration,
         'options': __get_pyinstaller_options(),
         'warnings': utils.get_warnings(),
-        'pathSeparator': ':',  # https://github.com/pyinstaller/pyinstaller/pull/6724#issuecomment-1637143150
+        'pathSeparator': os.pathsep,
         'defaultOutputFolder': config.default_output_directory,
         'languageHint': config.language_hint
     }
