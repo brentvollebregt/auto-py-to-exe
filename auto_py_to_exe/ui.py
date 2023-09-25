@@ -49,18 +49,10 @@ def __get_pyinstaller_options():
     # Filter out removed arguments (PyInstaller v6.0.0 removed some arguments but added proper handlers for people still using them - we need to ignore them)
     options = [option for option in options if option["help"] != argparse.SUPPRESS]
 
-    # In PyInstaller v6.0.0 --hide-console options were not set correctly (like --debug), set them here for a better experience
+    # In PyInstaller v6.0.0 --hide-console options were not set correctly (like --debug), fix them here
     for option in options:
-        if option["dest"] == "hide_console":
-            if option["choices"] is not None:
-                print("PyInstaller is setting choices for hide_console now, manually setting them can be removed now")
-
-            option["choices"] = [
-                "hide-early",
-                "minimize-late",
-                "minimize-early",
-                "hide-late"
-            ]
+        if type(option["choices"]) == set:
+            option["choices"] = list(option["choices"])
 
     return options
 
