@@ -144,9 +144,9 @@ def export_configuration(configuration):
 
 
 @eel.expose
-def will_packaging_overwrite_existing(file_path, one_file, output_folder):
+def will_packaging_overwrite_existing(file_path, manual_name, one_file, output_folder):
     """ Checks if there is a possibility of a previous output being overwritten """
-    return packaging.will_packaging_overwrite_existing(file_path, one_file, output_folder)
+    return packaging.will_packaging_overwrite_existing(file_path, manual_name, one_file, output_folder)
 
 
 @eel.expose

@@ -132,6 +132,7 @@ const packageScript = async (event) => {
 
     const willOverwrite = await eel.will_packaging_overwrite_existing(
         entryScript,
+        currentConfiguration.find(c => c.optionDest === 'name')?.value,
         currentConfiguration.find(c => c.optionDest === 'onefile').value,
         getNonPyinstallerConfiguration().outputDirectory
     )();

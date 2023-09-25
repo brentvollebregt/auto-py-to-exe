@@ -7,6 +7,7 @@ import shlex
 import shutil
 import sys
 import traceback
+from typing import Optional
 
 from . import config
 from . import __version__ as version
@@ -52,17 +53,17 @@ def get_pyinstaller_options():
     return [o.__dict__ for o in options]
 
 
-def will_packaging_overwrite_existing(file_path, one_file, output_folder):
+def will_packaging_overwrite_existing(file_path: str, manual_name: Optional[str], one_file: str, output_folder: str):
     """ Checks if there is a possibility of a previous output being overwritten. """
     if not os.path.exists(output_folder):
         return False
-    no_extension = '.'.join(os.path.basename(file_path).split('.')[:-1])
-    if one_file:
-        if no_extension + '.exe' in os.listdir(output_folder):
-            return True
-    else:
-        if no_extension in os.listdir(output_folder):
-            return True
+    
+    no_extension = manual_name if manual_name is not None else '.'.join(os.path.basename(file_path).split('.')[:-1])
+    if one_file and no_extension + '.exe' in os.listdir(output_folder):
+        return True
+    if (not one_file) and no_extension in os.listdir(output_folder):
+        return True
+        
     return False
 
 
