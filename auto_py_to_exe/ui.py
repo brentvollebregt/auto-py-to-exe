@@ -1,3 +1,4 @@
+import argparse
 import json
 import logging
 import os
@@ -42,6 +43,28 @@ def __setup_logging_ui_forwarding():
         module_logger.addHandler(handler)
 
 
+def __get_pyinstaller_options():
+    options = packaging.get_pyinstaller_options()
+
+    # Filter out removed arguments (PyInstaller v6.0.0 removed some arguments but added proper handlers for people still using them - we need to ignore them)
+    options = [option for option in options if option["help"] != argparse.SUPPRESS]
+
+    # In PyInstaller v6.0.0 --hide-console options were not set correctly (like --debug), set them here for a better experience
+    for option in options:
+        if option["dest"] == "hide_console":
+            if option["choices"] is not None:
+                print("PyInstaller is setting choices for hide_console now, manually setting them can be removed now")
+
+            option["choices"] = [
+                "hide-early",
+                "minimize-late",
+                "minimize-early",
+                "hide-late"
+            ]
+
+    return options
+
+
 @eel.expose
 def initialise():
     """ Called by the UI when opened. Used to pass initial values and setup state we couldn't set until now. """
@@ -51,9 +74,9 @@ def initialise():
     return {
         'filename': config.package_filename,
         'suppliedUiConfiguration': config.supplied_ui_configuration,
-        'options': packaging.get_pyinstaller_options(),
+        'options': __get_pyinstaller_options(),
         'warnings': utils.get_warnings(),
-        'pathSeparator': os.pathsep,
+        'pathSeparator': ':',  # https://github.com/pyinstaller/pyinstaller/pull/6724#issuecomment-1637143150
         'defaultOutputFolder': config.default_output_directory,
         'languageHint': config.language_hint
     }

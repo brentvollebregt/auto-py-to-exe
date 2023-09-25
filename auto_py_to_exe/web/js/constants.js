@@ -10,7 +10,7 @@ const options_inputTypeDoubleDirectoryDest = ['datas'];
 const advancedSections = [
     {
         titleI18nPath: 'dynamic.title.generalOptions',
-        options: ['name', 'upx_dir', 'ascii', 'clean_build', 'loglevel']
+        options: ['name', 'contents_directory', 'upx_dir', 'clean_build', 'loglevel']
     },
     {
         titleI18nPath: 'dynamic.title.whatToBundleWhereToSearch',
@@ -22,19 +22,15 @@ const advancedSections = [
     },
     {
         titleI18nPath: 'dynamic.title.windowsAndMacOsXSpecificOptions',
-        options: ['disable_windowed_traceback']
+        options: ['hide_console', 'disable_windowed_traceback']
     },
     {
         titleI18nPath: 'dynamic.title.windowsSpecificOptions',
         options: ['version_file', 'manifest', 'embed_manifest', 'resources', 'uac_admin', 'uac_uiaccess']
     },
     {
-        titleI18nPath: 'dynamic.title.windowsSideBySideAssemblySearchingOptions',
-        options: ['win_private_assemblies', 'win_no_prefer_redirects']
-    },
-    {
         titleI18nPath: 'dynamic.title.macOsxSpecificOptions',
-        options: ['bundle_identifier', 'target_arch', 'codesign_identity', 'entitlements_file']
+        options: ['argv_emulation', 'bundle_identifier', 'target_arch', 'codesign_identity', 'entitlements_file']
     },
     {
         titleI18nPath: 'dynamic.title.rarelyUsedSpecialOptions',
