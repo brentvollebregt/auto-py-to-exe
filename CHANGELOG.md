@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.40.0
+
+🚀 Enhancements
+
+- [#431](https://github.com/brentvollebregt/auto-py-to-exe/issues/431): Added support for PyInstaller 6.0.0
+
 ## 2.39.0
 
 🚀 Enhancements
