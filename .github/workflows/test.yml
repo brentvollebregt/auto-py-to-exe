@@ -1,10 +1,9 @@
-name: Test Develop
+name: Run Tests
 
 on:
   workflow_dispatch:
   push:
     branches:
-    - develop
     - master
 
 jobs:
