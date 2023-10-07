@@ -33,7 +33,7 @@ Türkçe Talimatları [burada](./README-Turkish.md) bulabilirsiniz.
 ## Getting Started
 
 ### Prerequisites
- - Python : 3.6-3.11
+ - Python : 3.6-3.12
 
 *To have the interface displayed in the images, you will need chrome. If chrome is not installed or --no-chrome is supplied, the default browser will be used.*
 

@@ -33,7 +33,7 @@ Türkçe Talimatları [burada](./README-Turkish.md) bulabilirsiniz.
 ## 시작하기
 
 ### 요구 사항
- - Python : 3.6-3.11
+ - Python : 3.6-3.12
 
 *이미지와 같이 인터페이스를 표시하려면, Chrome이 필요합니다. Chrome이 설치되어 있지 않거나, --no-chrome 매개변수와 실행된다면, 기본 브라우저가 사용됩니다.*
 
