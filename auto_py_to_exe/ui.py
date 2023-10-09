@@ -4,6 +4,7 @@ import logging
 import os
 
 import eel
+from eel import chrome
 
 from . import config
 from . import utils
@@ -55,6 +56,12 @@ def __get_pyinstaller_options():
             option["choices"] = list(option["choices"])
 
     return options
+
+
+def __can_use_chrome():
+    """ Identify if Chrome is available for Eel to use """
+    chrome_instance_path = chrome.find_path()
+    return chrome_instance_path is not None and os.path.exists(chrome_instance_path)
 
 
 @eel.expose
@@ -174,7 +181,7 @@ def send_message_to_ui_output(message):
 def start(open_mode):
     """ Start the UI using Eel """
     try:
-        chrome_available = utils.can_use_chrome()
+        chrome_available = __can_use_chrome()
         if open_mode == UIOpenMode.CHROME and chrome_available:
             eel.start('index.html', size=(650, 701), port=0)
         elif open_mode == UIOpenMode.USER_DEFAULT or (open_mode == UIOpenMode.CHROME and not chrome_available):

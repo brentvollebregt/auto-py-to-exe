@@ -4,6 +4,9 @@ import os
 import shutil
 import tempfile
 
+from . import shims
+shims.install_shims()
+
 from . import __version__
 from . import config
 from . import validation

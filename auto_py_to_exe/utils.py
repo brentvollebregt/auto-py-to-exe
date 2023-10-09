@@ -6,7 +6,6 @@ import platform
 import socket
 import sys
 
-from eel import chrome
 from PyInstaller import __version__ as pyinstaller_version_string
 
 
@@ -17,12 +16,6 @@ class ForwardToFunctionStream(io.TextIOBase):
     def write(self, string):
         self.output_function(string)
         return len(string)
-
-
-def can_use_chrome():
-    """ Identify if Chrome is available for Eel to use """
-    chrome_instance_path = chrome.find_path()
-    return chrome_instance_path is not None and os.path.exists(chrome_instance_path)
 
 
 def open_output_in_explorer(output_directory, input_filename, is_one_file):
