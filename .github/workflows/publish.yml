@@ -90,7 +90,10 @@ jobs:
         id: get_documented_changes
         shell: python
         run: |
+          import os
+          import random
           import re
+          import string
 
           # Read in the changelog
           with open("CHANGELOG.md", "r", encoding='utf-8') as f:
