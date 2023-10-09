@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.41.0
+
+🚀 Enhancements
+
+- [#434](https://github.com/brentvollebregt/auto-py-to-exe/pull/434): Added support for Python 3.12 using bottle shim
+- Better output overwrite detection
+
 ## 2.40.0
 
 🚀 Enhancements
