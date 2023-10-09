@@ -110,7 +110,7 @@ def get_warnings():
         })
 
     # Make sure we are not using Python from the Windows Store
-    if "Packages\PythonSoftwareFoundation.Python." in sys.executable:
+    if r"Packages\PythonSoftwareFoundation.Python." in sys.executable:
         message = 'It looks like you may be using Python from the Windows Store, the Python binary you are currently using is at:'
         message += '"' + sys.executable + '"'
         message += '\n\nPython from the Windows Store is not supported by PyInstaller so you may get errors referencing "win32ctypes.pywin32.pywintypes.error: (1920, \'LoadLibraryEx\', \'The file cannot be accessed by the system\'".'
