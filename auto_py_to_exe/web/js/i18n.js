@@ -1973,6 +1973,10 @@ const supportedLanguages = [
         code: 'pt_br'
     },
     {
+        name: 'Bulgarian (Български)',
+        code: 'bg',
+    },
+    {
         name: 'Chinese Simplified (简体中文)',
         code: 'zh',
     },
@@ -2063,10 +2067,6 @@ const supportedLanguages = [
     {
         name: 'Vietnamese (Tiếng Việt)',
         code: 'vi',
-    },
-        {
-        name: 'Bulgarian (Български)',
-        code: 'bg',
     },
 ];
 
