@@ -24,6 +24,8 @@ Türkçe Talimatları [burada](./README-Turkish.md) bulabilirsiniz.
 
 한국어로 된 설명은 [여기](./README-Korean.md)를 참고하세요.
 
+Български README [тук](README-Bulgarian.md)
+
 ## Demo
 
 <p align="center">
@@ -140,6 +142,7 @@ If you believe you've found an issue with this tool, please [create an issue](ht
 | Turkish (Türkçe)                            | [mcagriaksoy](https://github.com/mcagriaksoy)                          | UI and [README](./README-Turkish.md) |
 | Ukrainian (Українська)                      | [AndrejGorodnij](https://github.com/AndrejGorodnij)                    | UI                                   |
 | Vietnamese (Tiếng Việt)                     | [7777Hecker](https://github.com/7777Hecker)                            | UI                                   |
+| Bulgarian (Български)                       | [kbkozlev](https://github.com/kbkozlev)                                         | UI and [README](README-Bulgarian.md) |
 
 > Want to add a translation for another language? Update [i18n.js](https://github.com/brentvollebregt/auto-py-to-exe/blob/master/auto_py_to_exe/web/js/i18n.js) and submit a PR or attach it in an issue.
 
