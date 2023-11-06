@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.42.0
+
+🚀 Enhancements
+
+- [#440](https://github.com/brentvollebregt/auto-py-to-exe/pull/440): Added Bulgarian translations
+
+🏆 Contributors
+
+- [kbkozlev](https://github.com/kbkozlev)
+
 ## 2.41.0
 
 🚀 Enhancements
