@@ -33,6 +33,7 @@ const translationMap = {
                 vi: 'Vị trí tập lệnh',
                 nl: 'Script Locatie',
                 ko: "스크립트 위치",
+                bg: "Местонахождение на скрипта",
             },
             language: {
                 en: 'Language',
@@ -60,6 +61,7 @@ const translationMap = {
                 vi: 'Ngôn ngữ',
                 nl: 'Taal',
                 ko: "언어",
+                bg: "Език",
             },
             oneFile: {
                 en: 'Onefile',
@@ -87,6 +89,7 @@ const translationMap = {
                 vi: 'Một tập tin',
                 nl: 'Een Bestand',
                 ko: "단일 파일 여부",
+                bg: "Един файл",
             },
             consoleWindow: {
                 en: 'Console Window',
@@ -114,6 +117,7 @@ const translationMap = {
                 vi: 'Cửa sổ bảng điều khiển',
                 nl: 'Console Venster',
                 ko: "콘솔 화면",
+                bg: "Конзолно приложение",
             },
             icon: {
                 en: 'Icon',
@@ -141,6 +145,7 @@ const translationMap = {
                 vi: 'Biểu tượng',
                 nl: 'Icoon',
                 ko: "아이콘",
+                bg: "Икона",
             },
             additionalFiles: {
                 en: 'Additional Files',
@@ -168,6 +173,7 @@ const translationMap = {
                 vi: 'Các tệp bổ sung',
                 nl: 'Extra Bestanden',
                 ko: "추가 파일",
+                bg: "Допълнителни Файлове",
             },
             advanced: {
                 en: 'Advanced',
@@ -195,6 +201,7 @@ const translationMap = {
                 vi: 'Trình độ cao',
                 nl: 'Geanvanceerd',
                 ko: "고급",
+                bg: "Разширения",
             },
             settings: {
                 en: 'Settings',
@@ -222,6 +229,7 @@ const translationMap = {
                 vi: 'Cài đặt',
                 nl: 'Instellingen',
                 ko: "설정",
+                bg: "Настройки",
             },
             currentCommand: {
                 en: 'Current Command',
@@ -249,6 +257,7 @@ const translationMap = {
                 vi: 'Lệnh hiện tại',
                 nl: 'Huidig Comando',
                 ko: "현재 명령",
+                bg: "Настояща команда",
             },
             output: {
                 en: 'Output',
@@ -275,6 +284,7 @@ const translationMap = {
                 vi: 'Lối ra',
                 nl: 'Uitvoer',
                 ko: "출력",
+                bg: "Изход",
             },
             specificOptions: {
                 en: `${applicationName} Specific Options`,
@@ -302,6 +312,7 @@ const translationMap = {
                 vi: `${applicationName} Cài đặt chính xác`,
                 nl: `${applicationName} Specifieke Opties`,
                 ko: `${applicationName} 상세 옵션`,
+                bg: `${applicationName} Допълнителни Опции`,
             },
             outputDirectory: {
                 en: 'Output Directory',
@@ -329,6 +340,7 @@ const translationMap = {
                 vi: 'Thư mục đầu ra',
                 nl: 'Uitvoer Pad',
                 ko: "출력 디렉토리",
+                bg: "Изходяща директория",
             },
             increaseRecursionLimit: {
                 en: 'Increase Recursion Limit',
@@ -356,6 +368,7 @@ const translationMap = {
                 vi: 'Tăng giới hạn đệ quy',
                 nl: 'Verhoog Herhaling Limiet',
                 ko: "재귀 한도 증가",
+                bg: "Увеличи лимит на рекурсията",
             },
             manuallyProvideOptions: {
                 en: 'Manually Provide Options',
@@ -383,6 +396,7 @@ const translationMap = {
                 vi: 'Cung cấp cài đặt theo cách thủ công',
                 nl: 'Handmatig Toegestaande Opties',
                 ko: "직접 넣을 옵션",
+                bg: "Ръчно добавени параметри",
             },
             manualArgumentInput: {
                 en: 'Manual Argument Input',
@@ -410,6 +424,7 @@ const translationMap = {
                 vi: 'Nhập thủ công các đối số',
                 nl: 'Manuele Feit Ingave',
                 ko: "직접 입력할 매개변수",
+                bg: "Ръчно добавяне на аргументи",
             },
             configuration: {
                 en: 'Configuration',
@@ -437,6 +452,7 @@ const translationMap = {
                 vi: 'Cấu hình',
                 nl: 'Configuratie',
                 ko: "구성",
+                bg: "Конфигурация",
             }
         },
         button: {
@@ -466,6 +482,7 @@ const translationMap = {
                 vi: 'Xem',
                 nl: 'Zoeken',
                 ko: "찾아보기",
+                bg: "Търсене",
             },
             oneDirectory: {
                 en: 'One Directory',
@@ -493,6 +510,7 @@ const translationMap = {
                 vi: 'Một thư mục',
                 nl: 'Een Map',
                 ko: "단일 디렉토리",
+                bg: "Една директория",
             },
             oneFile: {
                 en: 'One File',
@@ -520,6 +538,7 @@ const translationMap = {
                 vi: 'Một tập tin',
                 nl: 'Een Bestand',
                 ko: "단일 파일",
+                bg: "Един файл",
             },
             consoleBased: {
                 en: 'Console Based',
@@ -547,6 +566,7 @@ const translationMap = {
                 vi: 'Trong bảng điều khiển',
                 nl: 'Console Gebaseerd',
                 ko: "콘솔 기반",
+                bg: "Конзолно приложение",
             },
             windowBased: {
                 en: 'Window Based (hide the console)',
@@ -574,6 +594,7 @@ const translationMap = {
                 vi: 'Trong cửa sổ (ẩn bàn điều khiển)',
                 nl: 'Venster Gebaseerd',
                 ko: "창 기반 (콘솔창 가리기)",
+                bg: "Приложение с прозорец (скриване на конзолата)",
             },
             addFiles: {
                 en: 'Add Files',
@@ -601,6 +622,7 @@ const translationMap = {
                 vi: 'Thêm các tập tin',
                 nl: 'Bestanden Toevoegen',
                 ko: "파일 추가",
+                bg: "Добавяне на файлове",
             },
             addFolder: {
                 en: 'Add Folder',
@@ -628,6 +650,7 @@ const translationMap = {
                 vi: 'Thêm thư mục',
                 nl: 'Map Toevoegen',
                 ko: "폴더 추가",
+                bg: "Добавяне на папки",
             },
             addBlank: {
                 en: 'Add Blank',
@@ -655,6 +678,7 @@ const translationMap = {
                 vi: 'Thêm trống',
                 nl: 'Leeg Toevoegen',
                 ko: "직접 입력",
+                bg: "Добавяне на шаблон",
             },
             importConfig: {
                 en: 'Import Config From JSON File',
@@ -682,6 +706,7 @@ const translationMap = {
                 vi: 'Nhập cấu hình từ tệp JSON',
                 nl: 'Importeer Config Uit JSON Bestand',
                 ko: "JSON 파일에서 구성 가져오기",
+                bg: "Импортиране на конфигурация от JSON файл",
             },
             exportConfig: {
                 en: 'Export Config To JSON File',
@@ -708,6 +733,7 @@ const translationMap = {
                 vi: 'Xuất cấu hình sang tệp JSON',
                 nl: 'Exporteer Config',
                 ko: "JSON 파일에 구성 저장하기",
+                bg: "Експортиране на конфигурация към JSON файл",
             },
             convert: {
                 en: 'Convert .py to .exe',
@@ -735,6 +761,7 @@ const translationMap = {
                 vi: 'Chuyển đổi .py sang .exe',
                 nl: 'Converteer .py naar .exe',
                 ko: ".py에서 .exe로 전환",
+                bg: "Конвертиране на .py към .exe",
             },
             openOutputFolder: {
                 en: 'Open Output Folder',
@@ -762,6 +789,7 @@ const translationMap = {
                 vi: 'Mở thư mục đầu ra',
                 nl: 'Open Uitvoer Map',
                 ko: "출력 폴더 열기",
+                bg: "Отваряне на изходна папка",
             },
             enable: {
                 en: 'Enable',
@@ -789,6 +817,7 @@ const translationMap = {
                 vi: 'Cho phép',
                 nl: 'Ingeschakeld',
                 ko: "활성화",
+                bg: "Включи",
             },
         },
         links: {
@@ -818,6 +847,7 @@ const translationMap = {
                 vi: 'Đăng trợ giúp',
                 nl: 'Help',
                 ko: "도움말",
+                bg: "Помощ",
             }
         },
         placeholders: {
@@ -847,6 +877,7 @@ const translationMap = {
                 vi: 'Đường dẫn tập tin',
                 nl: 'Bestand Pad',
                 ko: "파일 경로",
+                bg: "Път към файла",
             },
             icoFile: {
                 en: '.ico file',
@@ -874,6 +905,7 @@ const translationMap = {
                 vi: 'tập tin .ico',
                 nl: '.ico Bestand',
                 ko: ".ico 파일",
+                bg: ".ico файл",
             },
             directory: {
                 en: 'DIRECTORY',
@@ -901,6 +933,7 @@ const translationMap = {
                 vi: 'THÀNH PHẦN',
                 nl: 'MAP',
                 ko: "디렉토리",
+                bg: "Директория",
             },
             arguments: {
                 en: 'ARGUMENTS',
@@ -928,6 +961,7 @@ const translationMap = {
                 vi: 'TRANH LUẬN',
                 nl: 'ARGUMENTEN',
                 ko: "매개변수",
+                bg: "Аргументи",
             }
         },
         helpText: {
@@ -957,6 +991,7 @@ const translationMap = {
                 vi: 'Thư mục chứa đầu ra. Nó sẽ được tạo ra nếu nó không tồn tại.',
                 nl: 'De uitvoermap. Wordt aangemaakt als de map niet bestaat.',
                 ko: "결과물이 저장될 디렉토리. 디렉토리가 존재하지 않으면 자동 생성됩니다.",
+                bg: "Изходната папка ще бъде създадена, ако не съществува.",
             },
             increaseRecursionLimit: {
                 en: 'Having this enabled will set the recursion limit to 5000 using sys.setrecursionlimit(5000).',
@@ -984,6 +1019,7 @@ const translationMap = {
                 vi: 'Nếu được bật, giới hạn đệ quy được tăng lên 5000 bằng cách sử dụng sys.setrecursionlimit(5000).',
                 nl: 'Indien ingeschakeld, dan is de recurentie limiet beperkt tot 5000 gebruik makend van sys.setrecursionlimit(5000).',
                 ko: "활성화 시 sys.setrecursionlimit(5000)을 사용해 재귀 한도를 5000까지 늘립니다.",
+                bg: "Във включено положение, лимитът на рекурсията ще бъде увеличен до 5000 използвайки sys.setrecursionlimit(5000).",
             },
             manualArgumentInput: {
                 en: 'Inject raw text into the generated command.',
@@ -1011,6 +1047,7 @@ const translationMap = {
                 vi: 'Dán văn bản vào lệnh đã tạo.',
                 nl: 'Voeg rauwe tekst in de gegenereerde commando',
                 ko: "생성된 명령을 입력된 텍스트와 함께 실행합니다",
+                bg: "Добавяне на текст към генерираната команда",
             }
         },
         notes: {
@@ -1040,6 +1077,7 @@ const translationMap = {
                 vi: 'Cảnh báo: tệp này không phải là tệp .ico hợp lệ',
                 nl: 'Waarschuwing: het bestand is geen geldig .ico bestand',
                 ko: "경고: 이 파일은 유효한 .ico 파일이 아닙니다",
+                bg: "Внимание: това не е валиден .ico файл",
             },
             oneFileAdditionalFilesNote: {
                 en: 'Be careful when using additional files with onefile mode;\n' +
@@ -1117,6 +1155,9 @@ const translationMap = {
                 ko: "단일 파일 모드와 추가 파일 모드를 같이 사용할 때 주의해야 합니다.\n" +
                     `<a ${onFileModeAdditionalFilesHelpAnchorTagContents}>이 문서</a>\n` +
                     "를 읽고 PyInstaller 모듈을 사용해 코드를 수정하세요.",
+                bg: "Внимавайте при използването на допълнителни файлове в режим 'един файл'\n" +
+                    `<a ${onFileModeAdditionalFilesHelpAnchorTagContents}>Прочетете това</a>\n` +
+                    'и проверете вашият код за съвместимост с PyInstaller.',
             },
             rootDirectory: {
                 en: 'If you want to put files in the root directory, put a period (.) in the destination.',
@@ -1144,6 +1185,7 @@ const translationMap = {
                 vi: 'Nếu bạn muốn thêm tệp vào thư mục gốc, hãy thêm dấu chấm (.) vào đích.',
                 nl: 'Als je de bestanden wil toevoegen aan de root map, gebruik een punt (.) in de bestemming',
                 ko: '최상위 디렉토리에 파일을 넣으려고 한다면, 경로에 마침표 (.)를 입력하세요.',
+                bg: "Ако желаете да поставите файлове в главната папка сложете (.) в началото на пътя.",
             },
             somethingWrongWithOutput: {
                 en: 'Something wrong with your exe? Read ' +
@@ -1219,6 +1261,9 @@ const translationMap = {
                 ko: 'exe 파일에 문제가 있나요? ' +
                     `<a ${helpPostLinkAnchorTagContents}>자주 발생하는 오류의 수정 방법을 다룬 문서</a>` +
                     '를 읽어서 문제를 해결해보세요',
+                bg: 'Има проблем с вашият .exe файл? Прочетете ' +
+                    `<a ${helpPostLinkAnchorTagContents}>този пост за справка с най-често срещаните проблеми</a>` +
+                    ' и как да ги разрешите.',
             }
         }
     },
@@ -1252,6 +1297,7 @@ const translationMap = {
                 vi: 'Cài đặt đơn giản',
                 nl: 'Algemene Opties',
                 ko: '일반 옵션',
+                bg: "Основни настройки",
             },
             whatToBundleWhereToSearch: {
                 en: 'What to bundle, where to search',
@@ -1279,6 +1325,7 @@ const translationMap = {
                 vi: 'Gói gì, tìm ở đâu',
                 nl: 'Wat samenbrengen, waar te  zoeken',
                 ko: "번들 묶기 옵션 및 검색 옵션",
+                bg: "Какво да бъде включено, къде да бъде намерено",
             },
             howToGenerate: {
                 en: 'How to generate',
@@ -1306,6 +1353,7 @@ const translationMap = {
                 vi: 'Làm thế nào để tạo ra',
                 nl: 'Hoe te genereren',
                 ko: "생성 옵션",
+                bg: "Настройка на генератора",
             },
             windowsAndMacOsXSpecificOptions: {
                 en: 'Windows And macOS X Specific Options',
@@ -1332,6 +1380,7 @@ const translationMap = {
                 vi: 'Cài đặt cụ thể của Windows và macOS X',
                 nl: 'Windows en macOS X Specifieke Opties',
                 ko: "Windows와 macOS X 상세 옵션",
+                bg: "Настройки за macOS X и Windows",
             },
             windowsSpecificOptions: {
                 en: 'Windows specific options',
@@ -1359,6 +1408,7 @@ const translationMap = {
                 vi: 'Cài đặt cụ thể của Windows',
                 nl: 'Windows Specifieke Opties',
                 ko: "Windows 전용 상세 옵션",
+                bg: "Настройки за Windows",
             },
             windowsSideBySideAssemblySearchingOptions: {
                 en: 'Windows Side-by-side Assembly searching options (advanced)',
@@ -1386,6 +1436,7 @@ const translationMap = {
                 vi: 'Windows Side-by-side Cài đặt tìm kiếm hội (nâng cao)',
                 nl: 'Windows Zijde-bij-Zijde Samenvoeging Zoek Opties (geadvanceerd)',
                 ko: "Windows 병렬 어셈블리 검색 옵션 (고급)",
+                bg: "Windows Side-by-side Assembly (разширени)",
             },
             macOsxSpecificOptions: {
                 en: 'macOS X specific options',
@@ -1413,6 +1464,7 @@ const translationMap = {
                 vi: 'Cài đặt cụ thể của macOS X',
                 nl: 'macOS X Specifieke Opties',
                 ko: "macOS X 전용 옵션",
+                bg: "Специфични настройки за macOS X",
             },
             rarelyUsedSpecialOptions: {
                 en: 'Rarely used special options',
@@ -1440,6 +1492,7 @@ const translationMap = {
                 vi: 'Các cài đặt đặc biệt hiếm khi được sử dụng',
                 nl: 'Uitzonderlijk gebruikte opties',
                 ko: "사용이 드문 특수 옵션",
+                bg: "Рядко използвани допълнителни настройки",
             },
             other: {
                 en: 'Other',
@@ -1467,6 +1520,7 @@ const translationMap = {
                 vi: 'Khác',
                 nl: 'Andere',
                 ko: "기타",
+                bg: "Други",
             },
         },
         button: {
@@ -1497,6 +1551,7 @@ const translationMap = {
                 vi: 'Tìm kiếm tập tin',
                 nl: 'Zoeken naar Bestand',
                 ko: "파일 탐색",
+                bg: "Търсене на файл",
             },
             browseForFolder: {
                 en: 'Browse for Folder',
@@ -1524,6 +1579,7 @@ const translationMap = {
                 vi: 'Thư mục tìm kiếm',
                 nl: 'Zoeken naar Map',
                 ko: "폴더 탐색",
+                bg: "Търсене на папка",
             },
             enable: {
                 en: 'Enable',
@@ -1551,6 +1607,7 @@ const translationMap = {
                 vi: 'Bật',
                 nl: 'Inschakelen',
                 ko: "활성화",
+                bg: "Включи",
             },
             disable: {
                 en: 'Disable',
@@ -1578,6 +1635,7 @@ const translationMap = {
                 vi: 'Tắt',
                 nl: 'Uitschakelen',
                 ko: "비활성화",
+                bg: "Изключи",
             },
             converting: {
                 en: 'Converting...',
@@ -1605,6 +1663,7 @@ const translationMap = {
                 vi: 'Chuyển đổi...',
                 nl: 'Omzetten',
                 ko: "변환 중...",
+                bg: "Конвертиране...",
             },
             clearOutput: {
                 en: 'Clear Output',
@@ -1632,6 +1691,7 @@ const translationMap = {
                 vi: 'Xóa đầu ra',
                 nl: 'Wis Uitkomst',
                 ko: "출력 결과 지우기",
+                bg: "Изчистване на изхода",
             },
         },
         modal: {
@@ -1661,6 +1721,7 @@ const translationMap = {
                 vi: 'Ghi đè lên cấu hình hiện tại?',
                 nl: 'Overschrijf huidige configuratie?',
                 ko: "현재 설정을 덮어씌우시겠습니까?",
+                bg: "Презаписване на сегашната конфигурация?",
             },
             configModalDescription: {
                 en: 'All previously inserted values will be erased.',
@@ -1688,6 +1749,7 @@ const translationMap = {
                 vi: 'Tất cả các giá trị trước đó sẽ bị xóa.',
                 nl: 'Alle voorgaande ingegeven waarden worden gewist.',
                 ko: "이전까지 입력된 값이 모두 삭제됩니다.",
+                bg: "Всички предварително зададени параметри ще бъдат изтрити.",
             },
             configModalConfirmButton: {
                 en: 'Confirm',
@@ -1715,6 +1777,7 @@ const translationMap = {
                 vi: 'Xác nhận',
                 nl: 'Bevestig',
                 ko: "확인",
+                bg: "Потвърди",
             },
             configModalCancelButton: {
                 en: 'Cancel',
@@ -1742,6 +1805,7 @@ const translationMap = {
                 vi: 'Hủy bỏ',
                 nl: 'Annuleer',
                 ko: "취소",
+                bg: "Отмяна",
             }
         }
     },
@@ -1774,6 +1838,7 @@ const translationMap = {
                 vi: 'Thiếu không gian tập lệnh.\nVui lòng thêm không gian ở trên.',
                 nl: 'Je hebt de locatie van je script niet opgegeven.\n Voeg deze in bovenaan de pagina.',
                 ko: '스크립트 위치를 지정하지 않았습니다.\n이 페이지 맨 상단에서 위치를 지정하세요.',
+                bg: "Няма зададено местонахождение на скрипта. \nМоля задайте го в горната част на страницата.",
             },
             overwritePreviousOutput: {
                 en: 'This action will overwrite a previous output in the output folder.\nContinue?',
@@ -1801,6 +1866,7 @@ const translationMap = {
                 vi: 'Điều này sẽ ghi đè lên đầu ra trước đó.\nTiếp tục?',
                 nl: 'Deze actie overschrijft de vorige uitkomst in de uitvoer map.\n Doorgaan?',
                 ko: "이 작업은 출력 폴더에 과거의 출력물을 덮어씌웁니다.\n계속하시겠습니까?",
+                bg: "Това действие ще презапише предходният изход в изходната папка. \nИскате ли да продължите?",
             }
         },
     }
@@ -1904,6 +1970,10 @@ const supportedLanguages = [
     {
         name: 'Brazilian Portuguese (Português Brasileiro)',
         code: 'pt_br'
+    },
+    {
+        name: 'Bulgarian (Български)',
+        code: 'bg',
     },
     {
         name: 'Chinese Simplified (简体中文)',
