@@ -118,7 +118,6 @@ const translationMap = {
                 nl: 'Console Venster',
                 ko: "콘솔 화면",
                 bg: "Конзолно приложение",
-
             },
             icon: {
                 en: 'Icon',

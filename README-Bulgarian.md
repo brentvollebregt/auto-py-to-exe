@@ -114,35 +114,6 @@ $ auto-py-to-exe
 
 > При попълване на шаблона, обърнете внимание да обясните ясно какво се случва, предоставете стъпки за възпроизвеждане и [минимален възпроизводим пример](https://stackoverflow.com/help/minimal-reproducible-example) и обяснете какво вярвате, че трябва да се случи. Без тези данни, ще отнеме повече време да идентифицираме проблема.
 
-## Преводи
-
-| Език                                        | Преводач                                                                        | Преведено                            |
-|---------------------------------------------|---------------------------------------------------------------------------------|--------------------------------------|
-| Arabic (العربية)                            | [Tayeb-Ali](https://github.com/tayeb-ali)                                       | UI                                   |
-| Brazilian Portuguese (Português Brasileiro) | [marleyas](https://github.com/marleyas), [reneoliveirajr](https://github.com/reneoliveirajr) | UI                                   |
-| Chinese Simplified (简体中文)                   | [jiangzhe11](https://github.com/jiangzhe11)                                     | UI and [README](./README-Chinese.md) |
-| Chinese Traditional (繁體中文)                  | [startgo](https://github.com/ystartgo)                                          | UI                                   |
-| Czech                                       | [Matto58](https://github.com/Matto58)                                           | UI                                   |
-| English                                     | -                                                                               | UI and README                        |
-| Finnish (Suomen kieli)                      | [ZapX5](https://github.com/ZapX5)                                               | UI and [README](./README-Finnish.md) |
-| French (Français)                           | [flaviedesp](https://github.com/flaviedesp)                                     | UI                                   |
-| German (Deutsch)                            | [hebens](https://github.com/hebens), [ackhh](https://github.com/ackhh)          | UI                                   |
-| Greek (Ελληνικά)                            | [sofronas](https://github.com/sofronas)                                         | UI                                   |
-| Indonesian (Bahasa Indonesia)               | [MarvinZhong](https://github.com/MarvinZhong)                                   | UI                                   |
-| Italian (Italiano)                          | [itsEmax64](https://github.com/itsEmax64)                                       | UI                                   |
-| Japanese (日本語)                              | [NattyanTV](https://github.com/nattyan-tv)                                      | UI                                   |
-| Korean (한국어)                                | [jhk1090](https://github.com/jhk1090)                                           | UI and [README](./README-Korean.md)  |
-| Persian (فارسی)                             | [DrunkLeen](https://github.com/drunkleen), [Ar.dst](https://github.com/Ar-dst)  | UI and [README](./README-Persian.md) |
-| Russian (Русский)                           | Oleg                                                                            | UI                                   |
-| Spanish (Español)                           | [enriiquee](https://github.com/enriiquee)                                       | UI                                   |
-| Spanish Latam (Español Latam)               | [Matyrela](https://github.com/Matyrela)                                         | UI                                   |
-| Serbian                                     | [rina](https://github.com/sweatshirts)                                          | UI                                   |
-| Thai (ภาษาไทย)                              | [teerut26](https://github.com/teerut26)                                         | UI (partial)                         |
-| Turkish (Türkçe)                            | [mcagriaksoy](https://github.com/mcagriaksoy)                                   | UI and [README](./README-Turkish.md) |
-| Ukrainian (Українська)                      | [AndrejGorodnij](https://github.com/AndrejGorodnij)                             | UI                                   |
-| Vietnamese (Tiếng Việt)                     | [7777Hecker](https://github.com/7777Hecker)                                     | UI                                   |
-| Bulgarian (Български)                       | [kbkozlev](https://github.com/kbkozlev)                                         | UI and [README](README-Bulgarian.md) |
-
 > Искате да добавите превод на друг език? Актуализирайте [i18n.js](https://github.com/brentvollebregt/auto-py-to-exe/blob/master/auto_py_to_exe/web/js/i18n.js) и представете заявка за промяна (PR) или го прикачете към проблем (issue).
 
 ## Поддръжка на Python 2.7
