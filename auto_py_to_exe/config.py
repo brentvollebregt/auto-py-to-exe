@@ -12,7 +12,7 @@ class UIOpenMode:
 temporary_directory = None
 
 # Frontend
-FRONTEND_ASSET_FOLDER = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'web')
+FRONTEND_ASSET_FOLDER = os.path.join(os.path.dirname(os.path.realpath(__file__)), "web")
 
 # Pre-defined variables by Python
 DEFAULT_RECURSION_LIMIT = sys.getrecursionlimit()
@@ -21,5 +21,5 @@ DEFAULT_RECURSION_LIMIT = sys.getrecursionlimit()
 package_filename = None
 ui_open_mode = UIOpenMode.CHROME
 supplied_ui_configuration = None
-default_output_directory = os.path.abspath('output')
+default_output_directory = os.path.abspath("output")
 language_hint = None
