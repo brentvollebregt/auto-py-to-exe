@@ -4,13 +4,14 @@ import os
 import shutil
 import tempfile
 
-from . import shims, __version__
+from . import shims
 
 shims.install_shims()
 
 from . import config
 from . import validation
 from . import ui
+from . import  __version__
 
 
 def start_ui(logging_level, build_directory_override):
