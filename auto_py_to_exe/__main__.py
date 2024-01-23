@@ -4,10 +4,10 @@ import os
 import shutil
 import tempfile
 
-from . import shims
+from . import shims, __version__
+
 shims.install_shims()
 
-from . import __version__
 from . import config
 from . import validation
 from . import ui
@@ -95,9 +95,7 @@ def run():
         default='ERROR'
     )
     parser.add_argument(
-        "--version",
-        action="store_true",
-        help="print the version - will not run the ui"
+        "-v", "--version", action="version", version=f"auto-py-to-exe {__version__}"
     )
     args = parser.parse_args()
 
@@ -118,12 +116,8 @@ def run():
     if (args.build_directory_override is not None) and (not os.path.isdir(args.build_directory_override)):
         raise ValueError("--build-directory-override must be a directory")
 
-    # If the user has asked for the version, print it, otherwise run the application
-    if args.version:
-        print('auto-py-to-exe ' + __version__)
-    else:
-        logging_level = getattr(logging, args.logging_level)
-        start_ui(logging_level, args.build_directory_override)
+    logging_level = getattr(logging, args.logging_level)
+    start_ui(logging_level, args.build_directory_override)
 
 
 if __name__ == '__main__':
