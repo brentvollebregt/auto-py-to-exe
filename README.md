@@ -95,7 +95,7 @@ _Easy._
 
 ### Arguments
 
-Usage: `auto-py-to-exe [-nc] [-c [CONFIG]] [-o [PATH]] [filename]`
+Use the help flag to get the usage: `auto-py-to-exe --help`
 
 | Argument                                                     | Type                | Description                                                                                                                       |
 | ------------------------------------------------------------ | ------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
