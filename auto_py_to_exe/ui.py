@@ -6,11 +6,7 @@ import os
 import eel
 from eel import chrome
 
-from . import config
-from . import utils
-from . import packaging
-from . import dialogs
-
+from . import config, dialogs, packaging, utils
 
 LOGGING_HANDLER_NAME = "auto-py-to-exe logging handler"
 
@@ -52,7 +48,7 @@ def __get_pyinstaller_options():
 
     # In PyInstaller v6.0.0 --hide-console options were not set correctly (like --debug), fix them here
     for option in options:
-        if type(option["choices"]) == set:
+        if isinstance(option["choices"], set):
             option["choices"] = list(option["choices"])
 
     return options

@@ -1,10 +1,10 @@
 import os
 import subprocess
 
-from helpers import TemporaryDirectory, PythonScriptAsFile, os_allow
+from helpers import PythonScriptAsFile, TemporaryDirectory, os_allow
 
-from auto_py_to_exe.packaging import package
 from auto_py_to_exe import config as auto_py_to_exe_config
+from auto_py_to_exe.packaging import package
 
 
 @os_allow(["Windows"])

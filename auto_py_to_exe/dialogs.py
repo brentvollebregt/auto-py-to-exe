@@ -17,9 +17,9 @@ except ImportError:
             print('For linux, you can install tkinter by executing: "sudo apt-get install python3-tk"')
             sys.exit(1)
 try:
-    from tkinter.filedialog import askopenfilename, askdirectory, askopenfilenames, asksaveasfilename
+    from tkinter.filedialog import askdirectory, askopenfilename, askopenfilenames, asksaveasfilename
 except ImportError:
-    from tkFileDialog import askopenfilename, askdirectory, askopenfilenames, asksaveasfilename
+    from tkFileDialog import askdirectory, askopenfilename, askopenfilenames, asksaveasfilename
 
 
 def ask_file(file_type):

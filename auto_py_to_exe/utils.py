@@ -1,10 +1,11 @@
 from __future__ import print_function
+
 import io
 import os
-from pathlib import Path
 import platform
 import socket
 import sys
+from pathlib import Path
 
 from PyInstaller import __version__ as pyinstaller_version_string
 

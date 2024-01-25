@@ -8,10 +8,7 @@ from . import shims
 
 shims.install_shims()
 
-from . import config
-from . import validation
-from . import ui
-from . import __version__
+from . import __version__, config, ui, validation  # noqa: E402
 
 
 def start_ui(logging_level, build_directory_override):

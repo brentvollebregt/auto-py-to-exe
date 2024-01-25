@@ -9,18 +9,17 @@ import sys
 import traceback
 from typing import Optional
 
-from . import config
-from . import __version__ as version
-
 from PyInstaller.__main__ import run as run_pyinstaller
 
+from . import __version__ as version
+from . import config
 
 logger = logging.getLogger(__name__)
 
 
 def __get_pyinstaller_argument_parser():
-    from PyInstaller.building.makespec import __add_options as add_makespec_options
     from PyInstaller.building.build_main import __add_options as add_build_options
+    from PyInstaller.building.makespec import __add_options as add_makespec_options
     from PyInstaller.log import __add_options as add_log_options
 
     parser = argparse.ArgumentParser()
@@ -134,7 +133,7 @@ def package(pyinstaller_command, options):
         logger.info("")
 
         run_pyinstaller()
-    except:
+    except:  # noqa: E722
         fail = True
         logger.exception("An error occurred while packaging")
 
@@ -144,7 +143,7 @@ def package(pyinstaller_command, options):
         logger.info("Moving project to: {0}".format(output_directory))
         try:
             __move_package(dist_path, output_directory)
-        except:
+        except:  # noqa: E722
             logger.error("Failed to move project")
             logger.exception(traceback.format_exc())
     else:
