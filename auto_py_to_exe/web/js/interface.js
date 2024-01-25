@@ -4,469 +4,470 @@ Handle visual events
 
 // Expand a section (typically triggered by clicking on a section heading)
 const expandSection = (sectionName) => {
-    const root = document.getElementById(`section-${sectionName}`);
-    const chevron = root.querySelector('.header img');
-    const content = root.querySelector(`.content`);
+  const root = document.getElementById(`section-${sectionName}`);
+  const chevron = root.querySelector('.header img');
+  const content = root.querySelector(`.content`);
 
-    if (root.getAttribute('data-expanded') === null) {
-        // Show the section
-        chevron.style.transform = 'rotate(0deg)';
-        content.style.display = 'block';
-        root.setAttribute('data-expanded', '');
-    } else {
-        // Hide the section
-        chevron.style.transform = 'rotate(180deg)';
-        content.style.display = 'none';
-        root.removeAttribute('data-expanded');
-    }
+  if (root.getAttribute('data-expanded') === null) {
+    // Show the section
+    chevron.style.transform = 'rotate(0deg)';
+    content.style.display = 'block';
+    root.setAttribute('data-expanded', '');
+  } else {
+    // Hide the section
+    chevron.style.transform = 'rotate(180deg)';
+    content.style.display = 'none';
+    root.removeAttribute('data-expanded');
+  }
 };
 
 // Colour an input based on the "allowed" arguments. Returns whether the field is valid or not
 const colourInput = async (inputNode, allowedToBeEmpty, allowedToBeFile, allowedToBeADirectory) => {
-    const { value } = inputNode;
-    if (
-        (allowedToBeEmpty && value === '')
-        || (!allowedToBeEmpty && value !== '' && !allowedToBeFile && !allowedToBeADirectory)
-        || (allowedToBeFile && await doesFileExist(value))
-        || (allowedToBeADirectory && await doesFolderExist(value))
-    ) {
-        inputNode.style.border = "";
-        return true;
-    } else {
-        inputNode.style.border = '1px solid rgb(244, 67, 54)';
-        return false;
-    }
+  const { value } = inputNode;
+  if (
+    (allowedToBeEmpty && value === '') ||
+    (!allowedToBeEmpty && value !== '' && !allowedToBeFile && !allowedToBeADirectory) ||
+    (allowedToBeFile && (await doesFileExist(value))) ||
+    (allowedToBeADirectory && (await doesFolderExist(value)))
+  ) {
+    inputNode.style.border = '';
+    return true;
+  } else {
+    inputNode.style.border = '1px solid rgb(244, 67, 54)';
+    return false;
+  }
 };
 
-const addDoubleInputForSrcDst = (parentNode, optionDest, source, destination, sourceCanBeFile, sourceCanBeDirectory) => {
-    // Construct visible inputs
-    const wrapper = document.createElement('div');
-    parentNode.appendChild(wrapper);
-    const sourceInput = document.createElement('input');
-    wrapper.appendChild(sourceInput);
-    const destinationInput = document.createElement('input');
-    wrapper.appendChild(destinationInput);
-    const removeButton = document.createElement('img');
-    wrapper.appendChild(removeButton);
+const addDoubleInputForSrcDst = (
+  parentNode,
+  optionDest,
+  source,
+  destination,
+  sourceCanBeFile,
+  sourceCanBeDirectory
+) => {
+  // Construct visible inputs
+  const wrapper = document.createElement('div');
+  parentNode.appendChild(wrapper);
+  const sourceInput = document.createElement('input');
+  wrapper.appendChild(sourceInput);
+  const destinationInput = document.createElement('input');
+  wrapper.appendChild(destinationInput);
+  const removeButton = document.createElement('img');
+  wrapper.appendChild(removeButton);
 
-    wrapper.classList.add('dual-value');
+  wrapper.classList.add('dual-value');
 
-    sourceInput.value = source;
-    sourceInput.addEventListener('input', (event) => {
-        colourInput(sourceInput, false, sourceCanBeFile, sourceCanBeDirectory);
-        updateCurrentCommandDisplay();
-    });
+  sourceInput.value = source;
+  sourceInput.addEventListener('input', (event) => {
     colourInput(sourceInput, false, sourceCanBeFile, sourceCanBeDirectory);
-
-    destinationInput.value = destination;
-    destinationInput.addEventListener('input', (event) => {
-        updateCurrentCommandDisplay();
-    });
-
-    // Add configurationGetter
-    const configurationGetter = () => ([optionDest, `${sourceInput.value}${pathSeparator}${destinationInput.value}`]);
-    configurationGetters.push(configurationGetter);
-
-    // Setup removal
-    const onRemove = () => {
-        wrapper.remove();
-        const configurationGetterIndex = configurationGetters.indexOf(configurationGetter);
-        configurationGetters.splice(configurationGetterIndex, 1);
-        const configurationCleanerIndex = configurationCleaners.indexOf(onRemove);
-        configurationCleaners.splice(configurationCleanerIndex, 1);
-        updateCurrentCommandDisplay();
-    }
-    removeButton.src = 'img/remove.svg';
-    removeButton.addEventListener('click', onRemove);
-    configurationCleaners.push(onRemove);
-
     updateCurrentCommandDisplay();
-};
+  });
+  colourInput(sourceInput, false, sourceCanBeFile, sourceCanBeDirectory);
 
+  destinationInput.value = destination;
+  destinationInput.addEventListener('input', (event) => {
+    updateCurrentCommandDisplay();
+  });
+
+  // Add configurationGetter
+  const configurationGetter = () => [optionDest, `${sourceInput.value}${pathSeparator}${destinationInput.value}`];
+  configurationGetters.push(configurationGetter);
+
+  // Setup removal
+  const onRemove = () => {
+    wrapper.remove();
+    const configurationGetterIndex = configurationGetters.indexOf(configurationGetter);
+    configurationGetters.splice(configurationGetterIndex, 1);
+    const configurationCleanerIndex = configurationCleaners.indexOf(onRemove);
+    configurationCleaners.splice(configurationCleanerIndex, 1);
+    updateCurrentCommandDisplay();
+  };
+  removeButton.src = 'img/remove.svg';
+  removeButton.addEventListener('click', onRemove);
+  configurationCleaners.push(onRemove);
+
+  updateCurrentCommandDisplay();
+};
 
 const _createSubSectionInAdvanced = (title, i18nPath, options) => {
-    const parent = document.querySelector('#section-advanced .content');
+  const parent = document.querySelector('#section-advanced .content');
 
-    // The div wrapping the whole section
-    const subSectionNode = document.createElement('div');
-    parent.appendChild(subSectionNode);
+  // The div wrapping the whole section
+  const subSectionNode = document.createElement('div');
+  parent.appendChild(subSectionNode);
 
-    // Setup title
-    const subSectionTitleNode = document.createElement('h3');
-    subSectionTitleNode.textContent = title;
-    subSectionTitleNode.classList.add('noselect');
-    subSectionTitleNode.dataset.i18n = i18nPath;
-    subSectionNode.appendChild(subSectionTitleNode);
+  // Setup title
+  const subSectionTitleNode = document.createElement('h3');
+  subSectionTitleNode.textContent = title;
+  subSectionTitleNode.classList.add('noselect');
+  subSectionTitleNode.dataset.i18n = i18nPath;
+  subSectionNode.appendChild(subSectionTitleNode);
 
-    // Setup options
-    options.forEach(o => {
-        // Container for option
-        const container = document.createElement('div');
-        subSectionNode.appendChild(container);
-        container.classList.add('option-container');
+  // Setup options
+  options.forEach((o) => {
+    // Container for option
+    const container = document.createElement('div');
+    subSectionNode.appendChild(container);
+    container.classList.add('option-container');
 
-        // Option title / name
-        const optionNode = document.createElement('span');
-        container.appendChild(optionNode);
-        optionNode.textContent = chooseOptionString(o.option_strings);
+    // Option title / name
+    const optionNode = document.createElement('span');
+    container.appendChild(optionNode);
+    optionNode.textContent = chooseOptionString(o.option_strings);
 
-        // Help icon
-        const helpNode = document.createElement('span');
-        optionNode.appendChild(helpNode); // Put the icon inside the option text
-        helpNode.title = o.help.replace(/R\|/, '');
-        helpNode.classList.add('info_icon');
+    // Help icon
+    const helpNode = document.createElement('span');
+    optionNode.appendChild(helpNode); // Put the icon inside the option text
+    helpNode.title = o.help.replace(/R\|/, '');
+    helpNode.classList.add('info_icon');
 
-        if (o.inputType === OPTION_INPUT_TYPE_SWITCH) {
-            container.classList.add('switch');
+    if (o.inputType === OPTION_INPUT_TYPE_SWITCH) {
+      container.classList.add('switch');
 
-            // Add button (take note of the target argument state using `const`)
-            const enableButton = document.createElement('button');
-            container.appendChild(enableButton);
-            if (o.const === true) {
-                enableButton.dataset.i18n = 'dynamic.button.enable';
-            } else if (o.const === false)  {
-                enableButton.dataset.i18n = 'dynamic.button.disable';
-            } else {
-                throw new Error("Unknown o.const value: " + JSON.stringify(o));
-            }
-            enableButton.textContent = getTranslation(enableButton.dataset.i18n);
-            enableButton.classList.add('unselected');
+      // Add button (take note of the target argument state using `const`)
+      const enableButton = document.createElement('button');
+      container.appendChild(enableButton);
+      if (o.const === true) {
+        enableButton.dataset.i18n = 'dynamic.button.enable';
+      } else if (o.const === false) {
+        enableButton.dataset.i18n = 'dynamic.button.disable';
+      } else {
+        throw new Error('Unknown o.const value: ' + JSON.stringify(o));
+      }
+      enableButton.textContent = getTranslation(enableButton.dataset.i18n);
+      enableButton.classList.add('unselected');
 
-            // Function used to set the value of the switch
-            const setValue = (enabled) => {
-                if (enabled) {
-                    enableButton.classList.remove('unselected');
-                    enableButton.classList.add('selected');
-                } else {
-                    enableButton.classList.add('unselected');
-                    enableButton.classList.remove('selected');
-                }
-                updateCurrentCommandDisplay();
-            };
-
-            // When clicked, toggle the value
-            enableButton.addEventListener('click', () => {
-                setValue(!enableButton.classList.contains('selected'));
-            });
-
-            // Add configurationGetter
-            const configurationGetter = () => ([o.dest, !enableButton.classList.contains('unselected')]);
-            configurationGetters.push(configurationGetter);
-
-            // Add configurationSetter
-            configurationSetters[o.dest] = setValue;
-
-            // Add configurationCleaner
-            configurationCleaners.push(() => setValue(false));
-
-            // Allow a default value of `true` to come through
-            if (o.default === true) {
-                setValue(true);
-            }
-
-        } else if (o.inputType === OPTION_INPUT_TYPE_DROPDOWN) {
-            container.classList.add('choice');
-
-            // Add dropdown
-            const selectNode = document.createElement('select');
-            container.appendChild(selectNode);
-            selectNode.addEventListener('change', (event) => {
-                updateCurrentCommandDisplay();
-            });
-
-            // Add options (including default '')
-            const defaultOptionNode = document.createElement('option');
-            selectNode.appendChild(defaultOptionNode);
-            defaultOptionNode.textContent = '';
-
-            const choices = Array.isArray(o.choices) ? o.choices : Object.keys(o.choices);
-            choices.map(choice => {
-                const optionNode = document.createElement('option');
-                selectNode.appendChild(optionNode);
-                optionNode.textContent = choice;
-                optionNode.value = choice;
-            });
-
-            // Add configurationGetter
-            const configurationGetter = () => {
-                const value = selectNode.value;
-                return value === '' ? null : [o.dest, value];
-            };
-            configurationGetters.push(configurationGetter);
-
-            // Add configurationSetter
-            configurationSetters[o.dest] = (value) => {
-                if (choices.indexOf(value) !== 1) {
-                    selectNode.value = value;
-                } else {
-                    selectNode.value = '';
-                }
-                selectNode.dispatchEvent(new Event('change'));
-            };
-
-            // Add configurationCleaner
-            configurationCleaners.push(() => {
-                selectNode.value = '';
-                selectNode.dispatchEvent(new Event('change'));
-            });
-
-        } else if (o.inputType === OPTION_INPUT_TYPE_INPUT) {
-            container.classList.add('input');
-
-            const isOptionFileBased = o.allowedInputValues.indexOf(OPTION_INPUT_VALUE_FILE) !== -1;
-            const isOptionDirectoryBased = o.allowedInputValues.indexOf(OPTION_INPUT_VALUE_DIRECTORY) !== -1;
-
-            // Add input node
-            const inputNode = document.createElement('input');
-            container.appendChild(inputNode);
-            inputNode.placeholder = o.metavar || 'VALUE';
-            inputNode.addEventListener('input', (event) => {
-                updateCurrentCommandDisplay();
-
-                if (isOptionFileBased || isOptionDirectoryBased) {
-                    colourInput(inputNode, true, isOptionFileBased, isOptionDirectoryBased);
-                }
-            });
-
-            // Show browse button if required (only file or folder - not both)
-            if (isOptionFileBased || isOptionDirectoryBased) {
-                container.classList.add('with-browse');
-                const searchButton = document.createElement('button');
-                container.appendChild(searchButton);
-                searchButton.dataset.i18n = isOptionFileBased ? 'dynamic.button.browseForFile' : 'dynamic.button.browseForFolder';
-                searchButton.textContent = getTranslation(searchButton.dataset.i18n);
-                searchButton.addEventListener('click', async () => {
-                    const value = isOptionFileBased ? await askForFile(null) : await askForFolder();
-                    if (value !== null) {
-                        inputNode.value = value;
-                        inputNode.dispatchEvent(new Event('input'));
-                    }
-                });
-            }
-
-            // Add configurationGetter
-            const configurationGetter = () => {
-                const value = inputNode.value;
-                return value === '' ? null : [o.dest, value];
-            };
-            configurationGetters.push(configurationGetter);
-
-            // Add configurationSetter
-            configurationSetters[o.dest] = (value) => {
-                inputNode.value = value;
-                inputNode.dispatchEvent(new Event('input'));
-            };
-
-            // Add configurationCleaner
-            configurationCleaners.push(() => {
-                inputNode.value = '';
-                inputNode.dispatchEvent(new Event('input'));
-            });
-
-        } else if (o.inputType === OPTION_INPUT_TYPE_MULTIPLE_INPUT) {
-            container.classList.add('multiple-input');
-
-            const isOptionFileBased = o.allowedInputValues.indexOf(OPTION_INPUT_VALUE_FILE) !== -1;
-            const isOptionDirectoryBased = o.allowedInputValues.indexOf(OPTION_INPUT_VALUE_DIRECTORY) !== -1;
-
-            // Add button to add an entry
-            const addButton = document.createElement('img');
-            container.appendChild(addButton);
-            addButton.src = 'img/plus.svg';
-
-            // Container to hold the values
-            const valuesContainer = document.createElement('div');
-            container.appendChild(valuesContainer);
-
-            const addValue = (value) => {
-                // Container to hold the pair
-                const valueContainer = document.createElement('div');
-                valuesContainer.appendChild(valueContainer);
-
-                // Value input
-                const inputNode = document.createElement('input');
-                valueContainer.appendChild(inputNode);
-                inputNode.value = value;
-                inputNode.placeholder = o.metavar || 'VALUE';
-                colourInput(inputNode, false, isOptionFileBased, isOptionDirectoryBased);
-                inputNode.addEventListener('input', (event) => {
-                    colourInput(inputNode, false, isOptionFileBased, isOptionDirectoryBased);
-                    updateCurrentCommandDisplay();
-                });
-
-                // Add configurationGetter
-                const configurationGetter = () => ([o.dest, inputNode.value]);
-                configurationGetters.push(configurationGetter);
-
-                // Remove button
-                const removeButtonNode = document.createElement('img');
-                removeButtonNode.src = 'img/remove.svg';
-                valueContainer.appendChild(removeButtonNode);
-                const onRemove = () => {
-                    valueContainer.remove();
-                    const configurationGetterIndex = configurationGetters.indexOf(configurationGetter);
-                    configurationGetters.splice(configurationGetterIndex, 1);
-                    const configurationCleanerIndex = configurationCleaners.indexOf(onRemove);
-                    configurationCleaners.splice(configurationCleanerIndex, 1);
-                    updateCurrentCommandDisplay();
-                }
-                removeButtonNode.addEventListener('click', onRemove);
-
-                // Add configurationCleaner
-                configurationCleaners.push(onRemove);
-
-                updateCurrentCommandDisplay();
-            };
-
-            // Event to add a new input pair
-            addButton.addEventListener('click', async () => {
-                // Get initial value
-                let initialValue = '';
-                if (isOptionFileBased || isOptionDirectoryBased) {
-                    initialValue = isOptionFileBased ? await askForFile(null) : await askForFolder();
-                    if (initialValue === null) {
-                        return;
-                    }
-                }
-                addValue(initialValue);
-            });
-
-            // Add configurationSetter
-            configurationSetters[o.dest] = (value) => {
-                addValue(value);
-            };
-
-        } else if (o.inputType === OPTION_INPUT_TYPE_DOUBLE_MULTIPLE_INPUT) {
-            container.classList.add('multiple-input');
-
-            const isOptionFileBased = o.allowedInputValues.indexOf(OPTION_INPUT_VALUE_DOUBLE_FILE_DEST) !== -1;
-            const isOptionDirectoryBased = o.allowedInputValues.indexOf(OPTION_INPUT_VALUE_DOUBLE_DIRECTORY_DEST) !== -1;
-
-            // Add button to add an entry
-            const addButton = document.createElement('img');
-            container.appendChild(addButton);
-            addButton.src = 'img/plus.svg';
-
-            // Container to hold the value pairs
-            const valuesContainer = document.createElement('div');
-            container.appendChild(valuesContainer);
-
-            addButton.addEventListener('click', async () => {
-                // Get initial value
-                let initialValue = '';
-                if (isOptionFileBased || isOptionDirectoryBased) {
-                    initialValue = isOptionFileBased ? await askForFile(null) : await askForFolder();
-                    if (initialValue === null) {
-                        return
-                    }
-                }
-
-                addDoubleInputForSrcDst(valuesContainer, o.dest, initialValue, '.', true, false);
-            });
-
-            // Add configurationSetter
-            configurationSetters[o.dest] = (value) => {
-                const [val1, val2] = value.split(pathSeparator);
-                addDoubleInputForSrcDst(valuesContainer, o.dest, val1, val2, true, false);
-            };
+      // Function used to set the value of the switch
+      const setValue = (enabled) => {
+        if (enabled) {
+          enableButton.classList.remove('unselected');
+          enableButton.classList.add('selected');
+        } else {
+          enableButton.classList.add('unselected');
+          enableButton.classList.remove('selected');
         }
-    });
+        updateCurrentCommandDisplay();
+      };
+
+      // When clicked, toggle the value
+      enableButton.addEventListener('click', () => {
+        setValue(!enableButton.classList.contains('selected'));
+      });
+
+      // Add configurationGetter
+      const configurationGetter = () => [o.dest, !enableButton.classList.contains('unselected')];
+      configurationGetters.push(configurationGetter);
+
+      // Add configurationSetter
+      configurationSetters[o.dest] = setValue;
+
+      // Add configurationCleaner
+      configurationCleaners.push(() => setValue(false));
+
+      // Allow a default value of `true` to come through
+      if (o.default === true) {
+        setValue(true);
+      }
+    } else if (o.inputType === OPTION_INPUT_TYPE_DROPDOWN) {
+      container.classList.add('choice');
+
+      // Add dropdown
+      const selectNode = document.createElement('select');
+      container.appendChild(selectNode);
+      selectNode.addEventListener('change', (event) => {
+        updateCurrentCommandDisplay();
+      });
+
+      // Add options (including default '')
+      const defaultOptionNode = document.createElement('option');
+      selectNode.appendChild(defaultOptionNode);
+      defaultOptionNode.textContent = '';
+
+      const choices = Array.isArray(o.choices) ? o.choices : Object.keys(o.choices);
+      choices.map((choice) => {
+        const optionNode = document.createElement('option');
+        selectNode.appendChild(optionNode);
+        optionNode.textContent = choice;
+        optionNode.value = choice;
+      });
+
+      // Add configurationGetter
+      const configurationGetter = () => {
+        const value = selectNode.value;
+        return value === '' ? null : [o.dest, value];
+      };
+      configurationGetters.push(configurationGetter);
+
+      // Add configurationSetter
+      configurationSetters[o.dest] = (value) => {
+        if (choices.indexOf(value) !== 1) {
+          selectNode.value = value;
+        } else {
+          selectNode.value = '';
+        }
+        selectNode.dispatchEvent(new Event('change'));
+      };
+
+      // Add configurationCleaner
+      configurationCleaners.push(() => {
+        selectNode.value = '';
+        selectNode.dispatchEvent(new Event('change'));
+      });
+    } else if (o.inputType === OPTION_INPUT_TYPE_INPUT) {
+      container.classList.add('input');
+
+      const isOptionFileBased = o.allowedInputValues.indexOf(OPTION_INPUT_VALUE_FILE) !== -1;
+      const isOptionDirectoryBased = o.allowedInputValues.indexOf(OPTION_INPUT_VALUE_DIRECTORY) !== -1;
+
+      // Add input node
+      const inputNode = document.createElement('input');
+      container.appendChild(inputNode);
+      inputNode.placeholder = o.metavar || 'VALUE';
+      inputNode.addEventListener('input', (event) => {
+        updateCurrentCommandDisplay();
+
+        if (isOptionFileBased || isOptionDirectoryBased) {
+          colourInput(inputNode, true, isOptionFileBased, isOptionDirectoryBased);
+        }
+      });
+
+      // Show browse button if required (only file or folder - not both)
+      if (isOptionFileBased || isOptionDirectoryBased) {
+        container.classList.add('with-browse');
+        const searchButton = document.createElement('button');
+        container.appendChild(searchButton);
+        searchButton.dataset.i18n = isOptionFileBased
+          ? 'dynamic.button.browseForFile'
+          : 'dynamic.button.browseForFolder';
+        searchButton.textContent = getTranslation(searchButton.dataset.i18n);
+        searchButton.addEventListener('click', async () => {
+          const value = isOptionFileBased ? await askForFile(null) : await askForFolder();
+          if (value !== null) {
+            inputNode.value = value;
+            inputNode.dispatchEvent(new Event('input'));
+          }
+        });
+      }
+
+      // Add configurationGetter
+      const configurationGetter = () => {
+        const value = inputNode.value;
+        return value === '' ? null : [o.dest, value];
+      };
+      configurationGetters.push(configurationGetter);
+
+      // Add configurationSetter
+      configurationSetters[o.dest] = (value) => {
+        inputNode.value = value;
+        inputNode.dispatchEvent(new Event('input'));
+      };
+
+      // Add configurationCleaner
+      configurationCleaners.push(() => {
+        inputNode.value = '';
+        inputNode.dispatchEvent(new Event('input'));
+      });
+    } else if (o.inputType === OPTION_INPUT_TYPE_MULTIPLE_INPUT) {
+      container.classList.add('multiple-input');
+
+      const isOptionFileBased = o.allowedInputValues.indexOf(OPTION_INPUT_VALUE_FILE) !== -1;
+      const isOptionDirectoryBased = o.allowedInputValues.indexOf(OPTION_INPUT_VALUE_DIRECTORY) !== -1;
+
+      // Add button to add an entry
+      const addButton = document.createElement('img');
+      container.appendChild(addButton);
+      addButton.src = 'img/plus.svg';
+
+      // Container to hold the values
+      const valuesContainer = document.createElement('div');
+      container.appendChild(valuesContainer);
+
+      const addValue = (value) => {
+        // Container to hold the pair
+        const valueContainer = document.createElement('div');
+        valuesContainer.appendChild(valueContainer);
+
+        // Value input
+        const inputNode = document.createElement('input');
+        valueContainer.appendChild(inputNode);
+        inputNode.value = value;
+        inputNode.placeholder = o.metavar || 'VALUE';
+        colourInput(inputNode, false, isOptionFileBased, isOptionDirectoryBased);
+        inputNode.addEventListener('input', (event) => {
+          colourInput(inputNode, false, isOptionFileBased, isOptionDirectoryBased);
+          updateCurrentCommandDisplay();
+        });
+
+        // Add configurationGetter
+        const configurationGetter = () => [o.dest, inputNode.value];
+        configurationGetters.push(configurationGetter);
+
+        // Remove button
+        const removeButtonNode = document.createElement('img');
+        removeButtonNode.src = 'img/remove.svg';
+        valueContainer.appendChild(removeButtonNode);
+        const onRemove = () => {
+          valueContainer.remove();
+          const configurationGetterIndex = configurationGetters.indexOf(configurationGetter);
+          configurationGetters.splice(configurationGetterIndex, 1);
+          const configurationCleanerIndex = configurationCleaners.indexOf(onRemove);
+          configurationCleaners.splice(configurationCleanerIndex, 1);
+          updateCurrentCommandDisplay();
+        };
+        removeButtonNode.addEventListener('click', onRemove);
+
+        // Add configurationCleaner
+        configurationCleaners.push(onRemove);
+
+        updateCurrentCommandDisplay();
+      };
+
+      // Event to add a new input pair
+      addButton.addEventListener('click', async () => {
+        // Get initial value
+        let initialValue = '';
+        if (isOptionFileBased || isOptionDirectoryBased) {
+          initialValue = isOptionFileBased ? await askForFile(null) : await askForFolder();
+          if (initialValue === null) {
+            return;
+          }
+        }
+        addValue(initialValue);
+      });
+
+      // Add configurationSetter
+      configurationSetters[o.dest] = (value) => {
+        addValue(value);
+      };
+    } else if (o.inputType === OPTION_INPUT_TYPE_DOUBLE_MULTIPLE_INPUT) {
+      container.classList.add('multiple-input');
+
+      const isOptionFileBased = o.allowedInputValues.indexOf(OPTION_INPUT_VALUE_DOUBLE_FILE_DEST) !== -1;
+      const isOptionDirectoryBased = o.allowedInputValues.indexOf(OPTION_INPUT_VALUE_DOUBLE_DIRECTORY_DEST) !== -1;
+
+      // Add button to add an entry
+      const addButton = document.createElement('img');
+      container.appendChild(addButton);
+      addButton.src = 'img/plus.svg';
+
+      // Container to hold the value pairs
+      const valuesContainer = document.createElement('div');
+      container.appendChild(valuesContainer);
+
+      addButton.addEventListener('click', async () => {
+        // Get initial value
+        let initialValue = '';
+        if (isOptionFileBased || isOptionDirectoryBased) {
+          initialValue = isOptionFileBased ? await askForFile(null) : await askForFolder();
+          if (initialValue === null) {
+            return;
+          }
+        }
+
+        addDoubleInputForSrcDst(valuesContainer, o.dest, initialValue, '.', true, false);
+      });
+
+      // Add configurationSetter
+      configurationSetters[o.dest] = (value) => {
+        const [val1, val2] = value.split(pathSeparator);
+        addDoubleInputForSrcDst(valuesContainer, o.dest, val1, val2, true, false);
+      };
+    }
+  });
 };
 
 const constructAdvancedSection = () => {
-    // Setup pre-defined sections
-    advancedSections.forEach(section =>
-        _createSubSectionInAdvanced(
-            getTranslation(section.titleI18nPath),
-            section.titleI18nPath,
-            options.filter(o => section.options.indexOf(o.dest) !== -1)
-        )
-    );
+  // Setup pre-defined sections
+  advancedSections.forEach((section) =>
+    _createSubSectionInAdvanced(
+      getTranslation(section.titleI18nPath),
+      section.titleI18nPath,
+      options.filter((o) => section.options.indexOf(o.dest) !== -1)
+    )
+  );
 
-    // Setup extra arguments
-    const usedSectionOptions = flatMap(advancedSections.map(s => s.options));
-    const extraOptions = options.filter(option =>
-        usedSectionOptions.indexOf(option.dest) === -1
-        && option.placement !== OPTION_IGNORED
-        && option.placement !== OPTION_STATIC
-        && option.placement !== OPTION_OVERRIDDEN
-    );
-    if (extraOptions.length > 0) {
-        _createSubSectionInAdvanced(
-            getTranslation('dynamic.title.other'),
-            'dynamic.title.other',
-            extraOptions
-        );
-    }
+  // Setup extra arguments
+  const usedSectionOptions = flatMap(advancedSections.map((s) => s.options));
+  const extraOptions = options.filter(
+    (option) =>
+      usedSectionOptions.indexOf(option.dest) === -1 &&
+      option.placement !== OPTION_IGNORED &&
+      option.placement !== OPTION_STATIC &&
+      option.placement !== OPTION_OVERRIDDEN
+  );
+  if (extraOptions.length > 0) {
+    _createSubSectionInAdvanced(getTranslation('dynamic.title.other'), 'dynamic.title.other', extraOptions);
+  }
 };
 
 const setupWarnings = (warnings) => {
-    if (warnings.length === 0) {
-        return
+  if (warnings.length === 0) {
+    return;
+  }
+
+  const warningsRootNode = document.getElementById('warnings');
+
+  warnings.forEach((warning) => {
+    // Create wrapper
+    const wrapperNode = document.createElement('div');
+    warningsRootNode.appendChild(wrapperNode);
+
+    // Create message
+    const messageNode = document.createElement('p');
+    wrapperNode.appendChild(messageNode);
+    messageNode.innerText = warning.message;
+
+    // Add link is provided
+    if (warning.link !== null) {
+      const linkNodeContainer = document.createElement('a');
+      wrapperNode.appendChild(linkNodeContainer);
+      linkNodeContainer.href = warning.link;
+      linkNodeContainer.innerText = 'Read more here.';
+      linkNodeContainer.target = '_blank';
     }
-
-    const warningsRootNode = document.getElementById('warnings');
-
-    warnings.forEach(warning => {
-        // Create wrapper
-        const wrapperNode = document.createElement('div');
-        warningsRootNode.appendChild(wrapperNode);
-
-        // Create message
-        const messageNode = document.createElement('p');
-        wrapperNode.appendChild(messageNode);
-        messageNode.innerText = warning.message;
-
-        // Add link is provided
-        if (warning.link !== null) {
-            const linkNodeContainer = document.createElement('a');
-            wrapperNode.appendChild(linkNodeContainer);
-            linkNodeContainer.href = warning.link;
-            linkNodeContainer.innerText = 'Read more here.';
-            linkNodeContainer.target = '_blank';
-        }
-    });
+  });
 };
 
 const setupLanguageSelection = () => {
-    const languageSelectNode = document.getElementById('language-selection');
-    languageSelectNode.addEventListener('change', (event) => {
-        translate(event.target.value);
-    });
-    supportedLanguages.forEach(language => {
-        const option = document.createElement('option');
-        option.innerText = language.name;
-        option.value = language.code;
-        languageSelectNode.appendChild(option);
-    });
-    languageSelectNode.value = currentLanguage;
+  const languageSelectNode = document.getElementById('language-selection');
+  languageSelectNode.addEventListener('change', (event) => {
+    translate(event.target.value);
+  });
+  supportedLanguages.forEach((language) => {
+    const option = document.createElement('option');
+    option.innerText = language.name;
+    option.value = language.code;
+    languageSelectNode.appendChild(option);
+  });
+  languageSelectNode.value = currentLanguage;
 };
 
 // Toggle theme (triggered by clicking moon or sun)
 const _toggleTheme = () => {
-    const root = document.querySelector("body");
-    const onDarkThemeButton = document.querySelector("#on-dark-theme-button");
-    const onLightThemeButton = document.querySelector("#on-light-theme-button");
-    
-    if (root.classList.contains('dark-theme')) {
-        onLightThemeButton.style.display = "inline";
-        onDarkThemeButton.style.display = "none";
-    } else {
-        // dark
-        onLightThemeButton.style.display = "none";
-        onDarkThemeButton.style.display = "inline";
-    }
+  const root = document.querySelector('body');
+  const onDarkThemeButton = document.querySelector('#on-dark-theme-button');
+  const onLightThemeButton = document.querySelector('#on-light-theme-button');
 
-    root.classList.toggle("dark-theme")
-}
+  if (root.classList.contains('dark-theme')) {
+    onLightThemeButton.style.display = 'inline';
+    onDarkThemeButton.style.display = 'none';
+  } else {
+    // dark
+    onLightThemeButton.style.display = 'none';
+    onDarkThemeButton.style.display = 'inline';
+  }
+
+  root.classList.toggle('dark-theme');
+};
 
 // Check if user's default color scheme is dark
 const setupTheme = () => {
-    const toggleButton = document.querySelector("span#theme");
+  const toggleButton = document.querySelector('span#theme');
 
-    toggleButton.addEventListener('click', _toggleTheme);
+  toggleButton.addEventListener('click', _toggleTheme);
 
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        _toggleTheme()
-    }
-}
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    _toggleTheme();
+  }
+};

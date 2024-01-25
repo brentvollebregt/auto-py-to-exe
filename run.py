@@ -5,5 +5,5 @@ This script is simply a hack to make it seem like `python -m auto_py_to_exe` was
 
 from auto_py_to_exe import __main__ as apte
 
-apte.__name__ = '__main__'
+apte.__name__ = "__main__"
 apte.run()

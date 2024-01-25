@@ -15,7 +15,7 @@ class PythonScriptAsFile:
 
         # Create the Python script
         self.file_path = os.path.join(self.directory, self.filename)
-        f = open(self.file_path, 'w')
+        f = open(self.file_path, "w")
         f.write(self.content)
         f.close()
 
@@ -36,10 +36,13 @@ class TemporaryDirectory:
 
 
 def os_allow(operating_systems):
-    """ A decorator to only allow specific operating systems to run a function """
+    """A decorator to only allow specific operating systems to run a function"""
+
     def decorator(function):
         def wrapper(*args, **kwargs):
             if platform.system() in operating_systems:
                 return function(*args, **kwargs)
+
         return wrapper
+
     return decorator

@@ -1,5 +1,6 @@
 import platform
 import sys
+
 try:
     from tkinter import Tk
 except ImportError:
@@ -22,21 +23,21 @@ except ImportError:
 
 
 def ask_file(file_type):
-    """ Ask the user to select a file """
+    """Ask the user to select a file"""
     root = Tk()
     root.withdraw()
-    root.wm_attributes('-topmost', 1)
+    root.wm_attributes("-topmost", 1)
     if (file_type is None) or (platform.system() == "Darwin"):
         file_path = askopenfilename(parent=root)
     else:
-        if file_type == 'python':
-            file_types = [('Python files', '*.py;*.pyw'), ('All files', '*')]
-        elif file_type == 'icon':
-            file_types = [('Icon files', '*.ico'), ('All files', '*')]
-        elif file_type == 'json':
-            file_types = [('JSON Files', '*.json'), ('All files', '*')]
+        if file_type == "python":
+            file_types = [("Python files", "*.py;*.pyw"), ("All files", "*")]
+        elif file_type == "icon":
+            file_types = [("Icon files", "*.ico"), ("All files", "*")]
+        elif file_type == "json":
+            file_types = [("JSON Files", "*.json"), ("All files", "*")]
         else:
-            file_types = [('All files', '*')]
+            file_types = [("All files", "*")]
         file_path = askopenfilename(parent=root, filetypes=file_types)
     root.update()
 
@@ -45,10 +46,10 @@ def ask_file(file_type):
 
 
 def ask_files():
-    """ Ask the user to select one or more files """
+    """Ask the user to select one or more files"""
     root = Tk()
     root.withdraw()
-    root.wm_attributes('-topmost', 1)
+    root.wm_attributes("-topmost", 1)
     file_paths = askopenfilenames(parent=root)
     root.update()
 
@@ -56,10 +57,10 @@ def ask_files():
 
 
 def ask_folder():
-    """ Ask the user to select a folder """
+    """Ask the user to select a folder"""
     root = Tk()
     root.withdraw()
-    root.wm_attributes('-topmost', 1)
+    root.wm_attributes("-topmost", 1)
     folder = askdirectory(parent=root)
     root.update()
 
@@ -67,24 +68,24 @@ def ask_folder():
 
 
 def ask_file_save_location(file_type):
-    """ Ask the user where to save a file """
+    """Ask the user where to save a file"""
     root = Tk()
     root.withdraw()
-    root.wm_attributes('-topmost', 1)
+    root.wm_attributes("-topmost", 1)
 
     if (file_type is None) or (platform.system() == "Darwin"):
         file_path = asksaveasfilename(parent=root)
     else:
-        if file_type == 'json':
-            file_types = [('JSON Files', '*.json'), ('All files', '*')]
+        if file_type == "json":
+            file_types = [("JSON Files", "*.json"), ("All files", "*")]
         else:
-            file_types = [('All files', '*')]
+            file_types = [("All files", "*")]
         file_path = asksaveasfilename(parent=root, filetypes=file_types)
     root.update()
 
     if bool(file_path):
-        if file_type == 'json':
-            return file_path if file_path.endswith('.json') else file_path + '.json'
+        if file_type == "json":
+            return file_path if file_path.endswith(".json") else file_path + ".json"
         else:
             return file_path
     else:
