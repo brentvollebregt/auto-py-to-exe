@@ -1,0 +1,29 @@
+name: Check formatting
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Check Ruff linting
+        uses: chartboost/ruff-action@v1
+        with:
+          args: 'check'
+
+      - name: Check Ruff formatting
+        if: success() || failure()
+        uses: chartboost/ruff-action@v1
+        with:
+          args: 'format --check'
+
+      - name: Check Prettier formatting
+        if: success() || failure()
+        uses: creyD/prettier_action@v4.3
+        with:
+          dry: true
+          prettier_options: '--check .'

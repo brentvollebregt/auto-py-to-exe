@@ -63,3 +63,11 @@ If you want to add a new or update an existing translation:
 5. Create the PR
 
 > If you are unable to submit a pull request, you can also submit the changes in a new issue.
+
+## Style Guide
+
+For Python, we use [Ruff](https://github.com/astral-sh/ruff) to format, lint and auto-sort imports. The easiest way to use Ruff is through the Visual Studio Code extension - formatting is run on save. You can also format using Ruff's CLI by first installing ruff using `pip install ruff` and then executing `ruff format .`.
+
+For JavaScript, CSS, HTML, Markdown, JSON and YAML, we use [Prettier](https://prettier.io/). The easiest way to use Prettier is through the Visual Studio Code extension - formatting is run on save. You can also format using Prettier's CLI by executing `npx prettier --write .`.
+
+Formatting is checked using GitHub Action workflows.
