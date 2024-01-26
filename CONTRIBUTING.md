@@ -70,4 +70,4 @@ For Python, we use [Ruff](https://github.com/astral-sh/ruff) to format, lint and
 
 For JavaScript, CSS, HTML, Markdown, JSON and YAML, we use [Prettier](https://prettier.io/). The easiest way to use Prettier is through the Visual Studio Code extension - formatting is run on save. You can also format using Prettier's CLI by executing `npx prettier --write .`.
 
-Formatting is checked using GitHub Action workflows.
+Formatting is checked using a GitHub Action workflow - all PRs are checked to comply with the formatters and linting.
