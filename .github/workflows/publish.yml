@@ -18,7 +18,7 @@ jobs:
         run: |
           tag_commit=$(git rev-parse ${{ github.ref }})
           master_commit=$(git rev-parse origin/master)
-          
+
           if [ "$tag_commit" = "$master_commit" ]; then
             echo "The tag and master are pointing to the same commit."
           else
@@ -31,7 +31,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
-        python-version: ["3.7", "3.8", "3.9", "3.10", "3.11", "3.12"]
+        python-version: ['3.7', '3.8', '3.9', '3.10', '3.11', '3.12']
 
     steps:
       - uses: actions/checkout@v3
@@ -49,7 +49,7 @@ jobs:
 
       - name: Install package
         run: pip install -e .
-  
+
       - name: Run tests for Python ${{ matrix.python-version }} on ${{ matrix.os }}
         run: pytest
 
@@ -98,28 +98,28 @@ jobs:
           # Read in the changelog
           with open("CHANGELOG.md", "r", encoding='utf-8') as f:
               changelog = f.read()
-          
+
           version = "${{ steps.get_module_version.outputs.version }}"
-          
+
           # Get the changes for the current version
           changes_for_target_version_regex = r"##\s*{}\s*\n((?:.|\n)*?)(?:\n##\s*|\Z)".format(re.escape(version))
           match = re.search(changes_for_target_version_regex, changelog)
           if match is None:
               raise Exception(f"Changes were not detected in CHANGELOG.md for version {version}")
           changes = re.search(changes_for_target_version_regex, changelog).group(1).strip()
-          
+
           # Get the previous version
           versions_regex = r"^## (\d+\.\d+\.\d+)(?=^## \d+\.\d+\.\d+|$)"
           versions = re.findall(versions_regex, changelog, re.MULTILINE)
           current_version_index = [i for i, v in enumerate(versions) if v == version][0]
           previous_version = versions[current_version_index + 1]
-          
+
           # Build up the changelog
           footer = f"\n\n---"
           footer += f"\n\n[🌐 auto-py-to-exe {version} on PyPI](https://pypi.org/project/auto-py-to-exe/{version}/)"
           footer += f"\n[v{previous_version} ➡️ v{version} changes](https://github.com/brentvollebregt/auto-py-to-exe/compare/v{previous_version}...v{version})"
           changes += footer
-          
+
           # Output the changelog
           print(changes)
 

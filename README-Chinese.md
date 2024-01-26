@@ -18,67 +18,81 @@
 ## 让我们开始！
 
 ### 需要事先准备：
+
 - Python : 3.6-3.12
 
-*要在图像中显示界面，您需要使用Chrome。如果未安装Chrome或提供了--no-chrome 参数，则将使用默认浏览器。*
+_要在图像中显示界面，您需要使用Chrome。如果未安装Chrome或提供了--no-chrome 参数，则将使用默认浏览器。_
 
 > 从 [PyInstaller 4.0](https://github.com/pyinstaller/pyinstaller/releases/tag/v4.0) 开始，不再支持Python 2.7。有关如何在Python2.7中使用此工具的步骤，请阅读下面的“[Python 2.7 支持](#python-27-支持)”
 
 ### 安装和使用
+
 #### 通过 [PyPI](https://pypi.org/project/auto-py-to-exe/) 安装
+
 您可以使用PyPI安装此项目：
+
 ```
 $ pip install auto-py-to-exe
 ```
+
 然后运行它，在终端中执行以下命令：
+
 ```
 $ auto-py-to-exe
 ```
 
 ### 通过 [GitHub](https://github.com/brentvollebregt/auto-py-to-exe) 安装
+
 ```
 $ git clone https://github.com/brentvollebregt/auto-py-to-exe.git
 $ cd auto-py-to-exe
 $ python setup.py install
 ```
+
 然后运行它，在终端中执行以下命令：
+
 ```
 $ auto-py-to-exe
 ```
 
 #### 在本地通过 [Github](https://github.com/brentvollebregt/auto-py-to-exe) 运行（无需安装）
+
 您可以通过以下步骤在本地运行此项目:
+
 1. 克隆/下载 [该存储库](https://github.com/brentvollebregt/auto-py-to-exe)
 2. 打开cmd 或终端并cd 到该项目
-3. 执行 ```python -m pip install -r requirements.txt```
+3. 执行 `python -m pip install -r requirements.txt`
 
-现在运行应用程序，执行 ```python -m auto_py_to_exe```. 将在应用程序模式下打开一个Chrome窗口，并在其中运行本项目。
+现在运行应用程序，执行 `python -m auto_py_to_exe`. 将在应用程序模式下打开一个Chrome窗口，并在其中运行本项目。
 
 > 调用 `python -m auto_py_to_exe` 时，请确保您位于auto_py_to_exe下的目录中（在第3步之后），否则您将需要绝对/相对地将文件夹auto_py_to_exe引用到当前位置。
 
 ## 使用本程序
+
 1. 选择您的脚本文件的位置（粘贴或使用文件浏览器）
    - 文件存在时轮廓将变为蓝色
 2. 选择其他选项并添加图标或其他文件之类的内容
 3. 点击底部的蓝色大按钮进行转换
 4. 完成后在目录 /output中找到转换后的文件
 
-*简单！*
+_简单！_
 
 ### 参数
+
 用法 `auto-py-to-exe [-nc] [-c [CONFIG]] [-o [PATH]] [filename]`
 
-| 参数 | 类型 | 描述 |
-| - | - | - |
-| filename | positional | 在用户界面中预先填写“脚本位置”字段。 |
-| -nc, --no-chrome | optional | 使用默认浏览器（可能是Chrome）打开用户界面。 不会尝试寻找Chrome。 |
-| -nu, --no-ui | optional | 不要试图在浏览器中打开用户界面，而只是打印出可以访问该应用程序的地址。 |
-| -c [CONFIG], --config [CONFIG] | optional | 提供配置文件（json）以预填充UI。 这些可以在设置选项卡中生成。 |
-| -o [PATH], --output-dir [PATH] | optional | 设置默认输出目录。这仍然可以在UI中更改。 |
+| 参数                           | 类型       | 描述                                                                   |
+| ------------------------------ | ---------- | ---------------------------------------------------------------------- |
+| filename                       | positional | 在用户界面中预先填写“脚本位置”字段。                                   |
+| -nc, --no-chrome               | optional   | 使用默认浏览器（可能是Chrome）打开用户界面。 不会尝试寻找Chrome。      |
+| -nu, --no-ui                   | optional   | 不要试图在浏览器中打开用户界面，而只是打印出可以访问该应用程序的地址。 |
+| -c [CONFIG], --config [CONFIG] | optional   | 提供配置文件（json）以预填充UI。 这些可以在设置选项卡中生成。          |
+| -o [PATH], --output-dir [PATH] | optional   | 设置默认输出目录。这仍然可以在UI中更改。                               |
 
-> 如果您在本地运行此软件包，则需要调用 ```python -m auto_py_to_exe``` 而不是 ```auto-py-to-exe```
+> 如果您在本地运行此软件包，则需要调用 `python -m auto_py_to_exe` 而不是 `auto-py-to-exe`
 
 ### 配置
+
 您可以转到高级选项卡底部的“配置导入和导出”部分，并将JSON字符串导出到剪贴板或文件，从而导出UI的当前状态，而不是一遍又一遍地将相同的数据插入到UI中。然后可以再次将其导入到UI中，以重新填充所有字段。
 
 ## 演示视频
@@ -106,10 +120,9 @@ $ pytest
 
 ## 屏幕截图
 
-
-| <!-- --> | <!-- --> |
-| - | - |
+| <!-- -->                                                                                                                                             | <!-- -->                                                                                                                              |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
 | [![Empty interface](https://nitratine.net/posts/auto-py-to-exe/empty-interface.png)](https://nitratine.net/posts/auto-py-to-exe/empty-interface.png) | [![Filled out](https://nitratine.net/posts/auto-py-to-exe/filled-out.png)](https://nitratine.net/posts/auto-py-to-exe/filled-out.png) |
-| [![Converting](https://nitratine.net/posts/auto-py-to-exe/converting.png)](https://nitratine.net/posts/auto-py-to-exe/converting.png) | [![Completed](https://nitratine.net/posts/auto-py-to-exe/completed.png)](https://nitratine.net/posts/auto-py-to-exe/completed.png) |
+| [![Converting](https://nitratine.net/posts/auto-py-to-exe/converting.png)](https://nitratine.net/posts/auto-py-to-exe/converting.png)                | [![Completed](https://nitratine.net/posts/auto-py-to-exe/completed.png)](https://nitratine.net/posts/auto-py-to-exe/completed.png)    |
 
 中文翻译：[jiangzhe](https://github.com/jiangzhe11)

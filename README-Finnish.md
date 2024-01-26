@@ -29,54 +29,67 @@ Türkçe Talimatları [burada](./README-Turkish.md) bulabilirsiniz.
 ## Miten päästään alkuun
 
 ### Vaatimukset
- - Python : 3.6-3.12
 
-*Jos haluat nähdä käyttöliittymän, joka näkyy kuvissa, tarvitset Chromen. Jos Chromea ei ole asennettu tai --no-chrome vastaanotetaan, käytetään oletusselainta.*
+- Python : 3.6-3.12
+
+_Jos haluat nähdä käyttöliittymän, joka näkyy kuvissa, tarvitset Chromen. Jos Chromea ei ole asennettu tai --no-chrome vastaanotetaan, käytetään oletusselainta._
 
 > [PyInstaller 4.0:sta lähtien](https://github.com/pyinstaller/pyinstaller/releases/tag/v4.0) (englanniksi), Python 2.7 ei ole enää tuettu. Lue "[Python 2.7 Tuki](#python-27-support)" alla ohjeisiin miten käyttää tätä työkalua Python 2.7:n kanssa.
 
 ### Asennus ja käyttö
+
 #### Asennus [PyPI:n](https://pypi.org/project/auto-py-to-exe/) (englanniksi) kautta
+
 Voit asentaa tämän ohjelman PyPI:n kautta:
+
 ```
 $ pip install auto-py-to-exe
 ```
+
 Suorittaaksesi käytä tätä komentoa komentorivillä:
+
 ```
 $ auto-py-to-exe
 ```
 
 ### [GitHubin](https://github.com/brentvollebregt/auto-py-to-exe) kautta asentaminen
+
 ```
 $ git clone https://github.com/brentvollebregt/auto-py-to-exe.git
 $ cd auto-py-to-exe
 $ python setup.py install
 ```
+
 Suorittaaksesi käytä tätä komentoa komentorivillä:
+
 ```
 $ auto-py-to-exe
 ```
 
 #### [Githubin](https://github.com/brentvollebregt/auto-py-to-exe) kautta paikallisesti suorittaminen (ei asennusta)
+
 Voit suorittaa ohjelman paikallisesti näillä vaiheilla:
+
 1. Kloonaa tai lataa [repository](https://github.com/brentvollebregt/auto-py-to-exe)
 2. Avaa komentorivi ja mene projektin polkuun
-3. Käytä komentoa ```python -m pip install -r requirements.txt```
+3. Käytä komentoa `python -m pip install -r requirements.txt`
 
-Suorittaaksesi applikaation käytä komentoa ```python -m auto_py_to_exe```. Chrome-ikkuna aukeaa ohjelma sisällään.
+Suorittaaksesi applikaation käytä komentoa `python -m auto_py_to_exe`. Chrome-ikkuna aukeaa ohjelma sisällään.
 
 > Varmista, että olet auto_py_to_exe:n alla olevassa kansiossa (tulet olemaan kolmannen vaiheen jälkeen) kun käytät komentoa `python -m auto_py_to_exe` tai joudut viittaamaan kansioon auto_py_to_exe absoluuttisesti tai relatiivisesti siihen missä olet nyt.
 
 ## Ohjelman käyttö
+
 1. Valitse skriptin sijainti (liitä leikepöydältä tai käytä tiedostojenhallintaa)
-    - Reunat muuttuu siniseksi kun tiedosto on olemassa
+   - Reunat muuttuu siniseksi kun tiedosto on olemassa
 2. Valitse muita asetuksia ja lisää asioita kuten kuvake tai muita tiedostoja
 3. Paina isoa sinistä nappia alareunassa muuntaaksesi
 4. Löydä muunnetut tiedostot /output kansiosta valmiina
 
-*Helppoa.*
+_Helppoa._
 
 ### Argumentit
+
 Käyttö: `auto-py-to-exe [-nc] [-c [CONFIG]] [-o [POLKU]] [tiedostonimi]`
 
 | Argument                                                         | Type                       | Description                                                                                                     |
@@ -89,18 +102,20 @@ Käyttö: `auto-py-to-exe [-nc] [-c [CONFIG]] [-o [POLKU]] [tiedostonimi]`
 | -bdo [KANSION_POLKU], --build-directory-override [KANSION_POLKU] | valinnainen                | Päällekirjoittaa oletus-rakennuskansion. Hyödyllinen jos sinun täytyy päästää kansio virustorjunnan läpi.       |
 | -lang [KIELIKOODI], --language [KIELIKOODI]                      | valinnainen                | Anna käyttöliittymälle vihje, mikä kieli on oletus kun sen avaa. Kielikoodit näkee "Käännökset"-kohdassa alla.  |
 
-
-> Jos suoritat pakettia paikallisesti, sinun täytöö suorittaa ```python -m auto_py_to_exe``` ```auto-py-to-exe```:n sijasta.
+> Jos suoritat pakettia paikallisesti, sinun täytöö suorittaa `python -m auto_py_to_exe` `auto-py-to-exe`:n sijasta.
 
 ### JSON Konfiguraatio
+
 Jos saman tiedon lisääminen käyttöliittymään joka kerta on raskasta, voit viedä nykyisen tilan JSON-tiedostoon "Konfiguraatio"-kohdasta asetuksissa. Tämän voi sitten tuoda takaisin käyttöliittymään ja täyttää kentät valmiiksi.
 
-Tämä JSON-konfiguraation vienti-toiminto ei tallenna ulostulon polkua automaattisesti, koska eri tietokoneiden välillä liikkuminen saattaa tarkoittaa erilaisia kansiorakenteita. Jos haluat säilyttää ulostulon kansion JSON-konfiguraatiossa, lisää polku `nonPyinstallerOptions.outputDirectory`:n alle JSON-tiedostossa (täytyy luoda uusi key). 
+Tämä JSON-konfiguraation vienti-toiminto ei tallenna ulostulon polkua automaattisesti, koska eri tietokoneiden välillä liikkuminen saattaa tarkoittaa erilaisia kansiorakenteita. Jos haluat säilyttää ulostulon kansion JSON-konfiguraatiossa, lisää polku `nonPyinstallerOptions.outputDirectory`:n alle JSON-tiedostossa (täytyy luoda uusi key).
 
 ## Video
+
 Jos tarvit visuaalista ohjeistusta alkuun pääsemisessä, [brentvollebregt (Projektin kehittäjä)](https://github.com/brentvollebregt) [teki videon projektin alkuperäisen julkaisun aikaan (englanniksi)](https://youtu.be/OZSZHmWSOeM); jotkut asiat ovat muuttuneet, mutta sama konsepti säilyy.
 
 ## Ongelmia työkalun käytössä
+
 Jos sinulla on ongelmia paketoidun .exe:n kanssa tai työkalun käytössä yleisesti, Suosittelemme sinua lukemaan [brentvollebregtin](https://github.com/brentvollebregt) [blogipostauksen aiheesta (englanniksi).](https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=readme_link&utm_campaign=auto_py_to_exe_help). Tämä postaus käy läpi asioita joita pitää tietää Python-skriptien paketoimisesta ja korjauksista yleisiin virheisiin.
 
 Jos uskot, että olet löytänyt ongelman työkalun kanssa, ole hyvä ja [luo "issue"](https://github.com/brentvollebregt/auto-py-to-exe/issues/new/choose) (paina "Get started") ja täytä valmis pohja "Bug report" valinnasta. Jos ongelma ilmenee vain sinun ohjelmassasi, Ole hyvä ja älä luo "issue":ta tämän "repository":n sivuille - mutta, kommentoi apu-postaukseen, videoon, tai luo uusi keskustelu.
@@ -108,9 +123,11 @@ Jos uskot, että olet löytänyt ongelman työkalun kanssa, ole hyvä ja [luo "i
 > Kun täytät pohjaa, varmista että selität ongelman tarkasti, anna vaiheet tuottaa ongelma uudestaan ja [minimaalista uudelleentuotettavaa esimerkkiä (linkki englanniksi)](https://stackoverflow.com/help/minimal-reproducible-example) ja selitä mitä uskot että olisi pitänyt tapahtua. Ilman näitä, ongelman havaitseminen kestää pidempään
 
 ## Python 2.7 Tuki
+
 [PyInstaller v4.0:sta lähtien (englanniksi)](https://github.com/pyinstaller/pyinstaller/releases/tag/v4.0) (julkaistu elokuun 9. päivä 2020), Python 2.7 ei ole enää tuettu; tosin voit käyttää tätä työkalua Python 2.7:n kanssa asentamalla vanhemman version PyInstallerista.[PyInstaller v3.6 (englanniksi)](https://github.com/pyinstaller/pyinstaller/releases/tag/v3.6) oli viimeinen versio joka tuki Python 2.7:ää; Asentaaksesi tämän, ensin poista olemassaolevat versiot PyInstallerista ja käytä komentoa `python -m pip install pyinstaller==3.6`.
 
 ## Testaus
+
 Testit sijaitsevat kansiossa `tests/` ja niitä suoritetaan pytestillä:
 
 ```
@@ -121,7 +138,7 @@ $ pytest
 
 ## Kuvakaappaukset
 
-| <!-- -->    | <!-- -->    |
-|-------------|-------------|
+| <!-- -->                                                                                                                                                  | <!-- -->                                                                                                                            |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 | [![Tyhjä käyttöliittymä](https://nitratine.net/posts/auto-py-to-exe/empty-interface.png)](https://nitratine.net/posts/auto-py-to-exe/empty-interface.png) | [![Täytetty](https://nitratine.net/posts/auto-py-to-exe/filled-out.png)](https://nitratine.net/posts/auto-py-to-exe/filled-out.png) |
-| [![Muunnetaan](https://nitratine.net/posts/auto-py-to-exe/converting.png)](https://nitratine.net/posts/auto-py-to-exe/converting.png) | [![Valmis](https://nitratine.net/posts/auto-py-to-exe/completed.png)](https://nitratine.net/posts/auto-py-to-exe/completed.png) |
+| [![Muunnetaan](https://nitratine.net/posts/auto-py-to-exe/converting.png)](https://nitratine.net/posts/auto-py-to-exe/converting.png)                     | [![Valmis](https://nitratine.net/posts/auto-py-to-exe/completed.png)](https://nitratine.net/posts/auto-py-to-exe/completed.png)     |

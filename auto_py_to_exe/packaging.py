@@ -9,18 +9,17 @@ import sys
 import traceback
 from typing import Optional
 
-from . import config
-from . import __version__ as version
-
 from PyInstaller.__main__ import run as run_pyinstaller
 
+from . import __version__ as version
+from . import config
 
 logger = logging.getLogger(__name__)
 
 
 def __get_pyinstaller_argument_parser():
-    from PyInstaller.building.makespec import __add_options as add_makespec_options
     from PyInstaller.building.build_main import __add_options as add_build_options
+    from PyInstaller.building.makespec import __add_options as add_makespec_options
     from PyInstaller.log import __add_options as add_log_options
 
     parser = argparse.ArgumentParser()
@@ -30,11 +29,15 @@ def __get_pyinstaller_argument_parser():
     add_log_options(parser)
 
     parser.add_argument(
-        'filenames', metavar='scriptname', nargs='+',
-        help=("name of scriptfiles to be processed or "
-              "exactly one .spec-file. If a .spec-file is "
-              "specified, most options are unnecessary "
-              "and are ignored.")
+        "filenames",
+        metavar="scriptname",
+        nargs="+",
+        help=(
+            "name of scriptfiles to be processed or "
+            "exactly one .spec-file. If a .spec-file is "
+            "specified, most options are unnecessary "
+            "and are ignored."
+        ),
     )  # From PyInstaller.__main__.run
 
     return parser
@@ -54,21 +57,21 @@ def get_pyinstaller_options():
 
 
 def will_packaging_overwrite_existing(file_path: str, manual_name: Optional[str], one_file: str, output_folder: str):
-    """ Checks if there is a possibility of a previous output being overwritten. """
+    """Checks if there is a possibility of a previous output being overwritten."""
     if not os.path.exists(output_folder):
         return False
-    
-    no_extension = manual_name if manual_name is not None else '.'.join(os.path.basename(file_path).split('.')[:-1])
-    if one_file and no_extension + '.exe' in os.listdir(output_folder):
+
+    no_extension = manual_name if manual_name is not None else ".".join(os.path.basename(file_path).split(".")[:-1])
+    if one_file and no_extension + ".exe" in os.listdir(output_folder):
         return True
     if (not one_file) and no_extension in os.listdir(output_folder):
         return True
-        
+
     return False
 
 
 def __move_package(src, dst):
-    """ Move the output package to the desired path (default is output/ - set in script.js) """
+    """Move the output package to the desired path (default is output/ - set in script.js)"""
     # Make sure the destination exists
     if not os.path.exists(dst):
         os.makedirs(dst)
@@ -101,15 +104,15 @@ def package(pyinstaller_command, options):
     logger.info("Building directory: {}".format(config.temporary_directory))
 
     # Override arguments
-    dist_path = os.path.join(config.temporary_directory, 'application')
-    build_path = os.path.join(config.temporary_directory, 'build')
-    extra_args = ['--distpath', dist_path] + ['--workpath', build_path] + ['--specpath', config.temporary_directory]
+    dist_path = os.path.join(config.temporary_directory, "application")
+    build_path = os.path.join(config.temporary_directory, "build")
+    extra_args = ["--distpath", dist_path] + ["--workpath", build_path] + ["--specpath", config.temporary_directory]
 
-    logger.info('Provided command: {}'.format(pyinstaller_command))
+    logger.info("Provided command: {}".format(pyinstaller_command))
 
     # Setup options
-    increase_recursion_limit = options['increaseRecursionLimit']
-    output_directory = os.path.abspath(options['outputDirectory'])
+    increase_recursion_limit = options["increaseRecursionLimit"]
+    output_directory = os.path.abspath(options["outputDirectory"])
 
     if increase_recursion_limit:
         sys.setrecursionlimit(5000)
@@ -126,11 +129,11 @@ def package(pyinstaller_command, options):
         sys.argv = shlex.split(pyinstaller_command) + extra_args  # Put command into sys.argv and extra args
 
         # Display the command we are using and leave a space to separate out PyInstallers logs
-        logger.info('Executing: {}'.format(' '.join(sys.argv)))
-        logger.info('')
+        logger.info("Executing: {}".format(" ".join(sys.argv)))
+        logger.info("")
 
         run_pyinstaller()
-    except:
+    except:  # noqa: E722
         fail = True
         logger.exception("An error occurred while packaging")
 
@@ -140,7 +143,7 @@ def package(pyinstaller_command, options):
         logger.info("Moving project to: {0}".format(output_directory))
         try:
             __move_package(dist_path, output_directory)
-        except:
+        except:  # noqa: E722
             logger.error("Failed to move project")
             logger.exception(traceback.format_exc())
     else:

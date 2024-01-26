@@ -1,8 +1,8 @@
 :root {
-    --modal-offset: 0;
-    --modal-padding: 200px;
-    --modal-fallback-color: rgba(0, 0, 0, 0.4);
-    --modal-coverage-area: 100%;
+  --modal-offset: 0;
+  --modal-padding: 200px;
+  --modal-fallback-color: rgba(0, 0, 0, 0.4);
+  --modal-coverage-area: 100%;
 }
 
 .modal-coverage {
@@ -17,11 +17,9 @@
   background-color: var(--modal-fallback-color);
 }
 
-
 .modal-coverage-hidden {
   display: none;
 }
-
 
 .modal-content {
   background-color: var(--background);
@@ -32,7 +30,6 @@
   width: 80%;
   max-width: 600px;
 }
-
 
 .close-btn {
   color: var(--primary);
@@ -53,7 +50,7 @@
 }
 
 .modal-header h2 {
-    margin: 0;
+  margin: 0;
 }
 
 .modal-footer {

@@ -1,7 +1,7 @@
 ---
 name: 🐛 Bug report
 about: Report something wrong with auto-py-to-exe
-title: ""
+title: ''
 labels: bug
 assignees: brentvollebregt
 ---

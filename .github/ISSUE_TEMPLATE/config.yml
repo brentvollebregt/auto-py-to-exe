@@ -1,4 +1,4 @@
 contact_links:
-    - name: 🤔 Questions and Help
-      url: https://github.com/brentvollebregt/auto-py-to-exe/discussions
-      about: This issue tracker is not for general questions and help. Please create a new discussion for questions not directly related to auto-py-to-exe.
+  - name: 🤔 Questions and Help
+    url: https://github.com/brentvollebregt/auto-py-to-exe/discussions
+    about: This issue tracker is not for general questions and help. Please create a new discussion for questions not directly related to auto-py-to-exe.

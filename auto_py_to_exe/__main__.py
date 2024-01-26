@@ -8,14 +8,11 @@ from . import shims
 
 shims.install_shims()
 
-from . import config
-from . import validation
-from . import ui
-from . import  __version__
+from . import __version__, config, ui, validation  # noqa: E402
 
 
 def start_ui(logging_level, build_directory_override):
-    """ Open the interface """
+    """Open the interface"""
     # Suppress the global logger to only show error+ to the console
     logging.getLogger().handlers[0].setLevel(logging_level)
 
@@ -34,15 +31,11 @@ def start_ui(logging_level, build_directory_override):
 
 
 def run():
-    """ Module entry point """
+    """Module entry point"""
     # Parse arguments
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "filename",
-        nargs='?',
-        type=validation.argparse_file_exists,
-        help="pass a file into the interface",
-        default=None
+        "filename", nargs="?", type=validation.argparse_file_exists, help="pass a file into the interface", default=None
     )
     parser.add_argument(
         "-nc",
@@ -55,49 +48,41 @@ def run():
         "--no-ui",
         action="store_true",
         help="do not open a browser to show the application and simply print out where it's being hosted from. "
-             "When using this option, you must manually stop the application using Ctrl+C",
+        "When using this option, you must manually stop the application using Ctrl+C",
     )
     parser.add_argument(
         "-c",
         "--config",
-        nargs='?',
+        nargs="?",
         type=validation.argparse_file_json,
         help="provide a json file containing a UI configuration to pre-populate the ui",
-        default=None
+        default=None,
     )
-    parser.add_argument(
-        "-o",
-        "--output-dir",
-        nargs='?',
-        help="the directory to put output in",
-        default='output'
-    )
+    parser.add_argument("-o", "--output-dir", nargs="?", help="the directory to put output in", default="output")
     parser.add_argument(
         "-bdo",
         "--build-directory-override",
-        nargs='?',
+        nargs="?",
         help="a directory for build files (overrides the default)",
-        default=None
+        default=None,
     )
     parser.add_argument(
         "-lang",
         "--language",
-        nargs='?',
+        nargs="?",
         help="hint the language to use by default - language codes can be found in the README",
         default=None,
-        metavar='LANGUAGE_CODE'
+        metavar="LANGUAGE_CODE",
     )
     parser.add_argument(
         "--logging-level",
-        nargs='?',
+        nargs="?",
         type=validation.argparse_logging_level,
-        choices=['DEBUG', 'INFO', 'WARNING', 'ERROR', 'CRITICAL'],
+        choices=["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"],
         help="the level to use for logging - defaults to ERROR",
-        default='ERROR'
+        default="ERROR",
     )
-    parser.add_argument(
-        "-v", "--version", action="version", version=f"auto-py-to-exe {__version__}"
-    )
+    parser.add_argument("-v", "--version", action="version", version=f"auto-py-to-exe {__version__}")
     args = parser.parse_args()
 
     # Setup config from arguments
@@ -121,5 +106,5 @@ def run():
     start_ui(logging_level, args.build_directory_override)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     run()
