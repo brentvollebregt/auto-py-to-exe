@@ -1,0 +1,106 @@
+import pandas as pd
+from sqlalchemy import create_engine,inspect
+import pyodbc
+#import shutil 
+
+def join_and_create_table(parameters):
+# Extract connection parameters
+    server = parameters['Server']
+    database = parameters['Database']
+    username = parameters['Username']
+    password = parameters['Password']
+    exists_status = parameters['Exists_Status']
+    target_schema = parameters['Final_Table_schema']
+    table2_schema = parameters['Table2_schema']
+    table_name1 = parameters['Table1']
+    table_name2 = parameters['Table2']
+    new_table1 = parameters['Final_Table']
+
+    # Read Excel file into pandas DataFrame
+    excel_file = r'C:\Users\bhara\OneDrive - Perspicuum Solutions GmbH\Documents\Desktop\voicecon\Source File\Auswertung Voicecon as of 2023-09-08 New.xlsx'
+
+    # Read the file with its Sheetname
+    df1 = pd.read_excel(excel_file, sheet_name=parameters['Sheets'])
+
+    # Create a connection to SQL Server
+    engine = create_engine(f'mssql+pyodbc://{username}:{password}@{server}/{database}?driver=ODBC+Driver+17+for+SQL+Server')
+
+    # Write DataFrame to SQL Server tables
+    # Create a connection string
+    connection_string = f'DRIVER={{ODBC Driver 17 for SQL Server}};SERVER={server};DATABASE={database};UID={username};PWD={password}'
+
+    inspector = inspect(engine)
+    if exists_status == 'replace':
+        # Table exists, do something if needed, or simply skip replacement
+        with pyodbc.connect(connection_string) as connection:
+            with connection.cursor() as cursor:
+                exists_query = f'''
+                IF OBJECT_ID('{target_schema}.{table_name1}', 'U') IS NOT NULL
+                BEGIN
+                    DROP TABLE {target_schema}.{table_name1};
+                END
+                '''
+                cursor.execute(exists_query)
+
+        df1.to_sql(table_name1, engine, schema=target_schema, index=False, if_exists='replace')
+
+    elif exists_status == 'append':
+        # Table doesn't exist, proceed with appending
+        df1.to_sql(table_name1, engine, schema=target_schema, index=False, if_exists='append')
+
+
+    try:
+        connection = pyodbc.connect(connection_string)
+        cursor = connection.cursor()
+        create_query = f'''
+        IF OBJECT_ID('{target_schema}.{new_table1}', 'U') IS NOT NULL
+            BEGIN
+                DROP TABLE {target_schema}.{new_table1};
+            END
+
+        IF OBJECT_ID('{target_schema}.{new_table1}', 'U') IS NULL
+            BEGIN
+                select [Produkt],[Provision],[KeyAuftrag Kunde],[Periode],[BeginDate] ,CASE 
+                    WHEN SUBSTRING(ISNULL(Newperiode, '2999-12-01'), 6, 2) = '.1' 
+                    THEN CAST((LEFT(ISNULL(Newperiode, '2999-12-01'), 5) + '10' + RIGHT(ISNULL(Newperiode, '2999-12-01'), 3)) AS DATE) 
+                    ELSE CAST(ISNULL(Newperiode, '2999-12-01') AS DATE) 
+                    END AS PostingPeriode
+                INTO {target_schema}.{new_table1}
+                from(
+                SELECT t1.Produkt [Produkt], 
+                    t1.Provision [Provision], 
+                    t1.Key_Auftrag_Kunde AS [KeyAuftrag Kunde], 
+                    CAST(CONVERT(DECIMAL(10, 2), t1.[Periode]) AS NVARCHAR(20)) AS [Periode],
+                    CAST(t1.[P-Beginn] AS DATE) AS [BeginDate],
+                    (LEFT(CAST(t1.[Periode] AS NVARCHAR(7)), 4) + '-' + RIGHT(CAST(t1.[Periode] AS NVARCHAR(7)), 2) + CAST('-01' AS NVARCHAR(3))) AS Newperiode
+                    FROM {database}.{target_schema}.{table_name1} AS t1
+                    INNER JOIN [MAN].[E_Date] AS t2 ON CAST(t1.[P-Beginn] AS DATE) = t2.TheDate
+                    WHERE t1.Produkt IS NOT NULL) sub1;
+            END
+        '''
+        cursor.execute(create_query)
+        connection.commit()
+        print("New table", new_table1, "created successfully.")
+    except Exception as e:
+        print(f"Error: {e}")
+    finally:
+        cursor.close()
+        connection.close()
+
+# Define the source excel file path
+#source_excel_file = r'C:\Users\bhara\OneDrive - Perspicuum Solutions GmbH\Documents\Desktop\voicecon\Source File\Auswertung Voicecon as of 2023-09-08 New.xlsx' 
+
+# Call the function with parameters and the excel file path
+
+# Read parameters from Excel file
+parameters_excel_file = r'C:\Users\bhara\OneDrive - Perspicuum Solutions GmbH\Documents\Desktop\voicecon\Parameters.xlsx'
+parameters_df = pd.read_excel(parameters_excel_file, sheet_name='parameters')
+parameters = parameters_df.iloc[0].to_dict()
+
+join_and_create_table(parameters)
+
+# Move the Excel file after processing
+#new_location = r'C:\Users\bhara\OneDrive - Perspicuum Solutions GmbH\Documents\Desktop\voicecon\Python code\Auswertung Voicecon as of 2023-09-08 New.xlsx'
+#shutil.move(source_excel_file, new_location)
+
+
