@@ -2137,7 +2137,7 @@ const supportedLanguages = [
     code: 'el',
   },
   {
-    name: 'Hindi(हिंदी)',
+    name: 'Hindi (हिंदी)',
     code: 'hi',
   },
   {
