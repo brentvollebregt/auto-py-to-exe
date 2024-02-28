@@ -28,6 +28,8 @@ Türkçe Talimatları [burada](./README-Turkish.md) bulabilirsiniz.
 
 Български README [тук](README-Bulgarian.md)
 
+इस फ़ाइल का हिंदी में अनुवाद के लिए यहाँ क्लिक करें।[यहाँ](./README-Hindi.md)
+
 ## Demo
 
 <p align="center">
