@@ -127,38 +127,6 @@ _आसान।_
 
 यदि आपको लगता है कि आपने इस उपकरण के साथ कोई समस्या पाई है, तो कृपया [CONTRIBUTING.md में "समस्या की रिपोर्ट करना" अनुभाग का पालन करें](./CONTRIBUTING.md#reporting-an-issue)।
 
-## अनुवाद
-
-| भाषा                                       | अनुवादक                                                                                   | अनुवादित                           |
-| ------------------------------------------- | -------------------------------------------------------------------------------------------- | ------------------------------------ |
-| अरबी (العربية)                            | [Tayeb-Ali](https://github.com/tayeb-ali)                                                    | UI                                   |
-| ब्राज़ीलियाई पुर्तगाली (Português Brasileiro) | [marleyas](https://github.com/marleyas), [reneoliveirajr](https://github.com/reneoliveirajr) | UI                                   |
-| बल्गेरियाई (Български)                       | [kbkozlev](https://github.com/kbkozlev)                                                      | UI and [README](README-Bulgarian.md) |
-| चीनी सरलीकृत (简体中文)               | [jiangzhe11](https://github.com/jiangzhe11)                                                  | UI and [README](./README-Chinese.md) |
-| चीनी पारंपरिक (繁體中文)              | [startgo](https://github.com/ystartgo)                                                       | UI                                   |
-| चेक (Čeština)                             | [Matto58](https://github.com/Matto58)                                                        | UI                                   |
-| डच (Nederlands)                          | [barremans](https://github.com/barremans)                                                    | UI                                   |
-| अंग्रेज़ी                                     | -                                                                                            | UI and README                        |
-| फिनिश (Suomen kieli)                      | [ZapX5](https://github.com/ZapX5)                                                            | UI and [README](./README-Finnish.md) |
-| फ्रेंच (Français)                           | [flaviedesp](https://github.com/flaviedesp)                                                  | UI                                   |
-| जर्मन (Deutsch)                            | [hebens](https://github.com/hebens), [ackhh](https://github.com/ackhh)                       | UI                                   |
-| यूनानी (Ελληνικά)                            | [sofronas](https://github.com/sofronas)                                                      | UI                                   |
-| इंडोनेशियाई (Bahasa Indonesia)               | [MarvinZhong](https://github.com/MarvinZhong)                                                | UI                                   |
-| इतालवी (Italiano)                          | [itsEmax64](https://github.com/itsEmax64)                                                    | UI                                   |
-| जापानी (日本語)                           | [NattyanTV](https://github.com/nattyan-tv)                                                   | UI                                   |
-| कोरियाई (한국어)                             | [jhk1090](https://github.com/jhk1090)                                                        | UI and [README](./README-Korean.md)  |
-| फारसी (فارسی)                             | [DrunkLeen](https://github.com/drunkleen), [Ar.dst](https://github.com/Ar-dst)               | UI and [README](./README-Persian.md) |
-| पोलिश (Polski)                             | [Akuczaku](https://github.com/Akuczaku)                                                      | UI                                   |
-| रूसी (Русский)                           | Oleg                                                                                         | UI                                   |
-| सर्बियाई                                     | [rina](https://github.com/sweatshirts)                                                       | UI                                   |
-| स्पेनी (Español)                           | [enriiquee](https://github.com/enriiquee)                                                    | UI                                   |
-| स्पेनी लैटिन (Español Latam)               | [Matyrela](https://github.com/Matyrela)                                                      | UI                                   |
-| थाई (ภาษาไทย)                              | [teerut26](https://github.com/teerut26)                                                      | UI (partial)                         |
-| तुर्की (Türkçe)                            | [mcagriaksoy](https://github.com/mcagriaksoy)                                                | UI and [README](./README-Turkish.md) |
-| यूक्रेनी (Українська)                      | [AndrejGorodnij](https://github.com/AndrejGorodnij)                                          | UI                                   |
-| वियतनामी (Tiếng Việt)                     | [7777Hecker](https://github.com/7777Hecker)                                                  | UI                                   |
-
-> क्या आप किसी अन्य भाषा के लिए अनुवाद जोड़ना चाहते हैं? CONTRIBUTING.md में ["अनुवाद जोड़ें या अद्यतन करें" अनुभाग](./CONTRIBUTING.md#add-or-update-a-translation) का पालन करें।
 
 ## Python 2.7 समर्थन
 
