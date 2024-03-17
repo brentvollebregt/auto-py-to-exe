@@ -5,6 +5,7 @@ import os
 import platform
 import socket
 import sys
+import requests
 from pathlib import Path
 
 from PyInstaller import __version__ as pyinstaller_version_string
@@ -39,9 +40,34 @@ def open_output_in_explorer(output_directory, input_filename, is_one_file):
         return False
     return True
 
+def check_latest_pyinstaller_version():
+    """Check the latest version of PyInstaller"""
+    try:
+        response = requests.get("https://api.github.com/repos/pyinstaller/pyinstaller/releases/latest")
+        response.raise_for_status()
+        latest_version = response.json()["tag_name"]
+        return latest_version
+    except requests.exceptions.RequestException:
+        return None
 
 def get_warnings():
     warnings = []
+
+    # Check pyinstaller version is it latest
+    try:
+        latest_version = check_latest_pyinstaller_version()
+        if latest_version is None:
+            raise Exception("Unable to check for the latest version of PyInstaller.")
+        elif latest_version != pyinstaller_version_string:
+            message = "You are using an outdated version of PyInstaller."
+            message += f"\nLatest version: {latest_version}"
+            message += f"\nYour version: {pyinstaller_version_string}"
+            message += "\nPlease upgrade PyInstaller: python -m pip install pyinstaller --upgrade"
+            warnings.append({"message": message, "link": None})
+
+    except Exception as e:
+        message = f"\nError: {e}"
+        warnings.append({"message": message, "link": None})
 
     try:
         pyinstaller_version = parse_version_tuple(pyinstaller_version_string)
