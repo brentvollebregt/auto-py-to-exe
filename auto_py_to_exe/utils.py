@@ -46,6 +46,8 @@ def check_latest_pyinstaller_version():
         response = requests.get("https://api.github.com/repos/pyinstaller/pyinstaller/releases/latest")
         response.raise_for_status()
         latest_version = response.json()["tag_name"]
+        if latest_version.startswith("v"):
+            latest_version = latest_version[1:]
         return latest_version
     except requests.exceptions.RequestException:
         return None
