@@ -55,7 +55,7 @@ def get_warnings():
 
     # Check pyinstaller version is it latest
     try:
-        latest_version = check_latest_pyinstaller_version()
+        latest_pyinstaller_version = get_latest_pyinstaller_version()
         if latest_version is None:
             raise Exception("Unable to check for the latest version of PyInstaller.")
         elif latest_version != pyinstaller_version_string:
