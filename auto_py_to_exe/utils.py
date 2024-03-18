@@ -66,7 +66,7 @@ def get_warnings():
             warnings.append({"message": message, "link": None})
 
     except Exception as e:
-        message = f"\nError: {e}"
+        message = f"\nWarning: {e}"
         warnings.append({"message": message, "link": None})
 
     try:
