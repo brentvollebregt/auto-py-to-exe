@@ -45,8 +45,8 @@ def get_latest_pyinstaller_version():
     try:
         response = requests.get("https://api.github.com/repos/pyinstaller/pyinstaller/releases/latest")
         response.raise_for_status()
-        latest_version = response.json()["tag_name"]
-        return latest_version.strip('v')
+        latest_pyinstaller_version = response.json()["tag_name"]
+        return latest_pyinstaller_version.strip('v')
     except requests.exceptions.RequestException:
         return None
 
@@ -56,11 +56,11 @@ def get_warnings():
     # Check pyinstaller version is it latest
     try:
         latest_pyinstaller_version = get_latest_pyinstaller_version()
-        if latest_version is None:
+        if latest_pyinstaller_version is None:
             raise Exception("Unable to check for the latest version of PyInstaller.")
-        elif latest_version != pyinstaller_version_string:
+        elif latest_pyinstaller_version != pyinstaller_version_string:
             message = "A newer version of PyInstaller has been released."
-            message += f"\nLatest version: {latest_version}"
+            message += f"\nLatest version: {latest_pyinstaller_version}"
             message += f"\nYour version: {pyinstaller_version_string}"
             message += "\nUpgrade using: python -m pip install pyinstaller --upgrade"
             warnings.append({"message": message, "link": None})
