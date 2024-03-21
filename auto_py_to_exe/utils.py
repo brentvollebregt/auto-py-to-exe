@@ -40,15 +40,17 @@ def open_output_in_explorer(output_directory, input_filename, is_one_file):
         return False
     return True
 
+
 def get_latest_pyinstaller_version():
     """Check the latest version of PyInstaller"""
     try:
         response = requests.get("https://api.github.com/repos/pyinstaller/pyinstaller/releases/latest")
         response.raise_for_status()
         latest_pyinstaller_version = response.json()["tag_name"]
-        return latest_pyinstaller_version.strip('v')
+        return latest_pyinstaller_version.strip("v")
     except requests.exceptions.RequestException:
         return None
+
 
 def get_warnings():
     warnings = []
