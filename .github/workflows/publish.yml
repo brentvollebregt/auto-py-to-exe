@@ -73,7 +73,6 @@ jobs:
 
       - name: Get module version
         id: get_module_version
-        shell: bash
         run: |
           version=$(python -c "from auto_py_to_exe import __version__ as v; print(v)")
           echo "Module version: $version"
@@ -130,8 +129,7 @@ jobs:
               github_output_file.write(f"changes<<{delimiter}\n{changes}\n{delimiter}")
 
       - name: Build distribution
-        run: |
-          python setup.py sdist bdist_wheel --universal
+        run: python setup.py sdist bdist_wheel --universal
 
       - name: Publish package
         uses: pypa/gh-action-pypi-publish@c7f29f7adef1a245bd91520e94867e5c6eedddcc
@@ -141,7 +139,7 @@ jobs:
 
       - name: Create release
         id: create_release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           tag_name: v${{ steps.get_module_version.outputs.version }}
           name: v${{ steps.get_module_version.outputs.version }}
