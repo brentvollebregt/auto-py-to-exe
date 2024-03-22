@@ -1,4 +1,4 @@
-<h1 align="center">ऑटो पाई टू ईक्सी</h1>
+<h1 align="center">Auto PY to EXE</h1>
 <p align="center">एक .py से .exe में रूपांतरक जो एक सरल ग्राफिकल इंटरफेस और पाइथन में <a href="https://pyinstaller.readthedocs.io/en/stable/index.html">PyInstaller</a> का उपयोग करता है।</p>
 
 <p align="center">
