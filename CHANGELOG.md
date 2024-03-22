@@ -1,5 +1,18 @@
 # Changelog
 
+## 2.43.0
+
+🚀 Enhancements
+
+- [#469](https://github.com/brentvollebregt/auto-py-to-exe/pull/469): Notify users of new PyInstaller versions
+- [#464](https://github.com/brentvollebregt/auto-py-to-exe/pull/464): Added Hindi translations
+- Notify users of new auto-py-to-exe versions
+
+🏆 Contributors
+
+- [Mehmet Cagri Aksoy](mcagriaksoy)
+- [Triach Rold](https://github.com/triach-rold)
+
 ## 2.42.0
 
 🚀 Enhancements
