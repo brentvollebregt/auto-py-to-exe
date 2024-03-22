@@ -5,10 +5,12 @@ import os
 import platform
 import socket
 import sys
-import requests
 from pathlib import Path
 
+import requests
 from PyInstaller import __version__ as pyinstaller_version_string
+
+from . import __version__
 
 
 class ForwardToFunctionStream(io.TextIOBase):
@@ -41,32 +43,63 @@ def open_output_in_explorer(output_directory, input_filename, is_one_file):
     return True
 
 
-def get_latest_pyinstaller_version():
-    """Check the latest version of PyInstaller"""
+class PackageVersion:
+    def __init__(self, version_string, url) -> None:
+        self.version_string = version_string
+        self.version = parse_version_tuple(version_string)
+        self.url = url
+
+
+def __get_latest_version_for_library(library_repo):
     try:
-        response = requests.get("https://api.github.com/repos/pyinstaller/pyinstaller/releases/latest")
+        response = requests.get(f"https://api.github.com/repos/{library_repo}/releases/latest")
         response.raise_for_status()
-        latest_pyinstaller_version = response.json()["tag_name"]
-        return latest_pyinstaller_version.strip("v")
+        response_data = response.json()
+        latest_release_tag_name = response_data["tag_name"].strip("v")
+        return PackageVersion(latest_release_tag_name.strip("v"), response_data["html_url"])
     except requests.exceptions.RequestException:
         return None
+
+
+def __get_latest_auto_py_to_exe_version():
+    """Get the latest version of auto-py-to-exe"""
+    return __get_latest_version_for_library("brentvollebregt/auto-py-to-exe")
+
+
+def __get_latest_pyinstaller_version():
+    """Get the latest version of PyInstaller"""
+    return __get_latest_version_for_library("pyinstaller/pyinstaller")
 
 
 def get_warnings():
     warnings = []
 
-    # Check pyinstaller version is it latest
+    # Check auto-py-to-exe version is it latest
     try:
-        latest_pyinstaller_version = get_latest_pyinstaller_version()
+        current_auto_py_to_exe_version = parse_version_tuple(__version__)
+        latest_auto_py_to_exe_version = __get_latest_auto_py_to_exe_version()
+        if latest_auto_py_to_exe_version is None:
+            raise Exception("Unable to check for the latest version of auto-py-to-exe.")
+        elif latest_auto_py_to_exe_version.version > current_auto_py_to_exe_version:
+            message = f"A new version of auto-py-to-exe has been released: {__version__} → {latest_auto_py_to_exe_version.version_string}"
+            message += "\nUpgrade using: python -m pip install auto-py-to-exe --upgrade"
+            warnings.append({"message": message, "link": latest_auto_py_to_exe_version.url})
+    except Exception as e:
+        message = f"\nWarning: {e}"
+        warnings.append({"message": message, "link": None})
+
+    # Check PyInstaller version is it latest
+    try:
+        current_pyinstaller_version = parse_version_tuple(pyinstaller_version_string)
+        latest_pyinstaller_version = __get_latest_pyinstaller_version()
         if latest_pyinstaller_version is None:
             raise Exception("Unable to check for the latest version of PyInstaller.")
-        elif latest_pyinstaller_version != pyinstaller_version_string:
-            message = "A newer version of PyInstaller has been released."
-            message += f"\nLatest version: {latest_pyinstaller_version}"
-            message += f"\nYour version: {pyinstaller_version_string}"
+        elif latest_pyinstaller_version.version > current_pyinstaller_version:
+            message = f"A new version of PyInstaller has been released: {pyinstaller_version_string} → {latest_pyinstaller_version.version_string}"
             message += "\nUpgrade using: python -m pip install pyinstaller --upgrade"
-            warnings.append({"message": message, "link": None})
-
+            warnings.append({"message": message, "link": latest_pyinstaller_version.url})
+    except VersionParseError:
+        pass  # Don't warn about a new version when using a non-official release
     except Exception as e:
         message = f"\nWarning: {e}"
         warnings.append({"message": message, "link": None})
@@ -148,6 +181,13 @@ def get_port():
     return port
 
 
+class VersionParseError(Exception):
+    pass
+
+
 def parse_version_tuple(version_string):
     """Turn a version string into a tuple of integers e.g. "1.2.3" -> (1, 2, 3)"""
-    return tuple(map(int, (version_string.split("."))))
+    try:
+        return tuple(map(int, (version_string.split("."))))
+    except ValueError:
+        raise VersionParseError()
