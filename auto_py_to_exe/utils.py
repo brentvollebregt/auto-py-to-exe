@@ -81,12 +81,12 @@ def get_warnings():
         if latest_auto_py_to_exe_version is None:
             raise Exception("Unable to check for the latest version of auto-py-to-exe.")
         elif latest_auto_py_to_exe_version.version > current_auto_py_to_exe_version:
-            message = f"A new version of auto-py-to-exe has been released: {__version__} → {latest_auto_py_to_exe_version.version_string}"
+            message = f'<a href="{latest_auto_py_to_exe_version.url}" target="_blank">A new version of auto-py-to-exe has been released</a>: {__version__} → {latest_auto_py_to_exe_version.version_string}'
             message += "\nUpgrade using: python -m pip install auto-py-to-exe --upgrade"
-            warnings.append({"message": message, "link": latest_auto_py_to_exe_version.url})
+            warnings.append(message)
     except Exception as e:
         message = f"\nWarning: {e}"
-        warnings.append({"message": message, "link": None})
+        warnings.append(message)
 
     # Check PyInstaller version is it latest
     try:
@@ -95,14 +95,14 @@ def get_warnings():
         if latest_pyinstaller_version is None:
             raise Exception("Unable to check for the latest version of PyInstaller.")
         elif latest_pyinstaller_version.version > current_pyinstaller_version:
-            message = f"A new version of PyInstaller has been released: {pyinstaller_version_string} → {latest_pyinstaller_version.version_string}"
+            message = f'<a href="{latest_pyinstaller_version.url}" target="_blank">A new version of PyInstaller has been released</a>: {pyinstaller_version_string} → {latest_pyinstaller_version.version_string}'
             message += "\nUpgrade using: python -m pip install pyinstaller --upgrade"
-            warnings.append({"message": message, "link": latest_pyinstaller_version.url})
+            warnings.append(message)
     except VersionParseError:
         pass  # Don't warn about a new version when using a non-official release
     except Exception as e:
         message = f"\nWarning: {e}"
-        warnings.append({"message": message, "link": None})
+        warnings.append(message)
 
     try:
         pyinstaller_version = parse_version_tuple(pyinstaller_version_string)
@@ -112,7 +112,7 @@ def get_warnings():
             pyinstaller_version=pyinstaller_version_string
         )
         message += "\nIf this is an official release, please report this issue on GitHub."
-        warnings.append({"message": message, "link": None})
+        warnings.append(message)
         return warnings
 
     # Make sure PyInstaller 3.4 or above is being used with Python 3.7
@@ -123,7 +123,7 @@ def get_warnings():
                 pyinstaller_version=pyinstaller_version_string
             )
             message += "\nPlease upgrade PyInstaller: python -m pip install pyinstaller --upgrade"
-            warnings.append({"message": message, "link": None})
+            warnings.append(message)
     except ValueError:
         pass  # Dev branches will have pyinstaller_version as a string in the form X.Y.devZ+HASH. Ignore it if this is the case.
 
@@ -139,7 +139,7 @@ def get_warnings():
                 pyinstaller_version=pyinstaller_version_string
             )
             message += "\nIt is highly recommended to update your version of PyInstaller using: python -m pip install pyinstaller --upgrade"
-            warnings.append({"message": message, "link": None})
+            warnings.append(message)
     except ValueError:
         pass  # Dev branches will have pyinstaller_version as a string in the form X.Y.devZ+HASH. Ignore it if this is the case.
 
@@ -151,23 +151,23 @@ def get_warnings():
                 pyinstaller_version=pyinstaller_version_string
             )
             message += "\nPlease upgrade PyInstaller: python -m pip install pyinstaller --upgrade"
-            warnings.append({"message": message, "link": None})
+            warnings.append(message)
     except ValueError:
         pass  # Dev branches will have pyinstaller_version as a string in the form X.Y.devZ+HASH. Ignore it if this is the case.
 
     # If Python 3.10.0 is being used, we are probably going to see `IndexError: tuple index out of range`.
     if sys.version_info.major == 3 and sys.version_info.minor == 10 and sys.version_info.micro == 0:
-        message = "You are using Python 3.10.0. This version of Python has a bug that causes PyInstaller to fail."
+        message = 'You are using Python 3.10.0. <a href="https://github.com/brentvollebregt/auto-py-to-exe/issues/215" target="_blank">This version of Python has a bug that causes PyInstaller to fail.</a>'
         message += "\nPlease upgrade to Python 3.10.1 or above."
-        warnings.append({"message": message, "link": "https://github.com/brentvollebregt/auto-py-to-exe/issues/215"})
+        warnings.append(message)
 
     # Make sure we are not using Python from the Windows Store
     if r"Packages\PythonSoftwareFoundation.Python." in sys.executable:
-        message = "It looks like you may be using Python from the Windows Store, the Python binary you are currently using is at:"
+        message = "It looks like you may be using Python from the Windows Store, the Python binary you are currently using is at: "
         message += '"' + sys.executable + '"'
         message += "\n\nPython from the Windows Store is not supported by PyInstaller so you may get errors referencing \"win32ctypes.pywin32.pywintypes.error: (1920, 'LoadLibraryEx', 'The file cannot be accessed by the system'\"."
-        message += "\nTo fix this, use a distribution of Python from python.org."
-        warnings.append({"message": message, "link": "https://github.com/brentvollebregt/auto-py-to-exe/issues/166"})
+        message += '\n<a href="https://github.com/brentvollebregt/auto-py-to-exe/issues/166#issuecomment-827492005" target="_blank">To fix this, use a distribution of Python from python.org.</a>'
+        warnings.append(message)
 
     return warnings
 

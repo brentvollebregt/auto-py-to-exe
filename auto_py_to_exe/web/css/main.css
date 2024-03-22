@@ -104,11 +104,7 @@
 
 #warnings > div > p {
   margin: 0;
-}
-
-#warnings > div > a {
-  margin-left: auto;
-  text-decoration: none;
+  white-space: pre-wrap;
 }
 
 /* Sections */

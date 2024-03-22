@@ -408,7 +408,7 @@ const setupWarnings = (warnings) => {
 
   const warningsRootNode = document.getElementById('warnings');
 
-  warnings.forEach((warning) => {
+  warnings.forEach((warningContent) => {
     // Create wrapper
     const wrapperNode = document.createElement('div');
     warningsRootNode.appendChild(wrapperNode);
@@ -416,16 +416,7 @@ const setupWarnings = (warnings) => {
     // Create message
     const messageNode = document.createElement('p');
     wrapperNode.appendChild(messageNode);
-    messageNode.innerText = warning.message;
-
-    // Add link is provided
-    if (warning.link !== null) {
-      const linkNodeContainer = document.createElement('a');
-      wrapperNode.appendChild(linkNodeContainer);
-      linkNodeContainer.href = warning.link;
-      linkNodeContainer.innerText = 'Read more here.';
-      linkNodeContainer.target = '_blank';
-    }
+    messageNode.innerHTML = warningContent;
   });
 };
 
