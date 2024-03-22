@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.43.1
+
+🐛 Bug Fixes
+
+- [#472](https://github.com/brentvollebregt/auto-py-to-exe/issues/472): Fixed missing `requests` dependency when installing
+
 ## 2.43.0
 
 🚀 Enhancements
