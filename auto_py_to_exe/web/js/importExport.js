@@ -47,7 +47,9 @@ const onConfigurationImport = async () => {
   }
 
   const data = await eel.import_configuration()();
-  importConfiguration(data);
+  if (data !== null) {
+    importConfiguration(data);
+  }
 };
 
 const onConfigurationExport = async () => {
