@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.43.2
+
+🐛 Bug Fixes
+
+- [#473](https://github.com/brentvollebregt/auto-py-to-exe/issues/473): Stop freezing when selecting files/folders on macOS
+
 ## 2.43.1
 
 🐛 Bug Fixes
