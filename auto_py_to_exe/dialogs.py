@@ -25,7 +25,8 @@ except ImportError:
 
 root = Tk()
 root.withdraw()
-root.iconbitmap(str(Path(__file__).parent / "web/favicon.ico"))
+if platform.system() == "Windows":
+    root.iconbitmap(str(Path(__file__).parent / "web/favicon.ico"))
 root.wm_attributes("-topmost", 1)
 
 
