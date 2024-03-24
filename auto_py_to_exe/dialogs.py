@@ -28,7 +28,7 @@ def ask_file(file_type):
     root.withdraw()
     root.wm_attributes("-topmost", 1)
     if (file_type is None) or (platform.system() == "Darwin"):
-        file_path = askopenfilename(parent=root)
+        file_path = askopenfilename()
     else:
         if file_type == "python":
             file_types = [("Python files", "*.py;*.pyw"), ("All files", "*")]
@@ -38,7 +38,7 @@ def ask_file(file_type):
             file_types = [("JSON Files", "*.json"), ("All files", "*")]
         else:
             file_types = [("All files", "*")]
-        file_path = askopenfilename(parent=root, filetypes=file_types)
+        file_path = askopenfilename(filetypes=file_types)
     root.update()
 
     # bool(file_path) will help filter our the negative cases; an empty string or an empty tuple
@@ -50,7 +50,7 @@ def ask_files():
     root = Tk()
     root.withdraw()
     root.wm_attributes("-topmost", 1)
-    file_paths = askopenfilenames(parent=root)
+    file_paths = askopenfilenames()
     root.update()
 
     return file_paths if bool(file_paths) else None
@@ -61,7 +61,7 @@ def ask_folder():
     root = Tk()
     root.withdraw()
     root.wm_attributes("-topmost", 1)
-    folder = askdirectory(parent=root)
+    folder = askdirectory()
     root.update()
 
     return folder if bool(folder) else None
@@ -74,13 +74,13 @@ def ask_file_save_location(file_type):
     root.wm_attributes("-topmost", 1)
 
     if (file_type is None) or (platform.system() == "Darwin"):
-        file_path = asksaveasfilename(parent=root)
+        file_path = asksaveasfilename()
     else:
         if file_type == "json":
             file_types = [("JSON Files", "*.json"), ("All files", "*")]
         else:
             file_types = [("All files", "*")]
-        file_path = asksaveasfilename(parent=root, filetypes=file_types)
+        file_path = asksaveasfilename(filetypes=file_types)
     root.update()
 
     if bool(file_path):
