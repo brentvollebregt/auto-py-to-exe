@@ -1,5 +1,6 @@
 import platform
 import sys
+from pathlib import Path
 
 try:
     from tkinter import Tk
@@ -22,11 +23,14 @@ except ImportError:
     from tkFileDialog import askdirectory, askopenfilename, askopenfilenames, asksaveasfilename
 
 
+root = Tk()
+root.withdraw()
+root.iconbitmap(str(Path(__file__).parent / "web/favicon.ico"))
+root.wm_attributes("-topmost", 1)
+
+
 def ask_file(file_type):
     """Ask the user to select a file"""
-    root = Tk()
-    root.withdraw()
-    root.wm_attributes("-topmost", 1)
     if (file_type is None) or (platform.system() == "Darwin"):
         file_path = askopenfilename()
     else:
@@ -38,7 +42,7 @@ def ask_file(file_type):
             file_types = [("JSON Files", "*.json"), ("All files", "*")]
         else:
             file_types = [("All files", "*")]
-        file_path = askopenfilename(filetypes=file_types)
+        file_path = askopenfilename(title="Select a file", filetypes=file_types)
     root.update()
 
     # bool(file_path) will help filter our the negative cases; an empty string or an empty tuple
@@ -47,10 +51,7 @@ def ask_file(file_type):
 
 def ask_files():
     """Ask the user to select one or more files"""
-    root = Tk()
-    root.withdraw()
-    root.wm_attributes("-topmost", 1)
-    file_paths = askopenfilenames()
+    file_paths = askopenfilenames(title="Select one or more files")
     root.update()
 
     return file_paths if bool(file_paths) else None
@@ -58,10 +59,7 @@ def ask_files():
 
 def ask_folder():
     """Ask the user to select a folder"""
-    root = Tk()
-    root.withdraw()
-    root.wm_attributes("-topmost", 1)
-    folder = askdirectory()
+    folder = askdirectory(title="Select a folder")
     root.update()
 
     return folder if bool(folder) else None
@@ -69,18 +67,14 @@ def ask_folder():
 
 def ask_file_save_location(file_type):
     """Ask the user where to save a file"""
-    root = Tk()
-    root.withdraw()
-    root.wm_attributes("-topmost", 1)
-
     if (file_type is None) or (platform.system() == "Darwin"):
-        file_path = asksaveasfilename()
+        file_path = asksaveasfilename(title="Select where to save")
     else:
         if file_type == "json":
             file_types = [("JSON Files", "*.json"), ("All files", "*")]
         else:
             file_types = [("All files", "*")]
-        file_path = asksaveasfilename(filetypes=file_types)
+        file_path = asksaveasfilename(title="Select where to save", filetypes=file_types)
     root.update()
 
     if bool(file_path):
