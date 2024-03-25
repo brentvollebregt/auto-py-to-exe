@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.43.3
+
+🐛 Bug Fixes
+
+- [#475](https://github.com/brentvollebregt/auto-py-to-exe/issues/475): Fix warning text colour in dark mode
+
 ## 2.43.2
 
 🐛 Bug Fixes
