@@ -107,6 +107,11 @@
   white-space: pre-wrap;
 }
 
+#warnings > div > p,
+#warnings > div > p a {
+  color: var(--warning-text);
+}
+
 /* Sections */
 
 div[id*='section'] {

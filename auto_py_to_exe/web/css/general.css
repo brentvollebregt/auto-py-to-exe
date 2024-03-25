@@ -25,6 +25,7 @@
   --title: #666666;
   --warning-background: #fff3cd;
   --warning-border: #a0987c;
+  --warning-text: #000000;
 
   --border-radius: 4px;
 }
@@ -35,6 +36,7 @@
   --text: #ffffff;
 
   --title: #e2e2e2;
+  --warning-background: #ffdc6d;
 }
 
 * {
@@ -107,9 +109,7 @@ button {
   border-radius: var(--border-radius);
   background: transparent;
   padding: 3px 8px;
-  transition:
-    border 0.3s,
-    background 0.3s;
+  transition: border 0.3s, background 0.3s;
   border-style: solid;
   border-width: 2px;
 }
