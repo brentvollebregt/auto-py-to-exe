@@ -16,7 +16,7 @@
 
 To read README in English, press [here](./README.md)
 
-阅读中文版的README ，点击 [这里](./README-Chinese.md)
+阅读中文版的 README ，点击 [这里](./README-Chinese.md)
 
 Suomenkieliset käyttöohjeet löydät [täältä](./README-Finnish.md)
 

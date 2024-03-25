@@ -14,7 +14,7 @@
     <a href="https://www.buymeacoffee.com/brentvollebregt"><img src="https://img.shields.io/badge/-buy_me_a%C2%A0beer-gray?logo=buy-me-a-coffee" alt="Lahjoita"></a>
 </p>
 
-阅读中文版的README ，点击 [这里](./README-Chinese.md)
+阅读中文版的 README ，点击 [这里](./README-Chinese.md)
 
 Türkçe Talimatları [burada](./README-Turkish.md) bulabilirsiniz.
 

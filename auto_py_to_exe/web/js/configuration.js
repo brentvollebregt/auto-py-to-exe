@@ -66,7 +66,9 @@ const getCurrentCommand = () => {
   const entryScriptConfig = currentConfiguration.find((c) => c.optionDest === 'filenames');
   const entryScript = entryScriptConfig === undefined ? '' : entryScriptConfig.value;
 
-  return `pyinstaller ${optionsAndValues.join(' ')} ${getNonPyinstallerConfiguration().manualArguments} "${entryScript}"`;
+  return `pyinstaller ${optionsAndValues.join(' ')} ${
+    getNonPyinstallerConfiguration().manualArguments
+  } "${entryScript}"`;
 };
 
 const updateCurrentCommandDisplay = () => {
