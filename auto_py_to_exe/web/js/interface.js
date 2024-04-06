@@ -454,9 +454,7 @@ const _toggleTheme = () => {
 
 // Check if user's default color scheme is dark
 const setupTheme = () => {
-  const toggleButton = document.querySelector('span#theme');
-
-  toggleButton.addEventListener('click', _toggleTheme);
+  document.getElementById('theme-toggle').addEventListener('click', _toggleTheme);
 
   if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
     _toggleTheme();

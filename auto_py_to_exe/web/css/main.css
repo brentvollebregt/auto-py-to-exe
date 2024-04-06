@@ -2,7 +2,7 @@
 
 #header {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: auto 1fr;
   margin-top: 18px;
 }
 
@@ -49,12 +49,6 @@
   text-align: right;
 }
 
-#header .extra-links #theme img {
-  height: 20px;
-  user-select: none;
-  cursor: pointer;
-}
-
 #header .extra-links a {
   filter: grayscale(1);
   transition: filter 0.3s;
@@ -79,9 +73,27 @@
   margin-top: 4px;
 }
 
-#header .extra-links #language-selection {
+#header .ui-config {
   margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  justify-content: flex-end;
+}
+
+#header .ui-config [for='language-selection'] {
+  line-height: 0;
+}
+
+#header .ui-config #language-selection {
   padding: 0 6px;
+}
+
+#header .ui-config #theme-toggle {
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  height: 18px;
 }
 
 #language-selection {
