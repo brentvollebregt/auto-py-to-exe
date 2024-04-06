@@ -28,7 +28,7 @@
 
 🏆 Contributors
 
-- [Mehmet Cagri Aksoy](mcagriaksoy)
+- [Mehmet Cagri Aksoy](https://github.com/mcagriaksoy)
 - [Triach Rold](https://github.com/triach-rold)
 
 ## 2.42.0
