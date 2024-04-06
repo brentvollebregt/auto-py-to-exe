@@ -123,6 +123,10 @@ jobs:
               raise Exception(f"Changes were not detected in CHANGELOG.md for version {version}")
           changes = re.search(changes_for_target_version_regex, changelog).group(1).strip()
 
+          # Replace GitHub user links with @mentions
+          github_user_regex = re.compile(r"\[[^\]]+\]\(https:\/\/github\.com\/([A-Za-z0-9-]+)\)")
+          changes = github_user_regex.sub(r'@\1', changes)
+
           # Get the previous version
           versions_regex = r"^## (\d+\.\d+\.\d+)(?=^## \d+\.\d+\.\d+|$)"
           versions = re.findall(versions_regex, changelog, re.MULTILINE)
