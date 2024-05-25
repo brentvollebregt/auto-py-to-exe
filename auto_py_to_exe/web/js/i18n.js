@@ -369,7 +369,7 @@ const translationMap = {
         ko: '출력 디렉토리',
         bg: 'Изходяща директория',
       },
-      increaseRecursionLimhe: '',
+      increaseRecursionLimit: '',
         it: {
         en: 'Increase Recursion Limit',
         zh: '增加递归限制',
@@ -1214,8 +1214,8 @@ const translationMap = {
           `<a ${onFileModeAdditionalFilesHelpAnchorTagContents}>read this</a>\n` +
           'और अपने कोड को PyInstaller के साथ काम करने के लिए अपडेट करें।',
         he: 'היזהר בעת שימוש בקבצים נוספים במצב קובץ-יחיד;\n' +
-        `<a ${onFileModeAdditionalFilesHelpAnchorTagContents}>קרא את זה</a>\n` +
-        'ועדכן את הקוד שלך לעבודה עם PyInstaller.',
+          `<a ${onFileModeAdditionalFilesHelpAnchorTagContents}>קרא את זה</a>\n` +
+          'ועדכן את הקוד שלך לעבודה עם PyInstaller.',
         it:
           'Fai attenzione quando usi più di un file in modalità un file;\n' +
           `<a ${onFileModeAdditionalFilesHelpAnchorTagContents}>leggi qui (articolo in inglese)</a>\n` +
@@ -2044,7 +2044,7 @@ const translationMap = {
         th: 'การดำเนินการนี้จะเขียนทับเอาต์พุตก่อนหน้าในโฟลเดอร์เอาต์พุต\nทำต่อหรือไม่',
         fr: 'Cette action écrasera une sortie précédente dans le dossier de sortie.\nContinuer ?',
         hi: 'यह कार्रवाई आउटपुट फ़ोल्डर में पिछले आउटपुट को अधिलेखित कर देगी। \n क्या आप जारी रखना चाहते हैं?',
-        he: '',
+        he: 'פעולה זו תדרוס את הפלט בתיקיה של הפעולה הקודמת. האם להמשיך?',
         it: 'Questa azione sovrascriverà un output precedente nella cartella di output.\nContinuare?',
         id: 'Tindakan ini akan menimpa sebuah output sebelumnya di folder output.\nLanjutkan?',
         cs: 'Toto přepíše předchozí výstup.\nPokračovat?',
