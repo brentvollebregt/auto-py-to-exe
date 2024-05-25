@@ -369,8 +369,7 @@ const translationMap = {
         ko: '출력 디렉토리',
         bg: 'Изходяща директория',
       },
-      increaseRecursionLimit: '',
-        it: {
+      increaseRecursionLimit: {
         en: 'Increase Recursion Limit',
         zh: '增加递归限制',
         zh_tw: '增加遞歸限制',
