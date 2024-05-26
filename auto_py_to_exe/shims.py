@@ -29,7 +29,7 @@ def install_bottle_import_redirect_shim():
         return
 
     print(
-        f"Warning: Installing shim for bottle import redirects (using Python={sys.version_info[0]}.{sys.version_info[1]}.{sys.version_info[2]} and bottle={bottle.__version__})"
+        f"Info: Installing shim for bottle import redirects (using Python={sys.version_info[0]}.{sys.version_info[1]}.{sys.version_info[2]} and bottle={bottle.__version__})"
     )
 
     # Add the shim
