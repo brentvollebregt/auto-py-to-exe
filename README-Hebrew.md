@@ -132,41 +132,6 @@ _קללללל._
 
 אם אתה סבור שמצאת בעיה בכלי זה, עקוב אחר הסעיף ["דיווח על בעיה" ב-CONTRIBUTING.md](./CONTRIBUTING.md#reporting-an-issue).
 
-## תרגומים
-
-| שפה                                    | תורגם על ידי                                                                                   | מה תורגם                           |
-| ------------------------------------------- | -------------------------------------------------------------------------------------------- | ------------------------------------ |
-| Arabic (العربية)                            | [Tayeb-Ali](https://github.com/tayeb-ali)                                                    | UI                                   |
-| Brazilian Portuguese (Português Brasileiro) | [marleyas](https://github.com/marleyas), [reneoliveirajr](https://github.com/reneoliveirajr) | UI                                   |
-| Bulgarian (Български)                       | [kbkozlev](https://github.com/kbkozlev)                                                      | UI and [README](README-Bulgarian.md) |
-| Chinese Simplified (简体中文)               | [jiangzhe11](https://github.com/jiangzhe11)                                                  | UI and [README](./README-Chinese.md) |
-| Chinese Traditional (繁體中文)              | [startgo](https://github.com/ystartgo)                                                       | UI                                   |
-| Czech (Čeština)                             | [Matto58](https://github.com/Matto58)                                                        | UI                                   |
-| Dutch (Nederlands)                          | [barremans](https://github.com/barremans)                                                    | UI                                   |
-| English                                     | -                                                                                            | UI and README                        |
-| Finnish (Suomen kieli)                      | [ZapX5](https://github.com/ZapX5)                                                            | UI and [README](./README-Finnish.md) |
-| French (Français)                           | [flaviedesp](https://github.com/flaviedesp)                                                  | UI                                   |
-| German (Deutsch)                            | [hebens](https://github.com/hebens), [ackhh](https://github.com/ackhh)                       | UI                                   |
-| Greek (Ελληνικά)                            | [sofronas](https://github.com/sofronas)                                                      | UI                                   |
-| Hindi (हिन्दी)                              | [triach-rold](https://github.com/triach-rold)                                                | UI and [README](./README-Hindi.md)   |
-Hebrew (עברית)                              | [RonBentata](https://github.com/ronbentata)                                                | UI and [README](./README-Hebrew.md)   |
-| Indonesian (Bahasa Indonesia)               | [MarvinZhong](https://github.com/MarvinZhong)                                                | UI                                   |
-| Italian (Italiano)                          | [itsEmax64](https://github.com/itsEmax64)                                                    | UI                                   |
-| Japanese (日本語)                           | [NattyanTV](https://github.com/nattyan-tv)                                                   | UI                                   |
-| Korean (한국어)                             | [jhk1090](https://github.com/jhk1090)                                                        | UI and [README](./README-Korean.md)  |
-| Persian (فارسی)                             | [DrunkLeen](https://github.com/drunkleen), [Ar.dst](https://github.com/Ar-dst)               | UI and [README](./README-Persian.md) |
-| Polish (Polski)                             | [Akuczaku](https://github.com/Akuczaku)                                                      | UI                                   |
-| Russian (Русский)                           | Oleg                                                                                         | UI                                   |
-| Serbian                                     | [rina](https://github.com/sweatshirts)                                                       | UI                                   |
-| Spanish (Español)                           | [enriiquee](https://github.com/enriiquee)                                                    | UI                                   |
-| Spanish Latam (Español Latam)               | [Matyrela](https://github.com/Matyrela)                                                      | UI                                   |
-| Thai (ภาษาไทย)                              | [teerut26](https://github.com/teerut26)                                                      | UI (partial)                         |
-| Turkish (Türkçe)                            | [mcagriaksoy](https://github.com/mcagriaksoy)                                                | UI and [README](./README-Turkish.md) |
-| Ukrainian (Українська)                      | [AndrejGorodnij](https://github.com/AndrejGorodnij)                                          | UI                                   |
-| Vietnamese (Tiếng Việt)                     | [7777Hecker](https://github.com/7777Hecker)                                                  | UI                                   |
-
-> רוצה להוסיף תרגום לשפה נוספת? יש לעקוב אחר ההוראות תחת האזור ["Add or Update a Translation" בקובץ CONTRIBUTING.md](./CONTRIBUTING.md#add-or-update-a-translation).
-
 ## תמיכה של Python 2.7 
 
 החל מגרסא [PyInstaller v4.0](https://github.com/pyinstaller/pyinstaller/releases/tag/v4.0) אשר שוחררה בתאריך Aug 9 2020, Python 2.7 לא נתמכת; למרות שניתן עדיין להשתמש בכלי זה עם Python 2.7 על ידי התקנת גרסא ישנה של PyInstaller. [PyInstaller v3.6](https://github.com/pyinstaller/pyinstaller/releases/tag/v3.6) הייתה הגרסא האחרונה עם תמיכה ב-Python 2.7; 
