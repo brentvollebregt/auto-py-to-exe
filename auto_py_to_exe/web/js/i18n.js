@@ -1066,8 +1066,7 @@ const translationMap = {
         ko: '결과물이 저장될 디렉토리. 디렉토리가 존재하지 않으면 자동 생성됩니다.',
         bg: 'Изходната папка ще бъде създадена, ако не съществува.',
       },
-      increaseRecursionLimhe: '',
-        it: {
+      increaseRecursionLimit: {
         en: 'Having this enabled will set the recursion limit to 5000 using sys.setrecursionlimit(5000).',
         zh: '启用此功能将使用sys.setrecursionlimit（5000）将递归限制设置为5000。',
         zh_tw: '啟用此功能將使用 sys.setrecursionlimit（5000）將遞歸限制設置為5000。',
