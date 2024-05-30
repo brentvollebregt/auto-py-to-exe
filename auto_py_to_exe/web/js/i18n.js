@@ -1207,8 +1207,9 @@ const translationMap = {
           'Soyez prudent lorsque vous utilisez des fichiers supplémentaires avec le mode onefile;\n' +
           `<a ${onFileModeAdditionalFilesHelpAnchorTagContents}>read this</a>\n` +
           "et mettez à jour votre code pour qu'il fonctionne avec PyInstaller.",
-        he: 'היזהר בעת שימוש בקבצים נוספים במצב קובץ-יחיד;\n' +
-		  `<a ${onFileModeAdditionalFilesHelpAnchorTagContents}>קרא את זה</a>\n` +
+        he:
+          'היזהר בעת שימוש בקבצים נוספים במצב קובץ-יחיד;\n' +
+          `<a ${onFileModeAdditionalFilesHelpAnchorTagContents}>קרא את זה</a>\n` +
           'ועדכן את הקוד שלך לעבודה עם PyInstaller.',
         hi:
           'Onefile मोड के साथ अतिरिक्त फ़ाइलों का उपयोग करते समय सावधान रहें।;\n' +
@@ -1348,7 +1349,8 @@ const translationMap = {
           'Quelque chose ne va pas avec votre exe? Lire ' +
           `<a ${helpPostLinkAnchorTagContents}>ce post sur la façon de résoudre les problèmes courants</a>` +
           ' pour les solutions possibles.',
-        he: 'משהו לא טוב עם התוכנה שנוצרה? קרא ' +
+        he:
+          'משהו לא טוב עם התוכנה שנוצרה? קרא ' +
           `<a ${helpPostLinkAnchorTagContents}>את הפוסט הזה</a>` +
           ' לאיתור ותיקון תקלות נפוצות.',
         hi:
