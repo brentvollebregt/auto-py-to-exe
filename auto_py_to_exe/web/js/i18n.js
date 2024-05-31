@@ -465,7 +465,7 @@ const translationMap = {
         zh_tw: '配置',
         uk: 'Конфігурація',
         ru: 'Конфигурация',
-        be: 'Канфігурацыя'
+        be: 'Канфігурацыя',
         de: 'Konfiguration',
         pt_br: 'Configuração',
         es: 'Configuración',
