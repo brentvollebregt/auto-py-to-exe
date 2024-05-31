@@ -2160,12 +2160,12 @@ const supportedLanguages = [
     code: 'ar',
   },
   {
-    name: 'Brazilian Portuguese (Português Brasileiro)',
-    code: 'pt_br',
-  },
-  {
     name: 'Belarusian (Беларуская)',
     code: 'be',
+  },
+  {
+    name: 'Brazilian Portuguese (Português Brasileiro)',
+    code: 'pt_br',
   },
   {
     name: 'Bulgarian (Български)',
