@@ -5,7 +5,8 @@
       "name": "Run auto-py-to-exe",
       "type": "python",
       "request": "launch",
-      "module": "auto_py_to_exe"
+      "module": "auto_py_to_exe",
+      "justMyCode": false
     }
   ]
 }
