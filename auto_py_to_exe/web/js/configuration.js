@@ -33,7 +33,10 @@ const getCurrentConfiguration = async () => {
       continue;
     }
 
-    if ([OPTION_INPUT_VALUE_FILE, OPTION_INPUT_VALUE_DIRECTORY].some((v) => option.allowedInputValues.includes(v))) {
+    if (
+      [OPTION_INPUT_VALUE_FILE, OPTION_INPUT_VALUE_DIRECTORY].some((v) => option.allowedInputValues.includes(v)) ||
+      option.dest === 'filenames'
+    ) {
       c.value = await convertPathToAbsolute(c.value);
     }
     if (
