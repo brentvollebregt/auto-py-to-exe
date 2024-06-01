@@ -33,7 +33,7 @@ const advancedSections = [
   },
   {
     titleI18nPath: 'dynamic.title.howToGenerate',
-    options: ['debug', 'python_options', 'strip', 'noupx', 'upx_exclude'],
+    options: ['debug', 'optimize', 'python_options', 'strip', 'noupx', 'upx_exclude'],
   },
   {
     titleI18nPath: 'dynamic.title.windowsAndMacOsXSpecificOptions',
