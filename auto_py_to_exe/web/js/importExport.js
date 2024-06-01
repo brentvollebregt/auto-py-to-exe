@@ -27,7 +27,7 @@ const _collectDataToExport = async () => {
 
   return {
     version: 'auto-py-to-exe-configuration_v1',
-    pyinstallerOptions: await getCurrentConfiguration(),
+    pyinstallerOptions: await getCurrentConfiguration(true),
     nonPyinstallerOptions: nonPyinstallerConfiguration,
   };
 };

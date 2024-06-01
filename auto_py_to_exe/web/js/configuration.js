@@ -7,7 +7,7 @@ const configurationSetters = {}; // dest: fn(value) => void, used to set option 
 const configurationCleaners = []; // Each function in this should clear a dest value
 
 // Get option-value pairs [[option, value], ...]
-const getCurrentConfiguration = async () => {
+const getCurrentConfiguration = async (skipTransformations = false) => {
   const currentConfiguration = [
     {
       optionDest: 'noconfirm',
@@ -25,6 +25,10 @@ const getCurrentConfiguration = async () => {
       });
     }
   });
+
+  if (skipTransformations) {
+    return currentConfiguration;
+  }
 
   // Convert all relative paths to absolute paths
   for (const c of currentConfiguration) {
