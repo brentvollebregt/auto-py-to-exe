@@ -322,7 +322,7 @@ const translationMap = {
         tr: `${applicationName} ye Özel Seçenekler`,
         th: `${applicationName} ตัวเลือกเฉพาะ`,
         fr: 'Options spécifiques',
-        he: 'אפשרויות ייחודיות של ${applicationName}',
+        he: `אפשרויות ייחודיות של ${applicationName}`,
         hi: `${applicationName} विशिष्ट विकल्प`,
         it: `Opzioni specifiche ${applicationName}`,
         id: `Pilihan Spesifik ${applicationName}`,
