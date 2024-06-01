@@ -127,6 +127,14 @@ def is_file_an_ico(file_path):
 
 
 @eel.expose
+def convert_path_to_absolute(path: str) -> str:
+    """Converts a path to an absolute path if it exists. If it doesn't exist, returns the path as is."""
+    if not os.path.exists(path):
+        return path
+    return os.path.abspath(path)
+
+
+@eel.expose
 def import_configuration():
     """Get configuration data from a file"""
     file_path = dialogs.ask_file("json")

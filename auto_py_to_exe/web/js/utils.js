@@ -37,6 +37,10 @@ const isFileAnIco = async (file_path) => {
   return await eel.is_file_an_ico(file_path)();
 };
 
+const convertPathToAbsolute = async (path) => {
+  return await eel.convert_path_to_absolute(path)();
+};
+
 const chooseOptionString = (optionStrings) => {
   // Try not to use compressed flags
   if (optionStrings[0].length === 2 && optionStrings.length > 1) {

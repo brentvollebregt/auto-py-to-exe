@@ -2,7 +2,7 @@ const options_ignored = ['help'];
 const options_static = ['filenames', 'onefile', 'console', 'icon_file', 'datas'];
 const options_overridden = ['specpath', 'distpath', 'workpath', 'noconfirm'];
 
-const options_inputTypeFile = ['runtime_hooks', 'version_file', 'manifest', 'resources', 'splash'];
+const options_inputTypeFile = ['runtime_hooks', 'version_file', 'manifest', 'resources', 'splash', 'entitlements_file'];
 const options_inputTypeDirectory = ['upx_dir', 'pathex', 'hookspath'];
 const options_inputTypeDoubleFileDest = ['datas', 'binaries'];
 const options_inputTypeDoubleDirectoryDest = ['datas'];

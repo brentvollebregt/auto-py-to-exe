@@ -26,6 +26,26 @@ const getCurrentConfiguration = () => {
     }
   });
 
+  // Convert all relative paths to absolute paths
+  for (const c of currentConfiguration) {
+    const option = options.find((o) => o.dest === c.optionDest);
+    if (option === undefined) {
+      continue;
+    }
+
+    if ([OPTION_INPUT_VALUE_FILE, OPTION_INPUT_VALUE_DIRECTORY].some((v) => option.allowedInputValues.includes(v))) {
+      c.valueNew = convertPathToAbsolute(c.value);
+    }
+    if (
+      [OPTION_INPUT_VALUE_DOUBLE_FILE_DEST, OPTION_INPUT_VALUE_DOUBLE_DIRECTORY_DEST].some((v) =>
+        option.allowedInputValues.includes(v)
+      )
+    ) {
+      const [src, dest] = c.value.split(pathSeparator);
+      c.valueNew = `${convertPathToAbsolute(src)}${pathSeparator}${dest}`;
+    }
+  }
+
   return currentConfiguration;
 };
 
