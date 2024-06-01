@@ -6,7 +6,7 @@ Handle user events
 
 const scriptLocationChange = async (event) => {
   colourInput(event.target, false, true, false);
-  updateCurrentCommandDisplay();
+  void updateCurrentCommandDisplay();
 };
 
 const scriptLocationSearch = async (event) => {
@@ -27,7 +27,7 @@ const oneFileOptionChange = (option) => (event) => {
   const oneDirectoryButton = document.getElementById('one-directory-button');
   oneDirectoryButton.classList.add(option === 'one-directory' ? 'selected' : 'unselected');
   oneDirectoryButton.classList.remove(option !== 'one-directory' ? 'selected' : 'unselected');
-  updateCurrentCommandDisplay();
+  void updateCurrentCommandDisplay();
 };
 
 const consoleWindowOptionChange = (option) => (event) => {
@@ -37,12 +37,12 @@ const consoleWindowOptionChange = (option) => (event) => {
   const windowButton = document.getElementById('window-based-button');
   windowButton.classList.add(option === 'window' ? 'selected' : 'unselected');
   windowButton.classList.remove(option !== 'window' ? 'selected' : 'unselected');
-  updateCurrentCommandDisplay();
+  void updateCurrentCommandDisplay();
 };
 
 const iconLocationChange = async (event) => {
   const valid = await colourInput(event.target, true, true, false);
-  updateCurrentCommandDisplay();
+  void updateCurrentCommandDisplay();
 
   // If valid and a value exists, show the message if the file is not an ico file
   const warningElement = document.getElementById('icon-invalid-warning');
@@ -116,7 +116,7 @@ const recursionLimitToggle = (enabled) => {
 };
 
 const rawArgumentsChange = (event) => {
-  updateCurrentCommandDisplay();
+  void updateCurrentCommandDisplay();
 };
 
 const packageScript = async (event) => {
@@ -131,7 +131,7 @@ const packageScript = async (event) => {
   }
 
   // Pre-checks
-  const currentConfiguration = getCurrentConfiguration();
+  const currentConfiguration = await getCurrentConfiguration();
   const entryScript = currentConfiguration.find((c) => c.optionDest === 'filenames').value;
 
   if (entryScript === '') {
@@ -150,11 +150,11 @@ const packageScript = async (event) => {
   }
 
   // If checks have passed, package the script
-  startPackaging();
+  await startPackaging();
 };
 
-const openOutputFolder = (event) => {
-  const currentConfiguration = getCurrentConfiguration();
+const openOutputFolder = async (event) => {
+  const currentConfiguration = await getCurrentConfiguration();
   const entryScript = currentConfiguration.find((c) => c.optionDest === 'filenames').value;
   const isOneFile = currentConfiguration.find((c) => c.optionDest === 'onefile').value;
   eel.open_output_in_explorer(getNonPyinstallerConfiguration().outputDirectory, entryScript, isOneFile)();

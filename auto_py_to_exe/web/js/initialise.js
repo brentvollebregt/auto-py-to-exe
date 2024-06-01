@@ -96,7 +96,7 @@ window.addEventListener('load', async () => {
   setupWarnings(initialisationData.warnings);
 
   // Update the current command when setup is complete
-  updateCurrentCommandDisplay();
+  await updateCurrentCommandDisplay();
 
   // Try to translate to the default browser language
   translate(initialisationData.languageHint);
