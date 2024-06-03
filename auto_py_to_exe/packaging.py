@@ -123,16 +123,13 @@ def package(pyinstaller_command, options):
     # Run PyInstaller
     fail = False
     try:
-        # Since we allow manual argument input, we cannot pass arguments to PyInstaller as a list as we can't
-        # guarantee that the arguments will be parsed correctly. To get around this, we can set sys.argv here with our
-        # command to trick PyInstaller to reading the command as if we are using the cli tool.
-        sys.argv = shlex.split(pyinstaller_command) + extra_args  # Put command into sys.argv and extra args
+        pyinstaller_args = shlex.split(pyinstaller_command) + extra_args
 
         # Display the command we are using and leave a space to separate out PyInstallers logs
-        logger.info("Executing: {}".format(" ".join(sys.argv)))
+        logger.info("Executing: {}".format(" ".join(pyinstaller_args)))
         logger.info("")
 
-        run_pyinstaller()
+        run_pyinstaller(pyinstaller_args[1:])
     except:  # noqa: E722
         fail = True
         logger.exception("An error occurred while packaging")
