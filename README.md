@@ -28,6 +28,8 @@ Türkçe Talimatları [burada](./README-Turkish.md) bulabilirsiniz.
 
 Български README [тук](README-Bulgarian.md)
 
+Беларускамоўны README [тут](README-Belarusian.md)
+
 ## Demo
 
 <p align="center">
