@@ -21,19 +21,19 @@ const importConfiguration = (configuration) => {
   }
 };
 
-const _collectDataToExport = () => {
+const _collectDataToExport = async () => {
   const nonPyinstallerConfiguration = getNonPyinstallerConfiguration();
   delete nonPyinstallerConfiguration.outputDirectory; // This does not need to be saved in the config
 
   return {
     version: 'auto-py-to-exe-configuration_v1',
-    pyinstallerOptions: getCurrentConfiguration(),
+    pyinstallerOptions: await getCurrentConfiguration(true),
     nonPyinstallerOptions: nonPyinstallerConfiguration,
   };
 };
 
 const onConfigurationImport = async () => {
-  if (!isCommandDefault()) {
+  if (!(await isCommandDefault())) {
     const response = await displayModal(
       getTranslation('dynamic.modal.configModalTitle'),
       getTranslation('dynamic.modal.configModalDescription'),
@@ -53,6 +53,6 @@ const onConfigurationImport = async () => {
 };
 
 const onConfigurationExport = async () => {
-  const data = _collectDataToExport();
+  const data = await _collectDataToExport();
   await eel.export_configuration(data)();
 };

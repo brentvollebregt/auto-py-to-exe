@@ -7,7 +7,7 @@ const configurationSetters = {}; // dest: fn(value) => void, used to set option 
 const configurationCleaners = []; // Each function in this should clear a dest value
 
 // Get option-value pairs [[option, value], ...]
-const getCurrentConfiguration = () => {
+const getCurrentConfiguration = async (skipTransformations = false) => {
   const currentConfiguration = [
     {
       optionDest: 'noconfirm',
@@ -26,6 +26,33 @@ const getCurrentConfiguration = () => {
     }
   });
 
+  if (skipTransformations) {
+    return currentConfiguration;
+  }
+
+  // Convert all relative paths to absolute paths
+  for (const c of currentConfiguration) {
+    const option = options.find((o) => o.dest === c.optionDest);
+    if (option === undefined) {
+      continue;
+    }
+
+    if (
+      [OPTION_INPUT_VALUE_FILE, OPTION_INPUT_VALUE_DIRECTORY].some((v) => option.allowedInputValues.includes(v)) ||
+      option.dest === 'filenames'
+    ) {
+      c.value = await convertPathToAbsolute(c.value);
+    }
+    if (
+      [OPTION_INPUT_VALUE_DOUBLE_FILE_DEST, OPTION_INPUT_VALUE_DOUBLE_DIRECTORY_DEST].some((v) =>
+        option.allowedInputValues.includes(v)
+      )
+    ) {
+      const [src, dest] = c.value.split(pathSeparator);
+      c.value = `${await convertPathToAbsolute(src)}${pathSeparator}${dest}`;
+    }
+  }
+
   return currentConfiguration;
 };
 
@@ -37,8 +64,8 @@ const getNonPyinstallerConfiguration = () => {
   };
 };
 
-const getCurrentCommand = () => {
-  const currentConfiguration = getCurrentConfiguration();
+const getCurrentCommand = async () => {
+  const currentConfiguration = await getCurrentConfiguration();
 
   // Match configuration values with the correct flags
   const optionsAndValues = currentConfiguration
@@ -71,10 +98,10 @@ const getCurrentCommand = () => {
   } "${entryScript}"`;
 };
 
-const updateCurrentCommandDisplay = () => {
-  document.querySelector('#current-command textarea').value = getCurrentCommand();
+const updateCurrentCommandDisplay = async () => {
+  document.querySelector('#current-command textarea').value = await getCurrentCommand();
 };
 
-const isCommandDefault = () => {
-  return getCurrentCommand() === 'pyinstaller --noconfirm --onedir --console  ""';
+const isCommandDefault = async () => {
+  return (await getCurrentCommand()) === 'pyinstaller --noconfirm --onedir --console  ""';
 };

@@ -61,13 +61,13 @@ const addDoubleInputForSrcDst = (
   sourceInput.value = source;
   sourceInput.addEventListener('input', (event) => {
     colourInput(sourceInput, false, sourceCanBeFile, sourceCanBeDirectory);
-    updateCurrentCommandDisplay();
+    void updateCurrentCommandDisplay();
   });
   colourInput(sourceInput, false, sourceCanBeFile, sourceCanBeDirectory);
 
   destinationInput.value = destination;
   destinationInput.addEventListener('input', (event) => {
-    updateCurrentCommandDisplay();
+    void updateCurrentCommandDisplay();
   });
 
   // Add configurationGetter
@@ -81,13 +81,13 @@ const addDoubleInputForSrcDst = (
     configurationGetters.splice(configurationGetterIndex, 1);
     const configurationCleanerIndex = configurationCleaners.indexOf(onRemove);
     configurationCleaners.splice(configurationCleanerIndex, 1);
-    updateCurrentCommandDisplay();
+    void updateCurrentCommandDisplay();
   };
   removeButton.src = 'img/remove.svg';
   removeButton.addEventListener('click', onRemove);
   configurationCleaners.push(onRemove);
 
-  updateCurrentCommandDisplay();
+  void updateCurrentCommandDisplay();
 };
 
 const _createSubSectionInAdvanced = (title, i18nPath, options) => {
@@ -147,7 +147,7 @@ const _createSubSectionInAdvanced = (title, i18nPath, options) => {
           enableButton.classList.add('unselected');
           enableButton.classList.remove('selected');
         }
-        updateCurrentCommandDisplay();
+        void updateCurrentCommandDisplay();
       };
 
       // When clicked, toggle the value
@@ -176,7 +176,7 @@ const _createSubSectionInAdvanced = (title, i18nPath, options) => {
       const selectNode = document.createElement('select');
       container.appendChild(selectNode);
       selectNode.addEventListener('change', (event) => {
-        updateCurrentCommandDisplay();
+        void updateCurrentCommandDisplay();
       });
 
       // Add options (including default '')
@@ -225,7 +225,7 @@ const _createSubSectionInAdvanced = (title, i18nPath, options) => {
       container.appendChild(inputNode);
       inputNode.placeholder = o.metavar || 'VALUE';
       inputNode.addEventListener('input', (event) => {
-        updateCurrentCommandDisplay();
+        void updateCurrentCommandDisplay();
 
         if (isOptionFileBased || isOptionDirectoryBased) {
           colourInput(inputNode, true, isOptionFileBased, isOptionDirectoryBased);
@@ -296,7 +296,7 @@ const _createSubSectionInAdvanced = (title, i18nPath, options) => {
         colourInput(inputNode, false, isOptionFileBased, isOptionDirectoryBased);
         inputNode.addEventListener('input', (event) => {
           colourInput(inputNode, false, isOptionFileBased, isOptionDirectoryBased);
-          updateCurrentCommandDisplay();
+          void updateCurrentCommandDisplay();
         });
 
         // Add configurationGetter
@@ -313,14 +313,14 @@ const _createSubSectionInAdvanced = (title, i18nPath, options) => {
           configurationGetters.splice(configurationGetterIndex, 1);
           const configurationCleanerIndex = configurationCleaners.indexOf(onRemove);
           configurationCleaners.splice(configurationCleanerIndex, 1);
-          updateCurrentCommandDisplay();
+          void updateCurrentCommandDisplay();
         };
         removeButtonNode.addEventListener('click', onRemove);
 
         // Add configurationCleaner
         configurationCleaners.push(onRemove);
 
-        updateCurrentCommandDisplay();
+        void updateCurrentCommandDisplay();
       };
 
       // Event to add a new input pair

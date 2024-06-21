@@ -45,8 +45,8 @@ const setPackagingState = (newState) => {
   }
 };
 
-const startPackaging = () => {
-  eel.package(getCurrentCommand(), getNonPyinstallerConfiguration())();
+const startPackaging = async () => {
+  eel.package(await getCurrentCommand(), getNonPyinstallerConfiguration())();
   setPackagingState(PACKAGING_STATE_PACKAGING);
 };
 
