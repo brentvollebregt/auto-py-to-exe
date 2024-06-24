@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.44.1
+
+🐛 Bug Fixes
+
+- [#486](https://github.com/brentvollebregt/auto-py-to-exe/issues/486): Correctly resolve relative paths to the current working directory
+
 ## 2.44.0
 
 🚀 Enhancements
