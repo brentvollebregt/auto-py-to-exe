@@ -115,6 +115,15 @@ Instead of inserting the same data into the UI over and over again, you can expo
 
 This JSON config export action does not save the output directory automatically as moving hosts could mean different directory structures. If you want to have the output directory in the JSON config, add the directory under `nonPyinstallerOptions.outputDirectory` in the JSON file (will need to create a new key).
 
+## Examples
+
+The [examples/](./examples/) directory offers some examples of how to write your scripts and package them with auto-py-to-exe.
+
+- [Basic (console application)](./examples/1-basic/readme.md)
+- [No Console (as typically desired for GUI-based applications)](./examples/2-no-console/readme.md)
+- [Images and other non-.py files (static files to be included)](./examples/3-images-and-other-non-py-files/readme.md)
+- [Persistent data (like databases)](./examples/4-persistent-data/readme.md)
+
 ## Video
 
 If you need something visual to help you get started, [I made a video for the original release of this project](https://youtu.be/OZSZHmWSOeM); some things may be different but the same concepts still apply.
