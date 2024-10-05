@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.44.2
+
+🐛 Bug Fixes
+
+- Fix partial configuration files not importing
+
 ## 2.44.1
 
 🐛 Bug Fixes
