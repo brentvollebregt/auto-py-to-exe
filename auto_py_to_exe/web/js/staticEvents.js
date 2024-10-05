@@ -251,7 +251,7 @@ const setupEvents = () => {
 
   configurationCleaners.push(() => setEntryScript('')); // filenames
   configurationCleaners.push(() => setOnefile(false)); // onefile
-  configurationCleaners.push(() => setConsole(false)); // console
+  configurationCleaners.push(() => setConsole(true)); // console
   configurationCleaners.push(() => setIcon('')); // icon_file
 
   // Soft initialise (to trigger any required initial events)

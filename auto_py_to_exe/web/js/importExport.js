@@ -4,20 +4,28 @@ const importConfiguration = (configuration) => {
   // Re-init UI by clearing everything (copy the array first as it will be mutated during the iteration)
   [...configurationCleaners].forEach((cleaner) => cleaner());
 
-  configuration.pyinstallerOptions.forEach(({ optionDest, value }) => {
-    if (configurationSetters.hasOwnProperty(optionDest)) {
-      configurationSetters[optionDest](value);
-    } else {
-      // TODO Warn user?
-      // TODO noconfirm is expected to come here
-    }
-  });
+  if ('pyinstallerOptions' in configuration) {
+    configuration.pyinstallerOptions.forEach(({ optionDest, value }) => {
+      if (configurationSetters.hasOwnProperty(optionDest)) {
+        configurationSetters[optionDest](value);
+      } else {
+        // TODO Warn user?
+        // TODO noconfirm is expected to come here
+      }
+    });
+  }
 
   // setup nonPyinstallerOptions
-  recursionLimitToggle(configuration.nonPyinstallerOptions.increaseRecursionLimit);
-  document.getElementById('raw-arguments').value = configuration.nonPyinstallerOptions.manualArguments;
-  if ('outputDirectory' in configuration.nonPyinstallerOptions) {
-    document.getElementById('output-directory').value = configuration.nonPyinstallerOptions.outputDirectory;
+  if ('nonPyinstallerOptions' in configuration) {
+    if ('increaseRecursionLimit' in configuration.nonPyinstallerOptions) {
+      recursionLimitToggle(configuration.nonPyinstallerOptions.increaseRecursionLimit);
+    }
+    if ('manualArguments' in configuration.nonPyinstallerOptions) {
+      document.getElementById('raw-arguments').value = configuration.nonPyinstallerOptions.manualArguments;
+    }
+    if ('outputDirectory' in configuration.nonPyinstallerOptions) {
+      document.getElementById('output-directory').value = configuration.nonPyinstallerOptions.outputDirectory;
+    }
   }
 };
 
