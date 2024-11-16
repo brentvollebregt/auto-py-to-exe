@@ -14,6 +14,11 @@ setup(
     description="Converts .py to .exe using a simple graphical interface.",
     long_description="".join(open("README.md", encoding="utf-8").readlines()),
     long_description_content_type="text/markdown",
+    project_urls={
+        "Source Code": "https://github.com/brentvollebregt/auto-py-to-exe",
+        "Bug Tracker": "https://github.com/brentvollebregt/auto-py-to-exe/issues",
+        "Changelog": "https://github.com/brentvollebregt/auto-py-to-exe/blob/master/CHANGELOG.md",
+    },
     keywords=["gui", "executable"],
     packages=["auto_py_to_exe"],
     include_package_data=True,
