@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.44.4
+
+🏠 Internal
+
+- Remove temporary fix now that Eel has fixed its missing dependency ([python-eel/Eel#749](https://github.com/python-eel/Eel/pull/749))
+
 ## 2.44.3
 
 🐛 Bug Fixes
