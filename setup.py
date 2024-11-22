@@ -22,7 +22,7 @@ setup(
     keywords=["gui", "executable"],
     packages=["auto_py_to_exe"],
     include_package_data=True,
-    install_requires=["Eel>=0.11.0", "pyinstaller>=5.8.0", "requests"],
+    install_requires=["Eel>=0.11.0,!=0.18.0", "pyinstaller>=5.8.0", "requests"],
     python_requires=">=3.6",
     classifiers=[
         "License :: OSI Approved :: MIT License",

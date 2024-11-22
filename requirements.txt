@@ -1,4 +1,3 @@
 Eel>=0.11.0
 PyInstaller>=5.8.0
 requests
-typing-extensions>=4.3.0  # Temporary fix for https://github.com/python-eel/Eel/issues/748
