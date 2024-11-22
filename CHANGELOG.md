@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.44.3
+
+🐛 Bug Fixes
+
+- Fix Eel not importing due to a missing dependency ([python-eel/Eel#748](https://github.com/python-eel/Eel/issues/748))
+
 ## 2.44.2
 
 🐛 Bug Fixes
