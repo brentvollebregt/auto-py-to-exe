@@ -36,7 +36,7 @@ Türkçe Talimatları [burada](./README-Turkish.md) bulabilirsiniz.
 
 - Python : 3.6-3.12
 
-_이미지와 같이 인터페이스를 표시하려면, Chrome이 필요합니다. Chrome이 설치되어 있지 않거나, --no-chrome 매개변수와 실행된다면, 기본 브라우저가 사용됩니다._
+_이미지와 같이 인터페이스를 표시하려면, Chrome이 필요합니다. Chrome이 설치되어 있지 않거나, --default-browser 매개변수와 실행된다면, 기본 브라우저가 사용됩니다._
 
 > [PyInstaller 4.0](https://github.com/pyinstaller/pyinstaller/releases/tag/v4.0)부터 Python 2.7를 지원하지 않습니다. 아래의 "[Python 2.7 지원](#python-27-지원)" 문단을 차례로 읽고 Python 2.7에서 사용법을 알아보세요.
 
@@ -96,12 +96,12 @@ _참 쉽죠?_
 
 ### 매개변수
 
-사용법: `auto-py-to-exe [-nc] [-c [CONFIG]] [-o [PATH]] [filename]`
+사용법: `auto-py-to-exe [-db] [-c [CONFIG]] [-o [PATH]] [filename]`
 
 | 매개변수                                                 | 형식          | 설명                                                                                                                                    |
 | -------------------------------------------------------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
 | filename                                                 | 위치적/선택적 | UI의 "스크립트 위치"를 미리 채웁니다(pre-fill).                                                                                         |
-| -nc, --no-chrome                                         | 선택적        | UI를 Chrome 이 아닌 기본 브라우저(Chrome이 기본값일 수 있음)로 엽니다. 앱은 Chrome 설치 여부를 탐색하지 않습니다.                       |
+| -db, --default-browser                                   | 선택적        | UI를 Chrome 이 아닌 기본 브라우저(Chrome이 기본값일 수 있음)로 엽니다. 앱은 Chrome 설치 여부를 탐색하지 않습니다.                       |
 | -nu, --no-ui                                             | 선택적        | 추가 브라우저 창을 열지 않고, 앱에 접근할 수 있는 localhost 주소값만 출력됩니다.                                                        |
 | -c [구성], --config [구성]                               | 선택적        | UI를 미리 채울 수 있는 구성 파일(json)을 제공합니다. 설정 탭에서 생성됩니다.                                                            |
 | -o [경로], --output-dir [경로]                           | 선택적        | 출력 디렉토리 기본값을 지정합니다. 이 값은 UI에서 직접 바꿀 수도 있습니다.                                                              |

@@ -21,7 +21,7 @@
 
 - Python : 3.6-3.12
 
-_要在图像中显示界面，您需要使用 Chrome。如果未安装 Chrome 或提供了--no-chrome 参数，则将使用默认浏览器。_
+_要在图像中显示界面，您需要使用 Chrome。如果未安装 Chrome 或提供了--default-browser 参数，则将使用默认浏览器。_
 
 > 从 [PyInstaller 4.0](https://github.com/pyinstaller/pyinstaller/releases/tag/v4.0) 开始，不再支持 Python 2.7。有关如何在 Python2.7 中使用此工具的步骤，请阅读下面的“[Python 2.7 支持](#python-27-支持)”
 
@@ -79,12 +79,12 @@ _简单！_
 
 ### 参数
 
-用法 `auto-py-to-exe [-nc] [-c [CONFIG]] [-o [PATH]] [filename]`
+用法 `auto-py-to-exe [-db] [-c [CONFIG]] [-o [PATH]] [filename]`
 
 | 参数                           | 类型       | 描述                                                                   |
 | ------------------------------ | ---------- | ---------------------------------------------------------------------- |
 | filename                       | positional | 在用户界面中预先填写“脚本位置”字段。                                   |
-| -nc, --no-chrome               | optional   | 使用默认浏览器（可能是 Chrome）打开用户界面。 不会尝试寻找 Chrome。    |
+| -db, --default-browser         | optional   | 使用默认浏览器（可能是 Chrome）打开用户界面。 不会尝试寻找 Chrome。    |
 | -nu, --no-ui                   | optional   | 不要试图在浏览器中打开用户界面，而只是打印出可以访问该应用程序的地址。 |
 | -c [CONFIG], --config [CONFIG] | optional   | 提供配置文件（json）以预填充 UI。 这些可以在设置选项卡中生成。         |
 | -o [PATH], --output-dir [PATH] | optional   | 设置默认输出目录。这仍然可以在 UI 中更改。                             |

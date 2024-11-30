@@ -38,10 +38,10 @@ def run():
         "filename", nargs="?", type=validation.argparse_file_exists, help="pass a file into the interface", default=None
     )
     parser.add_argument(
-        "-nc",
-        "--no-chrome",
+        "-db",
+        "--default-browser",
         action="store_true",
-        help="do not open in chrome's app mode",
+        help="use the default browser",
     )
     parser.add_argument(
         "-nu",
@@ -93,10 +93,10 @@ def run():
 
     if args.no_ui:
         config.ui_open_mode = config.UIOpenMode.NONE
-    elif args.no_chrome:
-        config.ui_open_mode = config.UIOpenMode.USER_DEFAULT
+    elif args.default_browser:
+        config.ui_open_mode = config.UIOpenMode.DEFAULT_BROWSER
     else:
-        config.ui_open_mode = config.UIOpenMode.CHROME
+        config.ui_open_mode = config.UIOpenMode.CHROME_OR_EDGE
 
     # Validate --build-directory-override exists if supplied
     if (args.build_directory_override is not None) and (not os.path.isdir(args.build_directory_override)):

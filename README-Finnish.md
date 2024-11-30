@@ -32,7 +32,7 @@ Türkçe Talimatları [burada](./README-Turkish.md) bulabilirsiniz.
 
 - Python : 3.6-3.12
 
-_Jos haluat nähdä käyttöliittymän, joka näkyy kuvissa, tarvitset Chromen. Jos Chromea ei ole asennettu tai --no-chrome vastaanotetaan, käytetään oletusselainta._
+_Jos haluat nähdä käyttöliittymän, joka näkyy kuvissa, tarvitset Chromen. Jos Chromea ei ole asennettu tai --default-browser vastaanotetaan, käytetään oletusselainta._
 
 > [PyInstaller 4.0:sta lähtien](https://github.com/pyinstaller/pyinstaller/releases/tag/v4.0) (englanniksi), Python 2.7 ei ole enää tuettu. Lue "[Python 2.7 Tuki](#python-27-support)" alla ohjeisiin miten käyttää tätä työkalua Python 2.7:n kanssa.
 
@@ -90,12 +90,12 @@ _Helppoa._
 
 ### Argumentit
 
-Käyttö: `auto-py-to-exe [-nc] [-c [CONFIG]] [-o [POLKU]] [tiedostonimi]`
+Käyttö: `auto-py-to-exe [-db] [-c [CONFIG]] [-o [POLKU]] [tiedostonimi]`
 
 | Argument                                                         | Type                       | Description                                                                                                     |
 | ---------------------------------------------------------------- | -------------------------- | --------------------------------------------------------------------------------------------------------------- |
 | tiedostonimi                                                     | sijainnillinen/valinnainen | Esi-täytä "Skriptin sijainti"-kenttä käyttöliittymässä.                                                         |
-| -nc, --no-chrome                                                 | valinnainen                | Avaa käyttöliittymän oletusselaimella (mahdollisesti Chrome). Ei yritä etsiä Chromea.                           |
+| -db, --default-browser                                           | valinnainen                | Avaa käyttöliittymän oletusselaimella (mahdollisesti Chrome). Ei yritä etsiä Chromea.                           |
 | -nu, --no-ui                                                     | valinnainen                | Älä yritä avata käyttöliittymää ja vain yksinkertaisesti printtaa osoite jossa ohjelmaa voi käyttää.            |
 | -c [CONFIG], --config [CONFIG]                                   | valinnainen                | Anna konfiguraatiotiedosto (json) jolla esi-täyttää käyttöliittymä. Näitä voi generoida asetukset välilehdellä. |
 | -o [POLKU], --output-dir [POLKU]                                 | valinnainen                | Asettaa oletus-ulostulokansion. Tätä voi vaihtaa edelleen käyttöliittymässä.                                    |

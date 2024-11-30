@@ -4,17 +4,11 @@ import logging
 import os
 
 import eel
-from eel import chrome
+from eel import chrome, edge
 
 from . import config, dialogs, packaging, utils
 
 LOGGING_HANDLER_NAME = "auto-py-to-exe logging handler"
-
-
-class UIOpenMode:
-    NONE = 0
-    CHROME = 1
-    USER_DEFAULT = 2
 
 
 # Setup eels root folder
@@ -58,6 +52,11 @@ def __can_use_chrome():
     """Identify if Chrome is available for Eel to use"""
     chrome_instance_path = chrome.find_path()
     return chrome_instance_path is not None and os.path.exists(chrome_instance_path)
+
+
+def __can_use_edge():
+    """Identify if Edge is available for Eel to use"""
+    return edge.find_path()
 
 
 @eel.expose
@@ -186,15 +185,19 @@ def start(open_mode):
     """Start the UI using Eel"""
     try:
         chrome_available = __can_use_chrome()
-        if open_mode == UIOpenMode.CHROME and chrome_available:
-            eel.start("index.html", size=(650, 672), port=0)
-        elif open_mode == UIOpenMode.USER_DEFAULT or (open_mode == UIOpenMode.CHROME and not chrome_available):
+        edge_available = __can_use_edge()
+
+        if open_mode == config.UIOpenMode.CHROME_OR_EDGE and chrome_available:
+            eel.start("index.html", size=(650, 672), port=0, mode="chrome")
+        elif open_mode == config.UIOpenMode.CHROME_OR_EDGE and edge_available:
+            eel.start("index.html", size=(650, 673), port=0, mode="edge")
+        elif open_mode == config.UIOpenMode.DEFAULT_BROWSER or (
+            open_mode == config.UIOpenMode.CHROME_OR_EDGE and not chrome_available and not edge_available
+        ):
             eel.start("index.html", size=(650, 672), port=0, mode="user default")
         else:
             port = utils.get_port()
             print("Server starting at http://localhost:" + str(port) + "/index.html")
-            eel.start(
-                "index.html", size=(650, 672), host="localhost", port=port, mode=None, close_callback=lambda x, y: None
-            )
+            eel.start("index.html", host="localhost", port=port, mode=None, close_callback=lambda x, y: None)
     except (SystemExit, KeyboardInterrupt):
         pass  # This is what the bottle server raises

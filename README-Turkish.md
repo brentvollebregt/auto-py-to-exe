@@ -32,7 +32,7 @@ Suomenkieliset käyttöohjeet löydät [täältä](./README-Finnish.md)
 
 - Python : 3.6-3.12
 
-_Görsellerde gösterilen arayüze sahip olmak için kroma ihtiyacınız olacak. chrome kurulu değilse veya --no-chrome sağlanmışsa, varsayılan tarayıcı kullanılacaktır._
+_Görsellerde gösterilen arayüze sahip olmak için kroma ihtiyacınız olacak. chrome kurulu değilse veya --default-browser sağlanmışsa, varsayılan tarayıcı kullanılacaktır._
 
 > [PyInstaller 4.0](https://github.com/pyinstaller/pyinstaller/releases/tag/v4.0) itibariyle, Python 2.7 artık desteklenmemektedir. Bu aracın Python 2.7 ile nasıl kullanılacağına ilişkin adımlar için aşağıdaki "[Python 2.7 Destek](#python-27-destek)" bölümünü okuyun.
 
@@ -92,12 +92,12 @@ _Bu kadar Kolay._
 
 ### Argümanlar
 
-Kullanım: `auto-py-to-exe [-nc] [-c [CONFIG]] [-o [PATH]] [filename]`
+Kullanım: `auto-py-to-exe [-db] [-c [CONFIG]] [-o [PATH]] [filename]`
 
 | Argüman                                                      | Tip                | Açıklama                                                                                                                                                                     |
 | ------------------------------------------------------------ | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | filename                                                     | konumsal/opsiyonel | Kullanıcı arayüzündeki "Komut Dosyası Konumu" alanını önceden doldurun.                                                                                                      |
-| -nc, --no-chrome                                             | opsiyonel          | Varsayılan tarayıcıyı (Chrome olabilir) kullanarak kullanıcı arayüzünü kalemleyin. Chrome'u bulmaya çalışmaz.                                                                |
+| -db, --default-browser                                       | opsiyonel          | Varsayılan tarayıcıyı (Chrome olabilir) kullanarak kullanıcı arayüzünü kalemleyin. Chrome'u bulmaya çalışmaz.                                                                |
 | -nu, --no-ui                                                 | opsiyonel          | Kullanıcı arayüzünü bir tarayıcıda açmaya çalışmayın ve uygulamanın erişilebileceği adresi yazdırın.                                                                         |
 | -c [CONFIG], --config [CONFIG]                               | opsiyonel          | Kullanıcı arabirimini önceden doldurmak için bir yapılandırma dosyası (json) sağlayın. Bunlar ayarlar sekmesinde oluşturulabilir.                                            |
 | -o [PATH], --output-dir [PATH]                               | opsiyonel          | Varsayılan çıkış dizinini ayarlayın. Bu, kullanıcı arayüzünde hala değiştirilebilir.                                                                                         |

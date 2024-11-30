@@ -42,7 +42,7 @@ Türkçe Talimatları [burada](./README-Turkish.md) bulabilirsiniz.
 
 - Python: 3.6-3.12
 
-_To have the interface displayed in the images, you will need Chrome. If Chrome is not installed or `--no-chrome` is passed, the default browser will be used._
+_To have the interface displayed in the images, you will need Chrome. If Chrome is not installed or `--default-browser` is passed, the default browser will be used._
 
 ### Installation and Usage
 
@@ -102,7 +102,7 @@ Use the help flag to get the usage: `auto-py-to-exe --help`
 | Argument                                                     | Type                | Description                                                                                                                       |
 | ------------------------------------------------------------ | ------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
 | filename                                                     | positional/optional | Pre-fill the "Script Location" field in the UI.                                                                                   |
-| -nc, --no-chrome                                             | optional            | Open the UI using the default browser (which may be Chrome). Will not try to find Chrome.                                         |
+| -db, --default-browser                                       | optional            | Open the UI using the default browser (which may be Chrome). Will not try to find Chrome.                                         |
 | -nu, --no-ui                                                 | optional            | Don't try to open the UI in a browser and simply print out the address where the application can be accessed.                     |
 | -c [CONFIG], --config [CONFIG]                               | optional            | Provide a configuration file (JSON) to pre-fill the UI. These can be generated in the settings tab.                               |
 | -o [PATH], --output-dir [PATH]                               | optional            | Set the default output directory. This can still be changed in the UI.                                                            |
