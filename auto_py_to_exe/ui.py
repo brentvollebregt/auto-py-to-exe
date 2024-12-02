@@ -188,16 +188,29 @@ def start(open_mode):
         edge_available = __can_use_edge()
 
         if open_mode == config.UIOpenMode.CHROME_OR_EDGE and chrome_available:
+            print("The interface is being opened in a new Chrome window")
+            print(
+                "Please do not close this terminal while using auto-py-to-exe - the process will end when the window is closed"
+            )
             eel.start("index.html", size=(650, 672), port=0, mode="chrome")
         elif open_mode == config.UIOpenMode.CHROME_OR_EDGE and edge_available:
+            print("The interface is being opened in a new Edge window")
+            print(
+                "Please do not close this terminal while using auto-py-to-exe - the process will end when the window is closed"
+            )
             eel.start("index.html", size=(650, 673), port=0, mode="edge")
         elif open_mode == config.UIOpenMode.DEFAULT_BROWSER or (
             open_mode == config.UIOpenMode.CHROME_OR_EDGE and not chrome_available and not edge_available
         ):
+            print("The interface is being opened in your default browser")
+            print(
+                "Please do not close this terminal while using auto-py-to-exe - the process will end when the window is closed"
+            )
             eel.start("index.html", size=(650, 672), port=0, mode="user default")
         else:
             port = utils.get_port()
-            print("Server starting at http://localhost:" + str(port) + "/index.html")
+            print(f"Server starting at http://localhost:{port}/index.html")
+            print("You may end this process using Ctrl+C when finished using auto-py-to-exe")
             eel.start("index.html", host="localhost", port=port, mode=None, close_callback=lambda x, y: None)
     except (SystemExit, KeyboardInterrupt):
         pass  # This is what the bottle server raises
