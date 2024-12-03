@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.45.0
+
+🚀 Enhancements
+
+- [#187](https://github.com/brentvollebregt/auto-py-to-exe/issues/187): Use Edge app mode if Chrome is not found
+- [#510](https://github.com/brentvollebregt/auto-py-to-exe/issues/510): Show informative text in terminal when starting the application
+
 ## 2.44.4
 
 🏠 Internal
