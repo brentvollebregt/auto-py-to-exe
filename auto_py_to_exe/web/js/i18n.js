@@ -1322,6 +1322,9 @@ const translationMap = {
           'Budi oprezan kada koristiš dodatne datoteke u režimu jedne datoteke;\n' +
           `<a ${onFileModeAdditionalFilesHelpAnchorTagContents}>pročitaj ovo (na engleskom)</a>\n` +
           'i ažuriraj svoj kod da bi radio sa PyInstaller.',
+        sk: 'Buďte opatrný pri pridávaní súborov v režime jedného súboru;\n' +
+          '<a ${onFileModeAdditionalFilesHelpAnchorTagContents}>prečítajte si tento príspevok (stránka v angličtine)</a>\n' +
+          'a aktualizujte kód tak, aby fungoval s PyInstaller-om.',
         ja:
           '1つのファイルモードで追加ファイルを使用する際は、注意が必要です。;\n' +
           `<a ${onFileModeAdditionalFilesHelpAnchorTagContents}>こちら (原文記事)</a>\n` +
@@ -1374,6 +1377,7 @@ const translationMap = {
         ar: 'إذا كنت تريد وضع الملفات في الدليل الجذر ، فضع نقطة (.) في الوجهة.',
         fa: 'اگر می خواهید فایل ها را در پوشه اصلی قرار دهید، یک نقطه (.) در پوشه مقصد قرار دهید.',
         sr: 'Ako želiš da dodaš datoteke u osnovni direktorijum (tzv. root), dodaj tačku (.) u odredištu.',
+        sk: 'Ak chcete přidať súbory do koreňového adresára, pridajte bodku (.) do destinácie.',
         ja: 'ルートディレクトリにファイルを置きたい場合は、移動先にピリオド (.) を入れます。',
         pl: 'Jeśli chcesz umieścić pliki w katalogu głównym, postaw kropkę (.) w miejscu przeznaczenia.',
         fi: 'Jos haluat laittaa tiedostoja juurikansioon, laita piste (.) kohteeseen.',
@@ -1469,6 +1473,9 @@ const translationMap = {
           'Nešto nije u redu sa tvojim exe-om? Pročitaj ' +
           `<a ${helpPostLinkAnchorTagContents}>ovaj post o tome kako da popraviš česte greške,</a>` +
           ' za moguća rešenja problema.',
+        sk: 'Niečo nefunguje s vaším exe súborom? Přečtěte si ' +
+          `<a ${helpPostLinkAnchorTagContents}>tento príspevok ako opraviť bežné chyby</a>` +
+          ' pre možné riešenia.',
         ja:
           'exeに不具合がありますか？ ' +
           `<a ${helpPostLinkAnchorTagContents}>よくある問題を解決する方法についての記事</a>` +
@@ -1527,6 +1534,7 @@ const translationMap = {
         ar: 'خيارات عامة',
         fa: 'گزینه‌های عمومی',
         sr: 'Osnovna podešavanja',
+        sk: 'Obyčajné nastavenia',
         ja: '一般設定',
         pl: 'Opcje generalne',
         fi: 'Yleiset asetukset',
@@ -1558,6 +1566,7 @@ const translationMap = {
         ar: 'ماذا تحزم ، أين تبحث',
         fa: 'موارد بسته‌بندی و مکان‌های جستجو',
         sr: 'Šta uključiti, gde ga naći',
+        sk: 'Čo pribaliť, kde hladať',
         ja: '何を同梱するか、どこを探すか',
         pl: 'Co połączyć, gdzie szukać',
         fi: 'Mitä paketoida, mistä etsiä',
@@ -1589,6 +1598,7 @@ const translationMap = {
         ar: 'كيف تنشئ',
         fa: 'نحوه ی ساخت',
         sr: 'Kako generisati',
+        sk: 'Ako generovať',
         ja: 'どのように生成するか',
         pl: 'Jak wygenerować',
         fi: 'Miten generoida',
@@ -1619,6 +1629,7 @@ const translationMap = {
         ar: 'خيارات محددة لنظام التشغيل Windows و macOS X',
         fa: 'گزینه های خاص برای Windows و macOS X',
         sr: 'Specifična podešavanja za Windows i macOS X',
+        sk: 'Nastavenia špecifické fre Windows a macOS X',
         ja: 'WindowsとmacOS X 固有の設定',
         pl: 'Opcje specyficzne dla systemów Windows i macOS X',
         fi: 'Yksilölliset asetukset Windowsille ja macOSille',
@@ -1650,6 +1661,7 @@ const translationMap = {
         ar: 'خيارات Windows المحددة',
         fa: 'گزینه های خاص Windows',
         sr: 'Specifična podešavanja za Windows',
+        sk: 'Nastavenia špecifické pre Windows',
         ja: 'Windows固有の設定',
         pl: 'Opcje dla systemu Windows',
         fi: 'Yksilälliset asetukset Windowsille',
@@ -1681,6 +1693,7 @@ const translationMap = {
         ar: 'خيارات البحث عن تجميع Windows جنبًا إلى جنب (متقدمة)',
         fa: 'گزینه های جستجوی گروهی ویندوز کنار هم (پیشرفته)',
         sr: 'Windows Side-by-side Assembly podešavanja pretrage (napredno)',
+        sk: 'Windows Side-by-side Assembly nastavenia hľadania (pokročilé)',
         ja: 'Windows Side-by-side アセンブリ検索オプション (上級者向け)',
         pl: 'Windows Side-by-side Assembly opcje przeszukiwania(zaawansowane)',
         fi: 'Windows Side-by-side Assembly etsimisasetukset (edistynyt)',
@@ -1712,6 +1725,7 @@ const translationMap = {
         ar: 'خيارات محددة لنظام التشغيل macOS X',
         fa: 'گزینه های خاص MacOS X',
         sr: 'Specifična podešavanja za macOS X',
+        sk: 'Nastavenia špecifické pre macOS',
         ja: 'macOS X 固有の設定',
         pl: 'macOS X opcje specyficzne',
         fi: 'Yksilölliset asetukset macOSille',
@@ -1743,6 +1757,7 @@ const translationMap = {
         ar: 'نادرًا ما يتم استخدام خيارات خاصة',
         fa: 'گزینه های خاص کمتر استفاده شده',
         sr: 'Retko korišćena podešavanja',
+        sk: 'Málo používané špecifické nastavenia',
         ja: 'あまり使われない設定',
         pl: 'Rzadko wykorzystywane opcje specjalne',
         fi: 'Harvoin käytetyt erikoisasetukset',
@@ -1774,6 +1789,7 @@ const translationMap = {
         ar: 'آخر',
         fa: 'غیره',
         sr: 'Ostalo',
+        sk: 'Iné',
         ja: 'その他',
         pl: 'Inne',
         fi: 'Muu',
@@ -1808,6 +1824,7 @@ const translationMap = {
         ar: 'تصفح بحثًا عن ملف',
         fa: 'انتخاب فایل',
         sr: 'Pronađi datoteku',
+        sk: 'Hľadať súbor',
         ja: 'ファイルを参照',
         pl: 'Przeglądaj w celu znalezienia pliku',
         fi: 'Selaa tiedostoja',
@@ -1839,6 +1856,7 @@ const translationMap = {
         ar: 'قم بالاستعراض بحثًا عن مجلد',
         fa: 'انتخاب پوشه',
         sr: 'Pronađi direktorijum',
+        sk: 'Hľadať priečinok',
         ja: 'フォルダを参照',
         pl: 'Przeglądaj w celu znalezienia katalogu',
         fi: 'Selaa kansioita',
@@ -1870,6 +1888,7 @@ const translationMap = {
         ar: 'يُمكَِن',
         fa: 'فعال',
         sr: 'Omogući',
+        sk: 'Zapnúť',
         ja: '有効',
         pl: 'Włączenie',
         fi: 'Aktivoi',
@@ -1901,6 +1920,7 @@ const translationMap = {
         ar: 'تعطيل',
         fa: 'غیرفعال',
         sr: 'Onemogući',
+        sk: 'Vypnúť',
         ja: '無効',
         pl: 'Wyłączenie',
         fi: 'Deaktivoi',
@@ -1932,6 +1952,7 @@ const translationMap = {
         ar: 'التحويل...',
         fa: 'در حال تبدیل...',
         sr: 'Konvertovanje...',
+        sk: 'Konvertuje sa...',
         ja: '変換中...',
         pl: 'Konwertowanie...',
         fi: 'Muunnetaan...',
@@ -1963,6 +1984,7 @@ const translationMap = {
         ar: 'مسح المخرجات',
         fa: 'پاکسازی خروجی',
         sr: 'Očisti izlaz',
+        sk: 'Vyčistiť výstup',
         ja: '出力のクリア',
         pl: 'Wyczyść wyjście',
         fi: 'Tyhjennä ulostulo',
@@ -1996,6 +2018,7 @@ const translationMap = {
         ar: 'هل تريد تجاوز التكوين الحالي؟',
         fa: 'تنظیمات فعلی را جایگزین کنید؟',
         sr: 'Zameniti trenutnu konfiguraciju?',
+        sk: 'Prepísať aktuálnu konfiguráciu?',
         ja: '現在の構成を上書きしてもよろしいですか？',
         pl: 'Zastąpić aktualną konfigurację?',
         fi: 'Korvaa nykyinen konfiguraatio?',
@@ -2027,6 +2050,7 @@ const translationMap = {
         ar: 'سيتم مسح جميع القيم المدرجة مسبقًا.',
         fa: 'تمامی مقادیر درج شده، حذف خواهند شد.',
         sr: 'Sve prethodne vrednosti će biti izbrisane.',
+        sk: 'Všetky aktuálne hodnoty budú vymazané.',
         ja: '挿入されている値は全て削除されます。',
         pl: 'Wszystkie wcześniej wprowadzone wartości zostaną wymazane.',
         fi: 'Kaikki aikaisemmin syötetyt arvot nollataan.',
@@ -2058,6 +2082,7 @@ const translationMap = {
         ar: 'أكد',
         fa: 'تایید',
         sr: 'Potvrdi',
+        sk: 'Potvrdiť',
         ja: '確認',
         pl: 'Potwierdź',
         fi: 'Vahvista',
@@ -2089,6 +2114,7 @@ const translationMap = {
         ar: 'إلغاء',
         fa: 'لغو',
         sr: 'Otkaži',
+        sk: 'Zrušiť',
         ja: 'キャンセル',
         pl: 'Anuluj',
         fi: 'Peruuta',
@@ -2112,8 +2138,7 @@ const translationMap = {
         de: 'Kein Pfad zum Skript angegeben.\nBitte den Pfad zum Skript oben in der Seite eingeben.',
         pt_br: 'Você não informou a localização dos seus scripts.\nPor favor, insira isso no topo da página.',
         es: 'No ha facilitado la ubicación de sus guiones. \nPor favor, introdúzcala en la parte superior de la página.',
-        es_419:
-          'No ha facilitado la ubicación de sus guiones. \nPor favor, introdúzcala en la parte superior de la página.',
+        es_419: 'No ha facilitado la ubicación de sus guiones. \nPor favor, introdúzcala en la parte superior de la página.',
         tr: 'Komut dosyanızın konumunu belirtmediniz.\nLütfen bunu sayfanın en üstüne girin.',
         th: 'คุณยังไม่ได้ระบุตำแหน่งสคริปต์ของคุณ\nโปรดป้อนข้อมูลนี้ที่ด้านบนของหน้า',
         fr: "Vous n'avez pas fourni l'emplacement de vos scripts.\nVeuillez le saisir en haut de la page.",
@@ -2126,6 +2151,7 @@ const translationMap = {
         ar: 'لم تقم بتوفير موقع البرامج النصية الخاصة بك.  n الرجاء إدخال هذا في أعلى الصفحة.',
         fa: 'شما مکان اسکریپت های خود را ارائه نکرده اید.\nلطفاً مکان را در قسمت بالای صفحه وارد کنید.',
         sr: 'Nisi naveo lokaciju tvoje skripte.\nNavedi lokaciju na vrhu stranice',
+        sk: 'Nezadali ste lokácia skriptu.\nPridajte lokáciu skriptu na vrchu formulára.',
         ja: 'スクリプトの位置が入力されていません。\nページ上部に入力してください。',
         pl: 'Nie podałeś swojej lokalizacji skryptów.\nProszę wpisać ją na górze strony.',
         fi: 'Et ole antanut skriptien sijaintia.\nSyötä se sivun yläpäässä.',
@@ -2157,6 +2183,7 @@ const translationMap = {
         ar: 'سيؤدي هذا الإجراء إلى الكتابة فوق الإخراج السابق في مجلد الإخراج. \nهل تريد المتابعة؟',
         fa: 'این کار فایل خروجی قبلی را در فایل خروجی بازنویسی می کند\nادامه میدهید؟',
         sr: 'Ovo će zameniti prethodni izlaz u izlaznom direktorijumu.\nNastavi?',
+        sk: 'Toto prepíše aktuálny výstup.\nPokračovať?',
         ja: 'この操作により、出力フォルダー内の以前の出力が上書きされます。\n続けてもよろしいですか？',
         pl: 'Ta akcja spowoduje nadpisanie poprzedniego katalogu wyjściowego na nowy katalog wyjściowy.\nKontynować?',
         fi: 'Tämä toiminto korvaa aikaisemman ulostulon ulostulokansiosta.\nOletko varma?',
@@ -2328,6 +2355,10 @@ const supportedLanguages = [
   {
     name: 'Italian (Italiano)',
     code: 'it',
+  },
+    {
+    name: 'Slovak (Slovenčina)',
+    code: 'sk',
   },
   {
     name: 'Japanese (日本語)',
