@@ -33,7 +33,7 @@ const translationMap = {
         ar: 'موقع البرنامج النصي',
         fa: 'محل فایل اسکریپت',
         sr: 'Lokacija skripte',
-        sk : 'Lokácia skriptu'
+        sk : 'Lokácia skriptu',
         ja: 'スクリプトの場所',
         pl: 'Lokalizacja skryptu',
         fi: 'Skriptin sijainti',
@@ -320,7 +320,7 @@ const translationMap = {
         ar: 'المخرجات',
         fa: 'خروجی',
         sr: 'Izlaz (Output)',
-        sk: Výstup (Output)',
+        sk: 'Výstup (Output)',
         ja: '出力',
         pl: 'Wyjście',
         fi: 'Ulostulo',
@@ -673,7 +673,7 @@ const translationMap = {
         ar: 'قائم على النافذة (إخفاء وحدة التحكم)',
         fa: 'مبتنی بر پنجره (عدم نمایش کنسول)',
         sr: 'Aplikacija sa prozorom (sakrij konzolu)',
-        sk: 'Aplikáci v okne (skriť konzolu)
+        sk: 'Aplikáci v okne (skriť konzolu)',
         ja: 'ウィンドウベース (コンソールを非表示にする)',
         pl: 'Aplikacja okienkowa (ukrycie konsoli)',
         fi: 'Ikkunapohjainen (piilota konsoli)',
@@ -705,7 +705,7 @@ const translationMap = {
         ar: 'إضافة ملفات',
         fa: 'افزودن فایل‌ها',
         sr: 'Dodaj datoteku',
-        sk: 'Pridať súbory'
+        sk: 'Pridať súbory',
         ja: 'ファイルの追加',
         pl: 'Dodaj pliki',
         fi: 'Lisää tiedostoja',
