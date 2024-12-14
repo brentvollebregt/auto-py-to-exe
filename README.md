@@ -156,7 +156,7 @@ If you believe you've found an issue with this tool, please follow the ["Reporti
 | German (Deutsch)                            | [hebens](https://github.com/hebens), [ackhh](https://github.com/ackhh)                       | UI                                    |
 | Greek (Ελληνικά)                            | [sofronas](https://github.com/sofronas)                                                      | UI                                    |
 | Hebrew (עברית)                              | [ronbentata](https://github.com/ronbentata)                                                  | UI and [README](./README-Hebrew.md)   |
-| Hindi (हिन्दी)                              | [triach-rold](https://github.com/triach-rold)                                                | UI and [README](./README-Hindi.md)    |
+| Hindi (हिन्दी)                              | [triach-rold](https://github.com/triach-rold)                                                   | UI and [README](./README-Hindi.md)    |
 | Indonesian (Bahasa Indonesia)               | [MarvinZhong](https://github.com/MarvinZhong)                                                | UI                                    |
 | Italian (Italiano)                          | [itsEmax64](https://github.com/itsEmax64)                                                    | UI                                    |
 | Japanese (日本語)                           | [NattyanTV](https://github.com/nattyan-tv)                                                   | UI                                    |
@@ -165,6 +165,7 @@ If you believe you've found an issue with this tool, please follow the ["Reporti
 | Polish (Polski)                             | [Akuczaku](https://github.com/Akuczaku)                                                      | UI                                    |
 | Russian (Русский)                           | Oleg                                                                                         | UI                                    |
 | Serbian                                     | [rina](https://github.com/sweatshirts)                                                       | UI                                    |
+| Slovak (Slovenčina)                         | [mostypc123](https://github.com/mostypc123)                                                  | UI                                    |
 | Spanish (Español)                           | [enriiquee](https://github.com/enriiquee)                                                    | UI                                    |
 | Spanish Latam (Español Latam)               | [Matyrela](https://github.com/Matyrela)                                                      | UI                                    |
 | Thai (ภาษาไทย)                              | [teerut26](https://github.com/teerut26)                                                      | UI (partial)                          |
