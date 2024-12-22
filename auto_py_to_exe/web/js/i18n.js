@@ -352,7 +352,7 @@ const translationMap = {
         ar: `خيارات محددة ${applicationName}`,
         fa: `گزینه‌های ویژه ${applicationName}`,
         sr: 'Precizno podešavanje auto-py-to-exe-a',
-        sk: 'Špecifické nastavenia auto-py-to-exe',
+        sk: 'Špecifické nastavenia ${applicationName}',
         ja: `${applicationName} 固有の設定`,
         pl: `${applicationName} Opcje szczególne`,
         fi: `${applicationName} Tarkat asetukset`,
