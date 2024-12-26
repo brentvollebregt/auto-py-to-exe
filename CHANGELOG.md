@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.45.1
+
+🚀 Enhancements
+
+- [#514](https://github.com/brentvollebregt/auto-py-to-exe/pull/514): Add Slovak translations
+
+🏆 Contributors
+
+- [Juraj K.](https://github.com/mostypc123)
+
 ## 2.45.0
 
 🚀 Enhancements
