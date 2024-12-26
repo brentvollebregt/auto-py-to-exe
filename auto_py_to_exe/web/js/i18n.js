@@ -33,7 +33,7 @@ const translationMap = {
         ar: 'موقع البرنامج النصي',
         fa: 'محل فایل اسکریپت',
         sr: 'Lokacija skripte',
-        sk : 'Lokácia skriptu',
+        sk: 'Lokácia skriptu',
         ja: 'スクリプトの場所',
         pl: 'Lokalizacja skryptu',
         fi: 'Skriptin sijainti',
@@ -1322,7 +1322,8 @@ const translationMap = {
           'Budi oprezan kada koristiš dodatne datoteke u režimu jedne datoteke;\n' +
           `<a ${onFileModeAdditionalFilesHelpAnchorTagContents}>pročitaj ovo (na engleskom)</a>\n` +
           'i ažuriraj svoj kod da bi radio sa PyInstaller.',
-        sk: 'Buďte opatrný pri pridávaní súborov v režime jedného súboru;\n' +
+        sk:
+          'Buďte opatrný pri pridávaní súborov v režime jedného súboru;\n' +
           '<a ${onFileModeAdditionalFilesHelpAnchorTagContents}>prečítajte si tento príspevok (stránka v angličtine)</a>\n' +
           'a aktualizujte kód tak, aby fungoval s PyInstaller-om.',
         ja:
@@ -1473,7 +1474,8 @@ const translationMap = {
           'Nešto nije u redu sa tvojim exe-om? Pročitaj ' +
           `<a ${helpPostLinkAnchorTagContents}>ovaj post o tome kako da popraviš česte greške,</a>` +
           ' za moguća rešenja problema.',
-        sk: 'Niečo nefunguje s vaším exe súborom? Přečtěte si ' +
+        sk:
+          'Niečo nefunguje s vaším exe súborom? Přečtěte si ' +
           `<a ${helpPostLinkAnchorTagContents}>tento príspevok ako opraviť bežné chyby</a>` +
           ' pre možné riešenia.',
         ja:
@@ -2138,7 +2140,8 @@ const translationMap = {
         de: 'Kein Pfad zum Skript angegeben.\nBitte den Pfad zum Skript oben in der Seite eingeben.',
         pt_br: 'Você não informou a localização dos seus scripts.\nPor favor, insira isso no topo da página.',
         es: 'No ha facilitado la ubicación de sus guiones. \nPor favor, introdúzcala en la parte superior de la página.',
-        es_419: 'No ha facilitado la ubicación de sus guiones. \nPor favor, introdúzcala en la parte superior de la página.',
+        es_419:
+          'No ha facilitado la ubicación de sus guiones. \nPor favor, introdúzcala en la parte superior de la página.',
         tr: 'Komut dosyanızın konumunu belirtmediniz.\nLütfen bunu sayfanın en üstüne girin.',
         th: 'คุณยังไม่ได้ระบุตำแหน่งสคริปต์ของคุณ\nโปรดป้อนข้อมูลนี้ที่ด้านบนของหน้า',
         fr: "Vous n'avez pas fourni l'emplacement de vos scripts.\nVeuillez le saisir en haut de la page.",
@@ -2356,7 +2359,7 @@ const supportedLanguages = [
     name: 'Italian (Italiano)',
     code: 'it',
   },
-    {
+  {
     name: 'Slovak (Slovenčina)',
     code: 'sk',
   },
