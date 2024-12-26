@@ -2360,10 +2360,6 @@ const supportedLanguages = [
     code: 'it',
   },
   {
-    name: 'Slovak (Slovenčina)',
-    code: 'sk',
-  },
-  {
     name: 'Japanese (日本語)',
     code: 'ja',
   },
@@ -2387,6 +2383,10 @@ const supportedLanguages = [
     name: 'Serbian (Srpski)',
     code: 'sr',
   },
+  {
+    name: 'Slovak (Slovenčina)',
+    code: 'sk',
+  }
   {
     name: 'Spanish (Español)',
     code: 'es',
