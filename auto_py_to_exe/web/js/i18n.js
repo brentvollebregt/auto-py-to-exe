@@ -2386,7 +2386,7 @@ const supportedLanguages = [
   {
     name: 'Slovak (Slovenčina)',
     code: 'sk',
-  }
+  },
   {
     name: 'Spanish (Español)',
     code: 'es',
