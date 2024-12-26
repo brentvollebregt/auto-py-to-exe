@@ -1324,7 +1324,7 @@ const translationMap = {
           'i ažuriraj svoj kod da bi radio sa PyInstaller.',
         sk:
           'Buďte opatrný pri pridávaní súborov v režime jedného súboru;\n' +
-          '<a ${onFileModeAdditionalFilesHelpAnchorTagContents}>prečítajte si tento príspevok (stránka v angličtine)</a>\n' +
+         `<a ${onFileModeAdditionalFilesHelpAnchorTagContents}>prečítajte si tento príspevok (stránka v angličtine)</a>\n` +
           'a aktualizujte kód tak, aby fungoval s PyInstaller-om.',
         ja:
           '1つのファイルモードで追加ファイルを使用する際は、注意が必要です。;\n' +
