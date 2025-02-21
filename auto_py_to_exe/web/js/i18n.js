@@ -1332,6 +1332,10 @@ const translationMap = {
           'Onefile मोड के साथ अतिरिक्त फ़ाइलों का उपयोग करते समय सावधान रहें।;\n' +
           `<a ${onFileModeAdditionalFilesHelpAnchorTagContents}>read this</a>\n` +
           'और अपने कोड को PyInstaller के साथ काम करने के लिए अपडेट करें।',
+        hu:
+          'Légy óvatos, ha további fájlokat használ egyfájlos módban;\n' +
+          `<a ${onFileModeAdditionalFilesHelpAnchorTagContents}>olvasd el ezt</a>\n` +
+          'és frissítsd a kódod, hogy működjön pyinstallerrel.',
         it:
           'Fai attenzione quando usi più di un file in modalità un file;\n' +
           `<a ${onFileModeAdditionalFilesHelpAnchorTagContents}>leggi qui (articolo in inglese)</a>\n` +
@@ -1409,6 +1413,7 @@ const translationMap = {
         fr: 'Si vous souhaitez placer des fichiers dans le répertoire racine, mettez un point (.) dans la destination.',
         he: 'אם אתה רוצה לשים קבצים בספריית השורש, שים נקודה (.) ביעד',
         hi: 'यदि आप फ़ाइलों को मूल निर्देशिका में डालना चाहते हैं, तो गंतव्य में एक बिंदु (.) डालें।',
+        hu: 'Ha a fő könyvtárba szeretnéd elhelyezni a fájlokat, akkor rakj egy pontot (.) a célhoz.',
         it: 'Se vuoi mettere file nella cartella radice, inserisci (.) nella destinazione',
         id: 'Jika Anda ingin menyimpan berkas di direktori root, tambahkan titik (.) di tujuan.',
         cs: 'Pokud chcete přidat soubory do kořenové složky, přidejte tečku (.) do destinace.',
@@ -1484,6 +1489,9 @@ const translationMap = {
           'आपके एक्सी में कुछ गड़बड़ है? पढ़ें' +
           `<a ${helpPostLinkAnchorTagContents}>आम समस्याओं को कैसे ठीक करें, इस पोस्ट को पढ़ें।</a>` +
           'संभावित समाधानों के लिए।',
+        hu: 'Valami nem jó az exe fájloddal? Olvasd el ' +
+          `<a ${helpPostLinkAnchorTagContents}>ezt a posztot a leggyakoribb hibák elhárításáról</a>` +
+          ' lehetséges megoldásokért.',
         it:
           'Qualcosa è andato storto con il tuo exe? leggi ' +
           `<a ${helpPostLinkAnchorTagContents}>questo articolo su come risolvere problemi comuni (articolo in inglese)</a>` +
@@ -1567,6 +1575,7 @@ const translationMap = {
         fr: 'Options Générales',
         he: 'אפשרויות כלליות',
         hi: 'सामान्य विकल्प',
+        hu: 'Általános lehetőségek',
         it: 'Opzioni generali',
         id: 'Pilihan Umum',
         cs: 'Obyčejné nastavení',
@@ -1599,6 +1608,7 @@ const translationMap = {
         fr: 'Quoi regrouper, où chercher',
         he: 'מה לאגד, איפה לחפש',
         hi: 'क्या बंडल करना है, कहाँ खोजना है',
+        hu: 'Mit kell csomagolni, hol kell keresni',
         it: 'Cosa ragruppare, dove cercare',
         id: 'Apa yang dibundling, dimana cari',
         cs: 'Co přibalit, kde hledat',
@@ -1631,6 +1641,7 @@ const translationMap = {
         fr: 'Comment générer',
         he: 'איך ליצור',
         hi: 'कैसे उत्पन्न करें',
+        hu: 'Hogyan generáljunk',
         it: 'Come generare',
         id: 'Bagaimana cara generate',
         cs: 'Jak vygenerovat',
@@ -1662,6 +1673,7 @@ const translationMap = {
         fr: 'Windows et macOS X options specifiques',
         he: 'אפשרויות מיוחדות למק וחלונות',
         hi: 'Windows और macOS X विशिष्ट विकल्प',
+        hu: 'Windows és macOs X specifikus opciók',
         it: 'Opzioni specifice Windows e macOS X',
         id: 'Pilihan Windows dan macOS X',
         cs: 'Windows a macOS X specifické nastavení',
@@ -1695,6 +1707,7 @@ const translationMap = {
         he: 'אפשרויות מיוחדות לסביבת חלונות',
         hi: 'विंडोज़ विशिष्ट विकल्प',
         it: 'Opzioni specifice Windows',
+        hu: 'Windows specifikus opciók',
         id: 'Pilihan Windows',
         cs: 'Windows specifické nastavení',
         el: 'Συγκεκριμένες Επιλογές για Windows',
@@ -1726,6 +1739,7 @@ const translationMap = {
         fr: 'Options de recherche Windows Side-by-side Assembly (avancées)',
         he: 'אפשרויות חיפוש חלון לצד חלון (מתקדם)',
         hi: 'विंडोज़ साइड-बाई-साइड असेंबली खोज विकल्प (उन्नत)',
+        hu: 'Windows Side-by-side Assembly keresés beállítások (fejlett)',
         it: 'Opzioni ricerca Windows Side-by-side Assembly (avanzato)',
         id: 'Pilihan pencarian Assembly Windows Side-by-side (lanjutan)',
         cs: 'Windows Side-by-side Assembly nastavení hledání (pokročilé)',
@@ -1758,6 +1772,7 @@ const translationMap = {
         fr: 'Options spécifiques pour macOS X',
         he: 'אפשרויות מיוחדות למק',
         hi: 'macOS X विशिष्ट विकल्प',
+        hu: 'macOS X specifikus beállítások',
         it: 'Opzioni specifiche macOS X',
         id: 'Pilihan macOS X',
         cs: 'macOS X specifické nastavení',
@@ -1790,6 +1805,7 @@ const translationMap = {
         fr: 'Options spéciales rarement utilisées',
         he: 'אפשרויות מיוחדות בשימוש נדיר',
         hi: 'कम प्रयोग किए जाने वाले विशेष विकल्प',
+        hu: 'Ritkán használt speciális opciók',
         it: 'Opzioni speciali raramente utilizzate',
         id: 'Pilihan khusus yang jarang digunakan',
         cs: 'Málo používané speciální nastavení',
@@ -1822,6 +1838,7 @@ const translationMap = {
         fr: 'Autres',
         he: 'אחר',
         hi: 'अन्य',
+        hu: 'Egyéb',
         it: 'Altro',
         id: 'Lainnya',
         cs: 'Ostatní',
@@ -1857,6 +1874,7 @@ const translationMap = {
         fr: 'Rechercher un fichier',
         he: 'בחר קובץ',
         hi: 'फ़ाइल के लिए ब्राउज़ करें',
+        hu: 'Fájl böngészése',
         it: 'Sfoglia file',
         id: 'Telusuri berkas',
         cs: 'Hledat soubor',
@@ -1889,6 +1907,7 @@ const translationMap = {
         fr: 'Rechercher un dossier',
         he: 'בחר תיקיה',
         hi: 'फ़ोल्डर के लिए ब्राउज़ करें',
+        hu: 'Mappa böngeszése',
         it: 'Sfoglia archivio',
         id: 'Telusuri folder',
         cs: 'Hledat složku',
@@ -1921,6 +1940,7 @@ const translationMap = {
         fr: 'Activer',
         he: 'להפעיל',
         hi: 'सक्षम करें',
+        hu: 'Engedélyez',
         it: 'Abilita',
         id: 'Aktifkan',
         cs: 'Zapnout',
@@ -1953,6 +1973,7 @@ const translationMap = {
         fr: 'Désactiver',
         he: 'להשבית',
         hi: 'अक्षम करें',
+        hu: 'Letilt',
         it: 'Disabilita',
         id: 'Matikan',
         cs: 'Vypnout',
@@ -1985,6 +2006,7 @@ const translationMap = {
         fr: 'Conversion...',
         he: 'ממיר...',
         hi: 'रूपांतरण हो रहा है...',
+        hu: 'Átalakítás...',
         it: 'Conversione in corso...',
         id: 'Mengkonversi...',
         cs: 'Probíhá konverze...',
@@ -2017,6 +2039,7 @@ const translationMap = {
         fr: 'Effacer la sortie',
         he: 'ניקוי פלט',
         hi: 'आउटपुट साफ़ करें',
+        hu: 'Kimenet törlése',
         it: 'Cancella output',
         id: 'Clear Output',
         cs: 'Smazat výstup',
@@ -2051,6 +2074,7 @@ const translationMap = {
         fr: 'Remplacer la configuration actuelle ?',
         he: 'לדרוס הגדרות קיימות?',
         hi: 'वर्तमान विन्यास को अधिरोधित करें?',
+        hu: 'Felülírja a jelenlegi konfigurációt?',
         it: 'Sovrascrivi la confugurazione corrente?',
         id: 'Timpa konfigurasi saat ini?',
         cs: 'Přepsat aktuální konfiguraci?',
@@ -2083,6 +2107,7 @@ const translationMap = {
         fr: 'Toutes les valeurs précédemment insérées seront effacées.',
         he: 'כל הערכים שהוכנסו קודם לכן יימחקו',
         hi: 'पिछले में डाले गए सभी मान मिटा दिए जाएंगे।',
+        hu: 'Minden korábbi érték törtlődik',
         it: 'Tutti i valori inseriti sarranno cancellati.',
         id: 'Semua nilai yang sebelumnya dimasukkan akan dihapus.',
         cs: 'Všechny předchozí hodnoty budou smazány.',
@@ -2115,6 +2140,7 @@ const translationMap = {
         fr: 'confimer',
         he: 'אישור',
         hi: 'पुष्टि करें',
+        hu: 'Megerősítés',
         it: 'Conferma',
         id: 'Konfirmasi',
         cs: 'Potvrdit',
@@ -2147,6 +2173,7 @@ const translationMap = {
         fr: 'Annuler',
         he: 'ביטול',
         hi: 'रद्द करें',
+        hu: 'Mégse',
         it: 'Annulla',
         id: 'Batal',
         cs: 'Zrušit',
@@ -2185,6 +2212,7 @@ const translationMap = {
         fr: "Vous n'avez pas fourni l'emplacement de vos scripts.\nVeuillez le saisir en haut de la page.",
         he: 'לא סיפקת את מיקום הסקריפטים שלך.\nאנא הזן את זה בראש הדף',
         hi: 'आपने अपनी स्क्रिप्ट की स्थान नहीं दी है। \n कृपया पृष्ठ के शीर्ष पर इसे दर्ज करें।',
+        hu: 'Nem adtad meg a szkript elérési útvonalát.\nKérlek add meg az oldal tetején.',
         it: "Non hai provvisto la posizione dei tuoi script.\nPerfavore inserisci questo all'inizio della pagina",
         id: 'Anda belum menyediakan lokasi skrip Anda.\nSilakan masukkan di atas halaman.',
         cs: 'Chybí místo skriptu.\nProsím přidejte místo nahoře.',
@@ -2217,6 +2245,7 @@ const translationMap = {
         fr: 'Cette action écrasera une sortie précédente dans le dossier de sortie.\nContinuer ?',
         he: 'פעולה זו תדרוס את הפלט בתיקיה של הפעולה הקודמת. האם להמשיך?',
         hi: 'यह कार्रवाई आउटपुट फ़ोल्डर में पिछले आउटपुट को अधिलेखित कर देगी। \n क्या आप जारी रखना चाहते हैं?',
+        hu: 'Ez felülírja a legutóbbi kimenetet a kimeneti mappában.\nFolytatja?',
         it: 'Questa azione sovrascriverà un output precedente nella cartella di output.\nContinuare?',
         id: 'Tindakan ini akan menimpa sebuah output sebelumnya di folder output.\nLanjutkan?',
         cs: 'Toto přepíše předchozí výstup.\nPokračovat?',
