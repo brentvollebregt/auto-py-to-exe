@@ -1489,7 +1489,8 @@ const translationMap = {
           'आपके एक्सी में कुछ गड़बड़ है? पढ़ें' +
           `<a ${helpPostLinkAnchorTagContents}>आम समस्याओं को कैसे ठीक करें, इस पोस्ट को पढ़ें।</a>` +
           'संभावित समाधानों के लिए।',
-        hu: 'Valami nem jó az exe fájloddal? Olvasd el ' +
+        hu:
+          'Valami nem jó az exe fájloddal? Olvasd el ' +
           `<a ${helpPostLinkAnchorTagContents}>ezt a posztot a leggyakoribb hibák elhárításáról</a>` +
           ' lehetséges megoldásokért.',
         it:
