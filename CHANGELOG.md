@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.46.0
+
+🚀 Enhancements
+
+- [#521](https://github.com/brentvollebregt/auto-py-to-exe/pull/521): Added Hungarian translations
+
+🏆 Contributors
+
+- [Zalán Gódor](https://github.com/synexdev01)
+
 ## 2.45.1
 
 🚀 Enhancements
