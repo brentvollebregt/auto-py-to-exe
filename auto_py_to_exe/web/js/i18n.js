@@ -2322,6 +2322,10 @@ const translate = (language) => {
 };
 
 const _getLanguage = () => {
+  if (typeof navigator === 'undefined') {
+    return 'en';
+  }
+
   const language =
     (navigator.languages && navigator.languages[0]) || // Chrome / Firefox
     navigator.language || // All browsers
@@ -2416,7 +2420,7 @@ const supportedLanguages = [
     code: 'he',
   },
   {
-    name: 'Hindi (हिंदी)',
+    name: 'Hindi (हिन्दी)',
     code: 'hi',
   },
   {
@@ -2486,3 +2490,8 @@ const supportedLanguages = [
 ];
 
 let currentLanguage = _checkLanguageIsSupportedOrDefault(_getLanguage()); // Keeps track of the current language
+
+module.exports = {
+  translationMap,
+  supportedLanguages,
+};

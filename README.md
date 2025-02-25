@@ -165,10 +165,10 @@ If you believe you've found an issue with this tool, please follow the ["Reporti
 | Persian (فارسی)                             | [DrunkLeen](https://github.com/drunkleen), [Ar.dst](https://github.com/Ar-dst)               | UI and [README](./README-Persian.md)  |
 | Polish (Polski)                             | [Akuczaku](https://github.com/Akuczaku)                                                      | UI                                    |
 | Russian (Русский)                           | Oleg                                                                                         | UI                                    |
-| Serbian                                     | [rina](https://github.com/sweatshirts)                                                       | UI                                    |
+| Serbian (Srpski)                            | [rina](https://github.com/sweatshirts)                                                       | UI                                    |
 | Slovak (Slovenčina)                         | [mostypc123](https://github.com/mostypc123)                                                  | UI                                    |
 | Spanish (Español)                           | [enriiquee](https://github.com/enriiquee)                                                    | UI                                    |
-| Spanish Latam (Español Latam)               | [Matyrela](https://github.com/Matyrela)                                                      | UI                                    |
+| Spanish Latin America (Español Latam)       | [Matyrela](https://github.com/Matyrela)                                                      | UI                                    |
 | Thai (ภาษาไทย)                              | [teerut26](https://github.com/teerut26)                                                      | UI (partial)                          |
 | Turkish (Türkçe)                            | [mcagriaksoy](https://github.com/mcagriaksoy)                                                | UI and [README](./README-Turkish.md)  |
 | Ukrainian (Українська)                      | [AndrejGorodnij](https://github.com/AndrejGorodnij)                                          | UI                                    |

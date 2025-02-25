@@ -28,3 +28,14 @@ jobs:
           prettier_version: '2.8.8'
           dry: true
           prettier_options: '--check .'
+
+  translations:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+
+      - name: Run check-translations.js
+        run: node check-translations.js >> $GITHUB_STEP_SUMMARY
+        working-directory: ./.github/workflow_utils

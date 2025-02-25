@@ -7,7 +7,7 @@ _Insert a brief description about what your change is / does._
 **Translation checklist**
 
 - [ ] I have ran the application to make sure my code runs
-- [ ] I have used the correct [ISO 639-1 code](https://www.alchemysoftware.com/livedocs/ezscript/Topics/Catalyst/Language.htm) for my translations (e.g. `en`)
+- [ ] I have used the correct [ISO 639-1 code](https://localizely.com/iso-639-1-list/) for my translations (e.g. `en`)
 - [ ] I have formatted all changes as described in the [contribution style guide](https://github.com/brentvollebregt/auto-py-to-exe/blob/master/CONTRIBUTING.md#style-guide)
 - [ ] I have added the language to `supportedLanguages` in alphabetical order
 - [ ] I have added the language to the table in [README.md](https://github.com/brentvollebregt/auto-py-to-exe/blob/master/README.md#translations) in alphabetical order
