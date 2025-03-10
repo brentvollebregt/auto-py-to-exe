@@ -57,7 +57,9 @@ def __get_latest_version_for_library(library_repo):
         response_data = response.json()
         latest_release_tag_name = response_data["tag_name"].strip("v")
         return PackageVersion(latest_release_tag_name.strip("v"), response_data["html_url"])
-    except requests.exceptions.RequestException:
+    except requests.exceptions.RequestException as error:
+        print(f"Unable to get latest release for {library_repo}")
+        print(error)
         return None
 
 
