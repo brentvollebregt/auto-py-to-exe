@@ -35,7 +35,7 @@ def is_running_in_wine():
     
     # Method 3: Check for Windows drive letters in a Linux environment
     if platform.system() == 'Linux':
-        print(f"Wine-Check: Linux detected, checking for Windows drive letters...")
+        print("Wine-Check: Linux detected, checking for Windows drive letters...")
         windows_drives = [f"{chr(d)}:" for d in range(ord('C'), ord('Z')+1)]
         for drive in windows_drives:
             drive_path = f"/dosdevices/{drive.lower()}"
@@ -46,17 +46,17 @@ def is_running_in_wine():
     # Method 4: Check for discrepancies between reported OS and actual file system
     if platform.system() == 'Linux':
         try:
-            print(f"Wine-Check: Checking for Windows paths in Linux...")
+            print("Wine-Check: Checking for Windows paths in Linux...")
             if os.path.exists("C:\\Program Files"):
-                print(f"Wine-Check: Detected 'C:\\Program Files' in Linux")
+                print("Wine-Check: Detected 'C:\\Program Files' in Linux")
                 return True
             if os.path.exists("Z:\\usr"):
-                print(f"Wine-Check: Detected 'Z:\\usr' in Linux")
+                print("Wine-Check: Detected 'Z:\\usr' in Linux")
                 return True
         except Exception as e:
             print(f"Wine-Check: Error checking Windows paths: {e}")
             
-    print(f"Wine-Check: No Wine environment detected")
+    print("Wine-Check: No Wine environment detected")
     return False
 
 
