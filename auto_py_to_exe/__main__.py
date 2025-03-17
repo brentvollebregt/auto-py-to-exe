@@ -5,6 +5,9 @@ import shutil
 import tempfile
 import platform
 import sys
+from . import shims
+shims.install_shims()
+from . import __version__, config, ui, validation  # noqa: E402
 
 
 def is_running_in_wine():
@@ -58,11 +61,6 @@ def is_running_in_wine():
             
     print("Wine-Check: No Wine environment detected")
     return False
-
-
-from . import shims
-shims.install_shims()
-from . import __version__, config, ui, validation  # noqa: E402
 
 
 def start_ui(logging_level, build_directory_override):
