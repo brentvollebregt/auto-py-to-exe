@@ -76,6 +76,13 @@ def __get_latest_pyinstaller_version():
 def get_warnings():
     warnings = []
 
+    # Check we aren't running in C:\Windows\System32 (default when running cmd/PowerShell as an admin)
+    if Path.cwd() == Path("C:/Windows/system32"):
+        message = "Your current directory is C:\\Windows\\system32 which means the default output directory is in the System32 directory."
+        message += "\nThis is generally discouraged as System32 contains system files."
+        message += '\nPlease open auto-py-to-exe from another directory or manually configure the output directory in the "Settings" tab.'
+        warnings.append(message)
+
     # Check auto-py-to-exe version is it latest
     try:
         current_auto_py_to_exe_version = parse_version_tuple(__version__)
