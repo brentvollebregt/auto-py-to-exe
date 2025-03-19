@@ -2,6 +2,7 @@ import argparse
 import json
 import logging
 import os
+import sys
 
 import eel
 from eel import chrome, edge
@@ -50,6 +51,17 @@ def __get_pyinstaller_options():
 
 def __can_use_chrome():
     """Identify if Chrome is available for Eel to use"""
+    # Do not use Chrome if we are running in Wine - the Chrome found will most likely be the Linux host's binary
+    # We can detect if we are running in Wine by looking for the `HKEY_LOCAL_MACHINE\Software\Wine` registry key
+    if sys.platform == "win32":
+        try:
+            import winreg
+
+            with winreg.OpenKey(winreg.HKEY_CURRENT_USER, r"Software\Wine") as _key:
+                return False
+        except FileNotFoundError:
+            pass  # Not running in Wine - do the usual checks
+
     chrome_instance_path = chrome.find_path()
     return chrome_instance_path is not None and os.path.exists(chrome_instance_path)
 
