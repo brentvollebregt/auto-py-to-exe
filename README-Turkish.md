@@ -94,15 +94,15 @@ _Bu kadar kolay._
 
 Kullanım: `auto-py-to-exe [-db] [-c [CONFIG]] [-o [PATH]] [filename]`
 
-| Argüman                                                      | Tip                | Açıklama                                                                                                                                                                     |
-| ------------------------------------------------------------ | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| filename                                                     | konumsal/opsiyonel | Kullanıcı arayüzündeki "Komut Dosyası Konumu" alanını önceden doldurun.                                                                                                      |
-| -db, --default-browser                                       | opsiyonel          | Varsayılan tarayıcıyı (Chrome olabilir) kullanarak kullanıcı arayüzünü kalemleyin. Chrome'u bulmaya çalışmaz.                                                                |
-| -nu, --no-ui                                                 | opsiyonel          | Kullanıcı arayüzünü bir tarayıcıda açmaya çalışmayın ve uygulamanın erişilebileceği adresi yazdırın.                                                                         |
-| -c [CONFIG], --config [CONFIG]                               | opsiyonel          | Kullanıcı arayüzünü önceden doldurmak için bir yapılandırma dosyası (json) sağlayın. Bunlar ayarlar sekmesinde oluşturulabilir.                                            |
-| -o [PATH], --output-dir [PATH]                               | opsiyonel          | Varsayılan çıktı dizinini ayarlayın. Bu, kullanıcı arayüzünde hala değiştirilebilir.                                                                                         |
+| Argüman                                                      | Tip                | Açıklama                                                                                                                                                               |
+| ------------------------------------------------------------ | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| filename                                                     | konumsal/opsiyonel | Kullanıcı arayüzündeki "Komut Dosyası Konumu" alanını önceden doldurun.                                                                                                |
+| -db, --default-browser                                       | opsiyonel          | Varsayılan tarayıcıyı (Chrome olabilir) kullanarak kullanıcı arayüzünü kalemleyin. Chrome'u bulmaya çalışmaz.                                                          |
+| -nu, --no-ui                                                 | opsiyonel          | Kullanıcı arayüzünü bir tarayıcıda açmaya çalışmayın ve uygulamanın erişilebileceği adresi yazdırın.                                                                   |
+| -c [CONFIG], --config [CONFIG]                               | opsiyonel          | Kullanıcı arayüzünü önceden doldurmak için bir yapılandırma dosyası (json) sağlayın. Bunlar ayarlar sekmesinde oluşturulabilir.                                        |
+| -o [PATH], --output-dir [PATH]                               | opsiyonel          | Varsayılan çıktı dizinini ayarlayın. Bu, kullanıcı arayüzünde hala değiştirilebilir.                                                                                   |
 | -bdo [FOLDER_PATH], --build-directory-override [FOLDER_PATH] | opsiyonel          | Varsayılan derleme dizinini geçersiz kılın. Antivirüs programınızın dosyaları kaldırmasını durdurmak için bir klasörü beyaz listeye almanız gerekiyorsa kullanışlıdır. |
-| -lang [LANGUAGE_CODE], --language [LANGUAGE_CODE]            | opsiyonel          | Kullanıcı arayüzüne, açarken varsayılan olarak hangi dili kullanması gerektiği konusunda ipucu verin. Dil kodları aşağıdaki "Çeviriler" altındaki tabloda bulunabilir.       |
+| -lang [LANGUAGE_CODE], --language [LANGUAGE_CODE]            | opsiyonel          | Kullanıcı arayüzüne, açarken varsayılan olarak hangi dili kullanması gerektiği konusunda ipucu verin. Dil kodları aşağıdaki "Çeviriler" altındaki tabloda bulunabilir. |
 
 > Bu paketi yerel olarak çalıştırıyorsanız, `auto-py-to-exe` yerine `python -m auto_py_to_exe` komutunu çağırmanız gerekecektir.
 
