@@ -1,7 +1,11 @@
-const options_ignored = ['help'];
+/** Options that do not need to be handled or are purposefully ignored */
+const options_ignored = ['help', 'shorthand_manifest'];
+/** Options with no dynamically built inputs */
 const options_static = ['filenames', 'onefile', 'console', 'icon_file', 'datas'];
+/** Options that we override while building */
 const options_overridden = ['specpath', 'distpath', 'workpath', 'noconfirm'];
 
+/** Options that have an input type of file */
 const options_inputTypeFile = [
   'runtime_hooks',
   'version_file',
@@ -11,10 +15,14 @@ const options_inputTypeFile = [
   'entitlements_file',
   'icon_file',
 ];
+/** Options that have an input type of directory */
 const options_inputTypeDirectory = ['upx_dir', 'pathex', 'hookspath'];
+/** Options that have an input type of file and destination */
 const options_inputTypeDoubleFileDest = ['datas', 'binaries'];
+/** Options that have an input type of directory and destination */
 const options_inputTypeDoubleDirectoryDest = ['datas'];
 
+/** Pre-defined sections of the advanced tab */
 const advancedSections = [
   {
     titleI18nPath: 'dynamic.title.generalOptions',
