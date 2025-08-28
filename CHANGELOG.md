@@ -1,5 +1,19 @@
 # Changelog
 
+## 2.47.0
+
+🚀 Enhancements
+
+- [#526](https://github.com/brentvollebregt/auto-py-to-exe/issues/526): Show a warning when running from the System32 directory
+- [#536](https://github.com/brentvollebregt/auto-py-to-exe/pull/536): Fix Turkish translation errors in README-Turkish.md
+- [#535](https://github.com/brentvollebregt/auto-py-to-exe/issues/535): Hide -m option due to it being deprecated
+- [#538](https://github.com/brentvollebregt/auto-py-to-exe/pull/538): Correct some errors in Chinese and Russian translations
+
+🏆 Contributors
+
+- [Mehmet Cagri Aksoy](https://github.com/mcagriaksoy)
+- [2bitbit](https://github.com/2bitbit)
+
 ## 2.46.0
 
 🚀 Enhancements
