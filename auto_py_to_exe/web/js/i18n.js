@@ -48,7 +48,7 @@ const translationMap = {
         zh: '语言',
         zh_tw: '語言',
         uk: 'Мова',
-        ru: 'идиома',
+        ru: 'Язык',
         be: 'Мова',
         de: 'Sprache',
         pt_br: 'Idioma',
@@ -2026,7 +2026,7 @@ const translationMap = {
       },
       clearOutput: {
         en: 'Clear Output',
-        zh: '清除输出f',
+        zh: '清除输出',
         zh_tw: '清除輸出',
         uk: 'Очистка Виводу',
         ru: 'Отчистить Вывод',
@@ -2094,8 +2094,8 @@ const translationMap = {
       },
       configModalDescription: {
         en: 'All previously inserted values will be erased.',
-        zh: '所有先前插入的值将被删除。',
-        zh_tw: '所有先前插入的值將被刪除。',
+        zh: '所有先前插入的值都将被删除。',
+        zh_tw: '所有先前插入的值都將被刪除。',
         uk: 'Всі попередні налаштування будуть видалені.',
         ru: 'Все ранее текущие значения будут удалены.',
         be: 'Усе папярэднія бягучыя значэнні будуць выдаленыя.',
