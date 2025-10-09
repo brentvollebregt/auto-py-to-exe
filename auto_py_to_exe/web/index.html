@@ -26,7 +26,8 @@
         package: (command, non_pyinstaller_options) => {},
         import_configuration: () => {},
         export_configuration: (configuration) => {},
-      };
+		export_script_configuration: (command) => {},
+      }; 
     </script>
     <script type="text/javascript" src="/eel.js"></script>
     <script type="text/javascript" src="/js/constants.js"></script>
@@ -237,6 +238,7 @@
             <h3 data-i18n="ui.title.configuration">Configuration</h3>
             <button id="configuration-import" data-i18n="ui.button.importConfig">Import Config From JSON File</button>
             <button id="configuration-export" data-i18n="ui.button.exportConfig">Export Config To JSON File</button>
+			<button id="configuration-script-export" data-i18n="ui.button.exportScriptConfig">Export Config To Script File</button>
           </div>
         </div>
       </div>

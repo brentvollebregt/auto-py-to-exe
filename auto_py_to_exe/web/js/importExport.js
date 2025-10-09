@@ -64,3 +64,8 @@ const onConfigurationExport = async () => {
   const data = await _collectDataToExport();
   await eel.export_configuration(data)();
 };
+
+const onConfigurationScriptExport = async () => {
+  const command = await getCurrentCommand();
+  await eel.export_script_configuration(command)();
+};

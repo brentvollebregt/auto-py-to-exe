@@ -190,6 +190,7 @@ const setupEvents = () => {
   document.getElementById('raw-arguments').addEventListener('input', rawArgumentsChange);
   document.getElementById('configuration-import').addEventListener('click', () => onConfigurationImport());
   document.getElementById('configuration-export').addEventListener('click', () => onConfigurationExport());
+  document.getElementById('configuration-script-export').addEventListener('click', () => onConfigurationScriptExport());
 
   // Build buttons
   document.getElementById('package-button').addEventListener('click', packageScript);
