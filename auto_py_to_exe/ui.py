@@ -169,9 +169,9 @@ def export_script_configuration(command):
 
             if os.name == "nt":
                 f.write("pause\n")
-            else:   
-                f.write("read -p \"Press Enter to close...\"\n")
-    
+            else:
+                f.write('read -p "Press Enter to close..."\n')
+
 
 @eel.expose
 def will_packaging_overwrite_existing(file_path, manual_name, one_file, output_folder):
