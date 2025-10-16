@@ -42,7 +42,7 @@ Slovenski README [tukaj](./README-Slovenian.md)
 
 ### Prerequisites
 
-- Python: 3.6-3.12
+- Python: 3.6-3.14
 
 _To have the interface displayed in the images, you will need Chrome. If Chrome is not installed or `--default-browser` is passed, the default browser will be used._
 
@@ -53,7 +53,10 @@ _To have the interface displayed in the images, you will need Chrome. If Chrome 
 You can install this project using PyPI:
 
 ```
-$ pip install auto-py-to-exe
+Windows:
+$ python -m pip install auto-py-to-exe
+Linux:
+$ python3 -m pip install auto-py-to-exe
 ```
 
 Then to run it, execute the following in the terminal:
