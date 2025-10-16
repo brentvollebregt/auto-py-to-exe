@@ -361,3 +361,9 @@ div[id*='section'] .content {
     transform: rotate(360deg);
   }
 }
+
+.button-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
