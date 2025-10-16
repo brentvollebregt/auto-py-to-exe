@@ -919,6 +919,7 @@ const translationMap = {
         fa: 'ذخیره تنظیمات در فایل اسکریپت',
         sr: 'Sačuvaj konfiguracuju kao skript fajl',
         sk: 'Exportovať konfiguráciu do skriptovacieho súboru',
+        sl: 'Izvozi konfiguracijo v datoteko skripta',
         ja: '構成をスクリプトファイルへエクスポート',
         pl: 'Eksport konfiguracji do pliku skryptu',
         fi: 'Vie konfiguraatio skriptitiedostoon',
