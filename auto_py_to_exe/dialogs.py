@@ -1,6 +1,7 @@
 import platform
 import sys
 from pathlib import Path
+import os
 
 try:
     from tkinter import Tk
@@ -73,8 +74,14 @@ def ask_file_save_location(file_type):
     else:
         if file_type == "json":
             file_types = [("JSON Files", "*.json"), ("All files", "*")]
-        else:
-            file_types = [("All files", "*")]
+        elif file_type == "script":
+            # Check the os and set the default extension accordingly
+            # Windows uses .bat files, macOS uses .command files, Linux uses .sh files
+            if os.name == "nt":
+                extension = "bat"
+            else:
+                extension = "sh"
+            file_types = [("Script Files", f"*.{extension}"), ("All files", "*")]
         file_path = asksaveasfilename(title="Select where to save", filetypes=file_types)
     root.update()
 
