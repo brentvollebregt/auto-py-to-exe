@@ -37,7 +37,7 @@ def ask_file(file_type):
         file_path = askopenfilename()
     else:
         if file_type == "python":
-            file_types = [("Python files", "*.py;*.pyw"), ("All files", "*")]
+            file_types = [("Python files", "*.py *.pyw"), ("All files", "*")]
         elif file_type == "icon":
             file_types = [("Icon files", "*.ico"), ("All files", "*")]
         elif file_type == "json":
