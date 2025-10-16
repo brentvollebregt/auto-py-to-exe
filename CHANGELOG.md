@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.48.0
+
+🚀 Enhancements
+
+- [#541](https://github.com/brentvollebregt/auto-py-to-exe/pull/541): Add export to script functionality
+- [#542](https://github.com/brentvollebregt/auto-py-to-exe/pull/542): Add Slovenian translations
+
+🏆 Contributors
+
+- [Mehmet Cagri Aksoy](https://github.com/mcagriaksoy)
+- [Andrew Poženel](https://github.com/anderlli0053)
+
 ## 2.47.0
 
 🚀 Enhancements
