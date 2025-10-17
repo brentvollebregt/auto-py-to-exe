@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.48.1
+
+🐛 Bug Fixes
+
+- [#545](https://github.com/brentvollebregt/auto-py-to-exe/pull/545): Fix file type filter for Python files
+
+🏆 Contributors
+
+- [Mehmet Cagri Aksoy](https://github.com/mcagriaksoy)
+
 ## 2.48.0
 
 🚀 Enhancements
