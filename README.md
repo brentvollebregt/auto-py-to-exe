@@ -1,201 +1,457 @@
-<h1 align="center">Auto PY to EXE</h1>
-<p align="center">A .py to .exe converter using a simple graphical interface and <a href="https://pyinstaller.readthedocs.io/en/stable/index.html">PyInstaller</a> in Python.</p>
+import tkinter as tk
+from tkinter import filedialog, messagebox, ttk
+import datetime
+import sqlite3
+from persiandate import PersianDate
+import pandas as pd
+from reportlab.lib.pagesizes import A4
+from reportlab.pdfgen import canvas
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
+from reportlab.lib import colors
+from PIL import Image, ImageTk
+import os
+from pathlib import Path
 
-<p align="center">
-    <img src="https://nitratine.net/posts/auto-py-to-exe/feature.png" alt="Empty interface">
-</p>
+# تنظیمات اولیه
+FONT_PATH = "Vazir.ttf"
+DB_PATH = "personnel.db"
+PDF_OUTPUT = "Personnel_Report.pdf"
+EXCEL_OUTPUT = "Personnel_Report.xlsx"
 
-<p align="center">
-    <a href="https://pypi.org/project/auto-py-to-exe/"><img src="https://img.shields.io/pypi/v/auto-py-to-exe.svg" alt="PyPI Version"></a>
-    <a href="https://pypi.org/project/auto-py-to-exe/"><img src="https://img.shields.io/pypi/pyversions/auto-py-to-exe.svg" alt="PyPI Supported Versions"></a>
-    <a href="https://pypi.org/project/auto-py-to-exe/"><img src="https://img.shields.io/pypi/l/auto-py-to-exe.svg" alt="License"></a>
-    <a href="https://pepy.tech/project/auto-py-to-exe"><img src="https://static.pepy.tech/badge/auto-py-to-exe/month" alt="Downloads Per Month"></a>
-    <a href="https://pyinstaller.readthedocs.io/en/stable/requirements.html"><img src="https://img.shields.io/badge/platform-windows%20%7C%20linux%20%7C%20macos-lightgrey" alt="Supported Platforms"></a>
-    <a href="https://www.buymeacoffee.com/brentvollebregt"><img src="https://img.shields.io/badge/-buy_me_a%C2%A0beer-gray?logo=buy-me-a-coffee" alt="Donate"></a>
-</p>
+# ثبت فونت فارسی
+try:
+    pdfmetrics.registerFont(TTFont("Vazir", FONT_PATH))
+except Exception as e:
+    print(f"خطا در ثبت فونت: {e}")
 
-## Translations of This File
+class Database:
+    """مدیریت اتصال و عملیات دیتابیس"""
+    def __init__(self, db_path):
+        self.conn = sqlite3.connect(db_path)
+        self.cursor = self.conn.cursor()
+        self.create_table()
 
-阅读中文版的 README ，点击 [这里](./README-Chinese.md)
+    def create_table(self):
+        self.cursor.execute('''
+        CREATE TABLE IF NOT EXISTS personnel (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            first_name TEXT,
+            last_name TEXT,
+            personnel_code TEXT UNIQUE,
+            birth_date TEXT,
+            age INTEGER,
+            issue_place TEXT,
+            address TEXT,
+            mobile_phone TEXT,
+            national_code TEXT UNIQUE,
+            id_number TEXT,
+            father_name TEXT,
+            job_title TEXT,
+            work_place TEXT,
+            marital_status TEXT,
+            id_series TEXT,
+            photo_path TEXT,
+            documents_path TEXT,
+            promissory_note_serial TEXT,
+            emergency_phone1 TEXT,
+            emergency_phone2 TEXT,
+            hire_date TEXT,
+            end_date TEXT,
+            base_salary REAL,
+            housing_allowance REAL,
+            responsibility_allowance REAL,
+            child_allowance REAL,
+            grocery_allowance REAL,
+            children_count INTEGER,
+            status TEXT
+        )
+        ''')
+        # افزودن ایندکس برای جستجوی سریع‌تر
+        self.cursor.execute('CREATE INDEX IF NOT EXISTS idx_national_code ON personnel (national_code)')
+        self.conn.commit()
 
-Suomenkieliset käyttöohjeet löydät [täältä](./README-Finnish.md)
+    def insert_data(self, data):
+        try:
+            self.cursor.execute('''
+            INSERT INTO personnel (
+                first_name, last_name, personnel_code, birth_date, age, issue_place, address, mobile_phone,
+                national_code, id_number, father_name, job_title, work_place, marital_status, id_series,
+                photo_path, documents_path, promissory_note_serial, emergency_phone1, emergency_phone2,
+                hire_date, end_date, base_salary, housing_allowance, responsibility_allowance,
+                child_allowance, grocery_allowance, children_count, status
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ''', data)
+            self.conn.commit()
+            return True
+        except sqlite3.IntegrityError:
+            return "کد پرسنلی یا کد ملی تکراری است!"
+        except Exception as e:
+            return str(e)
 
-Türkçe Talimatları [burada](./README-Turkish.md) bulabilirsiniz.
+    def fetch_all(self):
+        self.cursor.execute("SELECT * FROM personnel")
+        return self.cursor.fetchall()
 
-دستور العمل های [فارسی](./README-Persian.md)
+    def close(self):
+        self.conn.close()
 
-한국어로 된 설명은 [여기](./README-Korean.md)를 참고하세요.
+class PersonnelApp:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("برنامه مدیریت پرسنل")
+        self.root.geometry("1000x800")
+        self.root.configure(bg="#e6f0fa")
+        self.db = Database(DB_PATH)
 
-Български README [тук](./README-Bulgarian.md)
+        # تنظیم استایل
+        self.style = ttk.Style()
+        self.style.theme_use("clam")
+        self.style.configure("TLabel", font=("Vazir", 12), background="#e6f0fa")
+        self.style.configure("TEntry", font=("Vazir", 12))
+        self.style.configure("TButton", font=("Vazir", 12), padding=6)
+        self.style.configure("Treeview", font=("Vazir", 11), rowheight=28)
+        self.style.configure("Treeview.Heading", font=("Vazir", 12, "bold"), background="#d1e7ff")
 
-Беларускамоўны README [тут](./README-Belarusian.md)
+        # متغیرها
+        self.entries = {}
+        self.photo_path = tk.StringVar()
+        self.documents_path = tk.StringVar()
+        self.photo_img = None
 
-Slovenski README [tukaj](./README-Slovenian.md)
+        # ایجاد رابط کاربری
+        self.create_widgets()
 
-## Demo
+    def create_widgets(self):
+        # فریم اصلی با اسکرول
+        self.main_frame = tk.Frame(self.root, bg="#e6f0fa")
+        self.main_frame.pack(fill=tk.BOTH, expand=True, padx=20, pady=10)
 
-<p align="center">
-    <img src="https://nitratine.net/posts/auto-py-to-exe/auto-py-to-exe-demo.gif" alt="auto-py-to-exe Demo">
-</p>
+        self.canvas = tk.Canvas(self.main_frame, bg="#e6f0fa")
+        self.scrollbar = ttk.Scrollbar(self.main_frame, orient="vertical", command=self.canvas.yview)
+        self.scrollable_frame = tk.Frame(self.canvas, bg="#e6f0fa")
 
-## Getting Started
+        self.scrollable_frame.bind(
+            "<Configure>",
+            lambda e: self.canvas.configure(scrollregion=self.canvas.bbox("all"))
+        )
 
-### Prerequisites
+        self.canvas.create_window((0, 0), window=self.scrollable_frame, anchor="nw")
+        self.canvas.configure(yscrollcommand=self.scrollbar.set)
+        self.canvas.pack(side="left", fill="both", expand=True)
+        self.scrollbar.pack(side="right", fill="y")
 
-- Python: 3.6-3.12
+        # فیلدهای فرم
+        fields = [
+            ("نام", "first_name"), ("نام خانوادگی", "last_name"), ("کد پرسنلی", "personnel_code"),
+            ("تاریخ تولد (YYYY/MM/DD شمسی)", "birth_date"), ("سن", "age", tk.Label),
+            ("محل صدور", "issue_place"), ("آدرس سکونت", "address"), ("تلفن همراه", "mobile_phone"),
+            ("کد ملی (۱۰ رقم)", "national_code"), ("شماره شناسنامه", "id_number"),
+            ("نام پدر", "father_name"), ("شغل", "job_title"), ("محل خدمت", "work_place"),
+            ("وضعیت تأهل", "marital_status"), ("سریال سری و حرف شناسنامه", "id_series"),
+            ("عکس پرسنلی", "photo", ttk.Button, self.upload_photo), ("عکس مدارک", "documents", ttk.Button, self.upload_documents),
+            ("سریال سفته", "promissory_note_serial"), ("تلفن ضروری ۱", "emergency_phone1"),
+            ("تلفن ضروری ۲", "emergency_phone2"), ("تاریخ استخدام (YYYY/MM/DD شمسی)", "hire_date"),
+            ("تاریخ پایان کار (YYYY/MM/DD شمسی)", "end_date"), ("حقوق پایه", "base_salary"),
+            ("حق مسکن", "housing_allowance"), ("حق مسئولیت", "responsibility_allowance"),
+            ("حق اولاد", "child_allowance"), ("بن خواروبار", "grocery_allowance"),
+            ("تعداد اولاد", "children_count"), ("وضعیت", "status")
+        ]
 
-_To have the interface displayed in the images, you will need Chrome. If Chrome is not installed or `--default-browser` is passed, the default browser will be used._
+        for i, (label_text, field_name, widget_type=ttk.Entry, command=None) in enumerate(fields):
+            tk.Label(self.scrollable_frame, text=label_text + ":", font=("Vazir", 12), bg="#e6f0fa", fg="#333").grid(row=i, column=0, padx=10, pady=5, sticky="e")
+            if widget_type == tk.Label:
+                self.entries[field_name] = tk.Label(self.scrollable_frame, text="0", font=("Vazir", 12), bg="#e6f0fa", fg="#333")
+            elif widget_type == ttk.Button:
+                self.entries[field_name] = ttk.Button(self.scrollable_frame, text=f"آپلود {label_text}", command=command)
+            else:
+                self.entries[field_name] = widget_type(self.scrollable_frame, font=("Vazir", 12), width=30)
+            self.entries[field_name].grid(row=i, column=1, padx=10, pady=5, sticky="w")
 
-### Installation and Usage
+        self.entries["birth_date"].bind("<FocusOut>", self.calculate_age)
 
-#### Installing via [PyPI](https://pypi.org/project/auto-py-to-exe/)
+        # فریم دکمه‌ها
+        self.buttons_frame = tk.Frame(self.root, bg="#e6f0fa")
+        self.buttons_frame.pack(pady=10)
+        buttons = [
+            ("ذخیره", self.save_data), ("پاک کردن", self.clear_form),
+            ("نمایش اطلاعات", self.view_data), ("ایجاد گزارش", self.generate_report)
+        ]
+        for text, command in buttons:
+            ttk.Button(self.buttons_frame, text=text, command=command).pack(side=tk.LEFT, padx=5)
 
-You can install this project using PyPI:
+        # نمایش عکس پرسنلی
+        self.photo_label = tk.Label(self.root, bg="#e6f0fa", borderwidth=2, relief="groove")
+        self.photo_label.pack(pady=10)
 
-```
-$ pip install auto-py-to-exe
-```
+    def validate_national_code(self, code):
+        if not code.isdigit() or len(code) != 10:
+            return False
+        check = int(code[9])
+        s = sum(int(code[i]) * (10 - i) for i in range(9)) % 11
+        return (s < 2 and check == s) or (s >= 2 and check == 11 - s)
 
-Then to run it, execute the following in the terminal:
+    def calculate_age(self, event):
+        try:
+            birth_date_str = self.entries["birth_date"].get()
+            year, month, day = map(int, birth_date_str.split('/'))
+            persian_birth_date = PersianDate(year, month, day)
+            gregorian_birth_date = persian_birth_date.to_gregorian()
+            today = datetime.date.today()
+            age = today.year - gregorian_birth_date.year - ((today.month, today.day) < (gregorian_birth_date.month, gregorian_birth_date.day))
+            self.entries["age"].config(text=str(age))
+        except Exception:
+            self.entries["age"].config(text="نامعتبر")
 
-```
-$ auto-py-to-exe
-```
+    def upload_photo(self):
+        file_path = filedialog.askopenfilename(filetypes=[("Image files", "*.jpg *.png *.jpeg")])
+        if file_path:
+            self.photo_path.set(file_path)
+            img = Image.open(file_path).resize((150, 150), Image.Resampling.LANCZOS)
+            self.photo_img = ImageTk.PhotoImage(img)
+            self.photo_label.config(image=self.photo_img)
 
-> If you have more than one version of Python installed, you can use `python -m auto_py_to_exe` instead of `auto-py-to-exe`.
+    def upload_documents(self):
+        file_path = filedialog.askopenfilename(filetypes=[("Image files", "*.jpg *.png *.jpeg")])
+        if file_path:
+            self.documents_path.set(file_path)
 
-#### Installing via [GitHub](https://github.com/brentvollebregt/auto-py-to-exe)
+    def save_data(self):
+        national_code = self.entries["national_code"].get()
+        if not self.validate_national_code(national_code):
+            messagebox.showerror("خطا", "کد ملی نامعتبر است!")
+            return
 
-```
-$ git clone https://github.com/brentvollebregt/auto-py-to-exe.git
-$ cd auto-py-to-exe
-$ python setup.py install
-```
+        try:
+            data = (
+                self.entries["first_name"].get(), self.entries["last_name"].get(),
+                self.entries["personnel_code"].get(), self.entries["birth_date"].get(),
+                int(self.entries["age"].cget("text")), self.entries["issue_place"].get(),
+                self.entries["address"].get(), self.entries["mobile_phone"].get(),
+                national_code, self.entries["id_number"].get(), self.entries["father_name"].get(),
+                self.entries["job_title"].get(), self.entries["work_place"].get(),
+                self.entries["marital_status"].get(), self.entries["id_series"].get(),
+                self.photo_path.get(), self.documents_path.get(),
+                self.entries["promissory_note_serial"].get(), self.entries["emergency_phone1"].get(),
+                self.entries["emergency_phone2"].get(), self.entries["hire_date"].get(),
+                self.entries["end_date"].get(),
+                float(self.entries["base_salary"].get() or 0),
+                float(self.entries["housing_allowance"].get() or 0),
+                float(self.entries["responsibility_allowance"].get() or 0),
+                float(self.entries["child_allowance"].get() or 0),
+                float(self.entries["grocery_allowance"].get() or 0),
+                int(self.entries["children_count"].get() or 0),
+                self.entries["status"].get()
+            )
+            result = self.db.insert_data(data)
+            if result is True:
+                messagebox.showinfo("موفقیت", "اطلاعات با موفقیت ذخیره شد!")
+                self.clear_form()
+            else:
+                messagebox.showerror("خطا", result)
+        except Exception as e:
+            messagebox.showerror("خطا", f"خطا در ذخیره اطلاعات: {e}")
 
-Then to run it, execute the following in the terminal:
+    def clear_form(self):
+        for key, widget in self.entries.items():
+            if isinstance(widget, (ttk.Entry, ttk.Combobox)):
+                widget.delete(0, tk.END)
+            elif isinstance(widget, tk.Label):
+                widget.config(text="0")
+        self.photo_path.set("")
+        self.documents_path.set("")
+        self.photo_label.config(image="")
 
-```
-$ auto-py-to-exe
-```
+    def view_data(self):
+        view_window = tk.Toplevel(self.root)
+        view_window.title("نمایش اطلاعات پرسنل")
+        view_window.geometry("1200x600")
+        view_window.configure(bg="#e6f0fa")
 
-#### Running Locally via [Github](https://github.com/brentvollebregt/auto-py-to-exe) (no install)
+        columns = (
+            "id", "first_name", "last_name", "personnel_code", "birth_date", "age", "issue_place",
+            "address", "mobile_phone", "national_code", "id_number", "father_name", "job_title",
+            "work_place", "marital_status", "id_series", "photo_path", "documents_path",
+            "promissory_note_serial", "emergency_phone1", "emergency_phone2", "hire_date",
+            "end_date", "base_salary", "housing_allowance", "responsibility_allowance",
+            "child_allowance", "grocery_allowance", "children_count", "status"
+        )
+        column_names = (
+            "شناسه", "نام", "نام خانوادگی", "کد پرسنلی", "تاریخ تولد", "سن", "محل صدور",
+            "آدرس", "تلفن همراه", "کد ملی", "شماره شناسنامه", "نام پدر", "شغل",
+            "محل خدمت", "وضعیت تأهل", "سریال شناسنامه", "عکس پرسنلی", "عکس مدارک",
+            "سریال سفته", "تلفن ضروری ۱", "تلفن ضروری ۲", "تاریخ استخدام", "تاریخ پایان",
+            "حقوق پایه", "حق مسکن", "حق مسئولیت", "حق اولاد", "بن خواروبار", "تعداد اولاد", "وضعیت"
+        )
 
-You can run this project locally by following these steps:
+        tree = ttk.Treeview(view_window, columns=columns, show="headings")
+        for col, name in zip(columns, column_names):
+            tree.heading(col, text=name)
+            tree.column(col, width=100, anchor="center")
 
-1. Clone/download the [repo](https://github.com/brentvollebregt/auto-py-to-exe)
-2. Open cmd/terminal and cd into the project's root folder
-3. Execute `python -m pip install -r requirements.txt`
-4. Execute `python -m auto_py_to_exe` to run the application
+        scrollbar = ttk.Scrollbar(view_window, orient="vertical", command=tree.yview)
+        tree.configure(yscroll=scrollbar.set)
+        scrollbar.pack(side="right", fill="y")
+        tree.pack(fill="both", expand=True, padx=10, pady=10)
 
-## Using the Application
+        for row in self.db.fetch_all():
+            tree.insert("", tk.END, values=row)
 
-1. Select your script location (paste in or use a file explorer)
-   - The outline will become blue if the file exists
-2. Select other options and add things like an icon or other files
-3. Click the big blue button at the bottom to convert
-4. Find your converted files in /output when completed
+        # دکمه‌های ویرایش و حذف
+        btn_frame = tk.Frame(view_window, bg="#e6f0fa")
+        btn_frame.pack(pady=5)
+        ttk.Button(btn_frame, text="ویرایش", command=lambda: self.edit_record(tree)).pack(side=tk.LEFT, padx=5)
+        ttk.Button(btn_frame, text="حذف", command=lambda: self.delete_record(tree)).pack(side=tk.LEFT, padx=5)
 
-_Easy._
+    def edit_record(self, tree):
+        selected = tree.selection()
+        if not selected:
+            messagebox.showwarning("هشدار", "لطفاً یک رکورد انتخاب کنید!")
+            return
+        item = tree.item(selected[0])
+        values = item["values"]
+        self.clear_form()
+        fields = [
+            "first_name", "last_name", "personnel_code", "birth_date", "age", "issue_place",
+            "address", "mobile_phone", "national_code", "id_number", "father_name", "job_title",
+            "work_place", "marital_status", "id_series", "photo", "documents",
+            "promissory_note_serial", "emergency_phone1", "emergency_phone2", "hire_date",
+            "end_date", "base_salary", "housing_allowance", "responsibility_allowance",
+            "child_allowance", "grocery_allowance", "children_count", "status"
+        ]
+        for field, value in zip(fields, values[1:]):  # رد شدن از id
+            if field in ["photo", "documents"]:
+                continue
+            if field == "age":
+                self.entries[field].config(text=str(value))
+            else:
+                self.entries[field].delete(0, tk.END)
+                self.entries[field].insert(0, str(value))
+        self.photo_path.set(values[16])
+        self.documents_path.set(values[17])
 
-### Arguments
+        # دکمه ذخیره برای به‌روزرسانی
+        self.save_button.config(text="به‌روزرسانی", command=lambda: self.update_record(values[0]))
 
-Use the help flag to get the usage: `auto-py-to-exe --help`
+    def update_record(self, record_id):
+        data = (
+            self.entries["first_name"].get(), self.entries["last_name"].get(),
+            self.entries["personnel_code"].get(), self.entries["birth_date"].get(),
+            int(self.entries["age"].cget("text")), self.entries["issue_place"].get(),
+            self.entries["address"].get(), self.entries["mobile_phone"].get(),
+            self.entries["national_code"].get(), self.entries["id_number"].get(),
+            self.entries["father_name"].get(), self.entries["job_title"].get(),
+            self.entries["work_place"].get(), self.entries["marital_status"].get(),
+            self.entries["id_series"].get(), self.photo_path.get(), self.documents_path.get(),
+            self.entries["promissory_note_serial"].get(), self.entries["emergency_phone1"].get(),
+            self.entries["emergency_phone2"].get(), self.entries["hire_date"].get(),
+            self.entries["end_date"].get(),
+            float(self.entries["base_salary"].get() or 0),
+            float(self.entries["housing_allowance"].get() or 0),
+            float(self.entries["responsibility_allowance"].get() or 0),
+            float(self.entries["child_allowance"].get() or 0),
+            float(self.entries["grocery_allowance"].get() or 0),
+            int(self.entries["children_count"].get() or 0),
+            self.entries["status"].get(),
+            record_id
+        )
+        try:
+            self.db.cursor.execute('''
+            UPDATE personnel SET
+                first_name=?, last_name=?, personnel_code=?, birth_date=?, age=?, issue_place=?, address=?,
+                mobile_phone=?, national_code=?, id_number=?, father_name=?, job_title=?, work_place=?,
+                marital_status=?, id_series=?, photo_path=?, documents_path=?, promissory_note_serial=?,
+                emergency_phone1=?, emergency_phone2=?, hire_date=?, end_date=?, base_salary=?,
+                housing_allowance=?, responsibility_allowance=?, child_allowance=?, grocery_allowance=?,
+                children_count=?, status=?
+            WHERE id=?
+            ''', data)
+            self.db.conn.commit()
+            messagebox.showinfo("موفقیت", "رکورد به‌روزرسانی شد!")
+            self.clear_form()
+            self.save_button.config(text="ذخیره", command=self.save_data)
+        except Exception as e:
+            messagebox.showerror("خطا", f"خطا در به‌روزرسانی: {e}")
 
-| Argument                                                     | Type                | Description                                                                                                                       |
-| ------------------------------------------------------------ | ------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| filename                                                     | positional/optional | Pre-fill the "Script Location" field in the UI.                                                                                   |
-| -db, --default-browser                                       | optional            | Open the UI using the default browser (which may be Chrome). Will not try to find Chrome.                                         |
-| -nu, --no-ui                                                 | optional            | Don't try to open the UI in a browser and simply print out the address where the application can be accessed.                     |
-| -c [CONFIG], --config [CONFIG]                               | optional            | Provide a configuration file (JSON) to pre-fill the UI. These can be generated in the settings tab.                               |
-| -o [PATH], --output-dir [PATH]                               | optional            | Set the default output directory. This can still be changed in the UI.                                                            |
-| -bdo [FOLDER_PATH], --build-directory-override [FOLDER_PATH] | optional            | Override the default build directory. Useful if you need to whitelist a folder to stop your antivirus from removing files.        |
-| -lang [LANGUAGE_CODE], --language [LANGUAGE_CODE]            | optional            | Hint the UI what language it should default to when opening. Language codes can be found in the table under "Translations" below. |
+    def delete_record(self, tree):
+        selected = tree.selection()
+        if not selected:
+            messagebox.showwarning("هشدار", "لطفاً یک رکورد انتخاب کنید!")
+            return
+        if messagebox.askyesno("تأیید", "آیا مطمئن هستید که می‌خواهید این رکورد را حذف کنید؟"):
+            item = tree.item(selected[0])
+            record_id = item["values"][0]
+            try:
+                self.db.cursor.execute("DELETE FROM personnel WHERE id=?", (record_id,))
+                self.db.conn.commit()
+                tree.delete(selected[0])
+                messagebox.showinfo("موفقیت", "رکورد حذف شد!")
+            except Exception as e:
+                messagebox.showerror("خطا", f"خطا در حذف: {e}")
 
-### JSON Configuration
+    def generate_report(self):
+        try:
+            rows = self.db.fetch_all()
+            if not rows:
+                messagebox.showwarning("هشدار", "هیچ داده‌ای برای گزارش وجود ندارد!")
+                return
 
-Instead of inserting the same data into the UI over and over again, you can export the current state by going to the "Configuration" section within the settings tab and exporting the config to a JSON file. This can then be imported into the UI again to re-populate all fields.
+            columns = [
+                "شناسه", "نام", "نام خانوادگی", "کد پرسنلی", "تاریخ تولد", "سن", "محل صدور", "آدرس",
+                "تلفن همراه", "کد ملی", "شماره شناسنامه", "نام پدر", "شغل", "محل خدمت", "وضعیت تأهل",
+                "سریال شناسنامه", "عکس پرسنلی", "عکس مدارک", "سریال سفته", "تلفن ضروری ۱", "تلفن ضروری ۲",
+                "تاریخ استخدام", "تاریخ پایان", "حقوق پایه", "حق مسکن", "حق مسئولیت", "حق اولاد",
+                "بن خواروبار", "تعداد اولاد", "وضعیت"
+            ]
 
-This JSON config export action does not save the output directory automatically as moving hosts could mean different directory structures. If you want to have the output directory in the JSON config, add the directory under `nonPyinstallerOptions.outputDirectory` in the JSON file (will need to create a new key).
+            # تولید فایل اکسل
+            df = pd.DataFrame(rows, columns=columns)
+            df.to_excel(EXCEL_OUTPUT, index=False, engine='openpyxl')
 
-## Examples
+            # تولید PDF با جدول‌بندی بهتر
+            c = canvas.Canvas(PDF_OUTPUT, pagesize=A4)
+            c.setFont("Vazir", 12)
+            width, height = A4
+            y = height - 50
+            c.drawString(width - 100, y, "گزارش پرسنل", mode=2)
+            y -= 30
 
-The [examples/](./examples/) directory offers some examples of how to write your scripts and package them with auto-py-to-exe.
+            # تنظیم جدول
+            col_width = 60
+            x_start = width - 30
+            y -= 20
+            for col in columns:
+                c.drawString(x_start - col_width, y, col, mode=2)
+                x_start -= col_width
+            y -= 10
+            c.setLineWidth(0.5)
+            c.line(30, y, width - 30, y)
 
-- [Basic (console application)](./examples/1-basic/readme.md)
-- [No Console (as typically desired for GUI-based applications)](./examples/2-no-console/readme.md)
-- [Images and other non-.py files (static files to be included)](./examples/3-images-and-other-non-py-files/readme.md)
-- [Persistent data (like databases)](./examples/4-persistent-data/readme.md)
+            # داده‌ها
+            for row in rows:
+                if y < 50:
+                    c.showPage()
+                    c.setFont("Vazir", 12)
+                    y = height - 50
+                    x_start = width - 30
+                    for col in columns:
+                        c.drawString(x_start - col_width, y, col, mode=2)
+                        x_start -= col_width
+                    y -= 10
+                    c.line(30, y, width - 30, y)
+                x_start = width - 30
+                for value in row:
+                    c.drawString(x_start - col_width, y - 20, str(value)[:20], mode=2)
+                    x_start -= col_width
+                y -= 20
+            c.showPage()
+            c.save()
 
-## Video
+            messagebox.showinfo("موفقیت", f"گزارش در {EXCEL_OUTPUT} و {PDF_OUTPUT} ذخیره شد!")
+        except Exception as e:
+            messagebox.showerror("خطا", f"خطا در تولید گزارش: {e}")
 
-If you need something visual to help you get started, [I made a video for the original release of this project](https://youtu.be/OZSZHmWSOeM); some things may be different but the same concepts still apply.
-
-## Contributing
-
-Check out [CONTRIBUTING.md](./CONTRIBUTING.md) to see guidelines on how to contribute. This outlines what to do if you have a new feature, a change, translation update or have found an issue with auto-py-to-exe.
-
-## Issues Using the Tool
-
-If you're having issues with the packaged executable or using this tool in general, I recommend you read [my blog post on common issues when using auto-py-to-exe](https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=readme_link&utm_campaign=auto_py_to_exe_help). This post covers things you should know about packaging Python scripts and fixes for things that commonly go wrong.
-
-If you believe you've found an issue with this tool, please follow the ["Reporting an Issue" section in CONTRIBUTING.md](./CONTRIBUTING.md#reporting-an-issue).
-
-## Translations
-
-| Language                                    | Translator                                                                                   | Translated                             |
-| ------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------- |
-| Arabic (العربية)                            | [Tayeb-Ali](https://github.com/tayeb-ali)                                                    | UI                                     |
-| Belarusian (Беларуская)                     | [Zmicier21](https://github.com/Zmicier21)                                                    | UI and [README](README-Belarusian.md)  |
-| Brazilian Portuguese (Português Brasileiro) | [marleyas](https://github.com/marleyas), [reneoliveirajr](https://github.com/reneoliveirajr) | UI                                     |
-| Bulgarian (Български)                       | [kbkozlev](https://github.com/kbkozlev)                                                      | UI and [README](README-Bulgarian.md)   |
-| Chinese Simplified (简体中文)               | [jiangzhe11](https://github.com/jiangzhe11)                                                  | UI and [README](./README-Chinese.md)   |
-| Chinese Traditional (繁體中文)              | [startgo](https://github.com/ystartgo)                                                       | UI                                     |
-| Czech (Čeština)                             | [Matto58](https://github.com/Matto58)                                                        | UI                                     |
-| Dutch (Nederlands)                          | [barremans](https://github.com/barremans)                                                    | UI                                     |
-| English                                     | -                                                                                            | UI and README                          |
-| Finnish (Suomen kieli)                      | [ZapX5](https://github.com/ZapX5)                                                            | UI and [README](./README-Finnish.md)   |
-| French (Français)                           | [flaviedesp](https://github.com/flaviedesp)                                                  | UI                                     |
-| German (Deutsch)                            | [hebens](https://github.com/hebens), [ackhh](https://github.com/ackhh)                       | UI                                     |
-| Greek (Ελληνικά)                            | [sofronas](https://github.com/sofronas)                                                      | UI                                     |
-| Hebrew (עברית)                              | [ronbentata](https://github.com/ronbentata)                                                  | UI and [README](./README-Hebrew.md)    |
-| Hindi (हिन्दी)                              | [triach-rold](https://github.com/triach-rold)                                                | UI and [README](./README-Hindi.md)     |
-| Hungarian (Magyar)                          | [synexdev01](https://github.com/synexdev01)                                                  | UI                                     |
-| Indonesian (Bahasa Indonesia)               | [MarvinZhong](https://github.com/MarvinZhong)                                                | UI                                     |
-| Italian (Italiano)                          | [itsEmax64](https://github.com/itsEmax64)                                                    | UI                                     |
-| Japanese (日本語)                           | [NattyanTV](https://github.com/nattyan-tv)                                                   | UI                                     |
-| Korean (한국어)                             | [jhk1090](https://github.com/jhk1090)                                                        | UI and [README](./README-Korean.md)    |
-| Persian (فارسی)                             | [DrunkLeen](https://github.com/drunkleen), [Ar.dst](https://github.com/Ar-dst)               | UI and [README](./README-Persian.md)   |
-| Polish (Polski)                             | [Akuczaku](https://github.com/Akuczaku)                                                      | UI                                     |
-| Russian (Русский)                           | Oleg                                                                                         | UI                                     |
-| Serbian (Srpski)                            | [rina](https://github.com/sweatshirts)                                                       | UI                                     |
-| Slovak (Slovenčina)                         | [mostypc123](https://github.com/mostypc123)                                                  | UI                                     |
-| Slovenian (Slovenščina)                     | [Andrew Poženel](https://github.com/anderlli0053)                                            | UI and [README](./README-Slovenian.md) |
-| Spanish (Español)                           | [enriiquee](https://github.com/enriiquee)                                                    | UI                                     |
-| Spanish Latin America (Español Latam)       | [Matyrela](https://github.com/Matyrela)                                                      | UI                                     |
-| Thai (ภาษาไทย)                              | [teerut26](https://github.com/teerut26)                                                      | UI (partial)                           |
-| Turkish (Türkçe)                            | [mcagriaksoy](https://github.com/mcagriaksoy)                                                | UI and [README](./README-Turkish.md)   |
-| Ukrainian (Українська)                      | [AndrejGorodnij](https://github.com/AndrejGorodnij)                                          | UI                                     |
-| Vietnamese (Tiếng Việt)                     | [7777Hecker](https://github.com/7777Hecker)                                                  | UI                                     |
-
-> Want to add a translation for another language? follow the ["Add or Update a Translation" section in CONTRIBUTING.md](./CONTRIBUTING.md#add-or-update-a-translation).
-
-## Python 2.7 Support
-
-As of [PyInstaller v4.0](https://github.com/pyinstaller/pyinstaller/releases/tag/v4.0) released on Aug 9 2020, Python 2.7 is no longer supported; although you can still use this tool with Python 2.7 by installing an older version of PyInstaller. [PyInstaller v3.6](https://github.com/pyinstaller/pyinstaller/releases/tag/v3.6) was the last version that supported Python 2.7; to install this, first uninstall any existing versions of PyInstaller and then execute `python -m pip install pyinstaller==3.6`.
-
-## Testing
-
-Tests are located in `tests/` and are run using pytest:
-
-```
-$ pip install pytest
-$ pip install -e .
-$ pytest
-```
-
-## Screenshots
-
-| <!-- -->                                                                                                                                             | <!-- -->                                                                                                                              |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| [![Empty interface](https://nitratine.net/posts/auto-py-to-exe/empty-interface.png)](https://nitratine.net/posts/auto-py-to-exe/empty-interface.png) | [![Filled out](https://nitratine.net/posts/auto-py-to-exe/filled-out.png)](https://nitratine.net/posts/auto-py-to-exe/filled-out.png) |
-| [![Converting](https://nitratine.net/posts/auto-py-to-exe/converting.png)](https://nitratine.net/posts/auto-py-to-exe/converting.png)                | [![Completed](https://nitratine.net/posts/auto-py-to-exe/completed.png)](https://nitratine.net/posts/auto-py-to-exe/completed.png)    |
+if __name__ == "__main__":
+    root = tk.Tk()
+    app = PersonnelApp(root)
+    root.mainloop()
