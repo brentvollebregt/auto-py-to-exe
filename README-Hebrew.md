@@ -40,7 +40,7 @@ Türkçe Talimatları [burada](./README-Turkish.md) bulabilirsiniz.
 
 ### דרישות מקדימות
 
-- Python: 3.6-3.12
+- Python: 3.6-3.14
 
 _כדי שהממשק יוצג בתמונות, תזדקק לכרום. אם כרום אינו מותקן או שה----default-browser מועבר, ייעשה שימוש בדפדפן ברירת המחדל._
 

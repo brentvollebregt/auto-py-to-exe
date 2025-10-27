@@ -30,7 +30,7 @@ Türkçe Talimatları [burada](./README-Turkish.md) bulabilirsiniz.
 
 ### Vaatimukset
 
-- Python : 3.6-3.12
+- Python : 3.6-3.14
 
 _Jos haluat nähdä käyttöliittymän, joka näkyy kuvissa, tarvitset Chromen. Jos Chromea ei ole asennettu tai --default-browser vastaanotetaan, käytetään oletusselainta._
 

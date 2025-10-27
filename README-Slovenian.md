@@ -42,7 +42,7 @@ Slovenski README lahko najdete [tukaj](./README-Slovenian.md)
 
 ### Predpogoji
 
-- Python: 3.6-3.12
+- Python: 3.6-3.14
 
 _Za prikaz vmesnika na slikah boste potrebovali Chrome. Če Chrome ni nameščen ali je podan `--default-browser`, bo uporabljen privzeti brskalnik._
 

@@ -32,7 +32,7 @@ Türkçe Talimatları [burada](./README-Turkish.md) bulabilirsiniz.
 
 ### پیش نیاز ها
 
-- Python : 3.6-3.12
+- Python : 3.6-3.14
 
 _برای نمایش رابط کاربری در تصاویر، به کروم نیاز دارید. اگر کروم نصب نشده باشد یا ارائه شده باشد، از مرورگر پیش فرض استفاده می شود--default-browser_
 

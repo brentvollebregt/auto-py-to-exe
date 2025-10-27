@@ -30,7 +30,7 @@ Suomenkieliset käyttöohjeet löydät [täältä](./README-Finnish.md)
 
 ### Önkoşullar
 
-- Python : 3.6-3.12
+- Python : 3.6-3.14
 
 _Görsellerde gösterilen arayüze sahip olmak için Chrome tabanlı bir tarayıcıya ihtiyacınız olacak. Chrome kurulu değilse veya --default-browser parametresi sağlanmışsa, varsayılan tarayıcı kullanılacaktır._
 
