@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.49.0
+
+🚀 Enhancements
+
+- Added tooltips to add and remove buttons
+- Indicated support for Python 3.14
+
 ## 2.48.1
 
 🐛 Bug Fixes
