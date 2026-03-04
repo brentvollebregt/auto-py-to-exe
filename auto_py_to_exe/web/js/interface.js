@@ -84,6 +84,7 @@ const addDoubleInputForSrcDst = (
     void updateCurrentCommandDisplay();
   };
   removeButton.src = 'img/remove.svg';
+  removeButton.title = 'Remove';
   removeButton.addEventListener('click', onRemove);
   configurationCleaners.push(onRemove);
 
@@ -278,6 +279,7 @@ const _createSubSectionInAdvanced = (title, i18nPath, options) => {
       const addButton = document.createElement('img');
       container.appendChild(addButton);
       addButton.src = 'img/plus.svg';
+      addButton.title = 'Add new';
 
       // Container to hold the values
       const valuesContainer = document.createElement('div');
@@ -306,6 +308,7 @@ const _createSubSectionInAdvanced = (title, i18nPath, options) => {
         // Remove button
         const removeButtonNode = document.createElement('img');
         removeButtonNode.src = 'img/remove.svg';
+        removeButton.title = 'Remove';
         valueContainer.appendChild(removeButtonNode);
         const onRemove = () => {
           valueContainer.remove();
@@ -350,6 +353,7 @@ const _createSubSectionInAdvanced = (title, i18nPath, options) => {
       const addButton = document.createElement('img');
       container.appendChild(addButton);
       addButton.src = 'img/plus.svg';
+      addButton.title = 'Add new';
 
       // Container to hold the value pairs
       const valuesContainer = document.createElement('div');
