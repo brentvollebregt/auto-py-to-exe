@@ -167,7 +167,8 @@ If you believe you've found an issue with this tool, please follow the ["Reporti
 | Persian (فارسی)                             | [DrunkLeen](https://github.com/drunkleen), [Ar.dst](https://github.com/Ar-dst)               | UI and [README](./README-Persian.md)   |
 | Polish (Polski)                             | [Akuczaku](https://github.com/Akuczaku)                                                      | UI                                     |
 | Russian (Русский)                           | Oleg                                                                                         | UI                                     |
-| Serbian Cyrillic & Latin (Српски)           | [rina](https://github.com/sweatshirts), [Radoš Milićev](https://github.com/rammba)                                                       | UI                                     |
+| Serbian Cyrillic (Српски)                   | [Radoš Milićev](https://github.com/rammba)                                                   | UI                                     |
+| Serbian Latin (Srpski)                      | [rina](https://github.com/sweatshirts), [Radoš Milićev](https://github.com/rammba)           | UI                                     |
 | Slovak (Slovenčina)                         | [mostypc123](https://github.com/mostypc123)                                                  | UI                                     |
 | Slovenian (Slovenščina)                     | [Andrew Poženel](https://github.com/anderlli0053)                                            | UI and [README](./README-Slovenian.md) |
 | Spanish (Español)                           | [enriiquee](https://github.com/enriiquee)                                                    | UI                                     |

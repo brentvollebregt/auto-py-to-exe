@@ -1299,8 +1299,10 @@ const translationMap = {
         el: 'Έχοντας ενεργοποιήσει το όριο που θα χρησιμοποιηθεί είναι 5000 με την παράμετρο sys.setrecursionlimit(5000).',
         ar: 'سيؤدي تمكين هذا إلى تعيين حد العودية على 5000 باستخدام sys.setrecursionlimit (5000).',
         fa: 'با فعال کردن این گزینه، محدودیت بازگشت به 5000 با استفاده از sys.setrecursionlimit(5000) تنظیم می شود.',
-        sr_cyrl: 'Ако је омогућено, ограничење рекурзије ће бити постављено на 5000 коришћењем sys.setrecursionlimit(5000).',
-        sr_latn: 'Ako je omogućeno, ograničenje rekurzije će biti postavljeno na 5000 korišćenjem sys.setrecursionlimit(5000).',
+        sr_cyrl:
+          'Ако је омогућено, ограничење рекурзије ће бити постављено на 5000 коришћењем sys.setrecursionlimit(5000).',
+        sr_latn:
+          'Ako je omogućeno, ograničenje rekurzije će biti postavljeno na 5000 korišćenjem sys.setrecursionlimit(5000).',
         sk: 'Ak zapnuté, limit rekurzie sa zvýši na 5000 pomocou sys.setrecursiomlimit(5000).',
         sl: 'Če je to omogočeno, bo omejitev rekurzije z uporabo sys.setrecursionlimit(5000) nastavljena na 5000.',
         ja: 'これを有効にすると、sys.setrecursionlimit(5000)を使い、再帰回数の上限を5000にします。',
