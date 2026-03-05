@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.50.0
+
+🚀 Enhancements
+
+- [#551](https://github.com/brentvollebregt/auto-py-to-exe/pull/551): Update Serbian translations (Cyrillic & Latin)
+
+🏆 Contributors
+
+- [Radoš Milićev](https://github.com/rammba)
+
 ## 2.49.0
 
 🚀 Enhancements
