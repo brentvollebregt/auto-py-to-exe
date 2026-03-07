@@ -32,6 +32,10 @@ Türkçe Talimatları [burada](./README-Turkish.md) bulabilirsiniz.
 
 Slovenski README [tukaj](./README-Slovenian.md)
 
+Српски README [овде](./README-Serbian_Cyrillic.md)
+
+Srpski README [ovde](./README-Serbian_Latin.md)
+
 ## Demo
 
 <p align="center">
@@ -142,7 +146,7 @@ If you believe you've found an issue with this tool, please follow the ["Reporti
 
 ## Translations
 
-| Language                                    | Translator                                                                                   | Translated                             |
+| Language                                    | Translators                                                                                  | Translated                             |
 | ------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------- |
 | Arabic (العربية)                            | [Tayeb-Ali](https://github.com/tayeb-ali)                                                    | UI                                     |
 | Belarusian (Беларуская)                     | [Zmicier21](https://github.com/Zmicier21)                                                    | UI and [README](README-Belarusian.md)  |
@@ -167,8 +171,8 @@ If you believe you've found an issue with this tool, please follow the ["Reporti
 | Persian (فارسی)                             | [DrunkLeen](https://github.com/drunkleen), [Ar.dst](https://github.com/Ar-dst)               | UI and [README](./README-Persian.md)   |
 | Polish (Polski)                             | [Akuczaku](https://github.com/Akuczaku)                                                      | UI                                     |
 | Russian (Русский)                           | Oleg                                                                                         | UI                                     |
-| Serbian Cyrillic (Српски)                   | [Radoš Milićev](https://github.com/rammba)                                                   | UI                                     |
-| Serbian Latin (Srpski)                      | [rina](https://github.com/sweatshirts), [Radoš Milićev](https://github.com/rammba)           | UI                                     |
+| Serbian Cyrillic (Српски)                   | [Radoš Milićev](https://github.com/rammba)                                                   | UI and [README](./README-Serbian_Cyrillic.md)                                     |
+| Serbian Latin (Srpski)                      | [rina](https://github.com/sweatshirts), [Radoš Milićev](https://github.com/rammba)           | UI and [README](./README-Serbian_Latin.md)                                      |
 | Slovak (Slovenčina)                         | [mostypc123](https://github.com/mostypc123)                                                  | UI                                     |
 | Slovenian (Slovenščina)                     | [Andrew Poženel](https://github.com/anderlli0053)                                            | UI and [README](./README-Slovenian.md) |
 | Spanish (Español)                           | [enriiquee](https://github.com/enriiquee)                                                    | UI                                     |
@@ -178,7 +182,7 @@ If you believe you've found an issue with this tool, please follow the ["Reporti
 | Ukrainian (Українська)                      | [AndrejGorodnij](https://github.com/AndrejGorodnij)                                          | UI                                     |
 | Vietnamese (Tiếng Việt)                     | [7777Hecker](https://github.com/7777Hecker)                                                  | UI                                     |
 
-> Want to add a translation for another language? follow the ["Add or Update a Translation" section in CONTRIBUTING.md](./CONTRIBUTING.md#add-or-update-a-translation).
+> Want to add a translation for another language? Follow the ["Add or Update a Translation" section in CONTRIBUTING.md](./CONTRIBUTING.md#add-or-update-a-translation).
 
 ## Python 2.7 Support
 
@@ -186,7 +190,7 @@ As of [PyInstaller v4.0](https://github.com/pyinstaller/pyinstaller/releases/tag
 
 ## Testing
 
-Tests are located in `tests/` and are run using pytest:
+Tests are located in [tests/](./tests/) directory and are run using pytest:
 
 ```
 $ pip install pytest
