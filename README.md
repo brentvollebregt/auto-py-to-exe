@@ -32,6 +32,10 @@ Türkçe Talimatları [burada](./README-Turkish.md) bulabilirsiniz.
 
 Slovenski README [tukaj](./README-Slovenian.md)
 
+Српски README [овде](./README-Serbian_Cyrillic.md)
+
+Srpski README [ovde](./README-Serbian_Latin.md)
+
 ## Demo
 
 <p align="center">
@@ -142,43 +146,43 @@ If you believe you've found an issue with this tool, please follow the ["Reporti
 
 ## Translations
 
-| Language                                    | Translator                                                                                   | Translated                             |
-| ------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------- |
-| Arabic (العربية)                            | [Tayeb-Ali](https://github.com/tayeb-ali)                                                    | UI                                     |
-| Belarusian (Беларуская)                     | [Zmicier21](https://github.com/Zmicier21)                                                    | UI and [README](README-Belarusian.md)  |
-| Brazilian Portuguese (Português Brasileiro) | [marleyas](https://github.com/marleyas), [reneoliveirajr](https://github.com/reneoliveirajr) | UI                                     |
-| Bulgarian (Български)                       | [kbkozlev](https://github.com/kbkozlev)                                                      | UI and [README](README-Bulgarian.md)   |
-| Chinese Simplified (简体中文)               | [jiangzhe11](https://github.com/jiangzhe11)                                                  | UI and [README](./README-Chinese.md)   |
-| Chinese Traditional (繁體中文)              | [startgo](https://github.com/ystartgo)                                                       | UI                                     |
-| Czech (Čeština)                             | [Matto58](https://github.com/Matto58)                                                        | UI                                     |
-| Dutch (Nederlands)                          | [barremans](https://github.com/barremans)                                                    | UI                                     |
-| English                                     | -                                                                                            | UI and README                          |
-| Finnish (Suomen kieli)                      | [ZapX5](https://github.com/ZapX5)                                                            | UI and [README](./README-Finnish.md)   |
-| French (Français)                           | [flaviedesp](https://github.com/flaviedesp)                                                  | UI                                     |
-| German (Deutsch)                            | [hebens](https://github.com/hebens), [ackhh](https://github.com/ackhh)                       | UI                                     |
-| Greek (Ελληνικά)                            | [sofronas](https://github.com/sofronas)                                                      | UI                                     |
-| Hebrew (עברית)                              | [ronbentata](https://github.com/ronbentata)                                                  | UI and [README](./README-Hebrew.md)    |
-| Hindi (हिन्दी)                              | [triach-rold](https://github.com/triach-rold)                                                | UI and [README](./README-Hindi.md)     |
-| Hungarian (Magyar)                          | [synexdev01](https://github.com/synexdev01)                                                  | UI                                     |
-| Indonesian (Bahasa Indonesia)               | [MarvinZhong](https://github.com/MarvinZhong)                                                | UI                                     |
-| Italian (Italiano)                          | [itsEmax64](https://github.com/itsEmax64)                                                    | UI                                     |
-| Japanese (日本語)                           | [NattyanTV](https://github.com/nattyan-tv)                                                   | UI                                     |
-| Korean (한국어)                             | [jhk1090](https://github.com/jhk1090)                                                        | UI and [README](./README-Korean.md)    |
-| Persian (فارسی)                             | [DrunkLeen](https://github.com/drunkleen), [Ar.dst](https://github.com/Ar-dst)               | UI and [README](./README-Persian.md)   |
-| Polish (Polski)                             | [Akuczaku](https://github.com/Akuczaku)                                                      | UI                                     |
-| Russian (Русский)                           | Oleg                                                                                         | UI                                     |
-| Serbian Cyrillic (Српски)                   | [Radoš Milićev](https://github.com/rammba)                                                   | UI                                     |
-| Serbian Latin (Srpski)                      | [rina](https://github.com/sweatshirts), [Radoš Milićev](https://github.com/rammba)           | UI                                     |
-| Slovak (Slovenčina)                         | [mostypc123](https://github.com/mostypc123)                                                  | UI                                     |
-| Slovenian (Slovenščina)                     | [Andrew Poženel](https://github.com/anderlli0053)                                            | UI and [README](./README-Slovenian.md) |
-| Spanish (Español)                           | [enriiquee](https://github.com/enriiquee)                                                    | UI                                     |
-| Spanish Latin America (Español Latam)       | [Matyrela](https://github.com/Matyrela)                                                      | UI                                     |
-| Thai (ภาษาไทย)                              | [teerut26](https://github.com/teerut26)                                                      | UI (partial)                           |
-| Turkish (Türkçe)                            | [mcagriaksoy](https://github.com/mcagriaksoy)                                                | UI and [README](./README-Turkish.md)   |
-| Ukrainian (Українська)                      | [AndrejGorodnij](https://github.com/AndrejGorodnij)                                          | UI                                     |
-| Vietnamese (Tiếng Việt)                     | [7777Hecker](https://github.com/7777Hecker)                                                  | UI                                     |
+| Language                                    | Translators                                                                                  | Translated                                    |
+| ------------------------------------------- | -------------------------------------------------------------------------------------------- | --------------------------------------------- |
+| Arabic (العربية)                            | [Tayeb-Ali](https://github.com/tayeb-ali)                                                    | UI                                            |
+| Belarusian (Беларуская)                     | [Zmicier21](https://github.com/Zmicier21)                                                    | UI and [README](README-Belarusian.md)         |
+| Brazilian Portuguese (Português Brasileiro) | [marleyas](https://github.com/marleyas), [reneoliveirajr](https://github.com/reneoliveirajr) | UI                                            |
+| Bulgarian (Български)                       | [kbkozlev](https://github.com/kbkozlev)                                                      | UI and [README](README-Bulgarian.md)          |
+| Chinese Simplified (简体中文)               | [jiangzhe11](https://github.com/jiangzhe11)                                                  | UI and [README](./README-Chinese.md)          |
+| Chinese Traditional (繁體中文)              | [startgo](https://github.com/ystartgo)                                                       | UI                                            |
+| Czech (Čeština)                             | [Matto58](https://github.com/Matto58)                                                        | UI                                            |
+| Dutch (Nederlands)                          | [barremans](https://github.com/barremans)                                                    | UI                                            |
+| English                                     | -                                                                                            | UI and README                                 |
+| Finnish (Suomen kieli)                      | [ZapX5](https://github.com/ZapX5)                                                            | UI and [README](./README-Finnish.md)          |
+| French (Français)                           | [flaviedesp](https://github.com/flaviedesp)                                                  | UI                                            |
+| German (Deutsch)                            | [hebens](https://github.com/hebens), [ackhh](https://github.com/ackhh)                       | UI                                            |
+| Greek (Ελληνικά)                            | [sofronas](https://github.com/sofronas)                                                      | UI                                            |
+| Hebrew (עברית)                              | [ronbentata](https://github.com/ronbentata)                                                  | UI and [README](./README-Hebrew.md)           |
+| Hindi (हिन्दी)                              | [triach-rold](https://github.com/triach-rold)                                                | UI and [README](./README-Hindi.md)            |
+| Hungarian (Magyar)                          | [synexdev01](https://github.com/synexdev01)                                                  | UI                                            |
+| Indonesian (Bahasa Indonesia)               | [MarvinZhong](https://github.com/MarvinZhong)                                                | UI                                            |
+| Italian (Italiano)                          | [itsEmax64](https://github.com/itsEmax64)                                                    | UI                                            |
+| Japanese (日本語)                           | [NattyanTV](https://github.com/nattyan-tv)                                                   | UI                                            |
+| Korean (한국어)                             | [jhk1090](https://github.com/jhk1090)                                                        | UI and [README](./README-Korean.md)           |
+| Persian (فارسی)                             | [DrunkLeen](https://github.com/drunkleen), [Ar.dst](https://github.com/Ar-dst)               | UI and [README](./README-Persian.md)          |
+| Polish (Polski)                             | [Akuczaku](https://github.com/Akuczaku)                                                      | UI                                            |
+| Russian (Русский)                           | Oleg                                                                                         | UI                                            |
+| Serbian Cyrillic (Српски)                   | [Radoš Milićev](https://github.com/rammba)                                                   | UI and [README](./README-Serbian_Cyrillic.md) |
+| Serbian Latin (Srpski)                      | [rina](https://github.com/sweatshirts), [Radoš Milićev](https://github.com/rammba)           | UI and [README](./README-Serbian_Latin.md)    |
+| Slovak (Slovenčina)                         | [mostypc123](https://github.com/mostypc123)                                                  | UI                                            |
+| Slovenian (Slovenščina)                     | [Andrew Poženel](https://github.com/anderlli0053)                                            | UI and [README](./README-Slovenian.md)        |
+| Spanish (Español)                           | [enriiquee](https://github.com/enriiquee)                                                    | UI                                            |
+| Spanish Latin America (Español Latam)       | [Matyrela](https://github.com/Matyrela)                                                      | UI                                            |
+| Thai (ภาษาไทย)                              | [teerut26](https://github.com/teerut26)                                                      | UI (partial)                                  |
+| Turkish (Türkçe)                            | [mcagriaksoy](https://github.com/mcagriaksoy)                                                | UI and [README](./README-Turkish.md)          |
+| Ukrainian (Українська)                      | [AndrejGorodnij](https://github.com/AndrejGorodnij)                                          | UI                                            |
+| Vietnamese (Tiếng Việt)                     | [7777Hecker](https://github.com/7777Hecker)                                                  | UI                                            |
 
-> Want to add a translation for another language? follow the ["Add or Update a Translation" section in CONTRIBUTING.md](./CONTRIBUTING.md#add-or-update-a-translation).
+> Want to add a translation for another language? Follow the ["Add or Update a Translation" section in CONTRIBUTING.md](./CONTRIBUTING.md#add-or-update-a-translation).
 
 ## Python 2.7 Support
 
@@ -186,7 +190,7 @@ As of [PyInstaller v4.0](https://github.com/pyinstaller/pyinstaller/releases/tag
 
 ## Testing
 
-Tests are located in `tests/` and are run using pytest:
+Tests are located in [tests/](./tests/) directory and are run using pytest:
 
 ```
 $ pip install pytest
