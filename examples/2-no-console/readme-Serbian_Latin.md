@@ -1,22 +1,22 @@
-# Пример 2 - Без конзоле
+# Primer 2 - Bez konzole
 
-[Овај пример](./main.py) је обична GUI апликација.
+[Ovaj primer](./main.py) je obična GUI aplikacija.
 
-## Паковање
+## Pakovanje
 
-Да бисте ово упаковали, можете користити `auto-py-to-exe` и изабрати "Апликација у прозору".
+Da biste ovo upakovali, možete koristiti `auto-py-to-exe` i izabrati "Aplikacija u prozoru".
 
-- Постарајте се да користите "Апликација у прозору" јер ће се у супротном појавити празан терминал (што нам не треба јер не позивамо `print`).
+- Postarajte se da koristite "Aplikacija u prozoru" jer će se u suprotnom pojaviti prazan terminal (što nam ne treba jer ne pozivamo `print`).
 
-### Употреба конфигурације
+### Upotreba konfiguracije
 
-Конфигурација за auto-py-to-exe се [налази овде](./auto-py-to-exe-config.json).
+Konfiguracija za auto-py-to-exe se [nalazi ovde](./auto-py-to-exe-config.json).
 
-1. Отворите терминал у овом директоријуму (`examples/2-no-console`)
-2. Извршите `auto-py-to-exe --config auto-py-to-exe-config.json` да бисте отворили auto-py-to-exe са прослеђеном конфигурацијом
-3. Кликните на велико плаво дугме на дну за конверзију
-4. Након завршетка, кликните на велико "ОТВОРИ ИЗЛАЗНИ ДИРЕКТОРИЈУМ" дугме да бисте видели излазни exe
+1. Otvorite terminal u ovom direktorijumu (`examples/2-no-console`)
+2. Izvršite `auto-py-to-exe --config auto-py-to-exe-config.json` da biste otvorili auto-py-to-exe sa prosleđenom konfiguracijom
+3. Kliknite na veliko plavo dugme na dnu za konverziju
+4. Nakon završetka, kliknite na veliko "OTVORI IZLAZNI DIREKTORIJUM" dugme da biste videli izlazni exe
 
-## Покретање
+## Pokretanje
 
-Можете покренути exe користећи терминал или на двоклик. Пошто користимо `window.mainloop()`, апликација ће трчати док се прозор не затвори.
+Možete pokrenuti exe koristeći terminal ili na dvoklik. Pošto koristimo `window.mainloop()`, aplikacija će trčati dok se prozor ne zatvori.
