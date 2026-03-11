@@ -35,7 +35,7 @@ When running the exe, you will see:
 
 - The target folder gets created if it doesn't exist
 - The data file gets created with default data if it doesn't exist
-- Even run increments the `count` value in the JSON file
+- Every run increments the `count` value in the JSON file
 
 Here is an example of the output:
 
