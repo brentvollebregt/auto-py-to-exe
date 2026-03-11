@@ -1,5 +1,9 @@
 # Doprinos auto-py-to-exe alatu
 
+[English](./CONTRIBUTING.md)
+| [српски](./CONTRIBUTING-Serbian_Cyrillic.md)
+| **srpski**
+
 👍🎉 Kao prvo, hvala Vam na interesovanju da doprinesete! 🎉👍
 
 Ovaj dokument opisuje smernice za doprinos koje su specifične za auto-py-to-exe. Ovo su uglavnom smernice, a ne pravila. Najbolje procenite sami i slobodno predložite izmene ovog dokumenta na pull request-u.

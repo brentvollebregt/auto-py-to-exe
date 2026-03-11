@@ -1,5 +1,9 @@
 # Contributing to auto-py-to-exe
 
+**English**
+| [српски](./CONTRIBUTING-Serbian_Cyrillic.md)
+| [srpski](./CONTRIBUTING-Serbian_Latin.md)
+
 👍🎉 First off, thanks for your interest in contributing! 🎉👍
 
 This document describes contribution guidelines that are specific to auto-py-to-exe. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
