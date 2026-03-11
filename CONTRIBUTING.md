@@ -12,14 +12,15 @@ This document describes contribution guidelines that are specific to auto-py-to-
 - [Pull Requests](#pull-requests)
   - [A New Feature / Change to an Existing Feature](#a-new-feature-change-to-an-existing-feature)
   - [Add or Update a Translation](#add-or-update-a-translation)
+- [Style Guide](#style-guide)
 
-## I don't want to read this whole thing, I just have a question!!!
+## I don't want to read this whole thing, I just have a question!!! <a id="i-dont-want-to-read-this-whole-thing-i-just-have-a-question"></a>
 
 > Please don't create an issue to ask a question.
 
 For questions and general help, [create a new discussion](https://github.com/brentvollebregt/auto-py-to-exe/discussions/new/choose) and provide a clear description of what's going on.
 
-## Reporting an Issue
+## Reporting an Issue <a id="reporting-an-issue"></a>
 
 > Please don't create an issue to ask a question or get help with something specific to your application. Instead [create a new discussion](https://github.com/brentvollebregt/auto-py-to-exe/discussions/new/choose).
 
@@ -31,7 +32,7 @@ If you run into an error or bug with auto-py-to-exe:
 
 Please be sure to clearly explain what's happening, give reproduction steps and a [minimal reproducible example](https://stackoverflow.com/help/minimal-reproducible-example) and explain what you believe should have happened.
 
-## Request a Feature
+## Request a Feature <a id="request-a-feature"></a>
 
 If auto-py-to-exe doesn't do something you need or want it to do:
 
@@ -41,9 +42,9 @@ If auto-py-to-exe doesn't do something you need or want it to do:
 
 Please provide as much context as you can about what you're running into and be clear about why existing features and alternatives would not work for you.
 
-## Pull Requests
+## Pull Requests <a id="pull-requests"></a>
 
-### A New Feature / Change to an Existing Feature
+### A New Feature / Change to an Existing Feature <a id="a-new-feature-change-to-an-existing-feature"></a>
 
 If you want to add a feature or change something that's existing:
 
@@ -52,7 +53,7 @@ If you want to add a feature or change something that's existing:
 3. Fill out the new template
 4. Create the PR
 
-### Add or Update a Translation
+### Add or Update a Translation <a id="add-or-update-a-translation"></a>
 
 If you want to add a new or update an existing translation:
 
@@ -64,7 +65,7 @@ If you want to add a new or update an existing translation:
 
 > If you are unable to submit a pull request, you can also submit the changes in a new issue.
 
-## Style Guide
+## Style Guide <a id="style-guide"></a>
 
 For Python, we use [Ruff](https://github.com/astral-sh/ruff) to format, lint and auto-sort imports. The easiest way to use Ruff is through the Visual Studio Code extension - formatting is run on save. You can also format using Ruff's CLI by first installing ruff using `pip install ruff` and then executing `ruff format .`.
 
