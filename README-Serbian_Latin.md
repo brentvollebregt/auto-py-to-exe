@@ -136,17 +136,17 @@ Ako Vam je za početak potrebno nešto vizuelno, [napravljen je video za origina
 
 ## Doprinos
 
-Pročitajte [CONTRIBUTING.md](./CONTRIBUTING.md) za smernice kako da doprinesete projektu. Ovo opisuje šta raditi ako imate novu funkcionalnost, izmenu, poboljšanje prevoda ili Ste našli problem na auto-py-to-exe.
+Pročitajte [CONTRIBUTING.md](./CONTRIBUTING-Serbian_Latin.md) za smernice kako da doprinesete projektu. Ovo opisuje šta raditi ako imate novu funkcionalnost, izmenu, poboljšanje prevoda ili Ste našli problem na auto-py-to-exe.
 
 ## Problemi prilikom korišćenja alata
 
 Ako imate problema sa upakovanom izvršnom datotekom, ili generalno sa upotrebom alata, preporučujemo da pročitate [post na blogu o uobičajenim problemima sa alatom auto-py-to-exe](https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=readme_link&utm_campaign=auto_py_to_exe_help). Ovaj post obuhvata ono što je potrebno znati vezano za pakovanje Python skripti i pomaže oko stvari koje često pođu po zlu.
 
-Ako verujete da Ste pronašli problem sa alatom, pročitajte [sekciju "Prijaviti Issue" u CONTRIBUTING.md](./CONTRIBUTING.md#reporting-an-issue).
+Ako verujete da Ste pronašli problem sa alatom, pročitajte [sekciju "Prijaviti Issue" u CONTRIBUTING.md](./CONTRIBUTING-Serbian_Latin.md#reporting-an-issue).
 
 ## Prevodi
 
-> Želite dodati prevod za drugi jezik? Počitajte [sekciju "Dodavanje i poboljšanje prevoda" u CONTRIBUTING.md](./CONTRIBUTING.md#add-or-update-a-translation).
+> Želite dodati prevod za drugi jezik? Počitajte [sekciju "Dodavanje i poboljšanje prevoda" u CONTRIBUTING.md](./CONTRIBUTING-Serbian_Latin.md#add-or-update-a-translation).
 
 ## Podrška za Python 2.7
 
