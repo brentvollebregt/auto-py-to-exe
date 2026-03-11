@@ -1,5 +1,9 @@
 # Primer 4 - Trajni podaci
 
+[English](./readme.md)
+| [српски](./readme-Serbian_Cyrillic.md)
+| **srpski**
+
 [Ovaj primer](./main.py) demonstrira kako možete upravljati trajnim podacima izvan izvršne datoteke. Ovo je potrebno kada imate SQLite bazu podataka ili nešto slično što koristite za čuvanje podataka između različitih pokretanja aplikacije.
 
 Kada koristite režim "Jedna datoteka", ne biste trebali da čuvate datoteke koje želite da budu trajne zajedno sa izvršnom datotekom, jer će biti pregažene pri sledećem pokretanju. Ako koristite "Jedan direktorijum", ovo nije problem jer se izvršna datoteka ne mora raspakivati svaki put.

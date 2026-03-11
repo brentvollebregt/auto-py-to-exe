@@ -1,5 +1,9 @@
 # Example 2 - No Console
 
+**English**
+| [српски](./readme-Serbian_Cyrillic.md)
+| [srpski](./readme-Serbian_Latin.md)
+
 [This example](./main.py) is a basic GUI application.
 
 ## Packaging

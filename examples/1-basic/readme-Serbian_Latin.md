@@ -1,5 +1,9 @@
 # Primer 1 - Osnovno
 
+[English](./readme.md)
+| [српски](./readme-Serbian_Cyrillic.md)
+| **srpski**
+
 [Ovaj primer](./main.py) je osnovna Hello World aplikacija. U ovom primeru ništa nije neuobičajeno.
 
 ## Pakovanje

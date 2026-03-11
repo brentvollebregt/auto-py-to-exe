@@ -1,5 +1,9 @@
 # Primer 3 - Slike i druge datoteke koji nisu .py
 
+[English](./readme.md)
+| [српски](./readme-Serbian_Cyrillic.md)
+| **srpski**
+
 [Ovaj primer](./main.py) je GUI aplikacija koja referencira GIF (sliku) i JSON datoteku.
 
 ## Pakovanje

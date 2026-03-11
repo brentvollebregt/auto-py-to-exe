@@ -1,5 +1,9 @@
 # Example 3 - Images and Other Non-.py Files
 
+**English**
+| [српски](./readme-Serbian_Cyrillic.md)
+| [srpski](./readme-Serbian_Latin.md)
+
 [This example](./main.py) is a GUI application that also references a GIF (image) and a JSON file.
 
 ## Packaging

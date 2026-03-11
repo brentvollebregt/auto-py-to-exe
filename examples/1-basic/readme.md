@@ -1,5 +1,9 @@
 # Example 1 - Basic
 
+**English**
+| [српски](./readme-Serbian_Cyrillic.md)
+| [srpski](./readme-Serbian_Latin.md)
+
 [This example](./main.py) is a basic Hello World application. Nothing is out of the ordinary in this example.
 
 ## Packaging

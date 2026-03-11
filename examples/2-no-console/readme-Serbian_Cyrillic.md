@@ -1,5 +1,9 @@
 # Пример 2 - Без конзоле
 
+[English](./readme.md)
+| **српски**
+| [srpski](./readme-Serbian_Latin.md)
+
 [Овај пример](./main.py) је обична GUI апликација.
 
 ## Паковање

@@ -1,5 +1,9 @@
 # Primer 2 - Bez konzole
 
+[English](./readme.md)
+| [српски](./readme-Serbian_Cyrillic.md)
+| **srpski**
+
 [Ovaj primer](./main.py) je obična GUI aplikacija.
 
 ## Pakovanje

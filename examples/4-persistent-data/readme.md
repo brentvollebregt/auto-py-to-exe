@@ -1,5 +1,9 @@
 # Example 4 - Persistent Data
 
+**English**
+| [српски](./readme-Serbian_Cyrillic.md)
+| [srpski](./readme-Serbian_Latin.md)
+
 [This example](./main.py) demonstrates how you can manage persistent data outside your executable. This is needed when you have something like a SQLite database or something else used to store data between application runs.
 
 When using "One File" mode, you should not store files you want to persist beside the executable because they will be overwritten on the next run. If you are using "One Directory", this is not an issue as the executable doesn't have to extract itself every time.
