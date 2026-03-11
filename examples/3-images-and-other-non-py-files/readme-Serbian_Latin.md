@@ -25,4 +25,4 @@ Možete pokrenuti exe koristeći terminal ili na dvoklik. Pošto koristimo `wind
 
 ## Napomene
 
-Da ste koristili režim "Jedna datoteka", izmene napravljene u JSON datoteci bi bile pregažene svaki put. Da biste to sprečili, pogledajte primer 4.
+Da Ste koristili režim "Jedna datoteka", izmene napravljene u JSON datoteci bi bile pregažene svaki put. Da biste to sprečili, pogledajte primer 4.
