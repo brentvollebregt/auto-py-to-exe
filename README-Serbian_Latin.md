@@ -1,5 +1,5 @@
 <h1 align="center">Auto PY to EXE</h1>
-<p align="center">Konverter .py fajlova u .exe koristi jednostavan grafički interfejs i <a href="https://pyinstaller.readthedocs.io/en/stable/index.html">PyInstaller</a> u Python-u.</p>
+<p align="center">Konverter .py datoteka u .exe koristi jednostavan grafički interfejs i <a href="https://pyinstaller.readthedocs.io/en/stable/index.html">PyInstaller</a> u Python-u.</p>
 
 <p align="center">
     <img src="https://nitratine.net/posts/auto-py-to-exe/feature.png" alt="Prazan interfejs">
@@ -87,17 +87,17 @@ $ auto-py-to-exe
 Lokalno možete pokrenuti ovaj projekat prateći sledeće korake:
 
 1. Klonirajte/preuzmite [repozitorijum](https://github.com/brentvollebregt/auto-py-to-exe)
-2. Otvorite cmd/terminal i u root folderu projekta
+2. Otvorite cmd/terminal u root folderu projekta
 3. Izvršite `python -m pip install -r requirements.txt`
 4. Izvršite `python -m auto_py_to_exe` da biste pokrenuli aplikaciju
 
 ## Korišćenje aplikacije
 
-1. Odaberite lokaciju vaše skripte (nalepite ili koristite pretraživač fajlova)
-   - Ivica će postati plava ako fajl postoji
-2. Izaberite ostale opcije i dodajte stvari poput ikonica ili drugih fajlova
+1. Odaberite lokaciju vaše skripte (nalepite ili koristite pretraživač datoteka)
+   - Ivica će postati plava ako datoteka postoji
+2. Izaberite ostale opcije i dodajte stvari poput ikonica ili drugih datoteka
 3. Kliknite na veliko plavo dugme na dnu za konverziju
-4. Nakon završetka, pronađite vaše konvertovane fajlove u /output
+4. Nakon završetka, pronađite vaše konvertovane datoteke u /output
 
 _Jednostavno._
 
@@ -105,21 +105,21 @@ _Jednostavno._
 
 Koristite help flag za bolje razumevanje: `auto-py-to-exe --help`
 
-| Argument                                                     | Tip               | Opis                                                                                                                                                |
-| ------------------------------------------------------------ | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| filename                                                     | poziciono/opciono | Popunjava polje "Lokacija skripte" na UI-u.                                                                                                         |
-| -db, --default-browser                                       | opciono           | Otvara UI korišćenjem podrazumevanog pretraživača (što može biti Chrome). Neće pokušati da pronađe Chrome.                                          |
-| -nu, --no-ui                                                 | opciono           | Ne pokušava da otvori UI u pretraživaču i jednostavno ispiše adresu na kojoj je aplikacija dostupna.                                                |
-| -c [CONFIG], --config [CONFIG]                               | opciono           | Pruža konfiguracioni fajl (JSON) za popunjavanje UI-a. Ovo može biti generisano u tab-u za postavke.                                                |
-| -o [PATH], --output-dir [PATH]                               | opciono           | Postavlja podrazumevani izlazni direktorijum. Ovo može biti promenjeno na UI-u.                                                                     |
-| -bdo [FOLDER_PATH], --build-directory-override [FOLDER_PATH] | opciono           | Zamenjuje podrazumevani direktorijum za izgradnju. Korisno je ako želite da dodate folder u belu listu kako bi sprečili da antivirus briše fajlove. |
-| -lang [LANGUAGE_CODE], --language [LANGUAGE_CODE]            | opciono           | Govori UI-u koji jezik treba da bude podrazumevan pri otvaranju. Kodove jezika možete pronaći u tabeli "Prevodi" koja se nalazi ispod.              |
+| Argument                                                     | Tip               | Opis                                                                                                                                                 |
+| ------------------------------------------------------------ | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| filename                                                     | poziciono/opciono | Popunjava polje "Lokacija skripte" na UI-u.                                                                                                          |
+| -db, --default-browser                                       | opciono           | Otvara UI korišćenjem podrazumevanog pretraživača (što može biti Chrome). Neće pokušati da pronađe Chrome.                                           |
+| -nu, --no-ui                                                 | opciono           | Ne pokušava da otvori UI u pretraživaču i jednostavno ispiše adresu na kojoj je aplikacija dostupna.                                                 |
+| -c [CONFIG], --config [CONFIG]                               | opciono           | Pruža konfiguracionu (JSON) datoteku za popunjavanje UI-a. Ovo može biti generisano u tab-u za postavke.                                             |
+| -o [PATH], --output-dir [PATH]                               | opciono           | Postavlja podrazumevani izlazni direktorijum. Ovo može biti promenjeno na UI-u.                                                                      |
+| -bdo [FOLDER_PATH], --build-directory-override [FOLDER_PATH] | opciono           | Zamenjuje podrazumevani direktorijum za izgradnju. Korisno je ako želite da dodate folder u belu listu kako bi sprečili da antivirus briše datoteke. |
+| -lang [LANGUAGE_CODE], --language [LANGUAGE_CODE]            | opciono           | Govori UI-u koji jezik treba da bude podrazumevan pri otvaranju. Kodove jezika možete pronaći u tabeli "Prevodi" koja se nalazi ispod.               |
 
 ### JSON konfiguracija
 
-Umesto da iste podatke ubacujete na UI iznova i iznova, možete sačuvati trenutno stanje odlaskom na sekciju "Konfiguracija" unutar tab-a za postavke i sačuvati konfiguraciju u JSON fajl. Ovo može biti učitano na UI radi popunjavanja svih polja.
+Umesto da iste podatke ubacujete na UI iznova i iznova, možete sačuvati trenutno stanje odlaskom na sekciju "Konfiguracija" unutar tab-a za postavke i sačuvati konfiguraciju u JSON datoteku. Ovo može biti učitano na UI radi popunjavanja svih polja.
 
-Ova akcija čuvanja JSON konfiguracije ne čuva izlazni direktorijum automatski jer pomeranje hostova može označavati različitu strukturu direktorijuma. Ako želite da imate izlazni direktorijum u JSON konfiguraciji, dodajte direktorijum u `nonPyinstallerOptions.outputDirectory` unutar JSON fajla (potrebno je napraviti novi ključ).
+Ova akcija čuvanja JSON konfiguracije ne čuva izlazni direktorijum automatski jer pomeranje hostova može označavati različitu strukturu direktorijuma. Ako želite da imate izlazni direktorijum u JSON konfiguraciji, dodajte direktorijum u `nonPyinstallerOptions.outputDirectory` unutar JSON datoteke (potrebno je napraviti novi ključ).
 
 ## Primeri
 
@@ -127,7 +127,7 @@ Direktorijum [examples/](./examples/) prikazuje nekoliko primera kako da napiše
 
 - [Osnovno (konzolna aplikacija)](./examples/1-basic/readme.md)
 - [Bez konzole (tipično poželjno za aplikacije koje koriste GUI)](./examples/2-no-console/readme.md)
-- [Slike i drugi fajlovi koji nisu .py (uključivanje statičkih fajlova)](./examples/3-images-and-other-non-py-files/readme.md)
+- [Slike i druge datoteke koji nisu .py (uključivanje statičkih datoteka)](./examples/3-images-and-other-non-py-files/readme.md)
 - [Trajni podaci (poput baza podataka)](./examples/4-persistent-data/readme.md)
 
 ## Video
@@ -136,17 +136,17 @@ Ako Vam je za početak potrebno nešto vizuelno, [napravljen je video za origina
 
 ## Doprinos
 
-Pročitajte [CONTRIBUTING.md](./CONTRIBUTING.md) za smernice kako da doprinesete projektu. Ovo opisuje šta raditi ako imate novu funkcionalnost, izmenu, poboljšanje prevoda ili Ste našli problem na auto-py-to-exe.
+Pročitajte [CONTRIBUTING.md](./CONTRIBUTING-Serbian_Latin.md) za smernice kako da doprinesete projektu. Ovo opisuje šta raditi ako imate novu funkcionalnost, izmenu, poboljšanje prevoda ili Ste našli problem na auto-py-to-exe.
 
 ## Problemi prilikom korišćenja alata
 
-Ako imate problema sa upakovanim izvršnim fajlom, ili generalno sa upotrebom alata, preporučujemo da pročitate [post na blogu o uobičajenim problemima sa alatom auto-py-to-exe](https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=readme_link&utm_campaign=auto_py_to_exe_help). Ovaj post obuhvata ono što je potrebno znati vezano za pakovanje Python skripti i pomaže oko stvari koje često pođu po zlu.
+Ako imate problema sa upakovanom izvršnom datotekom, ili generalno sa upotrebom alata, preporučujemo da pročitate [post na blogu o uobičajenim problemima sa alatom auto-py-to-exe](https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=readme_link&utm_campaign=auto_py_to_exe_help). Ovaj post obuhvata ono što je potrebno znati vezano za pakovanje Python skripti i pomaže oko stvari koje često pođu po zlu.
 
-Ako verujete da Ste pronašli problem sa alatom, pročitajte [sekciju "Prijaviti Issue" u CONTRIBUTING.md](./CONTRIBUTING.md#reporting-an-issue).
+Ako verujete da Ste pronašli problem sa alatom, pročitajte [sekciju "Prijaviti Issue" u CONTRIBUTING.md](./CONTRIBUTING-Serbian_Latin.md#reporting-an-issue).
 
 ## Prevodi
 
-> Želite dodati prevod za drugi jezik? Počitajte [sekciju "Dodavanje i poboljšanje prevoda" u CONTRIBUTING.md](./CONTRIBUTING.md#add-or-update-a-translation).
+> Želite dodati prevod za drugi jezik? Počitajte [sekciju "Dodavanje i poboljšanje prevoda" u CONTRIBUTING.md](./CONTRIBUTING-Serbian_Latin.md#add-or-update-a-translation).
 
 ## Podrška za Python 2.7
 

@@ -1,5 +1,9 @@
 # Example 4 - Persistent Data
 
+**English**
+| [српски](./readme-Serbian_Cyrillic.md)
+| [srpski](./readme-Serbian_Latin.md)
+
 [This example](./main.py) demonstrates how you can manage persistent data outside your executable. This is needed when you have something like a SQLite database or something else used to store data between application runs.
 
 When using "One File" mode, you should not store files you want to persist beside the executable because they will be overwritten on the next run. If you are using "One Directory", this is not an issue as the executable doesn't have to extract itself every time.
@@ -35,7 +39,7 @@ When running the exe, you will see:
 
 - The target folder gets created if it doesn't exist
 - The data file gets created with default data if it doesn't exist
-- Even run increments the `count` value in the JSON file
+- Every run increments the `count` value in the JSON file
 
 Here is an example of the output:
 
