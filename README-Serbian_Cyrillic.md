@@ -136,17 +136,17 @@ _Једноставно._
 
 ## Допринос
 
-Прочитајте [CONTRIBUTING.md](./CONTRIBUTING-Serbian_Cyrillic.md) за смернице како да допринесете пројекту. Ово описује шта радити ако имате нову функционалност, измену, побољшање превода или Сте нашли проблем на auto-py-to-exe.
+Прочитајте [CONTRIBUTING.md](./translations/contributing/CONTRIBUTING-Serbian_Cyrillic.md) за смернице како да допринесете пројекту. Ово описује шта радити ако имате нову функционалност, измену, побољшање превода или Сте нашли проблем на auto-py-to-exe.
 
 ## Проблеми приликом коришћења алата
 
 Ако имате проблема са упакованом извршном датотеком, или генерално са употребом алата, препоручујемо да прочитате [пост на блогу о уобичајеним проблемима са алатом auto-py-to-exe](https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=readme_link&utm_campaign=auto_py_to_exe_help). Овај пост обухвата оно што је потребно знати везано за паковање Python скрипти и помаже око ствари које често пођу по злу.
 
-Ако верујете да Сте пронашли проблем са алатом, прочитајте [секцију "Пријавити Issue" у CONTRIBUTING.md](./CONTRIBUTING-Serbian_Cyrillic.md#reporting-an-issue).
+Ако верујете да Сте пронашли проблем са алатом, прочитајте [секцију "Пријавити Issue" у CONTRIBUTING.md](./translations/contributing/CONTRIBUTING-Serbian_Cyrillic.md#reporting-an-issue).
 
 ## Преводи
 
-> Желите додати превод за други језик? Почитајте [секцију "Додавање и побољшање превода" у CONTRIBUTING.md](./CONTRIBUTING-Serbian_Cyrillic.md#add-or-update-a-translation).
+> Желите додати превод за други језик? Почитајте [секцију "Додавање и побољшање превода" у CONTRIBUTING.md](./translations/contributing/CONTRIBUTING-Serbian_Cyrillic.md#add-or-update-a-translation).
 
 ## Подршка за Python 2.7
 
