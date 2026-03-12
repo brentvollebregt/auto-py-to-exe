@@ -117,10 +117,10 @@ Ova akcija čuvanja JSON konfiguracije ne čuva izlazni direktorijum automatski 
 
 Direktorijum [examples/](../../examples/) prikazuje nekoliko primera kako da napišete vaše skripte i upakujete ih pomoću auto-py-to-exe.
 
-- [Osnovno (konzolna aplikacija)](./examples/1-basic/readme.md)
-- [Bez konzole (tipično poželjno za aplikacije koje koriste GUI)](./examples/2-no-console/readme.md)
-- [Slike i druge datoteke koji nisu .py (uključivanje statičkih datoteka)](./examples/3-images-and-other-non-py-files/readme.md)
-- [Trajni podaci (poput baza podataka)](./examples/4-persistent-data/readme.md)
+- [Osnovno (konzolna aplikacija)](../example1/readme-Serbian_Latin.md)
+- [Bez konzole (tipično poželjno za aplikacije koje koriste GUI)](../example2/readme-Serbian_Latin.md)
+- [Slike i druge datoteke koji nisu .py (uključivanje statičkih datoteka)](../example3/readme-Serbian_Latin.md)
+- [Trajni podaci (poput baza podataka)](../example4/readme-Serbian_Latin.md)
 
 ## Video
 

@@ -117,10 +117,10 @@ _Једноставно._
 
 Директоријум [examples/](../../examples/) приказује неколико примера како да напишете ваше скрипте и упакујете их помоћу auto-py-to-exe.
 
-- [Основно (конзолна апликација)](./examples/1-basic/readme.md)
-- [Без конзоле (типично пожељно за апликације које користе GUI)](./examples/2-no-console/readme.md)
-- [Слике и друге датотеке који нису .py (укључивање статичких датотека)](./examples/3-images-and-other-non-py-files/readme.md)
-- [Трајни подаци (попут база података)](./examples/4-persistent-data/readme.md)
+- [Основно (конзолна апликација)](../example1/readme-Serbian_Cyrillic.md)
+- [Без конзоле (типично пожељно за апликације које користе GUI)](../example2/readme-Serbian_Cyrillic.md)
+- [Слике и друге датотеке који нису .py (укључивање статичких датотека)](../example3/readme-Serbian_Cyrillic.md)
+- [Трајни подаци (попут база података)](../example4/readme-Serbian_Cyrillic.md)
 
 ## Видео
 
