@@ -105,15 +105,15 @@ _Jednostavno._
 
 Koristite help flag za bolje razumevanje: `auto-py-to-exe --help`
 
-| Argument                                                     | Tip               | Opis                                                                                                                                              |
-| ------------------------------------------------------------ | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| filename                                                     | poziciono/opciono | Popunjava polje "Lokacija skripte" na UI-u.                                                                                                         |
-| -db, --default-browser                                       | opciono           | Otvara UI korišćenjem podrazumevanog pretraživača (što može biti Chrome). Neće pokušati da pronađe Chrome.                                         |
-| -nu, --no-ui                                                 | opciono           | Ne pokušava da otvori UI u pretraživaču i jednostavno ispiše adresu na kojoj je aplikacija dostupna.                                              |
-| -c [CONFIG], --config [CONFIG]                               | opciono           | Pruža konfiguracionu (JSON) datoteku za popunjavanje UI-a. Ovo može biti generisano u tab-u za postavke.                                                |
-| -o [PATH], --output-dir [PATH]                               | opciono           | Postavlja podrazumevani izlazni direktorijum. Ovo može biti promenjeno na UI-u.                                                                     |
+| Argument                                                     | Tip               | Opis                                                                                                                                                 |
+| ------------------------------------------------------------ | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| filename                                                     | poziciono/opciono | Popunjava polje "Lokacija skripte" na UI-u.                                                                                                          |
+| -db, --default-browser                                       | opciono           | Otvara UI korišćenjem podrazumevanog pretraživača (što može biti Chrome). Neće pokušati da pronađe Chrome.                                           |
+| -nu, --no-ui                                                 | opciono           | Ne pokušava da otvori UI u pretraživaču i jednostavno ispiše adresu na kojoj je aplikacija dostupna.                                                 |
+| -c [CONFIG], --config [CONFIG]                               | opciono           | Pruža konfiguracionu (JSON) datoteku za popunjavanje UI-a. Ovo može biti generisano u tab-u za postavke.                                             |
+| -o [PATH], --output-dir [PATH]                               | opciono           | Postavlja podrazumevani izlazni direktorijum. Ovo može biti promenjeno na UI-u.                                                                      |
 | -bdo [FOLDER_PATH], --build-directory-override [FOLDER_PATH] | opciono           | Zamenjuje podrazumevani direktorijum za izgradnju. Korisno je ako želite da dodate folder u belu listu kako bi sprečili da antivirus briše datoteke. |
-| -lang [LANGUAGE_CODE], --language [LANGUAGE_CODE]            | opciono           | Govori UI-u koji jezik treba da bude podrazumevan pri otvaranju. Kodove jezika možete pronaći u tabeli "Prevodi" koja se nalazi ispod.             |
+| -lang [LANGUAGE_CODE], --language [LANGUAGE_CODE]            | opciono           | Govori UI-u koji jezik treba da bude podrazumevan pri otvaranju. Kodove jezika možete pronaći u tabeli "Prevodi" koja se nalazi ispod.               |
 
 ### JSON konfiguracija
 
@@ -164,7 +164,7 @@ $ pytest
 
 ## Snimci ekrana
 
-| <!-- -->                                                                                                                                              | <!-- -->                                                                                                                            |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| <!-- -->                                                                                                                                              | <!-- -->                                                                                                                             |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
 | [![Prazan interfejs](https://nitratine.net/posts/auto-py-to-exe/empty-interface.png)](https://nitratine.net/posts/auto-py-to-exe/empty-interface.png) | [![Popunjeno](https://nitratine.net/posts/auto-py-to-exe/filled-out.png)](https://nitratine.net/posts/auto-py-to-exe/filled-out.png) |
-| [![Konvertovanje](https://nitratine.net/posts/auto-py-to-exe/converting.png)](https://nitratine.net/posts/auto-py-to-exe/converting.png)               | [![Završeno](https://nitratine.net/posts/auto-py-to-exe/completed.png)](https://nitratine.net/posts/auto-py-to-exe/completed.png)   |
+| [![Konvertovanje](https://nitratine.net/posts/auto-py-to-exe/converting.png)](https://nitratine.net/posts/auto-py-to-exe/converting.png)              | [![Završeno](https://nitratine.net/posts/auto-py-to-exe/completed.png)](https://nitratine.net/posts/auto-py-to-exe/completed.png)    |
