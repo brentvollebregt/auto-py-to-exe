@@ -14,19 +14,19 @@
     <a href="https://www.buymeacoffee.com/brentvollebregt"><img src="https://img.shields.io/badge/-buy_me_a%C2%A0beer-gray?logo=buy-me-a-coffee" alt="दान करें"></a>
 </p>
 
-## इस फ़ाइल का अनुवाद
-
-[यहाँ](./README-Chinese.md) चीनी संस्करण को पढ़ें
-
-[यहाँ](./README-Finnish.md) फ़िनिश संस्करण के निर्देश प्राप्त करें
-
-[Türkçe Talimatları burada](./README-Turkish.md) पाएं
-
-[यहाँ](./README-Persian.md) फ़ारसी संस्करण के निर्देश प्राप्त करें
-
-[यहाँ](./README-Korean.md) कोरियाई संस्करण को देखें
-
-[यहाँ](README-Bulgarian.md) बल्गेरियाई संस्करण को देखें
+| [English](../../README.md)
+| [简体中文](./README-Chinese_Simplified.md)
+| [Suomen kieli](./README-Finnish.md)
+| [Türkçe](./README-Turkish.md)
+| [فارسی](./README-Persian.md)
+| [한국어](./README-Korean.md)
+| [Български](./README-Bulgarian.md)
+| **हिन्दी**
+| [עברית](./README-Hebrew.md)
+| [Беларуская](./README-Belarusian.md)
+| [Slovenščina](./README-Slovenian.md)
+| [српски](./README-Serbian_Cyrillic.md)
+| [srpski](./README-Serbian_Latin.md)
 
 ## डेमो
 

@@ -14,27 +14,19 @@
     <a href="https://www.buymeacoffee.com/brentvollebregt"><img src="https://img.shields.io/badge/-buy_me_a%C2%A0beer-gray?logo=buy-me-a-coffee" alt="Донирај"></a>
 </p>
 
-## Преводи овог фајла
-
-阅读中文版的 README ，点击 [这里](./README-Chinese.md)
-
-Suomenkieliset käyttöohjeet löydät [täältä](./README-Finnish.md)
-
-Türkçe Talimatları [burada](./README-Turkish.md) bulabilirsiniz.
-
-دستور العمل های [فارسی](./README-Persian.md)
-
-한국어로 된 설명은 [여기](./README-Korean.md)를 참고하세요.
-
-Български README [тук](./README-Bulgarian.md)
-
-Беларускамоўны README [тут](./README-Belarusian.md)
-
-Slovenski README [tukaj](./README-Slovenian.md)
-
-Српски README [овде](./README-Serbian_Cyrillic.md)
-
-Srpski README [ovde](./README-Serbian_Latin.md)
+| [English](../../README.md)
+| [简体中文](./README-Chinese_Simplified.md)
+| [Suomen kieli](./README-Finnish.md)
+| [Türkçe](./README-Turkish.md)
+| [فارسی](./README-Persian.md)
+| [한국어](./README-Korean.md)
+| [Български](./README-Bulgarian.md)
+| [हिन्दी](./README-Hindi.md)
+| [עברית](./README-Hebrew.md)
+| [Беларуская](./README-Belarusian.md)
+| [Slovenščina](./README-Slovenian.md)
+| **српски**
+| [srpski](./README-Serbian_Latin.md)
 
 ## Демо
 

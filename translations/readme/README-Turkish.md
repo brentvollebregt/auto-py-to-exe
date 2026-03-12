@@ -14,11 +14,19 @@
     <a href="https://www.buymeacoffee.com/brentvollebregt"><img src="https://img.shields.io/badge/-buy_me_a%C2%A0beer-gray?logo=buy-me-a-coffee" alt="Donate"></a>
 </p>
 
-阅读中文版的 README ，点击 [这里](./README-Chinese.md)
-
-Suomenkieliset käyttöohjeet löydät [täältä](./README-Finnish.md)
-
-دستور العمل های [فارسی](./README-Persian.md)
+| [English](../../README.md)
+| [简体中文](./README-Chinese_Simplified.md)
+| [Suomen kieli](./README-Finnish.md)
+| **Türkçe**
+| [فارسی](./README-Persian.md)
+| [한국어](./README-Korean.md)
+| [Български](./README-Bulgarian.md)
+| [हिन्दी](./README-Hindi.md)
+| [עברית](./README-Hebrew.md)
+| [Беларуская](./README-Belarusian.md)
+| [Slovenščina](./README-Slovenian.md)
+| [српски](./README-Serbian_Cyrillic.md)
+| [srpski](./README-Serbian_Latin.md)
 
 ## Demo
 

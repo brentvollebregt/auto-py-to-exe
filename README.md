@@ -14,27 +14,19 @@
     <a href="https://www.buymeacoffee.com/brentvollebregt"><img src="https://img.shields.io/badge/-buy_me_a%C2%A0beer-gray?logo=buy-me-a-coffee" alt="Donate"></a>
 </p>
 
-## Translations of This File
-
-阅读中文版的 README ，点击 [这里](./README-Chinese.md)
-
-Suomenkieliset käyttöohjeet löydät [täältä](./README-Finnish.md)
-
-Türkçe Talimatları [burada](./README-Turkish.md) bulabilirsiniz.
-
-دستور العمل های [فارسی](./README-Persian.md)
-
-한국어로 된 설명은 [여기](./README-Korean.md)를 참고하세요.
-
-Български README [тук](./README-Bulgarian.md)
-
-Беларускамоўны README [тут](./README-Belarusian.md)
-
-Slovenski README [tukaj](./README-Slovenian.md)
-
-Српски README [овде](./README-Serbian_Cyrillic.md)
-
-Srpski README [ovde](./README-Serbian_Latin.md)
+**English**
+| [简体中文](./translations/readme/README-Chinese_Simplified.md)
+| [Suomen kieli](./translations/readme/README-Finnish.md)
+| [Türkçe](./translations/readme/README-Turkish.md)
+| [فارسی](./translations/readme/README-Persian.md)
+| [한국어](./translations/readme/README-Korean.md)
+| [Български](./translations/readme/README-Bulgarian.md)
+| [हिन्दी](./translations/readme/README-Hindi.md)
+| [עברית](./translations/readme/README-Hebrew.md)
+| [Беларуская](./translations/readme/README-Belarusian.md)
+| [Slovenščina](./translations/readme/README-Slovenian.md)
+| [српски](./translations/readme/README-Serbian_Cyrillic.md)
+| [srpski](./translations/readme/README-Serbian_Latin.md)
 
 ## Demo
 
@@ -149,36 +141,36 @@ If you believe you've found an issue with this tool, please follow the ["Reporti
 | Language                                    | Translators                                                                                  | Translated content                                                                                          |
 | ------------------------------------------- | -------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
 | Arabic (العربية)                            | [Tayeb-Ali](https://github.com/tayeb-ali)                                                    | UI                                                                                                          |
-| Belarusian (Беларуская)                     | [Zmicier21](https://github.com/Zmicier21)                                                    | UI and [README](README-Belarusian.md)                                                                       |
+| Belarusian (Беларуская)                     | [Zmicier21](https://github.com/Zmicier21)                                                    | UI and [README](./translations/readme/README-Belarusian.md)                                                                       |
 | Brazilian Portuguese (Português Brasileiro) | [marleyas](https://github.com/marleyas), [reneoliveirajr](https://github.com/reneoliveirajr) | UI                                                                                                          |
-| Bulgarian (Български)                       | [kbkozlev](https://github.com/kbkozlev)                                                      | UI and [README](README-Bulgarian.md)                                                                        |
-| Chinese Simplified (简体中文)               | [jiangzhe11](https://github.com/jiangzhe11)                                                  | UI and [README](./README-Chinese.md)                                                                        |
+| Bulgarian (Български)                       | [kbkozlev](https://github.com/kbkozlev)                                                      | UI and [README](./translations/readme/README-Bulgarian.md)                                                                        |
+| Chinese Simplified (简体中文)               | [jiangzhe11](https://github.com/jiangzhe11)                                                  | UI and [README](./translations/readme/README-Chinese_Simplified.md)                                                                        |
 | Chinese Traditional (繁體中文)              | [startgo](https://github.com/ystartgo)                                                       | UI                                                                                                          |
 | Czech (Čeština)                             | [Matto58](https://github.com/Matto58)                                                        | UI                                                                                                          |
 | Dutch (Nederlands)                          | [barremans](https://github.com/barremans)                                                    | UI                                                                                                          |
 | English                                     | -                                                                                            | UI and README                                                                                               |
-| Finnish (Suomen kieli)                      | [ZapX5](https://github.com/ZapX5)                                                            | UI and [README](./README-Finnish.md)                                                                        |
+| Finnish (Suomen kieli)                      | [ZapX5](https://github.com/ZapX5)                                                            | UI and [README](./translations/readme/README-Finnish.md)                                                                        |
 | French (Français)                           | [flaviedesp](https://github.com/flaviedesp)                                                  | UI                                                                                                          |
 | German (Deutsch)                            | [hebens](https://github.com/hebens), [ackhh](https://github.com/ackhh)                       | UI                                                                                                          |
 | Greek (Ελληνικά)                            | [sofronas](https://github.com/sofronas)                                                      | UI                                                                                                          |
-| Hebrew (עברית)                              | [ronbentata](https://github.com/ronbentata)                                                  | UI and [README](./README-Hebrew.md)                                                                         |
-| Hindi (हिन्दी)                              | [triach-rold](https://github.com/triach-rold)                                                | UI and [README](./README-Hindi.md)                                                                          |
+| Hebrew (עברית)                              | [ronbentata](https://github.com/ronbentata)                                                  | UI and [README](./translations/readme/README-Hebrew.md)                                                                         |
+| Hindi (हिन्दी)                              | [triach-rold](https://github.com/triach-rold)                                                | UI and [README](./translations/readme/EADME-Hindi.md)                                                                          |
 | Hungarian (Magyar)                          | [synexdev01](https://github.com/synexdev01)                                                  | UI                                                                                                          |
 | Indonesian (Bahasa Indonesia)               | [MarvinZhong](https://github.com/MarvinZhong)                                                | UI                                                                                                          |
 | Italian (Italiano)                          | [itsEmax64](https://github.com/itsEmax64)                                                    | UI                                                                                                          |
 | Japanese (日本語)                           | [NattyanTV](https://github.com/nattyan-tv)                                                   | UI                                                                                                          |
-| Korean (한국어)                             | [jhk1090](https://github.com/jhk1090)                                                        | UI and [README](./README-Korean.md)                                                                         |
-| Persian (فارسی)                             | [DrunkLeen](https://github.com/drunkleen), [Ar.dst](https://github.com/Ar-dst)               | UI and [README](./README-Persian.md)                                                                        |
+| Korean (한국어)                             | [jhk1090](https://github.com/jhk1090)                                                        | UI and [README](./translations/readme/README-Korean.md)                                                                         |
+| Persian (فارسی)                             | [DrunkLeen](https://github.com/drunkleen), [Ar.dst](https://github.com/Ar-dst)               | UI and [README](./translations/readme/README-Persian.md)                                                                        |
 | Polish (Polski)                             | [Akuczaku](https://github.com/Akuczaku)                                                      | UI                                                                                                          |
 | Russian (Русский)                           | Oleg                                                                                         | UI                                                                                                          |
-| Serbian Cyrillic (Српски)                   | [Radoš Milićev](https://github.com/rammba)                                                   | UI, [README](./README-Serbian_Cyrillic.md), [CONTRIBUTING](./translations/contributing/CONTRIBUTING-Serbian_Cyrillic.md) and examples |
-| Serbian Latin (Srpski)                      | [rina](https://github.com/sweatshirts), [Radoš Milićev](https://github.com/rammba)           | UI, [README](./README-Serbian_Latin.md), [CONTRIBUTING](./translations/contributing/CONTRIBUTING-Serbian_Latin.md) and examples       |
+| Serbian Cyrillic (српски)                   | [Radoš Milićev](https://github.com/rammba)                                                   | UI, [README](./translations/readme/README-Serbian_Cyrillic.md), [CONTRIBUTING](./translations/contributing/CONTRIBUTING-Serbian_Cyrillic.md) and examples |
+| Serbian Latin (srpski)                      | [rina](https://github.com/sweatshirts), [Radoš Milićev](https://github.com/rammba)           | UI, [README](./translations/readme/README-Serbian_Latin.md), [CONTRIBUTING](./translations/contributing/CONTRIBUTING-Serbian_Latin.md) and examples       |
 | Slovak (Slovenčina)                         | [mostypc123](https://github.com/mostypc123)                                                  | UI                                                                                                          |
-| Slovenian (Slovenščina)                     | [Andrew Poženel](https://github.com/anderlli0053)                                            | UI and [README](./README-Slovenian.md)                                                                      |
+| Slovenian (Slovenščina)                     | [Andrew Poženel](https://github.com/anderlli0053)                                            | UI and [README](./translations/readme/README-Slovenian.md)                                                                      |
 | Spanish (Español)                           | [enriiquee](https://github.com/enriiquee)                                                    | UI                                                                                                          |
 | Spanish Latin America (Español Latam)       | [Matyrela](https://github.com/Matyrela)                                                      | UI                                                                                                          |
 | Thai (ภาษาไทย)                              | [teerut26](https://github.com/teerut26)                                                      | UI (partial)                                                                                                |
-| Turkish (Türkçe)                            | [mcagriaksoy](https://github.com/mcagriaksoy)                                                | UI and [README](./README-Turkish.md)                                                                        |
+| Turkish (Türkçe)                            | [mcagriaksoy](https://github.com/mcagriaksoy)                                                | UI and [README](./translations/readme/README-Turkish.md)                                                                        |
 | Ukrainian (Українська)                      | [AndrejGorodnij](https://github.com/AndrejGorodnij)                                          | UI                                                                                                          |
 | Vietnamese (Tiếng Việt)                     | [7777Hecker](https://github.com/7777Hecker)                                                  | UI                                                                                                          |
 

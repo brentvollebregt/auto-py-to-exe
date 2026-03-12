@@ -2628,11 +2628,11 @@ const supportedLanguages = [
     code: 'ru',
   },
   {
-    name: 'Serbian Cyrillic (Српски)',
+    name: 'Serbian Cyrillic (српски)',
     code: 'sr_cyrl',
   },
   {
-    name: 'Serbian Latin (Srpski)',
+    name: 'Serbian Latin (srpski)',
     code: 'sr_latn',
   },
   {
