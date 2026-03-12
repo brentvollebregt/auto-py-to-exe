@@ -128,13 +128,13 @@ _简单！_
 
 ## 贡献
 
-查阅 [CONTRIBUTING.md](./CONTRIBUTING.md) 来了解关于如何贡献的指引。本文档介绍了如果你有新功能、更改、翻译更新，或者在 auto-py-to-exe 中发现了问题，应该怎么做。
+查阅 [CONTRIBUTING-Chinese.md](./CONTRIBUTING-Chinese.md) 来了解关于如何贡献的指引。本文档介绍了如果你有新功能、更改、翻译更新，或者在 auto-py-to-exe 中发现了问题，应该怎么做。
 
 ## 使用该工具时出现的问题
 
 如果您在打包的可执行文件或一般情况下使用此工具时遇到问题，建议您阅读 [我关于使用 auto-py-to-exe 时常见问题的博客文章](https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=readme_link&utm_campaign=auto_py_to_exe_help)。 这篇文章涵盖了一些你应该知道的关于打包 Python 脚本和修复常见错误的内容。
 
-如果您确信您发现了这个工具的一个问题，请遵循 [CONTRIBUTING.md 文档的 "Reporting an Issue" 部分](./CONTRIBUTING.md#reporting-an-issue).
+如果您确信您发现了这个工具的一个问题，请遵循 [CONTRIBUTING-Chinese.md 文档的“报告一个问题”部分](./CONTRIBUTING-Chinese.md#reporting-an-issue).
 
 ## Python 2.7 支持
 

@@ -3,6 +3,7 @@
 [English](../../CONTRIBUTING.md)
 | **српски**
 | [srpski](./CONTRIBUTING-Serbian_Latin.md)
+| [简体中文](./CONTRIBUTING-Chinese.md)
 
 👍🎉 Као прво, хвала Вам на интересовању да допринесете! 🎉👍
 
