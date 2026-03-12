@@ -115,7 +115,7 @@ Ova akcija čuvanja JSON konfiguracije ne čuva izlazni direktorijum automatski 
 
 ## Primeri
 
-Direktorijum [examples/](./examples/) prikazuje nekoliko primera kako da napišete vaše skripte i upakujete ih pomoću auto-py-to-exe.
+Direktorijum [examples/](../../examples/) prikazuje nekoliko primera kako da napišete vaše skripte i upakujete ih pomoću auto-py-to-exe.
 
 - [Osnovno (konzolna aplikacija)](./examples/1-basic/readme.md)
 - [Bez konzole (tipično poželjno za aplikacije koje koriste GUI)](./examples/2-no-console/readme.md)
@@ -128,17 +128,17 @@ Ako Vam je za početak potrebno nešto vizuelno, [napravljen je video za origina
 
 ## Doprinos
 
-Pročitajte [CONTRIBUTING.md](./translations/contributing/CONTRIBUTING-Serbian_Latin.md) za smernice kako da doprinesete projektu. Ovo opisuje šta raditi ako imate novu funkcionalnost, izmenu, poboljšanje prevoda ili Ste našli problem na auto-py-to-exe.
+Pročitajte [CONTRIBUTING.md](../contributing/CONTRIBUTING-Serbian_Latin.md) za smernice kako da doprinesete projektu. Ovo opisuje šta raditi ako imate novu funkcionalnost, izmenu, poboljšanje prevoda ili Ste našli problem na auto-py-to-exe.
 
 ## Problemi prilikom korišćenja alata
 
 Ako imate problema sa upakovanom izvršnom datotekom, ili generalno sa upotrebom alata, preporučujemo da pročitate [post na blogu o uobičajenim problemima sa alatom auto-py-to-exe](https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=readme_link&utm_campaign=auto_py_to_exe_help). Ovaj post obuhvata ono što je potrebno znati vezano za pakovanje Python skripti i pomaže oko stvari koje često pođu po zlu.
 
-Ako verujete da Ste pronašli problem sa alatom, pročitajte [sekciju "Prijaviti Issue" u CONTRIBUTING.md](./translations/contributing/CONTRIBUTING-Serbian_Latin.md#reporting-an-issue).
+Ako verujete da Ste pronašli problem sa alatom, pročitajte [sekciju "Prijaviti Issue" u CONTRIBUTING.md](../contributing/CONTRIBUTING-Serbian_Latin.md#reporting-an-issue).
 
 ## Prevodi
 
-> Želite dodati prevod za drugi jezik? Počitajte [sekciju "Dodavanje i poboljšanje prevoda" u CONTRIBUTING.md](./translations/contributing/CONTRIBUTING-Serbian_Latin.md#add-or-update-a-translation).
+> Želite dodati prevod za drugi jezik? Počitajte [sekciju "Dodavanje i poboljšanje prevoda" u CONTRIBUTING.md](../contributing/CONTRIBUTING-Serbian_Latin.md#add-or-update-a-translation).
 
 ## Podrška za Python 2.7
 
@@ -146,7 +146,7 @@ Nakon što je 9. avgusta 2020. izašao [PyInstaller v4.0](https://github.com/pyi
 
 ## Testiranje
 
-Testovi se nalaze u [tests/](./tests/) direktorijumu i pokreću se korišćenjem komande pytest:
+Testovi se nalaze u [tests/](../../tests/) direktorijumu i pokreću se korišćenjem komande pytest:
 
 ```
 $ pip install pytest
