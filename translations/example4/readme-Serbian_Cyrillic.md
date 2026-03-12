@@ -1,6 +1,6 @@
 # Пример 4 - Трајни подаци
 
-[English](./readme.md)
+[English](../../examples/4-persistent-data/readme.md)
 | **српски**
 | [srpski](./readme-Serbian_Latin.md)
 
