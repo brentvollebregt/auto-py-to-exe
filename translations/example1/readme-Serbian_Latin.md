@@ -1,10 +1,10 @@
 # Primer 1 - Osnovno
 
-[English](./readme.md)
+[English](../../examples/1-basic/readme.md)
 | [српски](./readme-Serbian_Cyrillic.md)
 | **srpski**
 
-[Ovaj primer](./main.py) je osnovna Hello World aplikacija. U ovom primeru ništa nije neuobičajeno.
+[Ovaj primer](../../examples/1-basic/main.py) je osnovna Hello World aplikacija. U ovom primeru ništa nije neuobičajeno.
 
 ## Pakovanje
 
@@ -14,7 +14,7 @@ Da biste ovo upakovali, možete koristiti `auto-py-to-exe` i izabrati "Konzolna 
 
 ### Upotreba konfiguracije
 
-Konfiguracija za auto-py-to-exe se [nalazi ovde](./auto-py-to-exe-config.json).
+Konfiguracija za auto-py-to-exe se [nalazi ovde](../../examples/1-basic/auto-py-to-exe-config.json).
 
 1. Otvorite terminal u ovom direktorijumu (`examples/1-basic`)
 2. Izvršite `auto-py-to-exe --config auto-py-to-exe-config.json` da biste otvorili auto-py-to-exe sa prosleđenom konfiguracijom
