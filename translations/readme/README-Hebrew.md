@@ -14,7 +14,7 @@
     <a href="https://www.buymeacoffee.com/brentvollebregt"><img src="https://img.shields.io/badge/-buy_me_a%C2%A0beer-gray?logo=buy-me-a-coffee" alt="תרומה"></a>
 </p>
 
-| [English](../../README.md)
+[English](../../README.md)
 | [简体中文](./README-Chinese_Simplified.md)
 | [Suomen kieli](./README-Finnish.md)
 | [Türkçe](./README-Turkish.md)
