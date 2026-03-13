@@ -1,8 +1,8 @@
 # Example 2 - No Console
 
 **English**
-| [српски](./readme-Serbian_Cyrillic.md)
-| [srpski](./readme-Serbian_Latin.md)
+| [српски](../../translations/example2/readme-Serbian_Cyrillic.md)
+| [srpski](../../translations/example2/readme-Serbian_Latin.md)
 
 [This example](./main.py) is a basic GUI application.
 

@@ -1,10 +1,10 @@
 # Primer 3 - Slike i druge datoteke koji nisu .py
 
-[English](./readme.md)
+[English](../../examples/3-images-and-other-non-py-files/readme.md)
 | [српски](./readme-Serbian_Cyrillic.md)
 | **srpski**
 
-[Ovaj primer](./main.py) je GUI aplikacija koja referencira GIF (sliku) i JSON datoteku.
+[Ovaj primer](../../examples/3-images-and-other-non-py-files/main.py) je GUI aplikacija koja referencira GIF (sliku) i JSON datoteku.
 
 ## Pakovanje
 
@@ -16,7 +16,7 @@ Da biste ovo upakovali, možete koristiti `auto-py-to-exe` i izabrati "Aplikacij
 
 ### Upotreba konfiguracije
 
-Konfiguracija za auto-py-to-exe se [nalazi ovde](./auto-py-to-exe-config.json).
+Konfiguracija za auto-py-to-exe se [nalazi ovde](../../examples/3-images-and-other-non-py-files/auto-py-to-exe-config.json).
 
 1. Otvorite terminal u ovom direktorijumu (`examples/3-images-and-other-non-py-files`)
 2. Izvršite `auto-py-to-exe --config auto-py-to-exe-config.json` da biste otvorili auto-py-to-exe sa prosleđenom konfiguracijom

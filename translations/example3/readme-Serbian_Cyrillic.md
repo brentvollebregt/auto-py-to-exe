@@ -1,10 +1,10 @@
 # Пример 3 - Слике и друге датотеке који нису .py
 
-[English](./readme.md)
+[English](../../examples/3-images-and-other-non-py-files/readme.md)
 | **српски**
 | [srpski](./readme-Serbian_Latin.md)
 
-[Овај пример](./main.py) је GUI апликација која референцира GIF (слику) и JSON датотеку.
+[Овај пример](../../examples/3-images-and-other-non-py-files/main.py) је GUI апликација која референцира GIF (слику) и JSON датотеку.
 
 ## Паковање
 
@@ -16,7 +16,7 @@
 
 ### Употреба конфигурације
 
-Конфигурација за auto-py-to-exe се [налази овде](./auto-py-to-exe-config.json).
+Конфигурација за auto-py-to-exe се [налази овде](../../examples/3-images-and-other-non-py-files/auto-py-to-exe-config.json).
 
 1. Отворите терминал у овом директоријуму (`examples/3-images-and-other-non-py-files`)
 2. Извршите `auto-py-to-exe --config auto-py-to-exe-config.json` да бисте отворили auto-py-to-exe са прослеђеном конфигурацијом

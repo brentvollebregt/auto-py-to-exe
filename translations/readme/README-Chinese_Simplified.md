@@ -13,7 +13,19 @@
     <a href="https://pyinstaller.readthedocs.io/en/stable/requirements.html"><img src="https://img.shields.io/badge/platform-windows%20%7C%20linux%20%7C%20macos-lightgrey" alt="Supported Platforms"></a>
 </p>
 
-### To read README in English, press [here](./README.md)
+[English](../../README.md)
+| **简体中文**
+| [Suomen kieli](./README-Finnish.md)
+| [Türkçe](./README-Turkish.md)
+| [فارسی](./README-Persian.md)
+| [한국어](./README-Korean.md)
+| [Български](./README-Bulgarian.md)
+| [हिन्दी](./README-Hindi.md)
+| [עברית](./README-Hebrew.md)
+| [Беларуская](./README-Belarusian.md)
+| [Slovenščina](./README-Slovenian.md)
+| [српски](./README-Serbian_Cyrillic.md)
+| [srpski](./README-Serbian_Latin.md)
 
 ## 让我们开始！
 

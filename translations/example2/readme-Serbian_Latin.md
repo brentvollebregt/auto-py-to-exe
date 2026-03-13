@@ -1,10 +1,10 @@
 # Primer 2 - Bez konzole
 
-[English](./readme.md)
+[English](../../examples/2-no-console/readme.md)
 | [српски](./readme-Serbian_Cyrillic.md)
 | **srpski**
 
-[Ovaj primer](./main.py) je obična GUI aplikacija.
+[Ovaj primer](../../examples/2-no-console/main.py) je obična GUI aplikacija.
 
 ## Pakovanje
 
@@ -14,7 +14,7 @@ Da biste ovo upakovali, možete koristiti `auto-py-to-exe` i izabrati "Aplikacij
 
 ### Upotreba konfiguracije
 
-Konfiguracija za auto-py-to-exe se [nalazi ovde](./auto-py-to-exe-config.json).
+Konfiguracija za auto-py-to-exe se [nalazi ovde](../../examples/2-no-console/auto-py-to-exe-config.json).
 
 1. Otvorite terminal u ovom direktorijumu (`examples/2-no-console`)
 2. Izvršite `auto-py-to-exe --config auto-py-to-exe-config.json` da biste otvorili auto-py-to-exe sa prosleđenom konfiguracijom

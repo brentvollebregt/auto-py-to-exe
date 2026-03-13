@@ -1,6 +1,6 @@
 # Doprinos auto-py-to-exe alatu
 
-[English](./CONTRIBUTING.md)
+[English](../../CONTRIBUTING.md)
 | [српски](./CONTRIBUTING-Serbian_Cyrillic.md)
 | **srpski**
 

@@ -1,10 +1,10 @@
 # Пример 1 - Основно
 
-[English](./readme.md)
+[English](../../examples/1-basic/readme.md)
 | **српски**
 | [srpski](./readme-Serbian_Latin.md)
 
-[Овај пример](./main.py) је основна Hello World апликација. У овом примеру ништа није неуобичајено.
+[Овај пример](../../examples/1-basic/main.py) је основна Hello World апликација. У овом примеру ништа није неуобичајено.
 
 ## Паковање
 
@@ -14,7 +14,7 @@
 
 ### Употреба конфигурације
 
-Конфигурација за auto-py-to-exe се [налази овде](./auto-py-to-exe-config.json).
+Конфигурација за auto-py-to-exe се [налази овде](../../examples/1-basic//auto-py-to-exe-config.json).
 
 1. Отворите терминал у овом директоријуму (`examples/1-basic`)
 2. Извршите `auto-py-to-exe --config auto-py-to-exe-config.json` да бисте отворили auto-py-to-exe са прослеђеном конфигурацијом

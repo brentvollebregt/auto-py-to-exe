@@ -14,27 +14,19 @@
     <a href="https://www.buymeacoffee.com/brentvollebregt"><img src="https://img.shields.io/badge/-buy_me_a%C2%A0beer-gray?logo=buy-me-a-coffee" alt="Doniraj"></a>
 </p>
 
-## Prevodi ovog fajla
-
-阅读中文版的 README ，点击 [这里](./README-Chinese.md)
-
-Suomenkieliset käyttöohjeet löydät [täältä](./README-Finnish.md)
-
-Türkçe Talimatları [burada](./README-Turkish.md) bulabilirsiniz.
-
-دستور العمل های [فارسی](./README-Persian.md)
-
-한국어로 된 설명은 [여기](./README-Korean.md)를 참고하세요.
-
-Bъlgarski README [tuk](./README-Bulgarian.md)
-
-Belaruskamoўnы README [tut](./README-Belarusian.md)
-
-Slovenski README [tukaj](./README-Slovenian.md)
-
-Srpski README [ovde](./README-Serbian_Cyrillic.md)
-
-Srpski README [ovde](./README-Serbian_Latin.md)
+[English](../../README.md)
+| [简体中文](./README-Chinese_Simplified.md)
+| [Suomen kieli](./README-Finnish.md)
+| [Türkçe](./README-Turkish.md)
+| [فارسی](./README-Persian.md)
+| [한국어](./README-Korean.md)
+| [Български](./README-Bulgarian.md)
+| [हिन्दी](./README-Hindi.md)
+| [עברית](./README-Hebrew.md)
+| [Беларуская](./README-Belarusian.md)
+| [Slovenščina](./README-Slovenian.md)
+| [српски](./README-Serbian_Cyrillic.md)
+| **srpski**
 
 ## Demo
 
@@ -123,12 +115,12 @@ Ova akcija čuvanja JSON konfiguracije ne čuva izlazni direktorijum automatski 
 
 ## Primeri
 
-Direktorijum [examples/](./examples/) prikazuje nekoliko primera kako da napišete vaše skripte i upakujete ih pomoću auto-py-to-exe.
+Direktorijum [examples/](../../examples/) prikazuje nekoliko primera kako da napišete vaše skripte i upakujete ih pomoću auto-py-to-exe.
 
-- [Osnovno (konzolna aplikacija)](./examples/1-basic/readme.md)
-- [Bez konzole (tipično poželjno za aplikacije koje koriste GUI)](./examples/2-no-console/readme.md)
-- [Slike i druge datoteke koji nisu .py (uključivanje statičkih datoteka)](./examples/3-images-and-other-non-py-files/readme.md)
-- [Trajni podaci (poput baza podataka)](./examples/4-persistent-data/readme.md)
+- [Osnovno (konzolna aplikacija)](../example1/readme-Serbian_Latin.md)
+- [Bez konzole (tipično poželjno za aplikacije koje koriste GUI)](../example2/readme-Serbian_Latin.md)
+- [Slike i druge datoteke koji nisu .py (uključivanje statičkih datoteka)](../example3/readme-Serbian_Latin.md)
+- [Trajni podaci (poput baza podataka)](../example4/readme-Serbian_Latin.md)
 
 ## Video
 
@@ -136,17 +128,17 @@ Ako Vam je za početak potrebno nešto vizuelno, [napravljen je video za origina
 
 ## Doprinos
 
-Pročitajte [CONTRIBUTING.md](./CONTRIBUTING-Serbian_Latin.md) za smernice kako da doprinesete projektu. Ovo opisuje šta raditi ako imate novu funkcionalnost, izmenu, poboljšanje prevoda ili Ste našli problem na auto-py-to-exe.
+Pročitajte [CONTRIBUTING.md](../contributing/CONTRIBUTING-Serbian_Latin.md) za smernice kako da doprinesete projektu. Ovo opisuje šta raditi ako imate novu funkcionalnost, izmenu, poboljšanje prevoda ili Ste našli problem na auto-py-to-exe.
 
 ## Problemi prilikom korišćenja alata
 
 Ako imate problema sa upakovanom izvršnom datotekom, ili generalno sa upotrebom alata, preporučujemo da pročitate [post na blogu o uobičajenim problemima sa alatom auto-py-to-exe](https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=readme_link&utm_campaign=auto_py_to_exe_help). Ovaj post obuhvata ono što je potrebno znati vezano za pakovanje Python skripti i pomaže oko stvari koje često pođu po zlu.
 
-Ako verujete da Ste pronašli problem sa alatom, pročitajte [sekciju "Prijaviti Issue" u CONTRIBUTING.md](./CONTRIBUTING-Serbian_Latin.md#reporting-an-issue).
+Ako verujete da Ste pronašli problem sa alatom, pročitajte [sekciju "Prijaviti Issue" u CONTRIBUTING.md](../contributing/CONTRIBUTING-Serbian_Latin.md#reporting-an-issue).
 
 ## Prevodi
 
-> Želite dodati prevod za drugi jezik? Počitajte [sekciju "Dodavanje i poboljšanje prevoda" u CONTRIBUTING.md](./CONTRIBUTING-Serbian_Latin.md#add-or-update-a-translation).
+> Želite dodati prevod za drugi jezik? Počitajte [sekciju "Dodavanje i poboljšanje prevoda" u CONTRIBUTING.md](../contributing/CONTRIBUTING-Serbian_Latin.md#add-or-update-a-translation).
 
 ## Podrška za Python 2.7
 
@@ -154,7 +146,7 @@ Nakon što je 9. avgusta 2020. izašao [PyInstaller v4.0](https://github.com/pyi
 
 ## Testiranje
 
-Testovi se nalaze u [tests/](./tests/) direktorijumu i pokreću se korišćenjem komande pytest:
+Testovi se nalaze u [tests/](../../tests/) direktorijumu i pokreću se korišćenjem komande pytest:
 
 ```
 $ pip install pytest

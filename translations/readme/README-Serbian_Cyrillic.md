@@ -14,27 +14,19 @@
     <a href="https://www.buymeacoffee.com/brentvollebregt"><img src="https://img.shields.io/badge/-buy_me_a%C2%A0beer-gray?logo=buy-me-a-coffee" alt="Донирај"></a>
 </p>
 
-## Преводи овог фајла
-
-阅读中文版的 README ，点击 [这里](./README-Chinese.md)
-
-Suomenkieliset käyttöohjeet löydät [täältä](./README-Finnish.md)
-
-Türkçe Talimatları [burada](./README-Turkish.md) bulabilirsiniz.
-
-دستور العمل های [فارسی](./README-Persian.md)
-
-한국어로 된 설명은 [여기](./README-Korean.md)를 참고하세요.
-
-Български README [тук](./README-Bulgarian.md)
-
-Беларускамоўны README [тут](./README-Belarusian.md)
-
-Slovenski README [tukaj](./README-Slovenian.md)
-
-Српски README [овде](./README-Serbian_Cyrillic.md)
-
-Srpski README [ovde](./README-Serbian_Latin.md)
+[English](../../README.md)
+| [简体中文](./README-Chinese_Simplified.md)
+| [Suomen kieli](./README-Finnish.md)
+| [Türkçe](./README-Turkish.md)
+| [فارسی](./README-Persian.md)
+| [한국어](./README-Korean.md)
+| [Български](./README-Bulgarian.md)
+| [हिन्दी](./README-Hindi.md)
+| [עברית](./README-Hebrew.md)
+| [Беларуская](./README-Belarusian.md)
+| [Slovenščina](./README-Slovenian.md)
+| **српски**
+| [srpski](./README-Serbian_Latin.md)
 
 ## Демо
 
@@ -123,12 +115,12 @@ _Једноставно._
 
 ## Примери
 
-Директоријум [examples/](./examples/) приказује неколико примера како да напишете ваше скрипте и упакујете их помоћу auto-py-to-exe.
+Директоријум [examples/](../../examples/) приказује неколико примера како да напишете ваше скрипте и упакујете их помоћу auto-py-to-exe.
 
-- [Основно (конзолна апликација)](./examples/1-basic/readme.md)
-- [Без конзоле (типично пожељно за апликације које користе GUI)](./examples/2-no-console/readme.md)
-- [Слике и друге датотеке који нису .py (укључивање статичких датотека)](./examples/3-images-and-other-non-py-files/readme.md)
-- [Трајни подаци (попут база података)](./examples/4-persistent-data/readme.md)
+- [Основно (конзолна апликација)](../example1/readme-Serbian_Cyrillic.md)
+- [Без конзоле (типично пожељно за апликације које користе GUI)](../example2/readme-Serbian_Cyrillic.md)
+- [Слике и друге датотеке који нису .py (укључивање статичких датотека)](../example3/readme-Serbian_Cyrillic.md)
+- [Трајни подаци (попут база података)](../example4/readme-Serbian_Cyrillic.md)
 
 ## Видео
 
@@ -136,17 +128,17 @@ _Једноставно._
 
 ## Допринос
 
-Прочитајте [CONTRIBUTING.md](./CONTRIBUTING-Serbian_Cyrillic.md) за смернице како да допринесете пројекту. Ово описује шта радити ако имате нову функционалност, измену, побољшање превода или Сте нашли проблем на auto-py-to-exe.
+Прочитајте [CONTRIBUTING.md](../contributing/CONTRIBUTING-Serbian_Cyrillic.md) за смернице како да допринесете пројекту. Ово описује шта радити ако имате нову функционалност, измену, побољшање превода или Сте нашли проблем на auto-py-to-exe.
 
 ## Проблеми приликом коришћења алата
 
 Ако имате проблема са упакованом извршном датотеком, или генерално са употребом алата, препоручујемо да прочитате [пост на блогу о уобичајеним проблемима са алатом auto-py-to-exe](https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=readme_link&utm_campaign=auto_py_to_exe_help). Овај пост обухвата оно што је потребно знати везано за паковање Python скрипти и помаже око ствари које често пођу по злу.
 
-Ако верујете да Сте пронашли проблем са алатом, прочитајте [секцију "Пријавити Issue" у CONTRIBUTING.md](./CONTRIBUTING-Serbian_Cyrillic.md#reporting-an-issue).
+Ако верујете да Сте пронашли проблем са алатом, прочитајте [секцију "Пријавити Issue" у CONTRIBUTING.md](../contributing/CONTRIBUTING-Serbian_Cyrillic.md#reporting-an-issue).
 
 ## Преводи
 
-> Желите додати превод за други језик? Почитајте [секцију "Додавање и побољшање превода" у CONTRIBUTING.md](./CONTRIBUTING-Serbian_Cyrillic.md#add-or-update-a-translation).
+> Желите додати превод за други језик? Почитајте [секцију "Додавање и побољшање превода" у CONTRIBUTING.md](../contributing/CONTRIBUTING-Serbian_Cyrillic.md#add-or-update-a-translation).
 
 ## Подршка за Python 2.7
 
@@ -154,7 +146,7 @@ _Једноставно._
 
 ## Тестирање
 
-Тестови се налазе у [tests/](./tests/) директоријуму и покрећу се коришћењем команде pytest:
+Тестови се налазе у [tests/](../../tests/) директоријуму и покрећу се коришћењем команде pytest:
 
 ```
 $ pip install pytest

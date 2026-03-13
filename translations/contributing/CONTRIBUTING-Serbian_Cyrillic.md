@@ -1,6 +1,6 @@
 # Допринос auto-py-to-exe алату
 
-[English](./CONTRIBUTING.md)
+[English](../../CONTRIBUTING.md)
 | **српски**
 | [srpski](./CONTRIBUTING-Serbian_Latin.md)
 
