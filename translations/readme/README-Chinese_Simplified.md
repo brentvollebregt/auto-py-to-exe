@@ -38,7 +38,7 @@
 
 ### 需要事先准备：
 
-- Python : 3.6-3.14
+- Python: 3.6-3.14
 
 _要使用图像中显示的界面，您需要使用 Chrome。如果未安装 Chrome 或提供了 `--default-browser` 参数，则将使用默认浏览器。_
 
@@ -97,15 +97,15 @@ _简单！_
 
 使用 help 标志来获取用法: `auto-py-to-exe --help`
 
-| 参数                                                         | 类型      | 描述                                                                                                               |
-| ------------------------------------------------------------ | --------- | ------------------------------------------------------------------------------------------------------------------ |
-| filename                                                     | 位置/可选 | 在用户界面中预先填写“脚本位置”字段。                                                                               |
-| -db, --default-browser                                       | 可选      | 使用默认浏览器（可能是 Chrome）打开用户界面。 不会尝试寻找 Chrome。                                                |
-| -nu, --no-ui                                                 | 可选      | 不要试图在浏览器中打开用户界面，而只是打印出可以访问该应用程序的地址。                                             |
-| -c [CONFIG], --config [CONFIG]                               | 可选      | 提供配置文件（json）以预填充 UI。 这些可以在设置选项卡中生成。                                                     |
-| -o [PATH], --output-dir [PATH]                               | 可选      | 设置默认输出目录。这仍然可以在 UI 中更改。                                                                         |
-| -bdo [FOLDER_PATH], --build-directory-override [FOLDER_PATH] | 可选      | 覆盖默认构建目录。在您需要在杀毒软件中添加排除项以停止移除文件时有用。                                             |
-| -lang [LANGUAGE_CODE], --language [LANGUAGE_CODE]            | 可选      | 告诉 UI 启动时默认应显示什么语言。语言代码可在[英文 README 的 “Translations” 部分](./README.md#translations)找到。 |
+| 参数                                                         | 类型      | 描述                                                                                                                   |
+| ------------------------------------------------------------ | --------- | ---------------------------------------------------------------------------------------------------------------------- |
+| filename                                                     | 位置/可选 | 在用户界面中预先填写“脚本位置”字段。                                                                                   |
+| -db, --default-browser                                       | 可选      | 使用默认浏览器（可能是 Chrome）打开用户界面。 不会尝试寻找 Chrome。                                                    |
+| -nu, --no-ui                                                 | 可选      | 不要试图在浏览器中打开用户界面，而只是打印出可以访问该应用程序的地址。                                                 |
+| -c [CONFIG], --config [CONFIG]                               | 可选      | 提供配置文件（json）以预填充 UI。 这些可以在设置选项卡中生成。                                                         |
+| -o [PATH], --output-dir [PATH]                               | 可选      | 设置默认输出目录。这仍然可以在 UI 中更改。                                                                             |
+| -bdo [FOLDER_PATH], --build-directory-override [FOLDER_PATH] | 可选      | 覆盖默认构建目录。在您需要在杀毒软件中添加排除项以停止移除文件时有用。                                                 |
+| -lang [LANGUAGE_CODE], --language [LANGUAGE_CODE]            | 可选      | 告诉 UI 启动时默认应显示什么语言。语言代码可在[英文 README 的 “Translations” 部分](../../README.md#translations)找到。 |
 
 ### JSON 配置
 
@@ -115,12 +115,12 @@ _简单！_
 
 ## 示例
 
-[examples/](./examples/) 文件夹提供了一些关于如何编写您的脚本并用 auto-py-to-exe 打包它们的示例。
+[examples/](../../examples/) 文件夹提供了一些关于如何编写您的脚本并用 auto-py-to-exe 打包它们的示例。
 
-- [基础（控制台程序）](./examples/1-basic/readme.md)
-- [无控制台（通常基于图形界面的应用程序所需）](./examples/2-no-console/readme.md)
-- [图片和其他非 .py 文件（需要包含的静态文件）](./examples/3-images-and-other-non-py-files/readme.md)
-- [持久化数据（例如数据库）](./examples/4-persistent-data/readme.md)
+- [基础（控制台程序）](../../examples/1-basic/readme.md)
+- [无控制台（通常基于图形界面的应用程序所需）](../../examples/2-no-console/readme.md)
+- [图片和其他非 .py 文件（需要包含的静态文件）](../../examples/3-images-and-other-non-py-files/readme.md)
+- [持久化数据（例如数据库）](../../examples/4-persistent-data/readme.md)
 
 ## 演示视频
 
@@ -128,13 +128,13 @@ _简单！_
 
 ## 贡献
 
-查阅 [CONTRIBUTING-Chinese.md](./CONTRIBUTING-Chinese.md) 来了解关于如何贡献的指引。本文档介绍了如果你有新功能、更改、翻译更新，或者在 auto-py-to-exe 中发现了问题，应该怎么做。
+查阅 [CONTRIBUTING-Chinese_Simplified.md](../contributing/CONTRIBUTING-Chinese_Simplified.md) 来了解关于如何贡献的指引。本文档介绍了如果你有新功能、更改、翻译更新，或者在 auto-py-to-exe 中发现了问题，应该怎么做。
 
 ## 使用该工具时出现的问题
 
 如果您在打包的可执行文件或一般情况下使用此工具时遇到问题，建议您阅读 [我关于使用 auto-py-to-exe 时常见问题的博客文章](https://nitratine.net/blog/post/issues-when-using-auto-py-to-exe/?utm_source=auto_py_to_exe&utm_medium=readme_link&utm_campaign=auto_py_to_exe_help)。 这篇文章涵盖了一些你应该知道的关于打包 Python 脚本和修复常见错误的内容。
 
-如果您确信您发现了这个工具的一个问题，请遵循 [CONTRIBUTING-Chinese.md 文档的“报告一个问题”部分](./CONTRIBUTING-Chinese.md#reporting-an-issue).
+如果您确信您发现了这个工具的一个问题，请遵循 [CONTRIBUTING-Chinese.md 文档的“报告一个问题”部分](../contributing/CONTRIBUTING-Chinese_Simplified.md#reporting-an-issue).
 
 ## Python 2.7 支持
 

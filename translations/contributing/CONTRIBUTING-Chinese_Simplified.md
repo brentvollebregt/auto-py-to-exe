@@ -1,8 +1,8 @@
 # 贡献给 auto-py-to-exe
 
-[English](./CONTRIBUTING.md)
-| [српски](./CONTRIBUTING-Serbian_Cyrillic.md)
-| [srpski](./CONTRIBUTING-Serbian_Latin.md)
+[English](../../CONTRIBUTING.md)
+| [српски](../../CONTRIBUTING-Serbian_Cyrillic.md)
+| [srpski](../../CONTRIBUTING-Serbian_Latin.md)
 | **简体中文**
 
 👍🎉 首先，感谢您对贡献的兴趣！ 🎉👍
@@ -11,13 +11,13 @@
 
 ## 目录
 
-- [I don't want to read this whole thing, I just have a question!!!](#i-dont-want-to-read-this-whole-thing-i-just-have-a-question)
-- [Reporting an Issue](#reporting-an-issue)
-- [Request a Feature](#request-a-feature)
-- [Pull Requests](#pull-requests)
-  - [A New Feature / Change to an Existing Feature](#a-new-feature-change-to-an-existing-feature)
-  - [Add or Update a Translation](#add-or-update-a-translation)
-- [Style Guide](#style-guide)
+- [我不想读这全部内容，我只是有个问题！！！](#i-dont-want-to-read-this-whole-thing-i-just-have-a-question)
+- [报告一个问题](#reporting-an-issue)
+- [请求添加一个功能](#request-a-feature)
+- [拉取请求（Pull Requests）](#pull-requests)
+  - [一个新功能/修改现有的功能](#a-new-feature-change-to-an-existing-feature)
+  - [添加或更新一个翻译](#add-or-update-a-translation)
+- [代码风格指南](#style-guide)
 
 ## 我不想读这全部内容，我只是有个问题！！！ <a id="i-dont-want-to-read-this-whole-thing-i-just-have-a-question"></a>
 
