@@ -93,11 +93,9 @@ function extractTranslationTable(content) {
   // Skip the first two rows (header and ---) and then parse the data
   const tableRows = [];
   for (let i = 2; i < tableLines.length; i++) {
-    const [_, language, translator, translated] = tableLines[i].split('|').map((x) => x.trim());
+    const [_, language] = tableLines[i].split('|').map((x) => x.trim());
     tableRows.push({
       language,
-      translator,
-      translated,
     });
   }
 
@@ -182,14 +180,14 @@ if (translationMergeErrors.length > 0) {
   });
 } else {
   report += '\n\n**Translations**:\n';
-  report += '\n\n| Name | Code | i18n.js Missing Count | Translator | Translated |';
-  report += '\n| ---- | ---- | --------------------- | ---------- | ---------- |';
+  report += '\n\n| Name | Code | i18n.js Missing Count |';
+  report += '\n| ---- | ---- | --------------------- |';
   mergedTranslations.forEach((t) => {
     const missingWithWarning =
       t.missingTranslationPaths.length === 0
         ? t.missingTranslationPaths.length
         : `${t.missingTranslationPaths.length} ⚠️`;
-    report += `\n| ${t.name} | ${t.code} | ${missingWithWarning} | ${t.readmeRow.translator} | ${t.readmeRow.translated} |`;
+    report += `\n| ${t.name} | ${t.code} | ${missingWithWarning} |`;
   });
 }
 
