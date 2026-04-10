@@ -308,7 +308,7 @@ const _createSubSectionInAdvanced = (title, i18nPath, options) => {
         // Remove button
         const removeButtonNode = document.createElement('img');
         removeButtonNode.src = 'img/remove.svg';
-        removeButton.title = 'Remove';
+        removeButtonNode.title = 'Remove';
         valueContainer.appendChild(removeButtonNode);
         const onRemove = () => {
           valueContainer.remove();
