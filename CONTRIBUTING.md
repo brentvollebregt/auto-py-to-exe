@@ -72,7 +72,7 @@ If you want to add a new or update an existing translation:
 
 ## Style Guide <a id="style-guide"></a>
 
-For Python, we use [Ruff](https://github.com/astral-sh/ruff) to format, lint and auto-sort imports. The easiest way to use Ruff is through the Visual Studio Code extension - formatting is run on save. You can also format using Ruff's CLI by first installing ruff using `pip install ruff` and then executing `ruff format .`.
+For Python, we use [Ruff](https://github.com/astral-sh/ruff) to format, lint and auto-sort imports. The easiest way to use Ruff is through the Visual Studio Code extension - formatting is run on save. You can also format using Ruff's CLI by first installing ruff using `pip install ruff` and then executing `ruff format .`. Also run `ruff check` and fix any linting issues found.
 
 For JavaScript, CSS, HTML, Markdown, JSON and YAML, we use [Prettier](https://prettier.io/). The easiest way to use Prettier is through the Visual Studio Code extension - formatting is run on save. You can also format using Prettier's CLI by executing `npx prettier@2.8.8 --write .`.
 
