@@ -27,6 +27,7 @@
 | [Slovenščina](./README-Slovenian.md)
 | [српски](./README-Serbian_Cyrillic.md)
 | **srpski**
+| [Русский](./README-Russian.md)
 
 ## Demo
 
