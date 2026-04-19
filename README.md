@@ -27,6 +27,7 @@
 | [Slovenščina](./translations/readme/README-Slovenian.md)
 | [српски](./translations/readme/README-Serbian_Cyrillic.md)
 | [srpski](./translations/readme/README-Serbian_Latin.md)
+| [Русский](./translations/readme/README-Russian.md)
 
 ## Demo
 
@@ -162,7 +163,7 @@ If you believe you've found an issue with this tool, please follow the ["Reporti
 | Korean (한국어)                             | [jhk1090](https://github.com/jhk1090)                                                          | ✔️                     | [✔️](./translations/readme/README-Korean.md)             |                                                                      |          |
 | Persian (فارسی)                             | [DrunkLeen](https://github.com/drunkleen), [Ar.dst](https://github.com/Ar-dst)                 | ✔️                     | [✔️](./translations/readme/README-Persian.md)            |                                                                      |          |
 | Polish (Polski)                             | [Akuczaku](https://github.com/Akuczaku)                                                        | ✔️                     |                                                          |                                                                      |          |
-| Russian (Русский)                           | Oleg                                                                                           | ✔️                     |                                                          |                                                                      |          |
+| Russian (Русский)                           | Oleg, [Sandile](https://github.com/Sandile225325)                                                                                           | ✔️                     | [✔️](./translations/readme/README-Russian.md)                                                           |                                                                      |          |
 | Serbian Cyrillic (српски)                   | [Radoš Milićev](https://github.com/rammba)                                                     | ✔️                     | [✔️](./translations/readme/README-Serbian_Cyrillic.md)   | [✔️](./translations/contributing/CONTRIBUTING-Serbian_Cyrillic.md)   | ✔️       |
 | Serbian Latin (srpski)                      | [rina](https://github.com/sweatshirts), [Radoš Milićev](https://github.com/rammba)             | ✔️                     | [✔️](./translations/readme/README-Serbian_Latin.md)      | [✔️](./translations/contributing/CONTRIBUTING-Serbian_Latin.md)      | ✔️       |
 | Slovak (Slovenčina)                         | [mostypc123](https://github.com/mostypc123)                                                    | ✔️                     |                                                          |                                                                      |          |
