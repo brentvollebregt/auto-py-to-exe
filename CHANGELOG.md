@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.50.1
+
+🐛 Bug Fixes
+
+- [#556](https://github.com/brentvollebregt/auto-py-to-exe/issues/556): Fix ReferenceError on multiple input type setup
+
 ## 2.50.0
 
 🚀 Enhancements
