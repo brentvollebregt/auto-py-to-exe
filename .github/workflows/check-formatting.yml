@@ -8,22 +8,22 @@ jobs:
   main:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Check Ruff linting
-        uses: chartboost/ruff-action@v1
+        uses: astral-sh/ruff-action@v3
         with:
           args: 'check'
 
       - name: Check Ruff formatting
         if: success() || failure()
-        uses: chartboost/ruff-action@v1
+        uses: astral-sh/ruff-action@v3
         with:
           args: 'format --check'
 
       - name: Check Prettier formatting
         if: success() || failure()
-        uses: creyD/prettier_action@v4.3
+        uses: creyD/prettier_action@v4.5 # This can be bumped when https://github.com/creyD/prettier_action/issues/154 is solved
         with:
           prettier_version: '2.8.8'
           dry: true
@@ -32,9 +32,9 @@ jobs:
   translations:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
 
       - name: Run check-translations.js
         run: node check-translations.js >> $GITHUB_STEP_SUMMARY

@@ -1,4 +1,4 @@
-name: 'Stale Issue Handler'
+name: Stale Issue Handler
 on:
   workflow_dispatch:
   schedule:
@@ -8,7 +8,7 @@ jobs:
   stale:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/stale@main
+      - uses: actions/stale@v10
         with:
           stale-issue-message: 'This issue is stale because it has been open for 60 days with no activity. Remove stale label or comment on this issue or it will be closed in 5 days.'
           close-issue-message: 'Closing issue due to no activity in more than 60 days.'
