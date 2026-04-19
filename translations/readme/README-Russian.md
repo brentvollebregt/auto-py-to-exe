@@ -15,18 +15,18 @@
 </p>
 
 [English](../../README.md)
-| [简体中文](./translations/readme/README-Chinese_Simplified.md)
-| [Suomen kieli](./translations/readme/README-Finnish.md)
-| [Türkçe](./translations/readme/README-Turkish.md)
-| [فارسی](./translations/readme/README-Persian.md)
-| [한국어](./translations/readme/README-Korean.md)
-| [Български](./translations/readme/README-Bulgarian.md)
-| [हिन्दी](./translations/readme/README-Hindi.md)
-| [עברית](./translations/readme/README-Hebrew.md)
-| [Беларуская](./translations/readme/README-Belarusian.md)
-| [Slovenščina](./translations/readme/README-Slovenian.md)
-| [српски](./translations/readme/README-Serbian_Cyrillic.md)
-| [srpski](./translations/readme/README-Serbian_Latin.md)
+| [简体中文](./README-Chinese_Simplified.md)
+| [Suomen kieli](./README-Finnish.md)
+| [Türkçe](./README-Turkish.md)
+| [فارسی](./README-Persian.md)
+| [한국어](./README-Korean.md)
+| [Български](./README-Bulgarian.md)
+| [हिन्दी](./README-Hindi.md)
+| [עברית](./README-Hebrew.md)
+| [Беларуская](./README-Belarusian.md)
+| [Slovenščina](./README-Slovenian.md)
+| [српски](./README-Serbian_Cyrillic.md)
+| [srpski](./README-Serbian_Latin.md)
 | **Русский**
 
 ## Демонстрация
