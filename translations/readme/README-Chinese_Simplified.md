@@ -144,7 +144,7 @@ _简单！_
 
 ## 测试
 
-测试文件位于 `tests/` 中，它们被 pytest 运行:
+测试文件位于 [tests/](../../tests/) 中，它们被 pytest 运行:
 
 ```
 $ pip install pytest

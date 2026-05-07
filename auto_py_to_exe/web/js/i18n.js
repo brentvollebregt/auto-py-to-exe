@@ -1797,6 +1797,7 @@ const translationMap = {
       },
       windowsAndMacOsXSpecificOptions: {
         en: 'Windows And macOS X Specific Options',
+        zh: 'Windows 和 macOS X 特定选项',
         zh_tw: 'Windows 和 macOS X 特定選項',
         uk: 'Налаштування для Windows та macOS X',
         ru: 'Настройки для Windows и macOS X',

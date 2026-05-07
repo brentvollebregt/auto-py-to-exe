@@ -1,8 +1,8 @@
 # 贡献给 auto-py-to-exe
 
 [English](../../CONTRIBUTING.md)
-| [српски](../../CONTRIBUTING-Serbian_Cyrillic.md)
-| [srpski](../../CONTRIBUTING-Serbian_Latin.md)
+| [српски](./CONTRIBUTING-Serbian_Cyrillic.md)
+| [srpski](./CONTRIBUTING-Serbian_Latin.md)
 | **简体中文**
 
 👍🎉 首先，感谢您对贡献的兴趣！ 🎉👍
