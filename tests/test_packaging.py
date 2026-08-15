@@ -3,6 +3,7 @@ import subprocess
 
 from helpers import PythonScriptAsFile, TemporaryDirectory, os_allow
 
+import auto_py_to_exe.packaging as packaging_module
 from auto_py_to_exe import config as auto_py_to_exe_config
 from auto_py_to_exe.packaging import package
 
@@ -30,3 +31,28 @@ def test_basic_packaging():
                 predicted_exe_location = os.path.join(predicted_output_folder, filename.split(".")[0] + ".exe")
                 exe_output = subprocess.check_output([predicted_exe_location], cwd=predicted_output_folder)
                 assert exe_output == b"Test\r\n"
+
+
+def test_packaging_fails_when_output_cannot_be_moved(tmp_path, monkeypatch):
+    """A failed move must not be reported as a successful package."""
+    build_directory = tmp_path / "build"
+    build_directory.mkdir()
+    auto_py_to_exe_config.temporary_directory = str(build_directory)
+
+    output_directory = tmp_path / "output"
+    output_directory.write_text("not a directory")
+
+    def fake_pyinstaller(_args):
+        dist_directory = build_directory / "application"
+        dist_directory.mkdir()
+        (dist_directory / "built-artifact").write_text("built")
+
+    monkeypatch.setattr(packaging_module, "run_pyinstaller", fake_pyinstaller)
+
+    success = package(
+        "pyinstaller",
+        {"increaseRecursionLimit": False, "outputDirectory": str(output_directory)},
+    )
+
+    assert not success
+    assert output_directory.read_text() == "not a directory"
