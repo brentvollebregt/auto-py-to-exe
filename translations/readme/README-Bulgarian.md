@@ -23,6 +23,7 @@
 | **Български**
 | [हिन्दी](./README-Hindi.md)
 | [עברית](./README-Hebrew.md)
+| [العربية](./README-Arabic.md)
 | [Беларуская](./README-Belarusian.md)
 | [Slovenščina](./README-Slovenian.md)
 | [српски](./README-Serbian_Cyrillic.md)

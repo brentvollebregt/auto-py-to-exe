@@ -23,6 +23,7 @@
 | [Български](./translations/readme/README-Bulgarian.md)
 | [हिन्दी](./translations/readme/README-Hindi.md)
 | [עברית](./translations/readme/README-Hebrew.md)
+| [العربية](./translations/readme/README-Arabic.md)
 | [Беларуская](./translations/readme/README-Belarusian.md)
 | [Slovenščina](./translations/readme/README-Slovenian.md)
 | [српски](./translations/readme/README-Serbian_Cyrillic.md)
@@ -142,7 +143,7 @@ If you believe you've found an issue with this tool, please follow the ["Reporti
 
 | Language                                    | Translators                                                                                  | UI                     | README                                                   | CONTRIBUTING                                                         | Examples |
 | ------------------------------------------- | -------------------------------------------------------------------------------------------- | ---------------------- | -------------------------------------------------------- | -------------------------------------------------------------------- | -------- |
-| Arabic (العربية)                            | [Tayeb-Ali](https://github.com/tayeb-ali)                                                    | ✔️                     |                                                          |                                                                      |          |
+| Arabic (العربية)                            | [Tayeb-Ali](https://github.com/tayeb-ali)                                                    | ✔️                     |   ✔️                                                       |                                                                      |          |
 | Belarusian (Беларуская)                     | [Zmicier21](https://github.com/Zmicier21)                                                    | ✔️[⚠️](# 'Incomplete') | [✔️](./translations/readme/README-Belarusian.md)         |                                                                      |          |
 | Brazilian Portuguese (Português Brasileiro) | [marleyas](https://github.com/marleyas), [reneoliveirajr](https://github.com/reneoliveirajr) | ✔️                     |                                                          |                                                                      |          |
 | Bulgarian (Български)                       | [kbkozlev](https://github.com/kbkozlev)                                                      | ✔️                     | [✔️](./translations/readme/README-Bulgarian.md)          |                                                                      |          |

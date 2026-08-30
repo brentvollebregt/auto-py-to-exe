@@ -24,6 +24,7 @@
 | [Български](./README-Bulgarian.md)
 | [हिन्दी](./README-Hindi.md)
 | [עברית](./README-Hebrew.md)
+| **العربية**
 | [Беларуская](./README-Belarusian.md)
 | [Slovenščina](./README-Slovenian.md)
 | [српски](./README-Serbian_Cyrillic.md)
