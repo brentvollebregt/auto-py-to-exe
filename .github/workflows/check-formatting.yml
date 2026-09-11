@@ -13,12 +13,14 @@ jobs:
       - name: Check Ruff linting
         uses: astral-sh/ruff-action@v3
         with:
+          version: '0.15.22'
           args: 'check'
 
       - name: Check Ruff formatting
         if: success() || failure()
         uses: astral-sh/ruff-action@v3
         with:
+          version: '0.15.22'
           args: 'format --check'
 
       - name: Check Prettier formatting
