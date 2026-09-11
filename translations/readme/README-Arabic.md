@@ -106,15 +106,15 @@ _بهذه البساطة._
 
 الاستخدام: `auto-py-to-exe [-db] [-c [CONFIG]] [-o [PATH]] [filename]`
 
-| المعامل | النوع | الوصف |
-| --- | --- | --- |
-| filename | موضعي/اختياري | يملأ مسبقًا حقل "موقع السكربت" في واجهة المستخدم. |
-| -db, --default-browser | اختياري | افتح واجهة المستخدم باستخدام المتصفح الافتراضي (قد يكون Chrome). لا يحاول العثور على Chrome. |
-| -nu, --no-ui | اختياري | لا تحاول فتح واجهة المستخدم في متصفح، واطبع العنوان الذي يمكن الوصول إلى التطبيق من خلاله. |
-| -c [CONFIG], --config [CONFIG] | اختياري | قدّم ملف تهيئة (json) لملء واجهة المستخدم مسبقًا. يمكن إنشاء هذه الملفات من علامة تبويب الإعدادات. |
-| -o [PATH], --output-dir [PATH] | اختياري | حدد دليل الإخراج الافتراضي. لا يزال بالإمكان تغييره من واجهة المستخدم. |
-| -bdo [FOLDER_PATH], --build-directory-override [FOLDER_PATH] | اختياري | تجاوز دليل البناء الافتراضي. مفيد إذا كنت بحاجة إلى وضع مجلد في القائمة البيضاء لبرنامج مكافحة الفيروسات لديك حتى لا يقوم بحذف الملفات. |
-| -lang [LANGUAGE_CODE], --language [LANGUAGE_CODE] | اختياري | أعطِ واجهة المستخدم تلميحًا حول اللغة الافتراضية التي يجب استخدامها عند الفتح. يمكن إيجاد رموز اللغات في الجدول أدناه ضمن "الترجمات". |
+| المعامل                                                      | النوع         | الوصف                                                                                                                                   |
+| ------------------------------------------------------------ | ------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| filename                                                     | موضعي/اختياري | يملأ مسبقًا حقل "موقع السكربت" في واجهة المستخدم.                                                                                       |
+| -db, --default-browser                                       | اختياري       | افتح واجهة المستخدم باستخدام المتصفح الافتراضي (قد يكون Chrome). لا يحاول العثور على Chrome.                                            |
+| -nu, --no-ui                                                 | اختياري       | لا تحاول فتح واجهة المستخدم في متصفح، واطبع العنوان الذي يمكن الوصول إلى التطبيق من خلاله.                                              |
+| -c [CONFIG], --config [CONFIG]                               | اختياري       | قدّم ملف تهيئة (json) لملء واجهة المستخدم مسبقًا. يمكن إنشاء هذه الملفات من علامة تبويب الإعدادات.                                      |
+| -o [PATH], --output-dir [PATH]                               | اختياري       | حدد دليل الإخراج الافتراضي. لا يزال بالإمكان تغييره من واجهة المستخدم.                                                                  |
+| -bdo [FOLDER_PATH], --build-directory-override [FOLDER_PATH] | اختياري       | تجاوز دليل البناء الافتراضي. مفيد إذا كنت بحاجة إلى وضع مجلد في القائمة البيضاء لبرنامج مكافحة الفيروسات لديك حتى لا يقوم بحذف الملفات. |
+| -lang [LANGUAGE_CODE], --language [LANGUAGE_CODE]            | اختياري       | أعطِ واجهة المستخدم تلميحًا حول اللغة الافتراضية التي يجب استخدامها عند الفتح. يمكن إيجاد رموز اللغات في الجدول أدناه ضمن "الترجمات".   |
 
 > إذا كنت تشغّل هذه الحزمة محليًا، فستحتاج إلى استدعاء `python -m auto_py_to_exe` بدلًا من `auto-py-to-exe`.
 
@@ -153,7 +153,7 @@ pytest
 
 ## لقطات الشاشة
 
-| <!-- --> | <!-- --> |
-| --- | --- |
+| <!-- -->                                                                                                                                             | <!-- -->                                                                                                                              |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
 | [![Empty interface](https://nitratine.net/posts/auto-py-to-exe/empty-interface.png)](https://nitratine.net/posts/auto-py-to-exe/empty-interface.png) | [![Filled out](https://nitratine.net/posts/auto-py-to-exe/filled-out.png)](https://nitratine.net/posts/auto-py-to-exe/filled-out.png) |
-| [![Converting](https://nitratine.net/posts/auto-py-to-exe/converting.png)](https://nitratine.net/posts/auto-py-to-exe/converting.png) | [![Completed](https://nitratine.net/posts/auto-py-to-exe/completed.png)](https://nitratine.net/posts/auto-py-to-exe/completed.png) |
+| [![Converting](https://nitratine.net/posts/auto-py-to-exe/converting.png)](https://nitratine.net/posts/auto-py-to-exe/converting.png)                | [![Completed](https://nitratine.net/posts/auto-py-to-exe/completed.png)](https://nitratine.net/posts/auto-py-to-exe/completed.png)    |
