@@ -72,6 +72,9 @@ def will_packaging_overwrite_existing(file_path: str, manual_name: Optional[str]
 
 def __move_package(src, dst):
     """Move the output package to the desired path (default is output/ - set in script.js)"""
+    if os.path.exists(dst) and not os.path.isdir(dst):
+        raise NotADirectoryError(f"Output path is not a directory: {dst}")
+
     # Make sure the destination exists
     if not os.path.exists(dst):
         os.makedirs(dst)
@@ -143,6 +146,7 @@ def package(pyinstaller_command, options):
         except:  # noqa: E722
             logger.error("Failed to move project")
             logger.exception(traceback.format_exc())
+            return False
     else:
         logger.info("Project output will not be moved to output folder")
         return False
