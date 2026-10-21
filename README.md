@@ -17,19 +17,17 @@
 **English**
 | [简体中文](./translations/readme/README-Chinese_Simplified.md)
 | [Suomen kieli](./translations/readme/README-Finnish.md)
+| [Polski](./translations/readme/README-Polish.md)
 | [Türkçe](./translations/readme/README-Turkish.md)
 | [فارسی](./translations/readme/README-Persian.md)
 | [한국어](./translations/readme/README-Korean.md)
 | [Български](./translations/readme/README-Bulgarian.md)
 | [हिन्दी](./translations/readme/README-Hindi.md)
 | [עברית](./translations/readme/README-Hebrew.md)
-| [العربية](./translations/readme/README-Arabic.md)
 | [Беларуская](./translations/readme/README-Belarusian.md)
 | [Slovenščina](./translations/readme/README-Slovenian.md)
 | [српски](./translations/readme/README-Serbian_Cyrillic.md)
 | [srpski](./translations/readme/README-Serbian_Latin.md)
-| [Русский](./translations/readme/README-Russian.md)
-| [Français](./translations/readme/README-French.md)
 
 ## Demo
 
@@ -52,13 +50,13 @@ _To have the interface displayed in the images, you will need Chrome. If Chrome 
 You can install this project using PyPI:
 
 ```
-pip install auto-py-to-exe
+$ pip install auto-py-to-exe
 ```
 
 Then to run it, execute the following in the terminal:
 
 ```
-auto-py-to-exe
+$ auto-py-to-exe
 ```
 
 > If you have more than one version of Python installed, you can use `python -m auto_py_to_exe` instead of `auto-py-to-exe`.
@@ -66,15 +64,15 @@ auto-py-to-exe
 #### Installing via [GitHub](https://github.com/brentvollebregt/auto-py-to-exe)
 
 ```
-git clone https://github.com/brentvollebregt/auto-py-to-exe.git
-cd auto-py-to-exe
-python setup.py install
+$ git clone https://github.com/brentvollebregt/auto-py-to-exe.git
+$ cd auto-py-to-exe
+$ python setup.py install
 ```
 
 Then to run it, execute the following in the terminal:
 
 ```
-auto-py-to-exe
+$ auto-py-to-exe
 ```
 
 #### Running Locally via [Github](https://github.com/brentvollebregt/auto-py-to-exe) (no install)
@@ -141,41 +139,41 @@ If you believe you've found an issue with this tool, please follow the ["Reporti
 
 ## Translations
 
-| Language                                    | Translators                                                                                  | UI                     | README                                                   | CONTRIBUTING                                                         | Examples |
-| ------------------------------------------- | -------------------------------------------------------------------------------------------- | ---------------------- | -------------------------------------------------------- | -------------------------------------------------------------------- | -------- |
-| Arabic (العربية)                            | [Tayeb-Ali](https://github.com/tayeb-ali), [0xTrix](https://github.com/0xTrix)               | ✔️                     | [✔️](./translations/readme/README-Arabic.md)             |                                                                      |          |
-| Belarusian (Беларуская)                     | [Zmicier21](https://github.com/Zmicier21)                                                    | ✔️[⚠️](# 'Incomplete') | [✔️](./translations/readme/README-Belarusian.md)         |                                                                      |          |
-| Brazilian Portuguese (Português Brasileiro) | [marleyas](https://github.com/marleyas), [reneoliveirajr](https://github.com/reneoliveirajr) | ✔️                     |                                                          |                                                                      |          |
-| Bulgarian (Български)                       | [kbkozlev](https://github.com/kbkozlev)                                                      | ✔️                     | [✔️](./translations/readme/README-Bulgarian.md)          |                                                                      |          |
-| Chinese Simplified (简体中文)               | [jiangzhe11](https://github.com/jiangzhe11), [Emptylight](https://github.com/emptylight370)  | ✔️                     | [✔️](./translations/readme/README-Chinese_Simplified.md) | [✔️](./translations/contributing/CONTRIBUTING-Chinese_Simplified.md) |          |
-| Chinese Traditional (繁體中文)              | [startgo](https://github.com/ystartgo)                                                       | ✔️                     |                                                          |                                                                      |          |
-| Czech (Čeština)                             | [Matto58](https://github.com/Matto58)                                                        | ✔️                     |                                                          |                                                                      |          |
-| Dutch (Nederlands)                          | [barremans](https://github.com/barremans)                                                    | ✔️                     |                                                          |                                                                      |          |
-| English                                     | -                                                                                            | ✔️                     | ✔️                                                       | ✔️                                                                   | ✔️       |
-| Finnish (Suomen kieli)                      | [ZapX5](https://github.com/ZapX5)                                                            | ✔️                     | [✔️](./translations/readme/README-Finnish.md)            |                                                                      |          |
-| French (Français)                           | [flaviedesp](https://github.com/flaviedesp), [samuellouf](https://github.com/samuellouf)     | ✔️                     | [✔️](./translations/readme/README-French.md)             |                                                                      |          |
-| German (Deutsch)                            | [hebens](https://github.com/hebens), [ackhh](https://github.com/ackhh)                       | ✔️                     |                                                          |                                                                      |          |
-| Greek (Ελληνικά)                            | [sofronas](https://github.com/sofronas)                                                      | ✔️                     |                                                          |                                                                      |          |
-| Hebrew (עברית)                              | [ronbentata](https://github.com/ronbentata)                                                  | ✔️                     | [✔️](./translations/readme/README-Hebrew.md)             |                                                                      |          |
-| Hindi (हिन्दी)                              | [triach-rold](https://github.com/triach-rold)                                                | ✔️                     | [✔️](./translations/readme/README-Hindi.md)              |                                                                      |          |
-| Hungarian (Magyar)                          | [synexdev01](https://github.com/synexdev01)                                                  | ✔️                     |                                                          |                                                                      |          |
-| Indonesian (Bahasa Indonesia)               | [MarvinZhong](https://github.com/MarvinZhong)                                                | ✔️                     |                                                          |                                                                      |          |
-| Italian (Italiano)                          | [itsEmax64](https://github.com/itsEmax64)                                                    | ✔️                     |                                                          |                                                                      |          |
-| Japanese (日本語)                           | [NattyanTV](https://github.com/nattyan-tv)                                                   | ✔️                     |                                                          |                                                                      |          |
-| Korean (한국어)                             | [jhk1090](https://github.com/jhk1090)                                                        | ✔️                     | [✔️](./translations/readme/README-Korean.md)             |                                                                      |          |
-| Persian (فارسی)                             | [DrunkLeen](https://github.com/drunkleen), [Ar.dst](https://github.com/Ar-dst)               | ✔️                     | [✔️](./translations/readme/README-Persian.md)            |                                                                      |          |
-| Polish (Polski)                             | [Akuczaku](https://github.com/Akuczaku)                                                      | ✔️                     |                                                          |                                                                      |          |
-| Russian (Русский)                           | Oleg, [Sandile](https://github.com/Sandile225325)                                            | ✔️                     | [✔️](./translations/readme/README-Russian.md)            |                                                                      |          |
-| Serbian Cyrillic (српски)                   | [Radoš Milićev](https://github.com/rammba)                                                   | ✔️                     | [✔️](./translations/readme/README-Serbian_Cyrillic.md)   | [✔️](./translations/contributing/CONTRIBUTING-Serbian_Cyrillic.md)   | ✔️       |
-| Serbian Latin (srpski)                      | [rina](https://github.com/sweatshirts), [Radoš Milićev](https://github.com/rammba)           | ✔️                     | [✔️](./translations/readme/README-Serbian_Latin.md)      | [✔️](./translations/contributing/CONTRIBUTING-Serbian_Latin.md)      | ✔️       |
-| Slovak (Slovenčina)                         | [mostypc123](https://github.com/mostypc123)                                                  | ✔️                     |                                                          |                                                                      |          |
-| Slovenian (Slovenščina)                     | [Andrew Poženel](https://github.com/anderlli0053)                                            | ✔️                     | [✔️](./translations/readme/README-Slovenian.md)          |                                                                      |          |
-| Spanish (Español)                           | [enriiquee](https://github.com/enriiquee)                                                    | ✔️                     |                                                          |                                                                      |          |
-| Spanish Latin America (Español Latam)       | [Matyrela](https://github.com/Matyrela)                                                      | ✔️                     |                                                          |                                                                      |          |
-| Thai (ภาษาไทย)                              | [teerut26](https://github.com/teerut26)                                                      | ✔️[⚠️](# 'Incomplete') |                                                          |                                                                      |          |
-| Turkish (Türkçe)                            | [mcagriaksoy](https://github.com/mcagriaksoy)                                                | ✔️                     | [✔️](./translations/readme/README-Turkish.md)            |                                                                      |          |
-| Ukrainian (Українська)                      | [AndrejGorodnij](https://github.com/AndrejGorodnij)                                          | ✔️                     |                                                          |                                                                      |          |
-| Vietnamese (Tiếng Việt)                     | [7777Hecker](https://github.com/7777Hecker)                                                  | ✔️                     |                                                          |                                                                      |          |
+| Language                                    | Translators                                                                                    | UI                     | README                                                   | CONTRIBUTING                                                         | Examples |
+| ------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------- | -------------------------------------------------------- | -------------------------------------------------------------------- | -------- |
+| Arabic (العربية)                            | [Tayeb-Ali](https://github.com/tayeb-ali)                                                      | ✔️                     |                                                          |                                                                      |          |
+| Belarusian (Беларуская)                     | [Zmicier21](https://github.com/Zmicier21)                                                      | ✔️[⚠️](# 'Incomplete') | [✔️](./translations/readme/README-Belarusian.md)         |                                                                      |          |
+| Brazilian Portuguese (Português Brasileiro) | [marleyas](https://github.com/marleyas), [reneoliveirajr](https://github.com/reneoliveirajr)   | ✔️                     |                                                          |                                                                      |          |
+| Bulgarian (Български)                       | [kbkozlev](https://github.com/kbkozlev)                                                        | ✔️                     | [✔️](./translations/readme/README-Bulgarian.md)          |                                                                      |          |
+| Chinese Simplified (简体中文)               | [jiangzhe11](https://github.com/jiangzhe11) and [Emptylight](https://github.com/emptylight370) | ✔️[⚠️](# 'Incomplete') | [✔️](./translations/readme/README-Chinese_Simplified.md) | [✔️](./translations/contributing/CONTRIBUTING-Chinese_Simplified.md) |          |
+| Chinese Traditional (繁體中文)              | [startgo](https://github.com/ystartgo)                                                         | ✔️                     |                                                          |                                                                      |          |
+| Czech (Čeština)                             | [Matto58](https://github.com/Matto58)                                                          | ✔️                     |                                                          |                                                                      |          |
+| Dutch (Nederlands)                          | [barremans](https://github.com/barremans)                                                      | ✔️                     |                                                          |                                                                      |          |
+| English                                     | -                                                                                              | ✔️                     | ✔️                                                       | ✔️                                                                   | ✔️       |
+| Finnish (Suomen kieli)                      | [ZapX5](https://github.com/ZapX5)                                                              | ✔️                     | [✔️](./translations/readme/README-Finnish.md)            |                                                                      |          |
+| French (Français)                           | [flaviedesp](https://github.com/flaviedesp)                                                    | ✔️                     |                                                          |                                                                      |          |
+| German (Deutsch)                            | [hebens](https://github.com/hebens), [ackhh](https://github.com/ackhh)                         | ✔️                     |                                                          |                                                                      |          |
+| Greek (Ελληνικά)                            | [sofronas](https://github.com/sofronas)                                                        | ✔️                     |                                                          |                                                                      |          |
+| Hebrew (עברית)                              | [ronbentata](https://github.com/ronbentata)                                                    | ✔️                     | [✔️](./translations/readme/README-Hebrew.md)             |                                                                      |          |
+| Hindi (हिन्दी)                              | [triach-rold](https://github.com/triach-rold)                                                  | ✔️                     | [✔️](./translations/readme/README-Hindi.md)              |                                                                      |          |
+| Hungarian (Magyar)                          | [synexdev01](https://github.com/synexdev01)                                                    | ✔️                     |                                                          |                                                                      |          |
+| Indonesian (Bahasa Indonesia)               | [MarvinZhong](https://github.com/MarvinZhong)                                                  | ✔️                     |                                                          |                                                                      |          |
+| Italian (Italiano)                          | [itsEmax64](https://github.com/itsEmax64)                                                      | ✔️                     |                                                          |                                                                      |          |
+| Japanese (日本語)                           | [NattyanTV](https://github.com/nattyan-tv)                                                     | ✔️                     |                                                          |                                                                      |          |
+| Korean (한국어)                             | [jhk1090](https://github.com/jhk1090)                                                          | ✔️                     | [✔️](./translations/readme/README-Korean.md)             |                                                                      |          |
+| Persian (فارسی)                             | [DrunkLeen](https://github.com/drunkleen), [Ar.dst](https://github.com/Ar-dst)                 | ✔️                     | [✔️](./translations/readme/README-Persian.md)            |                                                                      |          |
+| Polish (Polski)                             | [Akuczaku](https://github.com/Akuczaku)                                                        | ✔️                     | [✔️](./translations/readme/README-Polish.md)          |                                                                      |          |
+| Russian (Русский)                           | Oleg                                                                                           | ✔️                     |                                                          |                                                                      |          |
+| Serbian Cyrillic (српски)                   | [Radoš Milićev](https://github.com/rammba)                                                     | ✔️                     | [✔️](./translations/readme/README-Serbian_Cyrillic.md)   | [✔️](./translations/contributing/CONTRIBUTING-Serbian_Cyrillic.md)   | ✔️       |
+| Serbian Latin (srpski)                      | [rina](https://github.com/sweatshirts), [Radoš Milićev](https://github.com/rammba)             | ✔️                     | [✔️](./translations/readme/README-Serbian_Latin.md)      | [✔️](./translations/contributing/CONTRIBUTING-Serbian_Latin.md)      | ✔️       |
+| Slovak (Slovenčina)                         | [mostypc123](https://github.com/mostypc123)                                                    | ✔️                     |                                                          |                                                                      |          |
+| Slovenian (Slovenščina)                     | [Andrew Poženel](https://github.com/anderlli0053)                                              | ✔️                     | [✔️](./translations/readme/README-Slovenian.md)          |                                                                      |          |
+| Spanish (Español)                           | [enriiquee](https://github.com/enriiquee)                                                      | ✔️                     |                                                          |                                                                      |          |
+| Spanish Latin America (Español Latam)       | [Matyrela](https://github.com/Matyrela)                                                        | ✔️                     |                                                          |                                                                      |          |
+| Thai (ภาษาไทย)                              | [teerut26](https://github.com/teerut26)                                                        | ✔️[⚠️](# 'Incomplete') |                                                          |                                                                      |          |
+| Turkish (Türkçe)                            | [mcagriaksoy](https://github.com/mcagriaksoy)                                                  | ✔️                     | [✔️](./translations/readme/README-Turkish.md)            |                                                                      |          |
+| Ukrainian (Українська)                      | [AndrejGorodnij](https://github.com/AndrejGorodnij)                                            | ✔️                     |                                                          |                                                                      |          |
+| Vietnamese (Tiếng Việt)                     | [7777Hecker](https://github.com/7777Hecker)                                                    | ✔️                     |                                                          |                                                                      |          |
 
 > Want to add a translation for another language? Follow the ["Add or Update a Translation" section in CONTRIBUTING.md](./CONTRIBUTING.md#add-or-update-a-translation).
 
@@ -188,9 +186,9 @@ As of [PyInstaller v4.0](https://github.com/pyinstaller/pyinstaller/releases/tag
 Tests are located in [tests/](./tests/) directory and are run using pytest:
 
 ```
-pip install pytest
-pip install -e .
-pytest
+$ pip install pytest
+$ pip install -e .
+$ pytest
 ```
 
 ## Screenshots
