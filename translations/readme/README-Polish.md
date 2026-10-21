@@ -64,15 +64,15 @@ auto-py-to-exe
 
 Pomoc: `auto-py-to-exe --help`
 
-| Argument | Rodzaj | Opis |
-| --- | --- | --- |
-| `filename` | pozycyjny / opcjonalny | Wstępnie wypełnia pole lokalizacji skryptu. |
-| `-db`, `--default-browser` | opcjonalny | Otwiera interfejs w domyślnej przeglądarce, bez wyszukiwania Chrome. |
-| `-nu`, `--no-ui` | opcjonalny | Nie otwiera automatycznie przeglądarki, lecz wyświetla adres interfejsu. |
-| `-c [CONFIG]`, `--config [CONFIG]` | opcjonalny | Wczytuje plik konfiguracji JSON, aby wypełnić formularz. |
-| `-o [PATH]`, `--output-dir [PATH]` | opcjonalny | Ustawia domyślny katalog wynikowy (można zmienić go w interfejsie). |
-| `-bdo [FOLDER_PATH]`, `--build-directory-override [FOLDER_PATH]` | opcjonalny | Zmienia katalog roboczy budowania; przydatne przy konfiguracji programu antywirusowego. |
-| `-lang [LANGUAGE_CODE]`, `--language [LANGUAGE_CODE]` | opcjonalny | Sugeruje język domyślny interfejsu. Dla polskiego użyj `pl`. |
+| Argument                                                         | Rodzaj                 | Opis                                                                                    |
+| ---------------------------------------------------------------- | ---------------------- | --------------------------------------------------------------------------------------- |
+| `filename`                                                       | pozycyjny / opcjonalny | Wstępnie wypełnia pole lokalizacji skryptu.                                             |
+| `-db`, `--default-browser`                                       | opcjonalny             | Otwiera interfejs w domyślnej przeglądarce, bez wyszukiwania Chrome.                    |
+| `-nu`, `--no-ui`                                                 | opcjonalny             | Nie otwiera automatycznie przeglądarki, lecz wyświetla adres interfejsu.                |
+| `-c [CONFIG]`, `--config [CONFIG]`                               | opcjonalny             | Wczytuje plik konfiguracji JSON, aby wypełnić formularz.                                |
+| `-o [PATH]`, `--output-dir [PATH]`                               | opcjonalny             | Ustawia domyślny katalog wynikowy (można zmienić go w interfejsie).                     |
+| `-bdo [FOLDER_PATH]`, `--build-directory-override [FOLDER_PATH]` | opcjonalny             | Zmienia katalog roboczy budowania; przydatne przy konfiguracji programu antywirusowego. |
+| `-lang [LANGUAGE_CODE]`, `--language [LANGUAGE_CODE]`            | opcjonalny             | Sugeruje język domyślny interfejsu. Dla polskiego użyj `pl`.                            |
 
 Aby spróbować uruchomić interfejs po polsku:
 
@@ -125,7 +125,7 @@ pytest
 
 ## Zrzuty ekranu
 
-| Interfejs początkowy | Wypełniony formularz |
-| --- | --- |
+| Interfejs początkowy                                                                                                                                      | Wypełniony formularz                                                                                                                            |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
 | [![Interfejs początkowy](https://nitratine.net/posts/auto-py-to-exe/empty-interface.png)](https://nitratine.net/posts/auto-py-to-exe/empty-interface.png) | [![Wypełniony formularz](https://nitratine.net/posts/auto-py-to-exe/filled-out.png)](https://nitratine.net/posts/auto-py-to-exe/filled-out.png) |
-| [![Konwersja](https://nitratine.net/posts/auto-py-to-exe/converting.png)](https://nitratine.net/posts/auto-py-to-exe/converting.png) | [![Zakończona konwersja](https://nitratine.net/posts/auto-py-to-exe/completed.png)](https://nitratine.net/posts/auto-py-to-exe/completed.png) |
+| [![Konwersja](https://nitratine.net/posts/auto-py-to-exe/converting.png)](https://nitratine.net/posts/auto-py-to-exe/converting.png)                      | [![Zakończona konwersja](https://nitratine.net/posts/auto-py-to-exe/completed.png)](https://nitratine.net/posts/auto-py-to-exe/completed.png)   |

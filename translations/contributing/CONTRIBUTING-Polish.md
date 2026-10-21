@@ -18,7 +18,7 @@ Ten dokument opisuje zasady współpracy przy projekcie auto-py-to-exe. Są to p
 
 ## Mam tylko pytanie i nie chcę czytać całego dokumentu! <a id="i-dont-want-to-read-this-whole-thing-i-just-have-a-question"></a>
 
-> Nie twórz zgłoszenia błędu (*issue*) tylko po to, aby zadać pytanie.
+> Nie twórz zgłoszenia błędu (_issue_) tylko po to, aby zadać pytanie.
 
 Jeśli masz pytanie lub potrzebujesz ogólnej pomocy, [rozpocznij nową dyskusję](https://github.com/brentvollebregt/auto-py-to-exe/discussions/new/choose) i dokładnie opisz sytuację.
 
@@ -65,7 +65,7 @@ Jeśli chcesz dodać tłumaczenie lub zaktualizować istniejące:
 4. Wypełnij szablon.
 5. Utwórz Pull Request.
 
-> Jeśli nie możesz wysłać Pull Requesta, możesz zgłosić zmiany również za pomocą nowego zgłoszenia (*issue*).
+> Jeśli nie możesz wysłać Pull Requesta, możesz zgłosić zmiany również za pomocą nowego zgłoszenia (_issue_).
 
 ## Zasady formatowania kodu <a id="style-guide"></a>
 
