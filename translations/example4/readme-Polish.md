@@ -1,6 +1,9 @@
 # Przykład 4 — trwałe przechowywanie danych
 
-[English](../../examples/4-persistent-data/readme.md) | **Polski** | [српски](./readme-Serbian_Cyrillic.md) | [srpski](./readme-Serbian_Latin.md)
+[English](../../examples/4-persistent-data/readme.md)
+| [српски](./readme-Serbian_Cyrillic.md)
+| [srpski](./readme-Serbian_Latin.md)
+| **Polski**
 
 [Ten przykład](../../examples/4-persistent-data/main.py) pokazuje, jak zapisywać dane między uruchomieniami aplikacji, poza plikiem wykonywalnym. Jest to potrzebne na przykład wtedy, gdy program korzysta z bazy SQLite lub innych danych, które mają być zachowane po zamknięciu aplikacji.
 

@@ -13,6 +13,3 @@ dist/
 
 # pytest
 .pytest_cache
-
-# JavaScript dependencies
-node_modules/

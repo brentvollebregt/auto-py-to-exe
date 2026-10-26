@@ -1,6 +1,9 @@
 # Przykład 1 — podstawowa aplikacja
 
-[English](../../examples/1-basic/readme.md) | **Polski** | [српски](./readme-Serbian_Cyrillic.md) | [srpski](./readme-Serbian_Latin.md)
+[English](../../examples/1-basic/readme.md)
+| [српски](./readme-Serbian_Cyrillic.md)
+| [srpski](./readme-Serbian_Latin.md)
+| **Polski**
 
 [Ten przykład](../../examples/1-basic/main.py) to prosta aplikacja „Hello World”. Nie zawiera żadnych dodatkowych elementów.
 

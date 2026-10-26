@@ -4,6 +4,7 @@
 | [српски](./CONTRIBUTING-Serbian_Cyrillic.md)
 | [srpski](./CONTRIBUTING-Serbian_Latin.md)
 | **简体中文**
+| [Polski](./CONTRIBUTING-Polish.md)
 
 👍🎉 首先，感谢您对贡献的兴趣！ 🎉👍
 

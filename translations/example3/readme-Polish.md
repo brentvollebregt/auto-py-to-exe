@@ -1,6 +1,9 @@
 # Przykład 3 — obrazy i inne pliki niebędące skryptami `.py`
 
-[English](../../examples/3-images-and-other-non-py-files/readme.md) | **Polski** | [српски](./readme-Serbian_Cyrillic.md) | [srpski](./readme-Serbian_Latin.md)
+[English](../../examples/3-images-and-other-non-py-files/readme.md)
+| [српски](./readme-Serbian_Cyrillic.md)
+| [srpski](./readme-Serbian_Latin.md)
+| **Polski**
 
 [Ten przykład](../../examples/3-images-and-other-non-py-files/main.py) przedstawia aplikację GUI, która korzysta również z obrazu GIF i pliku JSON.
 

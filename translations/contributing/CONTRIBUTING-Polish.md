@@ -1,6 +1,10 @@
 # Współtworzenie auto-py-to-exe
 
-[English](../../CONTRIBUTING.md) | **Polski** | [српски](./CONTRIBUTING-Serbian_Cyrillic.md) | [srpski](./CONTRIBUTING-Serbian_Latin.md) | [简体中文](./CONTRIBUTING-Chinese_Simplified.md)
+[English](../../CONTRIBUTING.md)
+| [српски](./CONTRIBUTING-Serbian_Cyrillic.md)
+| [srpski](./CONTRIBUTING-Serbian_Latin.md)
+| [简体中文](./CONTRIBUTING-Chinese_Simplified.md)
+| **Polski**
 
 👍🎉 Dziękujemy za zainteresowanie współtworzeniem projektu! 🎉👍
 

@@ -1,6 +1,9 @@
 # Przykład 2 — aplikacja bez konsoli
 
-[English](../../examples/2-no-console/readme.md) | **Polski** | [српски](./readme-Serbian_Cyrillic.md) | [srpski](./readme-Serbian_Latin.md)
+[English](../../examples/2-no-console/readme.md)
+| [српски](./readme-Serbian_Cyrillic.md)
+| [srpski](./readme-Serbian_Latin.md)
+| **Polski**
 
 [Ten przykład](../../examples/2-no-console/main.py) przedstawia prostą aplikację z graficznym interfejsem użytkownika (GUI).
 

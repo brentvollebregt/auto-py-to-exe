@@ -3,6 +3,7 @@
 [English](../../examples/1-basic/readme.md)
 | [српски](./readme-Serbian_Cyrillic.md)
 | **srpski**
+| [Polski](./readme-Polish.md)
 
 [Ovaj primer](../../examples/1-basic/main.py) je osnovna Hello World aplikacija. U ovom primeru ništa nije neuobičajeno.
 
