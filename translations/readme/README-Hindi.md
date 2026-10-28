@@ -30,6 +30,7 @@
 | [srpski](./README-Serbian_Latin.md)
 | [Русский](./README-Russian.md)
 | [Français](./README-French.md)
+| [Polski](./README-Polish.md)
 
 ## डेमो
 
