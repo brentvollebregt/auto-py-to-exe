@@ -30,6 +30,7 @@
 | **srpski**
 | [Русский](./README-Russian.md)
 | [Français](./README-French.md)
+| [Polski](./README-Polish.md)
 
 ## Demo
 

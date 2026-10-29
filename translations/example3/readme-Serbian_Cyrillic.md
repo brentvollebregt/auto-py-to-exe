@@ -3,6 +3,7 @@
 [English](../../examples/3-images-and-other-non-py-files/readme.md)
 | **српски**
 | [srpski](./readme-Serbian_Latin.md)
+| [Polski](./readme-Polish.md)
 
 [Овај пример](../../examples/3-images-and-other-non-py-files/main.py) је GUI апликација која референцира GIF (слику) и JSON датотеку.
 

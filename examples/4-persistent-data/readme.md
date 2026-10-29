@@ -3,6 +3,7 @@
 **English**
 | [српски](../../translations/example4/readme-Serbian_Cyrillic.md)
 | [srpski](../../translations/example4/readme-Serbian_Latin.md)
+| [Polski](../../translations/example4/readme-Polish.md)
 
 [This example](./main.py) demonstrates how you can manage persistent data outside your executable. This is needed when you have something like a SQLite database or something else used to store data between application runs.
 

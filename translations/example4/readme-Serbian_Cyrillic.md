@@ -3,6 +3,7 @@
 [English](../../examples/4-persistent-data/readme.md)
 | **српски**
 | [srpski](./readme-Serbian_Latin.md)
+| [Polski](./readme-Polish.md)
 
 [Овај пример](../../examples/4-persistent-data/main.py) демонстрира како можете управљати трајним подацима изван извршне датотеке. Ово је потребно када имате SQLite базу података или нешто слично што користите за чување података између различитих покретања апликације.
 

@@ -3,6 +3,7 @@
 **English**
 | [српски](../../translations/example2/readme-Serbian_Cyrillic.md)
 | [srpski](../../translations/example2/readme-Serbian_Latin.md)
+| [Polski](../../translations/example2/readme-Polish.md)
 
 [This example](./main.py) is a basic GUI application.
 

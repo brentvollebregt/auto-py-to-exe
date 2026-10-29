@@ -3,6 +3,7 @@
 [English](../../examples/2-no-console/readme.md)
 | **српски**
 | [srpski](./readme-Serbian_Latin.md)
+| [Polski](./readme-Polish.md)
 
 [Овај пример](../../examples/2-no-console/main.py) је обична GUI апликација.
 
